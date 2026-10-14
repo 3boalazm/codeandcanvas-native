@@ -77,6 +77,7 @@ window.PROPOSAL = {
       float1: { ar: 'تم اعتماد الفاتورة INV-2041', en: 'Invoice INV-2041 cleared' },
       float2: { ar: 'تنبيه: ٣ أصناف تحت حد الطلب', en: 'Alert: 3 items below reorder point' },
       float3: { ar: 'مسير رواتب الشهر جاهز للاعتماد', en: 'This month’s payroll is ready to approve' },
+      note: { ar: 'واجهة توضيحية ببيانات تجريبية — ليست لقطة من عميل ولا وعدًا بنتيجة.', en: 'Illustrative interface with sample data — not a customer screenshot, and not a promised result.' },
     },
   },
 

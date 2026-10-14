@@ -2,10 +2,11 @@
    CanvasOne ERP — Proposal content (single source of truth)
    --------------------------------------------------------------------------
    Every piece of copy on the page lives here, in Arabic + English.
-   Edit text here — the layout in index.html / app.js renders it automatically.
+   Edit text here — the layout in erp/index.html / erp-app.js renders it automatically.
 
    ⚠️  Before publishing, review the items marked  // VERIFY
-       (contact details + compliance claims must match the licensed product).
+       (compliance claims and module features must match the licensed product).
+       Contact details (email, WhatsApp, booking link) now come from the live site.
    ========================================================================== */
 
 window.PROPOSAL = {
@@ -18,9 +19,9 @@ window.PROPOSAL = {
     productAr: 'كانفاس ون',
     website: 'codeandcanvas.net',
     websiteUrl: 'https://codeandcanvas.net',
-    email: 'hello@codeandcanvas.net', // VERIFY — replace with the real sales inbox
-    whatsapp: '', // VERIFY — international format without "+", e.g. "9665XXXXXXXX". Empty = hidden
-    bookingUrl: '', // optional Cal.com / Calendly link. Empty = falls back to email
+    email: 'info@codeandcanvas.net', // from the live site's contact details
+    whatsapp: '966545520750', // KSA WhatsApp Business, from the live site (international format, no "+")
+    bookingUrl: 'https://codeandcanvas.net/contact/', // the live site's discovery-call page
     year: 2026,
   },
 

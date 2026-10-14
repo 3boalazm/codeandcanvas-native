@@ -346,6 +346,10 @@
   function bindChrome() {
     $('#langBtn')?.addEventListener('click', () => setLang(lang === 'ar' ? 'en' : 'ar'));
 
+    // Mark the current page in the shared header: <body data-nav="services"> ↔ <a data-key="services">
+    const key = document.body.dataset.nav;
+    if (key) $$('#navLinks a[data-key]').forEach((a) => { if (a.dataset.key === key) { a.classList.add('is-active'); a.setAttribute('aria-current', 'page'); } });
+
     const burger = $('#burger');
     const links = $('#navLinks');
     if (burger && links) {

@@ -1,0 +1,83 @@
+{
+  "$comment": "Machine-readable companion to docs/SITEMAP.md. Snapshot of https://codeandcanvas.net taken 2026-10-14 via public pages + WP REST API. status: live | duplicate | redirect | auth | missing. native: done | P1 | P2 | P3 | redirect | drop.",
+  "site": {
+    "origin": "https://codeandcanvas.net",
+    "name": "Code & Canvas",
+    "tagline": "Where creativity meets technology",
+    "platform": "WordPress + Elementor Pro + Astra + WooCommerce (SAR) + custom cc-auth",
+    "sitemap_xml": "broken (HTTP 500; sitemap-1..5.xml 404)"
+  },
+  "contact": {
+    "email": "info@codeandcanvas.net",
+    "whatsapp_ksa": "+966545520750",
+    "whatsapp_eg": "+201092500454",
+    "phone_eg_contact_page": "+201092500444 (verify — differs from WhatsApp)",
+    "offices": { "ksa": "Al Murouj, Riyadh · Al Khobar", "eg": "Al Obour City · Cairo" },
+    "external": [
+      "https://ahmed-bedeer.vercel.app/",
+      "https://aboalazm-os.vercel.app/",
+      "https://linkedin.com/in/ahmed-bedeer",
+      "https://github.com/ahmedbdeer",
+      "https://behance.net/aboalazm",
+      "https://zadullashr.vercel.app/"
+    ]
+  },
+  "routes": [
+    { "live": "/", "wp_id": 439, "title": "Home", "status": "live", "native": "done", "native_path": "/" },
+    { "live": null, "title": "CanvasOne ERP", "status": "native-only", "native": "done", "native_path": "/erp/" },
+
+    { "live": "/services/", "wp_id": 26, "title": "Solutions", "status": "live", "native": "P1", "native_path": "/services/" },
+    { "live": "/technology-services/", "wp_id": 5469, "title": "Technology services", "status": "live", "native": "P1", "native_path": "/technology-services/" },
+    { "live": "/creative-services/", "wp_id": 5464, "title": "Creative services", "status": "live", "native": "P1", "native_path": "/creative-services/" },
+    { "live": "/healthcare-hub/", "wp_id": 6185, "title": "Healthcare Hub", "status": "live", "note": "body is a copy of Creative services", "native": "P1", "native_path": "/healthcare/" },
+    { "live": "/about/", "wp_id": 5437, "title": "About", "status": "live", "native": "P1", "native_path": "/about/" },
+    { "live": "/our-story/", "wp_id": 5554, "title": "Our Story", "status": "live", "note": "5 chapter images are placeholders", "native": "P1", "native_path": "/our-story/" },
+    { "live": "/methodology/", "wp_id": 6187, "title": "Methodology", "status": "live", "native": "P1", "native_path": "/methodology/" },
+    { "live": "/team/", "wp_id": 5353, "title": "Team", "status": "live", "native": "P1", "native_path": "/team/" },
+    { "live": "/our-team/", "wp_id": 6218, "title": "our Team", "status": "duplicate", "native": "redirect", "redirect_to": "/team/" },
+    { "live": "/elementor-6205/", "wp_id": 6205, "title": "Team", "status": "duplicate", "native": "redirect", "redirect_to": "/team/" },
+    { "live": "/contact/", "wp_id": 5443, "title": "Contact", "status": "live", "note": "form needs a backend", "native": "P1", "native_path": "/contact/" },
+    { "live": "/pricing-faq/", "wp_id": 16, "title": "Pricing & FAQ", "status": "live", "native": "P1", "native_path": "/pricing-faq/" },
+    { "live": "/case-studies/", "wp_id": 5679, "title": "Case Studies", "status": "live", "note": "screenshots coming soon", "native": "P1", "native_path": "/case-studies/" },
+    { "live": "(404 template)", "title": "Page not found", "status": "live", "native": "P1", "native_path": "/404.html" },
+    { "live": "/privacy-policy/", "status": "missing", "note": "linked from native footer", "native": "P1", "native_path": "/privacy-policy/" },
+    { "live": "/terms-of-use/", "status": "missing", "note": "linked from native footer", "native": "P1", "native_path": "/terms-of-use/" },
+    { "live": "/cookie-policy/", "status": "missing", "note": "linked from native footer", "native": "P1", "native_path": "/cookie-policy/" },
+    { "live": "/solutions", "status": "missing", "note": "linked from Our Story and blog CTAs", "native": "redirect", "redirect_to": "/services/" },
+
+    { "live": "/blogs/", "wp_id": 5525, "title": "Blogs (Insights Hub)", "status": "live", "note": "10 cards, 5 links 404", "native": "P2", "native_path": "/blog/" },
+    { "live": "/category/blog/", "title": "Blog archive", "status": "live", "native": "redirect", "redirect_to": "/blog/" },
+    { "live": "/why-startups-waste-money-wrong-product/", "wp_id": 5563, "type": "post", "title": "Why Most Startups Waste Money Building the Wrong Product", "topic": "Product Strategy", "minutes": 8, "status": "live", "native": "P2", "native_path": "/blog/why-startups-waste-money-wrong-product/" },
+    { "live": "/how-to-turn-a-business-idea-into-a-market-ready-digital-product/", "wp_id": 5568, "type": "post", "title": "From Idea to Market-Ready Product: The 6-Step Strategic Framework", "topic": "Product Strategy", "minutes": 7, "status": "live", "native": "P2", "native_path": "/blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/" },
+    { "live": "/why-software-development-alone-wont-solve-your-business-problems/", "wp_id": 5583, "type": "post", "title": "Why Software Development Alone Won't Solve Your Business Problems", "topic": "Product Strategy", "minutes": 8, "status": "live", "native": "P2", "native_path": "/blog/why-software-development-alone-wont-solve-your-business-problems/" },
+    { "live": "/what-digital-transformation-actually-means-for-smes/", "wp_id": 5585, "type": "post", "title": "What Digital Transformation Actually Means for SMEs in 2026", "topic": "Digital Transformation", "minutes": 9, "status": "live", "native": "P2", "native_path": "/blog/what-digital-transformation-actually-means-for-smes/" },
+    { "live": "/how-product-thinking-creates-sustainable-business-growth/", "wp_id": 5586, "type": "post", "title": "Product Thinking: The Framework That Turns Features Into Business Outcomes", "topic": "Product Thinking", "minutes": 6, "status": "live", "native": "P2", "native_path": "/blog/how-product-thinking-creates-sustainable-business-growth/" },
+    { "live": "/why-most-brands-look-different-but-feel-the-same/", "wp_id": 5637, "type": "post", "title": "Why Most Brands Look Different but Feel the Same", "topic": "Brand Strategy", "minutes": 10, "author": "Mustafa Aboalazm", "status": "live", "native": "P2", "native_path": "/blog/why-most-brands-look-different-but-feel-the-same/" },
+    { "live": "/from-brand-identity-to-brand-systems/", "wp_id": 5639, "type": "post", "title": "Design Systems: The Operating System of Modern Digital Products", "topic": "Design Systems", "minutes": 5, "author": "Mustafa Aboalazm", "status": "live", "note": "WP title is '… – Copy'; slug does not match content", "native": "P2", "native_path": "/blog/design-systems-operating-system/" },
+    { "live": "/creative-strategy-in-the-age-of-generative-ai/", "wp_id": 5652, "type": "post", "title": "Experience Design as a Business Growth Driver", "topic": "Experience Design", "minutes": 5, "author": "Mustafa Aboalazm", "status": "live", "note": "WP title is '… – Copy'; slug does not match content", "native": "P2", "native_path": "/blog/experience-design-business-growth-driver/" },
+    { "live": "/brand-identity-to-brand-systems/", "type": "post", "title": "From Brand Identity to Brand Systems", "status": "missing", "note": "listed on /blogs/, no post exists", "native": "P2 (write or drop)" },
+    { "live": "/creative-strategy-generative-ai-age/", "type": "post", "title": "Creative Strategy in the Age of Generative AI", "status": "missing", "note": "listed on /blogs/, no post exists", "native": "P2 (write or drop)" },
+
+    { "live": "/books/", "wp_id": 5695, "title": "Books (المكتبة الرقمية)", "status": "live", "lang": "ar", "native": "P2", "native_path": "/books/" },
+    { "live": "/shop/", "wp_id": 1468, "status": "redirect", "redirect_to": "/books/", "native": "redirect" },
+    { "live": "/basics-of-brand-identity/", "wp_id": 5701, "title": "أساسيات الهوية البصرية (book landing)", "status": "live", "lang": "ar", "native": "P2", "native_path": "/books/basics-of-visual-identity/" },
+    { "live": "/product/marketing-fundamentals/", "wp_id": 6138, "type": "product", "title": "Marketing Fundamentals", "price_sar": 249, "status": "live", "note": "custom slide viewer, 258 slides / 15 parts", "native": "P3", "native_path": "/books/marketing-fundamentals/read/" },
+    { "live": "/product/basics-of-visual-identity/", "wp_id": 6126, "type": "product", "title": "Basics of Visual Identity", "price_sar": 199, "status": "live", "native": "P3", "native_path": "/books/basics-of-visual-identity/read/" },
+    { "live": "/product/basics-of-graphic-design/", "wp_id": 6122, "type": "product", "title": "Basics of Graphic Design", "price_sar": 199, "status": "live", "native": "P3", "native_path": "/books/basics-of-graphic-design/read/" },
+    { "live": "/product/%d8%af%d9%84%d9%8a%d9%84-%d8%aa%d8%ac%d8%b1%d8%a8%d8%a9-%d9%88%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%ae%d8%af%d9%85/", "wp_id": 6139, "type": "product", "title": "دليل تجربة وواجهة المستخدم (UI/UX Handbook)", "price_sar": 299, "status": "live", "note": "shown as قريباً", "native": "P3", "native_path": "/books/ui-ux-handbook/" },
+    { "live": "/product/full-brand-identity/", "wp_id": 1715, "type": "product", "price_sar": 500, "status": "live", "note": "legacy 2024 product", "native": "drop", "redirect_to": "/creative-services/" },
+    { "live": "/product/it-solutions/", "wp_id": 2645, "type": "product", "status": "live", "note": "empty, not purchasable", "native": "drop" },
+    { "live": "/product/data-analysis/", "wp_id": 2512, "type": "product", "status": "live", "note": "empty, not purchasable", "native": "drop" },
+    { "live": "/product-category/design-services/", "status": "live", "native": "drop" },
+    { "live": "/product-category/uncategorized/", "status": "live", "native": "drop" },
+    { "live": "/cart/", "wp_id": 2194, "title": "Cart", "status": "live", "native": "P3", "native_path": "/cart/" },
+    { "live": "/checkout/", "wp_id": 2412, "title": "Checkout", "status": "redirect", "note": "→ /cart/ when empty", "native": "P3", "native_path": "/checkout/" },
+    { "live": "/thank-you/", "wp_id": 6158, "title": "Thank you (order confirmation)", "status": "live", "lang": "ar", "native": "P3", "native_path": "/thank-you/" },
+
+    { "live": "/login/", "wp_id": 6060, "title": "Login", "status": "live", "native": "P3", "native_path": "/login/" },
+    { "live": "/register/", "wp_id": 6061, "title": "Register", "status": "live", "native": "P3", "native_path": "/register/" },
+    { "live": "/forgot-password/", "wp_id": 6062, "title": "Forgot Password", "status": "live", "native": "P3", "native_path": "/forgot-password/" },
+    { "live": "/reset-password/", "wp_id": 6063, "title": "Reset Password", "status": "live", "native": "P3", "native_path": "/reset-password/" },
+    { "live": "/account-center/", "wp_id": 5970, "title": "Account Center", "status": "auth", "note": "redirects to /login/?redirect_to=…", "native": "P3", "native_path": "/account/" }
+  ]
+}

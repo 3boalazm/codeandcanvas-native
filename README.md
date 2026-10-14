@@ -39,6 +39,9 @@ assets/
 ├── js/erp-data.js       ALL ERP copy, bilingual { ar, en }
 ├── js/erp-app.js        ERP rendering and interactions
 └── brand/               Code & Canvas logos (SVG)
+docs/
+├── SITEMAP.md           map of the live codeandcanvas.net (every URL, page blueprints, redirects, build phases)
+└── sitemap.json         the same route list, machine-readable
 ```
 
 ## Language

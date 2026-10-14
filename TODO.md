@@ -26,4 +26,8 @@
 - [ ] Verify ERP compliance claims and module features against the licensed product (`// VERIFY` in `assets/js/erp-data.js`).
 - [ ] Decide whether the homepage should default to Arabic for Saudi / Egypt visitors regardless of browser language.
 - [ ] Add `hreflang` / separate Arabic URLs if SEO for Arabic is needed (currently `?lang=ar`).
-- [ ] Rebuild the remaining pages (services, our story, contact) — links still point to the live site.
+- [ ] Rebuild the remaining pages — links still point to the live site. Full inventory, page blueprints, redirects and build phases are in [`docs/SITEMAP.md`](docs/SITEMAP.md) (`docs/sitemap.json` for the route list):
+  - P1 marketing pages: services, technology-services, creative-services, healthcare, about, our-story, methodology, team, contact, pricing-faq, case-studies, 404, legal pages.
+  - P2 content: blog hub + 8 posts, books catalogue + book landing pages.
+  - P3 commerce + auth: book viewer, cart/checkout/thank-you, login/register/reset, account.
+- [ ] Settle the content conflicts listed in `docs/SITEMAP.md` §7 (service numbering, counts, brand pricing, studio stats, Egypt phone number, `#book` behaviour) before writing P1 copy.

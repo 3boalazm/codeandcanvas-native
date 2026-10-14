@@ -3,3 +3,6 @@ node_modules/
 .DS_Store
 # local reference copy of the original ERP proposal (now lives in /erp/)
 erp-proposal/
+__pycache__/
+*.pyc
+dist/

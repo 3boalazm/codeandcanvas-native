@@ -6,6 +6,8 @@ Machine-readable version: [`docs/sitemap.json`](./sitemap.json).
 
 ---
 
+> **Status (2026-10-14):** migration complete on branch `arena/e74be3b3-codeandcanvas-native` — every route below has a native page (see README for the route table, build pipeline and integration points). Legacy URLs are mapped in `_redirects`. Pending items live in `TODO.md` §6.
+
 ## 1. Live site at a glance
 
 | | |

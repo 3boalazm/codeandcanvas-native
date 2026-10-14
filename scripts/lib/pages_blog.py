@@ -81,7 +81,7 @@ def hub(posts):
         <div class="phero__split">
           <div>
             <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="Code &amp; Canvas · قاعدة المعرفة">Code &amp; Canvas · Knowledge Base</span></span>
-            <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مركز">The</span> <span class="grad-text" data-ar="الرؤى.">Insights</span> <span data-ar="">Hub.</span></h1>
+            <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مركز">The Insights</span> <span class="grad-text" data-ar="الرؤى.">Hub.</span></h1>
             <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="الاستراتيجية والعمارة وأنظمة العلامة والتفكير المنتجي والتحول الرقمي. &lt;strong&gt;أطر ورؤى للقادة&lt;/strong&gt; الذين يبنون مؤسسات في المنطقة — بلا مصطلحات رنانة.">Strategy, architecture, brand systems, product thinking, and digital transformation. <strong>Frameworks and insights for leaders</strong> building organizations across MENA — without the buzzwords.</p>
             <div class="pill-list" data-reveal style="--d:.22s">{topic_pills}</div>
           </div>

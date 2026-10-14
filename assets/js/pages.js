@@ -191,6 +191,8 @@
   /*  Booking hook — <section id="book" data-booking-url="https://calendly.com/…">  */
   /*  When a scheduler URL is set, every [data-book] button opens it.    */
   /* ------------------------------------------------------------------ */
+  // Legacy WordPress deep-link: /about#book → booking card now lives on /contact/#book
+  if (location.hash === '#book' && !$('#book')) location.replace('/contact/#book');
   const bookUrl = ($('#book')?.dataset.bookingUrl || '').trim();
   if (bookUrl) $$('[data-book]').forEach((a) => { a.href = bookUrl; a.target = '_blank'; a.rel = 'noopener'; });
 

@@ -12,9 +12,19 @@ const types = {
   '.woff2': 'font/woff2', '.ttf': 'font/ttf', '.ico': 'image/x-icon', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8',
 };
 
+// `_redirects` (Netlify/Cloudflare syntax) is honoured so legacy WordPress URLs behave like production.
+async function loadRedirects() {
+  const text = await readFile(join(root, '_redirects'), 'utf8').catch(() => '');
+  return text.split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#')).map((l) => l.split(/\s+/)).filter((p) => p.length >= 2 && p[0] !== '/*');
+}
+const redirects = await loadRedirects();
+const matchRedirect = (path) => redirects.find(([from]) => (from.endsWith('/*') ? path.startsWith(from.slice(0, -1)) : from === path || decodeURIComponent(from) === path));
+
 createServer(async (req, res) => {
   try {
     const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    const r = matchRedirect(path);
+    if (r && r[1] !== path) { res.writeHead(Number(r[2]) || 301, { Location: r[1] }); return res.end(); }
     let file = normalize(join(root, path));
     if (!file.startsWith(root)) throw new Error('outside root');
     if ((await stat(file).catch(() => null))?.isDirectory()) {

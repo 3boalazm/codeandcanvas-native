@@ -100,6 +100,9 @@ def btn(label, label_ar, h, kind='primary', icon_name='arrowUpRight', extra=''):
     return f'<a class="{cls}{(" " + extra) if extra else ""}" href="{h}"{ext}><span data-ar="{esc(label_ar)}">{label}</span>{ic}</a>'
 
 
+REGISTRY = []  # (path, title, title_ar) of every page written this run
+
+
 def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extra_head='', scripts=('/assets/js/pages.js',), og_type='website', canonical=None):
     """Write <ROOT>/<path>/index.html (or ROOT/<path> when path ends with .html)."""
     url = canonical or (SITE + (path if path.endswith('.html') else path))
@@ -135,6 +138,7 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
 '''
     out = os.path.join(ROOT, path.lstrip('/')) if path.endswith('.html') else os.path.join(ROOT, path.strip('/'), 'index.html')
     os.makedirs(os.path.dirname(out), exist_ok=True)
+    REGISTRY.append((path, title, title_ar))
     with open(out, 'w', encoding='utf-8') as f:
         f.write(doc)
     return out

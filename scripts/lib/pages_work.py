@@ -97,4 +97,4 @@ def build():
     return [page('/case-studies/', title='Our Work — Case Studies & Delivered Projects · Code & Canvas', title_ar='أعمالنا — دراسات حالة ومشاريع مُسلَّمة · Code & Canvas',
                  desc='Real projects, proven results: Pharmacy OS (multi-tenant healthcare SaaS), Zad worship companion PWA, and the Nile Pharma ERP platform — built by Code & Canvas, 2024–2026.',
                  desc_ar='مشاريع حقيقية ونتائج مثبتة: نظام تشغيل الصيدليات (SaaS صحي متعدد المستأجرين)، تطبيق زاد للعبادات، ومنصة ERP لنايل فارما — من بناء Code & Canvas، 2024–2026.',
-                 nav='case-studies', body=body)]
+                 nav='work', body=body)]

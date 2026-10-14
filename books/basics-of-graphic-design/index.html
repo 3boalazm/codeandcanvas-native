@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="أساسيات التصميم الجرافيكي — Basics of Graphic Design · Code &amp; Canvas" data-desc-ar="مدخل عملي لأساسيات التصميم الجرافيكي — المبادئ والتكوين واللون والخط — للمحترفين والمبتدئين على حد سواء.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Basics of Graphic Design — أساسيات التصميم الجرافيكي · Code &amp; Canvas</title>
+    <meta name="description" content="A practical introduction to the fundamentals of graphic design — principles, composition, colour, and type — for professionals and beginners alike." />
+    <meta property="og:type" content="book" />
+    <meta property="og:title" content="Basics of Graphic Design — أساسيات التصميم الجرافيكي · Code &amp; Canvas" />
+    <meta property="og:description" content="A practical introduction to the fundamentals of graphic design — principles, composition, colour, and type — for professionals and beginners alike." />
+    <meta property="og:url" content="https://codeandcanvas.net/books/basics-of-graphic-design/" />
+    <link rel="canonical" href="https://codeandcanvas.net/books/basics-of-graphic-design/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <!-- /cc:head -->
+  </head>
+  <body class="is-loading" data-nav="books">
+    <!-- cc:top -->
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__inner container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <img class="nav__logo" src="/assets/brand/logo-white-horizontal.svg" alt="" width="96" height="40" />
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+          <a class="only-mobile" href="/contact/#book" data-ar="لنتحدث">Let’s talk</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="lang-btn" id="langBtn" type="button"></button>
+          <a class="btn btn--primary btn--sm magnetic" href="/contact/#book"><span data-ar="لنتحدث">Let’s talk</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <section class="phero container" aria-labelledby="page-title">
+        <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/books/" data-ar="الكتب">Books</a><i>›</i><span aria-current="page" data-ar="أساسيات التصميم الجرافيكي">Basics of Graphic Design</span></nav>
+        <div class="book-hero">
+          <div data-reveal><div class="art art--mint " data-slot="books/basics-of-graphic-design/cover" aria-hidden="true"><span class="art__mark" style="font-size:96px;font-family:var(--f-num);font-style:italic;font-weight:800">GD</span><span class="art__cap">Basics of Graphic Design · Mustafa Aboalazm · 2026</span></div></div>
+          <div>
+            <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="المكتبة · الكتاب الثالث">Library · Basics of Graphic Design</span></span>
+            <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span lang="ar" dir="rtl">أساسيات التصميم الجرافيكي</span><br /><span class="grad-text" style="font-size:.6em">Basics of Graphic Design</span></h1>
+            <p class="person__tag" data-reveal style="--d:.12s">1st Edition · 2026 · v1.0 · Mustafa Aboalazm · 2026</p>
+            <p class="hero__lead" data-reveal style="--d:.16s" data-ar="مدخل عملي لأساسيات التصميم الجرافيكي — المبادئ والتكوين واللون والخط — للمحترفين والمبتدئين على حد سواء.">A practical introduction to the fundamentals of graphic design — principles, composition, colour, and type — for professionals and beginners alike.</p>
+            <div class="stats__inner glass" style="margin-top:20px;grid-template-columns:repeat(3,1fr)" data-reveal style="--d:.2s"><div class="stat"><span class="stat__num stat__num--ltr">1</span><p class="stat__label" data-ar="إصدار أول">1st edition</p></div><div class="stat"><span class="stat__num stat__num--ltr">AR</span><p class="stat__label" data-ar="واجهة عربية">Arabic UI</p></div><div class="stat"><span class="stat__num stat__num--ltr">2026</span><p class="stat__label" data-ar="إصدار">Edition</p></div></div>
+            <div class="pill-list" style="margin-top:16px" data-reveal><span class="pill">المبادئ</span><span class="pill">التكوين</span><span class="pill">اللون</span><span class="pill">الخط</span></div>
+            
+            <div class="book-hero__buy glass">
+              <span class="book__price" dir="ltr">199 <small data-ar="ريال سعودي · دفعة واحدة · وصول دائم">SAR · one-time · lifetime access</small></span>
+              <button class="btn btn--primary" type="button" data-add="basics-of-graphic-design" data-title="Basics of Graphic Design" data-title-ar="أساسيات التصميم الجرافيكي" data-price="199" data-currency="SAR"><i data-icon="cart" aria-hidden="true"></i><span data-ar="أضف إلى السلة">Add to cart</span></button>
+              <a class="btn btn--glass" href="/books/basics-of-graphic-design/read/"><i data-icon="grid" aria-hidden="true"></i><span data-ar="افتح المعاينة المجانية">Open the free preview</span></a>
+              <small class="form__hint" data-ar="بعد الشراء يُفتح الكتاب كاملًا في القارئ التفاعلي من حسابك.">After purchase the full book unlocks in the interactive reader from your account.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="section container section--flush-top" id="chapters" aria-labelledby="toc-title">
+        <div class="notice glass" data-reveal><i data-icon="box" aria-hidden="true"></i><div><b id="toc-title" data-ar="الفهرس التفصيلي">Detailed table of contents</b><p data-ar="يُعرض الفهرس الكامل داخل القارئ بعد الشراء — افتح المعاينة المجانية للاطلاع على الأجزاء الأولى.">The full table of contents is shown inside the reader after purchase — open the free preview to browse the opening parts.</p></div></div>
+      </section>
+
+      <section class="section container section--tight" aria-labelledby="next-title">
+        <div class="callout glass glass--deep" data-reveal>
+          <div>
+            <p class="kicker"><span data-ar="الكتاب التالي في المكتبة">NEXT IN THE LIBRARY</span></p>
+            <h3 id="next-title"><span lang="ar" dir="rtl">دليل تجربة وواجهة المستخدم</span> <span class="grad-text">· UI/UX Handbook</span></h3>
+            <p data-ar="دليل عملي لتصميم تجارب وواجهات المستخدم — من البحث إلى النماذج الأولية إلى أنظمة التصميم. قريبًا.">A hands-on handbook for UX and UI design — from research to prototypes to design systems. Coming soon.</p>
+          </div>
+          <div class="callout__actions"><a class="btn btn--glass" href="/books/"><span data-ar="← المكتبة">← The Library</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--primary magnetic" href="/books/ui-ux-handbook/"><span data-ar="دليل تجربة وواجهة المستخدم ←">UI/UX Handbook →</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+        </div>
+      </section>
+
+      
+      <section class="section container section--tight" aria-label="Next step" data-ar-label="الخطوة التالية">
+        <div class="closing" data-reveal>
+          <span class="closing__border" aria-hidden="true"></span>
+          <div class="closing__inner glass glass--deep">
+            <p class="kicker kicker--center"><span data-ar="نتطلع لسماعك">CAN'T WAIT TO HEAR FROM YOU</span></p>
+            <h2 class="closing__title"><span data-ar="لا نطيق الانتظار">Can’t Wait To</span><br /><span class="grad-text" data-ar="لنسمع منك.">Hear From You.</span></h2>
+            <p class="closing__text" data-ar="أسئلة عن هذا الكتاب أو تراخيص جماعية أو نسخة تدريبية مخصصة؟ كلمنا.">Questions about this book, bulk licences, or a custom training edition? Talk to us.</p>
+            <div class="hero__ctas hero__ctas--center"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز موعدًا">Book an Appointment</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/contact/"><span data-ar="ابدأ الآن">Get Started</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--ghost" href="/services/"><span data-ar="كل الخدمات">Full Services</span><i class="flip" data-icon="arrow"></i></a></div>
+            <p class="closing__contact"><a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a> · <a class="ltr" href="tel:+966545520750">+966 54 552 0750</a> · <a class="ltr" href="tel:+201092500454">+20 109 250 0454</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+    <script src="/assets/js/shop.js"></script>
+  </body>
+</html>

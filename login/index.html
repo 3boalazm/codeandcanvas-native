@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="تسجيل الدخول - Code &amp; Canvas" data-desc-ar="أهلًا بعودتك — حساب Code &amp; Canvas.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Login - Code &amp; Canvas</title>
+    <meta name="description" content="Welcome back — Code &amp; Canvas account." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Login - Code &amp; Canvas" />
+    <meta property="og:description" content="Welcome back — Code &amp; Canvas account." />
+    <meta property="og:url" content="https://codeandcanvas.net/login/" />
+    <link rel="canonical" href="https://codeandcanvas.net/login/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <!-- /cc:head -->
+  </head>
+  <body class="is-loading is-auth">
+    <!-- cc:top -->
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__inner container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <img class="nav__logo" src="/assets/brand/logo-white-horizontal.svg" alt="" width="96" height="40" />
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+          <a class="only-mobile" href="/contact/#book" data-ar="لنتحدث">Let’s talk</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="lang-btn" id="langBtn" type="button"></button>
+          <a class="btn btn--primary btn--sm magnetic" href="/contact/#book"><span data-ar="لنتحدث">Let’s talk</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <section class="auth container" aria-labelledby="auth-title">
+        <div class="auth__card glass glass--deep">
+          <a class="auth__brand" href="/"><img src="/assets/brand/icon-white.svg" alt="" width="28" height="28" />Code &amp; Canvas</a>
+          <h1 class="auth__title" id="auth-title" data-ar="أهلًا بعودتك">Welcome back</h1>
+          <p class="auth__sub"><span data-ar="ليس لديك حساب؟">Don’t have an account?</span> <a href="/register/" data-ar="أنشئ حسابًا مجانًا">Create one for free</a></p>
+          
+          <form class="form" data-form="demo" data-next="/account/" novalidate>
+            <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+            <div class="field"><label for="f-email" data-ar="البريد الإلكتروني">Email</label><input id="f-email" name="email" type="email" required autocomplete="email" /><span class="field__err" data-ar="أدخل بريدًا صحيحًا">Please enter a valid e-mail</span></div>
+            <div class="field"><label for="f-password" data-ar="كلمة المرور">Password</label><input id="f-password" name="password" type="password" required minlength="8" autocomplete="current-password" /><span class="field__err" data-ar="8 أحرف على الأقل">At least 8 characters</span></div>
+            <div class="form__row form__row--between"><label class="check"><input type="checkbox" name="remember" value="1" /><span data-ar="تذكرني">Remember me</span></label><a class="text-link" href="/forgot-password/"><span data-ar="نسيت كلمة المرور؟">Forgot password?</span></a></div>
+            <button class="btn btn--primary magnetic btn--block" type="submit"><span data-ar="تسجيل الدخول">Sign In</span></button>
+            <div class="form__status" role="status" aria-live="polite"></div>
+            <p class="auth__or"><span data-ar="أو سجّل الدخول عبر">or sign in with</span></p>
+            <a class="btn btn--glass auth__google" href="/login/?provider=google" data-provider="google" aria-disabled="true"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path fill="#EA4335" d="M9 3.5c1.5 0 2.5.6 3.1 1.2l2.3-2.3C13 1.1 11.2.3 9 .3 5.5.3 2.5 2.3 1.1 5.2l2.7 2.1C4.4 5.2 6.5 3.5 9 3.5z"/><path fill="#4285F4" d="M17.6 9.2c0-.7-.1-1.2-.2-1.8H9v3.3h4.9c-.1.8-.6 2-1.8 2.8l2.6 2c1.6-1.4 2.9-3.6 2.9-6.3z"/><path fill="#FBBC05" d="M3.8 10.7c-.2-.6-.3-1.1-.3-1.7s.1-1.2.3-1.7L1.1 5.2C.4 6.3 0 7.6 0 9s.4 2.7 1.1 3.8l2.7-2.1z"/><path fill="#34A853" d="M9 17.7c2.4 0 4.5-.8 6-2.2l-2.6-2c-.8.5-1.8.9-3.4.9-2.5 0-4.6-1.7-5.3-4L1.1 12.5C2.5 15.6 5.5 17.7 9 17.7z"/></svg><span data-ar="المتابعة عبر Google">Continue with Google</span></a>
+          </form>
+          <details class="auth__2fa">
+            <summary><span data-ar="لديك تحقق بخطوتين؟ أدخل الرمز">Using two-factor authentication? Enter your code</span></summary>
+            <form class="form" data-form="demo" data-next="/account/" novalidate>
+              <p class="form__hint">🔐 <span data-ar="أدخل الرمز المكوّن من 6 أرقام من تطبيق المصادقة، أو رمز استرداد.">Enter the 6-digit code from your authenticator app, or a recovery code.</span></p>
+              <div class="field"><label for="f-otp" data-ar="رمز المصادقة">Authentication code</label><input id="f-otp" name="otp" type="text" required autocomplete="one-time-code" inputmode="numeric" pattern="[0-9A-Za-z-]{6,16}" /><span class="field__err" data-ar="هذا الحقل مطلوب">This field is required</span></div>
+              <button class="btn btn--glass btn--block" type="submit"><span data-ar="تحقق">Verify</span></button>
+              <a class="text-link" href="/login/"><span data-ar="← العودة لتسجيل الدخول">← Back to sign in</span></a>
+            </form>
+          </details>
+        </div>
+        
+      </section>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+    <script src="/assets/js/shop.js"></script>
+  </body>
+</html>

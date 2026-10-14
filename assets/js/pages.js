@@ -123,6 +123,8 @@
     return ok;
   }
 
+  if (window.CC) CC.validateForm = validate;
+
   function serialize(form) {
     const data = {};
     new FormData(form).forEach((v, k) => { if (k !== '_hp') data[k] = typeof v === 'string' ? v.trim() : v; });

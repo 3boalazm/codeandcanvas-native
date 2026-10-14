@@ -50,27 +50,32 @@ Static files are written to `dist/`. Preview with `node dev-server.mjs dist`.
 index.html               homepage (English markup; Arabic sits beside it in data-ar* attributes)
 erp/index.html           ERP proposal shell (content is rendered from erp-data.js)
 assets/
-├── css/ds.css           shared design system (tokens, glass, buttons, nav, footer, timeline, orbit…)
+├── css/ds.css           shared design system (tokens, glass, buttons, nav, footer, timeline…)
 ├── css/home.css         homepage-only components
 ├── css/erp.css          ERP-only components (+ print stylesheet)
-├── js/site.js           shared runtime: language, icons, preloader, reveal, tilt, nav, progress…
-├── js/home.js           homepage behaviour (orbit, hero parallax, meta per language)
+├── js/site.js           shared runtime: language, icons, preloader, reveal, tilt, nav, progress, CC.track() analytics hook…
+├── js/home.js           homepage behaviour (meta per language; sections are plain CSS/HTML)
 ├── js/pages.js          inner pages: tabs, FAQ, filters, forms (contact / demo), booking hook, TOC, account panels
 ├── js/shop.js           localStorage cart, checkout shell, account library
 ├── js/reader.js         interactive book reader (manifest or free preview, notes, fullscreen)
 ├── css/pages.css        inner-page components (hero, tiles, tiers, forms, prose, reader, cart, auth…)
 ├── js/erp-data.js       ALL ERP copy, bilingual { ar, en }
 ├── js/erp-app.js        ERP rendering and interactions
-└── brand/               Code & Canvas logos (SVG)
+└── brand/               Code & Canvas logos (SVG) + og-default.png (1200×630 social card)
 scripts/
 ├── gen-pages.py         builds every inner page + _redirects / sitemap.xml / robots.txt / manus-routes.json
 ├── sync-chrome.mjs      injects partials/{head,top,bottom}.html into all pages (--check in CI)
 ├── check-links.mjs      static QA: tag balance, internal links, anchors
-└── lib/                 catalog.py (23 services), h.py (HTML helpers), pages_*.py (one per page), posts/ (articles)
+├── audit-text.py        dumps the visible English text of every page to docs/audit/native/ (content QA)
+├── make-og.mjs          renders assets/brand/og-default.png (needs @resvg/resvg-js, see file header)
+└── lib/                 catalog.py (23 services), h.py (HTML helpers + JSON-LD), pages_*.py (one per page), posts/ (articles), _reorder.py (dev helper: reorder page blocks)
 partials/                shared head / nav / footer chrome
 docs/
 ├── SITEMAP.md           map of the live codeandcanvas.net (every URL, page blueprints, redirects, build phases)
-└── sitemap.json         the same route list, machine-readable
+├── sitemap.json         the same route list, machine-readable
+├── OVERHAUL-PLAN.md     work plan of the 2026-10 overhaul (phases, research method)
+├── OVERHAUL-REPORT.md   what the overhaul changed and why (final report)
+└── audit/               GAP-REPORT.md (live → native content gaps), REVIEW.md (cross-team site review), native/*.txt (text dumps)
 ```
 
 ## Language
@@ -114,6 +119,7 @@ What the config does: `trailingSlash: true` (`/services` → `/services/`), `cle
 | **Cart & payment** | `assets/js/shop.js` | Cart = `localStorage["cc-cart"]`; purchases unlock books via `localStorage["cc-library"]` (demo). Implement `checkout(cart, data)` with Moyasar / Tap / Paymob / Stripe and persist entitlements server-side. `[data-add]` buttons carry `data-title/-price/-currency`. |
 | **Book content** | `assets/js/reader.js` → `/assets/books/<slug>/manifest.json` | Publish `{ "parts":[{ "title", "slides":[{ "kicker","title","html" }] }], "free_parts": n }` (serve it behind your entitlement check). Without a manifest the reader shows the free preview generated from the landing page copy + the purchase gate. Reading position and notes are stored locally (`cc-reader-*`, `cc-notes-*`). |
 | **Imagery** | every `.art[data-slot="…"]` | CSS/SVG art tiles stand in for the WordPress stock images; replace by slot name (`blog/<slug>/cover`, `work/pharmacy-os`, `books/<slug>/cover`, …). |
+| **Analytics** | `assets/js/site.js › CC.track()` | Every meaningful click carries `data-track="<event>"` (+ `data-track-*` props). `CC.track()` pushes `{event:'cc', name, …props}` to `window.dataLayer` and dispatches a `cc:track` DOM event — plug GTM / GA4 / Plausible in by listening to either. Events fired today: `book-call`, `see-services`, `offer`, `duo`, `track`, `work`, `post`, `book`, `erp`, `whatsapp`, `phone`, `email`, `portfolio`, `lang-toggle`, `form-submit`, `add-to-cart`, `checkout`. Pre-filled inquiries: `/contact/?inquiry=<CODE>` selects the matching service in the form. |
 | **Hosting** | `_redirects`, `404.html`, `manus-routes.json` | Netlify / Cloudflare Pages read `_redirects` natively; for Vercel convert to `vercel.json` rewrites. The dev server honours `_redirects` too. |
 
 ## Scope

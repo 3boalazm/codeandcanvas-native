@@ -90,6 +90,17 @@ def build():
         </div>
       </section>
 
+      <!-- ░░ Section nav ░░ -->
+      <nav class="subnav subnav--sticky container" aria-label="On this page" data-ar-label="في هذه الصفحة" data-spy>
+        <a href="#credentials"><span data-ar="الاعتمادات">Credentials</span></a>
+        <a href="#results"><span data-ar="النتائج">Results</span></a>
+        <a href="#services"><span data-ar="الخدمات">Services</span><b>6</b></a>
+        <a href="#capabilities"><span data-ar="القدرات">Capabilities</span></a>
+        <a href="#model"><span data-ar="نموذج التعاون">Engagement model</span></a>
+        <a href="#who"><span data-ar="من ينفّذ">Who delivers</span></a>
+        <a href="/contact/#book" class="subnav__aux">{icon('calendar')}<span data-ar="احجز مكالمة">Book a call</span></a>
+      </nav>
+
       <!-- ░░ Credentials ░░ -->
       <section class="section container section--tight" id="credentials" aria-labelledby="cred-title">
         <header class="section__head" data-reveal>
@@ -168,7 +179,7 @@ def build():
       </section>
 
       <!-- ░░ Engagement model ░░ -->
-      <section class="section container section--flush-top" aria-labelledby="model-title">
+      <section class="section container section--flush-top" id="model" aria-labelledby="model-title">
         <header class="section__head" data-reveal>
           <p class="kicker"><span class="kicker__num">05</span><span data-ar="نموذج التعاون">Engagement model</span></p>
           <h2 class="section__title" id="model-title"><span data-ar="نموذج تعاون">An engagement model</span> <span class="grad-text" data-ar="مبني لاتخاذ القرار.">built for decisions.</span></h2>

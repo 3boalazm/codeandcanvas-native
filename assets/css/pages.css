@@ -4,6 +4,8 @@
    English (LTR) and Arabic (RTL). Nothing here depends on a build step.
    ========================================================================== */
 
+[hidden] { display: none !important; }
+
 /* ---------- Page hero ---------- */
 .phero { position: relative; padding-top: calc(var(--nav-h) + clamp(56px, 9vw, 120px)); padding-bottom: clamp(40px, 6vw, 80px); }
 .phero--center { text-align: center; }

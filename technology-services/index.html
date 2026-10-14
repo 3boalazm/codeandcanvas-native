@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="خدمات التقنية — Code &amp; Canvas" data-desc-ar="العمارة المؤسسية · التحول الرقمي · المعلوماتية الصحية · عمارة الحلول · السحابة · الاستشارات التنفيذية. 6 خدمات وممارسة واحدة — بقيادة أحمد بدير (CPHIMS، TOGAF، EMRAM، NORA).">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Technology Services — Code &amp; Canvas</title>
+    <meta name="description" content="Enterprise Architecture · Digital Transformation · Healthcare Informatics · Solution Architecture · Cloud · Executive Advisory. 6 services, one practice — led by Ahmed Bedeer (CPHIMS, TOGAF, EMRAM, NORA)." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Technology Services — Code &amp; Canvas" />
+    <meta property="og:description" content="Enterprise Architecture · Digital Transformation · Healthcare Informatics · Solution Architecture · Cloud · Executive Advisory. 6 services, one practice — led by Ahmed Bedeer (CPHIMS, TOGAF, EMRAM, NORA)." />
+    <meta property="og:url" content="https://codeandcanvas.net/technology-services/" />
+    <link rel="canonical" href="https://codeandcanvas.net/technology-services/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <!-- /cc:head -->
+  </head>
+  <body class="is-loading" data-nav="services">
+    <!-- cc:top -->
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__inner container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <img class="nav__logo" src="/assets/brand/logo-white-horizontal.svg" alt="" width="96" height="40" />
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+          <a class="only-mobile" href="/contact/#book" data-ar="لنتحدث">Let’s talk</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="lang-btn" id="langBtn" type="button"></button>
+          <a class="btn btn--primary btn--sm magnetic" href="/contact/#book"><span data-ar="لنتحدث">Let’s talk</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <!-- ░░ Hero ░░ -->
+      <section class="phero container" aria-labelledby="page-title">
+        <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/services/" data-ar="الحلول">Solutions</a><i>›</i><span aria-current="page" data-ar="خدمات التقنية">Technology Services</span></nav>
+        <div class="phero__split">
+          <div>
+            <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="التقنية · العمارة · التحول · البيانات">Technology · Architecture · Transformation · Data</span></span>
+            <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="نصمّم عمارة">Architecting</span><br /><span class="grad-text" data-ar="التحول الرقمي.">digital transformation.</span></h1>
+            <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="العمارة المؤسسية · التحول الرقمي · المعلوماتية الصحية · عمارة الحلول · السحابة · الاستشارات التنفيذية. &lt;strong&gt;6 خدمات. ممارسة واحدة.&lt;/strong&gt; كل مشروع يُنتج مخرجات يستطيع التنفيذيون التصرف بناءً عليها — لا أوراقًا تُركن على الرف.">Enterprise Architecture · Digital Transformation · Healthcare Informatics · Solution Architecture · Cloud · Executive Advisory. <strong>6 services. One practice.</strong> Every engagement produces artifacts executives can act on — not shelfware.</p>
+            <div class="hero__ctas" data-reveal style="--d:.24s"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة">Book a Call</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener"><span data-ar="الأعمال">Portfolio</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+          </div>
+          <div class="phero__aside" data-reveal style="--d:.2s">
+            <div class="stats__inner glass" style="grid-template-columns:repeat(2,1fr)">
+              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="10" data-latin="1">10</span>+</span><p class="stat__label" data-ar-html="سنوات في&lt;br /&gt;السعودية والمنطقة">Years across<br />KSA &amp; MENA</p></div>
+              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="3" data-latin="1">3</span></span><p class="stat__label" data-ar-html="أطر&lt;br /&gt;معمارية">Architecture<br />frameworks</p></div>
+              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="85" data-latin="1">85</span>%</span><p class="stat__label" data-ar-html="جاهزية HIMSS&lt;br /&gt;المرحلة 6 المحققة">HIMSS Stage 6<br />readiness achieved</p></div>
+              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="12" data-latin="1">12</span>+</span><p class="stat__label" data-ar-html="معيارًا تقنيًا&lt;br /&gt;ومعيار امتثال">Tech &amp;<br />compliance stds</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ Bio ░░ -->
+      <section class="section container section--tight" aria-labelledby="bio-title">
+        <article class="card glass person person--big" data-reveal>
+          <div class="art art--portrait" data-slot="team/ahmed-bedeer"><span class="art__mark">AB</span><span class="art__cap" data-ar="{ } الكود">{ } THE CODE</span></div>
+          <div>
+            <p class="person__role" data-ar="مهندس معماري مؤسسي · متخصص في التحول الرقمي">Enterprise Architect · Digital Transformation Specialist</p>
+            <h2 id="bio-title">Ahmed Bedeer</h2>
+            <p class="person__tag" data-ar="شريك مؤسس · Code &amp; Canvas · الخبر، السعودية">Co-Founder · Code &amp; Canvas · Al Khobar, KSA</p>
+            <p data-ar="مهندس معماري مؤسسي ومتخصص في التحول الرقمي بخبرة تتجاوز 10 سنوات في السعودية — عبر قطاعات الرعاية الصحية والحكومة والقطاع الخاص. حاصل على شهادة CPHIMS وبخبرة فعلية في تقييمات HIMSS EMRAM. خبرة في عمارة TOGAF/NORA واختيار موردي أنظمة HIS والهجرة السحابية وتحليلات البيانات وبناء قدرات العمارة المؤسسية بما يتماشى مع رؤية 2030.">Enterprise Architect and Digital Transformation Specialist with 10+ years in KSA — working across healthcare, government, and private sector. CPHIMS-certified with active HIMSS EMRAM assessment experience. Expertise in TOGAF/NORA architecture, HIS vendor selection, cloud migration, data analytics, and EA capability building aligned to Vision 2030.</p>
+            <div class="creds" aria-label="Skills" data-ar-label="المهارات"><span>TOGAF</span><span>NORA</span><span>CPHIMS</span><span>EMRAM</span><span>ArchiMate</span><span>Sparx EA</span><span>Java · Spring</span><span>Power BI</span><span>FHIR · HL7</span><span>Vision 2030</span></div>
+            <div class="person__links">
+              <a href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener" title="Ahmed's Portfolio"><i data-icon="link" aria-hidden="true"></i><span data-ar="الأعمال">Portfolio</span></a>
+              <a href="/contact/#book"><i data-icon="calendar" aria-hidden="true"></i><span data-ar="احجز مكالمة ←">Book a Call →</span></a>
+              <a href="https://www.linkedin.com/in/ahmed-bedeer" target="_blank" rel="noopener"><i data-icon="users" aria-hidden="true"></i><span>LinkedIn</span></a>
+              <a href="https://github.com/ahmedbdeer" target="_blank" rel="noopener"><i data-icon="kanban" aria-hidden="true"></i><span>GitHub</span></a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ░░ Credentials ░░ -->
+      <section class="section container section--tight section--flush-top" aria-labelledby="cred-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">01</span><span data-ar="اعتمادات فعّالة · ليست أطرًا مُدرجة فحسب">ACTIVE CREDENTIALS · NOT LISTED FRAMEWORKS</span></p>
+          <h2 class="section__title" id="cred-title"><span data-ar="اعتمادات تُستخدم">Credentials used</span> <span class="grad-text" data-ar="في كل مشروع ذي صلة.">in every relevant engagement.</span></h2>
+        </header>
+        <div class="grid grid--4">
+          <article class="card glass tile" data-tilt data-reveal><span class="card__icon"><i data-icon="award" aria-hidden="true"></i></span><h3>CPHIMS</h3><p data-ar="محترف معتمد في المعلوماتية الصحية">Certified Professional in Health Informatics</p><div class="tile__foot" data-ar="HIMSS · المعلوماتية الصحية وإدارة المعلومات">HIMSS · Health Informatics &amp; Info Mgmt</div></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon"><i data-icon="shield" aria-hidden="true"></i></span><h3>EMRAM</h3><p data-ar="مقيّم نموذج تبنّي السجلات الطبية الإلكترونية">EMR Adoption Model Assessor</p><div class="tile__foot" data-ar="HIMSS · مقيّم مراحل معتمد">HIMSS · Certified Stage Assessor</div></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><span class="card__icon"><i data-icon="layers" aria-hidden="true"></i></span><h3>TOGAF</h3><p data-ar="إطار العمارة المؤسسية">Enterprise Architecture Framework</p><div class="tile__foot" data-ar="The Open Group · تسليم مرتكز على ADM">The Open Group · ADM-anchored delivery</div></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.21s"><span class="card__icon"><i data-icon="plug" aria-hidden="true"></i></span><h3>NORA</h3><p data-ar="منصة التبادل الصحي الوطنية · السعودية">National Health Exchange · KSA</p><div class="tile__foot" data-ar="وزارة الصحة السعودية · عمارة تكامل فعّالة">Saudi MOH · Active integration architecture</div></article>
+        </div>
+      </section>
+
+      <!-- ░░ Outcomes ░░ -->
+      <section class="section container section--tight section--flush-top" aria-labelledby="out-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">02</span><span data-ar="نتائج · لا مجرد مخططات">OUTCOMES · NOT JUST DIAGRAMS</span></p>
+          <h2 class="section__title" id="out-title"><span data-ar="أرقام من">Numbers from</span> <span class="grad-text" data-ar="مشاريع حقيقية.">real engagements.</span></h2>
+        </header>
+        <div class="grid grid--4">
+          <article class="card glass tile" data-tilt data-reveal><strong class="art__mark" style="font-size:44px">12%</strong><h3 style="margin-top:12px" data-ar="خفض مدة الإقامة في العناية المركزة">ICU LOS Reduction</h3><p data-ar="التحليلات التنبؤية وتنبيهات فجوات الرعاية المدمجة في مستودع البيانات دعمت التواصل السريري الاستباقي">Predictive analytics &amp; care-gap alerting integrated into the EDW supported proactive clinical outreach</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><strong class="art__mark" style="font-size:44px">25%</strong><h3 style="margin-top:12px" data-ar="إقفال شهري أسرع">Faster Month-End Close</h3><p data-ar="مسارات دورة الإيرادات المنمذجة بـ UML بسّطت دورة الطلبات وعمليات تسجيل الرسوم">UML-modeled revenue-cycle workflows streamlined order lifecycle and charge capture processes</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><strong class="art__mark" style="font-size:44px">40%</strong><h3 style="margin-top:12px" data-ar="أعباء إدارية أقل">Less Admin Overhead</h3><p data-ar="تطبيق Java/Spring Boot متمحور حول المريض أتمت مسارات المواعيد والتأمين من البداية للنهاية">Patient-centric Java/Spring Boot application automated appointment and insurance workflows end-to-end</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.21s"><strong class="art__mark" style="font-size:44px">$500K+</strong><h3 style="margin-top:12px" data-ar="وفورات تكلفة مرصودة">Cost-Savings Identified</h3><p data-ar="لوحة تحليل سوق مؤتمتة قدّمت رؤى لحظية قادت قرارات قابلة للقياس لأصحاب المصلحة">Automated market analysis dashboard delivered real-time insights that drove measurable stakeholder decisions</p></article>
+        </div>
+      </section>
+
+      <!-- ░░ Services ░░ -->
+      <section class="section container" id="services" aria-labelledby="svc-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">03</span><span data-ar="6 خدمات تقنية">6 Technology Services</span></p>
+          <h2 class="section__title" id="svc-title"><span data-ar="عمارة. تحوّل.">Architecture. Transformation.</span><br /><span class="grad-text" data-ar="بيانات. سحابة. استشارات.">Data. Cloud. Advisory.</span></h2>
+        </header>
+        <div class="toolbar" data-reveal>
+          <p><span data-ar="تصفية حسب الممارسة">Filter by practice</span> <i data-icon="arrowDown" aria-hidden="true"></i></p>
+          <div class="filters" role="group" aria-label="Filter services" data-ar-label="تصفية الخدمات" data-filter-group="#svc-list">
+            <button class="filter is-active" type="button" data-filter="all" aria-pressed="true"><span data-ar="الكل">All</span><b>6</b></button>
+            <button class="filter" type="button" data-filter="ab-01" aria-pressed="false"><span data-ar="العمارة والاستراتيجية">EA &amp; Strategy</span><b>1</b></button>
+            <button class="filter" type="button" data-filter="ab-02" aria-pressed="false"><span data-ar="الرعاية الصحية">Healthcare</span><b>1</b></button>
+            <button class="filter" type="button" data-filter="ab-03" aria-pressed="false"><span data-ar="البيانات">Data</span><b>1</b></button>
+            <button class="filter" type="button" data-filter="ab-04" aria-pressed="false"><span data-ar="عمارة الحلول">Solution Arch</span><b>1</b></button>
+            <button class="filter" type="button" data-filter="ab-05" aria-pressed="false"><span data-ar="السحابة">Cloud</span><b>1</b></button>
+            <button class="filter" type="button" data-filter="ab-06" aria-pressed="false"><span data-ar="الاستشارات">Advisory</span><b>1</b></button>
+          </div>
+        </div>
+        <div id="svc-list">
+        
+        <article class="sdetail glass " id="ab-01" data-category="ab-01" data-reveal>
+          <div>
+            <div class="sdetail__head"><span class="sdetail__code">AB-01</span><span class="sdetail__star" aria-hidden="true">⭐</span><span class="sdetail__tag">TOGAF · NORA</span></div>
+            <h3 data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</h3>
+            <p class="sdetail__lead" data-ar="مشاريع شاملة متوافقة مع TOGAF — من تقييم الوضع الحالي إلى رؤية الوضع المستهدف وخارطة طريق انتقالية على مراحل بحوكمة واضحة. كل قرار يعود إلى مصفوفة مواءمة الأعمال مع التقنية.">End-to-end TOGAF-aligned engagements — from current-state assessment to target-state vision and a phased transition roadmap with clear governance. Every decision traces back to the Business-to-Technology Alignment Matrix.</p>
+            <div class="pill-list" style="margin-top:14px"><span class="pill">TOGAF ADM</span><span class="pill">ArchiMate 3.1</span><span class="pill">NORA Alignment</span><span class="pill">Capability Mapping</span><span class="pill">Sparx EA</span><span class="pill">Architecture Governance</span><span class="pill">Vision 2030</span></div>
+            <h4 data-ar="ما الذي تشمله">What's included</h4><ul class="ticks ticks--dense"><li data-ar="رؤية العمارة ورسم خرائط القدرات">Architecture Vision &amp; Capability Mapping</li><li data-ar="طبقات الأعمال · البيانات · التطبيقات · التقنية (BDAT)">Business · Data · Application · Tech layers (BDAT)</li><li data-ar="مواءمة NORA لبرامج السعودية">NORA alignment for KSA programs</li><li data-ar="نمذجة وتوثيق ArchiMate">ArchiMate modelling &amp; documentation</li><li data-ar="تمكين مجلس حوكمة العمارة">Architecture Governance Board enablement</li><li data-ar="خطة عمل مرحلية لمدة 90 يومًا">90-day phased action plan</li><li data-ar="مصفوفة مواءمة الأعمال مع التقنية">Business-to-Technology Alignment Matrix</li></ul>
+            <h4 data-ar="صيغ المشروع">Engagement tiers</h4><div class="tiers"><div class="tier tier--star"><b data-ar="تقييم البداية السريعة للعمارة المؤسسية">EA Quick-Start Assessment</b><strong>$1,000 – $2,500</strong><p data-ar="الوضع الحالي عبر طبقات BDAT · تحليل فجوات القدرات · مصفوفة مواءمة الأعمال مع التقنية · خطة عمل 90 يومًا · توثيق ArchiMate / Sparx EA.">Current state across BDAT layers · capability gap analysis · Business-to-Technology Alignment Matrix · 90-day action plan · ArchiMate / Sparx EA documentation.</p><small data-ar="أسبوعان · مرتكز على TOGAF">2 weeks · TOGAF-anchored</small></div><div class="tier"><b data-ar="استشارات التحول الرقمي (موسّعة)">Digital Transformation Advisory (extended)</b><strong>$3,000 – $8,000</strong><p data-ar="تصميم نموذج الحوكمة · خارطة طريق مرحلية · مواءمة NORA ورؤية 2030 · إطار مؤشرات الأداء · عرض لأصحاب المصلحة.">Governance model design · phased roadmap · NORA &amp; Vision 2030 alignment · KPI framework · stakeholder presentation.</p><small data-ar="⁦4–8⁩ أسابيع · NORA / رؤية 2030">4–8 weeks · NORA / Vision 2030</small></div></div>
+          </div>
+          <aside class="sdetail__side">
+            <div class="sdetail__price"><strong>$1,000 – $5,000</strong><span data-ar="⁦2–8⁩ أسابيع · TOGAF ADM">2–8 weeks · TOGAF ADM</span><small data-ar="ابدأ مشروع عمارة مؤسسية ← ابتداءً من ⁦$1,000⁩">Start an EA Engagement → from $1,000</small></div>
+            <a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="ابدأ مشروع عمارة مؤسسية">Start an EA Engagement</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="btn btn--glass" href="/pricing-faq/"><span data-ar="شروط الدفع والأسئلة الشائعة">Payment terms &amp; FAQ</span></a>
+            <span class="sdetail__lead-by"><i data-icon="users" aria-hidden="true"></i><span data-ar="يقودها">Led by</span> <b data-ar="أحمد بدير">Ahmed Bedeer</b></span>
+          </aside>
+        </article>
+        
+        <article class="sdetail glass " id="ab-02" data-category="ab-02" data-reveal>
+          <div>
+            <div class="sdetail__head"><span class="sdetail__code">AB-02</span><span class="sdetail__tag">CPHIMS · EMRAM</span></div>
+            <h3 data-ar="التحول الرقمي في الرعاية الصحية">Healthcare Digital Transformation</h3>
+            <p class="sdetail__lead" data-ar="تحوّلات المستشفيات والعيادات وفق جاهزية HIMSS المرحلة 6+ — من اختيار نظام السجلات الطبية الإلكترونية ونشر التشغيل البيني إلى جاهزية CBAHI وعمارة الامتثال لـ NORA. بتنفيذ مقيّم HIMSS EMRAM نشط.">Hospital and clinic transformations executed against HIMSS Stage 6+ readiness — from EHR selection and interoperability rollout to CBAHI readiness and NORA compliance architecture. Delivered by an active HIMSS EMRAM assessor.</p>
+            <div class="pill-list" style="margin-top:14px"><span class="pill">HIS · EHR · EMR</span><span class="pill">HL7 · FHIR · DICOM</span><span class="pill">Mirth Connect</span><span class="pill">HIMSS EMRAM</span><span class="pill">CBAHI · NORA</span></div>
+            
+            
+          </div>
+          <aside class="sdetail__side">
+            <div class="sdetail__price"><strong>$3,000 – $8,000</strong><span data-ar="⁦4–8⁩ أسابيع · بتنفيذ CPHIMS">4–8 weeks · CPHIMS-delivered</span><small data-ar="CPHIMS · EMRAM · NORA">CPHIMS · EMRAM · NORA</small></div>
+            <a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة استكشافية">Book a Discovery Call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="btn btn--glass" href="/pricing-faq/"><span data-ar="شروط الدفع والأسئلة الشائعة">Payment terms &amp; FAQ</span></a>
+            <span class="sdetail__lead-by"><i data-icon="users" aria-hidden="true"></i><span data-ar="يقودها">Led by</span> <b data-ar="أحمد بدير">Ahmed Bedeer</b></span>
+          </aside>
+        </article>
+        
+        <article class="sdetail glass " id="ab-03" data-category="ab-03" data-reveal>
+          <div>
+            <div class="sdetail__head"><span class="sdetail__code">AB-03</span><span class="sdetail__tag">Power BI · Python</span></div>
+            <h3 data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</h3>
+            <p class="sdetail__lead" data-ar="من تصميم حوكمة البيانات إلى خطوط ODS ← EDW ومنصات ذكاء أعمال إنتاجية — أساس البيانات الذي يغذّي لوحات المؤشرات ونماذج التعلم الآلي والقرارات التنفيذية. ليست تقارير استرجاعية، بل ذكاء قرار.">From data governance design to ODS → EDW pipelines and production BI platforms — the data foundation that feeds dashboards, ML models, and executive decisions. Not retrospective reporting; decision intelligence.</p>
+            <div class="pill-list" style="margin-top:14px"><span class="pill">Power BI · Tableau</span><span class="pill">Python · SQL</span><span class="pill">EDW · ETL</span><span class="pill">Master Data</span><span class="pill">KPI Frameworks</span></div>
+            
+            <h4 data-ar="صيغ المشروع">Engagement tiers</h4><div class="tiers"><div class="tier"><b data-ar="لوحة تحليلات">Analytics Dashboard</b><strong>$800 – $2,000</strong><p data-ar="بيانات تشغيلية ← لوحات تنفيذية · تسليم عبر Power BI أو Tableau · خط بيانات Python (عند الحاجة) · تأطير ذكاء القرار · مدخل لمشروع عمارة مؤسسية.">Operational data → executive dashboards · Power BI or Tableau delivery · Python data pipeline (if needed) · decision intelligence framing · entry point to an EA engagement.</p><small data-ar="⁦1–2⁩ أسبوع · Power BI · Python">1–2 weeks · Power BI · Python</small></div></div>
+          </div>
+          <aside class="sdetail__side">
+            <div class="sdetail__price"><strong>$800 – $3,500</strong><span data-ar="⁦1–4⁩ أسابيع · Power BI · Python">1–4 weeks · Power BI · Python</span></div>
+            <a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة استكشافية">Book a Discovery Call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="btn btn--glass" href="/pricing-faq/"><span data-ar="شروط الدفع والأسئلة الشائعة">Payment terms &amp; FAQ</span></a>
+            <span class="sdetail__lead-by"><i data-icon="users" aria-hidden="true"></i><span data-ar="يقودها">Led by</span> <b data-ar="أحمد بدير">Ahmed Bedeer</b></span>
+          </aside>
+        </article>
+        
+        <article class="sdetail glass " id="ab-04" data-category="ab-04" data-reveal>
+          <div>
+            <div class="sdetail__head"><span class="sdetail__code">AB-04</span><span class="sdetail__tag">Java · Spring Boot</span></div>
+            <h3 data-ar="عمارة الحلول">Solution Architecture</h3>
+            <p class="sdetail__lead" data-ar="عمارات قائمة على الواجهات البرمجية أولًا بلغة Java/Spring Boot و Node.js — خدمات مصغّرة وواجهات REST وتصميم قواعد البيانات وتحليل OODA يربط المنتج بالمنصة. من الفكرة إلى توثيق معماري قابل للنشر.">API-first architectures in Java/Spring Boot and Node.js — microservices, REST APIs, database design, and OODA-driven analysis bridging product and platform. From concept to deployable architecture documentation.</p>
+            <div class="pill-list" style="margin-top:14px"><span class="pill">Java · Spring Boot</span><span class="pill">Node.js</span><span class="pill">PostgreSQL</span><span class="pill">Microservices</span><span class="pill">API Design</span></div>
+            
+            <h4 data-ar="صيغ المشروع">Engagement tiers</h4><div class="tiers"><div class="tier"><b data-ar="استكشاف محفظة التطبيقات">Application Portfolio Discovery</b><strong>$800 – $2,000</strong><p data-ar="تحليل آلي لشفرة .NET · خريطة مشهد التطبيقات · خريطة اعتماديات الخدمات · توثيق تقني · يحل محل أسابيع من الاستكشاف اليدوي.">Automated .NET source analysis · application landscape map · service dependency map · technical documentation · replaces weeks of manual discovery.</p><small data-ar="⁦3–5⁩ أيام · أنظمة .NET">3–5 days · .NET stacks</small></div></div>
+          </div>
+          <aside class="sdetail__side">
+            <div class="sdetail__price"><strong data-ar="نطاق مخصّص">Custom scope</strong><span>Java · Spring · PostgreSQL</span><small data-ar="يُحدَّد نطاقه لكل مشروع">Scoped per engagement</small></div>
+            <a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة استكشافية">Book a Discovery Call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="btn btn--glass" href="/pricing-faq/"><span data-ar="شروط الدفع والأسئلة الشائعة">Payment terms &amp; FAQ</span></a>
+            <span class="sdetail__lead-by"><i data-icon="users" aria-hidden="true"></i><span data-ar="يقودها">Led by</span> <b data-ar="أحمد بدير">Ahmed Bedeer</b></span>
+          </aside>
+        </article>
+        
+        <article class="sdetail glass " id="ab-05" data-category="ab-05" data-reveal>
+          <div>
+            <div class="sdetail__head"><span class="sdetail__code">AB-05</span><span class="sdetail__tag">Docker · K8s</span></div>
+            <h3 data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</h3>
+            <p class="sdetail__lead" data-ar="هجرة سحابية وتحديث منصات بمنهج العمارة أولًا — تقييم الأحمال وتقييم المزوّدين ووضعية التوافر العالي/التعافي من الكوارث وسجل المخاطر ونموذج تكلفة إجمالية لثلاث سنوات. مصمَّم لتقليل المخاطر لا لمجرد النقل.">Architecture-first cloud migration and platform modernization — workload assessment, provider evaluation, HA/DR posture, risk register, and a 3-year TCO model. Built to reduce risk, not just lift and shift.</p>
+            <div class="pill-list" style="margin-top:14px"><span class="pill">Docker · Kubernetes</span><span class="pill">HA · DR Architecture</span><span class="pill">VLAN · Firewalls</span><span class="pill">Hybrid Cloud</span><span class="pill">Observability</span></div>
+            <h4 data-ar="ما الذي تشمله">What's included</h4><ul class="ticks ticks--dense"><li data-ar="تقييم الأحمال">Workload assessment</li><li data-ar="مصفوفة تقييم المزوّدين">Provider evaluation matrix</li><li data-ar="خطة تسلسل الهجرة">Migration sequencing plan</li><li data-ar="سجل المخاطر">Risk register</li><li data-ar="إطار حوكمة السحابة">Cloud governance framework</li></ul>
+            
+          </div>
+          <aside class="sdetail__side">
+            <div class="sdetail__price"><strong>$2,500 – $6,000</strong><span data-ar="⁦3–6⁩ أسابيع · Docker · K8s">3–6 weeks · Docker · K8s</span></div>
+            <a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة استكشافية">Book a Discovery Call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="btn btn--glass" href="/pricing-faq/"><span data-ar="شروط الدفع والأسئلة الشائعة">Payment terms &amp; FAQ</span></a>
+            <span class="sdetail__lead-by"><i data-icon="users" aria-hidden="true"></i><span data-ar="يقودها">Led by</span> <b data-ar="أحمد بدير">Ahmed Bedeer</b></span>
+          </aside>
+        </article>
+        
+        <article class="sdetail glass " id="ab-06" data-category="ab-06" data-reveal>
+          <div>
+            <div class="sdetail__head"><span class="sdetail__code">AB-06</span><span class="sdetail__tag" data-ar="أسبوعي · تعاقد مستمر">WEEKLY · RETAINER</span></div>
+            <h3 data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</h3>
+            <p class="sdetail__lead" data-ar="مستشار موثوق لرؤساء مجالس الإدارة ومديري تقنية المعلومات ومكاتب إدارة المشاريع — عروض المورّدين ودعم الحوكمة الأسبوعي واستشارات الخبراء عبر دورة حياة البرنامج. صوت معماري مستقل على طاولة القرار.">Trusted advisor to chairmen, CIOs, and PMOs — vendor proposals, weekly governance support, and SME consultation across the program lifecycle. Provides an independent architecture voice at the decision table.</p>
+            <div class="pill-list" style="margin-top:14px"><span class="pill">Vendor Review</span><span class="pill">PMO Governance</span><span class="pill">SOW Review</span><span class="pill">Lean Six Sigma</span><span class="pill">Agile Enablement</span></div>
+            
+            
+          </div>
+          <aside class="sdetail__side">
+            <div class="sdetail__price"><strong data-ar="أسبوعي · تعاقد مستمر">Weekly · Retainer</strong><span data-ar="PMO · مراجعة SOW · استشارات">PMO · SOW Review · Advisory</span></div>
+            <a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة استكشافية">Book a Discovery Call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="btn btn--glass" href="/pricing-faq/"><span data-ar="شروط الدفع والأسئلة الشائعة">Payment terms &amp; FAQ</span></a>
+            <span class="sdetail__lead-by"><i data-icon="users" aria-hidden="true"></i><span data-ar="يقودها">Led by</span> <b data-ar="أحمد بدير">Ahmed Bedeer</b></span>
+          </aside>
+        </article>
+        </div>
+      </section>
+
+      <!-- ░░ Capabilities ░░ -->
+      <section class="section container section--flush-top" id="capabilities" aria-labelledby="cap-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">04</span><span data-ar="9 قدرات · ممارسة واحدة">9 Capabilities · One Practice</span></p>
+          <h2 class="section__title" id="cap-title"><span data-ar="حيث يكمن">Where the</span> <span class="grad-text" data-ar="العمق.">depth lives.</span></h2>
+          <p class="section__lead" data-ar="كل قدرة ترتبط بنتيجة أعمال قابلة للقياس — هذا هو الخط الفاصل بين مهندس الحلول والمهندس المعماري المؤسسي.">Each capability ties back to a measurable business outcome — that's the line between a solution architect and an enterprise architect.</p>
+        </header>
+        <div class="grid grid--3">
+          <article class="card glass tile" data-tilt data-reveal style="--d:0.00s">
+            <span class="tile__num">EA</span>
+            <h3 data-ar="العمارة المؤسسية">Enterprise Architecture</h3>
+            <p data-ar="خرائط طريق متوافقة مع TOGAF ونمذجة القدرات ونماذج التشغيل وحوكمة تقنية المعلومات. تترجم الاستراتيجية إلى طبقات BDAT منظمة.">TOGAF-aligned roadmaps, capability modeling, operating models, and IT governance. Translates strategy into structured BDAT layers.</p>
+            <div class="tile__foot"><div class="pill-list"><span class="pill">Sparx EA</span><span class="pill">Visual Paradigm</span><span class="pill">ArchiMate</span></div></div>
+          </article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:0.07s">
+            <span class="tile__num">DX</span>
+            <h3 data-ar="التحول الرقمي">Digital Transformation</h3>
+            <p data-ar="مواءمة الأعمال مع تقنية المعلومات وإعادة هندسة العمليات والأتمتة والتنفيذ المقاد بمؤشرات الأداء. من خرائط طريق التحول إلى تحقيق القيمة.">Business–IT alignment, process re-engineering, automation, and KPI-driven execution. From transformation roadmaps to value realization.</p>
+            <div class="tile__foot"><div class="pill-list"><span class="pill">NORA</span><span class="pill">TOGAF</span><span class="pill">KPI Frameworks</span></div></div>
+          </article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:0.14s">
+            <span class="tile__num">⚕ HC</span>
+            <h3 data-ar="المعلوماتية الصحية">Healthcare Informatics</h3>
+            <p data-ar="أنظمة HIS و EHR/EMR و LIS و RIS/PACS والعناية المركزة وبوابات المرضى. تصميم مسارات العمل السريرية من البداية للنهاية وجاهزية HIMSS المرحلة 6.">HIS, EHR/EMR, LIS, RIS/PACS, ICU and patient portals. End-to-end clinical workflow design and HIMSS Stage 6 readiness.</p>
+            <div class="tile__foot"><div class="pill-list"><span class="pill">HIMSS</span><span class="pill">CPHIMS</span><span class="pill">HL7 · FHIR</span></div></div>
+          </article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:0.00s">
+            <span class="tile__num">⇄ INT</span>
+            <h3 data-ar="التكامل والتشغيل البيني">Integration &amp; Interoperability</h3>
+            <p data-ar="ناقل تكامل Mirth Connect وواجهات FHIR و HL7 v2.x و DICOM. ربط المصطلحات وفق LOINC و SNOMED CT.">Mirth Connect integration bus, FHIR APIs, HL7 v2.x, and DICOM. Terminology mapping against LOINC and SNOMED CT.</p>
+            <div class="tile__foot"><div class="pill-list"><span class="pill">Mirth</span><span class="pill">API-First</span><span class="pill">REST · iPaaS</span></div></div>
+          </article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:0.07s">
+            <span class="tile__num">Σ DATA</span>
+            <h3 data-ar="البيانات والتحليلات">Data &amp; Analytics</h3>
+            <p data-ar="خطوط ODS ← EDW وتنسيق ETL ولوحات ذكاء الأعمال والتحليلات التنبؤية. حوكمة البيانات وسجلات صحة السكان.">ODS → EDW pipelines, ETL orchestration, BI dashboards, and predictive analytics. Data governance and population health registries.</p>
+            <div class="tile__foot"><div class="pill-list"><span class="pill">Power BI</span><span class="pill">Tableau</span><span class="pill">Python · SQL</span></div></div>
+          </article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:0.14s">
+            <span class="tile__num">{} DEV</span>
+            <h3 data-ar="هندسة البرمجيات">Software Engineering</h3>
+            <p data-ar="خدمات مصغّرة بـ Java 17/Spring Boot وخدمات Node.js وتصميم OODA وواجهات RESTful ومنصات PostgreSQL — الواجهات أولًا.">Java 17/Spring Boot microservices, Node.js services, OODA design, RESTful APIs, and PostgreSQL platforms — API-first.</p>
+            <div class="tile__foot"><div class="pill-list"><span class="pill">Java · Spring</span><span class="pill">Node.js</span><span class="pill">PostgreSQL</span></div></div>
+          </article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:0.00s">
+            <span class="tile__num">☁ CLOUD</span>
+            <h3 data-ar="السحابة والبنية التحتية">Cloud &amp; Infrastructure</h3>
+            <p data-ar="Docker و Kubernetes وشبكات مقسّمة بـ VLAN ووصلات WAN عالية التوافر وتجميع نشط-خامل وتعافٍ من الكوارث بزمن تحويل أقل من 1%.">Docker, Kubernetes, VLAN-segmented networks, HA WAN links, active-passive clustering, and DR with sub-1% RTO failover.</p>
+            <div class="tile__foot"><div class="pill-list"><span class="pill">Docker</span><span class="pill">Kubernetes</span><span class="pill">Aruba · Palo Alto</span></div></div>
+          </article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:0.07s">
+            <span class="tile__num">🛡 SEC</span>
+            <h3 data-ar="الأمن والامتثال">Security &amp; Compliance</h3>
+            <p data-ar="ضوابط الخصوصية بالتصميم المستوفية لـ HIPAA و GDPR — نموذج AAA وسجلات التدقيق والتشفير أثناء التخزين والتنظيمات الصحية.">Privacy-by-design controls satisfying HIPAA &amp; GDPR — AAA model, audit logging, encryption-at-rest, and healthcare regulation.</p>
+            <div class="tile__foot"><div class="pill-list"><span class="pill">HIPAA</span><span class="pill">GDPR</span><span class="pill">AAA · IAM</span></div></div>
+          </article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:0.14s">
+            <span class="tile__num">⚙ PMO</span>
+            <h3 data-ar="تسليم المشاريع والبرامج">Project &amp; Program Delivery</h3>
+            <p data-ar="تعاون فعّال مع مكاتب إدارة المشاريع وتوثيق تقني ومراجعة المورّدين ونطاقات العمل واستشارات الخبراء. Lean Six Sigma و Agile.">Active PMO collaboration, technical documentation, vendor &amp; SOW review, and SME advisory. Lean Six Sigma and Agile.</p>
+            <div class="tile__foot"><div class="pill-list"><span class="pill">Agile</span><span class="pill">Lean Six Sigma</span><span class="pill">PMO</span></div></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ░░ Engagement model ░░ -->
+      <section class="section container section--flush-top" aria-labelledby="model-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">05</span><span data-ar="نموذج التعاون">Engagement model</span></p>
+          <h2 class="section__title" id="model-title"><span data-ar="نموذج تعاون">An engagement model</span> <span class="grad-text" data-ar="مبني لاتخاذ القرار.">built for decisions.</span></h2>
+          <p class="section__lead" data-ar="كل مشروع يُنتج مخرجات يستطيع التنفيذيون التصرف بناءً عليها — لا أوراقًا تُركن على الرف.">Every engagement produces artifacts that executives can act on — not shelfware.</p>
+        </header>
+        <div class="grid grid--3">
+          <article class="card glass tile" data-tilt data-reveal><span class="card__icon"><i data-icon="layers" aria-hidden="true"></i></span><h3 data-ar="عروض معمارية">Architecture Views</h3><p data-ar="نماذج ArchiMate / UML ومخططات BDAT في Sparx EA أو Visual Paradigm — المصدر الحي القابل للمراجعة لكل قرار معماري يُتخذ أثناء المشروع.">ArchiMate / UML models and BDAT diagrams in Sparx EA or Visual Paradigm — the living, reviewable source of truth for every architecture decision made during the engagement.</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon"><i data-icon="chart" aria-hidden="true"></i></span><h3 data-ar="ملخصات تنفيذية من صفحة واحدة">Executive One-Pagers</h3><p data-ar="عروض وملخصات موجزة تترجم العمارة إلى لغة الاستثمار والمخاطر والنتائج لمجلس الإدارة — ليقرر صانعو القرار لا ليكتفوا بالمشاهدة.">Slide decks and concise summaries that translate architecture into investment, risk, and outcome language for the board — so the decision-makers can decide, not just observe.</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><span class="card__icon"><i data-icon="sparkles" aria-hidden="true"></i></span><h3 data-ar="جولات شرح">Walkthroughs</h3><p data-ar="جولات قصيرة ومركّزة في فلسفة التصميم والمفاضلات — محتوى متعدد الوسائط ليفهمه كل صاحب مصلحة أيًا كان عمقه التقني.">Short, focused walkthroughs of design philosophy and trade-offs — multi-modal content so every stakeholder gets it, regardless of their technical depth.</p></article>
+        </div>
+      </section>
+
+      <!-- ░░ CTA ░░ -->
+      <section class="section container section--tight" aria-labelledby="cta-title">
+        <div class="callout glass glass--deep" data-reveal>
+          <div>
+            <p class="kicker"><span data-ar="ابدأ مشروعًا">START AN ENGAGEMENT</span></p>
+            <h3 id="cta-title"><span data-ar="لديك تحوّل">Have a transformation</span><br /><span class="grad-text" data-ar="يحتاج إلى عمارة؟">to architect?</span></h3>
+            <p data-ar="سواء كان بناء مستشفى جديد أو برنامج حوكمة بيانات أو تحديثًا سحابيًا — أخبرني بمشكلة العمل وسأقترح أخف مشروع يوصلك إلى قرار واثق.">Whether it's a greenfield hospital build, a data-governance program, or a cloud modernization — tell me the business problem and I'll propose the lightest engagement that gets you a confident decision.</p>
+          </div>
+          <div class="callout__actions">
+            <a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة استكشافية">Book a Discovery Call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="text-link" href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener"><span data-ar="عرض الأعمال ↗">View Portfolio ↗</span></a>
+          </div>
+        </div>
+        <ul class="promises glass" data-reveal aria-label="Engagement principles" data-ar-label="مبادئ التعاون" style="grid-template-columns:repeat(5,1fr)">
+          <li><i data-icon="check" aria-hidden="true"></i><span data-ar="TOGAF · NORA · CPHIMS فعّالة">TOGAF · NORA · CPHIMS active</span></li>
+          <li><i data-icon="check" aria-hidden="true"></i><span data-ar="مخرجات يتصرف التنفيذيون بناءً عليها">Artifacts executives can act on</span></li>
+          <li><i data-icon="check" aria-hidden="true"></i><span data-ar="دفعات حسب المعالم">Milestone-based payment</span></li>
+          <li><i data-icon="check" aria-hidden="true"></i><span data-ar="السعودية + مصر · عن بُعد">KSA + Egypt · Remote</span></li>
+          <li><i data-icon="check" aria-hidden="true"></i><span data-ar="العربية والإنجليزية">Arabic &amp; English</span></li>
+        </ul>
+      </section>
+
+      
+      <section class="section container section--tight" aria-label="Next step" data-ar-label="الخطوة التالية">
+        <div class="closing" data-reveal>
+          <span class="closing__border" aria-hidden="true"></span>
+          <div class="closing__inner glass glass--deep">
+            <p class="kicker kicker--center"><span data-ar="نتطلع لسماعك">CAN'T WAIT TO HEAR FROM YOU</span></p>
+            <h2 class="closing__title"><span data-ar="لا نطيق الانتظار">Can’t Wait To</span><br /><span class="grad-text" data-ar="لنسمع منك.">Hear From You.</span></h2>
+            <p class="closing__text" data-ar="احجز موعدًا، أو ابدأ بموجز مختصر، أو تصفّح كتالوج الخدمات الكامل.">Book an appointment, get started with a brief, or browse the full catalogue of services.</p>
+            <div class="hero__ctas hero__ctas--center"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز موعدًا">Book an Appointment</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/contact/"><span data-ar="ابدأ الآن">Get Started</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--ghost" href="/services/"><span data-ar="كل الخدمات">Full Services</span><i class="flip" data-icon="arrow"></i></a></div>
+            <p class="closing__contact"><a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a> · <a class="ltr" href="tel:+966545520750">+966 54 552 0750</a> · <a class="ltr" href="tel:+201092500454">+20 109 250 0454</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+  </body>
+</html>

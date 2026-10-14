@@ -517,3 +517,28 @@ html[lang='ar'] .cart-table th { letter-spacing: 0; text-transform: none; }
   .nav, .to-top, .toast, .ambient, .cursor-glow, .scroll-progress, .footer, .cta-band, .subnav { display: none !important; }
   .phero { padding-top: 20px; }
 }
+
+/* ---------- Additions: story / methodology / team ---------- */
+.grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.grid--center { align-items: center; }
+.tile--mini { align-items: center; text-align: center; padding: 22px 16px; gap: 10px; }
+.tile--mini h3 { font-size: 15px; margin: 0; }
+.art--violet { background: linear-gradient(145deg, #241a5e, #0a0a26 60%, #0d1f33); }
+.art--mint { background: linear-gradient(145deg, #0b2a2c, #0a0a26 55%, #1a1446); }
+.art__cap2 { position: absolute; z-index: 1; inset-inline-end: 18px; bottom: 16px; font-size: 12px; color: var(--ink-3); letter-spacing: .04em; }
+.chapter + .chapter { padding-top: clamp(28px, 4vw, 56px); }
+.person--stack { grid-template-columns: 1fr; }
+.person--stack .art { aspect-ratio: 16 / 9; }
+.person--stack h2 { font-size: clamp(24px, 2.2vw, 32px); margin-bottom: 6px; }
+.person__hint { font-family: var(--f-num); font-style: italic; color: var(--ink-3); font-size: 13px; margin: 14px 0 8px; }
+.person .quote { margin: 12px 0 0; padding-inline-start: 16px; border-inline-start: 2px solid var(--violet); color: var(--ink-2); font-style: italic; font-size: 15.5px; }
+.steps--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.steps--2col li { counter-increment: step; }
+.phero__hint { display: inline-flex; align-items: center; gap: 8px; color: var(--ink-3); font-size: 13.5px; margin-top: 10px; }
+.phero__hint .ico { animation: bob 1.8s ease-in-out infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+.matrix__legend { display: flex; gap: 22px; flex-wrap: wrap; padding: 14px 18px 4px; color: var(--ink-3); font-size: 13px; }
+.matrix td { text-align: center; font-size: 18px; color: var(--teal); }
+.matrix th[scope="row"] { text-transform: none; letter-spacing: 0; font-size: 14.5px; color: var(--ink); font-family: inherit; }
+@media (max-width: 980px) { .grid--5 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .steps--2col { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .grid--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

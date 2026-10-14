@@ -37,6 +37,8 @@
 - [x] Analytics hook (`CC.track`) + `?inquiry=` prefill.
 
 ## 7. Hand-over — connect the backend (see README › Integration points)
+
+> Tracked in Linear → project *Code & Canvas — Site overhaul (Oct 2026)*, issues `ABO-9` … `ABO-16` (report `ABO-5`, analyses `ABO-6/7/8`). Google Docs links: `docs/OVERHAUL-REPORT.md` §9.
 - [ ] Contact form endpoint (`data-endpoint`) + booking URL (`data-booking-url`) on `/contact/`.
 - [ ] Newsletter endpoint on `/blog/`.
 - [ ] Auth API for `/login/`, `/register/`, `/forgot-password/`, `/reset-password/`, `/account/` (forms are `data-form="demo"`); Google OAuth start URL.

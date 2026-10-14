@@ -146,6 +146,8 @@ Lines from the pre-overhaul native pages that no longer appear anywhere:
 * Contact: "Book an appointment, start with our story, or browse the services." + the three buttons — the duplicate closing; the same three destinations are in the hero, the form aside and the footer.
 
 ## 8. Follow-ups (owner decisions / later sprints) → Linear
+Tracked in the Linear project **Code & Canvas — Site overhaul (Oct 2026)** (team ABO): report `ABO-5` · analyses `ABO-6` gap report, `ABO-7` review, `ABO-8` plan · follow-ups `ABO-9` → `ABO-16` in the order below.
+
 1. Visual QA on devices (home, sticky navs, RTL) — first task after pull.
 2. Analytics provider: listen to `CC.track()`; define the conversion events in GA4/GTM.
 3. Per-page OG images (all pages share `og-default.png`); founder/office photography; case-study screenshots (`.art[data-slot]`).
@@ -154,3 +156,13 @@ Lines from the pre-overhaul native pages that no longer appear anywhere:
 6. Arabic URL mirror (`/ar/` + `hreflang`) if Arabic SEO matters; self-hosted fonts.
 7. Case-study metrics for the creative track (today only the technology track has numbers).
 8. Clean the WordPress install before the switch-over (spam categories, duplicate pages, "– Copy" posts).
+
+## 9. Hand-over links (Google Docs + Linear)
+| Document | Repo | Google Doc |
+|---|---|---|
+| Overhaul report (this file) | `docs/OVERHAUL-REPORT.md` | https://docs.google.com/document/d/1mwwEeqGAkN0deMaj91MAYXN58sWjhZicYopbQbg_gV8/edit |
+| Live-site gap report | `docs/audit/GAP-REPORT.md` | https://docs.google.com/document/d/1XvrLBeNsTkPWwDB158UqI-dtwF4IVQ_lgQva1vAXVu0/edit |
+| Cross-team review | `docs/audit/REVIEW.md` | https://docs.google.com/document/d/1hXKg7eSXrSj9sb0Nih1kwFJ0QpJwr_pbDSfdQxQQIds/edit |
+| Plan & research workflow | `docs/OVERHAUL-PLAN.md` | https://docs.google.com/document/d/1GIQeHy5_WR_7R1eF_iTigh4j3a9pRxoleMOMCHt0B3A/edit |
+
+Linear (team ABO, project *Code & Canvas — Site overhaul (Oct 2026)*): `ABO-5` final report (Done, carries the GitHub branch + report doc as attachments) · `ABO-6` / `ABO-7` / `ABO-8` the three analyses (Done, each with its doc attached) · `ABO-9` visual QA (Todo, urgent) · `ABO-10` analytics provider · `ABO-11` OG images + photography · `ABO-12` landline + social URLs (owner decision) · `ABO-13` backend hooks · `ABO-14` `/ar/` mirror + fonts · `ABO-15` creative-track metrics · `ABO-16` WordPress clean-up + switch-over.

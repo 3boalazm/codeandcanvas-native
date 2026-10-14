@@ -47,11 +47,13 @@ def project(p, i):
             <ul class="ticks ticks--dense" style="margin-top:18px">{feats}</ul>
             <div class="hero__ctas" style="margin-top:22px">{link}</div>
           </div>'''
+    visual = p['slot'].split('/')[-1]
     art = f'''
-          <div class="cs__art">
-            <div class="art art--wide {p['art']}" data-slot="{p['slot']}" aria-hidden="true"><span class="art__mark">{p['emoji']}</span><span class="art__cap" data-ar="لقطة الشاشة قريبًا">SCREENSHOT COMING SOON</span></div>
-            <div class="cs__stat glass"><strong>{p['stat']}</strong><span data-ar="{esc(p['stat_label_ar'])}">{esc(p['stat_label'])}</span></div>
-          </div>'''
+          <figure class="case-visual">
+            <img src="/assets/brand/work/{visual}.svg" width="960" height="600" loading="lazy" alt="{esc(p['name'])} — conceptual scope diagram" data-ar-alt="{esc(p['name_ar'])} مخطط توضيحي للنطاق" />
+            <figcaption data-ar="رسم توضيحي مبني على النطاق الموثق في الموقع، وليس لقطة من واجهة المنتج أو إثباتًا لنتيجة تجارية.">Conceptual illustration of the documented scope, not a product screenshot or evidence of a business outcome.</figcaption>
+          </figure>'''
+    text += f'''<div class="case-evidence"><b data-ar="حالة العرض">Access &amp; evidence</b><p data-ar="{esc(p['link_label_ar'])}">{esc(p['link_label'])}</p><p data-ar="يمكن مناقشة النطاق والدور وحدود المشاركة في مكالمة. لا ننشر مواد عميل محمية باتفاقية سرية.">Discuss scope, role and sharing restrictions with us. Client material protected by an NDA is not published here.</p>{btn('Discuss a similar challenge', 'ناقش تحديًا مشابهًا', '/contact/?inquiry=custom', 'glass')}</div>'''
     return f'''
       <section class="section container section--flush-top cs" id="project-{p['n']}" aria-labelledby="cs-{p['n']}-title">
         <div class="grid grid--2 grid--center" data-reveal>{(art + text) if flip else (text + art)}
@@ -64,7 +66,7 @@ def build():
       <!-- ░░ Hero ░░ -->
       <section class="phero container phero--center" aria-labelledby="page-title">
         {crumbs([('Home', 'الرئيسية', '/'), ('Work', 'أعمالنا', None)])}
-        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="مشاريع حقيقية. نتائج مثبتة. · 2024–2026">Real Projects. Proven Results. · 2024–2026</span></span>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="أعمال مختارة · النطاق والأنظمة والتنفيذ">Selected work · Scope, systems & delivery</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مبنية لتُنجز.">Built to deliver.</span><br /><em class="grad-text" data-ar="لا لتبهر فحسب.">Not just to impress.</em></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar="كل مشروع هنا بدأ بمشكلة عمل — وانتهى بنظام يعمل أو منتج حي أو علامة في السوق.">Every project here started with a business problem — and ended with a working system, a live product, or a brand in the market.</p>
         <nav class="subnav" aria-label="Projects" data-ar-label="المشاريع" data-reveal style="--d:.22s">{''.join(f'<a href="#project-{p["n"]}">{p["n"]} · {esc(p["name"])}</a>' for p in PROJECTS)}</nav>

@@ -4,23 +4,23 @@ from h import esc, icon, crumbs, closing, btn, page, PERSON_LD
 
 WHY = [
     ('Productized, not open-ended', 'مُنتجة، لا مفتوحة النهاية',
-     'Every engagement has <strong>defined scope, fixed milestones, and a traceable business outcome</strong>. No retainers. No surprise scope creep. You know exactly what you\'re buying before signing.',
-     'كل مشروع له &lt;strong&gt;نطاق محدد ومعالم ثابتة ونتيجة أعمال قابلة للتتبع&lt;/strong&gt;. لا عقود مستمرة. لا توسّع مفاجئ في النطاق. تعرف تمامًا ما تشتريه قبل التوقيع.', 'package'),
+     'Every engagement has <strong>defined scope, fixed milestones, and a traceable business outcome</strong>. Retainers are available only for specified services. No surprise scope creep. You know exactly what you\'re buying before signing.',
+     'كل مشروع له <strong>نطاق محدد ومعالم ثابتة ونتيجة أعمال قابلة للتتبع</strong>. تتاح الاشتراكات للخدمات المحددة فقط. لا توسّع مفاجئ في النطاق. تعرف تمامًا ما تشتريه قبل التوقيع.', 'package'),
     ('BD logic in every track', 'منطق تطوير الأعمال في كل مسار',
      'Whether we\'re building a brand or an architecture, the starting point is always the same: <strong>your business goals</strong>. We use the Business Motivation Model before any design or tech decision is made.',
-     'سواء كنا نبني علامة أو عمارة، نقطة البداية واحدة دائمًا: &lt;strong&gt;أهداف عملك&lt;/strong&gt;. نستخدم نموذج دوافع الأعمال (BMM) قبل أي قرار تصميمي أو تقني.', 'target'),
+     'سواء كنا نبني علامة أو عمارة، نقطة البداية واحدة دائمًا: <strong>أهداف عملك</strong>. نستخدم نموذج دوافع الأعمال (BMM) قبل أي قرار تصميمي أو تقني.', 'target'),
     ('Dual expertise — one studio', 'خبرة مزدوجة — استوديو واحد',
      'An Enterprise Architect and a Brand Identity Designer as co-founders means <strong>technology and brand decisions happen in the same room</strong>, aligned from day one.',
-     'مهندس معماري مؤسسي ومصمم هوية بصرية كشريكين مؤسسين يعني أن &lt;strong&gt;قرارات التقنية والعلامة تُتخذ في الغرفة نفسها&lt;/strong&gt;، متوائمة من اليوم الأول.', 'users'),
+     'مهندس معماري مؤسسي ومصمم هوية بصرية كشريكين مؤسسين يعني أن <strong>قرارات التقنية والعلامة تُتخذ في الغرفة نفسها</strong>، متوائمة من اليوم الأول.', 'users'),
     ('Deep healthcare domain knowledge', 'معرفة عميقة بقطاع الرعاية الصحية',
      'CPHIMS, HIMSS EMRAM, CBAHI, NORA — <strong>active credentials, not listed frameworks</strong>. Every HC engagement is delivered with clinical workflow context built in from the first call.',
-     'CPHIMS و HIMSS EMRAM و CBAHI و NORA — &lt;strong&gt;اعتمادات فعّالة لا أطر مُدرجة&lt;/strong&gt;. كل مشروع صحي يُنفَّذ بسياق مسارات العمل السريرية من المكالمة الأولى.', 'stethoscope'),
+     'CPHIMS و HIMSS EMRAM و CBAHI و NORA — <strong>اعتمادات فعّالة لا أطر مُدرجة</strong>. كل مشروع صحي يُنفَّذ بسياق مسارات العمل السريرية من المكالمة الأولى.', 'stethoscope'),
     ('MENA-native delivery', 'تنفيذ بروح المنطقة',
      'Bilingual AR/EN as standard. Vision 2030 and NORA alignment built into architecture. <strong>Saudi-specific regulatory context</strong> embedded in every technology recommendation.',
-     'ثنائية اللغة عربي/إنجليزي كمعيار. مواءمة رؤية 2030 و NORA مدمجة في العمارة. &lt;strong&gt;السياق التنظيمي السعودي&lt;/strong&gt; متضمَّن في كل توصية تقنية.', 'globe'),
+     'ثنائية اللغة عربي/إنجليزي كمعيار. مواءمة رؤية 2030 و NORA مدمجة في العمارة. <strong>السياق التنظيمي السعودي</strong> متضمَّن في كل توصية تقنية.', 'globe'),
     ('Milestone-based payment', 'دفعات حسب المعالم',
      'Payment is tied to deliverables, not time. <strong>Files release only on full settlement.</strong> This structure protects both sides and keeps every milestone meaningful.',
-     'الدفع مرتبط بالمخرجات لا بالوقت. &lt;strong&gt;الملفات تُسلَّم فقط عند السداد الكامل.&lt;/strong&gt; هذا الهيكل يحمي الطرفين ويجعل كل معلم ذا معنى.', 'wallet'),
+     'الدفع مرتبط بالمخرجات لا بالوقت. <strong>الملفات تُسلَّم فقط عند السداد الكامل.</strong> هذا الهيكل يحمي الطرفين ويجعل كل معلم ذا معنى.', 'wallet'),
 ]
 
 STAGES = [
@@ -97,62 +97,8 @@ def build():
           <p class="section__lead" data-ar="متخصصان، لا استوديو عام. كل مشروع يقوده الشخص المناسب من اليوم الأول.">Two specialists, not a generalist studio. Every engagement is led by the right person from day one.</p>
         </header>
         <div class="grid grid--2">
-          <article class="card glass person" data-reveal>
-            <div class="art art--square" data-slot="team/ahmed-bedeer"><span class="art__mark">AB</span><span class="art__cap" data-ar="{{ }} الكود">{{ }} THE CODE</span></div>
-            <div>
-              <p class="person__role" data-ar="المسار التقني · شريك مؤسس">Technology Track · Co-Founder</p>
-              <h3>Ahmed M. Bedeer</h3>
-              <p class="person__tag" data-ar="مهندس معماري مؤسسي ومتخصص في التحول الرقمي · الخبر، السعودية">Enterprise Architect &amp; Digital Transformation Specialist · Al Khobar, KSA</p>
-              <div class="creds"><span>TOGAF</span><span>CPHIMS</span><span>HIMSS EMRAM</span><span>NORA</span><span>CBAHI</span><span>ArchiMate 3.1</span></div>
-              <p style="margin-top:14px" data-ar-html="أكثر من 7 سنوات عبر قطاعات الرعاية الصحية والحكومة والقطاع الخاص في السعودية. خبرة في &lt;strong&gt;عمارة TOGAF/NORA واختيار موردي أنظمة HIS والهجرة السحابية وتحليلات البيانات&lt;/strong&gt; بما يتماشى مع رؤية 2030. مقيّم HIMSS EMRAM نشط — سياق مسارات العمل السريرية متضمَّن في كل توصية تقنية.">7+ years across healthcare, government, and private sector in KSA. Expertise in <strong>TOGAF/NORA architecture, HIS vendor selection, cloud migration, and data analytics</strong> aligned to Vision 2030. Active HIMSS EMRAM assessor — clinical workflow context embedded in every technology recommendation.</p>
-              <h4 class="person__role" style="margin-top:18px" data-ar="الخدمات التي يقودها">Services led</h4>
-              <ul class="ticks ticks--dense">
-                <li><a href="/technology-services/#ab-01">AB-01 · <span data-ar="تقييم البداية السريعة للعمارة المؤسسية">EA Quick-Start Assessment</span></a></li>
-                <li><a href="/technology-services/#ab-02">AB-02 · <span data-ar="استشارات التحول الرقمي">Digital Transformation Advisory</span></a></li>
-                <li><a href="/technology-services/#ab-05">AB-05 · <span data-ar="استراتيجية الهجرة السحابية">Cloud Migration Strategy</span></a></li>
-                <li><a href="/technology-services/#ab-03">AB-03 · <span data-ar="لوحة التحليلات">Analytics Dashboard</span></a></li>
-                <li><a href="/technology-services/#ab-04">AB-04 · <span data-ar="استكشاف محفظة التطبيقات">Application Portfolio Discovery</span></a></li>
-                <li><a href="/healthcare/#hc-03">HC-03 · <span data-ar="استشارات اختيار HIS">HIS Selection Advisory</span></a> · <a href="/healthcare/#hc-05">HC-05 · <span data-ar="العمارة الصحية + EMRAM">Healthcare EA + EMRAM</span></a></li>
-              </ul>
-              <div class="person__links"><a href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener">{icon('link')}<span data-ar="عرض الأعمال ↗">View Portfolio ↗</span></a></div>
-            </div>
-          </article>
-          <article class="card glass person" data-reveal style="--d:.08s">
-            <div class="art art--square art--pink" data-slot="team/mustafa-aboalazm"><span class="art__mark">MA</span><span class="art__cap" data-ar="✦ الكانفاس">✦ THE CANVAS</span></div>
-            <div>
-              <p class="person__role" data-ar="المسار الإبداعي · شريك مؤسس">Creative Track · Co-Founder</p>
-              <h3>Mustafa Aboalazm</h3>
-              <p class="person__tag" data-ar="مصمم هوية بصرية أول ومستشار تطوير أعمال · العبور، مصر">Senior Brand Identity Designer &amp; Business Development Consultant · Al Obour, Egypt</p>
-              <div class="creds"><span data-ar="استراتيجية العلامة">Brand Strategy</span><span data-ar="+9 سنوات">9+ Years</span><span data-ar="+20 علامة">20+ Brands</span><span>Adobe Suite</span><span>Figma</span></div>
-              <p style="margin-top:14px" data-ar-html="أكثر من 9 سنوات، أكثر من 20 علامة، 6 قطاعات. مدير إعلام سابق في Nile Pharma Food (5 سنوات) — بنى هوية العلامة من الصفر وأطلق المنصة الرقمية وقاد إعادة بناء كاملة لهوية الشركة أسفرت عن &lt;strong&gt;+40% في الظهور الرقمي و+25% في التفاعل مع العلامة&lt;/strong&gt;. يمارس تطوير الأعمال فعليًا عبر القطاعات غير الربحية والحكومية والتعليمية والخاصة في مصر والسعودية.">9+ years, 20+ brands, 6 sectors. Former Media Director at Nile Pharma Food (5 years) — built brand identity from zero, launched the digital platform, and led a full corporate rebrand resulting in <strong>+40% online visibility and +25% brand engagement</strong>. Active BD practitioner across NGO, government, education, and private sector in Egypt and KSA.</p>
-              <h4 class="person__role" style="margin-top:18px" data-ar="الخدمات التي يقودها">Services led</h4>
-              <ul class="ticks ticks--dense">
-                <li><a href="/creative-services/#ma-03">MA-03 · <span data-ar="منظومة هوية العلامة (منهجية V2 من 8 مراحل)">Brand Identity System (8-stage V2)</span></a></li>
-                <li><a href="/creative-services/#ma-02">MA-02 · <span data-ar="تدقيق وتجديد العلامة">Brand Audit + Refresh</span></a></li>
-                <li><a href="/services/#cc-01">CC-01 · <span data-ar="باقة الإطلاق الرقمي">Digital Launch Package</span></a></li>
-                <li><a href="/services/#cc-02">CC-02 · <span data-ar="استشارات تطوير الأعمال">Business Development Advisory</span></a></li>
-                <li><a href="/healthcare/#hc-01">HC-01 · <span data-ar="الإطلاق الرقمي للعيادات">Clinic Digital Launch</span></a> · <a href="/healthcare/#hc-04">HC-04 · <span data-ar="هوية العيادة">Clinic Brand Identity</span></a></li>
-              </ul>
-              <div class="person__links"><a href="https://aboalazm-os.vercel.app/" target="_blank" rel="noopener">{icon('link')}<span data-ar="عرض الأعمال ↗">View Portfolio ↗</span></a></div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ░░ At a glance ░░ -->
-      <section class="section container section--tight section--flush-top" id="glance" aria-labelledby="glance-title">
-        <div class="callout glass glass--deep" data-reveal>
-          <div>
-            <p class="kicker"><span data-ar="الاستوديو · لمحة سريعة">Studio · At a Glance</span></p>
-            <h3 id="glance-title"><span data-ar="تخصص واحد. مساران.">One discipline. Two tracks.</span> <span class="grad-text" data-ar="صفر عقود مفتوحة.">Zero open-ended retainers.</span></h3>
-            <p data-ar="كل مشروع — هوية أو تقنية أو متكامل — مرتكز على منطق تطوير الأعمال. نحن لا نسلّم مخرجات. نسلّم مواءمة بين أهدافك وقدراتك وأصولك.">Every engagement — brand, technology, or combined — is anchored in Business Development logic. We don't deliver outputs. We deliver alignment between your goals, capabilities, and assets.</p>
-          </div>
-          <ul class="ticks">
-            <li data-ar-html="&lt;strong&gt;المسار التقني&lt;/strong&gt; — العمارة المؤسسية، تقنية الرعاية الصحية، السحابة، البيانات"><strong>Technology Track</strong> — EA, Healthcare IT, Cloud, Data</li>
-            <li data-ar-html="&lt;strong&gt;المسار الإبداعي&lt;/strong&gt; — هوية العلامة، أنظمة التصميم، الإطلاق الرقمي"><strong>Creative Track</strong> — Brand Identity, Design Systems, Digital Launch</li>
-            <li data-ar-html="&lt;strong&gt;مشاريع متكاملة&lt;/strong&gt; — الإطلاق الرقمي للعيادات، ذكاء الأعمال الصحي"><strong>Combined Engagements</strong> — Clinic Digital Launch, Healthcare BI</li>
-            <li data-ar-html="&lt;strong&gt;نخدم&lt;/strong&gt; — السعودية · مصر · القطاعين الخاص والعام في المنطقة"><strong>Serving</strong> — KSA · Egypt · MENA private &amp; public sector</li>
-          </ul>
+          <article class="glass tile" data-reveal><p class="kicker" data-ar="التقنية والرعاية الصحية">Technology &amp; healthcare</p><h3>Ahmed M. Bedeer</h3><p data-ar="العمارة المؤسسية والتحول والبيانات — بقيادة المؤسس التقني.">Enterprise architecture, transformation and data — led by the technical co-founder.</p>{btn('Meet Ahmed', 'تعرّف على أحمد', '/team/#ahmed', 'glass')}</article>
+          <article class="glass tile" data-reveal><p class="kicker" data-ar="الهوية والتصميم">Brand &amp; design</p><h3>Mustafa Aboalazm</h3><p data-ar="استراتيجية العلامة والأنظمة البصرية — بقيادة المؤسس الإبداعي.">Brand strategy and visual systems — led by the creative co-founder.</p>{btn('Meet Mustafa', 'تعرّف على مصطفى', '/team/#mustafa', 'glass')}</article>
         </div>
       </section>
 
@@ -169,8 +115,7 @@ def build():
             <p style="margin-top:14px"><a class="text-link" href="/methodology/"><span data-ar="المنهجية كاملة ←">Full methodology →</span></a> &nbsp; <a class="text-link" href="/services/"><span data-ar="كل الخدمات ←">View All Services →</span></a></p>
           </div>
         </div>
-        <ol class="stage-rail glass" aria-label="The 8 stages, condensed" data-ar-label="المراحل الثماني باختصار">{stages}
-        </ol>
+
       </section>
 
       <!-- ░░ CTA ░░ -->
@@ -189,11 +134,7 @@ def build():
         </div>
       </section>
 
-      {closing('THE HOME OF INNOVATION', 'موطن الابتكار',
-               '<span data-ar="أطلق إمكانات التقنية">Unlock the Potential of IT</span><br /><span class="grad-text" data-ar="لتبسيط العمليات وزيادة الإنتاجية.">to Streamline Operations and Boost Productivity.</span>',
-               'Start with our story, or book an appointment and bring the business problem — we’ll bring the structure.',
-               'ابدأ بقصتنا، أو احجز موعدًا وأحضر مشكلة العمل — ونحن نُحضر الهيكل.',
-               [btn('Get Started', 'ابدأ الآن', '/our-story/'), btn('Book an Appointment', 'احجز موعدًا', '/contact/#book', 'glass')])}
+
 '''
     return [page('/about/', title='About — Code & Canvas', title_ar='من نحن — Code & Canvas',
                  desc='Code & Canvas is a boutique business development studio co-founded by an Enterprise Architect and a Brand Identity Designer. We help organizations across MENA grow by aligning brand, technology, and data to commercial objectives.',

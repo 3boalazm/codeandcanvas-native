@@ -130,7 +130,7 @@ def build():
       </section>
 
       {closing('THE HOME OF INNOVATION', 'موطن الابتكار',
-               '<span data-ar="أطلق إمكانات التقنية">Unlock the Potential of IT</span><br /><span class="grad-text" data-ar="لتبسيط العمليات وزيادة الإنتاجية.">to Streamline Operations and Boost Productivity.</span>',
+               '<span data-ar="لنحدد خطوتك التالية.">Let’s scope your next step.</span>',
                'Start with our story, or book an appointment and bring the business problem — we’ll bring the structure.',
                'ابدأ بقصتنا، أو احجز موعدًا وأحضر مشكلة العمل — ونحن نُحضر الهيكل.',
                [btn('Get Started', 'ابدأ الآن', '/our-story/'), btn('Book an Appointment', 'احجز موعدًا', '/contact/#book', 'glass')])}

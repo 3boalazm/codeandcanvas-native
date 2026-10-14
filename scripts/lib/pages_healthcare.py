@@ -113,7 +113,7 @@ def build():
         </div>
         <ul class="promises glass" data-reveal aria-label="Engagement principles" data-ar-label="مبادئ التعاون">
           <li>{icon('check')}<span data-ar="نطاق واضح من المكالمة الأولى">Clear scope from the first call</span></li>
-          <li>{icon('check')}<span data-ar="دفعات حسب المعالم — دون عقود مستمرة">Milestone-based payment — no retainers</span></li>
+          <li>{icon('check')}<span data-ar="تسليم حسب المعالم · شروط متفق عليها مسبقًا">Milestone-based delivery · terms agreed upfront</span></li>
           <li>{icon('check')}<span data-ar="سنخبرك إن لم نكن الخيار المناسب">We’ll tell you if we’re not the right match</span></li>
           <li>{icon('check')}<span data-ar="السعودية + مصر · تغطية MENA">KSA + Egypt · MENA coverage</span></li>
         </ul>

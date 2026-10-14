@@ -33,17 +33,18 @@
       } catch (e) {}
     })();
     </script>
-    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/css/fonts.css" />
     <link rel="stylesheet" href="/assets/css/ds.css" />
     <link rel="stylesheet" href="/assets/css/pages.css" />
+    <link rel="stylesheet" href="/assets/css/completion.css" />
+    <noscript><style>body.is-loading{overflow:auto}#preloader{display:none!important}[data-reveal],.split .w{opacity:1!important;transform:none!important;filter:none!important}form{display:none!important}[data-panel][hidden]{display:block!important}</style></noscript>
     <!-- /cc:head -->
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/team/#webpage","url":"https://codeandcanvas.net/team/","name":"Team — Code & Canvas","description":"Two minds, one ecosystem. Ahmed M. Bedeer (Enterprise Architect) and Mustafa Aboalazm (Creative Director) — a lean two-partner studio where brand architecture and digital engineering operate as one system.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/assets/brand/og-default.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"About","item":"https://codeandcanvas.net/about/"},{"@type":"ListItem","position":3,"name":"Team"}]},{"@type":"Person","@id":"https://codeandcanvas.net/team/#ahmed","name":"Ahmed M. Bedeer","url":"https://codeandcanvas.net/team/#ahmed","jobTitle":"Co-Founder · Enterprise Architect · Solution Architect","worksFor":{"@id":"https://codeandcanvas.net/#org"},"knowsAbout":["Enterprise Architecture","TOGAF","NORA","ArchiMate","Healthcare IT","HL7 FHIR","Java · Spring Boot","Cloud"],"sameAs":["https://linkedin.com/in/ahmed-bedeer","https://ahmed-bedeer.vercel.app/","https://github.com/ahmedbdeer"]},{"@type":"Person","@id":"https://codeandcanvas.net/team/#mustafa","name":"Mustafa Aboalazm","url":"https://codeandcanvas.net/team/#mustafa","jobTitle":"Co-Founder · Creative Director · Visual Brand Architect","worksFor":{"@id":"https://codeandcanvas.net/#org"},"knowsAbout":["Brand Identity","Visual Systems","Design Systems","Art Direction","Print & Packaging","Web Design"],"sameAs":["https://behance.net/aboalazm","https://aboalazm-os.vercel.app/"]}]}</script>
   </head>
   <body class="is-loading" data-nav="about">
     <!-- cc:top -->
+    <noscript><div class="notice container" style="padding-top:110px">Forms and interactive tools require JavaScript. <a href="mailto:info@codeandcanvas.net">Email us instead</a>. <span lang="ar" dir="rtl">تحتاج النماذج والأدوات التفاعلية إلى JavaScript. يمكنك التواصل عبر البريد.</span></div></noscript>
     <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
     <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
 
@@ -184,7 +185,7 @@
             <p class="section__lead" data-ar="نعمل مع مستقلين موهوبين في التصميم والهندسة والمحتوى من المنطقة. أخبرنا بقصتك — نردّ على كل طلب جادّ.">We work with talented freelancers in design, engineering, and content across the region. Tell us your story — every serious application gets a reply.</p>
             <ul class="hero__chips" aria-label="What we look for" data-ar-label="ما الذي نبحث عنه"><li><i data-icon="pen" aria-hidden="true"></i><span data-ar="التصميم">Design</span></li><li><i data-icon="layers" aria-hidden="true"></i><span data-ar="الهندسة">Engineering</span></li><li><i data-icon="sparkles" aria-hidden="true"></i><span data-ar="المحتوى والإنتاج">Content &amp; Production</span></li></ul>
           </header>
-          <form class="form-card glass form" data-form="contact" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Freelancer application — Code &amp; Canvas" data-endpoint="" novalidate data-reveal>
+          <form method="post" class="form-card glass form" data-form="contact" data-integration="career" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Freelancer application — Code &amp; Canvas" data-endpoint="" novalidate data-reveal>
             <h3 data-ar="الطلب">Career</h3>
             <p class="lead" data-ar="نموذج حواري — املأ ما يناسبك وأرسل.">Conversational form — fill what applies and send.</p>
             <input class="hp" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -295,7 +296,7 @@
             <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
             <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
             <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
-            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+            <a href="/account/" data-ar="كتبي المحفوظة">Saved Books</a>
           </div>
           <div class="footer__col footer__contact">
             <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
@@ -314,6 +315,7 @@
     <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+    <script src="/assets/js/config.js"></script>
     <script src="/assets/js/site.js"></script>
     <!-- /cc:bottom -->
     <script src="/assets/js/pages.js"></script>

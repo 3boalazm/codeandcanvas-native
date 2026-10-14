@@ -1,0 +1,218 @@
+{
+  "occurrences": 37,
+  "uniqueSlots": 29,
+  "note": "A slot is not necessarily a missing asset: covers, author representations and decorative art need editorial classification. Do not replace with fabricated client proof.",
+  "slots": [
+    {
+      "slot": "team/ahmed-bedeer",
+      "routes": [
+        "/technology-services/",
+        "/team/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "team/mustafa-aboalazm",
+      "routes": [
+        "/creative-services/",
+        "/team/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "story/01-architecture",
+      "routes": [
+        "/our-story/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "story/02-identity",
+      "routes": [
+        "/our-story/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "story/03-healthcare",
+      "routes": [
+        "/our-story/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "story/04-data",
+      "routes": [
+        "/our-story/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "story/05-media",
+      "routes": [
+        "/our-story/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "contact/map",
+      "routes": [
+        "/contact/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/why-startups-waste-money-wrong-product",
+      "routes": [
+        "/blog/",
+        "/blog/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product",
+      "routes": [
+        "/blog/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/why-software-development-alone-wont-solve-your-business-problems",
+      "routes": [
+        "/blog/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/what-digital-transformation-actually-means-for-smes",
+      "routes": [
+        "/blog/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/how-product-thinking-creates-sustainable-business-growth",
+      "routes": [
+        "/blog/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/why-most-brands-look-different-but-feel-the-same",
+      "routes": [
+        "/blog/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/design-systems-operating-system-modern-digital-products",
+      "routes": [
+        "/blog/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/experience-design-business-growth-driver",
+      "routes": [
+        "/blog/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/soon",
+      "routes": [
+        "/blog/",
+        "/blog/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/why-startups-waste-money-wrong-product/cover",
+      "routes": [
+        "/blog/why-startups-waste-money-wrong-product/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/cover",
+      "routes": [
+        "/blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/why-software-development-alone-wont-solve-your-business-problems/cover",
+      "routes": [
+        "/blog/why-software-development-alone-wont-solve-your-business-problems/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/what-digital-transformation-actually-means-for-smes/cover",
+      "routes": [
+        "/blog/what-digital-transformation-actually-means-for-smes/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/how-product-thinking-creates-sustainable-business-growth/cover",
+      "routes": [
+        "/blog/how-product-thinking-creates-sustainable-business-growth/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/why-most-brands-look-different-but-feel-the-same/cover",
+      "routes": [
+        "/blog/why-most-brands-look-different-but-feel-the-same/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/design-systems-operating-system-modern-digital-products/cover",
+      "routes": [
+        "/blog/design-systems-operating-system-modern-digital-products/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "blog/experience-design-business-growth-driver/cover",
+      "routes": [
+        "/blog/experience-design-business-growth-driver/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "books/marketing-fundamentals/cover",
+      "routes": [
+        "/books/",
+        "/books/marketing-fundamentals/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "books/basics-of-visual-identity/cover",
+      "routes": [
+        "/books/",
+        "/books/basics-of-visual-identity/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "books/basics-of-graphic-design/cover",
+      "routes": [
+        "/books/",
+        "/books/basics-of-graphic-design/"
+      ],
+      "status": "owner-review"
+    },
+    {
+      "slot": "books/ui-ux-handbook/cover",
+      "routes": [
+        "/books/",
+        "/books/ui-ux-handbook/"
+      ],
+      "status": "owner-review"
+    }
+  ]
+}

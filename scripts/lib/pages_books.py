@@ -72,7 +72,7 @@ def add_btn(b, kind='primary'):
     if not b['available']:
         return f'<button class="btn btn--glass" type="button" disabled><span data-ar="قريبًا">Coming soon</span></button>'
     return (f'<button class="btn btn--{kind}" type="button" data-add="{b["slug"]}" data-title="{esc(b["title"])}" data-title-ar="{esc(b["title_ar"])}" data-price="{b["price"]}" data-currency="SAR">'
-            f'{icon("cart")}<span data-ar="أضف إلى السلة">Add to cart</span></button>')
+            f'{icon("cart")}<span data-ar="احفظ الكتاب">Save book</span></button>')
 
 
 def cover(b, size='48px', extra=''):
@@ -112,10 +112,10 @@ def hub():
         <div class="book-grid" id="book-list">{cards}
         </div>
         <ul class="promises" data-reveal>
-          <li>{icon('lock')}<span data-ar="دفع آمن · ريال سعودي">Secure checkout · SAR</span></li>
+          <li>{icon('lock')}<span data-ar="أسعار استرشادية · ريال سعودي">Indicative prices · SAR</span></li>
           <li>{icon('globe')}<span data-ar="قارئ تفاعلي عربي RTL">Interactive Arabic RTL reader</span></li>
-          <li>{icon('check')}<span data-ar="وصول دائم بعد الشراء">Lifetime access after purchase</span></li>
-          <li>{icon('users')}<span data-ar="مكتبتك في حسابك">Your library lives in your account</span></li>
+          <li>{icon('check')}<span data-ar="معاينات عامة متاحة">Public previews available</span></li>
+          <li>{icon('users')}<span data-ar="احفظ قائمتك على هذا الجهاز">Save a shortlist on this device</span></li>
         </ul>
       </section>
 
@@ -128,7 +128,7 @@ def hub():
     return page('/books/', title='Books Library — Arabic Design & Brand References · Code & Canvas', title_ar='المكتبة — مراجع عربية في التصميم والعلامة · Code & Canvas',
                 desc='Code & Canvas digital library: practical Arabic guides in design, marketing, and technology — Marketing Fundamentals, Basics of Visual Identity, Basics of Graphic Design, and the UI/UX Handbook.',
                 desc_ar='المكتبة الرقمية لـ Code & Canvas: أدلة عربية عملية في التصميم والتسويق والتكنولوجيا — أساسيات التسويق، أساسيات الهوية البصرية، أساسيات التصميم الجرافيكي، ودليل تجربة وواجهة المستخدم.',
-                nav='books', body=body, scripts=('/assets/js/pages.js', '/assets/js/shop.js'))
+                nav='books', body=body, scripts=('/assets/js/pages.js', '/assets/js/book-catalog.js', '/assets/js/shop.js'))
 
 
 def vi_chapters():
@@ -223,11 +223,8 @@ def book_page(b, idx):
                'bookFormat': 'https://schema.org/EBook', 'url': f'https://codeandcanvas.net/books/{b["slug"]}/',
                'author': {'@type': 'Organization', '@id': 'https://codeandcanvas.net/#org'} if b['author'].startswith('Code') else {'@type': 'Person', 'name': 'Mustafa Aboalazm'},
                'publisher': {'@id': 'https://codeandcanvas.net/#org'}, 'image': 'https://codeandcanvas.net/assets/brand/og-default.png'}
-    if b['available']:
-        book_ld['offers'] = {'@type': 'Offer', 'price': str(b['price']), 'priceCurrency': 'SAR', 'availability': 'https://schema.org/InStock',
-                             'url': f'https://codeandcanvas.net/books/{b["slug"]}/', 'seller': {'@id': 'https://codeandcanvas.net/#org'}}
     return page(f'/books/{b["slug"]}/', title=f'{b["title"]} — {b["title_ar"]} · Code & Canvas', title_ar=f'{b["title_ar"]} — {b["title"]} · Code & Canvas', ld=[book_ld],
-                desc=b['lede'], desc_ar=b['lede_ar'], nav='books', body=body, og_type='book', scripts=('/assets/js/pages.js', '/assets/js/shop.js'))
+                desc=b['lede'], desc_ar=b['lede_ar'], nav='books', body=body, og_type='book', scripts=('/assets/js/pages.js', '/assets/js/book-catalog.js', '/assets/js/shop.js'))
 
 
 def reader_page(b):
@@ -235,25 +232,25 @@ def reader_page(b):
     if b['slug'] == 'basics-of-visual-identity':
         preview = [dict(k=k, title=t, sub=s, p=p1, q=p2, chips=c) for j in VI_JOURNEYS for (k, t, s, p1, p2, c) in j['chapters']]
     else:
-        preview = []
+        preview = [dict(k='01', title='عن هذا الكتاب', sub='نبذة عامة', p=b['lede_ar'], q='', chips=[])]
     import json
     sample = json.dumps(dict(slug=b['slug'], title=b['title_ar'], title_en=b['title'], author=b['author'], parts_total=int(b['stats'][0][0]) if b['stats'][0][0].isdigit() else None,
                              preview=preview), ensure_ascii=False).replace('</', '<\\/')
     body = f'''
       <section class="container" style="padding-top:calc(var(--nav-h) + 18px)">
-        <div class="reader glass" data-reader="{b['slug']}" data-manifest="/assets/books/{b['slug']}/manifest.json" dir="rtl" lang="ar">
+        <div class="reader glass" data-reader="{b['slug']}" dir="rtl" lang="ar">
           <aside class="reader__side">
-            <div class="reader__side-head"><b>{esc(b['title_ar'])}</b><a class="text-link" href="/books/{b['slug']}/">← الكتاب</a></div>
+            <div class="reader__side-head"><h1>{esc(b['title_ar'])}</h1><a class="text-link" href="/books/{b['slug']}/">← الكتاب</a></div>
             <div class="reader__parts" data-parts></div>
           </aside>
           <div class="reader__main">
             <div class="reader__bar">
-              <button class="btn btn--ghost btn--sm" type="button" data-prev aria-label="السابق">‹</button>
-              <button class="btn btn--ghost btn--sm" type="button" data-next aria-label="التالي">›</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-prev aria-label="السابق">›</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-next aria-label="التالي">‹</button>
               <span class="counter" data-counter>— / —</span>
               <span class="spacer"></span>
-              <button class="btn btn--ghost btn--sm" type="button" data-notes-toggle>📝 ملاحظاتي</button>
-              <button class="btn btn--ghost btn--sm" type="button" data-fullscreen>⛶ ملء الشاشة</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-notes-toggle>{icon("pen")} ملاحظاتي</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-fullscreen>{icon("grid")} ملء الشاشة</button>
             </div>
             <div class="reader__stage">
               <article class="slide glass" data-slide tabindex="0" aria-live="polite"></article>
@@ -261,17 +258,17 @@ def reader_page(b):
                 <div class="glass">
                   <span class="card__icon">🔒</span>
                   <h3>المعاينة المجانية انتهت</h3>
-                  <p>اشترِ الكتاب لفتح كل الأجزاء ({b['stats'][0][0]} {b['stats'][0][1]}) في القارئ التفاعلي — وصول دائم من حسابك.</p>
+                  <p>هذه معاينة عامة وليست الكتاب الكامل. الشراء والوصول المدفوع غير متاحين حاليًا. تواصل معنا لمعرفة التوفر.</p>
                   {add_btn(b)}
-                  <a class="btn btn--glass" href="/login/?next=/books/{b['slug']}/read/">لديك الكتاب؟ سجّل الدخول</a>
+                  <a class="btn btn--glass" href="/contact/?inquiry=book-{b['slug']}">استفسر عن التوفر</a>
                 </div>
               </div>
             </div>
             <div class="reader__thumbs" data-thumbs></div>
           </div>
           <aside class="reader__notes" hidden data-notes>
-            <div class="reader__notes-head"><b>ملاحظاتي</b><button class="btn btn--ghost btn--sm" type="button" data-notes-toggle>✕</button></div>
-            <textarea placeholder="اكتب ملاحظاتك هنا — تُحفظ على هذا الجهاز." data-notes-text></textarea>
+            <div class="reader__notes-head"><b>ملاحظاتي</b><button class="btn btn--ghost btn--sm" type="button" data-notes-toggle aria-label="إغلاق الملاحظات">✕</button></div>
+            <textarea aria-label="ملاحظاتي الخاصة على هذا الجهاز" placeholder="اكتب ملاحظاتك هنا — تُحفظ على هذا الجهاز." data-notes-text></textarea>
             <div class="reader__notes-foot">تُحفظ محليًا في المتصفح (localStorage).</div>
           </aside>
         </div>
@@ -279,9 +276,9 @@ def reader_page(b):
       </section>
 '''
     return page(f'/books/{b["slug"]}/read/', title=f'Reader — {b["title"]} · Code & Canvas', title_ar=f'القارئ — {b["title_ar"]} · Code & Canvas',
-                desc=f'Interactive reader for {b["title"]} ({b["title_ar"]}) — free preview; the full book unlocks after purchase.',
-                desc_ar=f'القارئ التفاعلي لكتاب {b["title_ar"]} — معاينة مجانية؛ يُفتح الكتاب كاملًا بعد الشراء.',
-                nav='books', body=body, body_class='is-reader', scripts=('/assets/js/pages.js', '/assets/js/shop.js', '/assets/js/reader.js'))
+                desc=f'Interactive reader for {b["title"]} ({b["title_ar"]}) — free public preview. Ask us about full-book availability.',
+                desc_ar=f'القارئ التفاعلي لكتاب {b["title_ar"]} — معاينة مجانية؛ تواصل معنا لمعرفة توفر المحتوى الكامل.',
+                nav='books', body=body, body_class='is-reader', scripts=('/assets/js/pages.js', '/assets/js/book-catalog.js', '/assets/js/shop.js', '/assets/js/reader.js'))
 
 
 def build():

@@ -3,26 +3,26 @@
    Modern-classic · glassmorphism · violet / teal / pink on deep navy.
    Used by the homepage (/) and the CanvasOne ERP proposal (/erp/).
    Page-specific styles live in home.css and erp.css.
-   Fonts are loaded from Google Fonts in each page <head>.
+   Fonts are self-hosted; see fonts.css and assets/fonts/SOURCES.md.
    ========================================================================== */
 
 /* ---------- Tokens ---------- */
 /* ---------- Fonts (self-hosted): Signate Grotesk = headings · Raleway = titles · Poppins = subtitles & body ---------- */
-@font-face { font-family: 'Signate Grotesk'; src: url('../fonts/signategrotesk-black.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-SemiBoldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; font-display: swap; }
-@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
-@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Signate Grotesk'; src: url('../fonts/signategrotesk-black.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-ExtraBold.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-SemiBoldItalic.woff2') format('woff2'); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-BoldItalic.woff2') format('woff2'); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
 
 :root {
   --navy: #00001e;
@@ -30,7 +30,7 @@
   --bg-2: #0a0a26;
   --ink: #f5f4ff;
   --ink-2: rgba(232, 230, 255, .74);
-  --ink-3: rgba(214, 210, 255, .5);
+  --ink-3: #b6b1cf;
   --line: rgba(255, 255, 255, .1);
   --line-2: rgba(255, 255, 255, .18);
 

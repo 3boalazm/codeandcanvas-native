@@ -2,7 +2,7 @@
 // Mirrors the production host: `/path/` → `/path/index.html`, unknown paths → `/404.html` (HTTP 404).
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
-import { extname, join, normalize, resolve } from 'node:path';
+import { extname, join, normalize, resolve, sep } from 'node:path';
 
 const root = resolve(process.argv[2] || '.');
 const port = Number(process.env.PORT) || 3000;
@@ -22,13 +22,15 @@ const matchRedirect = (path) => redirects.find(([from]) => (from.endsWith('/*') 
 
 createServer(async (req, res) => {
   try {
-    const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    const url = new URL(req.url, 'http://x');
+    const path = decodeURIComponent(url.pathname);
+    if (path.split('/').some(part => part.startsWith('.')) || /^\/(?:node_modules|scripts|tests|docs|partials|test-results|playwright-report)(?:\/|$)/.test(path)) { res.writeHead(403, { 'Content-Type': 'text/plain' }); return res.end('Forbidden'); }
     const r = matchRedirect(path);
-    if (r && r[1] !== path) { res.writeHead(Number(r[2]) || 301, { Location: r[1] }); return res.end(); }
+    if (r && r[1] !== path) { res.writeHead(Number(r[2]) || 301, { Location: (() => { const u = new URL(r[1], 'http://x'); url.searchParams.forEach((v, k) => { if (!u.searchParams.has(k)) u.searchParams.append(k, v); }); return u.pathname + u.search + u.hash; })() }); return res.end(); }
     let file = normalize(join(root, path));
-    if (!file.startsWith(root)) throw new Error('outside root');
+    if (file !== root && !file.startsWith(root + sep)) throw new Error('outside root');
     if ((await stat(file).catch(() => null))?.isDirectory()) {
-      if (!path.endsWith('/')) { res.writeHead(301, { Location: `${path}/` }); return res.end(); }
+      if (!path.endsWith('/')) { res.writeHead(301, { Location: `${path}/${url.search}` }); return res.end(); }
       file = join(file, 'index.html');
     }
     const body = await readFile(file);

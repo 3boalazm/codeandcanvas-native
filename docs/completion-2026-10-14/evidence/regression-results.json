@@ -1,0 +1,6307 @@
+{
+  "sprint": "2026-10-14",
+  "branch": "arena/e48bf0e9-codeandcanvas-native",
+  "scope": "Local static server. External traffic aborted; APIs mocked. Browser identity and screenshot conditions in screenshots.json. Not real-device, production or provider acceptance.",
+  "stats": {
+    "startTime": "2026-10-14T20:18:14.541Z",
+    "duration": 474171.444,
+    "expected": 242,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "axe / en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5129,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 228
+                  }
+                ],
+                "passes": 25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe / ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4182,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 26
+                  }
+                ],
+                "passes": 25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /about/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3902,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/about/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 140
+                  }
+                ],
+                "passes": 22
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /about/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2782,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/about/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 53
+                  }
+                ],
+                "passes": 22
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /our-story/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3294,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/our-story/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 117
+                  }
+                ],
+                "passes": 22
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /our-story/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2316,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/our-story/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 12
+                  }
+                ],
+                "passes": 22
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /services/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5529,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/services/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 263
+                  }
+                ],
+                "passes": 23
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /services/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4572,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/services/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 116
+                  },
+                  {
+                    "id": "link-in-text-block",
+                    "nodes": 2
+                  }
+                ],
+                "passes": 23
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /technology-services/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6297,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/technology-services/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 2
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 344
+                  }
+                ],
+                "passes": 24
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /technology-services/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5325,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/technology-services/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 2
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 102
+                  }
+                ],
+                "passes": 25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /creative-services/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6182,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/creative-services/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 2
+                  },
+                  {
+                    "id": "aria-valid-attr-value",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 314
+                  }
+                ],
+                "passes": 24
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /creative-services/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5141,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/creative-services/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 2
+                  },
+                  {
+                    "id": "aria-valid-attr-value",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 98
+                  }
+                ],
+                "passes": 25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /healthcare/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4976,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/healthcare/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 242
+                  }
+                ],
+                "passes": 24
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /healthcare/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3757,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/healthcare/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 63
+                  }
+                ],
+                "passes": 24
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /contact/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3028,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/contact/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 128
+                  }
+                ],
+                "passes": 28
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /contact/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2736,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/contact/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 10
+                  }
+                ],
+                "passes": 28
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /pricing-faq/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3827,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/pricing-faq/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 154
+                  }
+                ],
+                "passes": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /pricing-faq/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2955,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/pricing-faq/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 31
+                  }
+                ],
+                "passes": 27
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /case-studies/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3551,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/case-studies/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 99
+                  }
+                ],
+                "passes": 25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /case-studies/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2028,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/case-studies/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 19
+                  }
+                ],
+                "passes": 25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /books/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3936,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/books/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 141
+                  }
+                ],
+                "passes": 25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /books/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2644,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/books/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 17
+                  }
+                ],
+                "passes": 24
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /books/marketing-fundamentals/read/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3369,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/books/marketing-fundamentals/read/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "color-contrast",
+                    "nodes": 60
+                  }
+                ],
+                "passes": 23
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /books/marketing-fundamentals/read/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1434,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/books/marketing-fundamentals/read/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "color-contrast",
+                    "nodes": 9
+                  }
+                ],
+                "passes": 24
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /register/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2540,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/register/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 87
+                  }
+                ],
+                "passes": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /register/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2126,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/register/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 29
+                  }
+                ],
+                "passes": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /checkout/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2285,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/checkout/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 87
+                  },
+                  {
+                    "id": "link-in-text-block",
+                    "nodes": 2
+                  }
+                ],
+                "passes": 24
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /checkout/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1424,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/checkout/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 8
+                  },
+                  {
+                    "id": "link-in-text-block",
+                    "nodes": 2
+                  }
+                ],
+                "passes": 24
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /blog/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4183,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/blog/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 191
+                  }
+                ],
+                "passes": 27
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /blog/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3673,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/blog/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 91
+                  }
+                ],
+                "passes": 27
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /team/ en",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5204,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/team/",
+                "lang": "en",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 183
+                  }
+                ],
+                "passes": 28
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "axe /team/ ar",
+      "file": "accessibility.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3158,
+          "attachments": [
+            {
+              "name": "axe-summary",
+              "data": {
+                "route": "/team/",
+                "lang": "ar",
+                "violations": [],
+                "incomplete": [
+                  {
+                    "id": "aria-prohibited-attr",
+                    "nodes": 1
+                  },
+                  {
+                    "id": "color-contrast",
+                    "nodes": 88
+                  }
+                ],
+                "passes": 28
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "slash redirect preserves service and language query",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 110,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "all service CTA contexts arrive at the contact selector",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 42484,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "registration consent and password length are validated without fake auth",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5539,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "availability inquiry requires consent and never creates an entitlement",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3037,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "shortlist ignores forged prices, titles, duplicates and unknown IDs; counts update",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2636,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "reader buttons, RTL keyboard, notes and preview gate — en",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5149,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "reader buttons, RTL keyboard, notes and preview gate — ar",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4813,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "manual contact handoff is not lead success and preserves input",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3533,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "form API contract — accepted",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3700,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "form API contract — rejected",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3605,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "form API contract — http-error",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3658,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "form API contract — invalid-json",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3805,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "form API contract — timeout",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3973,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "form API contract — network-error",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3993,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "invalid external endpoint is never posted to; malformed scheduler fails safely",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3660,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "configured scheduler carries service context",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3382,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "analytics requires consent, excludes PII, bounds queue and allows withdrawal",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2579,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "privacy signal suppresses analytics — doNotTrack",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1335,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "privacy signal suppresses analytics — globalPrivacyControl",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1350,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "Arabic markup, mobile menu, tabs, FAQ and book filters",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4615,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "malformed and blocked local storage fail safely",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4856,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "one form request at a time; newsletter and career use their own endpoints",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9022,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "index policy and pricing schema match public capability",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8234,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "development preview does not expose repository internals",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 110,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "no-JavaScript fallback keeps content visible and prevents native form submission",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1177,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "reader mobile notes open, persist and close with Escape",
+      "file": "flows.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1892,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "route / en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1023,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route / en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1542,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route / ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 719,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route / ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1682,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /erp/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1082,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /erp/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3011,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /erp/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1817,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /erp/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2597,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /services/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1383,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /services/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1262,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /services/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 837,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /services/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1370,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /technology-services/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 926,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /technology-services/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1728,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /technology-services/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 828,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /technology-services/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1437,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /creative-services/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 855,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /creative-services/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1590,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /creative-services/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 819,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /creative-services/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1484,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /healthcare/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 828,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /healthcare/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1494,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /healthcare/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 773,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /healthcare/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1127,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /about/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 613,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /about/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1349,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /about/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 731,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /about/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1392,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /our-story/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 660,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /our-story/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1099,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /our-story/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 647,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /our-story/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1117,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /methodology/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 686,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /methodology/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1466,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /methodology/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 648,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /methodology/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1100,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /team/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1206,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /team/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2172,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /team/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 964,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /team/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1683,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /pricing-faq/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 747,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /pricing-faq/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1182,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /pricing-faq/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 648,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /pricing-faq/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1113,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /contact/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 900,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /contact/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1669,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /contact/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 933,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /contact/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1569,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 877,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2100,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 969,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1877,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-startups-waste-money-wrong-product/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 866,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-startups-waste-money-wrong-product/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1745,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-startups-waste-money-wrong-product/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 783,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-startups-waste-money-wrong-product/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2198,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 947,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1811,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 812,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1731,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-software-development-alone-wont-solve-your-business-problems/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 868,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-software-development-alone-wont-solve-your-business-problems/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1642,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-software-development-alone-wont-solve-your-business-problems/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 770,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-software-development-alone-wont-solve-your-business-problems/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1757,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/what-digital-transformation-actually-means-for-smes/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 864,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/what-digital-transformation-actually-means-for-smes/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2073,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/what-digital-transformation-actually-means-for-smes/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 729,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/what-digital-transformation-actually-means-for-smes/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1879,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/how-product-thinking-creates-sustainable-business-growth/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 838,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/how-product-thinking-creates-sustainable-business-growth/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2099,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/how-product-thinking-creates-sustainable-business-growth/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 636,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/how-product-thinking-creates-sustainable-business-growth/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1569,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-most-brands-look-different-but-feel-the-same/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 731,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-most-brands-look-different-but-feel-the-same/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1528,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-most-brands-look-different-but-feel-the-same/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 730,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/why-most-brands-look-different-but-feel-the-same/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1653,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/design-systems-operating-system-modern-digital-products/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 810,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/design-systems-operating-system-modern-digital-products/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1622,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/design-systems-operating-system-modern-digital-products/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 715,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/design-systems-operating-system-modern-digital-products/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1643,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/experience-design-business-growth-driver/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 777,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/experience-design-business-growth-driver/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1462,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/experience-design-business-growth-driver/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 664,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /blog/experience-design-business-growth-driver/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1625,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /case-studies/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 653,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /case-studies/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1211,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /case-studies/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 639,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /case-studies/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 818,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 895,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1717,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 850,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1646,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/marketing-fundamentals/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 971,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/marketing-fundamentals/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1657,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/marketing-fundamentals/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 804,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/marketing-fundamentals/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1395,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/marketing-fundamentals/read/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1012,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/marketing-fundamentals/read/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2241,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/marketing-fundamentals/read/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 920,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/marketing-fundamentals/read/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2533,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-visual-identity/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 894,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-visual-identity/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1442,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-visual-identity/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 780,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-visual-identity/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1256,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-visual-identity/read/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1087,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-visual-identity/read/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3395,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-visual-identity/read/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1003,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-visual-identity/read/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2926,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-graphic-design/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 795,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-graphic-design/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1447,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-graphic-design/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 805,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-graphic-design/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1236,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-graphic-design/read/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 969,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-graphic-design/read/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2231,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-graphic-design/read/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 662,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/basics-of-graphic-design/read/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1686,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/ui-ux-handbook/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 879,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/ui-ux-handbook/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1498,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/ui-ux-handbook/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 837,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /books/ui-ux-handbook/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1472,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /login/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1043,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /login/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1526,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /login/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 947,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /login/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1448,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /register/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1223,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /register/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1659,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /register/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1154,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /register/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1482,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /forgot-password/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1015,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /forgot-password/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1622,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /forgot-password/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 836,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /forgot-password/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1247,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /reset-password/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 840,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /reset-password/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1714,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /reset-password/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1227,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /reset-password/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1494,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /account/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 708,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /account/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1413,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /account/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 684,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /account/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1235,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /cart/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 901,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /cart/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1234,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /cart/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 720,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /cart/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1321,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /checkout/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 831,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /checkout/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1241,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /checkout/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 664,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /checkout/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1358,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /thank-you/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 583,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /thank-you/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 924,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /thank-you/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 492,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /thank-you/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 925,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /privacy-policy/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 552,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /privacy-policy/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1472,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /privacy-policy/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 553,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /privacy-policy/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1266,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /terms-of-use/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 571,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /terms-of-use/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1443,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /terms-of-use/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 554,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /terms-of-use/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1179,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /cookie-policy/ en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 498,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /cookie-policy/ en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1362,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /cookie-policy/ ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 599,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /cookie-policy/ ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1160,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /404.html en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 630,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /404.html en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1152,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /404.html ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 633,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 390,
+                "viewport": 390,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "route /404.html ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1294,
+          "attachments": [
+            {
+              "name": "route-check",
+              "data": {
+                "clipped": [],
+                "duplicateIDs": [],
+                "graphs": 1,
+                "docWidth": 1440,
+                "viewport": 1440,
+                "literalTags": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry en 320",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 792,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 17719,
+                "workTop": 1708.40625,
+                "cta": [
+                  {
+                    "x": 16,
+                    "y": 586.625,
+                    "width": 288,
+                    "height": 48,
+                    "top": 586.625,
+                    "right": 304,
+                    "bottom": 634.625,
+                    "left": 16
+                  },
+                  {
+                    "x": 16,
+                    "y": 644.625,
+                    "width": 288,
+                    "height": 48,
+                    "top": 644.625,
+                    "right": 304,
+                    "bottom": 692.625,
+                    "left": 16
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/Poppins-Regular.woff2",
+                  "/assets/fonts/Poppins-Bold.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/Raleway-Regular.woff2",
+                  "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+                  "/assets/fonts/Raleway-SemiBold.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/Poppins-SemiBold.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/Poppins-Medium.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry en 360",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 793,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 16219,
+                "workTop": 1557.125,
+                "cta": [
+                  {
+                    "x": 16,
+                    "y": 494.65625,
+                    "width": 328,
+                    "height": 48,
+                    "top": 494.65625,
+                    "right": 344,
+                    "bottom": 542.65625,
+                    "left": 16
+                  },
+                  {
+                    "x": 16,
+                    "y": 552.65625,
+                    "width": 328,
+                    "height": 48,
+                    "top": 552.65625,
+                    "right": 344,
+                    "bottom": 600.65625,
+                    "left": 16
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/Poppins-Regular.woff2",
+                  "/assets/fonts/Poppins-Bold.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/Raleway-Regular.woff2",
+                  "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+                  "/assets/fonts/Raleway-SemiBold.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/Poppins-SemiBold.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/Poppins-Medium.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry en 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 938,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 15359,
+                "workTop": 1498.828125,
+                "cta": [
+                  {
+                    "x": 16,
+                    "y": 494.65625,
+                    "width": 358,
+                    "height": 48,
+                    "top": 494.65625,
+                    "right": 374,
+                    "bottom": 542.65625,
+                    "left": 16
+                  },
+                  {
+                    "x": 16,
+                    "y": 552.65625,
+                    "width": 358,
+                    "height": 48,
+                    "top": 552.65625,
+                    "right": 374,
+                    "bottom": 600.65625,
+                    "left": 16
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/Poppins-Regular.woff2",
+                  "/assets/fonts/Poppins-Bold.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/Raleway-Regular.woff2",
+                  "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+                  "/assets/fonts/Raleway-SemiBold.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/Poppins-SemiBold.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/Poppins-Medium.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry en 480",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1200,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 14326,
+                "workTop": 1379.484375,
+                "cta": [
+                  {
+                    "x": 16,
+                    "y": 425.625,
+                    "width": 448,
+                    "height": 48,
+                    "top": 425.625,
+                    "right": 464,
+                    "bottom": 473.625,
+                    "left": 16
+                  },
+                  {
+                    "x": 16,
+                    "y": 483.625,
+                    "width": 448,
+                    "height": 48,
+                    "top": 483.625,
+                    "right": 464,
+                    "bottom": 531.625,
+                    "left": 16
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/Poppins-Regular.woff2",
+                  "/assets/fonts/Poppins-Bold.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/Raleway-Regular.woff2",
+                  "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+                  "/assets/fonts/Raleway-SemiBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Poppins-SemiBold.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/Poppins-Medium.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry en 768",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1261,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 12775,
+                "workTop": 1160.90625,
+                "cta": [
+                  {
+                    "x": 185,
+                    "y": 392.75,
+                    "width": 202,
+                    "height": 48,
+                    "top": 392.75,
+                    "right": 387,
+                    "bottom": 440.75,
+                    "left": 185
+                  },
+                  {
+                    "x": 397,
+                    "y": 392.75,
+                    "width": 186,
+                    "height": 48,
+                    "top": 392.75,
+                    "right": 583,
+                    "bottom": 440.75,
+                    "left": 397
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/Poppins-Regular.woff2",
+                  "/assets/fonts/Poppins-Bold.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/Raleway-Regular.woff2",
+                  "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+                  "/assets/fonts/Raleway-SemiBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Poppins-SemiBold.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/Poppins-Medium.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry en 1024",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1543,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 10582,
+                "workTop": 1189.453125,
+                "cta": [
+                  {
+                    "x": 313,
+                    "y": 411.0625,
+                    "width": 202,
+                    "height": 48,
+                    "top": 411.0625,
+                    "right": 515,
+                    "bottom": 459.0625,
+                    "left": 313
+                  },
+                  {
+                    "x": 525,
+                    "y": 411.0625,
+                    "width": 186,
+                    "height": 48,
+                    "top": 411.0625,
+                    "right": 711,
+                    "bottom": 459.0625,
+                    "left": 525
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/Poppins-Regular.woff2",
+                  "/assets/fonts/Poppins-Bold.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/Raleway-Regular.woff2",
+                  "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+                  "/assets/fonts/Raleway-SemiBold.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/Poppins-SemiBold.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/Poppins-Medium.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry en 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1534,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 9041,
+                "workTop": 743.390625,
+                "cta": [
+                  {
+                    "x": 100,
+                    "y": 542.609375,
+                    "width": 202,
+                    "height": 48,
+                    "top": 542.609375,
+                    "right": 302,
+                    "bottom": 590.609375,
+                    "left": 100
+                  },
+                  {
+                    "x": 312,
+                    "y": 542.609375,
+                    "width": 186,
+                    "height": 48,
+                    "top": 542.609375,
+                    "right": 498,
+                    "bottom": 590.609375,
+                    "left": 312
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/Poppins-Regular.woff2",
+                  "/assets/fonts/Poppins-Bold.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Regular.woff2",
+                  "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+                  "/assets/fonts/Raleway-SemiBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/Poppins-SemiBold.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/Poppins-Medium.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry en 1920",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1691,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 9041,
+                "workTop": 743.390625,
+                "cta": [
+                  {
+                    "x": 340,
+                    "y": 542.609375,
+                    "width": 202,
+                    "height": 48,
+                    "top": 542.609375,
+                    "right": 542,
+                    "bottom": 590.609375,
+                    "left": 340
+                  },
+                  {
+                    "x": 552,
+                    "y": 542.609375,
+                    "width": 186,
+                    "height": 48,
+                    "top": 542.609375,
+                    "right": 738,
+                    "bottom": 590.609375,
+                    "left": 552
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/Poppins-Regular.woff2",
+                  "/assets/fonts/Poppins-Bold.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Regular.woff2",
+                  "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+                  "/assets/fonts/Raleway-SemiBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/Poppins-SemiBold.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/Poppins-Medium.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry ar 320",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 639,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 15445,
+                "workTop": 1476.578125,
+                "cta": [
+                  {
+                    "x": 16,
+                    "y": 408.625,
+                    "width": 288,
+                    "height": 48,
+                    "top": 408.625,
+                    "right": 304,
+                    "bottom": 456.625,
+                    "left": 16
+                  },
+                  {
+                    "x": 16,
+                    "y": 466.625,
+                    "width": 288,
+                    "height": 48,
+                    "top": 466.625,
+                    "right": 304,
+                    "bottom": 514.625,
+                    "left": 16
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+                  "/assets/fonts/alexandria-latin-wght-normal.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+                  "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry ar 360",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 942,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 14809,
+                "workTop": 1437.828125,
+                "cta": [
+                  {
+                    "x": 16,
+                    "y": 408.625,
+                    "width": 328,
+                    "height": 48,
+                    "top": 408.625,
+                    "right": 344,
+                    "bottom": 456.625,
+                    "left": 16
+                  },
+                  {
+                    "x": 16,
+                    "y": 466.625,
+                    "width": 328,
+                    "height": 48,
+                    "top": 466.625,
+                    "right": 344,
+                    "bottom": 514.625,
+                    "left": 16
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+                  "/assets/fonts/alexandria-latin-wght-normal.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+                  "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry ar 390",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 684,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 14312,
+                "workTop": 1437.828125,
+                "cta": [
+                  {
+                    "x": 16,
+                    "y": 408.625,
+                    "width": 358,
+                    "height": 48,
+                    "top": 408.625,
+                    "right": 374,
+                    "bottom": 456.625,
+                    "left": 16
+                  },
+                  {
+                    "x": 16,
+                    "y": 466.625,
+                    "width": 358,
+                    "height": 48,
+                    "top": 466.625,
+                    "right": 374,
+                    "bottom": 514.625,
+                    "left": 16
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+                  "/assets/fonts/alexandria-latin-wght-normal.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+                  "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry ar 480",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 757,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 13436,
+                "workTop": 1249.078125,
+                "cta": [
+                  {
+                    "x": 16,
+                    "y": 380.625,
+                    "width": 448,
+                    "height": 48,
+                    "top": 380.625,
+                    "right": 464,
+                    "bottom": 428.625,
+                    "left": 16
+                  },
+                  {
+                    "x": 16,
+                    "y": 438.625,
+                    "width": 448,
+                    "height": 48,
+                    "top": 438.625,
+                    "right": 464,
+                    "bottom": 486.625,
+                    "left": 16
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+                  "/assets/fonts/alexandria-latin-wght-normal.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+                  "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry ar 768",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1057,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 12294,
+                "workTop": 1082.953125,
+                "cta": [
+                  {
+                    "x": 403,
+                    "y": 377.34375,
+                    "width": 189,
+                    "height": 48,
+                    "top": 377.34375,
+                    "right": 592,
+                    "bottom": 425.34375,
+                    "left": 403
+                  },
+                  {
+                    "x": 176,
+                    "y": 377.34375,
+                    "width": 217,
+                    "height": 48,
+                    "top": 377.34375,
+                    "right": 393,
+                    "bottom": 425.34375,
+                    "left": 176
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+                  "/assets/fonts/alexandria-latin-wght-normal.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+                  "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry ar 1024",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1039,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 10252,
+                "workTop": 1112.375,
+                "cta": [
+                  {
+                    "x": 531,
+                    "y": 396.53125,
+                    "width": 189,
+                    "height": 48,
+                    "top": 396.53125,
+                    "right": 720,
+                    "bottom": 444.53125,
+                    "left": 531
+                  },
+                  {
+                    "x": 304,
+                    "y": 396.53125,
+                    "width": 217,
+                    "height": 48,
+                    "top": 396.53125,
+                    "right": 521,
+                    "bottom": 444.53125,
+                    "left": 304
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+                  "/assets/fonts/alexandria-latin-wght-normal.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+                  "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry ar 1440",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1217,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 8818,
+                "workTop": 718.078125,
+                "cta": [
+                  {
+                    "x": 1151,
+                    "y": 462.6875,
+                    "width": 189,
+                    "height": 48,
+                    "top": 462.6875,
+                    "right": 1340,
+                    "bottom": 510.6875,
+                    "left": 1151
+                  },
+                  {
+                    "x": 924,
+                    "y": 462.6875,
+                    "width": 217,
+                    "height": 48,
+                    "top": 462.6875,
+                    "right": 1141,
+                    "bottom": 510.6875,
+                    "left": 924
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+                  "/assets/fonts/alexandria-latin-wght-normal.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+                  "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home geometry ar 1920",
+      "file": "matrix.spec.mjs",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1799,
+          "attachments": [
+            {
+              "name": "home-metrics",
+              "data": {
+                "height": 8818,
+                "workTop": 718.078125,
+                "cta": [
+                  {
+                    "x": 1391,
+                    "y": 462.6875,
+                    "width": 189,
+                    "height": 48,
+                    "top": 462.6875,
+                    "right": 1580,
+                    "bottom": 510.6875,
+                    "left": 1391
+                  },
+                  {
+                    "x": 1164,
+                    "y": 462.6875,
+                    "width": 217,
+                    "height": 48,
+                    "top": 462.6875,
+                    "right": 1381,
+                    "bottom": 510.6875,
+                    "left": 1164
+                  }
+                ],
+                "fonts": [
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+                  "/assets/fonts/alexandria-latin-wght-normal.woff2",
+                  "/assets/fonts/Raleway-ExtraBold.woff2",
+                  "/assets/fonts/Raleway-Italic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+                  "/assets/fonts/Raleway-BoldItalic.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+                  "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+                  "/assets/fonts/Raleway-Bold.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+                  "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -63,6 +63,16 @@ def build():
         <a href="#not-sure" class="subnav__aux">{icon('chat')}<span data-ar="لست متأكدًا؟">Not sure?</span></a>
       </nav>
 
+      <section class="container service-finder glass" aria-labelledby="finder-title">
+        <h2 id="finder-title" data-ar="ما الخطوة التي تريد تحقيقها؟">What is your next move?</h2>
+        <p data-ar="ابدأ بالمشكلة، ثم استكشف النطاق والسعر قبل التواصل.">Start with your challenge, then review the scope and price before getting in touch.</p>
+        <div class="grid grid--3">
+          <a href="/healthcare/#hc-03" data-track="service-finder" data-track-service="HC-03"><b data-ar="اختيار نظام صحي بثقة">Choose a healthcare system</b><span data-ar="استشارات اختيار HIS · نطاق ومقارنة موردين">HIS advisory · scope and vendor comparison</span></a>
+          <a href="/creative-services/#ma-03" data-track="service-finder" data-track-service="MA-03"><b data-ar="إطلاق علامة متماسكة">Build a coherent brand</b><span data-ar="استراتيجية وهوية ومنظومة تطبيقات">Strategy, identity and applications</span></a>
+          <a href="/technology-services/#ab-01" data-track="service-finder" data-track-service="AB-01"><b data-ar="تحديد أولويات التحول">Prioritize transformation</b><span data-ar="تقييم العمارة المؤسسية وخطة الخطوات التالية">Architecture assessment and next steps</span></a>
+        </div>
+      </section>
+
       <!-- ░░ Stats ░░ -->
       <section class="stats container" aria-label="Solutions at a glance" data-ar-label="الحلول في أرقام">
         <div class="stats__inner glass" data-reveal>
@@ -75,7 +85,7 @@ def build():
 
       <!-- ░░ Technology ░░ -->
       <section class="section container" id="technology" aria-labelledby="tech-title">
-        {person_card('ahmed')}
+        <p class="svc-note"><span data-ar="بقيادة أحمد بدير · التقنية والرعاية الصحية">Led by Ahmed Bedeer · Technology &amp; healthcare</span> <a href="/team/#ahmed" data-ar="تعرّف على المؤسس">Meet the founder</a></p>
         <header class="section__head" style="margin-top:40px" data-reveal>
           <p class="kicker"><span class="kicker__num">01</span><span data-ar="خدمات التقنية · العمارة المؤسسية · تقنية الرعاية الصحية · السحابة · البيانات">Technology Services · EA · Healthcare IT · Cloud · Data</span></p>
           <h2 class="section__title" id="tech-title"><span data-ar="عمارة، تحوّل، بيانات.">Architecture, transformation, data.</span><br /><span class="grad-text" data-ar="مبنية لاتخاذ القرار.">Built for decisions.</span></h2>
@@ -87,7 +97,7 @@ def build():
 
       <!-- ░░ Creative ░░ -->
       <section class="section container section--flush-top" id="creative" aria-labelledby="creative-title">
-        {person_card('mustafa')}
+        <p class="svc-note"><span data-ar="بقيادة مصطفى أبو العزم · الهوية والتصميم">Led by Mustafa Aboalazm · Brand &amp; design</span> <a href="/team/#mustafa" data-ar="تعرّف على المؤسس">Meet the founder</a></p>
         <header class="section__head" style="margin-top:40px" data-reveal>
           <p class="kicker"><span class="kicker__num">02</span><span data-ar="الاستوديو الإبداعي · الهوية · التصميم · الويب · الإعلام">Creative Studio · Brand · Design · Web · Media</span></p>
           <h2 class="section__title" id="creative-title"><span data-ar="هوية مبنية">Identity built as</span><br /><span class="grad-text" data-ar="كنظام تشغيل.">an operating system.</span></h2>
@@ -158,7 +168,7 @@ def build():
 
 def _combined_card(code, delay):
     s = SERVICES[code]
-    return f'''<a class="card glass svc svc--combined" id="{code.lower()}" data-category="combined" href="/contact/#book" data-tilt data-reveal style="--d:{delay}s">
+    return f'''<a class="card glass svc svc--combined" id="{code.lower()}" data-category="combined" href="/contact/?inquiry={code}#message" data-track="service-inquiry" data-track-service="{code}" data-tilt data-reveal style="--d:{delay}s">
             <span class="svc__top"><span class="svc__no">{code}</span>{t(s['tag'], s['tag_ar'], cls='svc__tag')}</span>
             <h3 data-ar="{esc(s['title_ar'])}">{esc(s['title'])}{' <i aria-hidden="true">✦</i>' if s.get('star') else ''}</h3>
             <p data-ar="{esc(s['blurb_ar'])}">{esc(s['blurb'])}</p>

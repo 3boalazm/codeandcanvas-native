@@ -33,17 +33,18 @@
       } catch (e) {}
     })();
     </script>
-    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/css/fonts.css" />
     <link rel="stylesheet" href="/assets/css/ds.css" />
     <link rel="stylesheet" href="/assets/css/pages.css" />
+    <link rel="stylesheet" href="/assets/css/completion.css" />
+    <noscript><style>body.is-loading{overflow:auto}#preloader{display:none!important}[data-reveal],.split .w{opacity:1!important;transform:none!important;filter:none!important}form{display:none!important}[data-panel][hidden]{display:block!important}</style></noscript>
     <!-- /cc:head -->
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/blog/design-systems-operating-system-modern-digital-products/#webpage","url":"https://codeandcanvas.net/blog/design-systems-operating-system-modern-digital-products/","name":"Design Systems: The Operating System of Modern Digital Products — Code & Canvas","description":"Without a design system, your product is accumulating design debt. $10–15M lost annually. Here is the ROI case.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/assets/brand/og-default.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://codeandcanvas.net/blog/"},{"@type":"ListItem","position":3,"name":"Design Systems"}]},{"@type":"Article","headline":"Design Systems: The Operating System of Modern Digital Products","description":"Without a design system, your product is accumulating design debt. $10–15M lost annually. Here is the ROI case.","url":"https://codeandcanvas.net/blog/design-systems-operating-system-modern-digital-products/","mainEntityOfPage":"https://codeandcanvas.net/blog/design-systems-operating-system-modern-digital-products/","inLanguage":"en","articleSection":"Design Systems","timeRequired":"PT5M","datePublished":"2026-06","author":{"@type":"Person","@id":"https://codeandcanvas.net/team/#mustafa","name":"Mustafa Aboalazm","url":"https://codeandcanvas.net/team/#mustafa","jobTitle":"Co-Founder · Creative Director · Visual Brand Architect","worksFor":{"@id":"https://codeandcanvas.net/#org"},"knowsAbout":["Brand Identity","Visual Systems","Design Systems","Art Direction","Print & Packaging","Web Design"],"sameAs":["https://behance.net/aboalazm","https://aboalazm-os.vercel.app/"]},"publisher":{"@id":"https://codeandcanvas.net/#org"},"image":"https://codeandcanvas.net/assets/brand/og-default.png"}]}</script>
   </head>
   <body class="is-loading" data-nav="blog">
     <!-- cc:top -->
+    <noscript><div class="notice container" style="padding-top:110px">Forms and interactive tools require JavaScript. <a href="mailto:info@codeandcanvas.net">Email us instead</a>. <span lang="ar" dir="rtl">تحتاج النماذج والأدوات التفاعلية إلى JavaScript. يمكنك التواصل عبر البريد.</span></div></noscript>
     <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
     <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
 
@@ -231,7 +232,7 @@
             <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
             <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
             <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
-            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+            <a href="/account/" data-ar="كتبي المحفوظة">Saved Books</a>
           </div>
           <div class="footer__col footer__contact">
             <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
@@ -250,6 +251,7 @@
     <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+    <script src="/assets/js/config.js"></script>
     <script src="/assets/js/site.js"></script>
     <!-- /cc:bottom -->
     <script src="/assets/js/pages.js"></script>

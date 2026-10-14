@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /account/
-Disallow: /cart/
-Disallow: /checkout/
-Disallow: /thank-you/
-Disallow: /reset-password/
 
 Sitemap: https://codeandcanvas.net/sitemap.xml

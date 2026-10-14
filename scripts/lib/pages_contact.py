@@ -3,7 +3,7 @@
 every "Book an Appointment" button on the live site pointed at (it never existed).
 
 Integration points (see README › Integration points):
-  · form[data-form="contact"] data-endpoint="" → set a JSON POST URL to deliver
+  · form[data-form="contact" data-integration="contact"] data-endpoint="" → set a JSON POST URL to deliver
     messages server-side; empty = WhatsApp / e-mail hand-off with pre-filled text.
   · #book  data-booking-url="" → set a Calendly / Cal.com / TidyCal URL and the
     "Book a Free Strategy Call" button opens it; empty = WhatsApp + form.
@@ -37,7 +37,7 @@ def build():
       <!-- ░░ Form + booking ░░ -->
       <section class="section container section--tight" id="message" aria-labelledby="form-title">
         <div class="grid grid--side">
-          <form class="form-card glass form" data-form="contact" data-whatsapp="966545520750" data-mail="info@codeandcanvas.net" data-subject="Website inquiry — Code &amp; Canvas" data-endpoint="" novalidate data-reveal>
+          <form class="form-card glass form" data-form="contact" data-integration="contact" data-whatsapp="966545520750" data-mail="info@codeandcanvas.net" data-subject="Website inquiry — Code &amp; Canvas" data-endpoint="" novalidate data-reveal>
             <h2 id="form-title" data-ar="أرسل لنا رسالة">Send us a message</h2>
             <p class="lead" data-ar="أخبرنا عن مشروعك أو تحدّيك أو سؤالك — وسنرد عليك بوضوح، لا بعرض مبيعات.">Tell us about your project, challenge, or question — we'll get back to you with clarity, not a sales pitch.</p>
             <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
@@ -61,7 +61,7 @@ def build():
             <div class="field"><label for="c-msg" data-ar-html="رسالتك &lt;i&gt;*&lt;/i&gt;">Your Message <i>*</i></label><textarea id="c-msg" name="message" rows="5" required minlength="10"></textarea><span class="field__err" data-ar="اكتب رسالة قصيرة.">Please write a short message.</span></div>
             <div class="form__actions">
               <button class="btn btn--primary magnetic" type="submit"><span data-ar="أرسل الرسالة">Send Message</span><i class="flip" data-icon="mail"></i></button>
-              <span class="field__hint" data-ar="نرد خلال يوم عمل واحد · لا رسائل مزعجة أبدًا">We respond within 1 business day · No spam, ever</span>
+              <span class="field__hint" data-ar="نرد خلال يوم عمل واحد. أكمل الإرسال في واتساب عند فتحه.">We reply within one business day. Complete sending in WhatsApp when prompted.</span>
             </div>
             <div class="form__status" role="status" aria-live="polite"></div>
           </form>

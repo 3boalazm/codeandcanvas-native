@@ -64,8 +64,8 @@ FAQ = [
      'Yes. Larger or multi-phase engagements are quoted individually. Book a discovery call and we\'ll scope it with you.',
      'نعم. المشاريع الأكبر أو متعددة المراحل تُسعَّر بشكل فردي. احجز مكالمة استكشافية وسنحدد نطاقها معك.'),
     ('Do you offer retainers?', 'هل تقدمون عقودًا مستمرة (ريتينر)؟',
-     'No open-ended retainers. Every engagement has a productized scope. Repeat engagements are welcome, and 30-day post-launch support is included in CC-01 Digital Launch Package and HC-01 Clinic Digital Launch.',
-     'لا عقود مفتوحة النهاية. كل مشروع له نطاق مُنتج. المشاريع المتكررة مرحَّب بها، ويشمل كلٌّ من باقة الإطلاق الرقمي CC-01 والإطلاق الرقمي للعيادات HC-01 دعمًا لمدة 30 يومًا بعد الإطلاق.'),
+     'Most engagements have a defined project scope. AB-06 advisory and MA-09 social content can be retained on an agreed cadence. Repeat engagements are welcome, and 30-day post-launch support is included in CC-01 Digital Launch Package and HC-01 Clinic Digital Launch.',
+     'معظم المشاريع لها نطاق محدد. تتاح استشارات AB-06 ومحتوى السوشيال MA-09 باشتراك ودورية متفق عليها. المشاريع المتكررة مرحَّب بها، ويشمل كلٌّ من باقة الإطلاق الرقمي CC-01 والإطلاق الرقمي للعيادات HC-01 دعمًا لمدة 30 يومًا بعد الإطلاق.'),
     ('What if I need changes after delivery?', 'ماذا لو احتجت تعديلات بعد التسليم؟',
      'Every engagement includes a structured revision cycle before final sign-off. Changes outside the agreed scope are quoted as a new mini-engagement — never silently absorbed.',
      'كل مشروع يتضمن دورة تعديلات منظمة قبل الاعتماد النهائي. التغييرات خارج النطاق المتفق عليه تُسعَّر كمشروع مصغّر جديد — ولا تُستوعب بصمت أبدًا.'),
@@ -139,6 +139,7 @@ def build():
         <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s">{btn('Book a Free Discovery Call', 'احجز مكالمة استكشافية مجانية', '/contact/#book')}{btn('Service pricing', 'أسعار الخدمات', '#pricing', 'glass', 'arrowDown')}</div>
       </section>
 
+      <nav class="subnav subnav--sticky container" data-spy aria-label="Pricing sections" data-ar-label="أقسام الأسعار"><a href="#pricing" data-ar="الخدمات والأسعار">Services &amp; pricing</a><a href="#how-we-charge" data-ar="شروط الدفع">Payment terms</a><a href="#faq" data-ar="الأسئلة الشائعة">FAQ</a></nav>
       <!-- ░░ How we charge ░░ -->
       <section class="section container section--tight" id="how-we-charge" aria-labelledby="charge-title">
         <header class="section__head" data-reveal>
@@ -180,7 +181,7 @@ def build():
         <header class="section__head" data-reveal>
           <p class="kicker"><span class="kicker__num">02</span><span data-ar="أسعار الخدمات">Service Pricing</span></p>
           <h2 class="section__title" id="pricing-title"><span data-ar="23 خدمة مُنتجة.">23 productized services.</span> <span class="grad-text" data-ar="نطاق ثابت. تسليم واضح.">Fixed scope. Clear delivery.</span></h2>
-          <p class="section__lead" data-ar="كل سعر يعكس مشروعًا محددًا — لا تقديرًا. اختر فئة لاستكشافها.">Every price reflects a defined engagement — not an estimate. Click a category to explore.</p>
+          <p class="section__lead" data-ar="النطاقات المنشورة تساعدك على الاختيار. يُؤكد النطاق والعملة والسعر النهائي في عرض مكتوب.">Published ranges guide your decision. Final scope, currency and price are confirmed in a written proposal.</p>
         </header>
         <div class="tabs" role="tablist" data-tabs="pricing" data-reveal><span class="tabs__ind" aria-hidden="true"></span>{tabs}</div>{panels}
       </section>
@@ -208,4 +209,4 @@ def build():
     return [page('/pricing-faq/', title='Pricing & FAQ — Code & Canvas', title_ar='الأسعار والأسئلة الشائعة — Code & Canvas',
                  desc='Transparent pricing, no surprises. Milestone-based payment, 23 productized services with fixed scope across technology, brand, data, and healthcare — plus answers to the questions we hear most.',
                  desc_ar='أسعار شفافة بلا مفاجآت. دفعات حسب المعالم و23 خدمة مُنتجة بنطاق ثابت عبر التقنية والهوية والبيانات والرعاية الصحية — مع إجابات عن أكثر الأسئلة شيوعًا.',
-                 nav='pricing', body=body)]
+                 nav='pricing', body=body, ld=[{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, qar, a, aar in FAQ]}, {'@type': 'OfferCatalog', 'name': 'Code & Canvas service catalogue', 'itemListElement': [{'@type': 'Offer', 'description': sv['price'], 'url': 'https://codeandcanvas.net' + href(code), 'itemOffered': {'@type': 'Service', 'name': sv['title']}} for code, sv in SERVICES.items()]}])]

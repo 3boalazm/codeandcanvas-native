@@ -6,7 +6,17 @@
   "scripts": {
     "dev": "node dev-server.mjs",
     "sync": "node scripts/sync-chrome.mjs",
-    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs",
-    "build": "sh ./build.sh"
+    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs",
+    "build": "sh ./build.sh",
+    "generate": "python3 scripts/gen-pages.py && npm run sync",
+    "test": "playwright test",
+    "test:flows": "playwright test tests/flows.spec.mjs",
+    "test:matrix": "playwright test tests/matrix.spec.mjs",
+    "test:a11y": "playwright test tests/accessibility.spec.mjs",
+    "check:generated": "node scripts/check-generated.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.64.1"
   }
 }

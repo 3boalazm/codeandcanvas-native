@@ -81,7 +81,7 @@ def crumbs(items):
 
 
 def closing(kicker, kicker_ar, title_html, text, text_ar, buttons, contact=True):
-    btns = ''.join(buttons)
+    btns = ''.join(buttons[:2])
     contact_html = ('<p class="closing__contact"><a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a> · '
                     '<a class="ltr" href="tel:+966545520750">+966 54 552 0750</a> · <a class="ltr" href="tel:+201092500454">+20 109 250 0454</a></p>') if contact else ''
     return f'''
@@ -153,6 +153,9 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
     a WebPage node and a BreadcrumbList (from the last crumbs() call) are always emitted.
     """
     url = canonical or (SITE + (path if path.endswith('.html') else path))
+    if path.startswith('/books/') and not path.endswith('/read/'):
+        body = body.replace('</h1>', '</h1><p class="notice" data-ar="معاينات عامة فقط. الشراء الإلكتروني غير متاح حاليًا؛ الأسعار استرشادية. احفظ قائمة أو استفسر عن التوفر.">Public previews only. Online purchasing is not available yet; prices are indicative. Save a shortlist or ask about availability.</p><p><a class="text-link" href="/cart/" data-ar="قائمة الكتب المحفوظة ←">Your saved shortlist →</a></p>', 1)
+    body = body.replace('<form ', '<form method="post" ')  # JS intercepts; never leak form values via GET if scripts fail.
     script_tags = '\n'.join(f'    <script src="{s}"></script>' for s in scripts)
     graph = [{
         '@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': title, 'description': desc,
@@ -165,6 +168,8 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
             for i, (en, ar, h) in enumerate(_LAST_CRUMBS)]})
         _LAST_CRUMBS.clear()
     graph.extend(ld or [])
+    if path in ('/account/', '/cart/', '/checkout/', '/thank-you/', '/login/', '/register/', '/forgot-password/', '/reset-password/', '/404.html') or path.endswith('/read/'):
+        extra_head += '    <meta name="robots" content="noindex, follow" />\n'
     extra_head = jsonld(*graph) + extra_head
     doc = f'''<!doctype html>
 <html lang="en" dir="ltr" data-title-ar="{esc(title_ar)}" data-desc-ar="{esc(desc_ar)}">

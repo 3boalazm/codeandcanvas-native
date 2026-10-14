@@ -6,9 +6,9 @@
         (publish this file for buyers only — e.g. behind your auth proxy)
      2. the inline <script data-reader-sample> JSON (free preview built from the
         public landing page copy) when the manifest is missing (404).
-   Access: slides beyond `free_parts` are gated unless the book id is in the
-   local `cc-library` (set by the demo checkout) — swap for a real entitlement
-   check when the backend exists. Keyboard: ← → Home End, F = fullscreen. */
+   Access: public previews only. Local storage stores notes and position, never
+   entitlements. Full paid content requires a separate authenticated server release.
+   Keyboard navigation follows the reader's own direction (Arabic content). */
 (() => {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
@@ -19,7 +19,8 @@
   const counter = $('[data-counter]', root), gate = $('[data-gate]', root), notes = $('[data-notes]', root);
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   let deck = [], idx = 0, freeUntil = Infinity;
-  const owned = () => { try { return JSON.parse(localStorage.getItem('cc-library') || '[]').includes(slug); } catch { return false; } };
+  // Public preview only. Local storage is never proof of ownership.
+  const owned = () => false;
 
   function fromSample(sample) {
     const slides = [];
@@ -28,7 +29,7 @@
       slides.push({ part: i + 1, kicker: c.sub, title: `${c.k} · ${c.title}`, html: `<p>${esc(c.p)}</p>${c.q ? `<p><em>${esc(c.q)}</em></p>` : ''}${c.chips && c.chips.length ? `<ul>${c.chips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}` });
     });
     const total = sample.parts_total || slides.length;
-    for (let i = slides.length; i < Math.max(total, slides.length); i++) slides.push({ part: i, kicker: 'محتوى الكتاب', title: `الجزء ${i}`, html: '<p>يُفتح بعد الشراء.</p>', locked: true });
+    for (let i = slides.length; i < Math.max(total, slides.length); i++) slides.push({ part: i, kicker: 'محتوى الكتاب', title: `الجزء ${i}`, html: '<p>المحتوى الكامل غير متاح في هذه المعاينة.</p>', locked: true });
     const names = ['الغلاف'].concat((sample.preview || []).map((c) => `${c.k} · ${c.title}`));
     while (names.length < slides.length) names.push(`الجزء ${names.length}`);
     return { slides, names, free: Math.min(3, slides.length) };
@@ -45,8 +46,13 @@
 
   function render() {
     const s = deck[idx];
+    if (!s) return;
+    const focused = document.activeElement;
+    $('[data-prev]', root).disabled = idx === 0;
+    $('[data-next]', root).disabled = idx === deck.length - 1;
+    if (focused?.disabled && root.contains(focused)) { stage.tabIndex = 0; stage.focus({ preventScroll: true }); }
     const locked = !owned() && (idx >= freeUntil || s.locked);
-    stage.innerHTML = `<span class="slide__kicker">${esc(s.kicker)}</span><h2>${esc(s.title)}</h2>${locked ? '<p>🔒 هذا الجزء متاح بعد الشراء.</p>' : s.html}`;
+    stage.innerHTML = `<span class="slide__kicker">${esc(s.kicker)}</span><h2>${esc(s.title)}</h2>${locked ? '<p>🔒 هذا الجزء خارج المعاينة العامة. استفسر عن توفر المحتوى الكامل.</p>' : s.html}`;
     gate.hidden = !locked;
     counter.textContent = `${idx + 1} / ${deck.length}`;
     parts.querySelectorAll('button').forEach((b) => b.classList.toggle('is-active', +b.dataset.part === s.part));
@@ -55,9 +61,10 @@
     try { localStorage.setItem(`cc-reader-${slug}`, String(idx)); } catch { /* ignore */ }
   }
 
-  function go(n) { idx = Math.max(0, Math.min(deck.length - 1, n)); render(); }
+  function go(n) { if (!deck.length) return; idx = Math.max(0, Math.min(deck.length - 1, Number.isFinite(n) ? Math.floor(n) : 0)); render(); }
 
   function mount(data) {
+    if (!Array.isArray(data.slides) || !data.slides.length) throw new Error('Empty preview');
     deck = data.slides; freeUntil = data.free;
     parts.innerHTML = data.names.map((n, i) => `<button type="button" data-part="${i}" class="${!owned() && deck.findIndex((s) => s.part === i) >= freeUntil ? 'is-locked' : ''}"><i>${String(i + 1).padStart(2, '0')}</i><span>${esc(n)}</span></button>`).join('');
     thumbs.innerHTML = deck.map((_, i) => `<button type="button" aria-label="${i + 1}">${i + 1}</button>`).join('');
@@ -67,20 +74,25 @@
     go(start);
   }
 
-  $('[data-prev]', root).addEventListener('click', () => go(idx + (document.documentElement.dir === 'rtl' ? 1 : -1)));
-  $('[data-next]', root).addEventListener('click', () => go(idx + (document.documentElement.dir === 'rtl' ? -1 : 1)));
+  $('[data-prev]', root).addEventListener('click', () => go(idx - 1));
+  $('[data-next]', root).addEventListener('click', () => go(idx + 1));
   $('[data-fullscreen]', root).addEventListener('click', () => { root.classList.toggle('is-fullscreen'); if (root.classList.contains('is-fullscreen') && root.requestFullscreen) root.requestFullscreen().catch(() => {}); else if (document.fullscreenElement) document.exitFullscreen(); });
-  root.querySelectorAll('[data-notes-toggle]').forEach((b) => b.addEventListener('click', () => { notes.hidden = !notes.hidden; }));
+  function toggleNotes(open) { notes.hidden = !open; root.classList.toggle('is-notes-open', open); root.querySelectorAll('[data-notes-toggle]').forEach(b => b.setAttribute('aria-expanded', String(open))); if (open) $('[data-notes-text]', root)?.focus(); else $('[data-notes-toggle]', root)?.focus(); }
+  root.querySelectorAll('[data-notes-toggle]').forEach((b) => { b.setAttribute('aria-expanded', 'false'); b.addEventListener('click', () => toggleNotes(notes.hidden)); });
   const ta = $('[data-notes-text]', root);
   if (ta) { try { ta.value = localStorage.getItem(`cc-notes-${slug}`) || ''; } catch { /* ignore */ } ta.addEventListener('input', () => { try { localStorage.setItem(`cc-notes-${slug}`, ta.value); } catch { /* ignore */ } }); }
-  document.addEventListener('keydown', (e) => {
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !notes.hidden) { toggleNotes(false); return; }
     if (e.target.matches('textarea, input')) return;
-    if (e.key === 'ArrowRight') go(idx + 1); else if (e.key === 'ArrowLeft') go(idx - 1);
+    if (['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) e.preventDefault();
+    if (e.key === 'ArrowRight') go(idx + (root.dir === 'rtl' ? -1 : 1)); else if (e.key === 'ArrowLeft') go(idx + (root.dir === 'rtl' ? 1 : -1));
     else if (e.key === 'Home') go(0); else if (e.key === 'End') go(deck.length - 1);
     else if (e.key.toLowerCase() === 'f') $('[data-fullscreen]', root).click();
   });
 
+  document.addEventListener('fullscreenchange', () => root.classList.toggle('is-fullscreen', document.fullscreenElement === root));
   const sample = (() => { try { return JSON.parse($('[data-reader-sample]')?.textContent || '{}'); } catch { return {}; } })();
+  if (!root.dataset.manifest) { mount(fromSample(sample)); return; }
   fetch(root.dataset.manifest, { cache: 'no-store' })
     .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
     .then((m) => mount(fromManifest(m)))

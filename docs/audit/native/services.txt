@@ -7,6 +7,7 @@ Technology 6
 Creative 10
 Healthcare 5
 Combined 2
+Not sure?
 23 Productized
 services
 9 + Years across
@@ -152,28 +153,6 @@ Tell us the business problem — we'll propose the lightest engagement that gets
 Book a Free 30-Min Call
 WhatsApp · KSA (Tech)
 WhatsApp · EG (Creative)
-05 Freelancer? Connect to our development
-Freelancer?
-Connect to our development.
-We work with talented freelancers in design, engineering, and content across the region. Tell us your story — every serious application gets a reply.
-Design
-Engineering
-Content & Production
-Career
-Conversational form — fill what applies and send.
-Your Name * Please enter your name
-Live in?
-Email * Please enter a valid e-mail
-Your Skill Spark
-Your Chapters of Growth
-Portfolio URL
-CV URL
-Your Daily free time
-- Select - Daytime Nighttime
-Your Different Ink
-Your note
-Submit
-Opens in WhatsApp or e-mail until a form endpoint is connected.
 THE HOME OF BUSINESS DEVELOPMENT
 The Home of
 Business Development.

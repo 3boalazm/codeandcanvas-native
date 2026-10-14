@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """/creative-services/ — live copy of codeandcanvas.net/creative-services/."""
 from catalog import SERVICES
-from h import esc, t, icon, crumbs, closing, btn, page
+from h import esc, t, icon, crumbs, closing, btn, page, service_ld, PERSON_LD
 from pages_technology import detail, tags
 
 
@@ -55,39 +55,21 @@ def build():
         </div>
       </section>
 
-      <!-- ░░ Bio ░░ -->
-      <section class="section container section--tight" aria-labelledby="bio-title">
-        <article class="card glass person person--big" data-reveal>
-          <div class="art art--portrait art--pink" data-slot="team/mustafa-aboalazm"><span class="art__mark">MA</span><span class="art__cap" data-ar="✦ الكانفاس">✦ THE CANVAS</span></div>
-          <div>
-            <p class="person__role" data-ar="مهندس هويات منهجية">Systemic Identity Architect</p>
-            <h2 id="bio-title">Mustafa Aboalazm</h2>
-            <p class="person__tag" data-ar="شريك مؤسس · Code &amp; Canvas · العبور، مصر">Co-Founder · Code &amp; Canvas · Al Obour, Egypt</p>
-            <p data-ar="مصمم هوية بصرية أول ومستشار تطوير أعمال — أكثر من 9 سنوات، أكثر من 20 علامة، 6 قطاعات. مدير إعلام سابق في Nile Pharma Food. يصمم منظومات هوية متكاملة لمؤسسي منتجات SaaS وشركات الذكاء الاصطناعي الناشئة والمؤسسات التي يقودها التصميم في المنطقة.">Senior brand identity designer and business development consultant — 9+ years, 20+ brands, 6 sectors. Former Media Director at Nile Pharma Food. Designs full-cycle identity systems for SaaS founders, AI startups, and design-driven organizations across MENA.</p>
-            <div class="creds" aria-label="Skills" data-ar-label="المهارات"><span data-ar="استراتيجية العلامة">Brand Strategy</span><span data-ar="منظومات الشعار">Logo Systems</span><span data-ar="أنظمة التصميم">Design Systems</span><span>Next.js</span><span>WordPress</span><span data-ar="الإخراج الفني">Art Direction</span><span data-ar="عربي + إنجليزي">AR + EN</span><span data-ar="العبور، مصر">Al Obour, Egypt</span></div>
-            <div class="person__links">
-              <a href="https://aboalazm-os.vercel.app/" target="_blank" rel="noopener" title="Mustafa's Portfolio">{icon('link')}<span data-ar="الأعمال">Portfolio</span></a>
-              <a href="https://behance.net/aboalazm" target="_blank" rel="noopener">{icon('pen')}<span>Behance ↗</span></a>
-              <a href="https://wa.me/201092500454" target="_blank" rel="noopener">{icon('chat')}<span>WhatsApp ↗</span></a>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- ░░ Method ░░ -->
-      <section class="section container section--tight section--flush-top" id="method" aria-labelledby="method-title">
-        <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">01</span><span data-ar="منهجية من أربعة فصول · صُقلت على مدى 9 سنوات · متوسط 38 يومًا من الانطلاق إلى التسليم">4-ACT METHOD · REFINED OVER 9 YEARS · AVG. 38 DAYS KICKOFF → DELIVERY</span></p>
-          <h2 class="section__title" id="method-title"><span data-ar="أربعة فصول.">Four acts.</span> <span class="grad-text" data-ar="علامة واحدة تعمل.">One brand that works.</span></h2>
-        </header>
-        <ol class="steps">{acts}
-        </ol>
+      <!-- ░░ Proof ░░ -->
+      <section class="section container section--tight" id="proof" aria-labelledby="proof-title">
+        <div class="proof-band glass" data-reveal>
+          <div class="proof-band__item"><b>20+</b><span data-ar="علامة صُغناها عبر 6 قطاعات">brands shaped across 6 sectors</span></div>
+          <div class="proof-band__item"><b>4</b><span data-ar="فصول في كل مشروع هوية — من البحث إلى التسليم خلال 38 يومًا">acts in every identity engagement — research to delivery in 38 days</span></div>
+          <div class="proof-band__item"><b>AR + EN</b><span data-ar="أنظمة شعار ثنائية اللغة — عربي أولًا، إنجليزي بنفس الجودة">bilingual logo systems — Arabic-first, English to the same standard</span></div>
+          <div class="proof-band__item"><b>5 <small data-ar="سنوات">yrs</small></b><span data-ar="مدير إعلام في Nile Pharma Food — هوية بُنيت من الصفر وأُطلقت في السوق">Media Director at Nile Pharma Food — an identity built from zero and launched to market</span></div>
+          <a class="proof-band__link" href="https://behance.net/aboalazm" target="_blank" rel="noopener" data-track="portfolio" data-track-id="behance"><span data-ar="الأعمال على Behance">Work on Behance</span><i class="flip" data-icon="arrowUpRight"></i></a>
+        </div>
       </section>
 
       <!-- ░░ Services ░░ -->
       <section class="section container" id="services" aria-labelledby="svc-title">
         <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">02</span><span data-ar="10 خدمات إبداعية">10 Creative Services</span></p>
+          <p class="kicker"><span class="kicker__num">01</span><span data-ar="10 خدمات إبداعية">10 Creative Services</span></p>
           <h2 class="section__title" id="svc-title"><span data-ar="استراتيجية، هوية،">Strategy, identity,</span><br /><span class="grad-text" data-ar="أنظمة وإنتاج.">systems &amp; production.</span></h2>
         </header>
         <div class="toolbar" data-reveal>
@@ -126,7 +108,7 @@ def build():
       <section class="section container section--flush-top" id="a-la-carte" aria-labelledby="alc-title">
         <div class="head-split">
           <header class="section__head" data-reveal>
-            <p class="kicker"><span class="kicker__num">03</span><span data-ar="حسب القطعة — عناصر مستقلة">À la carte — Stand-alone pieces</span></p>
+            <p class="kicker"><span class="kicker__num">02</span><span data-ar="حسب القطعة — عناصر مستقلة">À la carte — Stand-alone pieces</span></p>
             <h2 class="section__title" id="alc-title"><span data-ar="قطعة واحدة.">Single pieces.</span> <span class="grad-text" data-ar="داخل نظام علامتك.">Inside your brand system.</span></h2>
           </header>
           <div class="head-aside" data-reveal style="--d:.15s">
@@ -136,6 +118,39 @@ def build():
         </div>
         <div class="grid grid--4 tiers" style="gap:12px">{alacarte}
         </div>
+      </section>
+
+      <!-- ░░ Method ░░ -->
+      <section class="section container section--tight" id="method" aria-labelledby="method-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">03</span><span data-ar="منهجية من أربعة فصول · صُقلت على مدى 9 سنوات · متوسط 38 يومًا من الانطلاق إلى التسليم">4-ACT METHOD · REFINED OVER 9 YEARS · AVG. 38 DAYS KICKOFF → DELIVERY</span></p>
+          <h2 class="section__title" id="method-title"><span data-ar="أربعة فصول.">Four acts.</span> <span class="grad-text" data-ar="علامة واحدة تعمل.">One brand that works.</span></h2>
+        </header>
+        <ol class="steps">{acts}
+        </ol>
+      </section>
+
+      <!-- ░░ Bio ░░ -->
+      <section class="section container section--tight" id="who" aria-labelledby="bio-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">04</span><span data-ar="من يقود التنفيذ">WHO DELIVERS</span></p>
+          <h2 class="section__title" style="font-size:clamp(26px,3vw,40px)"><span data-ar="مؤسس واحد يقود كل مشروع إبداعي —">One founder leads every creative engagement —</span> <span class="grad-text" data-ar="من الموجز إلى التسليم.">brief to handover.</span></h2>
+        </header>
+        <article class="card glass person person--big" data-reveal>
+          <div class="art art--portrait art--pink" data-slot="team/mustafa-aboalazm"><span class="art__mark">MA</span><span class="art__cap" data-ar="✦ الكانفاس">✦ THE CANVAS</span></div>
+          <div>
+            <p class="person__role" data-ar="مهندس هويات منهجية">Systemic Identity Architect</p>
+            <h2 id="bio-title">Mustafa Aboalazm</h2>
+            <p class="person__tag" data-ar="شريك مؤسس · Code &amp; Canvas · العبور، مصر">Co-Founder · Code &amp; Canvas · Al Obour, Egypt</p>
+            <p data-ar="مصمم هوية بصرية أول ومستشار تطوير أعمال — أكثر من 9 سنوات، أكثر من 20 علامة، 6 قطاعات. مدير إعلام سابق في Nile Pharma Food. يصمم منظومات هوية متكاملة لمؤسسي منتجات SaaS وشركات الذكاء الاصطناعي الناشئة والمؤسسات التي يقودها التصميم في المنطقة.">Senior brand identity designer and business development consultant — 9+ years, 20+ brands, 6 sectors. Former Media Director at Nile Pharma Food. Designs full-cycle identity systems for SaaS founders, AI startups, and design-driven organizations across MENA.</p>
+            <div class="creds" aria-label="Skills" data-ar-label="المهارات"><span data-ar="استراتيجية العلامة">Brand Strategy</span><span data-ar="منظومات الشعار">Logo Systems</span><span data-ar="أنظمة التصميم">Design Systems</span><span>Next.js</span><span>WordPress</span><span data-ar="الإخراج الفني">Art Direction</span><span data-ar="عربي + إنجليزي">AR + EN</span><span data-ar="العبور، مصر">Al Obour, Egypt</span></div>
+            <div class="person__links">
+              <a href="https://aboalazm-os.vercel.app/" target="_blank" rel="noopener" title="Mustafa's Portfolio">{icon('link')}<span data-ar="الأعمال">Portfolio</span></a>
+              <a href="https://behance.net/aboalazm" target="_blank" rel="noopener">{icon('pen')}<span>Behance ↗</span></a>
+              <a href="https://wa.me/201092500454" target="_blank" rel="noopener">{icon('chat')}<span>WhatsApp ↗</span></a>
+            </div>
+          </div>
+        </article>
       </section>
 
       <!-- ░░ CTA ░░ -->
@@ -169,7 +184,7 @@ def build():
     return [page('/creative-services/', title='Creative Services — Code & Canvas', title_ar='الخدمات الإبداعية — Code & Canvas',
                  desc='Identity built as an operating system: 10 creative services — logo sprint, brand identity essentials, full brand system, design systems, web, print, production, and retainers — led by Mustafa Aboalazm. Bilingual AR/EN.',
                  desc_ar='هوية مبنية كنظام تشغيل: 10 خدمات إبداعية — سبرنت شعار وأساسيات الهوية ومنظومة العلامة الكاملة وأنظمة التصميم والويب والمطبوعات والإنتاج والاشتراكات — بقيادة مصطفى أبو العزم. ثنائية اللغة عربي/إنجليزي.',
-                 nav='services', body=body)]
+                 nav='services', body=body, ld=[service_ld([c for c in SERVICES if c.startswith('MA-')], 'https://codeandcanvas.net/creative-services/'), PERSON_LD['mustafa']])]
 
 
 def _d(code, cat, **kw):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """/team/ — live copy of codeandcanvas.net/team/."""
-from h import esc, icon, crumbs, closing, btn, page
+from h import esc, icon, crumbs, closing, btn, page, PERSON_LD
 
 FLAGSHIPS = [
     (['Canvas', 'Code'], 'Venture Launch 0 → 1', 'إطلاق مشروع من 0 إلى 1',
@@ -49,7 +49,7 @@ def build():
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="Code &amp; Canvas · الاستوديو">Code &amp; Canvas · The Studio</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="عقلان.">Two Minds.</span> <span class="grad-text" data-ar="منظومة واحدة.">One Ecosystem.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="لسنا وكالة من 100 شخص. بل استوديو رشيق بشريكين حيث تعمل &lt;strong&gt;عمارة العلامة&lt;/strong&gt; و&lt;strong&gt;الهندسة الرقمية&lt;/strong&gt; كنظام واحد متكامل — من أول جلسة استراتيجية إلى يوم الإطلاق.">Not a 100-person agency. A lean, two-partner studio where <strong>brand architecture</strong> and <strong>digital engineering</strong> operate as one integrated system — from the first strategy session to launch day.</p>
-        <nav class="subnav" aria-label="Founders" data-ar-label="المؤسسان" data-reveal style="--d:.22s"><a href="#ahmed" data-ar="الكود">The Code</a><a href="#mustafa" data-ar="الكانفاس">The Canvas</a><a href="#together" data-ar="لماذا معًا">Why Together</a></nav>
+        <nav class="subnav" aria-label="Founders" data-ar-label="المؤسسان" data-reveal style="--d:.22s"><a href="#ahmed" data-ar="الكود">The Code</a><a href="#mustafa" data-ar="الكانفاس">The Canvas</a><a href="#together" data-ar="لماذا معًا">Why Together</a><a href="#career" data-ar="انضم إلينا">Join us</a></nav>
       </section>
 
       <!-- ░░ Founders ░░ -->
@@ -101,6 +101,44 @@ def build():
         </div>
       </section>
 
+      <!-- ░░ Freelancer / career form ░░ -->
+      <section class="section container section--tight" id="career" aria-labelledby="career-title">
+        <div class="grid grid--side-l">
+          <header class="section__head sticky" data-reveal>
+            <p class="kicker"><span class="kicker__num">02</span><span data-ar="مستقل؟ انضم إلى تطويرنا">Freelancer? Connect to our development</span></p>
+            <h2 class="section__title" id="career-title"><span data-ar="مستقل؟">Freelancer?</span><br /><span class="grad-text" data-ar="انضم إلى فريق تطويرنا.">Connect to our development.</span></h2>
+            <p class="section__lead" data-ar="نعمل مع مستقلين موهوبين في التصميم والهندسة والمحتوى من المنطقة. أخبرنا بقصتك — نردّ على كل طلب جادّ.">We work with talented freelancers in design, engineering, and content across the region. Tell us your story — every serious application gets a reply.</p>
+            <ul class="hero__chips" aria-label="What we look for" data-ar-label="ما الذي نبحث عنه"><li>{icon('pen')}<span data-ar="التصميم">Design</span></li><li>{icon('layers')}<span data-ar="الهندسة">Engineering</span></li><li>{icon('sparkles')}<span data-ar="المحتوى والإنتاج">Content &amp; Production</span></li></ul>
+          </header>
+          <form class="form-card glass form" data-form="contact" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Freelancer application — Code &amp; Canvas" data-endpoint="" novalidate data-reveal>
+            <h3 data-ar="الطلب">Career</h3>
+            <p class="lead" data-ar="نموذج حواري — املأ ما يناسبك وأرسل.">Conversational form — fill what applies and send.</p>
+            <input class="hp" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <input type="hidden" name="inquiry" value="Freelancer / Career" />
+            <div class="form__row">
+              <div class="field"><label for="f-name" data-ar-html="اسمك &lt;i&gt;*&lt;/i&gt;">Your Name <i>*</i></label><input id="f-name" name="name" type="text" required autocomplete="name" /><span class="field__err" data-ar="أدخل اسمك">Please enter your name</span></div>
+              <div class="field"><label for="f-city" data-ar="تعيش في؟">Live in?</label><input id="f-city" name="live_in" type="text" autocomplete="address-level2" /></div>
+            </div>
+            <div class="field"><label for="f-email" data-ar-html="البريد الإلكتروني &lt;i&gt;*&lt;/i&gt;">Email <i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email" /><span class="field__err" data-ar="أدخل بريدًا صحيحًا">Please enter a valid e-mail</span></div>
+            <div class="field"><label for="f-spark" data-ar="شرارة مهارتك">Your Skill Spark</label><input id="f-spark" name="skill_spark" type="text" placeholder="Brand design · Next.js · Motion · Copywriting…" data-ar-placeholder="تصميم هوية · Next.js · موشن · كتابة محتوى…" /></div>
+            <div class="field"><label for="f-growth" data-ar="فصول نموّك">Your Chapters of Growth</label><textarea id="f-growth" name="chapters_of_growth" rows="3" placeholder="Where you started, what you've shipped, what you're learning now." data-ar-placeholder="من أين بدأت، وماذا أنجزت، وماذا تتعلم الآن."></textarea></div>
+            <div class="form__row">
+              <div class="field"><label for="f-portfolio" data-ar="رابط الأعمال">Portfolio URL</label><input id="f-portfolio" name="portfolio_url" type="url" placeholder="https://" /></div>
+              <div class="field"><label for="f-cv" data-ar="رابط السيرة الذاتية">CV URL</label><input id="f-cv" name="cv_url" type="url" placeholder="https://" /></div>
+            </div>
+            <div class="field"><label for="f-time" data-ar="وقت فراغك اليومي">Your Daily free time</label>
+              <select id="f-time" name="daily_free_time"><option value="" data-ar="- اختر -">- Select -</option><option value="Daytime" data-ar="نهارًا">Daytime</option><option value="Nighttime" data-ar="ليلًا">Nighttime</option></select></div>
+            <div class="field"><label for="f-ink" data-ar="حبرك المختلف">Your Different Ink</label><input id="f-ink" name="different_ink" type="text" placeholder="What makes your work unmistakably yours?" data-ar-placeholder="ما الذي يجعل عملك مميزًا بلا شك؟" /></div>
+            <div class="field"><label for="f-note" data-ar="ملاحظتك">Your note</label><textarea id="f-note" name="message" rows="3"></textarea></div>
+            <div class="form__actions">
+              <button class="btn btn--primary magnetic" type="submit"><span data-ar="إرسال">Submit</span><i class="flip" data-icon="arrowUpRight"></i></button>
+              <span class="field__hint" data-ar="يُفتح طلبك في واتساب أو البريد حتى يُربط النموذج بخدمة إرسال.">Opens in WhatsApp or e-mail until a form endpoint is connected.</span>
+            </div>
+            <div class="form__status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
       <!-- ░░ CTA ░░ -->
       <section class="section container section--tight" aria-labelledby="cta-title">
         <div class="callout glass glass--deep" data-reveal>
@@ -121,4 +159,4 @@ def build():
     return [page('/team/', title='Team — Code & Canvas', title_ar='الفريق — Code & Canvas',
                  desc='Two minds, one ecosystem. Ahmed M. Bedeer (Enterprise Architect) and Mustafa Aboalazm (Creative Director) — a lean two-partner studio where brand architecture and digital engineering operate as one system.',
                  desc_ar='عقلان ومنظومة واحدة. أحمد بدير (مهندس معماري مؤسسي) ومصطفى أبو العزم (مدير إبداعي) — استوديو رشيق بشريكين تعمل فيه عمارة العلامة والهندسة الرقمية كنظام واحد.',
-                 nav='about', body=body)]
+                 nav='about', body=body, ld=[PERSON_LD['ahmed'], PERSON_LD['mustafa']])]

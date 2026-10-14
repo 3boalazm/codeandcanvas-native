@@ -12,16 +12,6 @@ frameworks
 readiness achieved
 12 + Tech &
 compliance stds
-AB { } THE CODE
-Enterprise Architect · Digital Transformation Specialist
-Ahmed Bedeer
-Co-Founder · Code & Canvas · Al Khobar, KSA
-Enterprise Architect and Digital Transformation Specialist with 7+ years in KSA — working across healthcare, government, and private sector. CPHIMS-certified with active HIMSS EMRAM assessment experience. Expertise in TOGAF/NORA architecture, HIS vendor selection, cloud migration, data analytics, and EA capability building aligned to Vision 2030.
-TOGAF NORA CPHIMS EMRAM ArchiMate Sparx EA Java · Spring Power BI FHIR · HL7 Vision 2030
-Portfolio
-Book a Call →
-LinkedIn
-GitHub
 01 ACTIVE CREDENTIALS · NOT LISTED FRAMEWORKS
 Credentials used in every relevant engagement.
 CPHIMS
@@ -178,6 +168,18 @@ Executive One-Pagers
 Slide decks and concise summaries that translate architecture into investment, risk, and outcome language for the board — so the decision-makers can decide, not just observe.
 Walkthroughs
 Short, focused walkthroughs of design philosophy and trade-offs — multi-modal content so every stakeholder gets it, regardless of their technical depth.
+06 WHO DELIVERS
+One founder leads every technology engagement — not a sales team.
+AB { } THE CODE
+Enterprise Architect · Digital Transformation Specialist
+Ahmed Bedeer
+Co-Founder · Code & Canvas · Al Khobar, KSA
+Enterprise Architect and Digital Transformation Specialist with 7+ years in KSA — working across healthcare, government, and private sector. CPHIMS-certified with active HIMSS EMRAM assessment experience. Expertise in TOGAF/NORA architecture, HIS vendor selection, cloud migration, data analytics, and EA capability building aligned to Vision 2030.
+TOGAF NORA CPHIMS EMRAM ArchiMate Sparx EA Java · Spring Power BI FHIR · HL7 Vision 2030
+Portfolio
+Book a Call →
+LinkedIn
+GitHub
 START AN ENGAGEMENT
 Have a transformation
 to architect?

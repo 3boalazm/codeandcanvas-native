@@ -208,4 +208,4 @@ def build():
     return [page('/pricing-faq/', title='Pricing & FAQ — Code & Canvas', title_ar='الأسعار والأسئلة الشائعة — Code & Canvas',
                  desc='Transparent pricing, no surprises. Milestone-based payment, 23 productized services with fixed scope across technology, brand, data, and healthcare — plus answers to the questions we hear most.',
                  desc_ar='أسعار شفافة بلا مفاجآت. دفعات حسب المعالم و23 خدمة مُنتجة بنطاق ثابت عبر التقنية والهوية والبيانات والرعاية الصحية — مع إجابات عن أكثر الأسئلة شيوعًا.',
-                 nav='services', body=body)]
+                 nav='pricing', body=body)]

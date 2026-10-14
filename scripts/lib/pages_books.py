@@ -219,7 +219,14 @@ def book_page(b, idx):
                'أسئلة عن هذا الكتاب أو تراخيص جماعية أو نسخة تدريبية مخصصة؟ كلمنا.',
                [btn('Book an Appointment', 'احجز موعدًا', '/contact/#book'), btn('Get Started', 'ابدأ الآن', '/contact/', 'glass'), btn('Full Services', 'كل الخدمات', '/services/', 'ghost', 'arrow')])}
 '''
-    return page(f'/books/{b["slug"]}/', title=f'{b["title"]} — {b["title_ar"]} · Code & Canvas', title_ar=f'{b["title_ar"]} — {b["title"]} · Code & Canvas',
+    book_ld = {'@type': 'Book', 'name': b['title'], 'alternateName': b['title_ar'], 'description': b['lede'], 'inLanguage': 'ar',
+               'bookFormat': 'https://schema.org/EBook', 'url': f'https://codeandcanvas.net/books/{b["slug"]}/',
+               'author': {'@type': 'Organization', '@id': 'https://codeandcanvas.net/#org'} if b['author'].startswith('Code') else {'@type': 'Person', 'name': 'Mustafa Aboalazm'},
+               'publisher': {'@id': 'https://codeandcanvas.net/#org'}, 'image': 'https://codeandcanvas.net/assets/brand/og-default.png'}
+    if b['available']:
+        book_ld['offers'] = {'@type': 'Offer', 'price': str(b['price']), 'priceCurrency': 'SAR', 'availability': 'https://schema.org/InStock',
+                             'url': f'https://codeandcanvas.net/books/{b["slug"]}/', 'seller': {'@id': 'https://codeandcanvas.net/#org'}}
+    return page(f'/books/{b["slug"]}/', title=f'{b["title"]} — {b["title_ar"]} · Code & Canvas', title_ar=f'{b["title_ar"]} — {b["title"]} · Code & Canvas', ld=[book_ld],
                 desc=b['lede'], desc_ar=b['lede_ar'], nav='books', body=body, og_type='book', scripts=('/assets/js/pages.js', '/assets/js/shop.js'))
 
 

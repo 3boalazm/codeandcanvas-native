@@ -27,6 +27,7 @@
     const hit = cart.find((i) => i.id === id);
     if (hit) hit.qty = 1; // books are single-licence items
     else cart.push({ id, title: btn.dataset.title, title_ar: btn.dataset.titleAr || btn.dataset.title, price: +btn.dataset.price || 0, currency: btn.dataset.currency || 'SAR', qty: 1 });
+    if (window.CC && CC.track) CC.track('add-to-cart', { id, price: +btn.dataset.price || 0 });
     save(cart);
     toast(t('Added to cart', 'تمت الإضافة إلى السلة'));
     btn.classList.add('is-done');
@@ -95,6 +96,7 @@
       items: cart, subtotal: total(cart), total: total(cart), currency: cart[0]?.currency || 'SAR',
     };
     sessionStorage.setItem('cc-last-order', JSON.stringify(order));
+    if (window.CC && CC.track) CC.track('checkout', { id: order.id, total: order.total, currency: order.currency, pay: order.pay, items: cart.length });
     sessionStorage.setItem('cc-demo-note', t(`Payment integration pending — books unlocked in demo mode.`, `تكامل الدفع قيد التجهيز — فُتحت الكتب في وضع العرض.`));
     location.href = '/thank-you/';
   }

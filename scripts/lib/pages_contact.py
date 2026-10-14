@@ -34,57 +34,8 @@ def build():
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar="كل مشروع يبدأ بمحادثة. اختر القناة الأنسب لك — وسنرد خلال يوم عمل واحد.">Every engagement starts with a conversation. Pick the channel that works best for you — we'll respond within one business day.</p>
       </section>
 
-      <!-- ░░ Channels ░░ -->
-      <section class="section container section--tight" aria-label="Contact channels" data-ar-label="قنوات التواصل">
-        <div class="contact-grid">
-          <article class="card glass contact-card" data-reveal>
-            <span class="card__icon">{icon('phoneCall')}</span>
-            <h3 data-ar="تواصل مباشر">Direct Contact</h3>
-            <ul class="kv">
-              <li><span data-ar="الهاتف · السعودية">Phone · KSA</span><a class="ltr" href="tel:+966545520750">+966 545 520 750</a></li>
-              <li><span data-ar="الهاتف · مصر">Phone · Egypt</span><a class="ltr" href="tel:+201092500454">+20 109 250 0454</a></li>
-              <li><span data-ar="البريد الإلكتروني">Email</span><a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a></li>
-            </ul>
-            <div class="person__links" style="margin-top:auto">
-              <a href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener" title="Ahmed's Portfolio">{icon('link')}<span data-ar="أعمال أحمد">Ahmed · Portfolio</span></a>
-              <a href="https://aboalazm-os.vercel.app/" target="_blank" rel="noopener" title="Mustafa's Portfolio">{icon('link')}<span data-ar="أعمال مصطفى">Mustafa · Portfolio</span></a>
-              <a href="https://linkedin.com/in/ahmed-bedeer" target="_blank" rel="noopener" title="LinkedIn">{icon('linkedin')}<span>LinkedIn</span></a>
-              <a href="https://behance.net/aboalazm" target="_blank" rel="noopener" title="Behance">{icon('pen')}<span>Behance</span></a>
-            </div>
-          </article>
-          <article class="card glass contact-card" data-reveal style="--d:.08s">
-            <span class="card__icon">{icon('pin')}</span>
-            <h3 data-ar="مواقعنا">Our Locations</h3>
-            <ul class="kv">
-              <li><span data-ar="مكتب السعودية">KSA Office</span><b data-ar="المروج، الرياض · الخبر · السعودية">Al Murouj, Riyadh · Al Khobar · KSA</b></li>
-              <li><span data-ar="مكتب مصر">Egypt Office</span><b data-ar="مدينة العبور · القاهرة · مصر">Al Obour City · Cairo · Egypt</b></li>
-            </ul>
-            <div class="contact-maps">
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Murouj,+Riyadh,+Saudi+Arabia" target="_blank" rel="noopener"><span data-ar="الرياض على الخريطة">Riyadh on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Khobar,+Saudi+Arabia" target="_blank" rel="noopener"><span data-ar="الخبر على الخريطة">Al Khobar on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Obour+City,+Cairo,+Egypt" target="_blank" rel="noopener"><span data-ar="العبور على الخريطة">Al Obour on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
-            </div>
-            <div class="art art--wide art--map" data-slot="contact/map" aria-hidden="true" style="margin-top:auto;aspect-ratio:16/7"><span class="art__cap" data-ar="الرياض · الخبر · القاهرة">RIYADH · AL KHOBAR · CAIRO</span></div>
-          </article>
-          <article class="card glass contact-card contact-card--wa" data-reveal style="--d:.16s">
-            <span class="card__icon">{icon('chat')}</span>
-            <h3 data-ar="أسرع استجابة">Fastest Response</h3>
-            <a class="wa-big" href="https://wa.me/966545520750" target="_blank" rel="noopener">
-              <strong data-ar="راسلنا على واتساب">Message us on WhatsApp</strong>
-              <span data-ar="نرد عادةً خلال ساعات قليلة">Usually replies within a few hours</span>
-            </a>
-            <p class="kicker" style="margin-top:auto"><span data-ar="تابعنا">Follow Us</span></p>
-            <div class="person__links">
-              <a href="https://behance.net/aboalazm" target="_blank" rel="noopener" title="Behance">{icon('pen')}<span>Behance</span></a>
-              <a href="https://linkedin.com/in/ahmed-bedeer" target="_blank" rel="noopener" title="LinkedIn">{icon('linkedin')}<span>LinkedIn</span></a>
-              <a href="https://github.com/ahmedbdeer" target="_blank" rel="noopener" title="GitHub">{icon('github')}<span>GitHub</span></a>
-            </div>
-          </article>
-        </div>
-      </section>
-
       <!-- ░░ Form + booking ░░ -->
-      <section class="section container section--flush-top" id="message" aria-labelledby="form-title">
+      <section class="section container section--tight" id="message" aria-labelledby="form-title">
         <div class="grid grid--side">
           <form class="form-card glass form" data-form="contact" data-whatsapp="966545520750" data-mail="info@codeandcanvas.net" data-subject="Website inquiry — Code &amp; Canvas" data-endpoint="" novalidate data-reveal>
             <h2 id="form-title" data-ar="أرسل لنا رسالة">Send us a message</h2>
@@ -142,11 +93,55 @@ def build():
         </div>
       </section>
 
-      {closing("CAN'T WAIT TO HEAR FROM YOU", 'نتطلع لسماعك',
-               '<span data-ar="لا نطيق الانتظار">Can’t Wait To</span><br /><span class="grad-text" data-ar="لنسمع منك.">Hear From You.</span>',
-               'Book an appointment, start with our story, or browse the services.',
-               'احجز موعدًا، أو ابدأ بقصتنا، أو تصفّح الخدمات.',
-               [btn('Book an Appointment', 'احجز موعدًا', '#book', 'primary', 'calendar'), btn('Get Started', 'ابدأ الآن', '/our-story/', 'glass'), btn('Services', 'الخدمات', '/services/', 'ghost', 'arrow')], contact=False)}
+      <!-- ░░ Channels ░░ -->
+      <section class="section container section--tight section--flush-top" id="channels" aria-label="Contact channels" data-ar-label="قنوات التواصل">
+        <div class="contact-grid">
+          <article class="card glass contact-card" data-reveal>
+            <span class="card__icon">{icon('phoneCall')}</span>
+            <h3 data-ar="تواصل مباشر">Direct Contact</h3>
+            <ul class="kv">
+              <li><span data-ar="الهاتف · السعودية">Phone · KSA</span><a class="ltr" href="tel:+966545520750">+966 545 520 750</a></li>
+              <li><span data-ar="الهاتف · مصر">Phone · Egypt</span><a class="ltr" href="tel:+201092500454">+20 109 250 0454</a></li>
+              <li><span data-ar="البريد الإلكتروني">Email</span><a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a></li>
+            </ul>
+            <div class="person__links" style="margin-top:auto">
+              <a href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener" title="Ahmed's Portfolio">{icon('link')}<span data-ar="أعمال أحمد">Ahmed · Portfolio</span></a>
+              <a href="https://aboalazm-os.vercel.app/" target="_blank" rel="noopener" title="Mustafa's Portfolio">{icon('link')}<span data-ar="أعمال مصطفى">Mustafa · Portfolio</span></a>
+              <a href="https://linkedin.com/in/ahmed-bedeer" target="_blank" rel="noopener" title="LinkedIn">{icon('linkedin')}<span>LinkedIn</span></a>
+              <a href="https://behance.net/aboalazm" target="_blank" rel="noopener" title="Behance">{icon('pen')}<span>Behance</span></a>
+            </div>
+          </article>
+          <article class="card glass contact-card" data-reveal style="--d:.08s">
+            <span class="card__icon">{icon('pin')}</span>
+            <h3 data-ar="مواقعنا">Our Locations</h3>
+            <ul class="kv">
+              <li><span data-ar="مكتب السعودية">KSA Office</span><b data-ar="المروج، الرياض · الخبر · السعودية">Al Murouj, Riyadh · Al Khobar · KSA</b></li>
+              <li><span data-ar="مكتب مصر">Egypt Office</span><b data-ar="مدينة العبور · القاهرة · مصر">Al Obour City · Cairo · Egypt</b></li>
+            </ul>
+            <div class="contact-maps">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Murouj,+Riyadh,+Saudi+Arabia" target="_blank" rel="noopener"><span data-ar="الرياض على الخريطة">Riyadh on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Khobar,+Saudi+Arabia" target="_blank" rel="noopener"><span data-ar="الخبر على الخريطة">Al Khobar on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Obour+City,+Cairo,+Egypt" target="_blank" rel="noopener"><span data-ar="العبور على الخريطة">Al Obour on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            </div>
+            <div class="art art--wide art--map" data-slot="contact/map" aria-hidden="true" style="margin-top:auto;aspect-ratio:16/7"><span class="art__cap" data-ar="الرياض · الخبر · القاهرة">RIYADH · AL KHOBAR · CAIRO</span></div>
+          </article>
+          <article class="card glass contact-card contact-card--wa" data-reveal style="--d:.16s">
+            <span class="card__icon">{icon('chat')}</span>
+            <h3 data-ar="أسرع استجابة">Fastest Response</h3>
+            <a class="wa-big" href="https://wa.me/966545520750" target="_blank" rel="noopener">
+              <strong data-ar="راسلنا على واتساب">Message us on WhatsApp</strong>
+              <span data-ar="نرد عادةً خلال ساعات قليلة">Usually replies within a few hours</span>
+            </a>
+            <p class="kicker" style="margin-top:auto"><span data-ar="تابعنا">Follow Us</span></p>
+            <div class="person__links">
+              <a href="https://behance.net/aboalazm" target="_blank" rel="noopener" title="Behance">{icon('pen')}<span>Behance</span></a>
+              <a href="https://linkedin.com/in/ahmed-bedeer" target="_blank" rel="noopener" title="LinkedIn">{icon('linkedin')}<span>LinkedIn</span></a>
+              <a href="https://github.com/ahmedbdeer" target="_blank" rel="noopener" title="GitHub">{icon('github')}<span>GitHub</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
 '''
     return [page('/contact/', title='Contact — Code & Canvas', title_ar='تواصل معنا — Code & Canvas',
                  desc='Every engagement starts with a conversation. Call, e-mail, or WhatsApp Code & Canvas in KSA (+966 545 520 750) or Egypt (+20 109 250 0454), send a message, or book a free 30-minute strategy call.',

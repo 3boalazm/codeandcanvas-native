@@ -235,7 +235,7 @@ def thank_you():
         ('3', 'Access or kickoff', 'الوصول أو الانطلاق', 'Books unlock in your library immediately. Service orders get a kickoff session and milestone delivery per the agreed scope.', 'الكتب تتفتح في مكتبتك فورًا. طلبات الخدمات بنحددلها موعد أول اجتماع وبنبدأ تسليم المراحل حسب الـ scope المتفق عليه.', 'Within 48–72 hours', 'خلال 48–72 ساعة'),
     ]
     steps_html = ''.join(f'''
-            <li class="step glass"><span class="step__n">{n}</span><div><b data-ar="{esc(ta)}">{esc(te)}</b><p data-ar="{esc(da)}">{esc(de)}</p></div><small data-ar="{esc(wa)}">{esc(we)}</small></li>''' for n, te, ta, de, da, we, wa in steps)
+            <li class="tstep glass"><span class="tstep__n">{n}</span><div><b data-ar="{esc(ta)}">{esc(te)}</b><p data-ar="{esc(da)}">{esc(de)}</p></div><small data-ar="{esc(wa)}">{esc(we)}</small></li>''' for n, te, ta, de, da, we, wa in steps)
     body = f'''
       <section class="phero container" aria-labelledby="page-title">
         {crumbs([('Home', 'الرئيسية', '/'), ('Checkout', 'إتمام الشراء', '/checkout/'), ('Thank you', 'شكرًا', None)])}
@@ -246,7 +246,7 @@ def thank_you():
             <p class="hero__lead" data-reveal style="--d:.1s" data-ar="طلبك وصلنا وبنراجعه دلوقتي. هتوصلك رسالة تأكيد على الإيميل خلال دقائق — والكتب المشتراة تظهر في مكتبتك فورًا.">Your order is in and we’re reviewing it now. A confirmation e-mail arrives within minutes — purchased books appear in your library immediately.</p>
             <p class="notice notice--inline" data-demo-note hidden style="margin:14px 0 0;max-width:620px"></p>
             <h2 class="section__title" style="font-size:clamp(20px,2vw,26px);margin-top:34px" data-reveal data-ar="الخطوات الجاية">What happens next</h2>
-            <ol class="steps" data-reveal>{steps_html}
+            <ol class="tsteps" data-reveal>{steps_html}
             </ol>
             <div class="btn-row" style="margin-top:28px" data-reveal>{btn('Account Center', 'مركز الحساب', '/account/', 'primary', 'user')}{btn('Browse books', 'تصفّح الكتب', '/books/', 'glass', 'book')}{btn('Explore services', 'استكشف الخدمات', '/services/', 'glass', 'grid')}{btn('Home', 'الرئيسية', '/', 'ghost', 'home')}</div>
           </div>

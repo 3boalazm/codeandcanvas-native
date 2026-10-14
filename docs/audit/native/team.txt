@@ -2,7 +2,7 @@ Home › About › Team
 Code & Canvas · The Studio
 Two Minds. One Ecosystem.
 Not a 100-person agency. A lean, two-partner studio where brand architecture and digital engineering operate as one integrated system — from the first strategy session to launch day.
-The Code The Canvas Why Together
+The Code The Canvas Why Together Join us
 { } { } The Code
 { } The Code
 Ahmed M. Bedeer
@@ -51,6 +51,28 @@ BI · Analytics Visual
 Executive Data Intelligence
 Ahmed builds the EDW + dashboards + predictive models. Mustafa designs the data language and executive-facing reports. Decision intelligence that performs AND communicates.
 Learn more →
+02 Freelancer? Connect to our development
+Freelancer?
+Connect to our development.
+We work with talented freelancers in design, engineering, and content across the region. Tell us your story — every serious application gets a reply.
+Design
+Engineering
+Content & Production
+Career
+Conversational form — fill what applies and send.
+Your Name * Please enter your name
+Live in?
+Email * Please enter a valid e-mail
+Your Skill Spark
+Your Chapters of Growth
+Portfolio URL
+CV URL
+Your Daily free time
+- Select - Daytime Nighttime
+Your Different Ink
+Your note
+Submit
+Opens in WhatsApp or e-mail until a form endpoint is connected.
 One brief. Two disciplines. Zero handoff gaps.
 Every engagement at Code & Canvas runs on a single shared brief — no lost context between the brand desk and the architecture board. That's the efficiency premium you get from a two-partner studio.
 Book a Free Discovery Call

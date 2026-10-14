@@ -349,7 +349,7 @@
   }
 
   function bindChrome() {
-    $('#langBtn')?.addEventListener('click', () => setLang(lang === 'ar' ? 'en' : 'ar'));
+    $('#langBtn')?.addEventListener('click', () => { track('lang-toggle', { to: lang === 'ar' ? 'en' : 'ar' }); setLang(lang === 'ar' ? 'en' : 'ar'); });
 
     // Mark the current page in the shared header: <body data-nav="services"> ↔ <a data-key="services">
     const key = document.body.dataset.nav;
@@ -371,6 +371,28 @@
       });
     }
   }
+
+  /* ------------------------------------------------------------------ */
+  /*  Measurement hook (provider-agnostic)                               */
+  /*  CC.track(name, props) → window.dataLayer (GTM / GA4 ready) + a      */
+  /*  `cc:track` DOM event. No third-party script ships with the site;    */
+  /*  wire a provider by listening to the event or loading GTM.           */
+  /*  Elements opt in with data-track="name" (+ data-track-* props).      */
+  /* ------------------------------------------------------------------ */
+  function track(name, props = {}) {
+    const payload = { event: 'cc', name, lang, path: location.pathname, ...props };
+    try { (window.dataLayer = window.dataLayer || []).push(payload); } catch (e) { /* ignore */ }
+    try { document.dispatchEvent(new CustomEvent('cc:track', { detail: payload })); } catch (e) { /* ignore */ }
+    return payload;
+  }
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-track]');
+    if (!el) return;
+    const props = {};
+    Object.keys(el.dataset).forEach((k) => { if (k !== 'track' && k.startsWith('track')) props[k.slice(5).toLowerCase()] = el.dataset[k]; });
+    if (el.href) props.href = el.getAttribute('href');
+    track(el.dataset.track, props);
+  }, { capture: true, passive: true });
 
   let toastTimer;
   function toast(msg) {
@@ -436,7 +458,7 @@
   window.CC = {
     $, $$, esc, icon, ICONS, reduceMotion, finePointer,
     get lang() { return lang; },
-    t, num, splitWords, setLang, toast, refresh, boot, countUp, pointer,
+    t, num, splitWords, setLang, toast, track, refresh, boot, countUp, pointer,
     onLang: (fn) => listeners.push(fn),
     onFrame: (fn) => frameCallbacks.push(fn),
     onReady: (fn) => readyCallbacks.push(fn),

@@ -14,13 +14,10 @@ served
 services
 2 Countries
 KSA · Egypt
-Studio · At a Glance
-One discipline. Two tracks. Zero open-ended retainers.
-Every engagement — brand, technology, or combined — is anchored in Business Development logic. We don't deliver outputs. We deliver alignment between your goals, capabilities, and assets.
-Technology Track — EA, Healthcare IT, Cloud, Data
-Creative Track — Brand Identity, Design Systems, Digital Launch
-Combined Engagements — Clinic Digital Launch, Healthcare BI
-Serving — KSA · Egypt · MENA private & public sector
+Our Position
+Business development delivered through technology and design — not despite them.
+Most studios separate brand from technology. Most consultancies separate strategy from delivery. We built Code & Canvas to collapse those gaps — into a single studio, two specialist tracks, and a shared commercial discipline that makes both more effective.
+Enterprise Architecture Brand Identity Healthcare IT Digital Transformation Data & Analytics MENA · KSA · Egypt Vision 2030 Aligned TOGAF · CPHIMS · NORA
 01 Why Code & Canvas
 Not a generic studio.
 Not a consultancy either.
@@ -74,6 +71,13 @@ CC-01 · Digital Launch Package
 CC-02 · Business Development Advisory
 HC-01 · Clinic Digital Launch · HC-04 · Clinic Brand Identity
 View Portfolio ↗
+Studio · At a Glance
+One discipline. Two tracks. Zero open-ended retainers.
+Every engagement — brand, technology, or combined — is anchored in Business Development logic. We don't deliver outputs. We deliver alignment between your goals, capabilities, and assets.
+Technology Track — EA, Healthcare IT, Cloud, Data
+Creative Track — Brand Identity, Design Systems, Digital Launch
+Combined Engagements — Clinic Digital Launch, Healthcare BI
+Serving — KSA · Egypt · MENA private & public sector
 03 Our Methodology
 8 stages. Every engagement.
 From discovery to launch, every Code & Canvas engagement follows the same structured process — anchored in the Business Motivation Model and TOGAF ADM. Nothing is built without a business reason.
@@ -97,10 +101,6 @@ Concepts aligned to strategy, then full production — identity systems, archite
 07–08
 Validation → Launch & Embed
 Structured review cycle, client sign-off gate, deployment, handover documentation, and post-launch support.
-Our Position
-Business development delivered through technology and design — not despite them.
-Most studios separate brand from technology. Most consultancies separate strategy from delivery. We built Code & Canvas to collapse those gaps — into a single studio, two specialist tracks, and a shared commercial discipline that makes both more effective.
-Enterprise Architecture Brand Identity Healthcare IT Digital Transformation Data & Analytics MENA · KSA · Egypt Vision 2030 Aligned TOGAF · CPHIMS · NORA
 READY?
 Ready to build something that actually moves the needle?
 Book a 30-minute discovery call. We define the scope, confirm the fit, and give you a clear picture of what an engagement looks like — or tell you directly if we're not the right match.

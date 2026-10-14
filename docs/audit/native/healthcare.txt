@@ -12,13 +12,23 @@ reduction
 healthcare services
 $50–200K Cost to exit
 a wrong HIS
-Led by Ahmed Bedeer
-Healthcare-specific services (HC-03, HC-05) are led by Ahmed Bedeer — CPHIMS, HIMSS EMRAM assessor, NORA — with 7+ years in KSA across healthcare, government, and the private sector.
-Led by Mustafa Aboalazm
-Brand-only healthcare engagements (HC-04) are led by Mustafa — patient trust signals, regulatory-aware design, bilingual delivery.
-Combined engagements
-Combined engagements (HC-01, HC-02) involve both founders — quoted as a single package, never double-billed.
-01 5 Healthcare Services · HC-01 → HC-05
+01 ACTIVE CREDENTIALS · OUTCOMES, NOT JUST DIAGRAMS
+Clinical context from the first call.
+CPHIMS
+Certified Professional in Health Informatics — HIMSS
+HIMSS EMRAM
+Certified stage assessor — EMR Adoption Model
+CBAHI
+Saudi accreditation readiness built into every HC engagement
+NORA
+National Health Exchange · Saudi MOH · active integration architecture
+12% ICU LOS Reduction
+Predictive analytics & care-gap alerting integrated into the EDW supported proactive clinical outreach
+25% Faster Month-End Close
+UML-modeled revenue-cycle workflows streamlined order lifecycle and charge capture processes
+40% Less Admin Overhead
+Patient-centric Java/Spring Boot application automated appointment and insurance workflows end-to-end
+02 5 Healthcare Services · HC-01 → HC-05
 Built for clinics and hospitals
 in KSA and Egypt.
 CBAHI-aware · NORA-compliant · AR + EN as standard. Every service has a fixed scope and milestone-based payment.
@@ -91,22 +101,14 @@ $1,500 – $3,500 2–3 weeks · CPHIMS-delivered EA + EMRAM · 50 / 50
 Start EA Assessment
 Payment terms & FAQ
 Led by Ahmed Bedeer
-02 ACTIVE CREDENTIALS · OUTCOMES, NOT JUST DIAGRAMS
-Clinical context from the first call.
-CPHIMS
-Certified Professional in Health Informatics — HIMSS
-HIMSS EMRAM
-Certified stage assessor — EMR Adoption Model
-CBAHI
-Saudi accreditation readiness built into every HC engagement
-NORA
-National Health Exchange · Saudi MOH · active integration architecture
-12% ICU LOS Reduction
-Predictive analytics & care-gap alerting integrated into the EDW supported proactive clinical outreach
-25% Faster Month-End Close
-UML-modeled revenue-cycle workflows streamlined order lifecycle and charge capture processes
-40% Less Admin Overhead
-Patient-centric Java/Spring Boot application automated appointment and insurance workflows end-to-end
+03 WHO LEADS WHAT
+A named founder on every engagement — no account layer in between.
+Led by Ahmed Bedeer
+Healthcare-specific services (HC-03, HC-05) are led by Ahmed Bedeer — CPHIMS, HIMSS EMRAM assessor, NORA — with 7+ years in KSA across healthcare, government, and the private sector.
+Led by Mustafa Aboalazm
+Brand-only healthcare engagements (HC-04) are led by Mustafa — patient trust signals, regulatory-aware design, bilingual delivery.
+Combined engagements
+Combined engagements (HC-01, HC-02) involve both founders — quoted as a single package, never double-billed.
 HEALTHCARE ORGANIZATIONS
 Bring your challenge. We’ll bring the context.
 Whether it's a new clinic that needs an identity and digital presence, a hospital choosing an HIS, or a board that wants CBAHI dashboards — tell us the business problem and we'll propose the lightest engagement that gets you a confident decision.

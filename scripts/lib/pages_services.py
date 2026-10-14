@@ -2,7 +2,7 @@
 """/services/ — Solutions hub (live copy of codeandcanvas.net/services/ + the
 healthcare and combined tracks that the home/footer already link to)."""
 from catalog import SERVICES, href
-from h import esc, t, th, icon, svc_grid, crumbs, closing, btn, page
+from h import esc, t, th, icon, svc_grid, crumbs, closing, btn, page, service_ld
 
 
 def person_card(kind):
@@ -52,13 +52,16 @@ def build():
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="الهوية · التقنية · الرعاية الصحية · البيانات · الإعلام">Brand · Technology · Healthcare · Data · Media</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="كل حلولنا.">All our solutions.</span><br /><span class="grad-text" data-ar="إبداعية. تقنية.">Creative. Technical.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="مؤسِّسان. تخصصان. &lt;strong&gt;23 خدمة مُنتجة&lt;/strong&gt; عبر العمارة المؤسسية وتقنية الرعاية الصحية والتحول الرقمي والبيانات وهوية العلامة وأنظمة التصميم والويب والإعلام. اضغط أي خدمة لترى النطاق الكامل والمخرجات والتسعير.">Two co-founders. Two disciplines. <strong>23 productized services</strong> across enterprise architecture, healthcare IT, digital transformation, data, brand identity, design systems, web, and media. Tap any service for full scope, deliverables, and pricing.</p>
-        <nav class="subnav" aria-label="Jump to a track" data-ar-label="انتقل إلى مسار" data-reveal style="--d:.24s">
-          <a href="#technology">{icon('layers')}<span data-ar="التقنية">Technology</span><b>6</b></a>
-          <a href="#creative">{icon('pen')}<span data-ar="الإبداع">Creative</span><b>10</b></a>
-          <a href="#healthcare">{icon('stethoscope')}<span data-ar="الرعاية الصحية">Healthcare</span><b>5</b></a>
-          <a href="#combined">{icon('sparkles')}<span data-ar="باقات متكاملة">Combined</span><b>2</b></a>
-        </nav>
       </section>
+
+      <!-- ░░ Track nav ░░ -->
+      <nav class="subnav subnav--sticky container" aria-label="Jump to a track" data-ar-label="انتقل إلى مسار" data-spy>
+        <a href="#technology">{icon('layers')}<span data-ar="التقنية">Technology</span><b>6</b></a>
+        <a href="#creative">{icon('pen')}<span data-ar="الإبداع">Creative</span><b>10</b></a>
+        <a href="#healthcare">{icon('stethoscope')}<span data-ar="الرعاية الصحية">Healthcare</span><b>5</b></a>
+        <a href="#combined">{icon('sparkles')}<span data-ar="باقات متكاملة">Combined</span><b>2</b></a>
+        <a href="#not-sure" class="subnav__aux">{icon('chat')}<span data-ar="لست متأكدًا؟">Not sure?</span></a>
+      </nav>
 
       <!-- ░░ Stats ░░ -->
       <section class="stats container" aria-label="Solutions at a glance" data-ar-label="الحلول في أرقام">
@@ -125,7 +128,7 @@ def build():
       </section>
 
       <!-- ░░ Not sure ░░ -->
-      <section class="section container section--tight" aria-labelledby="fit-title">
+      <section class="section container section--tight" id="not-sure" aria-labelledby="fit-title">
         <div class="callout glass glass--deep" data-reveal>
           <div>
             <p class="kicker"><span data-ar="لست متأكدًا؟">NOT SURE?</span></p>
@@ -140,44 +143,6 @@ def build():
         </div>
       </section>
 
-      <!-- ░░ Freelancer / career form ░░ -->
-      <section class="section container section--tight" id="career" aria-labelledby="career-title">
-        <div class="grid grid--side-l">
-          <header class="section__head sticky" data-reveal>
-            <p class="kicker"><span class="kicker__num">05</span><span data-ar="مستقل؟ انضم إلى تطويرنا">Freelancer? Connect to our development</span></p>
-            <h2 class="section__title" id="career-title"><span data-ar="مستقل؟">Freelancer?</span><br /><span class="grad-text" data-ar="انضم إلى فريق تطويرنا.">Connect to our development.</span></h2>
-            <p class="section__lead" data-ar="نعمل مع مستقلين موهوبين في التصميم والهندسة والمحتوى من المنطقة. أخبرنا بقصتك — نردّ على كل طلب جادّ.">We work with talented freelancers in design, engineering, and content across the region. Tell us your story — every serious application gets a reply.</p>
-            <ul class="hero__chips" aria-label="What we look for" data-ar-label="ما الذي نبحث عنه"><li>{icon('pen')}<span data-ar="التصميم">Design</span></li><li>{icon('layers')}<span data-ar="الهندسة">Engineering</span></li><li>{icon('sparkles')}<span data-ar="المحتوى والإنتاج">Content &amp; Production</span></li></ul>
-          </header>
-          <form class="form-card glass form" data-form="contact" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Freelancer application — Code &amp; Canvas" data-endpoint="" novalidate data-reveal>
-            <h3 data-ar="الطلب">Career</h3>
-            <p class="lead" data-ar="نموذج حواري — املأ ما يناسبك وأرسل.">Conversational form — fill what applies and send.</p>
-            <input class="hp" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <input type="hidden" name="inquiry" value="Freelancer / Career" />
-            <div class="form__row">
-              <div class="field"><label for="f-name" data-ar-html="اسمك &lt;i&gt;*&lt;/i&gt;">Your Name <i>*</i></label><input id="f-name" name="name" type="text" required autocomplete="name" /><span class="field__err" data-ar="أدخل اسمك">Please enter your name</span></div>
-              <div class="field"><label for="f-city" data-ar="تعيش في؟">Live in?</label><input id="f-city" name="live_in" type="text" autocomplete="address-level2" /></div>
-            </div>
-            <div class="field"><label for="f-email" data-ar-html="البريد الإلكتروني &lt;i&gt;*&lt;/i&gt;">Email <i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email" /><span class="field__err" data-ar="أدخل بريدًا صحيحًا">Please enter a valid e-mail</span></div>
-            <div class="field"><label for="f-spark" data-ar="شرارة مهارتك">Your Skill Spark</label><input id="f-spark" name="skill_spark" type="text" placeholder="Brand design · Next.js · Motion · Copywriting…" data-ar-placeholder="تصميم هوية · Next.js · موشن · كتابة محتوى…" /></div>
-            <div class="field"><label for="f-growth" data-ar="فصول نموّك">Your Chapters of Growth</label><textarea id="f-growth" name="chapters_of_growth" rows="3" placeholder="Where you started, what you've shipped, what you're learning now." data-ar-placeholder="من أين بدأت، وماذا أنجزت، وماذا تتعلم الآن."></textarea></div>
-            <div class="form__row">
-              <div class="field"><label for="f-portfolio" data-ar="رابط الأعمال">Portfolio URL</label><input id="f-portfolio" name="portfolio_url" type="url" placeholder="https://" /></div>
-              <div class="field"><label for="f-cv" data-ar="رابط السيرة الذاتية">CV URL</label><input id="f-cv" name="cv_url" type="url" placeholder="https://" /></div>
-            </div>
-            <div class="field"><label for="f-time" data-ar="وقت فراغك اليومي">Your Daily free time</label>
-              <select id="f-time" name="daily_free_time"><option value="" data-ar="- اختر -">- Select -</option><option value="Daytime" data-ar="نهارًا">Daytime</option><option value="Nighttime" data-ar="ليلًا">Nighttime</option></select></div>
-            <div class="field"><label for="f-ink" data-ar="حبرك المختلف">Your Different Ink</label><input id="f-ink" name="different_ink" type="text" placeholder="What makes your work unmistakably yours?" data-ar-placeholder="ما الذي يجعل عملك مميزًا بلا شك؟" /></div>
-            <div class="field"><label for="f-note" data-ar="ملاحظتك">Your note</label><textarea id="f-note" name="message" rows="3"></textarea></div>
-            <div class="form__actions">
-              <button class="btn btn--primary magnetic" type="submit"><span data-ar="إرسال">Submit</span><i class="flip" data-icon="arrowUpRight"></i></button>
-              <span class="field__hint" data-ar="يُفتح طلبك في واتساب أو البريد حتى يُربط النموذج بخدمة إرسال.">Opens in WhatsApp or e-mail until a form endpoint is connected.</span>
-            </div>
-            <div class="form__status" role="status" aria-live="polite"></div>
-          </form>
-        </div>
-      </section>
-
       {closing('THE HOME OF BUSINESS DEVELOPMENT', 'موطن تطوير الأعمال',
                '<span data-ar="موطن">The Home of</span><br /><span class="grad-text" data-ar="تطوير الأعمال.">Business Development.</span>',
                'Read how two disciplines became one studio — and why every engagement starts with the business outcome, not the deliverable.',
@@ -187,7 +152,7 @@ def build():
     out = page('/services/', title='Solutions — Code & Canvas', title_ar='الحلول — Code & Canvas',
                desc='All Code & Canvas solutions: 23 productized services across enterprise architecture, healthcare IT, digital transformation, data, brand identity, design systems, web, and media — with scope, duration, and pricing.',
                desc_ar='كل حلول Code & Canvas: 23 خدمة مُنتجة عبر العمارة المؤسسية وتقنية الرعاية الصحية والتحول الرقمي والبيانات وهوية العلامة وأنظمة التصميم والويب والإعلام — بالنطاق والمدة والتسعير.',
-               nav='services', body=body)
+               nav='services', body=body, ld=[service_ld(list(SERVICES), 'https://codeandcanvas.net/services/')])
     return [out]
 
 

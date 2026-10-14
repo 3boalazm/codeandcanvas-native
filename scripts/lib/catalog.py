@@ -49,7 +49,7 @@ SERVICES = {
         title="Brand Identity Essentials", title_ar="أساسيات الهوية البصرية",
         blurb="Brand audit + competitor research + full logo system + colour + typography + 12–18 page visual standards guide + 3 key applications. The right scope for most emerging brands.",
         blurb_ar="تدقيق للعلامة + بحث في المنافسين + منظومة شعار كاملة + ألوان + خطوط + دليل معايير بصرية من ⁦12–18⁩ صفحة + 3 تطبيقات رئيسية. النطاق المناسب لمعظم العلامات الناشئة.",
-        price="$640 – $1,065", price_ar=None, dur="3–4 weeks · 50/50", dur_ar="⁦3–4⁩ أسابيع · دفعات 50/50"),
+        price="$640 – $1,065", price_ar=None, dur="3–4 weeks · 50/25/25", dur_ar="⁦3–4⁩ أسابيع · دفعات 50/25/25"),
     "MA-03": dict(track="creative", tag="FLAGSHIP", tag_ar="الباقة الرئيسية", star=True,
         title="Full Brand System", title_ar="منظومة العلامة الكاملة",
         blurb="Not a logo — an operating system for your brand. Full strategy document, complete visual identity, bilingual lockup (AR/EN), brand elements, 25–40 page guidelines, and a training workshop.",

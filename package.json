@@ -1,6 +1,6 @@
 {
   "name": "codeandcanvas-site",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "description": "Code & Canvas native static site: bilingual marketing site, blog, books and the CanvasOne ERP proposal",
   "scripts": {

@@ -54,9 +54,10 @@
     <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
 
     <header class="nav" id="nav">
-      <div class="nav__inner container">
+      <div class="nav__pill container">
         <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
-          <img class="nav__logo" src="/assets/brand/logo-white-horizontal.svg" alt="" width="96" height="40" />
+          <span class="nav__mark" aria-hidden="true"><img src="/assets/brand/icon-white.svg" alt="" width="26" height="26" /></span>
+          <span class="nav__word" aria-hidden="true">Code<em>&amp;</em>Canvas</span>
         </a>
         <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
           <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
@@ -65,13 +66,13 @@
           <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
           <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
           <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
-          <a href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
-          <a class="only-mobile" href="/contact/#book" data-ar="لنتحدث">Let’s talk</a>
+          <a class="only-mobile" href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
         </nav>
         <div class="nav__actions">
-          <button class="lang-btn" id="langBtn" type="button"></button>
-          <a class="btn btn--primary btn--sm magnetic" href="/contact/#book"><span data-ar="لنتحدث">Let’s talk</span><i class="flip" data-icon="arrowUpRight"></i></a>
-          <button class="burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+          <button class="nav__round lang-btn" id="langBtn" type="button"></button>
+          <a class="nav__round" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="WhatsApp" data-ar-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
+          <a class="btn btn--primary nav__cta magnetic" href="/contact/" data-key="contact"><span data-ar="تواصل">Contact</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="nav__round burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
         </div>
       </div>
     </header>

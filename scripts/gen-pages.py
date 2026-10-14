@@ -92,6 +92,52 @@ def meta_files():
     routes += [{'path': p[0], 'title': p[1]} for p in pages]
     routes.append({'path': '/404.html', 'title': '404 — Lost · Code & Canvas', 'notFound': True})
     write('manus-routes.json', json.dumps({'routes': routes, 'redirects': [{'from': a, 'to': b, 'status': 301} for a, b in STATIC_REDIRECTS]}, ensure_ascii=False, indent=1) + '\n')
+    # --- vercel.json (static deploy: `sh build.sh` → dist/) ---
+    from urllib.parse import unquote
+    seen, vredirects = set(), []
+
+    def vr(src, dst):
+        src = unquote(src)
+        if src.endswith('/*'):
+            src = src[:-2] + '/(.*)'
+        if src.endswith('/') and src != '/':
+            src = src[:-1]  # trailingSlash:true normalises both forms onto the slash-less source
+        if src in seen or src == dst.rstrip('/') or not src:
+            return
+        seen.add(src)
+        vredirects.append({'source': src, 'destination': dst, 'permanent': True})
+
+    for a, b in STATIC_REDIRECTS:
+        vr(a, b)
+    for post in all_posts():
+        vr(f'/{post["slug"]}/', f'/blog/{post["slug"]}/')
+        for alias in post.get('aliases', []):
+            vr(f'/{alias}/', f'/blog/{post["slug"]}/')
+    for b in BOOKS:
+        for alias in b.get('aliases', []):
+            vr(alias, f'/books/{b["slug"]}/')
+    vercel = {
+        '$schema': 'https://openapi.vercel.sh/vercel.json',
+        'framework': None,
+        'buildCommand': 'sh build.sh',
+        'outputDirectory': 'dist',
+        'installCommand': '',
+        'cleanUrls': True,
+        'trailingSlash': True,
+        'redirects': vredirects,
+        'headers': [
+            {'source': '/(.*)', 'headers': [
+                {'key': 'X-Content-Type-Options', 'value': 'nosniff'},
+                {'key': 'X-Frame-Options', 'value': 'SAMEORIGIN'},
+                {'key': 'Referrer-Policy', 'value': 'strict-origin-when-cross-origin'},
+                {'key': 'Permissions-Policy', 'value': 'camera=(), microphone=(), geolocation=()'},
+            ]},
+            {'source': '/assets/fonts/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=31536000, immutable'}]},
+            {'source': '/assets/(css|js|brand)/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=3600, stale-while-revalidate=86400'}]},
+            {'source': '/(.*)\\.html', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=0, must-revalidate'}]},
+        ],
+    }
+    write('vercel.json', json.dumps(vercel, ensure_ascii=False, indent=2) + '\n')
 
 
 if __name__ == '__main__':

@@ -4,7 +4,7 @@ Standalone, bilingual (English / Arabic, LTR / RTL) Code & Canvas site built wit
 
 | Route | What it is |
 | --- | --- |
-| `/` | Homepage: hero, services catalogue, CanvasOne ERP teaser, why us, approach, contact |
+| `/` | Homepage (clean editorial layout, no card grids): hero, stats, intro, four service tracks, CanvasOne ERP teaser, why us, approach, closing CTA |
 | `/erp/` | CanvasOne ERP interactive proposal (modules, industries, compliance, timeline, package builder, FAQ, print-to-PDF) |
 | `/services/` · `/technology-services/` · `/creative-services/` · `/healthcare/` | Solutions hub + the three tracks (23 services: AB-01…06, MA-01…10, HC-01…05, CC-01/02) |
 | `/about/` · `/our-story/` · `/methodology/` · `/team/` | Studio, story, methodology, founders |
@@ -52,7 +52,7 @@ assets/
 ├── css/home.css         homepage-only components
 ├── css/erp.css          ERP-only components (+ print stylesheet)
 ├── js/site.js           shared runtime: language, icons, preloader, reveal, tilt, nav, progress…
-├── js/home.js           homepage behaviour (filters, marquee, orbit, meta per language)
+├── js/home.js           homepage behaviour (orbit, hero parallax, meta per language)
 ├── js/pages.js          inner pages: tabs, FAQ, filters, forms (contact / demo), booking hook, TOC, account panels
 ├── js/shop.js           localStorage cart, checkout shell, account library
 ├── js/reader.js         interactive book reader (manifest or free preview, notes, fullscreen)

@@ -66,7 +66,11 @@
   function mount(data) {
     if (!Array.isArray(data.slides) || !data.slides.length) throw new Error('Empty preview');
     deck = data.slides; freeUntil = data.free;
-    parts.innerHTML = data.names.map((n, i) => `<button type="button" data-part="${i}" class="${!owned() && deck.findIndex((s) => s.part === i) >= freeUntil ? 'is-locked' : ''}"><i>${String(i + 1).padStart(2, '0')}</i><span>${esc(n)}</span></button>`).join('');
+    parts.innerHTML = data.names.map((n, i) => {
+      const lock = !owned() && deck.findIndex((s) => s.part === i) >= freeUntil;
+      const label = CC.lang === 'ar' ? 'مقفل في المعاينة' : 'Locked in preview';
+      return `<button type="button" data-part="${i}" class="${lock ? 'is-locked' : ''}"${lock ? ` title="${label}"` : ''}><i>${String(i + 1).padStart(2, '0')}</i><span>${esc(n)}</span>${lock ? `<b class="reader__lock" aria-hidden="true"></b><em class="sr-only">${label}</em>` : ''}</button>`;
+    }).join('');
     thumbs.innerHTML = deck.map((_, i) => `<button type="button" aria-label="${i + 1}">${i + 1}</button>`).join('');
     parts.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) go(deck.findIndex((s) => s.part === +b.dataset.part)); });
     thumbs.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) go([...thumbs.children].indexOf(b)); });

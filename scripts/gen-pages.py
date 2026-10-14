@@ -79,10 +79,16 @@ def meta_files():
     write('_redirects', '\n'.join(lines) + '\n')
     # --- sitemap.xml ---
     pri = lambda p: '1.0' if p == '/' else ('0.9' if p.count('/') == 2 else '0.7')
-    urls = [('/', '1.0'), ('/erp/', '0.8')] + [(p[0], pri(p[0])) for p in pages if not p[0].endswith('/read/') and not any(p[0].startswith(x) for x in ('/login', '/register', '/forgot', '/reset', '/account', '/cart', '/checkout', '/thank-you'))]
+    indexable = [(p[0], p[1]) for p in pages if not p[0].endswith('/read/') and not any(p[0].startswith(x) for x in ('/login', '/register', '/forgot', '/reset', '/account', '/cart', '/checkout', '/thank-you'))]
+    urls = [('/', '1.0'), ('/erp/', '0.8')] + [(p[0], pri(p[0])) for p in indexable]
+    ar = lambda u: (SITE + '/ar/') if u == '/' else (SITE + '/ar' + u)
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for u, pr in urls:
-        xml.append(f'  <url><loc>{SITE}{u}</loc><priority>{pr}</priority></url>')
+        for loc, pr_ in ((SITE + u, pr), (ar(u), '0.6')):
+            xml.append(f'  <url><loc>{loc}</loc><priority>{pr_}</priority>'
+                       f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{u}"/>'
+                       f'<xhtml:link rel="alternate" hreflang="ar" href="{ar(u)}"/>'
+                       f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{u}"/></url>')
     xml.append('</urlset>')
     write('sitemap.xml', '\n'.join(xml) + '\n')
     # --- robots.txt ---
@@ -91,6 +97,7 @@ def meta_files():
     routes = [{'path': '/', 'title': 'Code & Canvas — Business Development, By Design'}, {'path': '/erp/', 'title': 'CanvasOne ERP — Code & Canvas'}]
     routes += [{'path': p[0], 'title': p[1]} for p in pages]
     routes.append({'path': '/404.html', 'title': '404 — Lost · Code & Canvas', 'notFound': True})
+    routes += [{'path': ('/ar/' if p[0] == '/' else '/ar' + p[0]), 'title': p[2], 'lang': 'ar'} for p in pages]
     write('manus-routes.json', json.dumps({'routes': routes, 'redirects': [{'from': a, 'to': b, 'status': 301} for a, b in STATIC_REDIRECTS]}, ensure_ascii=False, indent=1) + '\n')
     # --- vercel.json (static deploy: `sh build.sh` → dist/) ---
     from urllib.parse import unquote

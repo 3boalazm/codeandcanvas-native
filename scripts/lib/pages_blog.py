@@ -7,7 +7,7 @@ had an article (404) → shown as "coming soon", not linked. Two posts were publ
 under wrong slugs with a "– Copy" title → re-slugged (see POST['aliases'] + _redirects).
 Articles are English-only on the live site; chrome/meta are bilingual."""
 import re
-from h import esc, icon, crumbs, closing, btn, page, PERSON_LD
+from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, PERSON_LD
 from posts import all_posts
 
 AUTHORS = {
@@ -40,20 +40,20 @@ def _author_chip(key):
 
 
 def card(p, i=0, featured=False, soon=False):
-    href = f'/blog/{p["slug"]}/' if not soon else None
-    tag = 'a' if href else 'div'
-    hr = f' href="{href}"' if href else ''
+    """One article row: category, title, excerpt, reading meta — no invented artwork."""
+    tag = 'a' if not soon else 'div'
+    hr = f' href="/blog/{p["slug"]}/"' if not soon else ''
     body_txt = p.get('card') or p['excerpt']
-    foot = (f'<span data-ar="اقرأ المقال ←">Read the article →</span>' if href else f'<span class="badge" data-ar="قريبًا">Coming soon</span>')
+    foot = ('<span class="post-row__go"><span data-ar="اقرأ المقال">Read the article</span>' + icon('arrowUpRight', 'flip') + '</span>') if not soon else f'<span class="tag-soft tag-soft--soon" data-ar="قريبًا">Coming soon</span><span>~{p["minutes"]} <span data-ar="دقائق">min</span></span>'
     return f'''
-          <{tag} class="card glass post-card{' post-card--featured' if featured else ''}{' is-soon' if soon else ''}"{hr} data-category="{CAT_KEY.get(p['cat'], 'brand')}" data-reveal style="--d:{(i % 3) * .06:.2f}s">
-            <div class="art {'art--pink' if p['author'] == 'ma' else 'art--violet'}" data-slot="blog/{p.get('slug', 'soon')}"><span class="art__mark" style="font-size:{'72px' if featured else '48px'}">{p['emoji']}</span>{'<span class="art__cap" data-ar="⭐ الأكثر قراءة · يونيو 2026">⭐ Most Read · June 2026</span>' if featured else ''}</div>
-            <div class="post-card__body">
-              <div class="post-card__meta"><span class="badge" data-ar="{esc(p['cat_ar'])}">{esc(p['cat'])}</span><span>{p['minutes']} <span data-ar="دقائق">min</span></span></div>
+          <{tag} class="post-row{' is-soon' if soon else ''}"{hr} data-category="{CAT_KEY.get(p['cat'], 'brand')}" data-reveal style="--d:{(i % 3) * .05:.2f}s">
+            <span class="post-row__no">{i + 1:02d}</span>
+            <div class="post-row__body">
+              <div class="post-row__meta"><span class="tag-soft" data-ar="{esc(p['cat_ar'])}">{esc(p['cat'])}</span><span>{p['minutes']} <span data-ar="دقائق قراءة">min read</span></span><span>{_author_chip(p['author'])}</span></div>
               <h3 data-ar="{esc(p['title_ar'])}">{esc(p['title'])}</h3>
               <p data-ar="{esc(p['excerpt_ar'])}">{esc(body_txt)}</p>
-              <div class="post-card__foot">{_author_chip(p['author'])}<span>{foot}</span></div>
             </div>
+            <span class="post-row__foot">{foot}</span>
           </{tag}>'''
 
 
@@ -76,55 +76,58 @@ def hub(posts):
 
     body = f'''
       <!-- ░░ Hero ░░ -->
-      <section class="phero container" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         {crumbs([('Home', 'الرئيسية', '/'), ('Insights', 'الرؤى', None)])}
-        <div class="phero__split">
-          <div>
-            <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="Code &amp; Canvas · قاعدة المعرفة">Code &amp; Canvas · Knowledge Base</span></span>
-            <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مركز">The Insights</span> <span class="grad-text" data-ar="الرؤى.">Hub.</span></h1>
-            <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="الاستراتيجية والعمارة وأنظمة العلامة والتفكير المنتجي والتحول الرقمي. &lt;strong&gt;أطر ورؤى للقادة&lt;/strong&gt; الذين يبنون مؤسسات في المنطقة — بلا مصطلحات رنانة.">Strategy, architecture, brand systems, product thinking, and digital transformation. <strong>Frameworks and insights for leaders</strong> building organizations across MENA — without the buzzwords.</p>
-            <div class="pill-list" data-reveal style="--d:.22s">{topic_pills}</div>
-          </div>
-          <div class="phero__aside" data-reveal style="--d:.2s">
-            <div class="stats__inner glass" style="grid-template-columns:repeat(2,1fr)">
-              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="{len(posts)}" data-latin="1">{len(posts)}</span></span><p class="stat__label" data-ar-html="مقالات&lt;br /&gt;منشورة">Articles<br />published</p></div>
-              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="{len(topics)}" data-latin="1">{len(topics)}</span></span><p class="stat__label" data-ar-html="موضوعات&lt;br /&gt;مغطاة">Topics<br />covered</p></div>
-              <div class="stat"><span class="stat__num stat__num--ltr">~{total_min}</span><p class="stat__label" data-ar-html="دقيقة إجمالي&lt;br /&gt;وقت القراءة">Min total<br />reading time</p></div>
-              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="2" data-latin="1">2</span></span><p class="stat__label" data-ar-html="وجهتا نظر&lt;br /&gt;المؤسسين">Founder<br />perspectives</p></div>
-            </div>
-          </div>
-        </div>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="قاعدة معرفة Code &amp; Canvas">Code &amp; Canvas · Knowledge Base</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="أطر ومسائل">Frameworks and problems</span><br /><span class="grad-text" data-ar="من مشاريع فعلية.">from live engagements.</span></h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="الاستراتيجية والعمارة وأنظمة العلامة والتفكير المنتجي والتحول الرقمي — &lt;strong&gt;مكتوبة لفريق يحتاج قرارًا، لا لفريق يبحث عن مصطلحات.&lt;/strong&gt; كل مقال منشور بالإنجليزية، والصفحات العربية متاحة للتنقّل.">Strategy, architecture, brand systems, product thinking and digital transformation — <strong>written for a team that has to decide something, not for one collecting buzzwords.</strong> Articles are published in English; the Arabic site carries the navigation and the summaries.</p>
+        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Start with the most-read', 'ابدأ بالأكثر قراءة', f'#featured', 'primary', 'arrowDown')}{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book', 'glass')}</div>
+      </section>
+
+      <!-- ░░ At a glance ░░ -->
+      <section class="section container section--tight" aria-label="The library at a glance" data-ar-label="المكتبة في أرقام">
+        {facts([('Articles published', 'مقال منشور', str(len(posts)), True),
+                ('Topics covered', 'موضوعًا مغطّى', str(len(topics)), True),
+                ('Minutes of reading', 'دقيقة قراءة', f'~{total_min}', True),
+                ('Founder perspectives', 'وجهتا نظر للمؤسسين', '2', True)])}
       </section>
 
       <!-- ░░ Featured ░░ -->
-      <section class="section container section--tight" aria-labelledby="feat-title">
-        <p class="kicker" data-reveal><span data-ar="مقال مميز · الأكثر قراءة">Featured Article · Most Read</span></p>
-        <a class="card glass post-card post-card--featured post-card--hero" href="/blog/{feat['slug']}/" data-reveal>
-          <div class="art art--violet" data-slot="blog/{feat['slug']}"><span class="art__mark" style="font-size:84px">{feat['emoji']}</span><span class="art__cap" data-ar="⭐ الأكثر قراءة · يونيو 2026">⭐ Most Read · June 2026</span></div>
-          <div class="post-card__body">
-            <div class="post-card__meta"><span class="badge" data-ar="{esc(feat['cat_ar'])}">{esc(feat['cat'])}</span><span>{feat['date']} · {feat['minutes']} <span data-ar="دقائق قراءة">min read</span></span></div>
+      <section class="section container section--flush-top" id="featured" aria-labelledby="feat-title">
+        <p class="kicker" data-reveal><span data-ar="مقال مميز · الأكثر قراءة">Featured · Most read</span></p>
+        <a class="feat-post panel" href="/blog/{feat['slug']}/" data-reveal>
+          <div class="feat-post__body">
+            <div class="post-row__meta"><span class="tag-soft" data-ar="{esc(feat['cat_ar'])}">{esc(feat['cat'])}</span><span>{feat['date']} · {feat['minutes']} <span data-ar="دقائق قراءة">min read</span></span>{_author_chip(feat['author'])}</div>
             <h2 id="feat-title" data-ar="{esc(feat['title_ar'])}">{esc(feat['title'])}</h2>
             <p data-ar="{esc(feat['excerpt_ar'])}">{esc(feat['excerpt'])}</p>
-            <div class="post-card__foot">{_author_chip(feat['author'])}<span class="text-link"><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+            <span class="post-row__go"><span data-ar="اقرأ المقال">Read the article</span>{icon('arrowUpRight', 'flip')}</span>
+          </div>
+          <div class="feat-post__plate" aria-hidden="true">
+            <span class="feat-post__mark">{feat['emoji']}</span>
+            <span class="story-plate__cap" data-ar="الأكثر قراءة">MOST READ</span>
+            <span class="story-plate__cap2">{esc(feat['cat'])} · {feat['minutes']} <span data-ar="دقائق">min</span></span>
           </div>
         </a>
       </section>
 
       <!-- ░░ All articles ░░ -->
       <section class="section container section--flush-top" id="articles" aria-labelledby="all-title">
+        {sec_head('01', 'THE LIBRARY', 'المكتبة',
+                  '<span id="all-title" data-ar="كل المقالات.">Every article.</span>',
+                  'Filter by topic, or read straight down — each row states its category, reading time and author before you commit to it.',
+                  'رشّح حسب الموضوع أو اقرأ بالتتابع — كل صف يوضّح تصنيفه ووقت قراءته وكاتبه قبل أن تبدأ.')}
         <div class="toolbar" data-reveal>
-          <h2 class="section__title" id="all-title" style="font-size:clamp(24px,2.6vw,34px)" data-ar="كل المقالات">All Articles</h2>
           <div class="filters" role="group" aria-label="Browse by topic" data-ar-label="تصفّح حسب الموضوع" data-filter-group="#post-list">{filt}</div>
         </div>
-        <div class="post-grid" id="post-list">{cards}{soon}
+        <div class="post-list" id="post-list">{cards}{soon}
         </div>
       </section>
 
       <!-- ░░ Subscribe ░░ -->
-      <section class="section container section--tight" aria-labelledby="sub-title">
-        <div class="callout glass glass--deep" data-reveal>
+      <section class="section container section--flush-top" aria-labelledby="sub-title">
+        <div class="callout panel" data-reveal>
           <div>
-            <p class="kicker"><span data-ar="ابقَ على اطلاع · بلا رسائل مزعجة">Stay Informed · No Spam</span></p>
+            <p class="kicker"><span data-ar="ابقَ على اطلاع · بلا رسائل مزعجة">Stay informed · No spam</span></p>
             <h3 id="sub-title"><span data-ar="احصل على الرؤى">Get insights</span> <span class="grad-text" data-ar="قبل الجميع.">before everyone else.</span></h3>
             <p data-ar="أطر جديدة ودراسات حالة وأدلة استراتيجية — تصلك عند نشرها. تركيز على الاستراتيجية. بلا حشو.">New frameworks, case studies, and strategic guides — delivered when they're published. Strategy-focused. No filler.</p>
           </div>
@@ -178,13 +181,11 @@ def article(p, by_slug):
     for s in p.get('related', []):
         r = by_slug.get(s)
         if r:
-            related += f'''
-          <a class="card glass post-card" href="/blog/{r['slug']}/"><div class="art {'art--pink' if r['author'] == 'ma' else 'art--violet'}"><span class="art__mark" style="font-size:44px">{r['emoji']}</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">{esc(r['cat'])}</span></div><h3>{esc(r['title'])}</h3><div class="post-card__foot"><span>{r['minutes']} min read · {r['date']}</span></div></div></a>'''
+            related += card({'slug': r['slug'], 'cat': r['cat'], 'cat_ar': r['cat_ar'], 'title': r['title'], 'title_ar': r['title_ar'], 'excerpt': r['excerpt'], 'excerpt_ar': r['excerpt_ar'], 'minutes': r['minutes'], 'date': r['date'], 'author': r['author'], 'emoji': r['emoji']})
         else:
             cs = next((c for c in COMING_SOON if s in ('creative-strategy-generative-ai-age', 'brand-identity-to-brand-systems') and ((s.startswith('creative') and c['cat'] == 'Creative Strategy') or (s.startswith('brand') and c['cat'] == 'Brand Identity'))), None)
             if cs:
-                related += f'''
-          <div class="card glass post-card is-soon"><div class="art art--pink"><span class="art__mark" style="font-size:44px">{cs['emoji']}</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">{esc(cs['cat'])}</span></div><h3>{esc(cs['title'])}</h3><div class="post-card__foot"><span class="badge">Coming soon</span></div></div></div>'''
+                related += card(cs, soon=True)
     toc_items = [(m.group(1), re.sub(r'<[^>]+>', '', m.group(2))) for m in re.finditer(r'<h2 id="([^"]+)">(.*?)</h2>', p['body'])]
     if tk: toc_items.append(('takeaways', tk[0]))
     if concl: toc_items.append(('conclusion', concl[0]))
@@ -217,8 +218,8 @@ def article(p, by_slug):
             </aside>
           </div>
           <aside class="post__side">
-            <nav class="toc glass" aria-label="On this page" data-ar-label="في هذه الصفحة"><h4 data-ar="في هذه الصفحة">On this page</h4><div class="toc__list">{toc_html}</div></nav>
-            <div class="card glass book-card" style="margin-top:14px">
+            <nav class="toc panel" aria-label="On this page" data-ar-label="في هذه الصفحة"><h4 data-ar="في هذه الصفحة">On this page</h4><div class="toc__list">{toc_html}</div></nav>
+            <div class="panel tier" style="margin-top:14px">
               <p class="kicker"><span data-ar="ناقش هذا المقال">Discuss this article</span></p>
               <p data-ar="احجز مكالمة استكشافية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.">Book a 30-minute discovery call — we come prepared, not with a pitch.</p>
               <div class="book-card__actions">{btn('Book a Free Call', 'احجز مكالمة مجانية', '/contact/#book')}</div>
@@ -227,7 +228,7 @@ def article(p, by_slug):
         </div>
         <section class="related">
           <div class="head-split"><h2 class="section__title" style="font-size:clamp(22px,2.4vw,30px)" data-ar="تابع القراءة">Continue reading</h2><a class="text-link" href="/blog/"><span data-ar="كل الرؤى ←">View all insights →</span></a></div>
-          <div class="post-grid">{related}
+          <div class="post-list">{related}
           </div>
         </section>
       </article>

@@ -146,6 +146,109 @@ def service_ld(codes, page_url):
     return {'@type': 'ItemList', 'itemListElement': items}
 
 
+def sec_head(no, kicker, kicker_ar, title_html, lead, lead_ar, aside=None, center=False):
+    """Numbered editorial section head: rule, kicker, title, lead and an optional aside."""
+    cls = 'sec-head sec-head--center' if center else 'sec-head'
+    aside_html = f'<div class="sec-head__aside">{aside}</div>' if aside else ''
+    lead_html = f'<p class="lead" data-ar="{esc(lead_ar)}">{lead}</p>' if lead else ''
+    return f'''
+        <header class="{cls}" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>{no}</b><span data-ar="{esc(kicker_ar)}">{kicker}</span></p>
+            <h2>{title_html}</h2>
+            {lead_html}
+          </div>
+          {aside_html}
+        </header>'''
+
+
+def svc_row(code, delay=0, alt=False, cta=('Start a scoped inquiry', 'ابدأ استفسارًا بنطاق واضح')):
+    """One decision row per service: who it is for, what the client keeps, price and CTA."""
+    s = SERVICES[code]
+    out = ''.join(f'<li data-ar="{esc(a)}">{esc(e)}</li>' for e, a in zip(s['out'], s['out_ar']))
+    dur = t(s['dur'], s['dur_ar']) if s.get('dur_ar') else f'<span>{esc(s["dur"])}</span>'
+    price = t(s['price'], s['price_ar'], tag='strong') if s.get('price_ar') else f'<strong class="ltr">{esc(s["price"])}</strong>'
+    star = ' ✦' if s.get('star') else ''
+    tag = t(s['tag'], s['tag_ar'], cls='tag-soft') if s.get('tag_ar') else f'<span class="tag-soft">{esc(s["tag"])}</span>'
+    cls = 'svc-row svc-row--alt' if alt else 'svc-row'
+    return f'''
+        <article class="{cls}" id="{code.lower()}" data-category="{s['track']}" data-reveal{f' style="--d:{delay:.2f}s"' if delay else ''}>
+          <div class="svc-row__code">{code}{star}</div>
+          <div class="svc-row__body">
+            <h3 data-ar="{esc(s['title_ar'])}">{esc(s['title'])}</h3>
+            <p data-ar="{esc(s['blurb_ar'])}">{esc(s['blurb'])}</p>
+            <div class="svc-row__out"><b data-ar="ما تحصل عليه">{'What you keep'}</b><ul class="svc-row__list">{out}</ul></div>
+          </div>
+          <div class="svc-row__fit">
+            <div><b data-ar="لمن؟">Who it is for</b><span data-ar="{esc(s['for_ar'])}">{esc(s['for_'])}</span></div>
+            <div>{tag}</div>
+          </div>
+          <div class="svc-row__act">
+            <span class="svc-row__price">{price}{dur}</span>
+            <a class="btn btn--glass btn--sm" href="/contact/?inquiry={code}#message" data-track="service-inquiry" data-track-service="{code}"><span data-ar="{esc(cta[1])}">{cta[0]}</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </article>'''
+
+
+def svc_rows(codes, alt_ids=False, alt_every=None):
+    rows = []
+    for i, c in enumerate(codes):
+        alt = (i % alt_every == 1) if alt_every else False
+        rows.append(svc_row(c, (i % 3) * 0.05, alt=alt))
+    return '<div class="svc-rows">' + ''.join(rows) + '</div>'
+
+
+def svc_index_row(code):
+    """Compact index row used by the /services/ hub: code, title, who, duration, price."""
+    s = SERVICES[code]
+    return (f'<li><a href="{href(code)}" data-track="service-detail" data-track-id="{code}">'
+            f'<span class="idx__code">{code}</span>'
+            f'<span class="idx__title" data-ar="{esc(s["title_ar"])}">{esc(s["title"])}</span>'
+            f'<span class="idx__who" data-ar="{esc(s["for_ar"])}">{esc(s["for_"])}</span>'
+            f'<span class="idx__price ltr">{esc(s["price"])}</span>'
+            f'<span class="idx__dur" data-ar="{esc(s.get("dur_ar") or s["dur"])}">{esc(s["dur"])}</span>'
+            f'<i class="flip" data-icon="arrowUpRight" aria-hidden="true"></i></a></li>')
+
+
+def steps3(items):
+    """items = [(no, title_en, title_ar, body_en, body_ar, deliverable_en, deliverable_ar)]"""
+    blocks = ''.join(f'''
+            <div>
+              <span class="stepno">{no}</span>
+              <h3 data-ar="{esc(t_ar)}">{esc(t_en)}</h3>
+              <p data-ar="{esc(b_ar)}">{esc(b_en)}</p>
+              <span class="step__deliv"><i data-icon="check" aria-hidden="true"></i><span data-ar="{esc(d_ar)}">{esc(d_en)}</span></span>
+            </div>''' for no, t_en, t_ar, b_en, b_ar, d_en, d_ar in items)
+    return f'<div class="steps3" data-reveal>{blocks}</div>'
+
+
+def chal(code, kicker, kicker_ar, title, title_ar, symptoms, symptoms_ar, price_en, price_ar, delay=0, link=None):
+    """Problem-first entry card: opens the service page, with a scoped inquiry link."""
+    sym = ''.join(f'<li data-ar="{esc(a)}">{esc(e)}</li>' for e, a in zip(symptoms, symptoms_ar))
+    return f'''
+          <article class="chal" data-reveal{f' style="--d:{delay:.2f}s"' if delay else ''}>
+            <span class="chal__k" data-ar="{esc(kicker_ar)}">{kicker}</span>
+            <h3><a class="chal__link" href="{link or href(code)}" data-track="service-finder" data-track-id="{code}" data-ar="{esc(title_ar)}">{title}</a></h3>
+            <ul class="chal__sym">{sym}</ul>
+            <span class="chal__fix">
+              <span class="chal__code">{code} · <b data-ar="{esc(SERVICES[code]['title_ar'])}">{esc(SERVICES[code]['title'])}</b></span>
+              <span class="chal__price" data-ar="{esc(price_ar)}">{price_en}</span>
+              <a class="chal__cta" href="/contact/?inquiry={code}#message" data-track="service-inquiry" data-track-service="{code}"><span data-ar="ابدأ استفسارًا بنطاق">Start a scoped inquiry</span>{icon('arrowUpRight', 'flip')}</a>
+            </span>
+          </article>'''
+
+
+def facts(items):
+    """items = [(label_en, label_ar, value, value_is_ltr, value_ar or None)]"""
+    cells = []
+    for item in items:
+        e, a, v, ltr = item[0], item[1], item[2], item[3]
+        va = item[4] if len(item) > 4 else None
+        b = f'<b class="ltr">{v}</b>' if ltr else (f'<b data-ar="{esc(va)}">{v}</b>' if va else f'<b>{v}</b>')
+        cells.append(f'<div><span data-ar="{esc(a)}">{esc(e)}</span>{b}</div>')
+    return '<div class="facts" data-reveal>' + ''.join(cells) + '</div>'
+
+
 def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extra_head='', scripts=('/assets/js/pages.js',), og_type='website', canonical=None, ld=None):
     """Write <ROOT>/<path>/index.html (or ROOT/<path> when path ends with .html).
 
@@ -153,6 +256,8 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
     a WebPage node and a BreadcrumbList (from the last crumbs() call) are always emitted.
     """
     url = canonical or (SITE + (path if path.endswith('.html') else path))
+    ar_url = SITE + '/ar/' if path == '/' else SITE + '/ar' + path
+    ar_path = '/ar/' if path == '/' else '/ar' + path
     if path.startswith('/books/') and not path.endswith('/read/'):
         body = body.replace('</h1>', '</h1><p class="notice" data-ar="معاينات عامة فقط. الشراء الإلكتروني غير متاح حاليًا؛ الأسعار استرشادية. احفظ قائمة أو استفسر عن التوفر.">Public previews only. Online purchasing is not available yet; prices are indicative. Save a shortlist or ask about availability.</p><p><a class="text-link" href="/cart/" data-ar="قائمة الكتب المحفوظة ←">Your saved shortlist →</a></p>', 1)
     body = body.replace('<form ', '<form method="post" ')  # JS intercepts; never leak form values via GET if scripts fail.
@@ -172,7 +277,7 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
         extra_head += '    <meta name="robots" content="noindex, follow" />\n'
     extra_head = jsonld(*graph) + extra_head
     doc = f'''<!doctype html>
-<html lang="en" dir="ltr" data-title-ar="{esc(title_ar)}" data-desc-ar="{esc(desc_ar)}">
+<html lang="en" dir="ltr" data-title-ar="{esc(title_ar)}" data-desc-ar="{esc(desc_ar)}" data-lang-mirror="{ar_path}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -182,7 +287,11 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
     <meta property="og:title" content="{esc(title)}" />
     <meta property="og:description" content="{esc(desc)}" />
     <meta property="og:url" content="{url}" />
+    <meta property="og:locale" content="en_US" />
     <link rel="canonical" href="{url}" />
+    <link rel="alternate" hreflang="en" href="{url}" />
+    <link rel="alternate" hreflang="ar" href="{ar_url}" />
+    <link rel="alternate" hreflang="x-default" href="{url}" />
     <!-- cc:head -->
     <!-- /cc:head -->
 {extra_head}  </head>

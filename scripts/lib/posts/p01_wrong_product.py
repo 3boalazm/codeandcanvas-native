@@ -44,7 +44,7 @@ POST = dict(
 <p>Similarly, <strong>Buffer's CEO</strong> Joel Gascoigne set up a simple landing page to test pricing intent before the product existed. Only after seeing real sign-ups did the team proceed with development — discovering lack of interest before, not after, a full launch.</p>
 ''',
     cta=dict(k='Code & Canvas · Product Strategy Advisory', h='Validating a product idea — or navigating digital transformation?',
-             p='Our teams in Product Strategy, MVP Development, and Growth Consulting provide the structured frameworks and technical expertise to turn your vision into a scalable reality — without wasting your first $250K on the wrong product.'),
+             p='Our teams in Product Strategy, MVP Development, and Growth Consulting provide the structured frameworks and technical expertise to turn your vision into a scalable reality — without betting your first budget on the wrong product.'),
     takeaways=('Key Takeaways for Innovation Leaders', 'What to do differently starting today', [
         '<strong>Get Out of the Building:</strong> There are no facts inside your office. Directly interact with users in the environment where the product will be used.',
         '<strong>Prioritize Ruthlessly:</strong> Use RICE or MoSCoW frameworks to identify the 20% of features that deliver 80% of the value.',

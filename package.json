@@ -8,7 +8,7 @@
     "sync": "node scripts/sync-chrome.mjs",
     "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs",
     "build": "sh ./build.sh",
-    "generate": "python3 scripts/gen-pages.py && npm run sync",
+    "generate": "python3 scripts/gen-pages.py && npm run sync && node scripts/gen-ar.mjs",
     "test": "playwright test",
     "test:flows": "playwright test tests/flows.spec.mjs",
     "test:matrix": "playwright test tests/matrix.spec.mjs",

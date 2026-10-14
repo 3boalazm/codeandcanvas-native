@@ -1,131 +1,142 @@
 # -*- coding: utf-8 -*-
-"""/healthcare/ — the healthcare track as a real page (the live site only had a
-`/services/#healthcare` anchor that pointed nowhere and a `/healthcare-hub/`
-duplicate of the creative page). Copy is assembled from the live HC cards,
-the pricing page bullets, and Ahmed's credentials/outcomes."""
+"""/healthcare/ — Healthcare track.
+
+v3 architecture: a decision path for a clinic or hospital owner, the five
+services as decision rows, the regulatory context with its verification status,
+and a clinic-vs-hospital fit split. No unverified compliance claims.
+"""
 from catalog import SERVICES
-from h import esc, icon, crumbs, closing, btn, page, service_ld, PERSON_LD
-from pages_technology import detail
+from h import (esc, t, th, icon, crumbs, closing, btn, page, service_ld, PERSON_LD,
+               sec_head, svc_rows, steps3, facts)
+
+HC = [c for c in SERVICES if c.startswith('HC-')]
+
+PATH = [
+    ('01', 'Diagnose the gap', 'تشخيص الفجوة',
+     'Where the clinic or hospital stands today: systems in place, data actually used, and the compliance items that are already late.',
+     'أين تقف العيادة أو المستشفى اليوم: الأنظمة القائمة، والبيانات المستخدمة فعلًا، وبنود الامتثال المتأخرة بالفعل.',
+     'Gap and risk list', 'قائمة الفجوات والمخاطر'),
+    ('02', 'Choose with evidence', 'الاختيار بالدليل',
+     'If a system purchase is coming, run a scored vendor selection before the demos begin — so the decision is defensible to the board.',
+     'إذا كان شراء نظام قادمًا، نُجري اختيارًا موزونًا للمورّدين قبل بدء العروض — ليكون القرار قابلًا للدفاع أمام الإدارة.',
+     'Scored criteria + RFP', 'معايير موزونة + طلب عروض'),
+    ('03', 'Launch and train', 'الإطلاق والتدريب',
+     'Identity, digital presence and clinical workflows shipped together, with the front desk and clinical staff trained on what changed.',
+     'الهوية والحضور الرقمي ومسارات العمل السريرية تُسلَّم معًا، مع تدريب الاستقبال والفريق السريري على ما تغيّر.',
+     'Launch + training', 'إطلاق + تدريب'),
+    ('04', 'Measure and decide next', 'القياس والقرار التالي',
+     'Dashboards tied to CBAHI-relevant KPIs, so the next investment is decided on numbers rather than on a vendor’s promise.',
+     'لوحات مؤشرات مرتبطة بمؤشرات CBAHI، ليُبنى القرار الاستثماري التالي على أرقام لا على وعود مورّد.',
+     'KPI dashboards', 'لوحات المؤشرات'),
+]
+
+CONTEXT = [
+    ('CBAHI', 'Saudi central board for accreditation of healthcare institutions — the accreditation body clinic and hospital work is measured against in KSA.',
+     'المركز السعودي لاعتماد المنشآت الصحية — الجهة التي يُقاس عليها عمل العيادات والمستشفيات في السعودية.'),
+    ('NORA', 'The national health information exchange architecture — the interoperability frame KSA healthcare integrations are expected to follow.',
+     'عمارة التبادل الوطني للمعلومات الصحية — الإطار الذي يُتوقع أن تتبعه التكاملات الصحية في السعودية.'),
+    ('HL7 · FHIR · DICOM', 'The standards used to move clinical data between HIS, LIS, RIS/PACS and portals without rebuilding them every time.',
+     'المعايير المستخدمة لنقل البيانات السريرية بين أنظمة HIS و LIS و RIS/PACS والبوابات دون إعادة بنائها كل مرة.'),
+    ('ETA e-invoice (EG)', 'Egyptian tax authority e-invoicing requirements, relevant to clinic billing and pharmacy workflows in Egypt.',
+     'متطلبات الفاتورة الإلكترونية لهيئة الضرائب المصرية، وترتبط بفوترة العيادات ومسارات الصيدليات في مصر.'),
+]
+
+FIT = [
+    ('A clinic or a small group', 'عيادة أو مجموعة صغيرة', True,
+     ['Clinic Digital Launch (HC-01) — identity, site, booking and Google presence in one engagement',
+      'Clinic Brand Identity Kit (HC-04) if the digital presence already exists',
+      'Healthcare BI (HC-02) once there are two or more branches to compare'],
+     ['الإطلاق الرقمي للعيادات (HC-01) — هوية وموقع وحجوزات وحضور Google في مشروع واحد',
+      'حزمة هوية العيادة (HC-04) إن كان الحضور الرقمي موجودًا بالفعل',
+      'ذكاء الأعمال الصحي (HC-02) عند وجود فرعين أو أكثر للمقارنة']),
+    ('A hospital or an investor', 'مستشفى أو مستثمر', False,
+     ['HIS Selection Advisory (HC-03) before any system commitment',
+      'Healthcare EA Assessment (HC-05) for EMRAM scoring and a 90-day roadmap',
+      'Healthcare BI (HC-02) as the measurement layer under both'],
+     ['استشارات اختيار نظام HIS (HC-03) قبل أي التزام بنظام',
+      'تقييم العمارة المؤسسية الصحية (HC-05) لتحديد مرحلة EMRAM وخارطة 90 يومًا',
+      'ذكاء الأعمال الصحي (HC-02) كطبقة قياس تحت كل ما سبق']),
+]
 
 
 def build():
-    both = ('Ahmed Bedeer + Mustafa Aboalazm', 'أحمد بدير + مصطفى أبو العزم')
-    ahmed = ('Ahmed Bedeer', 'أحمد بدير')
-    mustafa = ('Mustafa Aboalazm', 'مصطفى أبو العزم')
+    context = ''.join(f'''
+          <article class="panel mini" data-reveal style="--d:{i * .05:.2f}s">
+            <span class="mini__code">{esc(name)}</span>
+            <p data-ar="{esc(ar)}">{esc(en)}</p>
+          </article>''' for i, (name, en, ar) in enumerate(CONTEXT))
+
+    fit = ''.join(f'''
+          <article class="panel mini{' mini--warn' if not primary else ''}" data-reveal style="--d:{i * .05:.2f}s">
+            <h3 data-ar="{esc(title_ar)}">{title_en}</h3>
+            <ul class="svc-row__list">{''.join(f'<li data-ar="{esc(a)}">{esc(e)}</li>' for e, a in zip(items_en, items_ar))}</ul>
+          </article>''' for i, (title_en, title_ar, primary, items_en, items_ar) in enumerate([(a, b, c, d, e) for a, b, c, d, e in FIT]))
+
     body = f'''
       <!-- ░░ Hero ░░ -->
-      <section class="phero container" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         {crumbs([('Home', 'الرئيسية', '/'), ('Solutions', 'الحلول', '/services/'), ('Healthcare', 'الرعاية الصحية', None)])}
-        <div class="phero__split">
-          <div>
-            <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="الرعاية الصحية · CPHIMS · EMRAM · CBAHI · NORA">Healthcare · CPHIMS · EMRAM · CBAHI · NORA</span></span>
-            <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="تعمل في الرعاية الصحية؟">Working in healthcare?</span><br /><span class="grad-text" data-ar="لنتحدث بالتفاصيل.">Let’s talk specifics.</span></h1>
-            <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="&lt;strong&gt;خمس خدمات صحية مُنتجة&lt;/strong&gt; للعيادات والمراكز الطبية والمستشفيات في السعودية ومصر — من هوية تبني ثقة المرضى إلى اختيار نظام HIS وجاهزية EMRAM. المكالمات الاستكشافية متخصصة بالقطاع — نأتي مستعدين بسياق CBAHI و HIMSS EMRAM و NORA ومسارات العمل السريرية."><strong>Five productized healthcare services</strong> for clinics, medical centres, and hospitals in KSA and Egypt — from patient-trust identity to HIS selection and EMRAM readiness. Discovery calls are sector-specific — we come prepared with CBAHI, HIMSS EMRAM, NORA, and clinical workflow context already built in.</p>
-            <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Book a Healthcare Discovery Call', 'احجز مكالمة استكشافية للرعاية الصحية', '/contact/#book')}{btn('See the 5 services', 'استعرض الخدمات الخمس', '#services', 'glass', 'arrowDown')}</div>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="عيادات ومستشفيات · السعودية ومصر · ثنائي اللغة">Clinics &amp; hospitals · KSA + Egypt · bilingual</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="قرارات الرعاية الصحية">Healthcare decisions</span><br /><span class="grad-text" data-ar="تُبنى على بيانات وأدلة.">built on data and evidence.</span></h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="خمس خدمات للعيادات والمستشفيات: الإطلاق الرقمي وذكاء الأعمال الصحي واستشارات اختيار HIS وهوية العيادة وتقييم العمارة المؤسسية. &lt;strong&gt;يُسلّمها فريق يحمل CPHIMS و EMRAM ويعمل بسياق سريري حقيقي.&lt;/strong&gt;">Five services for clinics and hospitals: digital launch, healthcare BI, HIS selection advisory, clinic identity and enterprise-architecture assessment. <strong>Delivered by a team holding CPHIMS and EMRAM, working with real clinical context.</strong></p>
+        <div class="hero__ctas" data-reveal style="--d:.24s">
+          {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}
+          {btn('Healthcare pricing', 'أسعار الرعاية الصحية', '/pricing-faq/', 'glass')}
+        </div>
+        {facts([('Services', 'خدمات', '5', True), ('Engagements from', 'تبدأ المشاريع من', '$1,500', True),
+                ('Built for', 'مبنية لـ', 'KSA + Egypt', True), ('Delivery', 'التسليم', '2–7 weeks', True)])}
+      </section>
+
+      <!-- ░░ 01 · The decision path ░░ -->
+      <section class="section container" id="path" aria-labelledby="path-title">
+        {sec_head('01', 'THE DECISION PATH', 'مسار القرار',
+                  '<span id="path-title" data-ar="أربع خطوات">Four steps</span> <span class="grad-text" data-ar="من الفجوة إلى المقارنة.">from the gap to the comparison.</span>',
+                  'This is the sequence a clinic owner or investor usually faces. You can enter it at any step — most enter at the second one, when a system purchase is already on the table.',
+                  'هذا هو التسلسل الذي يواجهه صاحب العيادة أو المستثمر عادةً. يمكنك الدخول من أي خطوة — ومعظم العملاء يدخلون من الثانية حين يكون شراء النظام مطروحًا بالفعل.')}
+        {steps3(PATH)}
+      </section>
+
+      <!-- ░░ 02 · Services ░░ -->
+      <section class="section container" id="services" aria-labelledby="svc-title">
+        {sec_head('02', 'THE SERVICES', 'الخدمات', '<span id="svc-title" data-ar="خمس خدمات.">Five services.</span> <span class="grad-text" data-ar="قرار واحد لكل صف.">One decision per row.</span>',
+                  'Background on the founder’s healthcare work: <a href="/technology-services/#results">numbers with their limits</a>. Scope and price per service are below.',
+                  'خلفية عمل المؤسس في الرعاية الصحية: <a href="/technology-services/#results">أرقام بحدودها</a>. النطاق والسعر لكل خدمة أدناه.',
+                  aside=f'<a class="text-link" href="/pricing-faq/" data-track="navigation" data-track-to="pricing"><span data-ar="الأسعار وشروط الدفع">Prices &amp; payment terms</span>{icon("arrowUpRight", "flip")}</a>')}
+        {svc_rows(HC)}
+        <p class="note-quiet" style="margin-top:16px" data-ar-html="الأسعار استرشادية وتُثبَّت في العرض المكتوب. المشاريع الصحية تبدأ عادةً بمكالمة نطاق نحدد فيها ما هو &lt;em&gt;خارج&lt;/em&gt; النطاق بوضوح — من تشغيل النظام إلى مسؤوليات المورّد. &lt;a href=&quot;/contact/?inquiry=HC-03#message&quot;&gt;لست متأكدًا من أين تبدأ؟&lt;/a&gt;">Prices are indicative and fixed in the written proposal. Healthcare engagements start with a scoping call where we state plainly what is <em>out</em> of scope — from system operation to vendor responsibilities. <a href="/contact/?inquiry=HC-03#message">Not sure where to start?</a></p>
+      </section>
+
+      <!-- ░░ 03 · Regulatory context ░░ -->
+      <section class="section section--band" id="context" aria-labelledby="ctx-title">
+        <div class="container">
+          {sec_head('03', 'REGULATORY CONTEXT', 'السياق التنظيمي',
+                    '<span id="ctx-title" data-ar="المفردات التي">The vocabulary</span> <span class="grad-text" data-ar="تُناقش بها القرارات.">the decisions are made in.</span>',
+                    'These are the frameworks and standards the work is delivered against. Anything project-specific — including which requirements apply to your facility — is confirmed with your quality and compliance leads before scope is fixed.',
+                    'هذه هي الأطر والمعايير التي يُسلَّم العمل وفقها. أي تفصيل خاص بالمشروع — بما فيه المتطلبات التي تنطبق على منشأتك — يُؤكَّد مع مسؤولي الجودة والامتثال قبل تثبيت النطاق.')}
+          <div class="grid-4">{context}
           </div>
-          <div class="phero__aside" data-reveal style="--d:.2s">
-            <div class="stats__inner glass" style="grid-template-columns:repeat(2,1fr)">
-              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="85" data-latin="1">85</span>%</span><p class="stat__label" data-ar-html="جاهزية HIMSS&lt;br /&gt;المرحلة 6 المحققة">HIMSS Stage 6<br />readiness achieved</p></div>
-              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="12" data-latin="1">12</span>%</span><p class="stat__label" data-ar-html="خفض مدة الإقامة&lt;br /&gt;في العناية المركزة">ICU length-of-stay<br />reduction</p></div>
-              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="5" data-latin="1">5</span></span><p class="stat__label" data-ar-html="خدمات صحية&lt;br /&gt;مُنتجة">Productized<br />healthcare services</p></div>
-              <div class="stat"><span class="stat__num stat__num--ltr">$50–200K</span><p class="stat__label" data-ar-html="كلفة الخروج من&lt;br /&gt;نظام HIS خاطئ">Cost to exit<br />a wrong HIS</p></div>
-            </div>
-          </div>
+          <p class="note-quiet" style="margin-top:16px" data-ar-html="لا ندّعي اعتمادًا تنظيميًا أو شهادة لمنشأتك. الاستشارة تُنتج تقييمًا ووثائق وخارطة طريق، والقرار النهائي والمسؤولية التنظيمية يبقيان لك وللمعنيين بالامتثال. &lt;a href=&quot;/contact/?inquiry=HC-03#message&quot;&gt;ناقش التفاصيل&lt;/a&gt;.">We do not claim regulatory accreditation or certification for your facility. The engagement produces an assessment, documents and a roadmap; the decision and regulatory responsibility stay with you and your compliance owners. <a href="/contact/?inquiry=HC-03#message">Discuss the detail</a>.</p>
         </div>
       </section>
 
-      <!-- ░░ Credentials + outcomes ░░ -->
-      <section class="section container section--tight" id="credentials" aria-labelledby="cred-title">
-        <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">01</span><span data-ar="اعتمادات فعّالة · نتائج لا مجرد مخططات">ACTIVE CREDENTIALS · OUTCOMES, NOT JUST DIAGRAMS</span></p>
-          <h2 class="section__title" id="cred-title"><span data-ar="سياق سريري">Clinical context</span> <span class="grad-text" data-ar="من المكالمة الأولى.">from the first call.</span></h2>
-        </header>
-        <div class="grid grid--4">
-          <article class="card glass tile" data-tilt data-reveal><span class="card__icon">{icon('award')}</span><h3>CPHIMS</h3><p data-ar="محترف معتمد في المعلوماتية الصحية — HIMSS">Certified Professional in Health Informatics — HIMSS</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon">{icon('shield')}</span><h3>HIMSS EMRAM</h3><p data-ar="مقيّم مراحل معتمد لنموذج تبنّي السجلات الطبية الإلكترونية">Certified stage assessor — EMR Adoption Model</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><span class="card__icon">{icon('check')}</span><h3>CBAHI</h3><p data-ar="جاهزية اعتماد المركز السعودي لاعتماد المنشآت الصحية مدمجة في كل مشروع صحي">Saudi accreditation readiness built into every HC engagement</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.21s"><span class="card__icon">{icon('plug')}</span><h3>NORA</h3><p data-ar="منصة التبادل الصحي الوطنية · وزارة الصحة السعودية · عمارة تكامل فعّالة">National Health Exchange · Saudi MOH · active integration architecture</p></article>
-        </div>
-        <div class="grid grid--3" style="margin-top:18px">
-          <article class="card glass tile" data-tilt data-reveal><strong class="art__mark" style="font-size:44px">12%</strong><h3 style="margin-top:12px" data-ar="خفض مدة الإقامة في العناية المركزة">ICU LOS Reduction</h3><p data-ar="التحليلات التنبؤية وتنبيهات فجوات الرعاية المدمجة في مستودع البيانات دعمت التواصل السريري الاستباقي">Predictive analytics &amp; care-gap alerting integrated into the EDW supported proactive clinical outreach</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><strong class="art__mark" style="font-size:44px">25%</strong><h3 style="margin-top:12px" data-ar="إقفال شهري أسرع">Faster Month-End Close</h3><p data-ar="مسارات دورة الإيرادات المنمذجة بـ UML بسّطت دورة الطلبات وعمليات تسجيل الرسوم">UML-modeled revenue-cycle workflows streamlined order lifecycle and charge capture processes</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><strong class="art__mark" style="font-size:44px">40%</strong><h3 style="margin-top:12px" data-ar="أعباء إدارية أقل">Less Admin Overhead</h3><p data-ar="تطبيق Java/Spring Boot متمحور حول المريض أتمت مسارات المواعيد والتأمين من البداية للنهاية">Patient-centric Java/Spring Boot application automated appointment and insurance workflows end-to-end</p></article>
+      <!-- ░░ 04 · Which one are you ░░ -->
+      <section class="section container" id="fit" aria-labelledby="fit-title">
+        {sec_head('04', 'WHICH ONE ARE YOU?', 'أيّهما أنت؟', '<span id="fit-title" data-ar="عيادة صغيرة">A small clinic</span> <span class="grad-text" data-ar="أم مستشفى أو مستثمر؟">or a hospital / investor?</span>',
+                  'The two paths need different first steps — pick the row that describes you and start there.',
+                  'المساران يحتاجان أول خطوة مختلفة — اختر الصف الذي يصفك وابدأ منه.')}
+        <div class="grid-2">{fit}
         </div>
       </section>
 
-      <!-- ░░ Services ░░ -->
-      <section class="section container section--flush-top" id="services" aria-labelledby="svc-title">
-        <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">02</span><span data-ar="5 خدمات صحية · HC-01 → HC-05">5 Healthcare Services · HC-01 → HC-05</span></p>
-          <h2 class="section__title" id="svc-title"><span data-ar="مبنية للعيادات والمستشفيات">Built for clinics and hospitals</span><br /><span class="grad-text" data-ar="في السعودية ومصر.">in KSA and Egypt.</span></h2>
-          <p class="section__lead" data-ar="واعية بمتطلبات CBAHI · متوافقة مع NORA · عربي + إنجليزي كمعيار. كل خدمة بنطاق ثابت ودفعات حسب المعالم.">CBAHI-aware · NORA-compliant · AR + EN as standard. Every service has a fixed scope and milestone-based payment.</p>
-        </header>
-        <div id="svc-list">
-        {detail('HC-01', cls='sdetail--health', featured=True, lead_by=both,
-                tag_list=['Brand identity', 'Bilingual digital presence', 'Booking system', 'Google presence', 'Social kit', 'CBAHI-aware', 'NORA-compliant'],
-                included=['Brand identity + bilingual digital presence', 'Booking system + Google presence', 'CBAHI-aware design', 'NORA-compliant patient comms', 'AR + EN as standard', '30-day post-launch support'],
-                included_ar=['هوية العلامة + حضور رقمي ثنائي اللغة', 'نظام حجوزات + حضور على Google', 'تصميم واعٍ بمتطلبات CBAHI', 'تواصل مع المرضى متوافق مع NORA', 'عربي + إنجليزي كمعيار', 'دعم 30 يومًا بعد الإطلاق'],
-                price_note='Brand + Tech · 50 / 25 / 25', price_note_ar='هوية + تقنية · 50 / 25 / 25', cta=('Start Clinic Launch', 'ابدأ إطلاق العيادة'))}
-        {detail('HC-02', cls='sdetail--health', lead_by=both, tag_list=['Power BI', 'CBAHI KPI library', 'Patient flow', 'Revenue cycle', 'Executive reporting'],
-                included=['Clinical operational data → dashboards', 'CBAHI KPI library included', 'BD insight layer', 'Executive reporting format'],
-                included_ar=['بيانات تشغيلية سريرية ← لوحات مؤشرات', 'مكتبة مؤشرات CBAHI مضمّنة', 'طبقة رؤى تطوير الأعمال', 'صيغة تقارير تنفيذية'],
-                price_note='Combined · 50 / 50', price_note_ar='متكاملة · 50 / 50', cta=('Start HC-BI', 'ابدأ ذكاء الأعمال الصحي'))}
-        {detail('HC-03', cls='sdetail--health', lead_by=ahmed, tag_list=['CPHIMS-delivered', 'CBAHI + NORA', 'Vendor scoring (10+ vendors)', 'RFP template', 'Contract review'],
-                included=['Clinical workflow mapping', 'Vendor scoring matrix (10+ vendors)', 'RFP template', 'Contract review checklist', '⚠ Wrong HIS: $50K–$200K exposure'],
-                included_ar=['رسم مسارات العمل السريرية', 'مصفوفة تقييم المورّدين (+10 مورّدين)', 'قالب طلب العروض (RFP)', 'قائمة مراجعة العقد', '⚠ نظام HIS خاطئ: تعرّض بقيمة ⁦$50K–$200K⁩'],
-                price_note='EA + CPHIMS · 50 / 50', price_note_ar='عمارة مؤسسية + CPHIMS · 50 / 50', cta=('Start HIS Advisory', 'ابدأ استشارات HIS'))}
-        {detail('HC-04', cls='sdetail--health', lead_by=mustafa, tag_list=['Patient trust signals', 'Regulatory-aware design', 'Bilingual AR/EN', 'Signage · stationery', 'Patient-facing templates'],
-                included=['Logo system + bilingual AR/EN lockup', 'Patient trust signals built into the identity', 'Regulatory-aware design (CBAHI context)', 'Signage, stationery, and patient-facing templates', 'Brand guidelines (AR + EN)'],
-                included_ar=['منظومة شعار + تركيب ثنائي اللغة عربي/إنجليزي', 'إشارات ثقة للمرضى مدمجة في الهوية', 'تصميم واعٍ بالمتطلبات التنظيمية (سياق CBAHI)', 'لوحات وقرطاسية وقوالب موجّهة للمرضى', 'دليل العلامة (عربي + إنجليزي)'],
-                price_note='Brand · 50 / 25 / 25', price_note_ar='هوية · 50 / 25 / 25', cta=('Start Clinic Identity', 'ابدأ هوية العيادة'))}
-        {detail('HC-05', cls='sdetail--health', lead_by=ahmed, tag_list=['TOGAF-anchored', 'EMRAM stage scoring', 'CBAHI readiness', 'NORA alignment', '90-day roadmap'],
-                included=['EMRAM stage scoring', 'CBAHI readiness gap report', 'NORA alignment review', '90-day technology roadmap'],
-                included_ar=['تحديد مرحلة EMRAM', 'تقرير فجوات الجاهزية لـ CBAHI', 'مراجعة المواءمة مع NORA', 'خارطة طريق تقنية لمدة 90 يومًا'],
-                price_note='EA + EMRAM · 50 / 50', price_note_ar='عمارة مؤسسية + EMRAM · 50 / 50', cta=('Start EA Assessment', 'ابدأ تقييم العمارة'))}
-        </div>
-      </section>
-
-      <!-- ░░ Who leads what ░░ -->
-      <section class="section container section--tight section--flush-top" id="who" aria-labelledby="who-title">
-        <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">03</span><span data-ar="من يقود ماذا">WHO LEADS WHAT</span></p>
-          <h2 class="section__title" id="who-title" style="font-size:clamp(26px,3vw,40px)"><span data-ar="مؤسس مُسمّى لكل مشروع —">A named founder on every engagement —</span> <span class="grad-text" data-ar="لا طبقة حسابات بينكما.">no account layer in between.</span></h2>
-        </header>
-        <div class="grid grid--3">
-          <article class="card glass tile" data-tilt data-reveal><span class="card__icon">{icon('stethoscope')}</span><h3 id="lead-title" data-ar="يقودها أحمد بدير">Led by Ahmed Bedeer</h3><p data-ar="الخدمات الصحية المتخصصة (HC-03، HC-05) يقودها أحمد بدير — CPHIMS، مقيّم HIMSS EMRAM، NORA — بخبرة أكثر من 7 سنوات في السعودية عبر الرعاية الصحية والحكومة والقطاع الخاص.">Healthcare-specific services (HC-03, HC-05) are led by Ahmed Bedeer — CPHIMS, HIMSS EMRAM assessor, NORA — with 7+ years in KSA across healthcare, government, and the private sector.</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon">{icon('pen')}</span><h3 data-ar="يقودها مصطفى أبو العزم">Led by Mustafa Aboalazm</h3><p data-ar="مشاريع الهوية الصحية فقط (HC-04) يقودها مصطفى — إشارات ثقة للمرضى وتصميم واعٍ بالمتطلبات التنظيمية وتسليم ثنائي اللغة.">Brand-only healthcare engagements (HC-04) are led by Mustafa — patient trust signals, regulatory-aware design, bilingual delivery.</p></article>
-          <article class="card glass tile tile--accent" data-tilt data-reveal style="--d:.14s"><span class="card__icon">{icon('sparkles')}</span><h3 data-ar="مشاريع متكاملة">Combined engagements</h3><p data-ar="المشاريع المتكاملة (HC-01، HC-02) يشارك فيها المؤسسان معًا — وتُسعَّر كباقة واحدة، دون فوترة مزدوجة أبدًا.">Combined engagements (HC-01, HC-02) involve both founders — quoted as a single package, never double-billed.</p></article>
-        </div>
-      </section>
-
-      <!-- ░░ CTA ░░ -->
-      <section class="section container section--tight" aria-labelledby="cta-title">
-        <div class="callout glass glass--deep" data-reveal>
-          <div>
-            <p class="kicker"><span data-ar="المؤسسات الصحية">HEALTHCARE ORGANIZATIONS</span></p>
-            <h3 id="cta-title"><span data-ar="أحضر تحدّيك.">Bring your challenge.</span> <span class="grad-text" data-ar="سنأتي بالسياق.">We’ll bring the context.</span></h3>
-            <p data-ar="سواء كانت عيادة جديدة تحتاج هوية وحضورًا رقميًا، أو مستشفى يختار نظام HIS، أو مجلس إدارة يريد لوحات CBAHI — أخبرنا بمشكلة العمل وسنقترح أخف مشروع يوصلك إلى قرار واثق.">Whether it's a new clinic that needs an identity and digital presence, a hospital choosing an HIS, or a board that wants CBAHI dashboards — tell us the business problem and we'll propose the lightest engagement that gets you a confident decision.</p>
-          </div>
-          <div class="callout__actions">
-            {btn('Book a Healthcare Discovery Call', 'احجز مكالمة استكشافية للرعاية الصحية', '/contact/#book')}
-            <a class="text-link" href="https://wa.me/966545520750" target="_blank" rel="noopener">{icon('chat')}<span data-ar="واتساب · السعودية">WhatsApp · KSA</span></a>
-          </div>
-        </div>
-        <ul class="promises glass" data-reveal aria-label="Engagement principles" data-ar-label="مبادئ التعاون">
-          <li>{icon('check')}<span data-ar="نطاق واضح من المكالمة الأولى">Clear scope from the first call</span></li>
-          <li>{icon('check')}<span data-ar="تسليم حسب المعالم · شروط متفق عليها مسبقًا">Milestone-based delivery · terms agreed upfront</span></li>
-          <li>{icon('check')}<span data-ar="سنخبرك إن لم نكن الخيار المناسب">We’ll tell you if we’re not the right match</span></li>
-          <li>{icon('check')}<span data-ar="السعودية + مصر · تغطية MENA">KSA + Egypt · MENA coverage</span></li>
-        </ul>
-      </section>
-
-      {closing("CAN'T WAIT TO HEAR FROM YOU", 'نتطلع لسماعك',
-               '<span data-ar="لا نطيق الانتظار">Can’t Wait To</span><br /><span class="grad-text" data-ar="لنسمع منك.">Hear From You.</span>',
-               'Book an appointment, get started with a brief, or browse the full catalogue of services.',
-               'احجز موعدًا، أو ابدأ بموجز مختصر، أو تصفّح كتالوج الخدمات الكامل.',
-               [btn('Book an Appointment', 'احجز موعدًا', '/contact/#book'), btn('Get Started', 'ابدأ الآن', '/contact/', 'glass'), btn('Full Services', 'كل الخدمات', '/services/', 'ghost', 'arrow')])}
+      {closing('START A HEALTHCARE ENGAGEMENT', 'ابدأ مشروعًا صحيًا',
+               '<span data-ar="قرار صحي">A healthcare decision</span> <span class="grad-text" data-ar="تريد أن تدافع عنه؟">you need to defend?</span>',
+               'Bring the situation — a system purchase, an accreditation deadline, a branch launch — and we will propose the smallest engagement that makes the next decision defensible.',
+               'أحضر الحالة — شراء نظام أو موعد اعتماد أو إطلاق فرع — وسنقترح أصغر مشروع يجعل القرار التالي قابلًا للدفاع.',
+               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book'), btn('All 23 services', 'كل الخدمات الـ23', '/services/', 'glass')])}
 '''
-    return [page('/healthcare/', title='Healthcare Solutions — Code & Canvas', title_ar='حلول الرعاية الصحية — Code & Canvas',
-                 desc='Five productized healthcare services for clinics and hospitals in KSA and Egypt — Clinic Digital Launch, Healthcare BI, HIS Selection Advisory, Clinic Brand Identity, Healthcare EA + EMRAM. CPHIMS · EMRAM · CBAHI · NORA.',
-                 desc_ar='خمس خدمات صحية مُنتجة للعيادات والمستشفيات في السعودية ومصر — الإطلاق الرقمي للعيادات وذكاء الأعمال الصحي واستشارات اختيار HIS وهوية العيادة وتقييم العمارة الصحية + EMRAM. CPHIMS · EMRAM · CBAHI · NORA.',
-                 nav='healthcare', body=body, ld=[service_ld([c for c in SERVICES if c.startswith('HC-')], 'https://codeandcanvas.net/healthcare/'), PERSON_LD['ahmed'], PERSON_LD['mustafa']])]
+    return [page('/healthcare/', title='Healthcare Solutions — Clinics and hospitals in KSA and Egypt · Code & Canvas',
+                 title_ar='حلول الرعاية الصحية — العيادات والمستشفيات في السعودية ومصر · Code & Canvas',
+                 desc='Five healthcare services for clinics and hospitals: clinic digital launch, healthcare BI, HIS selection advisory, clinic brand identity and enterprise-architecture assessment — delivered with CPHIMS and EMRAM experience.',
+                 desc_ar='خمس خدمات صحية للعيادات والمستشفيات: الإطلاق الرقمي للعيادات وذكاء الأعمال الصحي واستشارات اختيار نظام HIS وهوية العيادة وتقييم العمارة المؤسسية — بما يحمله الفريق من CPHIMS و EMRAM.',
+                 nav='healthcare', body=body,
+                 ld=[service_ld(HC, 'https://codeandcanvas.net/healthcare/'), PERSON_LD['ahmed'], PERSON_LD['mustafa']])]

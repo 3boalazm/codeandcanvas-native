@@ -1,0 +1,206 @@
+Home › Solutions › Technology Services
+Technology · Architecture · Transformation · Data
+Architecting
+digital transformation.
+Enterprise Architecture · Digital Transformation · Healthcare Informatics · Solution Architecture · Cloud · Executive Advisory. 6 services. One practice. Every engagement produces artifacts executives can act on — not shelfware.
+Book a Call Portfolio
+7 + Years across
+KSA & MENA
+3 Architecture
+frameworks
+85 % HIMSS Stage 6
+readiness achieved
+12 + Tech &
+compliance stds
+Credentials
+Results
+Services 6
+Capabilities
+Engagement model
+Who delivers
+Book a call
+01 ACTIVE CREDENTIALS · NOT LISTED FRAMEWORKS
+Credentials used in every relevant engagement.
+CPHIMS
+Certified Professional in Health Informatics
+HIMSS · Health Informatics & Info Mgmt
+EMRAM
+EMR Adoption Model Assessor
+HIMSS · Certified Stage Assessor
+TOGAF
+Enterprise Architecture Framework
+The Open Group · ADM-anchored delivery
+NORA
+National Health Exchange · KSA
+Saudi MOH · Active integration architecture
+02 OUTCOMES · NOT JUST DIAGRAMS
+Numbers from real engagements.
+12% ICU LOS Reduction
+Predictive analytics & care-gap alerting integrated into the EDW supported proactive clinical outreach
+25% Faster Month-End Close
+UML-modeled revenue-cycle workflows streamlined order lifecycle and charge capture processes
+40% Less Admin Overhead
+Patient-centric Java/Spring Boot application automated appointment and insurance workflows end-to-end
+$500K+ Cost-Savings Identified
+Automated market analysis dashboard delivered real-time insights that drove measurable stakeholder decisions
+03 6 Technology Services
+Architecture. Transformation.
+Data. Cloud. Advisory.
+Filter by practice
+All 6
+EA & Strategy 1
+Healthcare 1
+Data 1
+Solution Arch 1
+Cloud 1
+Advisory 1
+AB-01 ⭐ Most Requested TOGAF · NORA
+Enterprise Architecture & Strategy
+End-to-end TOGAF-aligned engagements — from current-state assessment to target-state vision and a phased transition roadmap with clear governance. Every decision traces back to the Business-to-Technology Alignment Matrix.
+TOGAF ADM ArchiMate 3.1 NORA Alignment Capability Mapping Sparx EA Architecture Governance Vision 2030
+What's included
+Architecture Vision & Capability Mapping
+Business · Data · Application · Tech layers (BDAT)
+NORA alignment for KSA programs
+ArchiMate modelling & documentation
+Architecture Governance Board enablement
+90-day phased action plan
+Business-to-Technology Alignment Matrix
+Engagement tiers
+EA Quick-Start Assessment $1,000 – $2,500 Current state across BDAT layers · capability gap analysis · Business-to-Technology Alignment Matrix · 90-day action plan · ArchiMate / Sparx EA documentation.
+2 weeks · TOGAF-anchored
+Digital Transformation Advisory (extended) $3,000 – $8,000 Governance model design · phased roadmap · NORA & Vision 2030 alignment · KPI framework · stakeholder presentation.
+4–8 weeks · NORA / Vision 2030
+$1,000 – $5,000 2–8 weeks · TOGAF ADM Start an EA Engagement → from $1,000
+Start an EA Engagement
+Payment terms & FAQ
+Led by Ahmed Bedeer
+AB-02 CPHIMS · EMRAM
+Healthcare Digital Transformation
+Hospital and clinic transformations executed against HIMSS Stage 6+ readiness — from EHR selection and interoperability rollout to CBAHI readiness and NORA compliance architecture. Delivered by an active HIMSS EMRAM assessor.
+HIS · EHR · EMR HL7 · FHIR · DICOM Mirth Connect HIMSS EMRAM CBAHI · NORA
+$3,000 – $8,000 4–8 weeks · CPHIMS-delivered CPHIMS · EMRAM · NORA
+Book a Discovery Call
+Payment terms & FAQ
+Led by Ahmed Bedeer
+AB-03 Power BI · Python
+Data Architecture & Analytics
+From data governance design to ODS → EDW pipelines and production BI platforms — the data foundation that feeds dashboards, ML models, and executive decisions. Not retrospective reporting; decision intelligence.
+Power BI · Tableau Python · SQL EDW · ETL Master Data KPI Frameworks
+Engagement tiers
+Analytics Dashboard $800 – $2,000 Operational data → executive dashboards · Power BI or Tableau delivery · Python data pipeline (if needed) · decision intelligence framing · entry point to an EA engagement.
+1–2 weeks · Power BI · Python
+$800 – $3,500 1–4 weeks · Power BI · Python
+Book a Discovery Call
+Payment terms & FAQ
+Led by Ahmed Bedeer
+AB-04 Java · Spring Boot
+Solution Architecture
+API-first architectures in Java/Spring Boot and Node.js — microservices, REST APIs, database design, and OODA-driven analysis bridging product and platform. From concept to deployable architecture documentation.
+Java · Spring Boot Node.js PostgreSQL Microservices API Design
+Engagement tiers
+Application Portfolio Discovery $800 – $2,000 Automated .NET source analysis · application landscape map · service dependency map · technical documentation · replaces weeks of manual discovery.
+3–5 days · .NET stacks
+Custom scope Java · Spring · PostgreSQL Scoped per engagement
+Book a Discovery Call
+Payment terms & FAQ
+Led by Ahmed Bedeer
+AB-05 Docker · K8s
+Cloud & Platform Modernization
+Architecture-first cloud migration and platform modernization — workload assessment, provider evaluation, HA/DR posture, risk register, and a 3-year TCO model. Built to reduce risk, not just lift and shift.
+Docker · Kubernetes HA · DR Architecture VLAN · Firewalls Hybrid Cloud Observability
+What's included
+Workload assessment
+Provider evaluation matrix
+Migration sequencing plan
+Risk register
+Cloud governance framework
+$2,500 – $6,000 3–6 weeks · Docker · K8s
+Book a Discovery Call
+Payment terms & FAQ
+Led by Ahmed Bedeer
+AB-06 WEEKLY · RETAINER
+Executive & PMO Advisory
+Trusted advisor to chairmen, CIOs, and PMOs — vendor proposals, weekly governance support, and SME consultation across the program lifecycle. Provides an independent architecture voice at the decision table.
+Vendor Review PMO Governance SOW Review Lean Six Sigma Agile Enablement
+Weekly · Retainer PMO · SOW Review · Advisory
+Book a Discovery Call
+Payment terms & FAQ
+Led by Ahmed Bedeer
+04 9 Capabilities · One Practice
+Where the depth lives.
+Each capability ties back to a measurable business outcome — that's the line between a solution architect and an enterprise architect.
+EA
+Enterprise Architecture
+TOGAF-aligned roadmaps, capability modeling, operating models, and IT governance. Translates strategy into structured BDAT layers.
+Sparx EA Visual Paradigm ArchiMate
+DX
+Digital Transformation
+Business–IT alignment, process re-engineering, automation, and KPI-driven execution. From transformation roadmaps to value realization.
+NORA TOGAF KPI Frameworks
+⚕ HC
+Healthcare Informatics
+HIS, EHR/EMR, LIS, RIS/PACS, ICU and patient portals. End-to-end clinical workflow design and HIMSS Stage 6 readiness.
+HIMSS CPHIMS HL7 · FHIR
+⇄ INT
+Integration & Interoperability
+Mirth Connect integration bus, FHIR APIs, HL7 v2.x, and DICOM. Terminology mapping against LOINC and SNOMED CT.
+Mirth API-First REST · iPaaS
+Σ DATA
+Data & Analytics
+ODS → EDW pipelines, ETL orchestration, BI dashboards, and predictive analytics. Data governance and population health registries.
+Power BI Tableau Python · SQL
+{} DEV
+Software Engineering
+Java 17/Spring Boot microservices, Node.js services, OODA design, RESTful APIs, and PostgreSQL platforms — API-first.
+Java · Spring Node.js PostgreSQL
+☁ CLOUD
+Cloud & Infrastructure
+Docker, Kubernetes, VLAN-segmented networks, HA WAN links, active-passive clustering, and DR with sub-1% RTO failover.
+Docker Kubernetes Aruba · Palo Alto
+🛡 SEC
+Security & Compliance
+Privacy-by-design controls satisfying HIPAA & GDPR — AAA model, audit logging, encryption-at-rest, and healthcare regulation.
+HIPAA GDPR AAA · IAM
+⚙ PMO
+Project & Program Delivery
+Active PMO collaboration, technical documentation, vendor & SOW review, and SME advisory. Lean Six Sigma and Agile.
+Agile Lean Six Sigma PMO
+05 Engagement model
+An engagement model built for decisions.
+Every engagement produces artifacts that executives can act on — not shelfware.
+Architecture Views
+ArchiMate / UML models and BDAT diagrams in Sparx EA or Visual Paradigm — the living, reviewable source of truth for every architecture decision made during the engagement.
+Executive One-Pagers
+Slide decks and concise summaries that translate architecture into investment, risk, and outcome language for the board — so the decision-makers can decide, not just observe.
+Walkthroughs
+Short, focused walkthroughs of design philosophy and trade-offs — multi-modal content so every stakeholder gets it, regardless of their technical depth.
+06 WHO DELIVERS
+One founder leads every technology engagement — not a sales team.
+AB { } THE CODE
+Enterprise Architect · Digital Transformation Specialist
+Ahmed Bedeer
+Co-Founder · Code & Canvas · Al Khobar, KSA
+Enterprise Architect and Digital Transformation Specialist with 7+ years in KSA — working across healthcare, government, and private sector. CPHIMS-certified with active HIMSS EMRAM assessment experience. Expertise in TOGAF/NORA architecture, HIS vendor selection, cloud migration, data analytics, and EA capability building aligned to Vision 2030.
+TOGAF NORA CPHIMS EMRAM ArchiMate Sparx EA Java · Spring Power BI FHIR · HL7 Vision 2030
+Portfolio
+Book a Call →
+LinkedIn
+GitHub
+START AN ENGAGEMENT
+Have a transformation
+to architect?
+Whether it's a greenfield hospital build, a data-governance program, or a cloud modernization — tell me the business problem and I'll propose the lightest engagement that gets you a confident decision.
+Book a Discovery Call
+View Portfolio ↗
+TOGAF · NORA · CPHIMS active
+Artifacts executives can act on
+Milestone-based payment
+KSA + Egypt · Remote
+Arabic & English
+CAN'T WAIT TO HEAR FROM YOU
+Can’t Wait To
+Hear From You.
+Book an appointment, get started with a brief, or browse the full catalogue of services.
+Book an Appointment Get Started Full Services
+info@codeandcanvas.net · +966 54 552 0750 · +20 109 250 0454

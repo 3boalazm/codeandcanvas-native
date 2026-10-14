@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """/about/ — live copy of codeandcanvas.net/about/."""
-from h import esc, icon, crumbs, closing, btn, page
+from h import esc, icon, crumbs, closing, btn, page, PERSON_LD
 
 WHY = [
     ('Productized, not open-ended', 'مُنتجة، لا مفتوحة النهاية',
@@ -41,11 +41,11 @@ def build():
             <p data-ar-html="{esc(dar)}">{den}</p>
           </article>''' for i, (en, ar, den, dar, ic) in enumerate(WHY))
     stages = ''.join(f'''
-          <article class="card glass tile" data-tilt data-reveal style="--d:{(i % 3) * .07:.2f}s">
-            <span class="tile__num">{n}</span>
+          <li class="stage-rail__item" data-reveal style="--d:{i * .05:.2f}s">
+            <b>{n}</b>
             <h3 data-ar="{esc(ar)}">{esc(en)}</h3>
             <p data-ar="{esc(dar)}">{esc(den)}</p>
-          </article>''' for i, (n, en, ar, den, dar) in enumerate(STAGES))
+          </li>''' for i, (n, en, ar, den, dar) in enumerate(STAGES))
 
     body = f'''
       <!-- ░░ Hero ░░ -->
@@ -68,20 +68,13 @@ def build():
         </div>
       </section>
 
-      <!-- ░░ At a glance ░░ -->
-      <section class="section container section--tight" aria-labelledby="glance-title">
-        <div class="callout glass glass--deep" data-reveal>
-          <div>
-            <p class="kicker"><span data-ar="الاستوديو · لمحة سريعة">Studio · At a Glance</span></p>
-            <h3 id="glance-title"><span data-ar="تخصص واحد. مساران.">One discipline. Two tracks.</span> <span class="grad-text" data-ar="صفر عقود مفتوحة.">Zero open-ended retainers.</span></h3>
-            <p data-ar="كل مشروع — هوية أو تقنية أو متكامل — مرتكز على منطق تطوير الأعمال. نحن لا نسلّم مخرجات. نسلّم مواءمة بين أهدافك وقدراتك وأصولك.">Every engagement — brand, technology, or combined — is anchored in Business Development logic. We don't deliver outputs. We deliver alignment between your goals, capabilities, and assets.</p>
-          </div>
-          <ul class="ticks">
-            <li data-ar-html="&lt;strong&gt;المسار التقني&lt;/strong&gt; — العمارة المؤسسية، تقنية الرعاية الصحية، السحابة، البيانات"><strong>Technology Track</strong> — EA, Healthcare IT, Cloud, Data</li>
-            <li data-ar-html="&lt;strong&gt;المسار الإبداعي&lt;/strong&gt; — هوية العلامة، أنظمة التصميم، الإطلاق الرقمي"><strong>Creative Track</strong> — Brand Identity, Design Systems, Digital Launch</li>
-            <li data-ar-html="&lt;strong&gt;مشاريع متكاملة&lt;/strong&gt; — الإطلاق الرقمي للعيادات، ذكاء الأعمال الصحي"><strong>Combined Engagements</strong> — Clinic Digital Launch, Healthcare BI</li>
-            <li data-ar-html="&lt;strong&gt;نخدم&lt;/strong&gt; — السعودية · مصر · القطاعين الخاص والعام في المنطقة"><strong>Serving</strong> — KSA · Egypt · MENA private &amp; public sector</li>
-          </ul>
+      <!-- ░░ Position ░░ -->
+      <section class="section container section--tight" id="position" aria-labelledby="pos-title">
+        <div class="statement glass glass--deep" style="border-radius:var(--r-lg);padding-inline:clamp(20px,5vw,70px)" data-reveal>
+          <p class="kicker kicker--center"><span data-ar="موقفنا">Our Position</span></p>
+          <h2 class="statement__text" id="pos-title" style="font-size:clamp(28px,4.4vw,60px)"><span data-ar="تطوير الأعمال يُقدَّم عبر التقنية والتصميم —">Business development delivered through technology and design —</span> <span class="grad-text" data-ar="لا رغمًا عنهما.">not despite them.</span></h2>
+          <p class="section__lead" style="margin-inline:auto;margin-top:22px" data-ar="معظم الاستوديوهات تفصل العلامة عن التقنية. ومعظم شركات الاستشارات تفصل الاستراتيجية عن التنفيذ. بنينا Code &amp; Canvas لنطوي هذه الفجوات — في استوديو واحد ومسارين متخصصين وانضباط تجاري مشترك يجعل كليهما أكثر فاعلية.">Most studios separate brand from technology. Most consultancies separate strategy from delivery. We built Code &amp; Canvas to collapse those gaps — into a single studio, two specialist tracks, and a shared commercial discipline that makes both more effective.</p>
+          <div class="pill-list" style="justify-content:center;margin-top:26px"><span class="pill" data-ar="العمارة المؤسسية">Enterprise Architecture</span><span class="pill" data-ar="هوية العلامة">Brand Identity</span><span class="pill" data-ar="تقنية الرعاية الصحية">Healthcare IT</span><span class="pill" data-ar="التحول الرقمي">Digital Transformation</span><span class="pill" data-ar="البيانات والتحليلات">Data &amp; Analytics</span><span class="pill" data-ar="MENA · السعودية · مصر">MENA · KSA · Egypt</span><span class="pill" data-ar="متوافق مع رؤية 2030">Vision 2030 Aligned</span><span class="pill">TOGAF · CPHIMS · NORA</span></div>
         </div>
       </section>
 
@@ -111,7 +104,7 @@ def build():
               <h3>Ahmed M. Bedeer</h3>
               <p class="person__tag" data-ar="مهندس معماري مؤسسي ومتخصص في التحول الرقمي · الخبر، السعودية">Enterprise Architect &amp; Digital Transformation Specialist · Al Khobar, KSA</p>
               <div class="creds"><span>TOGAF</span><span>CPHIMS</span><span>HIMSS EMRAM</span><span>NORA</span><span>CBAHI</span><span>ArchiMate 3.1</span></div>
-              <p style="margin-top:14px" data-ar-html="أكثر من 10 سنوات عبر قطاعات الرعاية الصحية والحكومة والقطاع الخاص في السعودية. خبرة في &lt;strong&gt;عمارة TOGAF/NORA واختيار موردي أنظمة HIS والهجرة السحابية وتحليلات البيانات&lt;/strong&gt; بما يتماشى مع رؤية 2030. مقيّم HIMSS EMRAM نشط — سياق مسارات العمل السريرية متضمَّن في كل توصية تقنية.">10+ years across healthcare, government, and private sector in KSA. Expertise in <strong>TOGAF/NORA architecture, HIS vendor selection, cloud migration, and data analytics</strong> aligned to Vision 2030. Active HIMSS EMRAM assessor — clinical workflow context embedded in every technology recommendation.</p>
+              <p style="margin-top:14px" data-ar-html="أكثر من 7 سنوات عبر قطاعات الرعاية الصحية والحكومة والقطاع الخاص في السعودية. خبرة في &lt;strong&gt;عمارة TOGAF/NORA واختيار موردي أنظمة HIS والهجرة السحابية وتحليلات البيانات&lt;/strong&gt; بما يتماشى مع رؤية 2030. مقيّم HIMSS EMRAM نشط — سياق مسارات العمل السريرية متضمَّن في كل توصية تقنية.">7+ years across healthcare, government, and private sector in KSA. Expertise in <strong>TOGAF/NORA architecture, HIS vendor selection, cloud migration, and data analytics</strong> aligned to Vision 2030. Active HIMSS EMRAM assessor — clinical workflow context embedded in every technology recommendation.</p>
               <h4 class="person__role" style="margin-top:18px" data-ar="الخدمات التي يقودها">Services led</h4>
               <ul class="ticks ticks--dense">
                 <li><a href="/technology-services/#ab-01">AB-01 · <span data-ar="تقييم البداية السريعة للعمارة المؤسسية">EA Quick-Start Assessment</span></a></li>
@@ -146,6 +139,23 @@ def build():
         </div>
       </section>
 
+      <!-- ░░ At a glance ░░ -->
+      <section class="section container section--tight section--flush-top" id="glance" aria-labelledby="glance-title">
+        <div class="callout glass glass--deep" data-reveal>
+          <div>
+            <p class="kicker"><span data-ar="الاستوديو · لمحة سريعة">Studio · At a Glance</span></p>
+            <h3 id="glance-title"><span data-ar="تخصص واحد. مساران.">One discipline. Two tracks.</span> <span class="grad-text" data-ar="صفر عقود مفتوحة.">Zero open-ended retainers.</span></h3>
+            <p data-ar="كل مشروع — هوية أو تقنية أو متكامل — مرتكز على منطق تطوير الأعمال. نحن لا نسلّم مخرجات. نسلّم مواءمة بين أهدافك وقدراتك وأصولك.">Every engagement — brand, technology, or combined — is anchored in Business Development logic. We don't deliver outputs. We deliver alignment between your goals, capabilities, and assets.</p>
+          </div>
+          <ul class="ticks">
+            <li data-ar-html="&lt;strong&gt;المسار التقني&lt;/strong&gt; — العمارة المؤسسية، تقنية الرعاية الصحية، السحابة، البيانات"><strong>Technology Track</strong> — EA, Healthcare IT, Cloud, Data</li>
+            <li data-ar-html="&lt;strong&gt;المسار الإبداعي&lt;/strong&gt; — هوية العلامة، أنظمة التصميم، الإطلاق الرقمي"><strong>Creative Track</strong> — Brand Identity, Design Systems, Digital Launch</li>
+            <li data-ar-html="&lt;strong&gt;مشاريع متكاملة&lt;/strong&gt; — الإطلاق الرقمي للعيادات، ذكاء الأعمال الصحي"><strong>Combined Engagements</strong> — Clinic Digital Launch, Healthcare BI</li>
+            <li data-ar-html="&lt;strong&gt;نخدم&lt;/strong&gt; — السعودية · مصر · القطاعين الخاص والعام في المنطقة"><strong>Serving</strong> — KSA · Egypt · MENA private &amp; public sector</li>
+          </ul>
+        </div>
+      </section>
+
       <!-- ░░ Methodology ░░ -->
       <section class="section container section--flush-top" id="methodology" aria-labelledby="meth-title">
         <div class="head-split">
@@ -159,18 +169,8 @@ def build():
             <p style="margin-top:14px"><a class="text-link" href="/methodology/"><span data-ar="المنهجية كاملة ←">Full methodology →</span></a> &nbsp; <a class="text-link" href="/services/"><span data-ar="كل الخدمات ←">View All Services →</span></a></p>
           </div>
         </div>
-        <div class="grid grid--3">{stages}
-        </div>
-      </section>
-
-      <!-- ░░ Position ░░ -->
-      <section class="section container section--flush-top" aria-labelledby="pos-title">
-        <div class="statement glass glass--deep" style="border-radius:var(--r-lg);padding-inline:clamp(20px,5vw,70px)" data-reveal>
-          <p class="kicker kicker--center"><span data-ar="موقفنا">Our Position</span></p>
-          <h2 class="statement__text" id="pos-title" style="font-size:clamp(28px,4.4vw,60px)"><span data-ar="تطوير الأعمال يُقدَّم عبر التقنية والتصميم —">Business development delivered through technology and design —</span> <span class="grad-text" data-ar="لا رغمًا عنهما.">not despite them.</span></h2>
-          <p class="section__lead" style="margin-inline:auto;margin-top:22px" data-ar="معظم الاستوديوهات تفصل العلامة عن التقنية. ومعظم شركات الاستشارات تفصل الاستراتيجية عن التنفيذ. بنينا Code &amp; Canvas لنطوي هذه الفجوات — في استوديو واحد ومسارين متخصصين وانضباط تجاري مشترك يجعل كليهما أكثر فاعلية.">Most studios separate brand from technology. Most consultancies separate strategy from delivery. We built Code &amp; Canvas to collapse those gaps — into a single studio, two specialist tracks, and a shared commercial discipline that makes both more effective.</p>
-          <div class="pill-list" style="justify-content:center;margin-top:26px"><span class="pill" data-ar="العمارة المؤسسية">Enterprise Architecture</span><span class="pill" data-ar="هوية العلامة">Brand Identity</span><span class="pill" data-ar="تقنية الرعاية الصحية">Healthcare IT</span><span class="pill" data-ar="التحول الرقمي">Digital Transformation</span><span class="pill" data-ar="البيانات والتحليلات">Data &amp; Analytics</span><span class="pill" data-ar="MENA · السعودية · مصر">MENA · KSA · Egypt</span><span class="pill" data-ar="متوافق مع رؤية 2030">Vision 2030 Aligned</span><span class="pill">TOGAF · CPHIMS · NORA</span></div>
-        </div>
+        <ol class="stage-rail glass" aria-label="The 8 stages, condensed" data-ar-label="المراحل الثماني باختصار">{stages}
+        </ol>
       </section>
 
       <!-- ░░ CTA ░░ -->
@@ -198,4 +198,4 @@ def build():
     return [page('/about/', title='About — Code & Canvas', title_ar='من نحن — Code & Canvas',
                  desc='Code & Canvas is a boutique business development studio co-founded by an Enterprise Architect and a Brand Identity Designer. We help organizations across MENA grow by aligning brand, technology, and data to commercial objectives.',
                  desc_ar='Code & Canvas استوديو بوتيكي لتطوير الأعمال أسّسه مهندس معماري مؤسسي ومصمم هوية بصرية. نساعد المؤسسات في المنطقة على النمو عبر مواءمة الهوية والتقنية والبيانات مع الأهداف التجارية.',
-                 nav='about', body=body)]
+                 nav='about', body=body, ld=[PERSON_LD['ahmed'], PERSON_LD['mustafa']])]

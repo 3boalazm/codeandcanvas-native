@@ -7,7 +7,7 @@ had an article (404) → shown as "coming soon", not linked. Two posts were publ
 under wrong slugs with a "– Copy" title → re-slugged (see POST['aliases'] + _redirects).
 Articles are English-only on the live site; chrome/meta are bilingual."""
 import re
-from h import esc, icon, crumbs, closing, btn, page
+from h import esc, icon, crumbs, closing, btn, page, PERSON_LD
 from posts import all_posts
 
 AUTHORS = {
@@ -232,8 +232,14 @@ def article(p, by_slug):
         </section>
       </article>
 '''
+    url = f'https://codeandcanvas.net/blog/{p["slug"]}/'
+    author_ld = PERSON_LD['mustafa'] if p['author'] == 'ma' else {'@type': 'Organization', '@id': 'https://codeandcanvas.net/#org'}
+    article = {'@type': 'Article', 'headline': p['title'], 'description': p['excerpt'], 'url': url, 'mainEntityOfPage': url,
+               'inLanguage': 'en', 'articleSection': p['cat'], 'timeRequired': f'PT{p["minutes"]}M', 'datePublished': '2026-06',
+               'author': author_ld, 'publisher': {'@id': 'https://codeandcanvas.net/#org'},
+               'image': 'https://codeandcanvas.net/assets/brand/og-default.png'}
     return page(f'/blog/{p["slug"]}/', title=f'{p.get("page_title") or p["title"]} — Code & Canvas', title_ar=f'{p["title_ar"]} — Code & Canvas',
-                desc=p['excerpt'], desc_ar=p['excerpt_ar'], nav='blog', body=body, og_type='article')
+                desc=p['excerpt'], desc_ar=p['excerpt_ar'], nav='blog', body=body, og_type='article', ld=[article])
 
 
 def build():

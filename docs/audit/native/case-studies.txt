@@ -1,0 +1,57 @@
+Home › Work
+Real Projects. Proven Results. · 2024–2026
+Built to deliver.
+Not just to impress.
+Every project here started with a business problem — and ended with a working system, a live product, or a brand in the market.
+01 · Pharmacy OS 02 · Worship Companion 03 · ERP Platform
+01 Healthcare · SaaS · Multi-tenant · 2026
+صيدليتي —
+Pharmacy OS
+Doctor Pharmacy
+An integrated operating system for pharmacies that brings POS, inventory, prescriptions, finance, and shifts into one platform. Multi-tenant SaaS with a fully RTL-first Arabic interface.
+Next.js 14 NestJS TypeScript Prisma Neon Postgres Zustand PWA Tailwind
+Point of sale (POS) + invoicing
+Inventory + goods receipt (GRN)
+Prescriptions + customer management
+Reports + analytics + alerts
+Live Demo coming soon ↗
+💊 SCREENSHOT COMING SOON
+14 Modules shipped
+🕌 SCREENSHOT COMING SOON
+12 Worship modules
+02 PWA · Islamic · Offline-first · 2026
+زاد —
+Worship Companion
+Personal / Open project
+Islamic worship PWA built for the ten days of Dhul-Hijjah — prayer times, Quran, adhkar, tasbih counter, Ramadan & Hajj tools. Fully offline-first, bilingual AR/EN.
+PWA / Service Worker GSAP Vanilla JS localStorage canvas-confetti Vercel IBM Plex Sans Arabic
+Prayer times + Qibla
+Quran Mushaf + Adhkar + 40 Nawawi
+Tasbih counter + Ruqyah + Asmaa Allah
+Ramadan + Hajj + Kids section
+View Live ↗
+03 Healthcare · ERP · Pharma · 2026
+نايل فارما —
+ERP Platform
+Nile Pharma, Food & Supplements
+A pharmaceutical ERP platform covering the full sales cycle — from FEFO stock allocation and consignment inventory to invoicing, collections, and sales-rep incentive calculation.
+React 18 RTL Babel Standalone IBM Plex Sans Arabic FEFO Logic CDN Deploy
+Product catalogue + inventory + consignment
+FEFO sales orders
+Invoicing + collections
+Rep incentives + ranking
+Internal system — NDA
+📊 SCREENSHOT COMING SOON
+10 ERP modules
+MORE WORK
+Founder portfolios — brands and architecture.
+20+ brands shaped by Mustafa and transformation programmes architected by Ahmed — showcased in their personal portfolios.
+Mustafa · Portfolio ↗
+Ahmed · Portfolio ↗
+Behance ↗
+CAN'T WAIT TO HEAR FROM YOU
+Can’t Wait To
+Hear From You.
+Have a system to build, a product to launch, or a brand to shape? Start with a 30-minute call.
+Book an Appointment Get Started Full Services
+info@codeandcanvas.net · +966 54 552 0750 · +20 109 250 0454

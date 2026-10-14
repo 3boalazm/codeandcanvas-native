@@ -84,6 +84,9 @@
 
   Object.assign(ICONS, {
     arrowUpRight: '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+    book: '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>',
+    user: '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    home: '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>',
     arrowDown: '<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>',
     phoneCall: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
     pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
@@ -346,7 +349,7 @@
   }
 
   function bindChrome() {
-    $('#langBtn')?.addEventListener('click', () => setLang(lang === 'ar' ? 'en' : 'ar'));
+    $('#langBtn')?.addEventListener('click', () => { track('lang-toggle', { to: lang === 'ar' ? 'en' : 'ar' }); setLang(lang === 'ar' ? 'en' : 'ar'); });
 
     // Mark the current page in the shared header: <body data-nav="services"> ↔ <a data-key="services">
     const key = document.body.dataset.nav;
@@ -368,6 +371,28 @@
       });
     }
   }
+
+  /* ------------------------------------------------------------------ */
+  /*  Measurement hook (provider-agnostic)                               */
+  /*  CC.track(name, props) → window.dataLayer (GTM / GA4 ready) + a      */
+  /*  `cc:track` DOM event. No third-party script ships with the site;    */
+  /*  wire a provider by listening to the event or loading GTM.           */
+  /*  Elements opt in with data-track="name" (+ data-track-* props).      */
+  /* ------------------------------------------------------------------ */
+  function track(name, props = {}) {
+    const payload = { event: 'cc', name, lang, path: location.pathname, ...props };
+    try { (window.dataLayer = window.dataLayer || []).push(payload); } catch (e) { /* ignore */ }
+    try { document.dispatchEvent(new CustomEvent('cc:track', { detail: payload })); } catch (e) { /* ignore */ }
+    return payload;
+  }
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-track]');
+    if (!el) return;
+    const props = {};
+    Object.keys(el.dataset).forEach((k) => { if (k !== 'track' && k.startsWith('track')) props[k.slice(5).toLowerCase()] = el.dataset[k]; });
+    if (el.href) props.href = el.getAttribute('href');
+    track(el.dataset.track, props);
+  }, { capture: true, passive: true });
 
   let toastTimer;
   function toast(msg) {
@@ -433,7 +458,7 @@
   window.CC = {
     $, $$, esc, icon, ICONS, reduceMotion, finePointer,
     get lang() { return lang; },
-    t, num, splitWords, setLang, toast, refresh, boot, countUp, pointer,
+    t, num, splitWords, setLang, toast, track, refresh, boot, countUp, pointer,
     onLang: (fn) => listeners.push(fn),
     onFrame: (fn) => frameCallbacks.push(fn),
     onReady: (fn) => readyCallbacks.push(fn),

@@ -229,18 +229,51 @@ def checkout():
 
 
 def thank_you():
+    steps = [
+        ('1', 'E-mail confirmation', 'تأكيد بالإيميل', 'A copy of the order lands in your inbox right away.', 'هتوصلك نسخة من الطلب على إيميلك مباشرةً.', 'About now', 'الآن تقريبًا'),
+        ('2', 'Review by our team', 'مراجعة الطلب من فريقنا', 'We check the details and reach out to confirm the starting point.', 'بنراجع التفاصيل وبنتواصل معاك لتأكيد نقطة الانطلاق.', 'Within 24 hours', 'خلال 24 ساعة'),
+        ('3', 'Access or kickoff', 'الوصول أو الانطلاق', 'Books unlock in your library immediately. Service orders get a kickoff session and milestone delivery per the agreed scope.', 'الكتب تتفتح في مكتبتك فورًا. طلبات الخدمات بنحددلها موعد أول اجتماع وبنبدأ تسليم المراحل حسب الـ scope المتفق عليه.', 'Within 48–72 hours', 'خلال 48–72 ساعة'),
+    ]
+    steps_html = ''.join(f'''
+            <li class="tstep glass"><span class="tstep__n">{n}</span><div><b data-ar="{esc(ta)}">{esc(te)}</b><p data-ar="{esc(da)}">{esc(de)}</p></div><small data-ar="{esc(wa)}">{esc(we)}</small></li>''' for n, te, ta, de, da, we, wa in steps)
     body = f'''
-      <section class="oops" aria-labelledby="page-title">
-        <div>
-          <span class="card__icon" style="margin:0 auto 18px">✅</span>
-          <h1 id="page-title"><span data-ar="شكرًا لك —">Thank you —</span> <span class="grad-text" data-ar="وصلنا طلبك.">we’ve got it.</span></h1>
-          <p data-ar="سنعود إليك خلال 24 ساعة عمل. الكتب المشتراة تظهر في مكتبتك فورًا.">We’ll get back to you within 24 business hours. Purchased books appear in your library immediately.</p>
-          <p class="notice notice--inline" data-demo-note hidden style="margin:18px auto 0;max-width:560px"></p>
-          <div class="oops__links">{btn('Open my library', 'افتح مكتبتي', '/account/#library')}{btn('Back to home', 'العودة للرئيسية', '/', 'glass')}{btn('WhatsApp us', 'راسلنا واتساب', 'https://wa.me/966545520750', 'ghost', 'chat')}</div>
+      <section class="phero container" aria-labelledby="page-title">
+        {crumbs([('Home', 'الرئيسية', '/'), ('Checkout', 'إتمام الشراء', '/checkout/'), ('Thank you', 'شكرًا', None)])}
+        <div class="thanks" data-order>
+          <div class="thanks__main">
+            <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="تم تأكيد الطلب">Order confirmed</span></span>
+            <h1 class="phero__title" id="page-title" data-reveal style="--d:.06s"><span data-ar="شكرًا،">Thank you,</span> <span class="grad-text" data-order-name>—</span>! 🎉</h1>
+            <p class="hero__lead" data-reveal style="--d:.1s" data-ar="طلبك وصلنا وبنراجعه دلوقتي. هتوصلك رسالة تأكيد على الإيميل خلال دقائق — والكتب المشتراة تظهر في مكتبتك فورًا.">Your order is in and we’re reviewing it now. A confirmation e-mail arrives within minutes — purchased books appear in your library immediately.</p>
+            <p class="notice notice--inline" data-demo-note hidden style="margin:14px 0 0;max-width:620px"></p>
+            <h2 class="section__title" style="font-size:clamp(20px,2vw,26px);margin-top:34px" data-reveal data-ar="الخطوات الجاية">What happens next</h2>
+            <ol class="tsteps" data-reveal>{steps_html}
+            </ol>
+            <div class="btn-row" style="margin-top:28px" data-reveal>{btn('Account Center', 'مركز الحساب', '/account/', 'primary', 'user')}{btn('Browse books', 'تصفّح الكتب', '/books/', 'glass', 'book')}{btn('Explore services', 'استكشف الخدمات', '/services/', 'glass', 'grid')}{btn('Home', 'الرئيسية', '/', 'ghost', 'home')}</div>
+          </div>
+          <aside class="thanks__side">
+            <div class="card glass order-card" data-reveal>
+              <p class="kicker"><span data-ar="ملخص الطلب">Order summary</span></p>
+              <ul class="kv">
+                <li><span data-ar="رقم الطلب">Order #</span><b data-order-id>—</b></li>
+                <li><span data-ar="التاريخ">Date</span><b data-order-date>—</b></li>
+                <li><span data-ar="الإيميل">E-mail</span><b data-order-email>—</b></li>
+                <li><span data-ar="طريقة الدفع">Payment method</span><b data-order-pay>—</b></li>
+              </ul>
+              <div class="order-card__items" data-order-items></div>
+              <div class="order-card__totals"><div><span data-ar="المجموع الجزئي">Subtotal</span><b data-order-subtotal>—</b></div><div class="is-total"><span data-ar="الإجمالي">Total</span><b data-order-total>—</b></div></div>
+              <small class="form__hint" data-order-note hidden data-ar="لا يوجد طلب في هذه الجلسة — إذا وصلت هنا من نموذج تواصل، فطلبك مسجَّل وسنعود إليك خلال 24 ساعة عمل.">No order in this session — if you arrived from a contact form, your request is logged and we’ll reply within 24 business hours.</small>
+            </div>
+            <div class="card glass contact-card contact-card--wa" data-reveal style="--d:.08s">
+              <span class="card__icon">{icon('chat')}</span>
+              <h3 data-ar="عندك سؤال على طلبك؟">A question about your order?</h3>
+              <p data-ar="تواصل معانا مباشرةً على واتساب وهنرد في أسرع وقت.">Message us directly on WhatsApp and we’ll reply as fast as we can.</p>
+              <div class="btn-row"><a class="btn btn--glass" href="https://wa.me/966545520750" target="_blank" rel="noopener">🇸🇦 <span data-ar="السعودية">KSA</span></a><a class="btn btn--glass" href="https://wa.me/201092500454" target="_blank" rel="noopener">🇪🇬 <span data-ar="مصر">Egypt</span></a></div>
+            </div>
+          </aside>
         </div>
       </section>
 '''
-    return page('/thank-you/', title='Thank you - Code & Canvas', title_ar='شكرًا لك - Code & Canvas', desc='Thank you — your request has been received.', desc_ar='شكرًا لك — تم استلام طلبك.', nav='', body=body, scripts=SHOP_JS)
+    return page('/thank-you/', title='Thank you - Code & Canvas', title_ar='شكرًا لك - Code & Canvas', desc='Order confirmed — thank you. Here is what happens next.', desc_ar='تم تأكيد الطلب — شكرًا لك. إليك الخطوات التالية.', nav='', body=body, scripts=SHOP_JS)
 
 
 def build():

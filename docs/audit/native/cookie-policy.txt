@@ -1,0 +1,24 @@
+Home › Cookie Policy
+Cookie Policy
+Last updated: October 2026 info@codeandcanvas.net Draft — pending legal review
+What this site stores in your browser — and what it does not.
+Sections
+What we use Local storage Session cookies Your choices
+What we use
+This site is a static, tracker-free build. We do not set advertising or third-party analytics cookies.
+هذا الموقع بناء ثابت خالٍ من أدوات التتبع. لا نضع ملفات تعريف إعلانية أو تحليلات طرف ثالث.
+Local storage
+cc-lang — your language choice (EN / AR).
+cc-cart , cc-library — your shopping cart and purchased books.
+cc-reader-* , cc-notes-* — your reading position and private notes inside the book reader.
+These values stay in your browser and are never sent to us.
+cc-lang — اختيارك للغة (EN / AR).
+cc-cart و cc-library — سلة التسوق والكتب المشتراة.
+cc-reader-* و cc-notes-* — موضع القراءة وملاحظاتك الخاصة داخل القارئ.
+تبقى هذه القيم في متصفحك ولا تُرسل إلينا.
+Session cookies
+If you sign in to your account, a strictly necessary session cookie keeps you logged in. Payment providers may set their own cookies during checkout.
+عند تسجيل الدخول إلى حسابك، يُبقيك ملف جلسة ضروري مسجلًا. قد تضع بوابات الدفع ملفاتها الخاصة أثناء إتمام الشراء.
+Your choices
+You can clear local storage and cookies from your browser settings at any time; the site keeps working, you will simply be asked for your language again.
+يمكنك مسح التخزين المحلي وملفات تعريف الارتباط من إعدادات متصفحك في أي وقت؛ سيستمر الموقع في العمل وسيُطلب منك اختيار اللغة مجددًا.

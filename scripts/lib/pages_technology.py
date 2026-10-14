@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """/technology-services/ — live copy of codeandcanvas.net/technology-services/."""
 from catalog import SERVICES
-from h import esc, t, th, icon, crumbs, closing, btn, page
+from h import esc, t, th, icon, crumbs, closing, btn, page, service_ld, PERSON_LD
 
 
 def tags(items):
@@ -12,7 +12,7 @@ def ticks(items, ar_items, cls='ticks'):
     return f'<ul class="{cls}">' + ''.join(f'<li data-ar="{esc(a)}">{esc(e)}</li>' for e, a in zip(items, ar_items)) + '</ul>'
 
 
-def detail(code, *, cls, tag_list, included=None, included_ar=None, tiers=None, price_note=None, price_note_ar=None, lead_by=('Ahmed Bedeer', 'أحمد بدير'), featured=False, cta=('Book a Discovery Call', 'احجز مكالمة استكشافية')):
+def detail(code, *, cls, tag_list, included=None, included_ar=None, tiers=None, price_note=None, price_note_ar=None, lead_by=('Ahmed Bedeer', 'أحمد بدير'), featured=False, badge=('Most Requested', 'الأكثر طلبًا'), cta=('Book a Discovery Call', 'احجز مكالمة استكشافية')):
     s = SERVICES[code]
     inc = ''
     if included:
@@ -23,7 +23,7 @@ def detail(code, *, cls, tag_list, included=None, included_ar=None, tiers=None, 
             f'<div class="tier{" tier--star" if tr.get("star") else ""}"><b data-ar="{esc(tr["name_ar"])}">{esc(tr["name"])}</b><strong>{esc(tr["price"])}</strong><p data-ar="{esc(tr["desc_ar"])}">{esc(tr["desc"])}</p><small data-ar="{esc(tr["dur_ar"])}">{esc(tr["dur"])}</small></div>'
             for tr in tiers)
         tier_html = f'<h4 data-ar="صيغ المشروع">Engagement tiers</h4><div class="tiers">{rows}</div>'
-    star = '<span class="sdetail__star" aria-hidden="true">⭐</span>' if featured else ''
+    star = f'<span class="sdetail__star" aria-hidden="true">⭐</span><span class="sdetail__badge" data-ar="{esc(badge[1])}">{esc(badge[0])}</span>' if featured else ''
     note = f'<small data-ar="{esc(price_note_ar)}">{esc(price_note)}</small>' if price_note else ''
     price = (t(s['price'], s['price_ar'], tag='strong') if s.get('price_ar') else f'<strong>{esc(s["price"])}</strong>')
     dur = t(s['dur'], s['dur_ar']) if s.get('dur_ar') else f'<span>{esc(s["dur"])}</span>'
@@ -81,7 +81,7 @@ def build():
           </div>
           <div class="phero__aside" data-reveal style="--d:.2s">
             <div class="stats__inner glass" style="grid-template-columns:repeat(2,1fr)">
-              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="10" data-latin="1">10</span>+</span><p class="stat__label" data-ar-html="سنوات في&lt;br /&gt;السعودية والمنطقة">Years across<br />KSA &amp; MENA</p></div>
+              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="7" data-latin="1">7</span>+</span><p class="stat__label" data-ar-html="سنوات في&lt;br /&gt;السعودية والمنطقة">Years across<br />KSA &amp; MENA</p></div>
               <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="3" data-latin="1">3</span></span><p class="stat__label" data-ar-html="أطر&lt;br /&gt;معمارية">Architecture<br />frameworks</p></div>
               <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="85" data-latin="1">85</span>%</span><p class="stat__label" data-ar-html="جاهزية HIMSS&lt;br /&gt;المرحلة 6 المحققة">HIMSS Stage 6<br />readiness achieved</p></div>
               <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="12" data-latin="1">12</span>+</span><p class="stat__label" data-ar-html="معيارًا تقنيًا&lt;br /&gt;ومعيار امتثال">Tech &amp;<br />compliance stds</p></div>
@@ -90,28 +90,19 @@ def build():
         </div>
       </section>
 
-      <!-- ░░ Bio ░░ -->
-      <section class="section container section--tight" aria-labelledby="bio-title">
-        <article class="card glass person person--big" data-reveal>
-          <div class="art art--portrait" data-slot="team/ahmed-bedeer"><span class="art__mark">AB</span><span class="art__cap" data-ar="{{ }} الكود">{{ }} THE CODE</span></div>
-          <div>
-            <p class="person__role" data-ar="مهندس معماري مؤسسي · متخصص في التحول الرقمي">Enterprise Architect · Digital Transformation Specialist</p>
-            <h2 id="bio-title">Ahmed Bedeer</h2>
-            <p class="person__tag" data-ar="شريك مؤسس · Code &amp; Canvas · الخبر، السعودية">Co-Founder · Code &amp; Canvas · Al Khobar, KSA</p>
-            <p data-ar="مهندس معماري مؤسسي ومتخصص في التحول الرقمي بخبرة تتجاوز 10 سنوات في السعودية — عبر قطاعات الرعاية الصحية والحكومة والقطاع الخاص. حاصل على شهادة CPHIMS وبخبرة فعلية في تقييمات HIMSS EMRAM. خبرة في عمارة TOGAF/NORA واختيار موردي أنظمة HIS والهجرة السحابية وتحليلات البيانات وبناء قدرات العمارة المؤسسية بما يتماشى مع رؤية 2030.">Enterprise Architect and Digital Transformation Specialist with 10+ years in KSA — working across healthcare, government, and private sector. CPHIMS-certified with active HIMSS EMRAM assessment experience. Expertise in TOGAF/NORA architecture, HIS vendor selection, cloud migration, data analytics, and EA capability building aligned to Vision 2030.</p>
-            <div class="creds" aria-label="Skills" data-ar-label="المهارات"><span>TOGAF</span><span>NORA</span><span>CPHIMS</span><span>EMRAM</span><span>ArchiMate</span><span>Sparx EA</span><span>Java · Spring</span><span>Power BI</span><span>FHIR · HL7</span><span>Vision 2030</span></div>
-            <div class="person__links">
-              <a href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener" title="Ahmed's Portfolio">{icon('link')}<span data-ar="الأعمال">Portfolio</span></a>
-              <a href="/contact/#book">{icon('calendar')}<span data-ar="احجز مكالمة ←">Book a Call →</span></a>
-              <a href="https://www.linkedin.com/in/ahmed-bedeer" target="_blank" rel="noopener">{icon('users')}<span>LinkedIn</span></a>
-              <a href="https://github.com/ahmedbdeer" target="_blank" rel="noopener">{icon('kanban')}<span>GitHub</span></a>
-            </div>
-          </div>
-        </article>
-      </section>
+      <!-- ░░ Section nav ░░ -->
+      <nav class="subnav subnav--sticky container" aria-label="On this page" data-ar-label="في هذه الصفحة" data-spy>
+        <a href="#credentials"><span data-ar="الاعتمادات">Credentials</span></a>
+        <a href="#results"><span data-ar="النتائج">Results</span></a>
+        <a href="#services"><span data-ar="الخدمات">Services</span><b>6</b></a>
+        <a href="#capabilities"><span data-ar="القدرات">Capabilities</span></a>
+        <a href="#model"><span data-ar="نموذج التعاون">Engagement model</span></a>
+        <a href="#who"><span data-ar="من ينفّذ">Who delivers</span></a>
+        <a href="/contact/#book" class="subnav__aux">{icon('calendar')}<span data-ar="احجز مكالمة">Book a call</span></a>
+      </nav>
 
       <!-- ░░ Credentials ░░ -->
-      <section class="section container section--tight section--flush-top" aria-labelledby="cred-title">
+      <section class="section container section--tight" id="credentials" aria-labelledby="cred-title">
         <header class="section__head" data-reveal>
           <p class="kicker"><span class="kicker__num">01</span><span data-ar="اعتمادات فعّالة · ليست أطرًا مُدرجة فحسب">ACTIVE CREDENTIALS · NOT LISTED FRAMEWORKS</span></p>
           <h2 class="section__title" id="cred-title"><span data-ar="اعتمادات تُستخدم">Credentials used</span> <span class="grad-text" data-ar="في كل مشروع ذي صلة.">in every relevant engagement.</span></h2>
@@ -125,7 +116,7 @@ def build():
       </section>
 
       <!-- ░░ Outcomes ░░ -->
-      <section class="section container section--tight section--flush-top" aria-labelledby="out-title">
+      <section class="section container section--tight section--flush-top" id="results" aria-labelledby="out-title">
         <header class="section__head" data-reveal>
           <p class="kicker"><span class="kicker__num">02</span><span data-ar="نتائج · لا مجرد مخططات">OUTCOMES · NOT JUST DIAGRAMS</span></p>
           <h2 class="section__title" id="out-title"><span data-ar="أرقام من">Numbers from</span> <span class="grad-text" data-ar="مشاريع حقيقية.">real engagements.</span></h2>
@@ -188,7 +179,7 @@ def build():
       </section>
 
       <!-- ░░ Engagement model ░░ -->
-      <section class="section container section--flush-top" aria-labelledby="model-title">
+      <section class="section container section--flush-top" id="model" aria-labelledby="model-title">
         <header class="section__head" data-reveal>
           <p class="kicker"><span class="kicker__num">05</span><span data-ar="نموذج التعاون">Engagement model</span></p>
           <h2 class="section__title" id="model-title"><span data-ar="نموذج تعاون">An engagement model</span> <span class="grad-text" data-ar="مبني لاتخاذ القرار.">built for decisions.</span></h2>
@@ -199,6 +190,30 @@ def build():
           <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon">{icon('chart')}</span><h3 data-ar="ملخصات تنفيذية من صفحة واحدة">Executive One-Pagers</h3><p data-ar="عروض وملخصات موجزة تترجم العمارة إلى لغة الاستثمار والمخاطر والنتائج لمجلس الإدارة — ليقرر صانعو القرار لا ليكتفوا بالمشاهدة.">Slide decks and concise summaries that translate architecture into investment, risk, and outcome language for the board — so the decision-makers can decide, not just observe.</p></article>
           <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><span class="card__icon">{icon('sparkles')}</span><h3 data-ar="جولات شرح">Walkthroughs</h3><p data-ar="جولات قصيرة ومركّزة في فلسفة التصميم والمفاضلات — محتوى متعدد الوسائط ليفهمه كل صاحب مصلحة أيًا كان عمقه التقني.">Short, focused walkthroughs of design philosophy and trade-offs — multi-modal content so every stakeholder gets it, regardless of their technical depth.</p></article>
         </div>
+      </section>
+
+      <!-- ░░ Bio ░░ -->
+      <section class="section container section--tight" id="who" aria-labelledby="bio-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">06</span><span data-ar="من يقود التنفيذ">WHO DELIVERS</span></p>
+          <h2 class="section__title" style="font-size:clamp(26px,3vw,40px)"><span data-ar="مؤسس واحد يقود كل مشروع تقني —">One founder leads every technology engagement —</span> <span class="grad-text" data-ar="لا فريق مبيعات.">not a sales team.</span></h2>
+        </header>
+        <article class="card glass person person--big" data-reveal>
+          <div class="art art--portrait" data-slot="team/ahmed-bedeer"><span class="art__mark">AB</span><span class="art__cap" data-ar="{{ }} الكود">{{ }} THE CODE</span></div>
+          <div>
+            <p class="person__role" data-ar="مهندس معماري مؤسسي · متخصص في التحول الرقمي">Enterprise Architect · Digital Transformation Specialist</p>
+            <h2 id="bio-title">Ahmed Bedeer</h2>
+            <p class="person__tag" data-ar="شريك مؤسس · Code &amp; Canvas · الخبر، السعودية">Co-Founder · Code &amp; Canvas · Al Khobar, KSA</p>
+            <p data-ar="مهندس معماري مؤسسي ومتخصص في التحول الرقمي بخبرة تتجاوز 7 سنوات في السعودية — عبر قطاعات الرعاية الصحية والحكومة والقطاع الخاص. حاصل على شهادة CPHIMS وبخبرة فعلية في تقييمات HIMSS EMRAM. خبرة في عمارة TOGAF/NORA واختيار موردي أنظمة HIS والهجرة السحابية وتحليلات البيانات وبناء قدرات العمارة المؤسسية بما يتماشى مع رؤية 2030.">Enterprise Architect and Digital Transformation Specialist with 7+ years in KSA — working across healthcare, government, and private sector. CPHIMS-certified with active HIMSS EMRAM assessment experience. Expertise in TOGAF/NORA architecture, HIS vendor selection, cloud migration, data analytics, and EA capability building aligned to Vision 2030.</p>
+            <div class="creds" aria-label="Skills" data-ar-label="المهارات"><span>TOGAF</span><span>NORA</span><span>CPHIMS</span><span>EMRAM</span><span>ArchiMate</span><span>Sparx EA</span><span>Java · Spring</span><span>Power BI</span><span>FHIR · HL7</span><span>Vision 2030</span></div>
+            <div class="person__links">
+              <a href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener" title="Ahmed's Portfolio">{icon('link')}<span data-ar="الأعمال">Portfolio</span></a>
+              <a href="/contact/#book">{icon('calendar')}<span data-ar="احجز مكالمة ←">Book a Call →</span></a>
+              <a href="https://www.linkedin.com/in/ahmed-bedeer" target="_blank" rel="noopener">{icon('users')}<span>LinkedIn</span></a>
+              <a href="https://github.com/ahmedbdeer" target="_blank" rel="noopener">{icon('kanban')}<span>GitHub</span></a>
+            </div>
+          </div>
+        </article>
       </section>
 
       <!-- ░░ CTA ░░ -->
@@ -232,4 +247,4 @@ def build():
     return [page('/technology-services/', title='Technology Services — Code & Canvas', title_ar='خدمات التقنية — Code & Canvas',
                  desc='Enterprise Architecture · Digital Transformation · Healthcare Informatics · Solution Architecture · Cloud · Executive Advisory. 6 services, one practice — led by Ahmed Bedeer (CPHIMS, TOGAF, EMRAM, NORA).',
                  desc_ar='العمارة المؤسسية · التحول الرقمي · المعلوماتية الصحية · عمارة الحلول · السحابة · الاستشارات التنفيذية. 6 خدمات وممارسة واحدة — بقيادة أحمد بدير (CPHIMS، TOGAF، EMRAM، NORA).',
-                 nav='services', body=body)]
+                 nav='services', body=body, ld=[service_ld([c for c in SERVICES if c.startswith('AB-')], 'https://codeandcanvas.net/technology-services/'), PERSON_LD['ahmed']])]

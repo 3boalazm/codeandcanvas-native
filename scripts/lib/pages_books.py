@@ -160,6 +160,17 @@ def book_page(b, idx):
         <div class="section__head" data-reveal><p class="kicker"><span data-ar="الفهرس">TABLE OF CONTENTS</span></p><h2 class="section__title" id="toc-title" lang="ar" dir="rtl">ثلاث رحلات · 16 فصلاً</h2></div>
         <div class="grid grid--side-l" dir="rtl" lang="ar" style="display:block;max-width:900px">{vi_chapters()}</div>
       </section>'''
+    elif b['slug'] == 'marketing-fundamentals':
+        toc = f'''
+      <section class="section container section--flush-top" id="chapters" aria-labelledby="toc-title">
+        <div class="section__head" data-reveal><p class="kicker"><span data-ar="الجزء الافتتاحي · معاينة مجانية">OPENING PART · FREE PREVIEW</span></p><h2 class="section__title" id="toc-title"><span lang="ar" dir="rtl">الجزء 01 · مقدمة في التسويق</span><br /><span class="grad-text" style="font-size:.6em">Part 01 — Introduction to Marketing</span></h2><p class="section__lead" lang="ar" dir="rtl">مقدمة في التسويق — الأساس الذي يبدأ منه كل شيء قبل الإعلانات والمحتوى والعلامة التجارية.</p></div>
+        <div class="grid grid--3" data-reveal>
+          <article class="card glass tile"><span class="chapter__k">01</span><h3>What Is Marketing?</h3><p lang="ar" dir="rtl">ما هو التسويق؟</p></article>
+          <article class="card glass tile"><span class="chapter__k">02</span><h3>The Evolution</h3><p lang="ar" dir="rtl">تطوّر التسويق</p></article>
+          <article class="card glass tile"><span class="chapter__k">03</span><h3>The Ecosystem</h3><p lang="ar" dir="rtl">منظومة التسويق</p></article>
+        </div>
+        <div class="notice glass" data-reveal style="margin-top:18px">{icon('box')}<div><b data-ar="A MODERN GUIDE · 2026 — 15 جزءًا · 258 شريحة">A MODERN GUIDE · 2026 — 15 parts · 258 slides</b><p data-ar="يُعرض الفهرس الكامل داخل القارئ بعد الشراء — افتح المعاينة المجانية للاطلاع على الجزء الأول. اختصارات القارئ: ← → للتنقل · F للشاشة الكاملة.">The full table of contents is shown inside the reader after purchase — open the free preview to browse Part 01. Reader shortcuts: ← → to navigate · F for fullscreen.</p></div></div>
+      </section>'''
     else:
         toc = f'''
       <section class="section container section--flush-top" id="chapters" aria-labelledby="toc-title">
@@ -208,7 +219,14 @@ def book_page(b, idx):
                'أسئلة عن هذا الكتاب أو تراخيص جماعية أو نسخة تدريبية مخصصة؟ كلمنا.',
                [btn('Book an Appointment', 'احجز موعدًا', '/contact/#book'), btn('Get Started', 'ابدأ الآن', '/contact/', 'glass'), btn('Full Services', 'كل الخدمات', '/services/', 'ghost', 'arrow')])}
 '''
-    return page(f'/books/{b["slug"]}/', title=f'{b["title"]} — {b["title_ar"]} · Code & Canvas', title_ar=f'{b["title_ar"]} — {b["title"]} · Code & Canvas',
+    book_ld = {'@type': 'Book', 'name': b['title'], 'alternateName': b['title_ar'], 'description': b['lede'], 'inLanguage': 'ar',
+               'bookFormat': 'https://schema.org/EBook', 'url': f'https://codeandcanvas.net/books/{b["slug"]}/',
+               'author': {'@type': 'Organization', '@id': 'https://codeandcanvas.net/#org'} if b['author'].startswith('Code') else {'@type': 'Person', 'name': 'Mustafa Aboalazm'},
+               'publisher': {'@id': 'https://codeandcanvas.net/#org'}, 'image': 'https://codeandcanvas.net/assets/brand/og-default.png'}
+    if b['available']:
+        book_ld['offers'] = {'@type': 'Offer', 'price': str(b['price']), 'priceCurrency': 'SAR', 'availability': 'https://schema.org/InStock',
+                             'url': f'https://codeandcanvas.net/books/{b["slug"]}/', 'seller': {'@id': 'https://codeandcanvas.net/#org'}}
+    return page(f'/books/{b["slug"]}/', title=f'{b["title"]} — {b["title_ar"]} · Code & Canvas', title_ar=f'{b["title_ar"]} — {b["title"]} · Code & Canvas', ld=[book_ld],
                 desc=b['lede'], desc_ar=b['lede_ar'], nav='books', body=body, og_type='book', scripts=('/assets/js/pages.js', '/assets/js/shop.js'))
 
 

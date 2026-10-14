@@ -1,0 +1,68 @@
+Home › About › Methodology
+Our Methodology
+Business-Asset Alignment.
+Not just delivery.
+Most engagements deliver outputs. Ours deliver alignment — a traceable connection between your goals, capabilities, technology, and data. Every phase is intentional. Nothing is built without a business reason.
+Book a Discovery Call See the 8 stages
+01 The 8-stage process
+Eight stages. Every engagement.
+Foundation
+Discovery & Business Goals
+We start with the Business Motivation Model — mapping your vision, goals, strategies, and tactics before a single design decision is made. This produces a traceable chain from commercial intent to deliverable scope. Nothing is assumed; everything is confirmed in writing.
+BMM Stakeholder Workshop Goals Map
+Alignment
+Kickoff + Engagement Brief
+Formal scope confirmation, stakeholder alignment, and engagement brief sign-off. The brief defines what success looks like, what is out of scope, and how decisions will be made. First milestone payment is triggered here.
+Engagement Brief Scope Matrix RACI
+Diagnosis
+Capability Research
+Value stream mapping and capability heatmap — identifying what's broken, missing, or misaligned with your commercial objectives. This is the diagnostic layer that makes every downstream decision defensible, not intuitive.
+Capability Map Value Stream Analysis Heatmap
+Architecture
+Strategy & Target State Design
+TOGAF ADM-grounded target state design. Business-to-Technology Alignment Matrix produced — linking every strategic objective to a capability, technology asset, or data initiative. For brand engagements: strategic platform, positioning, and brand architecture.
+TOGAF ADM ArchiMate Alignment Matrix Brand Platform
+Creation
+Concept Development
+Concepts aligned to strategy — not to aesthetics or personal preference. Brand concepts are evaluated against the strategic platform. Architecture options are evaluated against the capability model. Analytics models are evaluated against business decisions they must enable.
+Brand Concepts Architecture Options Analytics Models
+Production
+Design & Build
+Full production — visual identity systems, architecture documentation, dashboard builds, or digital product development. Every output is traceable to a business requirement established in phases 1–5. No scope creep; no undocumented additions.
+Figma Adobe Suite Sparx EA Power BI
+Validation
+Validation & Refinement
+Structured review cycle with defined revision scope. Client sign-off gate before final delivery. Revisions are tracked against the original brief — changes to scope are documented and, if significant, trigger a scope amendment. Second milestone payment is triggered at sign-off.
+Revision Rounds Sign-off Gate Scope Amendment
+Handover
+Launch & Embed
+Deployment, handover documentation, and post-launch support where applicable. File release is conditional on full settlement. For EA and advisory engagements: implementation oversight is available as a separate retainer.
+Handover Pack Post-Launch Support Implementation Oversight
+02 The Two Diagnostic Layers
+Ends first. Then assets.
+Business Motivation Model (BMM)
+We start with ends, not means.
+Before any design or architecture work begins, we map your business goals → strategies → tactics → capabilities using the Business Motivation Model. This produces a traceable chain — from vision down to the specific capability or brand element that delivers it. Nothing is built without a business reason.
+Value Stream + Capability Mapping
+Then we connect those ends to your assets.
+We construct business capability maps and align them to value streams — identifying which capabilities are broken, missing, or misaligned with your commercial objectives. This is the diagnostic layer that makes every downstream decision defensible, not intuitive.
+03 Business-to-Technology Alignment Matrix
+So you always know why a decision was made.
+A traceability matrix linking business goals to capabilities, technology assets, and transformation initiatives. Every engagement produces a version of this — so you always know why a decision was made.
+Business Goal Brand Capability Technology Asset Data / Analytics Transformation
+Growth & Market Entry ● ◐ ◐ ●
+Operational Efficiency ○ ● ● ●
+Digital Credibility ● ● ○ ◐
+Regulatory Compliance ◐ ● ◐ ●
+Strategic Insight ○ ◐ ● ◐
+● Primary driver ◐ Supporting ○ Indirect
+Payment is milestone-based — not time-based. Brand-heavy services: 50% Kickoff · 25% Strategy Sign-off · 25% Final. Advisory and EA services: 50% Kickoff · 50% Final. File release is conditional on full settlement. Late payments accrue at 2% per month after 14 days.
+Want to see the methodology applied?
+Book a 30-minute discovery call. We'll walk you through how the 8-stage process applies to your specific engagement — and give you a clear picture of what the output looks like.
+Book a Discovery Call Pricing & FAQ →
+THE HOME OF INNOVATION
+Unlock the Potential of IT
+to Streamline Operations and Boost Productivity.
+Start with our story, or book an appointment and bring the business problem — we’ll bring the structure.
+Get Started Book an Appointment
+info@codeandcanvas.net · +966 54 552 0750 · +20 109 250 0454

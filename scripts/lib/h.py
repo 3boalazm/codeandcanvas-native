@@ -2,7 +2,9 @@
 """Tiny HTML helpers used by scripts/gen-pages.py (scaffolding only — the
 committed HTML under each route folder is the source of truth)."""
 import html as _html
+import json as _json
 import os
+import re
 from catalog import SERVICES, TRACKS, href
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -61,8 +63,12 @@ def svc_grid(codes, link_self=False):
     return '\n'.join(out)
 
 
+_LAST_CRUMBS = []  # set by crumbs(); consumed by page() for the BreadcrumbList JSON-LD
+
+
 def crumbs(items):
     """items = [(label_en, label_ar, href|None)] — last item is current."""
+    _LAST_CRUMBS[:] = list(items)
     parts = []
     for i, (en, ar, h) in enumerate(items):
         if h:
@@ -103,10 +109,63 @@ def btn(label, label_ar, h, kind='primary', icon_name='arrowUpRight', extra=''):
 REGISTRY = []  # (path, title, title_ar) of every page written this run
 
 
-def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extra_head='', scripts=('/assets/js/pages.js',), og_type='website', canonical=None):
-    """Write <ROOT>/<path>/index.html (or ROOT/<path> when path ends with .html)."""
+ORG_ID = SITE + '/#org'
+SITE_ID = SITE + '/#website'
+
+
+def jsonld(*objects):
+    """Serialise schema.org objects into one <script type="application/ld+json"> block."""
+    objs = [o for o in objects if o]
+    if not objs:
+        return ''
+    data = {'@context': 'https://schema.org', '@graph': objs} if len(objs) > 1 else {'@context': 'https://schema.org', **objs[0]}
+    return '    <script type="application/ld+json">' + _json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + '</script>\n'
+
+
+PERSON_LD = {
+    'ahmed': {'@type': 'Person', '@id': SITE + '/team/#ahmed', 'name': 'Ahmed M. Bedeer', 'url': SITE + '/team/#ahmed',
+              'jobTitle': 'Co-Founder · Enterprise Architect · Solution Architect', 'worksFor': {'@id': ORG_ID},
+              'knowsAbout': ['Enterprise Architecture', 'TOGAF', 'NORA', 'ArchiMate', 'Healthcare IT', 'HL7 FHIR', 'Java · Spring Boot', 'Cloud'],
+              'sameAs': ['https://linkedin.com/in/ahmed-bedeer', 'https://ahmed-bedeer.vercel.app/', 'https://github.com/ahmedbdeer']},
+    'mustafa': {'@type': 'Person', '@id': SITE + '/team/#mustafa', 'name': 'Mustafa Aboalazm', 'url': SITE + '/team/#mustafa',
+                'jobTitle': 'Co-Founder · Creative Director · Visual Brand Architect', 'worksFor': {'@id': ORG_ID},
+                'knowsAbout': ['Brand Identity', 'Visual Systems', 'Design Systems', 'Art Direction', 'Print & Packaging', 'Web Design'],
+                'sameAs': ['https://behance.net/aboalazm', 'https://aboalazm-os.vercel.app/']},
+}
+
+
+def service_ld(codes, page_url):
+    """OfferCatalog-style ItemList of Service nodes for a track/hub page."""
+    items = []
+    for i, code in enumerate(codes):
+        sv = SERVICES[code]
+        node = {'@type': 'Service', '@id': page_url + '#' + code.lower(), 'name': sv['title'], 'serviceType': sv.get('tag') or sv['title'],
+                'description': re.sub(r'<[^>]+>', '', sv.get('blurb') or sv['title']), 'provider': {'@id': ORG_ID},
+                'areaServed': ['Saudi Arabia', 'Egypt', 'MENA'], 'url': SITE + href(code)}
+        items.append({'@type': 'ListItem', 'position': i + 1, 'item': node})
+    return {'@type': 'ItemList', 'itemListElement': items}
+
+
+def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extra_head='', scripts=('/assets/js/pages.js',), og_type='website', canonical=None, ld=None):
+    """Write <ROOT>/<path>/index.html (or ROOT/<path> when path ends with .html).
+
+    ld — optional list of extra schema.org objects (Article, Product, Service…);
+    a WebPage node and a BreadcrumbList (from the last crumbs() call) are always emitted.
+    """
     url = canonical or (SITE + (path if path.endswith('.html') else path))
     script_tags = '\n'.join(f'    <script src="{s}"></script>' for s in scripts)
+    graph = [{
+        '@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': title, 'description': desc,
+        'inLanguage': ['en', 'ar'], 'isPartOf': {'@id': SITE_ID}, 'publisher': {'@id': ORG_ID},
+        'primaryImageOfPage': {'@type': 'ImageObject', 'url': SITE + '/assets/brand/og-default.png', 'width': 1200, 'height': 630},
+    }]
+    if _LAST_CRUMBS:
+        graph.append({'@type': 'BreadcrumbList', 'itemListElement': [
+            {'@type': 'ListItem', 'position': i + 1, 'name': en, **({'item': SITE + h} if h else {})}
+            for i, (en, ar, h) in enumerate(_LAST_CRUMBS)]})
+        _LAST_CRUMBS.clear()
+    graph.extend(ld or [])
+    extra_head = jsonld(*graph) + extra_head
     doc = f'''<!doctype html>
 <html lang="en" dir="ltr" data-title-ar="{esc(title_ar)}" data-desc-ar="{esc(desc_ar)}">
   <head>

@@ -9,7 +9,7 @@
      · [data-tabs] / .tab[data-tab] / [data-panel]        → tabbed panels
      · [data-filter-group] / [data-filter] / [data-category] → card filters
      · form[data-form]                     → validation + submission (see forms section)
-     · .toc                                → active heading tracking
+     · .toc / [data-spy]                   → active heading / section tracking
      · [data-copy]                         → copy text to clipboard
      · [data-acct] / [data-acct-panel]     → account dashboard panels (UI shell)
    ========================================================================== */
@@ -207,11 +207,33 @@
       btn?.classList.add('is-busy');
       try {
         const data = serialize(form);
+        if (window.CC && CC.track) CC.track('form-submit', { form: form.dataset.form || 'form', inquiry: data.inquiry || '' });
         if (form.dataset.form === 'contact') await submitContact(form, data);
         else submitDemo(form, data);
       } finally { btn?.classList.remove('is-busy'); }
     });
   });
+
+  // Deep links into the contact form: /contact/?inquiry=HC-03 | custom | book-<slug>
+  try {
+    const q = new URLSearchParams(location.search).get('inquiry');
+    const sel = $('#c-inquiry');
+    if (q && sel) {
+      const code = q.toUpperCase();
+      const opt = Array.from(sel.options).find((o) => o.value.toUpperCase().startsWith(code + ' '));
+      const msg = $('#c-msg');
+      if (opt) sel.value = opt.value;
+      else {
+        const general = Array.from(sel.options).find((o) => /general inquiry/i.test(o.value));
+        if (general) sel.value = general.value;
+        if (msg && !msg.value) {
+          if (q === 'custom') msg.value = CC.lang === 'ar' ? 'أرغب في تصميم باقة مخصصة. هدفي: ' : 'I would like a custom package. My goal: ';
+          else if (q.startsWith('book-')) msg.value = (CC.lang === 'ar' ? 'استفسار عن الكتاب: ' : 'Question about the book: ') + q.slice(5).replace(/-/g, ' ');
+        }
+      }
+      if (location.hash !== '#book') setTimeout(() => sel.closest('form')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 400);
+    }
+  } catch { /* ignore */ }
 
   // Session note from a previous demo step (e.g. checkout → thank-you)
   try {
@@ -223,17 +245,21 @@
   /* ------------------------------------------------------------------ */
   /*  Article table of contents                                          */
   /* ------------------------------------------------------------------ */
-  const toc = $('.toc');
-  if (toc) {
-    const links = $$('a[href^="#"]', toc);
+  /* Scroll-spy shared by the article TOC and sticky section nav ([data-spy]) */
+  $$('.toc, [data-spy]').forEach((nav) => {
+    const links = $$('a[href^="#"]', nav);
     const heads = links.map((a) => $(a.getAttribute('href'))).filter(Boolean);
-    if (heads.length) {
-      const io = new IntersectionObserver((entries) => entries.forEach((en) => {
-        if (en.isIntersecting) links.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === `#${en.target.id}`));
-      }), { rootMargin: '-20% 0px -70% 0px' });
-      heads.forEach((h) => io.observe(h));
-    }
-  }
+    if (!heads.length) return;
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      links.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === `#${en.target.id}`));
+      if (nav.matches('[data-spy]') && nav.scrollWidth > nav.clientWidth + 4) {
+        const on = $('a.is-active', nav);
+        if (on) nav.scrollTo({ left: on.offsetLeft - (nav.clientWidth - on.offsetWidth) / 2, behavior: 'smooth' });
+      }
+    }), { rootMargin: '-20% 0px -70% 0px' });
+    heads.forEach((h) => io.observe(h));
+  });
 
   /* ------------------------------------------------------------------ */
   /*  Copy buttons                                                       */

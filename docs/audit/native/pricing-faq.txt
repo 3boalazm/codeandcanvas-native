@@ -1,0 +1,222 @@
+Home › Solutions › Pricing & FAQ
+Pricing & FAQ
+Transparent pricing.
+No surprises.
+Fixed scope. Milestone-based payment. Every engagement has a clear price, a defined deliverable, and a traceable business outcome — before you sign anything.
+Book a Free Discovery Call Service pricing
+01 How We Charge
+Milestone-based. Not time-based.
+Payment is split across defined milestones — not billed by the hour or the month. Files are only released upon full settlement.
+Brand & Creative
+MA-01 → MA-10 · CC-01 · HC-01 · HC-04
+50% Kickoff & Brief Sign-off
+25% Strategy Sign-off
+25% Final Delivery
+Technology & Advisory
+AB-01 → AB-06 · CC-02 · HC-02 · HC-03 · HC-05
+50% Kickoff & Scope Lock
+50% Final Delivery
+File release is conditional on full payment. Late payments accrue at 2% per month after 14 days.
+Files on Full Settlement
+All deliverables — source files, documentation, guidelines — are released only upon 100% payment. No exceptions.
+Scope Locked at Kickoff
+Scope is defined and signed off before work begins. Out-of-scope requests are quoted separately — never silently absorbed.
+USD · SAR · EGP
+Pricing shown in USD. Equivalent SAR/EGP rates confirmed at contract. Bank transfer or digital payment accepted.
+02 Service Pricing
+23 productized services. Fixed scope. Clear delivery.
+Every price reflects a defined engagement — not an estimate. Click a category to explore.
+Technology & EA Brand & Creative Data & BD Healthcare
+AB-01
+Enterprise Architecture & Strategy
+Two tiers · ex-S03 / S04
+$1,000 – $5,000 2–8 weeks · TOGAF ADM
+EA Quick-Start ($1,000 – $2,500 · 2 weeks): current state across BDAT layers · capability gap analysis · Business-to-Technology Alignment Matrix · 90-day action plan · ArchiMate / Sparx EA documentation
+Transformation Advisory ($3,000 – $8,000 · 4–8 weeks): governance model design · phased roadmap · NORA & Vision 2030 alignment · KPI framework · stakeholder presentation
+Service details →
+AB-05
+Cloud & Platform Modernization
+3–6 weeks · Architecture-first
+$2,500 – $6,000 3–6 weeks · Docker · K8s
+Workload assessment
+Provider evaluation matrix
+Migration sequencing plan
+Risk register
+Cloud governance framework
+Service details →
+AB-04
+Solution Architecture
+3–5 days · .NET
+Custom scope Java · Spring · PostgreSQL
+Automated .NET source analysis
+Application landscape map
+Service dependency map
+Technical documentation
+Replaces weeks of manual discovery
+Service details →
+Also in this track
+AB-02 CPHIMS · EMRAM
+Healthcare Digital Transformation
+Hospital and clinic transformations executed against HIMSS Stage 6+ readiness — from EHR selection and interoperability rollout to CBAHI readiness and NORA compliance architecture. Delivered by an active HIMSS EMRAM assessor.
+$3,000 – $8,000 4–8 weeks · CPHIMS-delivered
+AB-06 WEEKLY · RETAINER
+Executive & PMO Advisory
+Trusted advisor to chairmen, CIOs, and PMOs — vendor proposals, weekly governance support, and SME consultation across the program lifecycle. Provides an independent architecture voice at the decision table.
+Weekly · Retainer PMO · SOW Review · Advisory
+MA-03 ⭐
+Full Brand System
+Flagship · 8-stage V2
+$1,490 – $2,975+ 5–7 weeks · 50/25/25
+Logo system (5+ variants)
+Brand strategy document
+Color + typography system
+Brand guidelines (AR + EN)
+Full stationery kit
+Social media template pack
+Service details →
+MA-02
+Brand Identity Essentials
+Includes Brand Audit + Refresh tier ($500 – $1,500 · 1–2 weeks)
+$640 – $1,065 3–4 weeks · 50/25/25
+Brand health diagnosis
+Stay / update / rebrand decision
+Targeted refresh delivery
+Updated guidelines
+Service details →
+CC-01 ⭐
+Digital Launch Package
+6–8 weeks · Flagship
+$3,500 – $7,000+ 6–8 weeks · 50/25/25
+Brand identity system
+Bilingual website (AR + EN)
+Digital architecture
+Booking system + GA4 + SEO
+Social media kit
+30-day post-launch support
+Service details →
+Also in this track
+MA-01 BRAND IDENTITY
+Logo Design Sprint
+3 strategic concept directions built from scratch — each grounded in your brand personality and market position. One direction refined to final, delivered in every format you'll ever need.
+$170 – $260 7–10 days · 50/50
+MA-04 DESIGN SYSTEMS
+Visual & Design Systems
+Token-driven design systems for digital and print — social media kits, presentation templates, Figma component libraries. Built so your team can run the brand without always needing a designer.
+$340 – $1,500+ 2–4 weeks · Custom
+MA-05 WORDPRESS
+Web Design & WordPress
+Responsive websites designed in Figma, built on WordPress. UX-led, brand-aligned, mobile-first, bilingual AR/EN with full RTL support. Includes SEO setup and 6-month post-launch support.
+$255 – $1,105 2–5 weeks · 50/50
+MA-06 NEXT.JS · CUSTOM
+Custom Web Platform
+Next.js for SaaS founders and ambitious brands — performance-first, bilingual EN/AR + RTL, Lighthouse 90+ score. Full source code ownership.
+$1,275 – $2,975 4–8 weeks · 50/25/25
+MA-07 PRINT · PACKAGING
+Print & Packaging Design
+Production-ready print collateral — packaging, brochures, banners, roll-ups, flyers, posters. Proper CMYK file prep for offset and digital print. Bleed, trim marks, and print-ready PDFs included.
+From $22 3–7 days · À la carte
+MA-08 PRODUCTION
+Art Direction & Production
+Photography, videography, scripting, voice-over, and audio engineering — full content production for campaigns, social media, and YouTube. Direction-led, bilingual scripted.
+Custom scope 1–2 weeks · 50/50
+MA-09 MONTHLY RETAINER
+Social Media Design Retainer
+15–20 brand-consistent social designs per month. Custom templates inside your design system — not stock, not Canva. Figma source files included.
+$170 – $255 / mo Monthly · min. 3 months
+MA-10 FULL RETAINER
+Full Marketing Design Retainer
+Social + print + digital + light video. One retainer — all your brand's content needs from a designer who knows your brand inside out.
+$425 – $640 / mo Monthly · min. 3 months
+AB-03
+Data Architecture & Analytics
+Power BI · Python
+$800 – $3,500 1–4 weeks · Power BI · Python
+Operational data → executive dashboards
+Power BI or Tableau delivery
+Python data pipeline (if needed)
+Decision intelligence framing
+Entry point to AB-01
+Service details →
+CC-02
+Business Development Advisory
+2–4 weeks · Framework + execution
+$1,500 – $4,000 2–4 weeks · 50/50
+Market entry strategy
+Commercial positioning (framework)
+BD framework / BD pipeline design
+Go-to-market (execution) plan
+Service details →
+HC-01 ⭐
+Clinic Digital Launch
+5–7 weeks · Brand + Tech
+$3,500 – $7,000+ 5–7 weeks · Combined
+Brand identity + bilingual digital presence
+Booking system + Google presence
+CBAHI-aware design
+NORA-compliant patient comms
+AR + EN as standard
+Service details →
+HC-03
+HIS Selection Advisory
+3–5 weeks · CBAHI + NORA
+$2,500 – $5,000 3–5 weeks · CBAHI + NORA
+Clinical workflow mapping
+Vendor scoring matrix (10+ vendors)
+RFP template
+Contract review checklist
+⚠ Wrong HIS: $50K–$200K exposure
+Service details →
+HC-02
+Healthcare Business Intelligence
+2–3 weeks · CBAHI KPIs
+$1,500 – $3,500 2–3 weeks · CBAHI KPIs
+Clinical operational data → dashboards
+CBAHI KPI library included
+BD insight layer
+Executive reporting format
+Service details →
+HC-05
+Healthcare EA Assessment
+2–3 weeks · CPHIMS-delivered
+$1,500 – $3,500 2–3 weeks · CPHIMS-delivered
+EMRAM stage scoring
+CBAHI readiness gap report
+NORA alignment review
+90-day technology roadmap
+Service details →
+Also in this track
+HC-04 HC · BRAND
+Clinic Brand Identity Kit
+A complete identity system built for healthcare — patient trust signals, regulatory-aware design, and bilingual Arabic/English delivery.
+$1,500 – $2,500 3–4 weeks · 8-stage V2
+03 FAQ
+Common questions,
+direct answers.
+Didn't find your question? Write to us and we'll answer within one business day.
+Ask us directly
+Do you work with clients outside KSA and Egypt?
+Yes. We serve organizations across MENA. All engagements are delivered fully remotely, with communication in Arabic and English.
+Can I get a custom quote for a larger engagement?
+Yes. Larger or multi-phase engagements are quoted individually. Book a discovery call and we'll scope it with you.
+Do you offer retainers?
+No open-ended retainers. Every engagement has a productized scope. Repeat engagements are welcome, and 30-day post-launch support is included in CC-01 Digital Launch Package and HC-01 Clinic Digital Launch.
+What if I need changes after delivery?
+Every engagement includes a structured revision cycle before final sign-off. Changes outside the agreed scope are quoted as a new mini-engagement — never silently absorbed.
+What happens on a discovery call?
+A 30-minute structured session. We come prepared, ask about your business problem, and leave you with a clear scope, timeline, and fit assessment — or tell you directly if we're not the right match.
+Do you work on healthcare projects only as a unit?
+No. Healthcare-specific services (HC-01 to HC-05) are led by Ahmed Bedeer (CPHIMS, HIMSS EMRAM, NORA). HC-04 Clinic Brand Identity is brand-only and led by Mustafa. Combined engagements (HC-01, HC-02) involve both founders.
+Can I combine services across categories?
+Yes. CC-01 Digital Launch Package and HC-01 / HC-02 already combine brand and technology. Any cross-track engagement is quoted as a single package — never double-billed.
+What currency do you invoice in?
+Pricing is shown in USD. Equivalent SAR or EGP rates are confirmed at contract. Bank transfer or digital payment accepted. One invoice per milestone.
+Are your credentials active?
+Active. TOGAF, CPHIMS, HIMSS EMRAM Assessor, NORA, and CBAHI are used in every relevant engagement — not listed for decoration.
+I'm not sure which service I need.
+That's what the discovery call is for. Tell us the business problem and we'll point you to the right engagement. If we're not the right match, we'll say so directly.
+GET STARTED
+Clear scope
+from the first call.
+Book a 30-minute discovery call. We define the engagement, confirm the fit, and give you a price — or tell you directly if we’re not the right match.
+Book a Free Discovery Call View All Services
+info@codeandcanvas.net · +966 54 552 0750 · +20 109 250 0454

@@ -1,0 +1,210 @@
+KSA + Egypt · Brand · Technology · Transformation · Data
+Brand, technology and data —
+built around a business outcome.
+BD Business Development, By Design — the discipline behind every engagement
+A two-founder studio working from Saudi Arabia and Egypt. Enterprise architecture, healthcare transformation and data on one side; brand systems and digital products on the other — 23 fixed-scope services, milestone-based payment, from $170.
+Book a free 30-min call
+See all 23 services
+Clear scope from the first call
+Milestone-based payment — no retainers
+We’ll tell you if we’re not the right match
+START HERE · THREE FIXED-SCOPE ENTRY POINTS
+Starting from
+Healthcare
+HIS Selection Advisory
+Objective, evidence-based vendor selection — CPHIMS-delivered, CBAHI + NORA aligned. Wrong HIS: $50K–$200K exposure.
+$2.5K 3–5 weeks
+Technology
+EA Quick-Start Assessment
+2-week TOGAF-anchored architecture assessment — current state, capability gaps, 90-day action plan.
+$1K 2 weeks
+Brand + Tech ⭐
+Digital Launch Package
+Brand identity + bilingual website + digital launch system with scalable positioning.
+$3.5K 6–8 weeks
+All 23 services with prices
+Build your own package
+10 + Years of experience
+40 + Brands delivered
+12 + Sectors served
+23 Fixed-scope services
+01 THE STUDIO
+Two practices.
+One table.
+We don’t deliver isolated services — we build digital products as one integrated whole . At Code & Canvas, we merge product strategy, behavioral design, and advanced engineering to turn your idea into a validated, market-ready reality — and every engagement is led by the founder who owns that track.
+Product Strategy
+Behavioral Design
+Advanced Engineering
+Business Intelligence
+Meet the team
+{ } The Code
+Ahmed M. Bedeer
+Enterprise Architect · Digital Transformation Specialist · 7+ years in KSA
+Enterprise architecture, healthcare transformation, data and cloud — with clinical workflow context embedded in every technology recommendation.
+CPHIMS
+HIMSS EMRAM
+TOGAF
+NORA
+FHIR · HL7
+Technology services · 6 services
+✦ The Canvas
+Mustafa Aboalazm
+Creative Director · Visual Brand Architect · 9+ years of creative practice
+Brand systems, visual identity, websites and digital products — identity built as an operating system, not just a logo.
+Brand strategy
+Visual systems
+Figma · Webflow
+Art direction
+Print & packaging
+AR + EN
+Creative services · 10 services
+02 WHAT WE DO
+Integrated solutions
+that drive business growth.
+23 productized services across four tracks — fixed scope, milestone-based delivery. Pick the track that matches your challenge.
+01
+For CIOs & transformation leads
+Technology & Enterprise Architecture
+Enterprise architecture & strategy · healthcare digital transformation · data architecture & analytics · solution architecture · cloud modernization · executive advisory.
+6 services TOGAF · CPHIMS · from $800
+02
+For founders & marketing leads
+Creative & Brand Systems
+Logo sprint · identity essentials · full brand system · design systems · web & platforms · packaging, social & production · monthly retainers.
+10 services Strategy to delivery · from $170
+03
+For clinics & hospitals in KSA and Egypt
+Healthcare
+Clinic digital launch · healthcare BI · HIS selection advisory · clinic brand identity kit · healthcare EA assessment + EMRAM.
+5 services CBAHI · EMRAM · NORA · from $1,500
+04
+For launches that need brand and tech together
+Combined Engagements
+Digital Launch Package — brand identity + bilingual website + digital launch system · Business Development Advisory.
+2 packages Both founders · from $1,500
++
+When no ready-made track fits
+Customize your own package
+Each brand has unique requirements and distinct details that set it apart from others. Tell us the goal and we’ll compose the scope from the 23 services.
+Start now Custom scope · milestone pricing
+03 SELECTED WORK
+Built to deliver.
+Not just to impress.
+Three systems shipped between 2024 and 2026 — a multi-tenant pharmacy OS, an offline-first worship companion, and a pharmaceutical ERP with FEFO logic. All Arabic-first.
+All case studies
+💊 HEALTHCARE · SAAS · 2026
+صيدليتي · Pharmacy OS
+POS, inventory, prescriptions, finance and shifts in one multi-tenant platform — RTL-first Arabic interface.
+14 modules shipped Next.js 14 · NestJS · Prisma
+🕌 PWA · OFFLINE-FIRST · 2026
+زاد · Worship Companion
+Prayer times, Quran, adhkar, tasbih counter, Ramadan & Hajj tools — fully offline-first, bilingual.
+12 worship modules Live ↗
+📊 HEALTHCARE · ERP · 2026
+نايل فارما · ERP Platform
+The full sales cycle — FEFO stock allocation, consignment inventory, invoicing, collections and rep incentives.
+10 ERP modules Internal — NDA
+85% HIMSS Stage 6 readiness achieved
+−12% ICU length of stay — predictive care-gap analytics
+25% Faster month-end close — modelled revenue-cycle workflows
+−40% Admin overhead — appointment & insurance automation
+$500K+ Cost savings identified — automated market-analysis dashboard
+Figures from enterprise-architecture and transformation engagements led by Ahmed Bedeer in KSA. Details
+04 WHERE CREATIVITY MEETS TECHNOLOGY
+Not order takers.
+Solution makers.
+Typical agencies execute a list of requirements. We question it. Every engagement starts from your business outcome — then we work backwards to build the right product, in the right order.
+Learn how we work
+01 · Mindset Solution Makers
+Build what’s asked Solve what matters
+Order executors vs. solution creators
+We analyse the business challenge and propose solutions that move real outcomes — higher conversions, stronger retention, measurable growth — not just a list of delivered features.
+A digital product is a means to a business goal — not just code.
+02 · Risk De-risking
+Full build, then test Validate first
+Rapid validation before full investment
+The biggest startup risk: building a product the market doesn’t want. We use rapid validation and lean MVPs that gather data, not just ship features — testing assumptions with real users before committing to a full build.
+Save time, save money — and ensure product-market fit from day one.
+03 · Speed 4–7× Faster
+Traditional timelines Market speed
+Parallel entrepreneurship & speed-to-market
+An accumulated playbook, cross-functional collaboration and modern No-code and AI tooling launch digital assets 4–7× faster than traditional methods — without trading away quality.
+Speed is a competitive advantage. We build it in from day one.
+04 · Team Cross-functional
+Siloed specialists One integrated team
+Strategists, designers & engineers — one table
+Strategy, design and engineering collaborate from day one, so every design decision serves a strategic purpose and every line of code supports the user experience. You’re a partner, not just a client.
+No handoff gaps. No lost context. One team, one outcome.
+05 HOW WE WORK
+Good work starts
+with a good conversation.
+Every engagement starts with a clear, structured conversation — not a sales pitch. Three steps, then eight documented delivery stages in our methodology.
+01
+LISTEN
+Understand the outcome
+Bring your idea, challenge, or roadmap. We’ll turn it into a structured engagement — or tell you honestly if we’re not the right partner.
+30 minutes · video call · free
+02
+SHAPE
+Set a clear scope
+Define the right service, deliverables, timing, and milestones before work begins. No open-ended brief, no surprise retainer.
+Scope locked at kickoff
+03
+DELIVER
+Move forward together
+Work progresses through agreed milestones with the right people at one table — strategy, design, and engineering in sync.
+Milestone payments · files on full settlement
+The methodology: 8 stages in every engagement How we charge — 50/25/25 or 50/50
+06 INSIGHTS & BOOKS
+What we think.
+What we wrote.
+Eight long-form articles on product strategy, digital transformation and brand systems — and four interactive Arabic books in the library.
+The Insights Hub
+Product Strategy 8 min
+Why Most Startups Waste Money Building the Wrong Product
+42% of startups fail due to lack of market need — not bad technology. The Three-Layer PMF Journey framework.
+Digital Transformation 9 min
+What Digital Transformation Actually Means for SMEs in 2026
+An 18-month roadmap. 4 pillars. Measurable ROI at each sprint gate — without the buzzwords.
+Brand Strategy 10 min
+Why Most Brands Look Different but Feel the Same
+$13.8T of market cap is reputation-driven. Most brands are leaking that value — because they confuse identity with system.
+MF
+أساسيات التسويق
+Marketing Fundamentals
+15 parts · 258 slides · 249 SAR
+VI
+أساسيات الهوية البصرية
+Basics of Visual Identity
+16 chapters · 3 journeys · 199 SAR
+The full library · 4 books
+07 PLATFORM · CanvasOne ERP
+Run your entire business on one canvas.
+An interactive proposal for a modular ERP — 12 modules on one database: a sale moves inventory, posts the ledger entry and issues the e-invoice. Configure your package and print the proposal as a PDF.
+Zero double entry
+Role-based access
+Multi-company · multi-branch · multi-currency
+Full audit trail
+Explore CanvasOne ERP
+Configure a package
+08 BEGIN YOUR ENGAGEMENT
+Choose your next move.
+Every engagement starts with a clear, structured conversation — not a sales pitch. Three ways to start; pick the one that fits your pace.
+Free · Video call · 30 min
+Book a Free Discovery Call
+Bring your goal or challenge. Together we pick the right service, scope and milestones — or tell you honestly if we’re not the right partner.
+Book an appointment
+23 services · Fixed scope · From $170 · 3 days → 8 weeks
+Explore the Service Catalog
+Fixed scope, milestone-based payment, and a traceable business outcome. No open-ended retainers. Prices are published on the site.
+Browse the services
+Instant · WhatsApp
+Message us on WhatsApp
+Prefer a quick chat before committing to a call? Send your question and we’ll respond within the business day.
+KSA +966 545 520 750
+info@codeandcanvas.net +966 545 520 750 +20 109 250 0454
+Working in healthcare? Book a Healthcare Discovery Call · Review services first
+Clear scope from the first call
+Milestone-based payment — no retainers
+We’ll tell you if we’re not the right match
+KSA + Egypt · MENA coverage

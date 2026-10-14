@@ -3,7 +3,8 @@
 `/services/#healthcare` anchor that pointed nowhere and a `/healthcare-hub/`
 duplicate of the creative page). Copy is assembled from the live HC cards,
 the pricing page bullets, and Ahmed's credentials/outcomes."""
-from h import esc, icon, crumbs, closing, btn, page
+from catalog import SERVICES
+from h import esc, icon, crumbs, closing, btn, page, service_ld, PERSON_LD
 from pages_technology import detail
 
 
@@ -33,19 +34,29 @@ def build():
         </div>
       </section>
 
-      <!-- ░░ Who leads what ░░ -->
-      <section class="section container section--tight" aria-labelledby="lead-title">
-        <div class="grid grid--3">
-          <article class="card glass tile" data-tilt data-reveal><span class="card__icon">{icon('stethoscope')}</span><h3 id="lead-title" data-ar="يقودها أحمد بدير">Led by Ahmed Bedeer</h3><p data-ar="الخدمات الصحية المتخصصة (HC-03، HC-05) يقودها أحمد بدير — CPHIMS، مقيّم HIMSS EMRAM، NORA — بخبرة أكثر من 10 سنوات في الرعاية الصحية في السعودية.">Healthcare-specific services (HC-03, HC-05) are led by Ahmed Bedeer — CPHIMS, HIMSS EMRAM assessor, NORA — with 10+ years in KSA healthcare.</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon">{icon('pen')}</span><h3 data-ar="يقودها مصطفى أبو العزم">Led by Mustafa Aboalazm</h3><p data-ar="مشاريع الهوية الصحية فقط (HC-04) يقودها مصطفى — إشارات ثقة للمرضى وتصميم واعٍ بالمتطلبات التنظيمية وتسليم ثنائي اللغة.">Brand-only healthcare engagements (HC-04) are led by Mustafa — patient trust signals, regulatory-aware design, bilingual delivery.</p></article>
-          <article class="card glass tile tile--accent" data-tilt data-reveal style="--d:.14s"><span class="card__icon">{icon('sparkles')}</span><h3 data-ar="مشاريع متكاملة">Combined engagements</h3><p data-ar="المشاريع المتكاملة (HC-01، HC-02) يشارك فيها المؤسسان معًا — وتُسعَّر كباقة واحدة، دون فوترة مزدوجة أبدًا.">Combined engagements (HC-01, HC-02) involve both founders — quoted as a single package, never double-billed.</p></article>
+      <!-- ░░ Credentials + outcomes ░░ -->
+      <section class="section container section--tight" id="credentials" aria-labelledby="cred-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">01</span><span data-ar="اعتمادات فعّالة · نتائج لا مجرد مخططات">ACTIVE CREDENTIALS · OUTCOMES, NOT JUST DIAGRAMS</span></p>
+          <h2 class="section__title" id="cred-title"><span data-ar="سياق سريري">Clinical context</span> <span class="grad-text" data-ar="من المكالمة الأولى.">from the first call.</span></h2>
+        </header>
+        <div class="grid grid--4">
+          <article class="card glass tile" data-tilt data-reveal><span class="card__icon">{icon('award')}</span><h3>CPHIMS</h3><p data-ar="محترف معتمد في المعلوماتية الصحية — HIMSS">Certified Professional in Health Informatics — HIMSS</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon">{icon('shield')}</span><h3>HIMSS EMRAM</h3><p data-ar="مقيّم مراحل معتمد لنموذج تبنّي السجلات الطبية الإلكترونية">Certified stage assessor — EMR Adoption Model</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><span class="card__icon">{icon('check')}</span><h3>CBAHI</h3><p data-ar="جاهزية اعتماد المركز السعودي لاعتماد المنشآت الصحية مدمجة في كل مشروع صحي">Saudi accreditation readiness built into every HC engagement</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.21s"><span class="card__icon">{icon('plug')}</span><h3>NORA</h3><p data-ar="منصة التبادل الصحي الوطنية · وزارة الصحة السعودية · عمارة تكامل فعّالة">National Health Exchange · Saudi MOH · active integration architecture</p></article>
+        </div>
+        <div class="grid grid--3" style="margin-top:18px">
+          <article class="card glass tile" data-tilt data-reveal><strong class="art__mark" style="font-size:44px">12%</strong><h3 style="margin-top:12px" data-ar="خفض مدة الإقامة في العناية المركزة">ICU LOS Reduction</h3><p data-ar="التحليلات التنبؤية وتنبيهات فجوات الرعاية المدمجة في مستودع البيانات دعمت التواصل السريري الاستباقي">Predictive analytics &amp; care-gap alerting integrated into the EDW supported proactive clinical outreach</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><strong class="art__mark" style="font-size:44px">25%</strong><h3 style="margin-top:12px" data-ar="إقفال شهري أسرع">Faster Month-End Close</h3><p data-ar="مسارات دورة الإيرادات المنمذجة بـ UML بسّطت دورة الطلبات وعمليات تسجيل الرسوم">UML-modeled revenue-cycle workflows streamlined order lifecycle and charge capture processes</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><strong class="art__mark" style="font-size:44px">40%</strong><h3 style="margin-top:12px" data-ar="أعباء إدارية أقل">Less Admin Overhead</h3><p data-ar="تطبيق Java/Spring Boot متمحور حول المريض أتمت مسارات المواعيد والتأمين من البداية للنهاية">Patient-centric Java/Spring Boot application automated appointment and insurance workflows end-to-end</p></article>
         </div>
       </section>
 
       <!-- ░░ Services ░░ -->
       <section class="section container section--flush-top" id="services" aria-labelledby="svc-title">
         <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">01</span><span data-ar="5 خدمات صحية · HC-01 → HC-05">5 Healthcare Services · HC-01 → HC-05</span></p>
+          <p class="kicker"><span class="kicker__num">02</span><span data-ar="5 خدمات صحية · HC-01 → HC-05">5 Healthcare Services · HC-01 → HC-05</span></p>
           <h2 class="section__title" id="svc-title"><span data-ar="مبنية للعيادات والمستشفيات">Built for clinics and hospitals</span><br /><span class="grad-text" data-ar="في السعودية ومصر.">in KSA and Egypt.</span></h2>
           <p class="section__lead" data-ar="واعية بمتطلبات CBAHI · متوافقة مع NORA · عربي + إنجليزي كمعيار. كل خدمة بنطاق ثابت ودفعات حسب المعالم.">CBAHI-aware · NORA-compliant · AR + EN as standard. Every service has a fixed scope and milestone-based payment.</p>
         </header>
@@ -74,22 +85,16 @@ def build():
         </div>
       </section>
 
-      <!-- ░░ Credentials + outcomes ░░ -->
-      <section class="section container section--flush-top" aria-labelledby="cred-title">
+      <!-- ░░ Who leads what ░░ -->
+      <section class="section container section--tight section--flush-top" id="who" aria-labelledby="who-title">
         <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">02</span><span data-ar="اعتمادات فعّالة · نتائج لا مجرد مخططات">ACTIVE CREDENTIALS · OUTCOMES, NOT JUST DIAGRAMS</span></p>
-          <h2 class="section__title" id="cred-title"><span data-ar="سياق سريري">Clinical context</span> <span class="grad-text" data-ar="من المكالمة الأولى.">from the first call.</span></h2>
+          <p class="kicker"><span class="kicker__num">03</span><span data-ar="من يقود ماذا">WHO LEADS WHAT</span></p>
+          <h2 class="section__title" id="who-title" style="font-size:clamp(26px,3vw,40px)"><span data-ar="مؤسس مُسمّى لكل مشروع —">A named founder on every engagement —</span> <span class="grad-text" data-ar="لا طبقة حسابات بينكما.">no account layer in between.</span></h2>
         </header>
-        <div class="grid grid--4">
-          <article class="card glass tile" data-tilt data-reveal><span class="card__icon">{icon('award')}</span><h3>CPHIMS</h3><p data-ar="محترف معتمد في المعلوماتية الصحية — HIMSS">Certified Professional in Health Informatics — HIMSS</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon">{icon('shield')}</span><h3>HIMSS EMRAM</h3><p data-ar="مقيّم مراحل معتمد لنموذج تبنّي السجلات الطبية الإلكترونية">Certified stage assessor — EMR Adoption Model</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><span class="card__icon">{icon('check')}</span><h3>CBAHI</h3><p data-ar="جاهزية اعتماد المركز السعودي لاعتماد المنشآت الصحية مدمجة في كل مشروع صحي">Saudi accreditation readiness built into every HC engagement</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.21s"><span class="card__icon">{icon('plug')}</span><h3>NORA</h3><p data-ar="منصة التبادل الصحي الوطنية · وزارة الصحة السعودية · عمارة تكامل فعّالة">National Health Exchange · Saudi MOH · active integration architecture</p></article>
-        </div>
-        <div class="grid grid--3" style="margin-top:18px">
-          <article class="card glass tile" data-tilt data-reveal><strong class="art__mark" style="font-size:44px">12%</strong><h3 style="margin-top:12px" data-ar="خفض مدة الإقامة في العناية المركزة">ICU LOS Reduction</h3><p data-ar="التحليلات التنبؤية وتنبيهات فجوات الرعاية المدمجة في مستودع البيانات دعمت التواصل السريري الاستباقي">Predictive analytics &amp; care-gap alerting integrated into the EDW supported proactive clinical outreach</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><strong class="art__mark" style="font-size:44px">25%</strong><h3 style="margin-top:12px" data-ar="إقفال شهري أسرع">Faster Month-End Close</h3><p data-ar="مسارات دورة الإيرادات المنمذجة بـ UML بسّطت دورة الطلبات وعمليات تسجيل الرسوم">UML-modeled revenue-cycle workflows streamlined order lifecycle and charge capture processes</p></article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><strong class="art__mark" style="font-size:44px">40%</strong><h3 style="margin-top:12px" data-ar="أعباء إدارية أقل">Less Admin Overhead</h3><p data-ar="تطبيق Java/Spring Boot متمحور حول المريض أتمت مسارات المواعيد والتأمين من البداية للنهاية">Patient-centric Java/Spring Boot application automated appointment and insurance workflows end-to-end</p></article>
+        <div class="grid grid--3">
+          <article class="card glass tile" data-tilt data-reveal><span class="card__icon">{icon('stethoscope')}</span><h3 id="lead-title" data-ar="يقودها أحمد بدير">Led by Ahmed Bedeer</h3><p data-ar="الخدمات الصحية المتخصصة (HC-03، HC-05) يقودها أحمد بدير — CPHIMS، مقيّم HIMSS EMRAM، NORA — بخبرة أكثر من 7 سنوات في السعودية عبر الرعاية الصحية والحكومة والقطاع الخاص.">Healthcare-specific services (HC-03, HC-05) are led by Ahmed Bedeer — CPHIMS, HIMSS EMRAM assessor, NORA — with 7+ years in KSA across healthcare, government, and the private sector.</p></article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon">{icon('pen')}</span><h3 data-ar="يقودها مصطفى أبو العزم">Led by Mustafa Aboalazm</h3><p data-ar="مشاريع الهوية الصحية فقط (HC-04) يقودها مصطفى — إشارات ثقة للمرضى وتصميم واعٍ بالمتطلبات التنظيمية وتسليم ثنائي اللغة.">Brand-only healthcare engagements (HC-04) are led by Mustafa — patient trust signals, regulatory-aware design, bilingual delivery.</p></article>
+          <article class="card glass tile tile--accent" data-tilt data-reveal style="--d:.14s"><span class="card__icon">{icon('sparkles')}</span><h3 data-ar="مشاريع متكاملة">Combined engagements</h3><p data-ar="المشاريع المتكاملة (HC-01، HC-02) يشارك فيها المؤسسان معًا — وتُسعَّر كباقة واحدة، دون فوترة مزدوجة أبدًا.">Combined engagements (HC-01, HC-02) involve both founders — quoted as a single package, never double-billed.</p></article>
         </div>
       </section>
 
@@ -123,4 +128,4 @@ def build():
     return [page('/healthcare/', title='Healthcare Solutions — Code & Canvas', title_ar='حلول الرعاية الصحية — Code & Canvas',
                  desc='Five productized healthcare services for clinics and hospitals in KSA and Egypt — Clinic Digital Launch, Healthcare BI, HIS Selection Advisory, Clinic Brand Identity, Healthcare EA + EMRAM. CPHIMS · EMRAM · CBAHI · NORA.',
                  desc_ar='خمس خدمات صحية مُنتجة للعيادات والمستشفيات في السعودية ومصر — الإطلاق الرقمي للعيادات وذكاء الأعمال الصحي واستشارات اختيار HIS وهوية العيادة وتقييم العمارة الصحية + EMRAM. CPHIMS · EMRAM · CBAHI · NORA.',
-                 nav='healthcare', body=body)]
+                 nav='healthcare', body=body, ld=[service_ld([c for c in SERVICES if c.startswith('HC-')], 'https://codeandcanvas.net/healthcare/'), PERSON_LD['ahmed'], PERSON_LD['mustafa']])]

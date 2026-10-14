@@ -1,0 +1,83 @@
+# Acceptance log — 2026-10-14
+
+Environment: Chromium 153.0.8010.0 headless (SwiftShader), 1 worker, local dev-server, external hosts blocked by tests/helpers.mjs.
+
+## npm run check
+```
+41 page(s) carry chrome markers · 0 out of date
+84 HTML files checked · 0 problem(s)
+Generator parity: 91 outputs match isolated regeneration.
+```
+
+## npm run build
+Static site built in dist/
+`dist/`: 84 HTML files, 6.8M
+
+## Arabic tree
+`ar/`: 42 HTML files
+- noindex English-only long-form: 8
+- sitemap AR urls: 44
+
+## Full Playwright run (frozen working tree)
+
+```
+Running 362 tests using 1 worker
+  362 passed (12.8m)
+```
+
+| Suite | Count | What it proves |
+| --- | ---: | --- |
+| `matrix.spec.mjs` | 262 | every route × language × {390,1440}: one h1, no page errors, no failing local assets, no duplicate ids, ≥1 JSON-LD block, no clipped buttons, no horizontal overflow; plus 16 home-geometry viewports (320→1920) |
+| `accessibility.spec.mjs` | 32 | axe wcag2a / wcag2aa / wcag21aa on 16 routes × 2 languages |
+| `arabic.spec.mjs` | 42 | every `/ar/…` document: `lang=ar` + `dir=rtl`, self-canonical, reciprocal hreflang + `x-default`, zero `data-ar*` leftovers, one h1, JSON-LD, the language pill links to the English twin, that `?lang=en` cannot flip it, one no-JavaScript read of `/ar/services/`, and the language pill navigating to the Arabic twin while keeping `?inquiry=` |
+| `flows.spec.mjs` | 26 | redirects, every service CTA context, registration/consent, shortlist integrity, reader gate, form API contract (accepted/rejected/http-error/invalid-json/timeout/network), analytics consent, sitemap/robots policy, no-JS fallback, preview internals 403 |
+
+Deliberately unchanged: no test was skipped, weakened or deleted; the two a11y failures
+found this round were fixed in the CSS that owns the rule (see REPORT §2).
+
+## Measured page weights
+
+| Page | English | Arabic |
+| --- | ---: | ---: |
+| `/` | 60 KB | 48 KB |
+| `/services/` | 64 KB | 56 KB |
+
+## Studio round (same day, after the four studio pages moved to v3)
+
+```
+41 page(s) carry chrome markers · 0 out of date
+84 HTML files checked · 0 problem(s)
+Generator parity: 91 outputs match isolated regeneration.
+```
+
+```
+Running 362 tests using 1 worker
+  362 passed (10.4m)
+```
+
+Pages re-shot at 1440 after the v3 pass, added to `docs/next-round/evidence/`:
+`en-team-1440.png` · `en-our-story-1440.png` · `en-methodology-1440.png` · `en-books-1440.png`.
+
+What this run re-verified after the change: the whole route matrix (including every `/ar/…`
+twin of the four studio pages), axe on all 32 route/language pairs, the Arabic suite
+(canonical / hreflang / no JS / language-pill navigation) and the flows suite. No test was
+added, skipped or relaxed for this pass — the only new evidence is the screenshots.
+
+## Editorial round — `/blog/`, `/books/`, `/contact/` onto v3 (same day)
+
+```
+41 page(s) carry chrome markers · 0 out of date
+84 HTML files checked · 0 problem(s)
+Generator parity: 91 outputs match isolated regeneration.
+```
+
+```
+Running 362 tests using 1 worker
+  362 passed (14.1m)
+```
+
+New screenshots in `docs/next-round/evidence/`: `en-blog-1440.png`, `en-books-1440.png`,
+`en-contact-1440.png` (Arabic twins re-shot separately: see the `/ar/` captures in the
+same folder). The suite run covers the rewritten routes and their Arabic twins in both
+viewports, plus the 32 axe scans and the whole flows suite (newsletter/career endpoints,
+book filters, reader gate, form contract) — unchanged and unskipped.

@@ -7,6 +7,23 @@
    ========================================================================== */
 
 /* ---------- Tokens ---------- */
+/* ---------- Fonts (self-hosted): Signate Grotesk = headings · Raleway = titles · Poppins = subtitles & body ---------- */
+@font-face { font-family: 'Signate Grotesk'; src: url('../fonts/signategrotesk-black.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-SemiBoldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+
 :root {
   --navy: #00001e;
   --bg: #05051a;
@@ -40,18 +57,24 @@
   --ease: cubic-bezier(.22, 1, .36, 1);
   --ease-in-out: cubic-bezier(.65, 0, .35, 1);
 
-  --f-display: 'Alexandria', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  /* Arabic: Alexandria (headings / titles), IBM Plex Sans Arabic (body) */
+  --f-head: 'Alexandria', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --f-title: 'Alexandria', 'IBM Plex Sans Arabic', system-ui, sans-serif;
   --f-body: 'IBM Plex Sans Arabic', 'Alexandria', system-ui, sans-serif;
+  --f-display: var(--f-title);
   --f-accent: 'Alexandria', sans-serif;
+  --f-num: 'Raleway', 'Alexandria', sans-serif;
   --f-mark: 'Comfortaa', 'Raleway', sans-serif;
 
   --container: 1240px;
   --nav-h: 76px;
 }
 html[lang='en'] {
-  --f-display: 'Raleway', system-ui, sans-serif;
-  --f-body: 'Raleway', system-ui, sans-serif;
-  --f-accent: 'Fraunces', Georgia, serif;
+  --f-head: 'Signate Grotesk', 'Raleway', system-ui, sans-serif;   /* headings   */
+  --f-title: 'Raleway', system-ui, sans-serif;                     /* titles     */
+  --f-body: 'Poppins', system-ui, sans-serif;                      /* subtitles + body */
+  --f-display: var(--f-title);
+  --f-accent: 'Raleway', system-ui, sans-serif;                    /* italic accent words */
 }
 
 /* ---------- Base ---------- */
@@ -70,7 +93,7 @@ body {
   overflow-x: hidden;
   transition: opacity .35s var(--ease);
 }
-html[lang='en'] body { line-height: 1.7; font-size: 16.5px; }
+html[lang='en'] body { line-height: 1.7; font-size: 16px; }
 body.is-loading { overflow: hidden; }
 body.is-switching main, body.is-switching .nav__links { opacity: 0; transform: translateY(6px); filter: blur(4px); }
 main, .nav__links { transition: opacity .3s var(--ease), transform .3s var(--ease), filter .3s var(--ease); }
@@ -79,8 +102,11 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 ::selection { background: rgba(139, 108, 255, .45); color: #fff; }
 :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 8px; }
-h1, h2, h3, h4 { font-family: var(--f-display); margin: 0; line-height: 1.25; font-weight: 700; }
-html[lang='en'] h1, html[lang='en'] h2 { letter-spacing: -.025em; line-height: 1.08; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.25; font-weight: 700; }
+h1, h2 { font-family: var(--f-head); }
+h3, h4 { font-family: var(--f-title); }
+.btn, .nav__links a, .kicker, .eyebrow, .tab, .pill, .text-link, .lang-btn, .seg button, .chips button, .compare__switch button, .market-switch button, .stat__label, .step__time { font-family: var(--f-title); }
+html[lang='en'] h1, html[lang='en'] h2 { letter-spacing: .005em; line-height: 1.08; }
 p { margin: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 
@@ -100,7 +126,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   padding-block: .14em;
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
-html[lang='en'] .grad-text { font-family: var(--f-accent); font-style: italic; font-weight: 400; letter-spacing: -.01em; padding-inline-end: .06em; }
+html[lang='en'] .grad-text { font-family: var(--f-accent); font-style: italic; font-weight: 600; letter-spacing: -.01em; padding-inline-end: .06em; }
 @keyframes shimmer { to { background-position: 200% center; } }
 
 /* ---------- Glass ---------- */
@@ -175,7 +201,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
 .btn--glass:hover { background: rgba(255,255,255,.12); }
 .icon-btn, .lang-btn { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); background: rgba(255,255,255,.04); transition: background .3s, border-color .3s, transform .3s var(--ease); }
 .icon-btn .ico { font-size: 18px; }
-.lang-btn { font-family: 'Raleway', 'IBM Plex Sans Arabic', sans-serif; font-weight: 700; font-size: 14px; }
+.lang-btn { font-family: 'Raleway', 'IBM Plex Sans Arabic', sans-serif !important; font-weight: 700; font-size: 14px; }
 .icon-btn:hover, .lang-btn:hover { background: rgba(255,255,255,.1); border-color: var(--line-2); transform: translateY(-2px); }
 
 /* ---------- Navigation ---------- */
@@ -203,7 +229,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(63,214,196,.55); } 70% { box-shadow: 0 0 0 10px rgba(63,214,196,0); } 100% { box-shadow: 0 0 0 0 rgba(63,214,196,0); } }
 .kicker { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; color: var(--teal); margin-bottom: 18px; }
 html[lang='en'] .kicker { text-transform: uppercase; letter-spacing: .16em; font-size: 12.5px; }
-.kicker__num { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; font-size: 15px; color: var(--ink-3); letter-spacing: 0; display: inline-flex; align-items: center; gap: 12px; }
+.kicker__num { font-family: var(--f-num); font-style: italic; font-weight: 400; font-size: 15px; color: var(--ink-3); letter-spacing: 0; display: inline-flex; align-items: center; gap: 12px; }
 .kicker__num::after { content: ''; width: 36px; height: 1px; background: linear-gradient(90deg, var(--ink-3), transparent); }
 [dir='rtl'] .kicker__num::after { background: linear-gradient(-90deg, var(--ink-3), transparent); }
 
@@ -248,7 +274,7 @@ html[lang='en'] .hero__title { line-height: 1.02; font-weight: 800; }
 .stats__inner { display: grid; grid-template-columns: repeat(4, 1fr); border-radius: var(--r-lg); }
 .stat { padding: 30px 26px; text-align: center; position: relative; }
 .stat + .stat::before { content: ''; position: absolute; inset-inline-start: 0; top: 24%; bottom: 24%; width: 1px; background: linear-gradient(transparent, var(--line-2), transparent); }
-.stat__num { font-family: 'Raleway', 'Alexandria', sans-serif; font-size: clamp(36px, 4vw, 56px); font-weight: 800; line-height: 1; font-variant-numeric: lining-nums tabular-nums; background: linear-gradient(180deg, #fff 30%, rgba(255,255,255,.55)); -webkit-background-clip: text; background-clip: text; color: transparent; direction: ltr; display: inline-block; }
+.stat__num { font-family: var(--f-head); font-size: clamp(36px, 4vw, 56px); font-weight: 800; line-height: 1; font-variant-numeric: lining-nums tabular-nums; background: linear-gradient(180deg, #fff 30%, rgba(255,255,255,.55)); -webkit-background-clip: text; background-clip: text; color: transparent; direction: ltr; display: inline-block; }
 html[lang='ar'] .stat__num { font-family: 'Alexandria', sans-serif; direction: rtl; }
 .stat__label { margin-top: 10px; font-size: 14.5px; color: var(--ink-2); }
 
@@ -305,7 +331,7 @@ main, .footer { overflow-x: clip; }
 .timeline__rail i { display: block; width: 100%; height: 100%; background: linear-gradient(180deg, var(--teal), var(--violet), var(--pink)); transform-origin: top; transform: scaleY(0); }
 .step { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
 .step__card { padding: 28px; border-radius: var(--r); }
-.step__dot { position: absolute; inset-inline-start: 50%; top: 28px; width: 46px; height: 46px; margin-inline-start: -23px; border-radius: 50%; display: grid; place-items: center; font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; background: var(--bg-2); border: 1px solid var(--line-2); transition: all .6s var(--ease); z-index: 1; }
+.step__dot { position: absolute; inset-inline-start: 50%; top: 28px; width: 46px; height: 46px; margin-inline-start: -23px; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-num); font-style: italic; font-size: 18px; background: var(--bg-2); border: 1px solid var(--line-2); transition: all .6s var(--ease); z-index: 1; }
 .step.is-lit .step__dot { background: var(--grad-brand); border-color: transparent; box-shadow: 0 0 0 6px rgba(122,85,224,.18), 0 0 30px rgba(122,85,224,.7); }
 .step__time { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--teal); padding: 4px 12px; border-radius: 999px; background: rgba(63,214,196,.1); border: 1px solid rgba(63,214,196,.25); margin-bottom: 14px; }
 .step__card h3 { font-size: 22px; margin-bottom: 8px; }
@@ -318,8 +344,8 @@ main, .footer { overflow-x: clip; }
 .pillars .card { padding: 36px 32px; min-height: 300px; }
 .pillars .card__icon { width: 60px; height: 60px; font-size: 28px; border-radius: 18px; }
 .pillars .card h3 { font-size: 26px; }
-html[lang='en'] .pillars .card h3 { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 30px; }
-.pillars .card__big { position: absolute; inset-inline-end: -10px; bottom: -30px; font-family: 'Fraunces', serif; font-style: italic; font-size: 160px; line-height: 1; color: rgba(255,255,255,.04); pointer-events: none; }
+html[lang='en'] .pillars .card h3 { font-family: var(--f-accent); font-style: italic; font-weight: 600; font-size: 28px; }
+.pillars .card__big { position: absolute; inset-inline-end: -10px; bottom: -30px; font-family: var(--f-num); font-style: italic; font-size: 160px; line-height: 1; color: rgba(255,255,255,.04); pointer-events: none; }
 .promises { margin-top: 20px; display: grid; grid-template-columns: repeat(4, 1fr); border-radius: var(--r-lg); }
 .promises li { display: flex; align-items: center; gap: 12px; padding: 22px 24px; font-size: 15px; font-weight: 500; }
 .promises li + li { border-inline-start: 1px solid var(--line); }

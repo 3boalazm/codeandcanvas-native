@@ -30,13 +30,13 @@ html[lang='ar'] .board .dash__title { letter-spacing: .04em; }
 .board__body { padding: clamp(20px, 2.4vw, 30px); padding-bottom: 44px; display: grid; gap: 22px; }
 .board__kicker { color: var(--teal); font-size: 12px; font-weight: 700; letter-spacing: .16em; margin-bottom: 8px; }
 html[lang='ar'] .board__kicker { letter-spacing: 0; font-size: 13.5px; }
-.board__title { font-family: var(--f-display); font-size: clamp(28px, 2.9vw, 40px); font-weight: 800; line-height: 1.12; letter-spacing: -.02em; }
+.board__title { font-family: var(--f-head); font-size: clamp(28px, 2.9vw, 40px); font-weight: 800; line-height: 1.12; letter-spacing: .005em; }
 html[lang='ar'] .board__title { line-height: 1.4; letter-spacing: 0; }
 .board__lead { margin-top: 10px; color: var(--ink-2); font-size: 14.5px; }
 .board__flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .stage { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; padding: 14px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.045); transition: transform .45s var(--ease), border-color .35s, background .35s; }
 .stage:hover { transform: translateY(-4px); border-color: rgba(63,214,196,.35); background: linear-gradient(150deg, rgba(139,108,255,.14), rgba(255,255,255,.03)); }
-.stage__no { display: inline-grid; place-items: center; width: 30px; height: 30px; margin-bottom: 8px; border-radius: 10px; border: 1px solid rgba(139,108,255,.4); background: rgba(139,108,255,.1); color: #c9bdff; font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; direction: ltr; }
+.stage__no { display: inline-grid; place-items: center; width: 30px; height: 30px; margin-bottom: 8px; border-radius: 10px; border: 1px solid rgba(139,108,255,.4); background: rgba(139,108,255,.1); color: #c9bdff; font-family: var(--f-num); font-style: italic; font-size: 13px; direction: ltr; }
 .stage__label { color: var(--teal); font-size: 11px; font-weight: 800; letter-spacing: .16em; }
 html[lang='ar'] .stage__label { letter-spacing: 0; font-size: 13px; }
 .stage__label--violet { color: #c4b6ff; }
@@ -102,7 +102,7 @@ a:hover > .round-arrow, a:hover .round-arrow { background: var(--grad-brand); bo
 .svc--creative { --acc: #b8a9ff; }
 .svc--health { --acc: var(--pink); }
 .svc__top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 22px; }
-.svc__no { color: var(--ink-3); font-family: 'Fraunces', serif; font-style: italic; font-size: 14.5px; direction: ltr; }
+.svc__no { color: var(--ink-3); font-family: var(--f-num); font-style: italic; font-size: 14.5px; direction: ltr; }
 .svc__tag { padding: 4px 11px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--acc) 38%, transparent); background: color-mix(in srgb, var(--acc) 9%, transparent); color: var(--acc); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 html[lang='ar'] .svc__tag { letter-spacing: 0; text-transform: none; font-size: 12px; }
 .svc h3 { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.3; }
@@ -144,9 +144,9 @@ html[lang='ar'] .pri__pill { letter-spacing: 0; font-size: 12px; }
 
 /* ---------- Statement ---------- */
 .statement { padding-block: clamp(70px, 9vw, 130px); text-align: center; }
-.statement__text { font-family: var(--f-display); font-size: clamp(36px, 6.6vw, 96px); font-weight: 800; line-height: 1.12; text-wrap: balance; }
+.statement__text { font-family: var(--f-head); font-size: clamp(36px, 6.6vw, 96px); font-weight: 800; line-height: 1.12; text-wrap: balance; }
 html[lang='ar'] .statement__text { line-height: 1.35; }
-html[lang='en'] .statement__text { letter-spacing: -.03em; }
+html[lang='en'] .statement__text { letter-spacing: 0; }
 
 /* ---------- Approach ---------- */
 .step__label { display: block; margin-bottom: 8px; color: var(--violet); font-size: 12px; font-weight: 800; letter-spacing: .18em; }

@@ -50,7 +50,7 @@ assets/
 
 ## Fonts
 
-Loaded from Google Fonts in each page `<head>`: Alexandria and IBM Plex Sans Arabic (Arabic), Raleway and Fraunces Italic (English), Comfortaa (wordmark). All are SIL OFL. To self-host, download the `woff2` files, add `@font-face` rules to `ds.css` and remove the `<link>`.
+Typography roles (English): **Signate Grotesk** (Black) for headings, **Raleway** for titles (card titles, kickers, buttons, nav, italic accent words) and **Poppins** for subtitles and body copy. The files are self-hosted from  (TTF, declared in ). Arabic uses Alexandria (headings / titles) and IBM Plex Sans Arabic (body); the Comfortaa wordmark font — all three still load from Google Fonts in each page . Check the Signate Grotesk licence covers web embedding before going public; converting the TTFs to WOFF2 would cut their size.
 
 ## Scope
 

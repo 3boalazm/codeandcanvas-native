@@ -39,7 +39,7 @@ def detail(code, *, cls, tag_list, included=None, included_ar=None, tiers=None, 
           </div>
           <aside class="sdetail__side">
             <div class="sdetail__price">{price}{dur}{note}</div>
-            <a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="{esc(cta[1])}">{cta[0]}</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="btn btn--primary magnetic" href="/contact/?inquiry={code}#message" data-track="service-inquiry" data-track-service="{code}"><span data-ar="{esc(cta[1])}">{cta[0]}</span><i class="flip" data-icon="arrowUpRight"></i></a>
             <a class="btn btn--glass" href="/pricing-faq/"><span data-ar="شروط الدفع والأسئلة الشائعة">Payment terms &amp; FAQ</span></a>
             <span class="sdetail__lead-by">{icon('users')}<span data-ar="يقودها">Led by</span> <b data-ar="{esc(lead_by[1])}">{lead_by[0]}</b></span>
           </aside>
@@ -116,6 +116,7 @@ def build():
       </section>
 
       <!-- ░░ Outcomes ░░ -->
+      <p class="container notice" data-ar="الأرقام التالية من عرض خبرات المؤسس السابق، وليست تدقيقًا مستقلًا. ناقش نطاق القياس والأدلة المناسبة قبل التعاقد.">The following figures are reported in the founder’s prior portfolio, not independently audited here. Discuss measurement scope and appropriate evidence before engaging.</p>
       <section class="section container section--tight section--flush-top" id="results" aria-labelledby="out-title">
         <header class="section__head" data-reveal>
           <p class="kicker"><span class="kicker__num">02</span><span data-ar="نتائج · لا مجرد مخططات">OUTCOMES · NOT JUST DIAGRAMS</span></p>
@@ -238,11 +239,7 @@ def build():
         </ul>
       </section>
 
-      {closing("CAN'T WAIT TO HEAR FROM YOU", 'نتطلع لسماعك',
-               '<span data-ar="لا نطيق الانتظار">Can’t Wait To</span><br /><span class="grad-text" data-ar="لنسمع منك.">Hear From You.</span>',
-               'Book an appointment, get started with a brief, or browse the full catalogue of services.',
-               'احجز موعدًا، أو ابدأ بموجز مختصر، أو تصفّح كتالوج الخدمات الكامل.',
-               [btn('Book an Appointment', 'احجز موعدًا', '/contact/#book'), btn('Get Started', 'ابدأ الآن', '/contact/', 'glass'), btn('Full Services', 'كل الخدمات', '/services/', 'ghost', 'arrow')])}
+
 '''
     return [page('/technology-services/', title='Technology Services — Code & Canvas', title_ar='خدمات التقنية — Code & Canvas',
                  desc='Enterprise Architecture · Digital Transformation · Healthcare Informatics · Solution Architecture · Cloud · Executive Advisory. 6 services, one practice — led by Ahmed Bedeer (CPHIMS, TOGAF, EMRAM, NORA).',

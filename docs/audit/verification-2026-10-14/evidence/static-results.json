@@ -1,0 +1,1963 @@
+{
+  "summary": {
+    "pages": 42,
+    "jsonldPages": 42,
+    "ogPages": 42,
+    "hreflangPages": 0,
+    "placeholderSlots": 44,
+    "trackedLinks": 29,
+    "totalLinks": 2756,
+    "fontsBytes": 2377796
+  },
+  "pages": [
+    {
+      "file": "404.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 54,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "about/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Person",
+        "Person"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 2,
+      "trackedLinks": 0,
+      "totalLinks": 80,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "account/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 59,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": [
+        {
+          "data-form": "demo"
+        },
+        {
+          "data-form": "demo"
+        }
+      ]
+    },
+    {
+      "file": "blog/design-systems-operating-system-modern-digital-products/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 69,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "blog/experience-design-business-growth-driver/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 70,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "blog/how-product-thinking-creates-sustainable-business-growth/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Organization"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 72,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Organization"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 71,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "blog/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 11,
+      "trackedLinks": 0,
+      "totalLinks": 61,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": [
+        {
+          "data-form": "contact",
+          "data-whatsapp": "",
+          "data-mail": "info@codeandcanvas.net",
+          "data-subject": "Newsletter subscription — Code & Canvas",
+          "data-endpoint": ""
+        }
+      ]
+    },
+    {
+      "file": "blog/what-digital-transformation-actually-means-for-smes/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Organization"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 71,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "blog/why-most-brands-look-different-but-feel-the-same/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 71,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "blog/why-software-development-alone-wont-solve-your-business-problems/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Organization"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 70,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "blog/why-startups-waste-money-wrong-product/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Organization"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 71,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "books/basics-of-graphic-design/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Book",
+        "Person",
+        "Offer"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 62,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "books/basics-of-graphic-design/read/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject"
+      ],
+      "h1": 0,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 53,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "books/basics-of-visual-identity/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Book",
+        "Person",
+        "Offer"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 62,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "books/basics-of-visual-identity/read/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject"
+      ],
+      "h1": 0,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 53,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "books/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 4,
+      "trackedLinks": 0,
+      "totalLinks": 70,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "books/marketing-fundamentals/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Book",
+        "Organization",
+        "Offer"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 62,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "books/marketing-fundamentals/read/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject"
+      ],
+      "h1": 0,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 53,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "books/ui-ux-handbook/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Book",
+        "Organization"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 62,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/?inquiry=book-ui-ux-handbook",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "cart/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 55,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "case-studies/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 3,
+      "trackedLinks": 0,
+      "totalLinks": 65,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "checkout/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 55,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": [
+        {
+          "data-checkout": null
+        }
+      ]
+    },
+    {
+      "file": "contact/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 68,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": [
+        {
+          "data-form": "contact",
+          "data-whatsapp": "966545520750",
+          "data-mail": "info@codeandcanvas.net",
+          "data-subject": "Website inquiry — Code & Canvas",
+          "data-endpoint": "",
+          "data-reveal": null
+        }
+      ]
+    },
+    {
+      "file": "cookie-policy/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 57,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "creative-services/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ItemList",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "Person"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 1,
+      "totalLinks": 94,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "erp/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "SoftwareApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 16,
+      "contactLinks": [],
+      "forms": [
+        {}
+      ]
+    },
+    {
+      "file": "forgot-password/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 53,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": [
+        {
+          "data-form": "demo",
+          "data-note": "If an account exists for this e-mail, a reset link has been sent (backend pending)."
+        }
+      ]
+    },
+    {
+      "file": "healthcare/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ItemList",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "Person",
+        "Person"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 73,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "index.html",
+      "jsonldTypes": [
+        "Organization",
+        "ImageObject",
+        "PostalAddress",
+        "PostalAddress",
+        "PostalAddress",
+        "ContactPoint",
+        "ContactPoint",
+        "WebSite",
+        "WebPage",
+        "ImageObject",
+        "Person",
+        "Person"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 28,
+      "totalLinks": 91,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          "book-call"
+        ],
+        [
+          "/contact/?inquiry=custom",
+          null
+        ],
+        [
+          "/contact/?inquiry=custom",
+          "track"
+        ],
+        [
+          "/contact/#book",
+          "book-call"
+        ],
+        [
+          "/contact/?inquiry=HC-03#book",
+          "book-call"
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "login/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 56,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": [
+        {
+          "data-form": "demo",
+          "data-next": "/account/"
+        },
+        {
+          "data-form": "demo",
+          "data-next": "/account/"
+        }
+      ]
+    },
+    {
+      "file": "methodology/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 62,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "our-story/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 5,
+      "trackedLinks": 0,
+      "totalLinks": 76,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "pricing-faq/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 96,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "privacy-policy/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 60,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "register/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 56,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": [
+        {
+          "data-form": "demo",
+          "data-next": "/account/"
+        }
+      ]
+    },
+    {
+      "file": "reset-password/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 52,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": [
+        {
+          "data-form": "demo",
+          "data-next": "/login/"
+        }
+      ]
+    },
+    {
+      "file": "services/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ItemList",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 2,
+      "trackedLinks": 0,
+      "totalLinks": 98,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "team/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Person",
+        "Person"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 2,
+      "trackedLinks": 0,
+      "totalLinks": 74,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": [
+        {
+          "data-form": "contact",
+          "data-whatsapp": "201092500454",
+          "data-mail": "info@codeandcanvas.net",
+          "data-subject": "Freelancer application — Code & Canvas",
+          "data-endpoint": "",
+          "data-reveal": null
+        }
+      ]
+    },
+    {
+      "file": "technology-services/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "ItemList",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "ListItem",
+        "Service",
+        "Person"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 1,
+      "trackedLinks": 0,
+      "totalLinks": 86,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "terms-of-use/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 58,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    },
+    {
+      "file": "thank-you/index.html",
+      "jsonldTypes": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ],
+      "h1": 1,
+      "duplicateIds": [],
+      "ogImage": "https://codeandcanvas.net/assets/brand/og-default.png",
+      "robots": null,
+      "hreflang": 0,
+      "placeholderSlots": 0,
+      "trackedLinks": 0,
+      "totalLinks": 59,
+      "contactLinks": [
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/",
+          null
+        ],
+        [
+          "/contact/#book",
+          null
+        ]
+      ],
+      "forms": []
+    }
+  ]
+}

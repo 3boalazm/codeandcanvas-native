@@ -138,19 +138,19 @@
   },
   {
    "path": "/account/",
-   "title": "Account Center - Code & Canvas"
+   "title": "Saved books — Code & Canvas"
   },
   {
    "path": "/cart/",
-   "title": "Cart - Code & Canvas"
+   "title": "Saved book shortlist — Code & Canvas"
   },
   {
    "path": "/checkout/",
-   "title": "Checkout - Code & Canvas"
+   "title": "Book availability — Code & Canvas"
   },
   {
    "path": "/thank-you/",
-   "title": "Thank you - Code & Canvas"
+   "title": "Request information — Code & Canvas"
   },
   {
    "path": "/privacy-policy/",

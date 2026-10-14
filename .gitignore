@@ -6,3 +6,7 @@ erp-proposal/
 __pycache__/
 *.pyc
 dist/
+
+# Browser test outputs (curated evidence belongs in docs/completion-*)
+test-results/
+playwright-report/

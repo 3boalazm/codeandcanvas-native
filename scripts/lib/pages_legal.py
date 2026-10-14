@@ -2,7 +2,7 @@
 """Legal pages + 404. NOTE: the live WordPress site has NO privacy / terms / cookie
 pages (all 404) although the footer links to them. These are concise DRAFTS
 written from the site's actual practices (contact form, WhatsApp hand-off,
-analytics-free static hosting, book purchases) — marked for legal review."""
+optional consented measurement, preview-only books) — marked for legal review."""
 from h import esc, icon, crumbs, btn, page
 
 UPDATED = 'October 2026'
@@ -27,23 +27,27 @@ def legal(path, *, title, title_ar, intro, intro_ar, sections, nav=''):
 
 
 def privacy():
-    S = [
-        ('Who we are', 'من نحن',
-         '<p>Code &amp; Canvas is a digital product studio and advisory firm operating from Riyadh, Saudi Arabia and Al Obour, Egypt. This policy explains what personal data we collect through codeandcanvas.net and how we use it.</p>',
-         '<p>Code &amp; Canvas استوديو منتجات رقمية وشركة استشارات تعمل من الرياض (السعودية) والعبور (مصر). توضح هذه السياسة البيانات الشخصية التي نجمعها عبر codeandcanvas.net وكيفية استخدامها.</p>'),
-        ('What we collect', 'ما نجمعه',
-         '<ul><li><strong>Contact &amp; booking forms:</strong> name, e-mail, phone, company, and the message you send us.</li><li><strong>Accounts &amp; purchases:</strong> name, e-mail, phone (optional), billing country, and your order history for digital books.</li><li><strong>Newsletter:</strong> your e-mail address.</li><li><strong>Technical data:</strong> standard server logs (IP address, browser, pages requested) kept by our hosting provider for security.</li></ul>',
-         '<ul><li><strong>نماذج التواصل والحجز:</strong> الاسم والبريد الإلكتروني والهاتف والشركة ورسالتك.</li><li><strong>الحسابات والمشتريات:</strong> الاسم والبريد والهاتف (اختياري) ودولة الفوترة وسجل طلبات الكتب الرقمية.</li><li><strong>النشرة البريدية:</strong> بريدك الإلكتروني.</li><li><strong>بيانات تقنية:</strong> سجلات الخادم القياسية (عنوان IP والمتصفح والصفحات المطلوبة) يحتفظ بها مزود الاستضافة لأغراض الأمان.</li></ul>'),
-        ('How we use it', 'كيف نستخدمها',
-         '<p>To answer your inquiry, schedule discovery calls, deliver purchased books, send the newsletter you subscribed to, issue invoices, and keep the site secure. We do not sell personal data and we do not run advertising profiles.</p>',
-         '<p>للرد على استفسارك، وجدولة المكالمات الاستكشافية، وتسليم الكتب المشتراة، وإرسال النشرة التي اشتركت فيها، وإصدار الفواتير، والحفاظ على أمان الموقع. لا نبيع البيانات الشخصية ولا ننشئ ملفات إعلانية.</p>'),
-        ('Messaging channels', 'قنوات المراسلة',
-         '<p>When you choose WhatsApp or e-mail from our contact page, your message is handled by that provider (Meta / your mail provider) under its own terms. Payment details are processed by the payment gateway and never stored on our servers.</p>',
-         '<p>عند اختيارك واتساب أو البريد الإلكتروني من صفحة التواصل، تُعالج رسالتك عبر ذلك المزود (Meta / مزود بريدك) وفق شروطه. تُعالج بيانات الدفع عبر بوابة الدفع ولا تُخزَّن على خوادمنا.</p>'),
-        ('Retention & your rights', 'الاحتفاظ وحقوقك',
-         '<p>Inquiry data is kept for up to 24 months; account and invoice data for as long as required by law. You may request access, correction, or deletion of your data at any time by writing to <a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a>.</p>',
-         '<p>نحتفظ ببيانات الاستفسارات حتى 24 شهرًا، وببيانات الحسابات والفواتير للمدة التي يفرضها القانون. يمكنك طلب الاطلاع على بياناتك أو تصحيحها أو حذفها في أي وقت عبر <a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a>.</p>'),
-    ]
+    S = [('Current operation',
+  'طريقة التشغيل الحالية',
+  '<p>Online accounts and payments are not connected. Contact, career and book inquiries prepare a WhatsApp or email draft unless a first-party form '
+  'endpoint is configured. A draft is not sent until you finish in the chosen app.</p>',
+  '<p>الحسابات والدفع الإلكتروني غير مربوطين. تُجهّز استفسارات التواصل والتوظيف والكتب مسودة واتساب أو بريد، ما لم تُربط بخدمة نماذج. لا تُرسل '
+  'المسودة حتى تُكمل الإرسال في التطبيق المختار.</p>'),
+ ('Information you choose to share',
+  'المعلومات التي تختار مشاركتها',
+  '<p>Forms may include your name, email, company and message. The receiving messaging provider applies its own terms. When a form endpoint is '
+  'connected, it receives the fields you submit and must have an approved retention and security policy. Contact info@codeandcanvas.net for access '
+  'or deletion requests.</p>',
+  '<p>قد تشمل النماذج اسمك وبريدك وشركتك ورسالتك. تسري شروط مزود المراسلة المستقبِل. عند ربط خدمة نماذج تستقبل الحقول التي ترسلها ويلزم اعتماد سياسة '
+  'احتفاظ وحماية. تواصل عبر info@codeandcanvas.net لطلبات الاطلاع أو الحذف.</p>'),
+ ('Usage measurement',
+  'قياس الاستخدام',
+  '<p>No analytics provider is connected by default. If a first-party collector is configured, measurement is sent only after your consent, '
+  'respecting Do Not Track and Global Privacy Control. Events exclude form values, emails and URL query strings. Change or withdraw your choice '
+  'through Measurement settings in the footer. Hosting providers may keep standard security logs separately.</p>',
+  '<p>لا يوجد مزود تحليلات مربوط افتراضيًا. عند إعداد مجمّع بيانات خاص بالموقع لا يُرسل القياس إلا بعد موافقتك مع احترام Do Not Track وGlobal '
+  'Privacy Control. لا تشمل الأحداث بيانات النماذج أو البريد أو معاملات الروابط. يمكنك تغيير اختيارك أو سحبه من إعدادات القياس بالتذييل. قد يحتفظ '
+  'مزود الاستضافة بسجلات أمان منفصلة.</p>')]
     return legal('/privacy-policy/', title='Privacy Policy', title_ar='سياسة الخصوصية', intro='How Code & Canvas collects, uses, and protects your personal data.', intro_ar='كيف تجمع Code & Canvas بياناتك الشخصية وتستخدمها وتحميها.', sections=S)
 
 
@@ -65,24 +69,23 @@ def terms():
          '<p>The site is provided “as is”. To the extent permitted by law, our liability is limited to the fees paid for the specific service or product. These terms are governed by the laws of the Kingdom of Saudi Arabia for KSA engagements and the Arab Republic of Egypt for Egypt engagements.</p>',
          '<p>يُقدَّم الموقع «كما هو». وفي الحدود التي يسمح بها القانون، تقتصر مسؤوليتنا على الرسوم المدفوعة للخدمة أو المنتج المحدد. تخضع هذه الشروط لقوانين المملكة العربية السعودية للتعاقدات في السعودية، وجمهورية مصر العربية للتعاقدات في مصر.</p>'),
     ]
+    S = [(en, ar, '<p>Only public book previews and availability inquiries are offered in this build. Saving a book is not a purchase and grants no paid access. Any future sale requires separately confirmed terms, pricing and access arrangements.</p>' if en == 'Digital books' else eh, '<p>تقدم هذه النسخة معاينات عامة واستفسارات عن التوفر فقط. حفظ الكتاب ليس شراءً ولا يمنح وصولًا مدفوعًا. أي بيع لاحق يتطلب تأكيدًا منفصلًا للشروط والسعر وطريقة الوصول.</p>' if en == 'Digital books' else ah) for en, ar, eh, ah in S]
     return legal('/terms-of-use/', title='Terms of Use', title_ar='شروط الاستخدام', intro='The rules for using codeandcanvas.net, buying our books, and working with us.', intro_ar='قواعد استخدام codeandcanvas.net وشراء كتبنا والعمل معنا.', sections=S)
 
 
 def cookies():
-    S = [
-        ('What we use', 'ما نستخدمه',
-         '<p>This site is a static, tracker-free build. We do not set advertising or third-party analytics cookies.</p>',
-         '<p>هذا الموقع بناء ثابت خالٍ من أدوات التتبع. لا نضع ملفات تعريف إعلانية أو تحليلات طرف ثالث.</p>'),
-        ('Local storage', 'التخزين المحلي',
-         '<ul><li><code>cc-lang</code> — your language choice (EN / AR).</li><li><code>cc-cart</code>, <code>cc-library</code> — your shopping cart and purchased books.</li><li><code>cc-reader-*</code>, <code>cc-notes-*</code> — your reading position and private notes inside the book reader.</li></ul><p>These values stay in your browser and are never sent to us.</p>',
-         '<ul><li><code>cc-lang</code> — اختيارك للغة (EN / AR).</li><li><code>cc-cart</code> و<code>cc-library</code> — سلة التسوق والكتب المشتراة.</li><li><code>cc-reader-*</code> و<code>cc-notes-*</code> — موضع القراءة وملاحظاتك الخاصة داخل القارئ.</li></ul><p>تبقى هذه القيم في متصفحك ولا تُرسل إلينا.</p>'),
-        ('Session cookies', 'ملفات الجلسة',
-         '<p>If you sign in to your account, a strictly necessary session cookie keeps you logged in. Payment providers may set their own cookies during checkout.</p>',
-         '<p>عند تسجيل الدخول إلى حسابك، يُبقيك ملف جلسة ضروري مسجلًا. قد تضع بوابات الدفع ملفاتها الخاصة أثناء إتمام الشراء.</p>'),
-        ('Your choices', 'خياراتك',
-         '<p>You can clear local storage and cookies from your browser settings at any time; the site keeps working, you will simply be asked for your language again.</p>',
-         '<p>يمكنك مسح التخزين المحلي وملفات تعريف الارتباط من إعدادات متصفحك في أي وقت؛ سيستمر الموقع في العمل وسيُطلب منك اختيار اللغة مجددًا.</p>'),
-    ]
+    S = [('Local preferences',
+  'تفضيلات محلية',
+  '<p>cc-lang stores your language; cc-cart stores saved book IDs, not purchases; cc-reader-* and cc-notes-* store your reading position and notes '
+  'on this device. cc-pre is a session preference for the intro animation. Clear them in browser settings at any time.</p>',
+  '<p>يحفظ cc-lang اللغة، وcc-cart معرّفات الكتب المحفوظة لا المشتريات، وcc-reader-* وcc-notes-* موضع القراءة والملاحظات على هذا الجهاز. cc-pre '
+  'تفضيل للجلسة خاص بمقدمة الموقع. يمكنك مسحها من إعدادات المتصفح.</p>'),
+ ('Optional measurement',
+  'قياس اختياري',
+  '<p>No third-party analytics or advertising cookies are set by this build. cc-analytics-consent records your choice only when optional measurement '
+  'is configured. Declining does not prevent using the site. No account or payment session is created in the current build.</p>',
+  '<p>لا تنشئ هذه النسخة ملفات إعلانية أو تحليلات خارجية. يحفظ cc-analytics-consent اختيارك عند إعداد القياس الاختياري فقط. الرفض لا يمنع استخدام '
+  'الموقع. لا تُنشأ جلسة حساب أو دفع في النسخة الحالية.</p>')]
     return legal('/cookie-policy/', title='Cookie Policy', title_ar='سياسة ملفات تعريف الارتباط', intro='What this site stores in your browser — and what it does not.', intro_ar='ما يخزنه هذا الموقع في متصفحك — وما لا يخزنه.', sections=S)
 
 

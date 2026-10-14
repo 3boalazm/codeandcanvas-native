@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en" dir="ltr" data-title-ar="مركز الحساب - Code &amp; Canvas" data-desc-ar="حسابك في Code &amp; Canvas: المكتبة والطلبات والملف الشخصي والأمان.">
+<html lang="en" dir="ltr" data-title-ar="الكتب المحفوظة — Code &amp; Canvas" data-desc-ar="قائمة كتبك المحلية والمعاينات المجانية.">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Account Center - Code &amp; Canvas</title>
-    <meta name="description" content="Your Code &amp; Canvas account: library, orders, profile, and security." />
+    <title>Saved books — Code &amp; Canvas</title>
+    <meta name="description" content="Your local book shortlist and free previews." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Account Center - Code &amp; Canvas" />
-    <meta property="og:description" content="Your Code &amp; Canvas account: library, orders, profile, and security." />
+    <meta property="og:title" content="Saved books — Code &amp; Canvas" />
+    <meta property="og:description" content="Your local book shortlist and free previews." />
     <meta property="og:url" content="https://codeandcanvas.net/account/" />
     <link rel="canonical" href="https://codeandcanvas.net/account/" />
     <!-- cc:head -->
@@ -33,17 +33,19 @@
       } catch (e) {}
     })();
     </script>
-    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/css/fonts.css" />
     <link rel="stylesheet" href="/assets/css/ds.css" />
     <link rel="stylesheet" href="/assets/css/pages.css" />
+    <link rel="stylesheet" href="/assets/css/completion.css" />
+    <noscript><style>body.is-loading{overflow:auto}#preloader{display:none!important}[data-reveal],.split .w{opacity:1!important;transform:none!important;filter:none!important}form{display:none!important}[data-panel][hidden]{display:block!important}</style></noscript>
     <!-- /cc:head -->
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/account/#webpage","url":"https://codeandcanvas.net/account/","name":"Account Center - Code & Canvas","description":"Your Code & Canvas account: library, orders, profile, and security.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/assets/brand/og-default.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"Account Center"}]}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/account/#webpage","url":"https://codeandcanvas.net/account/","name":"Saved books — Code & Canvas","description":"Your local book shortlist and free previews.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/assets/brand/og-default.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"Saved books"}]}]}</script>
+    <meta name="robots" content="noindex, follow" />
   </head>
-  <body class="is-loading">
+  <body class="is-loading" data-nav="books">
     <!-- cc:top -->
+    <noscript><div class="notice container" style="padding-top:110px">Forms and interactive tools require JavaScript. <a href="mailto:info@codeandcanvas.net">Email us instead</a>. <span lang="ar" dir="rtl">تحتاج النماذج والأدوات التفاعلية إلى JavaScript. يمكنك التواصل عبر البريد.</span></div></noscript>
     <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
     <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
 
@@ -88,55 +90,16 @@
     <main id="main">
 
       <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
-        <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><span aria-current="page" data-ar="مركز الحساب">Account Center</span></nav>
-        <div class="head-split"><h1 class="section__title" id="page-title" data-ar="مركز الحساب">Account Center</h1><p class="notice notice--inline" data-demo-note hidden></p></div>
-        <div class="acct">
-          <nav class="acct__nav glass" aria-label="Account" data-ar-label="الحساب" data-acct>
-            <div class="acct__user"><span class="avatar">CC</span><div><b data-acct-name>Guest</b><small data-acct-email>guest@codeandcanvas.net</small></div></div>
-            <a href="#overview" data-acct-link="overview" class="is-active"><i data-icon="grid" aria-hidden="true"></i><span data-ar="نظرة عامة">Overview</span></a><a href="#library" data-acct-link="library" class=""><i data-icon="box" aria-hidden="true"></i><span data-ar="مكتبتي">My Library</span></a><a href="#orders" data-acct-link="orders" class=""><i data-icon="cart" aria-hidden="true"></i><span data-ar="الطلبات">Orders</span></a><a href="#profile" data-acct-link="profile" class=""><i data-icon="users" aria-hidden="true"></i><span data-ar="الملف الشخصي">Profile</span></a><a href="#security" data-acct-link="security" class=""><i data-icon="lock" aria-hidden="true"></i><span data-ar="الأمان">Security</span></a>
-            <a href="/login/" data-acct-logout><i data-icon="arrow" aria-hidden="true"></i><span data-ar="تسجيل الخروج">Sign out</span></a>
-          </nav>
-          <div>
-            <section class="acct__panel is-active" id="overview" data-acct-panel="overview">
-              <div class="grid grid--3">
-                <div class="tile tile--mini"><span class="tile__num" data-library-count>0</span><span class="tile__sub" data-ar="كتب في مكتبتك">Books in your library</span></div>
-                <div class="tile tile--mini"><span class="tile__num" data-cart-count-tile>0</span><span class="tile__sub" data-ar="عناصر في السلة">Items in cart</span></div>
-                <div class="tile tile--mini"><span class="tile__num">—</span><span class="tile__sub" data-ar="طلبات سابقة">Past orders</span></div>
-              </div>
-              <div class="notice glass" style="margin-top:18px"><i data-icon="alert" aria-hidden="true"></i><div><b data-ar="واجهة الحساب جاهزة — الباك-إند قيد الربط">Account UI ready — backend pending</b><p data-ar="هذه الصفحة واجهة كاملة لمركز الحساب (المكتبة، الطلبات، الملف الشخصي، الأمان). تُربط بخدمة المصادقة عبر نقاط التكامل الموثقة في README.">This is the complete Account Center UI (library, orders, profile, security). Connect it to your auth service via the integration points documented in the README.</p></div></div>
-            </section>
-            <section class="acct__panel" id="library" data-acct-panel="library">
-              <h2 class="section__title" style="font-size:24px" data-ar="مكتبتي">My Library</h2>
-              <div class="grid grid--3" data-library hidden></div>
-              <div class="notice glass" data-library-empty><i data-icon="box" aria-hidden="true"></i><div><b data-ar="مكتبتك فارغة">Your library is empty</b><p data-ar="الكتب التي تشتريها تظهر هنا وتُفتح في القارئ التفاعلي.">Books you purchase appear here and open in the interactive reader.</p><a class="btn btn--glass" href="/books/"><span data-ar="تصفّح المكتبة">Browse the library</span><i class="flip" data-icon="arrowUpRight"></i></a></div></div>
-            </section>
-            <section class="acct__panel" id="orders" data-acct-panel="orders">
-              <h2 class="section__title" style="font-size:24px" data-ar="الطلبات">Orders</h2>
-              <div class="notice glass"><i data-icon="cart" aria-hidden="true"></i><div><b data-ar="لا توجد طلبات بعد">No orders yet</b><p data-ar="سجل طلباتك وفواتيرك سيظهر هنا.">Your order history and invoices will appear here.</p></div></div>
-            </section>
-            <section class="acct__panel" id="profile" data-acct-panel="profile">
-              <h2 class="section__title" style="font-size:24px" data-ar="الملف الشخصي">Profile</h2>
-              <form class="form form-card glass" data-form="demo" novalidate>
-                <div class="form__row"><div class="field"><label for="f-name" data-ar="الاسم الكامل">Full name</label><input id="f-name" name="name" type="text" required autocomplete="name" /><span class="field__err" data-ar="هذا الحقل مطلوب">This field is required</span></div><div class="field"><label for="f-email" data-ar="البريد الإلكتروني">Email</label><input id="f-email" name="email" type="email" required autocomplete="email" /><span class="field__err" data-ar="أدخل بريدًا صحيحًا">Please enter a valid e-mail</span></div></div>
-                <div class="form__row"><div class="field"><label for="f-phone" data-ar="الهاتف">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" /><span class="field__err" data-ar="أدخل رقمًا صحيحًا">Please enter a valid phone</span></div><div class="field"><label for="f-company" data-ar="الشركة (اختياري)">Company (optional)</label><input id="f-company" name="company" type="text" autocomplete="organization" /><span class="field__err" data-ar="هذا الحقل مطلوب">This field is required</span></div></div>
-                <div class="form__actions"><button class="btn btn--primary" type="submit"><span data-ar="حفظ التغييرات">Save changes</span></button></div>
-                <div class="form__status" role="status" aria-live="polite"></div>
-              </form>
-            </section>
-            <section class="acct__panel" id="security" data-acct-panel="security">
-              <h2 class="section__title" style="font-size:24px" data-ar="الأمان">Security</h2>
-              <form class="form form-card glass" data-form="demo" novalidate>
-                <div class="field"><label for="f-current" data-ar="كلمة المرور الحالية">Current password</label><input id="f-current" name="current" type="password" required minlength="8" autocomplete="current-password" /><span class="field__err" data-ar="8 أحرف على الأقل">At least 8 characters</span></div>
-                <div class="form__row"><div class="field"><label for="f-password" data-ar="كلمة المرور الجديدة">New password</label><input id="f-password" name="password" type="password" required minlength="8" autocomplete="new-password" /><span class="field__err" data-ar="8 أحرف على الأقل">At least 8 characters</span></div><div class="field"><label for="f-password2" data-ar="تأكيد كلمة المرور الجديدة">Confirm new password</label><input id="f-password2" name="password2" type="password" required minlength="8" autocomplete="new-password" data-match="#f-password" /><span class="field__err" data-ar="8 أحرف على الأقل">At least 8 characters</span></div></div>
-                <div class="form__actions"><button class="btn btn--primary" type="submit"><span data-ar="تحديث كلمة المرور">Update password</span></button></div>
-                <div class="form__status" role="status" aria-live="polite"></div>
-              </form>
-              <div class="notice glass" style="margin-top:14px"><i data-icon="shield" aria-hidden="true"></i><div><b data-ar="التحقق بخطوتين (2FA)">Two-factor authentication (2FA)</b><p data-ar="أضف تطبيق مصادقة لحماية حسابك — يُفعَّل عند ربط الباك-إند.">Add an authenticator app to protect your account — enabled once the backend is connected.</p><button class="btn btn--glass" type="button" disabled><span data-ar="تفعيل 2FA">Enable 2FA</span></button></div></div>
-            </section>
-          </div>
-        </div>
+        <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><span aria-current="page" data-ar="الكتب المحفوظة">Saved books</span></nav>
+        <h1 class="section__title" id="page-title" data-ar="كتبك المحفوظة">Your saved books</h1>
+        <p class="section__lead" data-ar="قائمة على هذا الجهاز فقط، وليست مكتبة مشتريات أو حسابًا مسجّلًا. المعاينات مجانية؛ الشراء الإلكتروني غير متاح حاليًا.">A shortlist on this device, not a purchase library or signed-in account. Previews are free; online purchasing is not available yet.</p>
+        <p class="notice"><b data-library-count>0</b> <span data-ar="كتب محفوظة">saved books</span></p>
+        <section id="library" aria-label="Saved previews" data-ar-label="المعاينات المحفوظة">
+          <div class="grid grid--3" data-library hidden></div>
+          <p data-library-empty data-ar="قائمتك فارغة. احفظ كتابًا من المكتبة للعودة إليه هنا.">Your list is empty. Save a book from the library to return to it here.</p>
+        </section>
+        <div class="btn-row" style="margin-top:24px"><a class="btn btn--primary magnetic" href="/books/"><span data-ar="تصفّح الكتب">Explore books</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/cart/"><span data-ar="إدارة القائمة">Manage shortlist</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
       </section>
-
     </main>
 
     <!-- cc:bottom -->
@@ -194,7 +157,7 @@
             <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
             <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
             <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
-            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+            <a href="/account/" data-ar="كتبي المحفوظة">Saved Books</a>
           </div>
           <div class="footer__col footer__contact">
             <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
@@ -213,9 +176,11 @@
     <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+    <script src="/assets/js/config.js"></script>
     <script src="/assets/js/site.js"></script>
     <!-- /cc:bottom -->
     <script src="/assets/js/pages.js"></script>
+    <script src="/assets/js/book-catalog.js"></script>
     <script src="/assets/js/shop.js"></script>
   </body>
 </html>

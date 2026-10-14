@@ -1,0 +1,674 @@
+[
+  {
+    "test": "home geometry en 320",
+    "height": 17719,
+    "workTop": 1708.40625,
+    "cta": [
+      {
+        "x": 16,
+        "y": 586.625,
+        "width": 288,
+        "height": 48,
+        "top": 586.625,
+        "right": 304,
+        "bottom": 634.625,
+        "left": 16
+      },
+      {
+        "x": 16,
+        "y": 644.625,
+        "width": 288,
+        "height": 48,
+        "top": 644.625,
+        "right": 304,
+        "bottom": 692.625,
+        "left": 16
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/Poppins-Regular.woff2",
+      "/assets/fonts/Poppins-Bold.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/Raleway-Regular.woff2",
+      "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+      "/assets/fonts/Raleway-SemiBold.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/Poppins-SemiBold.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/Poppins-Medium.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry en 360",
+    "height": 16219,
+    "workTop": 1557.125,
+    "cta": [
+      {
+        "x": 16,
+        "y": 494.65625,
+        "width": 328,
+        "height": 48,
+        "top": 494.65625,
+        "right": 344,
+        "bottom": 542.65625,
+        "left": 16
+      },
+      {
+        "x": 16,
+        "y": 552.65625,
+        "width": 328,
+        "height": 48,
+        "top": 552.65625,
+        "right": 344,
+        "bottom": 600.65625,
+        "left": 16
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/Poppins-Regular.woff2",
+      "/assets/fonts/Poppins-Bold.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/Raleway-Regular.woff2",
+      "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+      "/assets/fonts/Raleway-SemiBold.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/Poppins-SemiBold.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/Poppins-Medium.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry en 390",
+    "height": 15359,
+    "workTop": 1498.828125,
+    "cta": [
+      {
+        "x": 16,
+        "y": 494.65625,
+        "width": 358,
+        "height": 48,
+        "top": 494.65625,
+        "right": 374,
+        "bottom": 542.65625,
+        "left": 16
+      },
+      {
+        "x": 16,
+        "y": 552.65625,
+        "width": 358,
+        "height": 48,
+        "top": 552.65625,
+        "right": 374,
+        "bottom": 600.65625,
+        "left": 16
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/Poppins-Regular.woff2",
+      "/assets/fonts/Poppins-Bold.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/Raleway-Regular.woff2",
+      "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+      "/assets/fonts/Raleway-SemiBold.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/Poppins-SemiBold.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/Poppins-Medium.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry en 480",
+    "height": 14326,
+    "workTop": 1379.484375,
+    "cta": [
+      {
+        "x": 16,
+        "y": 425.625,
+        "width": 448,
+        "height": 48,
+        "top": 425.625,
+        "right": 464,
+        "bottom": 473.625,
+        "left": 16
+      },
+      {
+        "x": 16,
+        "y": 483.625,
+        "width": 448,
+        "height": 48,
+        "top": 483.625,
+        "right": 464,
+        "bottom": 531.625,
+        "left": 16
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/Poppins-Regular.woff2",
+      "/assets/fonts/Poppins-Bold.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/Raleway-Regular.woff2",
+      "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+      "/assets/fonts/Raleway-SemiBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Poppins-SemiBold.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/Poppins-Medium.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry en 768",
+    "height": 12775,
+    "workTop": 1160.90625,
+    "cta": [
+      {
+        "x": 185,
+        "y": 392.75,
+        "width": 202,
+        "height": 48,
+        "top": 392.75,
+        "right": 387,
+        "bottom": 440.75,
+        "left": 185
+      },
+      {
+        "x": 397,
+        "y": 392.75,
+        "width": 186,
+        "height": 48,
+        "top": 392.75,
+        "right": 583,
+        "bottom": 440.75,
+        "left": 397
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/Poppins-Regular.woff2",
+      "/assets/fonts/Poppins-Bold.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/Raleway-Regular.woff2",
+      "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+      "/assets/fonts/Raleway-SemiBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Poppins-SemiBold.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/Poppins-Medium.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry en 1024",
+    "height": 10582,
+    "workTop": 1189.453125,
+    "cta": [
+      {
+        "x": 313,
+        "y": 411.0625,
+        "width": 202,
+        "height": 48,
+        "top": 411.0625,
+        "right": 515,
+        "bottom": 459.0625,
+        "left": 313
+      },
+      {
+        "x": 525,
+        "y": 411.0625,
+        "width": 186,
+        "height": 48,
+        "top": 411.0625,
+        "right": 711,
+        "bottom": 459.0625,
+        "left": 525
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/Poppins-Regular.woff2",
+      "/assets/fonts/Poppins-Bold.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/Raleway-Regular.woff2",
+      "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+      "/assets/fonts/Raleway-SemiBold.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/Poppins-SemiBold.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/Poppins-Medium.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry en 1440",
+    "height": 9041,
+    "workTop": 743.390625,
+    "cta": [
+      {
+        "x": 100,
+        "y": 542.609375,
+        "width": 202,
+        "height": 48,
+        "top": 542.609375,
+        "right": 302,
+        "bottom": 590.609375,
+        "left": 100
+      },
+      {
+        "x": 312,
+        "y": 542.609375,
+        "width": 186,
+        "height": 48,
+        "top": 542.609375,
+        "right": 498,
+        "bottom": 590.609375,
+        "left": 312
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/Poppins-Regular.woff2",
+      "/assets/fonts/Poppins-Bold.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Regular.woff2",
+      "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+      "/assets/fonts/Raleway-SemiBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/Poppins-SemiBold.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/Poppins-Medium.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry en 1920",
+    "height": 9041,
+    "workTop": 743.390625,
+    "cta": [
+      {
+        "x": 340,
+        "y": 542.609375,
+        "width": 202,
+        "height": 48,
+        "top": 542.609375,
+        "right": 542,
+        "bottom": 590.609375,
+        "left": 340
+      },
+      {
+        "x": 552,
+        "y": 542.609375,
+        "width": 186,
+        "height": 48,
+        "top": 542.609375,
+        "right": 738,
+        "bottom": 590.609375,
+        "left": 552
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/Poppins-Regular.woff2",
+      "/assets/fonts/Poppins-Bold.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Regular.woff2",
+      "/assets/fonts/Raleway-SemiBoldItalic.woff2",
+      "/assets/fonts/Raleway-SemiBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/Poppins-SemiBold.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/Poppins-Medium.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry ar 320",
+    "height": 15445,
+    "workTop": 1476.578125,
+    "cta": [
+      {
+        "x": 16,
+        "y": 408.625,
+        "width": 288,
+        "height": 48,
+        "top": 408.625,
+        "right": 304,
+        "bottom": 456.625,
+        "left": 16
+      },
+      {
+        "x": 16,
+        "y": 466.625,
+        "width": 288,
+        "height": 48,
+        "top": 466.625,
+        "right": 304,
+        "bottom": 514.625,
+        "left": 16
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+      "/assets/fonts/alexandria-latin-wght-normal.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+      "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry ar 360",
+    "height": 14809,
+    "workTop": 1437.828125,
+    "cta": [
+      {
+        "x": 16,
+        "y": 408.625,
+        "width": 328,
+        "height": 48,
+        "top": 408.625,
+        "right": 344,
+        "bottom": 456.625,
+        "left": 16
+      },
+      {
+        "x": 16,
+        "y": 466.625,
+        "width": 328,
+        "height": 48,
+        "top": 466.625,
+        "right": 344,
+        "bottom": 514.625,
+        "left": 16
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+      "/assets/fonts/alexandria-latin-wght-normal.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+      "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry ar 390",
+    "height": 14312,
+    "workTop": 1437.828125,
+    "cta": [
+      {
+        "x": 16,
+        "y": 408.625,
+        "width": 358,
+        "height": 48,
+        "top": 408.625,
+        "right": 374,
+        "bottom": 456.625,
+        "left": 16
+      },
+      {
+        "x": 16,
+        "y": 466.625,
+        "width": 358,
+        "height": 48,
+        "top": 466.625,
+        "right": 374,
+        "bottom": 514.625,
+        "left": 16
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+      "/assets/fonts/alexandria-latin-wght-normal.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+      "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry ar 480",
+    "height": 13436,
+    "workTop": 1249.078125,
+    "cta": [
+      {
+        "x": 16,
+        "y": 380.625,
+        "width": 448,
+        "height": 48,
+        "top": 380.625,
+        "right": 464,
+        "bottom": 428.625,
+        "left": 16
+      },
+      {
+        "x": 16,
+        "y": 438.625,
+        "width": 448,
+        "height": 48,
+        "top": 438.625,
+        "right": 464,
+        "bottom": 486.625,
+        "left": 16
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+      "/assets/fonts/alexandria-latin-wght-normal.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+      "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry ar 768",
+    "height": 12294,
+    "workTop": 1082.953125,
+    "cta": [
+      {
+        "x": 403,
+        "y": 377.34375,
+        "width": 189,
+        "height": 48,
+        "top": 377.34375,
+        "right": 592,
+        "bottom": 425.34375,
+        "left": 403
+      },
+      {
+        "x": 176,
+        "y": 377.34375,
+        "width": 217,
+        "height": 48,
+        "top": 377.34375,
+        "right": 393,
+        "bottom": 425.34375,
+        "left": 176
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+      "/assets/fonts/alexandria-latin-wght-normal.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+      "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry ar 1024",
+    "height": 10252,
+    "workTop": 1112.375,
+    "cta": [
+      {
+        "x": 531,
+        "y": 396.53125,
+        "width": 189,
+        "height": 48,
+        "top": 396.53125,
+        "right": 720,
+        "bottom": 444.53125,
+        "left": 531
+      },
+      {
+        "x": 304,
+        "y": 396.53125,
+        "width": 217,
+        "height": 48,
+        "top": 396.53125,
+        "right": 521,
+        "bottom": 444.53125,
+        "left": 304
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+      "/assets/fonts/alexandria-latin-wght-normal.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+      "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry ar 1440",
+    "height": 8818,
+    "workTop": 718.078125,
+    "cta": [
+      {
+        "x": 1151,
+        "y": 462.6875,
+        "width": 189,
+        "height": 48,
+        "top": 462.6875,
+        "right": 1340,
+        "bottom": 510.6875,
+        "left": 1151
+      },
+      {
+        "x": 924,
+        "y": 462.6875,
+        "width": 217,
+        "height": 48,
+        "top": 462.6875,
+        "right": 1141,
+        "bottom": 510.6875,
+        "left": 924
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+      "/assets/fonts/alexandria-latin-wght-normal.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+      "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+    ]
+  },
+  {
+    "test": "home geometry ar 1920",
+    "height": 8818,
+    "workTop": 718.078125,
+    "cta": [
+      {
+        "x": 1391,
+        "y": 462.6875,
+        "width": 189,
+        "height": 48,
+        "top": 462.6875,
+        "right": 1580,
+        "bottom": 510.6875,
+        "left": 1391
+      },
+      {
+        "x": 1164,
+        "y": 462.6875,
+        "width": 217,
+        "height": 48,
+        "top": 462.6875,
+        "right": 1381,
+        "bottom": 510.6875,
+        "left": 1164
+      }
+    ],
+    "fonts": [
+      "/assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+      "/assets/fonts/alexandria-latin-wght-normal.woff2",
+      "/assets/fonts/Raleway-ExtraBold.woff2",
+      "/assets/fonts/Raleway-Italic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+      "/assets/fonts/Raleway-BoldItalic.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+      "/assets/fonts/alexandria-arabic-wght-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+      "/assets/fonts/Raleway-Bold.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+      "/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2"
+    ]
+  }
+]

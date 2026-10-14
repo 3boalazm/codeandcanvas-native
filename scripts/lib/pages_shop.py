@@ -5,7 +5,7 @@
 cart is localStorage (assets/js/shop.js). Integration points are in README."""
 from h import esc, icon, crumbs, btn, page
 
-SHOP_JS = ('/assets/js/pages.js', '/assets/js/shop.js')
+SHOP_JS = ('/assets/js/pages.js', '/assets/js/book-catalog.js', '/assets/js/shop.js')
 
 
 def field(name, label, label_ar, typ='text', req=True, auto='', extra='', hint=None, placeholder=''):
@@ -21,7 +21,7 @@ def field(name, label, label_ar, typ='text', req=True, auto='', extra='', hint=N
 
 
 def google():
-    return f'''<a class="btn btn--glass auth__google" href="/login/?provider=google" data-provider="google" aria-disabled="true"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path fill="#EA4335" d="M9 3.5c1.5 0 2.5.6 3.1 1.2l2.3-2.3C13 1.1 11.2.3 9 .3 5.5.3 2.5 2.3 1.1 5.2l2.7 2.1C4.4 5.2 6.5 3.5 9 3.5z"/><path fill="#4285F4" d="M17.6 9.2c0-.7-.1-1.2-.2-1.8H9v3.3h4.9c-.1.8-.6 2-1.8 2.8l2.6 2c1.6-1.4 2.9-3.6 2.9-6.3z"/><path fill="#FBBC05" d="M3.8 10.7c-.2-.6-.3-1.1-.3-1.7s.1-1.2.3-1.7L1.1 5.2C.4 6.3 0 7.6 0 9s.4 2.7 1.1 3.8l2.7-2.1z"/><path fill="#34A853" d="M9 17.7c2.4 0 4.5-.8 6-2.2l-2.6-2c-.8.5-1.8.9-3.4.9-2.5 0-4.6-1.7-5.3-4L1.1 12.5C2.5 15.6 5.5 17.7 9 17.7z"/></svg><span data-ar="المتابعة عبر Google">Continue with Google</span></a>'''
+    return f'''<button class="btn btn--glass auth__google" type="button" disabled><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path fill="#EA4335" d="M9 3.5c1.5 0 2.5.6 3.1 1.2l2.3-2.3C13 1.1 11.2.3 9 .3 5.5.3 2.5 2.3 1.1 5.2l2.7 2.1C4.4 5.2 6.5 3.5 9 3.5z"/><path fill="#4285F4" d="M17.6 9.2c0-.7-.1-1.2-.2-1.8H9v3.3h4.9c-.1.8-.6 2-1.8 2.8l2.6 2c1.6-1.4 2.9-3.6 2.9-6.3z"/><path fill="#FBBC05" d="M3.8 10.7c-.2-.6-.3-1.1-.3-1.7s.1-1.2.3-1.7L1.1 5.2C.4 6.3 0 7.6 0 9s.4 2.7 1.1 3.8l2.7-2.1z"/><path fill="#34A853" d="M9 17.7c2.4 0 4.5-.8 6-2.2l-2.6-2c-.8.5-1.8.9-3.4.9-2.5 0-4.6-1.7-5.3-4L1.1 12.5C2.5 15.6 5.5 17.7 9 17.7z"/></svg><span data-ar="تسجيل الدخول عبر Google غير متاح">Google sign-in unavailable</span></button>'''
 
 
 def auth_shell(path, *, title, title_ar, head, head_ar, sub_html, form_html, aside_html='', nav='', desc='', desc_ar=''):
@@ -31,6 +31,7 @@ def auth_shell(path, *, title, title_ar, head, head_ar, sub_html, form_html, asi
           <a class="auth__brand" href="/"><img src="/assets/brand/icon-white.svg" alt="" width="28" height="28" />Code &amp; Canvas</a>
           <h1 class="auth__title" id="auth-title" data-ar="{esc(head_ar)}">{esc(head)}</h1>
           <p class="auth__sub">{sub_html}</p>
+          <p class="notice" role="note" data-ar="الحسابات الإلكترونية غير متاحة حاليًا. هذه النماذج لا تسجّل الدخول ولا تنشئ حسابًا ولا ترسل كلمات مرور. تصفّح المعاينات المجانية أو تواصل معنا.">Online accounts are not available yet. These forms do not sign in, create accounts or send passwords. Explore the free previews or contact us.</p>
           {form_html}
         </div>
         {aside_html}
@@ -85,14 +86,14 @@ def register():
 
 def forgot():
     form = f'''
-          <form class="form" data-form="demo" novalidate data-note="If an account exists for this e-mail, a reset link has been sent (backend pending).">
+          <form class="form" data-form="demo" novalidate data-note="Online password reset is not available yet.">
             <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
             {field('email', 'Email', 'البريد الإلكتروني', 'email', auto='email')}
             <button class="btn btn--primary magnetic btn--block" type="submit"><span data-ar="إرسال رابط إعادة التعيين">Send reset link</span></button>
             <div class="form__status" role="status" aria-live="polite"></div>
             <a class="text-link" href="/login/"><span data-ar="← العودة لتسجيل الدخول">← Back to sign in</span></a>
           </form>'''
-    sub = '<span data-ar="أدخل بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور.">Enter your e-mail and we’ll send you a link to reset your password.</span>'
+    sub = '<span data-ar="إعادة تعيين كلمة المرور غير مربوطة. تواصل معنا إذا احتجت مساعدة.">Password reset is not connected. Contact us if you need help.</span>'
     return auth_shell('/forgot-password/', title='Forgot Password - Code & Canvas', title_ar='نسيت كلمة المرور - Code & Canvas', head='Forgot your password?', head_ar='نسيت كلمة المرور؟', sub_html=sub, form_html=form)
 
 
@@ -111,67 +112,26 @@ def reset():
 
 
 def account():
-    nav_items = [('overview', 'Overview', 'نظرة عامة', 'grid'), ('library', 'My Library', 'مكتبتي', 'box'), ('orders', 'Orders', 'الطلبات', 'cart'), ('profile', 'Profile', 'الملف الشخصي', 'users'), ('security', 'Security', 'الأمان', 'lock')]
-    navh = ''.join(f'<a href="#{k}" data-acct-link="{k}" class="{"is-active" if k == "overview" else ""}">{icon(ic)}<span data-ar="{esc(ar)}">{esc(en)}</span></a>' for k, en, ar, ic in nav_items)
     body = f'''
       <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
-        {crumbs([('Home', 'الرئيسية', '/'), ('Account Center', 'مركز الحساب', None)])}
-        <div class="head-split"><h1 class="section__title" id="page-title" data-ar="مركز الحساب">Account Center</h1><p class="notice notice--inline" data-demo-note hidden></p></div>
-        <div class="acct">
-          <nav class="acct__nav glass" aria-label="Account" data-ar-label="الحساب" data-acct>
-            <div class="acct__user"><span class="avatar">CC</span><div><b data-acct-name>Guest</b><small data-acct-email>guest@codeandcanvas.net</small></div></div>
-            {navh}
-            <a href="/login/" data-acct-logout>{icon('arrow')}<span data-ar="تسجيل الخروج">Sign out</span></a>
-          </nav>
-          <div>
-            <section class="acct__panel is-active" id="overview" data-acct-panel="overview">
-              <div class="grid grid--3">
-                <div class="tile tile--mini"><span class="tile__num" data-library-count>0</span><span class="tile__sub" data-ar="كتب في مكتبتك">Books in your library</span></div>
-                <div class="tile tile--mini"><span class="tile__num" data-cart-count-tile>0</span><span class="tile__sub" data-ar="عناصر في السلة">Items in cart</span></div>
-                <div class="tile tile--mini"><span class="tile__num">—</span><span class="tile__sub" data-ar="طلبات سابقة">Past orders</span></div>
-              </div>
-              <div class="notice glass" style="margin-top:18px">{icon('alert')}<div><b data-ar="واجهة الحساب جاهزة — الباك-إند قيد الربط">Account UI ready — backend pending</b><p data-ar="هذه الصفحة واجهة كاملة لمركز الحساب (المكتبة، الطلبات، الملف الشخصي، الأمان). تُربط بخدمة المصادقة عبر نقاط التكامل الموثقة في README.">This is the complete Account Center UI (library, orders, profile, security). Connect it to your auth service via the integration points documented in the README.</p></div></div>
-            </section>
-            <section class="acct__panel" id="library" data-acct-panel="library">
-              <h2 class="section__title" style="font-size:24px" data-ar="مكتبتي">My Library</h2>
-              <div class="grid grid--3" data-library hidden></div>
-              <div class="notice glass" data-library-empty>{icon('box')}<div><b data-ar="مكتبتك فارغة">Your library is empty</b><p data-ar="الكتب التي تشتريها تظهر هنا وتُفتح في القارئ التفاعلي.">Books you purchase appear here and open in the interactive reader.</p>{btn('Browse the library', 'تصفّح المكتبة', '/books/', 'glass')}</div></div>
-            </section>
-            <section class="acct__panel" id="orders" data-acct-panel="orders">
-              <h2 class="section__title" style="font-size:24px" data-ar="الطلبات">Orders</h2>
-              <div class="notice glass">{icon('cart')}<div><b data-ar="لا توجد طلبات بعد">No orders yet</b><p data-ar="سجل طلباتك وفواتيرك سيظهر هنا.">Your order history and invoices will appear here.</p></div></div>
-            </section>
-            <section class="acct__panel" id="profile" data-acct-panel="profile">
-              <h2 class="section__title" style="font-size:24px" data-ar="الملف الشخصي">Profile</h2>
-              <form class="form form-card glass" data-form="demo" novalidate>
-                <div class="form__row">{field('name', 'Full name', 'الاسم الكامل', auto='name')}{field('email', 'Email', 'البريد الإلكتروني', 'email', auto='email')}</div>
-                <div class="form__row">{field('phone', 'Phone', 'الهاتف', 'tel', req=False, auto='tel')}{field('company', 'Company (optional)', 'الشركة (اختياري)', req=False, auto='organization')}</div>
-                <div class="form__actions"><button class="btn btn--primary" type="submit"><span data-ar="حفظ التغييرات">Save changes</span></button></div>
-                <div class="form__status" role="status" aria-live="polite"></div>
-              </form>
-            </section>
-            <section class="acct__panel" id="security" data-acct-panel="security">
-              <h2 class="section__title" style="font-size:24px" data-ar="الأمان">Security</h2>
-              <form class="form form-card glass" data-form="demo" novalidate>
-                {field('current', 'Current password', 'كلمة المرور الحالية', 'password', auto='current-password')}
-                <div class="form__row">{field('password', 'New password', 'كلمة المرور الجديدة', 'password', auto='new-password')}{field('password2', 'Confirm new password', 'تأكيد كلمة المرور الجديدة', 'password', auto='new-password', extra=' data-match="#f-password"')}</div>
-                <div class="form__actions"><button class="btn btn--primary" type="submit"><span data-ar="تحديث كلمة المرور">Update password</span></button></div>
-                <div class="form__status" role="status" aria-live="polite"></div>
-              </form>
-              <div class="notice glass" style="margin-top:14px">{icon('shield')}<div><b data-ar="التحقق بخطوتين (2FA)">Two-factor authentication (2FA)</b><p data-ar="أضف تطبيق مصادقة لحماية حسابك — يُفعَّل عند ربط الباك-إند.">Add an authenticator app to protect your account — enabled once the backend is connected.</p><button class="btn btn--glass" type="button" disabled><span data-ar="تفعيل 2FA">Enable 2FA</span></button></div></div>
-            </section>
-          </div>
-        </div>
-      </section>
-'''
-    return page('/account/', title='Account Center - Code & Canvas', title_ar='مركز الحساب - Code & Canvas', desc='Your Code & Canvas account: library, orders, profile, and security.', desc_ar='حسابك في Code & Canvas: المكتبة والطلبات والملف الشخصي والأمان.', nav='', body=body, scripts=SHOP_JS)
+        {crumbs([('Home', 'الرئيسية', '/'), ('Saved books', 'الكتب المحفوظة', None)])}
+        <h1 class="section__title" id="page-title" data-ar="كتبك المحفوظة">Your saved books</h1>
+        <p class="section__lead" data-ar="قائمة على هذا الجهاز فقط، وليست مكتبة مشتريات أو حسابًا مسجّلًا. المعاينات مجانية؛ الشراء الإلكتروني غير متاح حاليًا.">A shortlist on this device, not a purchase library or signed-in account. Previews are free; online purchasing is not available yet.</p>
+        <p class="notice"><b data-library-count>0</b> <span data-ar="كتب محفوظة">saved books</span></p>
+        <section id="library" aria-label="Saved previews" data-ar-label="المعاينات المحفوظة">
+          <div class="grid grid--3" data-library hidden></div>
+          <p data-library-empty data-ar="قائمتك فارغة. احفظ كتابًا من المكتبة للعودة إليه هنا.">Your list is empty. Save a book from the library to return to it here.</p>
+        </section>
+        <div class="btn-row" style="margin-top:24px">{btn('Explore books', 'تصفّح الكتب', '/books/')}{btn('Manage shortlist', 'إدارة القائمة', '/cart/', 'glass')}</div>
+      </section>'''
+    return page('/account/', title='Saved books — Code & Canvas', title_ar='الكتب المحفوظة — Code & Canvas', desc='Your local book shortlist and free previews.', desc_ar='قائمة كتبك المحلية والمعاينات المجانية.', nav='books', body=body, scripts=SHOP_JS)
 
 
 def cart():
     body = f'''
       <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
-        {crumbs([('Home', 'الرئيسية', '/'), ('Books', 'الكتب', '/books/'), ('Cart', 'السلة', None)])}
-        <h1 class="section__title" id="page-title" data-ar="سلة التسوق">Your Cart</h1>
+        {crumbs([('Home', 'الرئيسية', '/'), ('Books', 'الكتب', '/books/'), ('Shortlist', 'القائمة', None)])}
+        <h1 class="section__title" id="page-title" data-ar="قائمة الكتب المحفوظة">Your book shortlist</h1>
         <div class="grid grid--side" data-cart>
           <div>
             <div class="table-wrap" data-cart-table hidden>
@@ -180,100 +140,60 @@ def cart():
                 <tbody></tbody>
               </table>
             </div>
-            <div class="notice glass" data-cart-empty>{icon('cart')}<div><b data-ar="سلتك فارغة">Your cart is empty</b><p data-ar="تصفّح المكتبة وأضف كتابًا للبدء.">Browse the library and add a book to get started.</p>{btn('Browse books', 'تصفّح الكتب', '/books/', 'glass')}</div></div>
+            <div class="notice glass" data-cart-empty>{icon('cart')}<div><b data-ar="قائمتك فارغة">Your list is empty</b><p data-ar="تصفّح المكتبة وأضف كتابًا للبدء.">Browse the library and add a book to get started.</p>{btn('Browse books', 'تصفّح الكتب', '/books/', 'glass')}</div></div>
           </div>
           <aside class="summary glass">
             <h3 data-ar="الملخص">Summary</h3>
             <div><span data-ar="المجموع الفرعي">Subtotal</span><b data-cart-total>0 SAR</b></div>
-            <div><span data-ar="الضريبة">VAT</span><b data-ar="تُحسب عند الدفع">Calculated at checkout</b></div>
+            <div><span data-ar="الضريبة">VAT</span><b data-ar="تُؤكد في العرض المكتوب">Confirmed in a written offer</b></div>
             <div class="total"><span data-ar="الإجمالي">Total</span><b data-cart-total>0 SAR</b></div>
-            {btn('Proceed to checkout', 'إتمام الشراء', '/checkout/')}
-            <small class="form__hint" data-ar="الأسعار بالريال السعودي · دفع آمن">Prices in SAR · secure checkout</small>
+            {btn('Ask about availability', 'استفسار عن التوفر', '/checkout/')}
+            <small class="form__hint" data-ar="أسعار استرشادية بالريال · لا يتم تحصيل أي مبلغ">Indicative prices in SAR · no payment collected</small>
           </aside>
         </div>
       </section>
 '''
-    return page('/cart/', title='Cart - Code & Canvas', title_ar='السلة - Code & Canvas', desc='Your Code & Canvas cart.', desc_ar='سلة التسوق في Code & Canvas.', nav='books', body=body, scripts=SHOP_JS)
+    return page('/cart/', title='Saved book shortlist — Code & Canvas', title_ar='قائمة الكتب المحفوظة — Code & Canvas', desc='Your local shortlist, not a purchase order.', desc_ar='قائمة كتبك المحلية، وليست طلب شراء.', nav='books', body=body, scripts=SHOP_JS)
 
 
 def checkout():
     body = f'''
       <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
-        {crumbs([('Home', 'الرئيسية', '/'), ('Cart', 'السلة', '/cart/'), ('Checkout', 'الدفع', None)])}
-        <h1 class="section__title" id="page-title" data-ar="إتمام الشراء">Checkout</h1>
-        <form class="grid grid--side form" data-checkout novalidate>
+        {crumbs([('Home', 'الرئيسية', '/'), ('Shortlist', 'القائمة', '/cart/'), ('Availability', 'التوفر', None)])}
+        <h1 class="section__title" id="page-title" data-ar="استفسر عن توفر الكتب">Ask about book availability</h1>
+        <p class="section__lead" data-ar="الشراء الإلكتروني غير متاح حاليًا. هذه رسالة استفسار فقط: لا ندفع ولا نفتح محتوى مدفوعًا، والسعر النهائي والتوفر يُؤكدان قبل أي اتفاق.">Online purchasing is not available yet. This is an inquiry only: no payment or paid access. Availability and final pricing are confirmed before any agreement.</p>
+        <form class="grid grid--side form" data-checkout data-integration="books" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Book availability" novalidate>
           <div class="form-card glass">
-            <h3 data-ar="بيانات الفاتورة">Billing details</h3>
-            <div class="form__row">{field('name', 'Full name', 'الاسم الكامل', auto='name')}{field('email', 'Email', 'البريد الإلكتروني', 'email', auto='email')}</div>
-            <div class="form__row">{field('phone', 'Phone', 'الهاتف', 'tel', auto='tel', placeholder='+966 5x xxx xxxx')}<div class="field"><label for="f-country" data-ar="الدولة">Country</label><select id="f-country" name="country" required><option value="SA">Saudi Arabia</option><option value="EG">Egypt</option><option value="AE">United Arab Emirates</option><option value="KW">Kuwait</option><option value="QA">Qatar</option><option value="BH">Bahrain</option><option value="OM">Oman</option><option value="JO">Jordan</option><option value="OTHER">Other</option></select><span class="field__err" data-ar="اختر الدولة">Choose a country</span></div></div>
-            <h3 style="margin-top:22px" data-ar="طريقة الدفع">Payment method</h3>
-            <div class="pay-methods">
-              <label><input type="radio" name="pay" value="card" checked /><div><b data-ar="بطاقة ائتمان / مدى">Credit card / mada</b><small data-ar="Visa · Mastercard · mada · Apple Pay">Visa · Mastercard · mada · Apple Pay</small></div></label>
-              <label><input type="radio" name="pay" value="transfer" /><div><b data-ar="تحويل بنكي">Bank transfer</b><small data-ar="نرسل لك بيانات الحساب بعد الطلب">We send account details after the order</small></div></label>
-              <label><input type="radio" name="pay" value="wallet" /><div><b data-ar="محفظة إلكترونية (مصر)">E-wallet (Egypt)</b><small>Vodafone Cash · InstaPay</small></div></label>
-            </div>
-            <label class="check" style="margin-top:16px"><input type="checkbox" name="consent" value="1" required /><span data-ar-html="أوافق على &lt;a href=&quot;/terms-of-use/&quot;&gt;شروط الاستخدام&lt;/a&gt;.">I agree to the <a href="/terms-of-use/">Terms of Use</a>.</span></label>
+            <h2 data-ar="بيانات التواصل">Contact details</h2>
+            {field('name', 'Full name', 'الاسم الكامل', auto='name')}
+            {field('email', 'Email', 'البريد الإلكتروني', 'email', auto='email')}
+            {field('phone', 'Phone (optional)', 'الهاتف (اختياري)', 'tel', req=False, auto='tel')}
+            <label class="check"><input type="checkbox" name="consent" value="1" required /><span data-ar-html="أوافق على &lt;a href=&quot;/terms-of-use/&quot;&gt;الشروط&lt;/a&gt; ومعالجة بيانات الاستفسار وفق &lt;a href=&quot;/privacy-policy/&quot;&gt;سياسة الخصوصية&lt;/a&gt;.">I agree to the <a href="/terms-of-use/">terms</a> and use of my inquiry details under the <a href="/privacy-policy/">privacy policy</a>.</span></label>
+            <div class="form__status" role="status" aria-live="polite"></div>
           </div>
           <aside class="summary glass" data-summary>
-            <h3 data-ar="طلبك">Your order</h3>
+            <h2 data-ar="الكتب المختارة">Selected books</h2>
             <div data-summary-items></div>
-            <div class="total"><span data-ar="الإجمالي">Total</span><b data-cart-total>0 SAR</b></div>
-            <button class="btn btn--primary magnetic" type="submit" data-pay>{icon('lock')}<span data-ar="ادفع الآن">Pay now</span></button>
-            <small class="form__hint" data-ar="بوابة الدفع تُربط عبر shop.js › checkout() — انظر README.">Payment gateway connects via shop.js › checkout() — see README.</small>
-            <a class="text-link" href="/cart/"><span data-ar="← العودة للسلة">← Back to cart</span></a>
+            <div class="total"><span data-ar="إجمالي استرشادي فقط">Indicative total only</span><b data-cart-total>0 SAR</b></div>
+            <button class="btn btn--primary" type="submit" data-pay><span data-ar="جهّز رسالة الاستفسار">Prepare availability inquiry</span></button>
+            <p class="form__hint" data-ar="في الوضع الحالي، أكمل الإرسال في واتساب. لن يتم تأكيد طلب أو اشتراك تلقائيًا.">In the current mode, finish sending in WhatsApp. No order or subscription is automatically confirmed.</p>
+            <a class="text-link" href="/cart/" data-ar="العودة للقائمة">Back to shortlist</a>
           </aside>
         </form>
-      </section>
-'''
-    return page('/checkout/', title='Checkout - Code & Canvas', title_ar='إتمام الشراء - Code & Canvas', desc='Secure checkout — Code & Canvas books.', desc_ar='دفع آمن — كتب Code & Canvas.', nav='books', body=body, scripts=SHOP_JS)
+      </section>'''
+    return page('/checkout/', title='Book availability — Code & Canvas', title_ar='توفر الكتب — Code & Canvas', desc='Ask about book availability. No online payment is collected.', desc_ar='استفسر عن توفر الكتب. لا يتم تحصيل أي دفع إلكتروني.', nav='books', body=body, scripts=SHOP_JS)
 
 
 def thank_you():
-    steps = [
-        ('1', 'E-mail confirmation', 'تأكيد بالإيميل', 'A copy of the order lands in your inbox right away.', 'هتوصلك نسخة من الطلب على إيميلك مباشرةً.', 'About now', 'الآن تقريبًا'),
-        ('2', 'Review by our team', 'مراجعة الطلب من فريقنا', 'We check the details and reach out to confirm the starting point.', 'بنراجع التفاصيل وبنتواصل معاك لتأكيد نقطة الانطلاق.', 'Within 24 hours', 'خلال 24 ساعة'),
-        ('3', 'Access or kickoff', 'الوصول أو الانطلاق', 'Books unlock in your library immediately. Service orders get a kickoff session and milestone delivery per the agreed scope.', 'الكتب تتفتح في مكتبتك فورًا. طلبات الخدمات بنحددلها موعد أول اجتماع وبنبدأ تسليم المراحل حسب الـ scope المتفق عليه.', 'Within 48–72 hours', 'خلال 48–72 ساعة'),
-    ]
-    steps_html = ''.join(f'''
-            <li class="tstep glass"><span class="tstep__n">{n}</span><div><b data-ar="{esc(ta)}">{esc(te)}</b><p data-ar="{esc(da)}">{esc(de)}</p></div><small data-ar="{esc(wa)}">{esc(we)}</small></li>''' for n, te, ta, de, da, we, wa in steps)
     body = f'''
-      <section class="phero container" aria-labelledby="page-title">
-        {crumbs([('Home', 'الرئيسية', '/'), ('Checkout', 'إتمام الشراء', '/checkout/'), ('Thank you', 'شكرًا', None)])}
-        <div class="thanks" data-order>
-          <div class="thanks__main">
-            <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="تم تأكيد الطلب">Order confirmed</span></span>
-            <h1 class="phero__title" id="page-title" data-reveal style="--d:.06s"><span data-ar="شكرًا،">Thank you,</span> <span class="grad-text" data-order-name>—</span>! 🎉</h1>
-            <p class="hero__lead" data-reveal style="--d:.1s" data-ar="طلبك وصلنا وبنراجعه دلوقتي. هتوصلك رسالة تأكيد على الإيميل خلال دقائق — والكتب المشتراة تظهر في مكتبتك فورًا.">Your order is in and we’re reviewing it now. A confirmation e-mail arrives within minutes — purchased books appear in your library immediately.</p>
-            <p class="notice notice--inline" data-demo-note hidden style="margin:14px 0 0;max-width:620px"></p>
-            <h2 class="section__title" style="font-size:clamp(20px,2vw,26px);margin-top:34px" data-reveal data-ar="الخطوات الجاية">What happens next</h2>
-            <ol class="tsteps" data-reveal>{steps_html}
-            </ol>
-            <div class="btn-row" style="margin-top:28px" data-reveal>{btn('Account Center', 'مركز الحساب', '/account/', 'primary', 'user')}{btn('Browse books', 'تصفّح الكتب', '/books/', 'glass', 'book')}{btn('Explore services', 'استكشف الخدمات', '/services/', 'glass', 'grid')}{btn('Home', 'الرئيسية', '/', 'ghost', 'home')}</div>
-          </div>
-          <aside class="thanks__side">
-            <div class="card glass order-card" data-reveal>
-              <p class="kicker"><span data-ar="ملخص الطلب">Order summary</span></p>
-              <ul class="kv">
-                <li><span data-ar="رقم الطلب">Order #</span><b data-order-id>—</b></li>
-                <li><span data-ar="التاريخ">Date</span><b data-order-date>—</b></li>
-                <li><span data-ar="الإيميل">E-mail</span><b data-order-email>—</b></li>
-                <li><span data-ar="طريقة الدفع">Payment method</span><b data-order-pay>—</b></li>
-              </ul>
-              <div class="order-card__items" data-order-items></div>
-              <div class="order-card__totals"><div><span data-ar="المجموع الجزئي">Subtotal</span><b data-order-subtotal>—</b></div><div class="is-total"><span data-ar="الإجمالي">Total</span><b data-order-total>—</b></div></div>
-              <small class="form__hint" data-order-note hidden data-ar="لا يوجد طلب في هذه الجلسة — إذا وصلت هنا من نموذج تواصل، فطلبك مسجَّل وسنعود إليك خلال 24 ساعة عمل.">No order in this session — if you arrived from a contact form, your request is logged and we’ll reply within 24 business hours.</small>
-            </div>
-            <div class="card glass contact-card contact-card--wa" data-reveal style="--d:.08s">
-              <span class="card__icon">{icon('chat')}</span>
-              <h3 data-ar="عندك سؤال على طلبك؟">A question about your order?</h3>
-              <p data-ar="تواصل معانا مباشرةً على واتساب وهنرد في أسرع وقت.">Message us directly on WhatsApp and we’ll reply as fast as we can.</p>
-              <div class="btn-row"><a class="btn btn--glass" href="https://wa.me/966545520750" target="_blank" rel="noopener">🇸🇦 <span data-ar="السعودية">KSA</span></a><a class="btn btn--glass" href="https://wa.me/201092500454" target="_blank" rel="noopener">🇪🇬 <span data-ar="مصر">Egypt</span></a></div>
-            </div>
-          </aside>
+      <section class="oops" aria-labelledby="page-title">
+        <div class="container">
+          <h1 id="page-title" data-ar="نتابع معك عبر قناتك المختارة">Continue in your chosen channel</h1>
+          <p data-ar="هذه الصفحة ليست إيصال شراء أو تأكيد حجز. إذا جهزت رسالة، أكمل إرسالها في واتساب أو البريد وانتظر رد الفريق. لم يتم تحصيل أي مبلغ هنا.">This page is not a purchase receipt or booking confirmation. If you prepared a message, finish sending it in WhatsApp or email and wait for the team to reply. No payment was collected here.</p>
+          <div class="oops__links">{btn('Contact the team', 'تواصل مع الفريق', '/contact/')}{btn('Read free previews', 'اقرأ المعاينات المجانية', '/books/', 'glass')}</div>
         </div>
-      </section>
-'''
-    return page('/thank-you/', title='Thank you - Code & Canvas', title_ar='شكرًا لك - Code & Canvas', desc='Order confirmed — thank you. Here is what happens next.', desc_ar='تم تأكيد الطلب — شكرًا لك. إليك الخطوات التالية.', nav='', body=body, scripts=SHOP_JS)
+      </section>'''
+    return page('/thank-you/', title='Request information — Code & Canvas', title_ar='معلومات الطلب — Code & Canvas', desc='How to follow up on your inquiry.', desc_ar='كيفية متابعة استفسارك.', nav='', body=body)
 
 
 def build():

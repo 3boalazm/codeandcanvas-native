@@ -1,0 +1,855 @@
+{
+  "reviewedHead": "4b0e854ae3f90cecd56d8f75e8e7fd29c0a5a41f",
+  "priorPR": "https://github.com/3boalazm/codeandcanvas-native/pull/2",
+  "mergedAt": "2026-10-14T18:58:49Z",
+  "priorFinalCommit": "45b6985e4618ddaf6b13f25d53af4c151930263d",
+  "filesCompared": 169,
+  "differences": [],
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha": "423afd918612914e3b2f7e432bb3f67844c3d9f8",
+      "matches": true
+    },
+    {
+      "path": "404.html",
+      "sha": "32fe49a849c7f985bd6d9af45396ea552440d9c9",
+      "matches": true
+    },
+    {
+      "path": "README.md",
+      "sha": "d84fefee23200713f6222f73ba6db9abcd906d75",
+      "matches": true
+    },
+    {
+      "path": "TODO.md",
+      "sha": "a0cf9d60c089b5620b1972bf934af178c02cba71",
+      "matches": true
+    },
+    {
+      "path": "_redirects",
+      "sha": "0d4bd49c1b013b6e3d9786cfe4994f65b62d4b4a",
+      "matches": true
+    },
+    {
+      "path": "about/index.html",
+      "sha": "0714f050adae7afc6e871a16c9bd83d8d32ddfdc",
+      "matches": true
+    },
+    {
+      "path": "account/index.html",
+      "sha": "fcb7f0a073a79e74afcfba866c667eafa8ecbc51",
+      "matches": true
+    },
+    {
+      "path": "app.config.ts",
+      "sha": "c1b5d166937e5e7beaff52848fe44782015f25dd",
+      "matches": true
+    },
+    {
+      "path": "assets/brand/icon-navy.svg",
+      "sha": "783cb8b45c23398f449362589ab6ff475712d698",
+      "matches": true
+    },
+    {
+      "path": "assets/brand/icon-white.svg",
+      "sha": "87674c53f4b737775ca48ee5a90c81813f62148e",
+      "matches": true
+    },
+    {
+      "path": "assets/brand/logo-navy-horizontal.svg",
+      "sha": "1899edf22f14ea313990074b56df6a40a172f96e",
+      "matches": true
+    },
+    {
+      "path": "assets/brand/logo-white-horizontal.svg",
+      "sha": "93c8ff3ee9f76c4ee12f3a34f2a5812df9443159",
+      "matches": true
+    },
+    {
+      "path": "assets/brand/og-default.png",
+      "sha": "e7916faa28adce902212b27e1d3e9f14da2b7db2",
+      "matches": true
+    },
+    {
+      "path": "assets/css/ds.css",
+      "sha": "b6060b6f9e50f98265987f3bd21bfaa3dbf3211e",
+      "matches": true
+    },
+    {
+      "path": "assets/css/erp.css",
+      "sha": "3ce88eef691474e81d40bd1ea70c6831d9472800",
+      "matches": true
+    },
+    {
+      "path": "assets/css/home.css",
+      "sha": "4f045041cb83899460ae6289343c1bae65979861",
+      "matches": true
+    },
+    {
+      "path": "assets/css/pages.css",
+      "sha": "9f13c538bc788d9d03ffd58717f56d7a2ec855c5",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Poppins-Bold.ttf",
+      "sha": "6e26de76d46d7e4c28d19acb691cc8a4b41b4287",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Poppins-Italic.ttf",
+      "sha": "0bc0d35f22115e6c5f2fd9842485e861a32b8f62",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Poppins-Light.ttf",
+      "sha": "52d424ba2b7148bf8c5125992acb8a72c3d6a8a5",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Poppins-Medium.ttf",
+      "sha": "89aae6b6afc9a15381aec165494e81e99f93499f",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Poppins-Regular.ttf",
+      "sha": "441d3baab4f3bfc1ce251942e420988fac12a8f4",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Poppins-SemiBold.ttf",
+      "sha": "3b8622f67bffda70fc2d7f6ff2f2ad6f3078fd08",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Raleway-Bold.ttf",
+      "sha": "38c099cc857f5c21ed7289d757f2f96ccd483552",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Raleway-BoldItalic.ttf",
+      "sha": "eac54e782bcb4b708d06cd9c77fabcee3f1ad208",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Raleway-ExtraBold.ttf",
+      "sha": "502ff86381726e8f7b2386360990e3c07a9e4674",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Raleway-Italic.ttf",
+      "sha": "237d88d90117c4f00cdb55a23fb0bb988df870be",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Raleway-Medium.ttf",
+      "sha": "7a71a6ff03134f2f7bf925043622b55ccf824ac9",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Raleway-Regular.ttf",
+      "sha": "e570a2d5c39b2841b5753350a3822bd2b685e771",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Raleway-SemiBold.ttf",
+      "sha": "ed0a8b9941ad1a112f04fe2743cac9e995a4e02e",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/Raleway-SemiBoldItalic.ttf",
+      "sha": "36b795154190dd49d63ad8ad27c01938797ae516",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/signategrotesk-black.ttf",
+      "sha": "dfaeb12b2f8ef726f4d0dcf3ad9fa3d249a09c79",
+      "matches": true
+    },
+    {
+      "path": "assets/js/erp-app.js",
+      "sha": "f16c68d351ae25fe3c6ca4d8ada52a79ea1cbc45",
+      "matches": true
+    },
+    {
+      "path": "assets/js/erp-data.js",
+      "sha": "22016e28e04be7a80dc1c7916f33194cea9ba86e",
+      "matches": true
+    },
+    {
+      "path": "assets/js/home.js",
+      "sha": "a8eef554867adbfb3a04128760cbfd7acfc5f75f",
+      "matches": true
+    },
+    {
+      "path": "assets/js/pages.js",
+      "sha": "6939efcdbd3b442ddc8884385367c016fd65e987",
+      "matches": true
+    },
+    {
+      "path": "assets/js/reader.js",
+      "sha": "a7e0af0e945e1e6d28286c7f8e3a66639f7cb60b",
+      "matches": true
+    },
+    {
+      "path": "assets/js/shop.js",
+      "sha": "dc30f438df4cd94cca19ee1e9545e0cae4dab28b",
+      "matches": true
+    },
+    {
+      "path": "assets/js/site.js",
+      "sha": "6dd1e5f29a28aa9877d5711dd471e8699ab3850e",
+      "matches": true
+    },
+    {
+      "path": "blog/design-systems-operating-system-modern-digital-products/index.html",
+      "sha": "46c314bca956c90fc1251d938dde14dd4e56dfb4",
+      "matches": true
+    },
+    {
+      "path": "blog/experience-design-business-growth-driver/index.html",
+      "sha": "0dfccc141ab07afc120cf7ccc158b979b6b56a4c",
+      "matches": true
+    },
+    {
+      "path": "blog/how-product-thinking-creates-sustainable-business-growth/index.html",
+      "sha": "20f1ba13e5de33ece3552dfee4e2798c583c9cce",
+      "matches": true
+    },
+    {
+      "path": "blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/index.html",
+      "sha": "ac079341970b2dcff6d9f80ec2b4be0544c65928",
+      "matches": true
+    },
+    {
+      "path": "blog/index.html",
+      "sha": "5e6aad15565e3ec9b95550045cdca11b949263aa",
+      "matches": true
+    },
+    {
+      "path": "blog/what-digital-transformation-actually-means-for-smes/index.html",
+      "sha": "3fd98337467dd53136ff51169735fe295a6203fd",
+      "matches": true
+    },
+    {
+      "path": "blog/why-most-brands-look-different-but-feel-the-same/index.html",
+      "sha": "7d4f765592960da1e4b788b5b210c0c3af45e273",
+      "matches": true
+    },
+    {
+      "path": "blog/why-software-development-alone-wont-solve-your-business-problems/index.html",
+      "sha": "25e2ee4f770285a0b882bfb9474b23435529e241",
+      "matches": true
+    },
+    {
+      "path": "blog/why-startups-waste-money-wrong-product/index.html",
+      "sha": "1ba369f912b21f1730eead9d2848e995c8371e73",
+      "matches": true
+    },
+    {
+      "path": "books/basics-of-graphic-design/index.html",
+      "sha": "787e48497e9825f1e98a2e8475cead9ec6b50292",
+      "matches": true
+    },
+    {
+      "path": "books/basics-of-graphic-design/read/index.html",
+      "sha": "5e1a1e89489d60ab4c015f57cebd737252f0ead6",
+      "matches": true
+    },
+    {
+      "path": "books/basics-of-visual-identity/index.html",
+      "sha": "fc0db3a6f1c391097dde22e1b99d7b6aa0273ead",
+      "matches": true
+    },
+    {
+      "path": "books/basics-of-visual-identity/read/index.html",
+      "sha": "f846cf3d594ae60e116dab4f2c7e280770f6c76b",
+      "matches": true
+    },
+    {
+      "path": "books/index.html",
+      "sha": "359b09a441b41b90f6ee98e0e9d3c23a0c192335",
+      "matches": true
+    },
+    {
+      "path": "books/marketing-fundamentals/index.html",
+      "sha": "cc88ef9779d7d9232910f419a40706c088b0ace7",
+      "matches": true
+    },
+    {
+      "path": "books/marketing-fundamentals/read/index.html",
+      "sha": "d52f7cb446490eef515e9e9a422e563c1a42da18",
+      "matches": true
+    },
+    {
+      "path": "books/ui-ux-handbook/index.html",
+      "sha": "7439be807369c8df08c85d6981be6a3552b2e2b4",
+      "matches": true
+    },
+    {
+      "path": "build.sh",
+      "sha": "2805711b373219c08a212c0e48755d5b5676e276",
+      "matches": true
+    },
+    {
+      "path": "cart/index.html",
+      "sha": "80eab5d0fcdb6b22663c863ef0666c9ad2fe88bd",
+      "matches": true
+    },
+    {
+      "path": "case-studies/index.html",
+      "sha": "f474fdbe41c8c26709ec2c7b0a7f07843eec3d1a",
+      "matches": true
+    },
+    {
+      "path": "checkout/index.html",
+      "sha": "040a56334f7ce4e4da4e17eb69332e4ad2f4137a",
+      "matches": true
+    },
+    {
+      "path": "contact/index.html",
+      "sha": "b2598db44ade443f08e7be4522d4bfc95295bfd8",
+      "matches": true
+    },
+    {
+      "path": "cookie-policy/index.html",
+      "sha": "1fd86815acc85607f14a7e558e88af4c7846b4be",
+      "matches": true
+    },
+    {
+      "path": "creative-services/index.html",
+      "sha": "6c2efdf6fb2c6ccbc8516c0bd0d013f8c1f28716",
+      "matches": true
+    },
+    {
+      "path": "dev-server.mjs",
+      "sha": "01300f83f0ca4c510aea75da254793fe709f6b68",
+      "matches": true
+    },
+    {
+      "path": "docs/OVERHAUL-PLAN.md",
+      "sha": "160b430b833b7d89643fc8fd348d812cec58445f",
+      "matches": true
+    },
+    {
+      "path": "docs/OVERHAUL-REPORT.md",
+      "sha": "8ea3213355d72db8da6fd6a6e1330417faca513a",
+      "matches": true
+    },
+    {
+      "path": "docs/SITEMAP.md",
+      "sha": "fd0ac04f8a6b986493483f1509380b69b004d548",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/GAP-REPORT.md",
+      "sha": "72124d0a3a67a86b5996ccddc2f983a6f6c96817",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/REVIEW.md",
+      "sha": "ce8f259e3d11b5d53c6b858913c3c34e4a7b9bce",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/404.txt",
+      "sha": "ce9ce766ab76dc9fac13e6bd6725d6a58ddbcdc6",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/about.txt",
+      "sha": "a02ead35387c74e831b9a4144b447c1549c7b59d",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/account.txt",
+      "sha": "e874aef7628f4b5dc366c52862cde1e284b606bd",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/blog.txt",
+      "sha": "3cf1db23675af99ed84ac9cca5f39ad8039365e3",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/blog__design-systems-operating-system-modern-digital-products.txt",
+      "sha": "dab594c4ae489926df597595d65e513a8e4ec159",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/blog__experience-design-business-growth-driver.txt",
+      "sha": "46063c0ccbe734ee538e1278a7a8e8e6e49842ed",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/blog__how-product-thinking-creates-sustainable-business-growth.txt",
+      "sha": "8af8d22659a77b59cbb5fed893e5f6663c2cec3c",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/blog__how-to-turn-a-business-idea-into-a-market-ready-digital-product.txt",
+      "sha": "07bb5b439bbecb740aad9931448fc41dd6ca33bd",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/blog__what-digital-transformation-actually-means-for-smes.txt",
+      "sha": "fbcc716949041cd8aa358b7a3e6a6f28af086a20",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/blog__why-most-brands-look-different-but-feel-the-same.txt",
+      "sha": "999e8400e9a45a10d2f565332d5834dc8fe2a0e5",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/blog__why-software-development-alone-wont-solve-your-business-problems.txt",
+      "sha": "cc674618c24d53ba9e606be21f0de29aef2cbbc2",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/blog__why-startups-waste-money-wrong-product.txt",
+      "sha": "b31fca276cd14b39b09fb916a42d98e238b124a8",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/books.txt",
+      "sha": "cea8d8a548f6871ba9f1e5f1ace0684b0fd065f3",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/books__basics-of-graphic-design.txt",
+      "sha": "199e575a3f3662d124ec784ed0e36d81b938711f",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/books__basics-of-graphic-design__read.txt",
+      "sha": "495e9fd3d3f1c7218837ba38e81906c4217133f4",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/books__basics-of-visual-identity.txt",
+      "sha": "14d55a1dbbf33c3917d42a9322355fd64f769a8f",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/books__basics-of-visual-identity__read.txt",
+      "sha": "9e799437b756d01ce25248105ed8b8172a36c123",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/books__marketing-fundamentals.txt",
+      "sha": "b1a6faec2ca93bac93af723ca797f174cbf7d2d9",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/books__marketing-fundamentals__read.txt",
+      "sha": "9c6c7dcb3aef18213b614be65cd35be30df95560",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/books__ui-ux-handbook.txt",
+      "sha": "0ae1ea0bd0386932edf778f1d1cb1f8f946750ef",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/cart.txt",
+      "sha": "270ee18a24688bc4eb6aef1cec246eb5ae72c685",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/case-studies.txt",
+      "sha": "8c02e664b101be4c1961c8c916906d0c4c328072",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/checkout.txt",
+      "sha": "fbd5df95b272f1cc9c295dd4422d8510f820087e",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/contact.txt",
+      "sha": "6eb2b7d28d48e54bccdf11f0ed1811f04b22e631",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/cookie-policy.txt",
+      "sha": "2f9dc8d46b8ce9f71b1305abaaecc4a6bffe655d",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/creative-services.txt",
+      "sha": "9b1c5b281911e527eff22fee7c6a511542e5fdc7",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/erp.txt",
+      "sha": "29e2694c1bdb2e596d94248af23241b6a5742a3c",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/forgot-password.txt",
+      "sha": "99c2e819053d793b6f4f6a624fd847ea7aaf3a4d",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/healthcare.txt",
+      "sha": "0537c2713edd3d06f66ef007c56af36a9a09297c",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/index.txt",
+      "sha": "45e5236c15d6a085e0b3e1388615ad466065e272",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/login.txt",
+      "sha": "38113aec065ef9519c1fe6a915d3784bc62fa17d",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/methodology.txt",
+      "sha": "2f564066d03a15249725f3e58c9960d3efd788b5",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/our-story.txt",
+      "sha": "7ef5ada28baaac2695b9e2c9539e85490369c748",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/pricing-faq.txt",
+      "sha": "48ef7223a759bd6c63c58c8e0afd19b9185bdea1",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/privacy-policy.txt",
+      "sha": "aec41a69d0a6378f814b2be3bfbf94f26acf04e1",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/register.txt",
+      "sha": "9cf9b53181acfbcc9b6d96af97f8385071ccd4cd",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/reset-password.txt",
+      "sha": "b254c8fc0a7baeb1e39b613a1e6e9ed4b50313e3",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/services.txt",
+      "sha": "e1e82bdac9c1abf0dd470f215f64f837fe4d9336",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/team.txt",
+      "sha": "583804888711201388365865679ed0e6079b7e58",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/technology-services.txt",
+      "sha": "71524b908dbaefd3a6aa338d8cd6a5780afa30c8",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/terms-of-use.txt",
+      "sha": "99a35663f76dc3cc21d0b8e18bf2eeeb1e471315",
+      "matches": true
+    },
+    {
+      "path": "docs/audit/native/thank-you.txt",
+      "sha": "20b6028d36b84a4cd7f15f47c36463b96c857eab",
+      "matches": true
+    },
+    {
+      "path": "docs/sitemap.json",
+      "sha": "62ab16c3d2a389da68ffeccde41c7c1375cb8db6",
+      "matches": true
+    },
+    {
+      "path": "erp/index.html",
+      "sha": "e05d27116af4061974ecf30eb5c262d9418c54d3",
+      "matches": true
+    },
+    {
+      "path": "favicon.svg",
+      "sha": "51ccbbcfefbf6ca4d609dbe9e22944b1125d1ac2",
+      "matches": true
+    },
+    {
+      "path": "forgot-password/index.html",
+      "sha": "6c1a6fbee45c3a0a76d30a2e124bfd1cf8c07c40",
+      "matches": true
+    },
+    {
+      "path": "healthcare/index.html",
+      "sha": "64f3f8bcc1bce8025b42401f8643782451d17391",
+      "matches": true
+    },
+    {
+      "path": "index.html",
+      "sha": "996c463bf19aaa84bebe6db21ba1f409ba4dd48d",
+      "matches": true
+    },
+    {
+      "path": "login/index.html",
+      "sha": "1fbc20b8ac10d7c4b34597833acbbe9a2b5f434f",
+      "matches": true
+    },
+    {
+      "path": "manus-routes.json",
+      "sha": "bce3234b3a9af5f250961f11a6eb2df8230dbdd9",
+      "matches": true
+    },
+    {
+      "path": "methodology/index.html",
+      "sha": "54c2cf04b46be23e50ea90c9da1276dfcf5f66ae",
+      "matches": true
+    },
+    {
+      "path": "our-story/index.html",
+      "sha": "b9f6b0d24ccf20394609563165ca64799596eb7f",
+      "matches": true
+    },
+    {
+      "path": "package.json",
+      "sha": "96bb798faf537168462ccd364d51a36e00235010",
+      "matches": true
+    },
+    {
+      "path": "partials/bottom.html",
+      "sha": "9047ac61b7de155d788b1d1abd8819e12a29b7fe",
+      "matches": true
+    },
+    {
+      "path": "partials/head.html",
+      "sha": "00d564b406d8449b0f84e73753fccc587329538e",
+      "matches": true
+    },
+    {
+      "path": "partials/top.html",
+      "sha": "7a01a00123eb635dff2759fefaf1570b97fb7840",
+      "matches": true
+    },
+    {
+      "path": "pricing-faq/index.html",
+      "sha": "1920f6d8c39d6b9e4f01af0b775656ec403e0e91",
+      "matches": true
+    },
+    {
+      "path": "privacy-policy/index.html",
+      "sha": "c1fb54802f82ae16008c31c88a71744da72cb461",
+      "matches": true
+    },
+    {
+      "path": "register/index.html",
+      "sha": "9c34e1f7c02f77536921437d9d5d28243be77fb0",
+      "matches": true
+    },
+    {
+      "path": "reset-password/index.html",
+      "sha": "c83ef1140a273d19d70e6bcfd3a4e671e9e8b532",
+      "matches": true
+    },
+    {
+      "path": "robots.txt",
+      "sha": "91a05cae9f6e9de2d3428ebfbda815695c8e287f",
+      "matches": true
+    },
+    {
+      "path": "scripts/audit-text.py",
+      "sha": "264ab44f52ffd6aa7c11d01d8c656a35c13bd1d1",
+      "matches": true
+    },
+    {
+      "path": "scripts/check-links.mjs",
+      "sha": "4b9380823271ccc1a9831434e59726e071c5fbf7",
+      "matches": true
+    },
+    {
+      "path": "scripts/gen-pages.py",
+      "sha": "592fd181bc509df7ad7bf9dca7d793539c0c1b6c",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/_reorder.py",
+      "sha": "e180d090b8bdca35ea21c9fc6f305012617d5684",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/catalog.py",
+      "sha": "8df8f5a5656b85ab13b6a09096df93223d35d7c6",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/h.py",
+      "sha": "57d089dbd31eb55ad974e64c27f2094c4d877930",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_about.py",
+      "sha": "5992d90fd14ddd4969948b55b0f3cb2730402d37",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_blog.py",
+      "sha": "cdff7d29464f86a69746d4b3b9e67e00efac018b",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_books.py",
+      "sha": "f20ae6e5902e757f7ec212a43625214df1428d8b",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_contact.py",
+      "sha": "01b165090532131ea2dd7086b9dabbd496a2b907",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_creative.py",
+      "sha": "45597dd67f31d89e808fcfbdd9e942c3c0826946",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_healthcare.py",
+      "sha": "da91540eddce5f5e16691c587e07426dc92f8406",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_legal.py",
+      "sha": "899cfcb9a76d1fdfd16d8aa60ede446fe0b2e3c0",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_methodology.py",
+      "sha": "873add3f3f42fedd46ce046b73c7c9386c40b985",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_pricing.py",
+      "sha": "fc90e1534e9213ee096337e416e1e82d522ba091",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_services.py",
+      "sha": "167cff1a929df3732313f0483ef82f4d1859043b",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_shop.py",
+      "sha": "f1ff43996b5029ba43ee8422285dad561abb1395",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_story.py",
+      "sha": "76665e9df37b5ee085c802a2c1c0addfddae3325",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_team.py",
+      "sha": "a0ab20a394a3800e8290f1c58f0b24d7baaee8ab",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_technology.py",
+      "sha": "b7c4613790cd60affdc565a47f2927b87a977a02",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/pages_work.py",
+      "sha": "feee71c789f77ee012d88ea2ab97c5338b50bdf5",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/posts/__init__.py",
+      "sha": "19437dc14e1a3f57b08c808449107e74ef8f9c40",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/posts/p01_wrong_product.py",
+      "sha": "b0f0760f1d1457ff2bfe2f644b30e72db0b1b2f9",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/posts/p02_idea_to_product.py",
+      "sha": "0bf8e3130d7006ccc722a1350cfce69baf69c831",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/posts/p03_software_alone.py",
+      "sha": "33561806df69272486af8f418126dedd67add71f",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/posts/p04_digital_transformation_smes.py",
+      "sha": "26e76cace1a0e072f2706646d89bf4596b24106d",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/posts/p05_product_thinking.py",
+      "sha": "63385580540347125bd70c1c784c8353d329502d",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/posts/p06_brands_feel_the_same.py",
+      "sha": "54bffa675194b48b8fc982aefc9eae4755d34476",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/posts/p08_design_systems.py",
+      "sha": "f0d40c1843f1dc9e510b9d1beebaff381418d39b",
+      "matches": true
+    },
+    {
+      "path": "scripts/lib/posts/p10_experience_design.py",
+      "sha": "c372fd03376d72e89fb085a1e104722cc246d206",
+      "matches": true
+    },
+    {
+      "path": "scripts/make-og.mjs",
+      "sha": "54dcbff79bffc1213ce2f172314f3dd8cd231330",
+      "matches": true
+    },
+    {
+      "path": "scripts/sync-chrome.mjs",
+      "sha": "f67055d0cdef5d6ed7333e3b516c36b03c283662",
+      "matches": true
+    },
+    {
+      "path": "services/index.html",
+      "sha": "5821fdef7f39eac761a2505cd0b6bb76ece7bcf0",
+      "matches": true
+    },
+    {
+      "path": "sitemap.xml",
+      "sha": "40c9e48e6a8810f9078be64b08ac57bcb349a212",
+      "matches": true
+    },
+    {
+      "path": "team/index.html",
+      "sha": "bfd3d88ae45ae734bb420e377fa90a6b992f2968",
+      "matches": true
+    },
+    {
+      "path": "technology-services/index.html",
+      "sha": "206d096e19fa06e281987cb44010abb24aba3ee3",
+      "matches": true
+    },
+    {
+      "path": "terms-of-use/index.html",
+      "sha": "afac47b81ba3d19d930f59bda3368d9a1d1c6fb7",
+      "matches": true
+    },
+    {
+      "path": "thank-you/index.html",
+      "sha": "70f59feb096b26d71100976ec9053df98b5b0d7c",
+      "matches": true
+    },
+    {
+      "path": "vercel.json",
+      "sha": "79d7eef49891b9adcf92e20f5aab43498c63d87d",
+      "matches": true
+    }
+  ]
+}

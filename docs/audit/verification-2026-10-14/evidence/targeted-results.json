@@ -1,0 +1,70 @@
+{
+  "mobile320": {
+    "rect": {
+      "x": -8.484375,
+      "y": 744.921875,
+      "width": 312.484375,
+      "height": 53.1875,
+      "top": 744.921875,
+      "right": 304,
+      "bottom": 798.109375,
+      "left": -8.484375
+    },
+    "viewport": 320,
+    "scrollWidth": 320
+  },
+  "register": {
+    "customValidity": true,
+    "browserValidity": false,
+    "consent": false,
+    "passwordMinLength": 8
+  },
+  "http": [
+    {
+      "path": "/does-not-exist-audit/",
+      "status": 404,
+      "location": null
+    },
+    {
+      "path": "/blogs/",
+      "status": 301,
+      "location": "/blog/"
+    },
+    {
+      "path": "/healthcare-hub/",
+      "status": 301,
+      "location": "/healthcare/"
+    },
+    {
+      "path": "/book/",
+      "status": 301,
+      "location": "/contact/#book"
+    },
+    {
+      "path": "/contact?lang=ar&inquiry=HC-03",
+      "status": 301,
+      "location": "/contact/"
+    }
+  ],
+  "anchors": [
+    {
+      "lang": "en",
+      "navBottom": 146.9375,
+      "sectionTop": 92.046875,
+      "headingTop": 152.546875,
+      "active": "Combined2"
+    },
+    {
+      "lang": "ar",
+      "navBottom": 148.96875,
+      "sectionTop": 92.375,
+      "headingTop": 162.15625,
+      "active": "باقات متكاملة2"
+    }
+  ],
+  "defaultMotion": {
+    "ready": true,
+    "loading": false,
+    "h1Visible": "1"
+  }
+}

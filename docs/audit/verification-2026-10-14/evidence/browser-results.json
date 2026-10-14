@@ -1,0 +1,6328 @@
+{
+  "browser": "153.0.8010.0",
+  "note": "External requests intentionally blocked. Google Arabic fonts unavailable. Reduced-motion enabled. Local dev server, not production.",
+  "results": [
+    {
+      "path": "/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Code & Canvas — Business Development, By Design",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 10653,
+      "h1": [
+        "Brand, technology and data — built around a business outcome."
+      ],
+      "panels": [
+        {
+          "id": "top",
+          "heading": "Brand, technology and data — built around a business outcome.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 1290
+        },
+        {
+          "id": "studio",
+          "heading": "Two practices. One table.",
+          "y": 1442
+        },
+        {
+          "id": "solutions",
+          "heading": "Integrated solutions that drive business growth.",
+          "y": 2457
+        },
+        {
+          "id": "work",
+          "heading": "Built to deliver. Not just to impress.",
+          "y": 4120
+        },
+        {
+          "id": "why",
+          "heading": "Not order takers. Solution makers.",
+          "y": 5292
+        },
+        {
+          "id": "approach",
+          "heading": "Good work starts with a good conversation.",
+          "y": 6457
+        },
+        {
+          "id": "learn",
+          "heading": "What we think. What we wrote.",
+          "y": 7426
+        },
+        {
+          "id": "erp",
+          "heading": "Run your entire business on one canvas.",
+          "y": 8425
+        },
+        {
+          "id": "contact",
+          "heading": "Choose your next move.",
+          "y": 8931
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "nodes": [
+              {
+                "target": [
+                  "#studio > .head-split > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">01</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#solutions > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">02</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "a[data-track-id=\"technology\"] > .track__body > p"
+                ],
+                "html": "<p data-ar=\"العمارة المؤسسية والاستراتيجية · التحول الرقمي في الرعاية الصحية · هندسة البيانات والتحليلات · عمارة الحلول · التحديث السحابي · الاستشارات التنفيذية.\">",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "small[data-ar=\"TOGAF · CPHIMS · من ⁦$800⁩\"]"
+                ],
+                "html": "<small data-ar=\"TOGAF · CPHIMS · من ⁦$800⁩\">TOGAF · CPHIMS · from $800</small>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "a[data-track-id=\"creative\"] > .track__body > p"
+                ],
+                "html": "<p data-ar=\"سبرنت الشعار · أساسيات الهوية · منظومة العلامة الكاملة · أنظمة التصميم · المواقع والمنصات · التغليف والسوشيال والإنتاج · اشتراكات شهرية.\">",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "a[data-track-id=\"creative\"] > .track__meta > small"
+                ],
+                "html": "<small data-ar=\"من الاستراتيجية للتسليم · من ⁦$170⁩\">Strategy to delivery · from $170</small>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "a[data-track-id=\"healthcare\"] > .track__body > p"
+                ],
+                "html": "<p data-ar=\"الإطلاق الرقمي للعيادات · ذكاء الأعمال الصحي · استشارات اختيار نظام HIS · حزمة هوية العيادة · تقييم العمارة المؤسسية الصحية + EMRAM.\">Clinic digital launch · healthcare BI · HIS selection advisory · clinic brand identity kit · healthcare EA assessment + EMRAM.</p>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "a[data-track-id=\"healthcare\"] > .track__meta > small"
+                ],
+                "html": "<small data-ar=\"CBAHI · EMRAM · NORA · من ⁦$1,500⁩\">CBAHI · EMRAM · NORA · from $1,500</small>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "a[href$=\"services/#combined\"] > .track__body > p"
+                ],
+                "html": "<p data-ar=\"باقة الإطلاق الرقمي — هوية العلامة + موقع ثنائي اللغة + منظومة إطلاق رقمي · استشارات تطوير الأعمال.\">Digital Launch Package — brand identity + bilingual website + digital launch system · Business Development Advisory.</p>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "small[data-ar=\"المؤسسان معًا · من ⁦$1,500⁩\"]"
+                ],
+                "html": "<small data-ar=\"المؤسسان معًا · من ⁦$1,500⁩\">Both founders · from $1,500</small>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#work > .head-split > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">03</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "span[data-ar=\"جاهزية HIMSS المرحلة 6 المحققة\"]"
+                ],
+                "html": "<span data-ar=\"جاهزية HIMSS المرحلة 6 المحققة\">HIMSS Stage 6 readiness achieved</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #716f8f, background color: #0b0b1f, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".numbers > li:nth-child(2) > span"
+                ],
+                "html": "<span data-ar=\"خفض مدة الإقامة في العناية المركزة عبر تحليلات تنبؤية\">ICU length of stay — predictive care-gap analytics</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #716f8f, background color: #0b0b1f, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".numbers > li:nth-child(3) > span"
+                ],
+                "html": "<span data-ar=\"إقفال شهري أسرع — مسارات دورة إيرادات منمذجة\">Faster month-end close — modelled revenue-cycle workflows</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #716f8f, background color: #0b0b1f, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".numbers > li:nth-child(4) > span"
+                ],
+                "html": "<span data-ar=\"أعباء إدارية أقل — أتمتة المواعيد والتأمين\">Admin overhead — appointment &amp; insurance automation</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #716f8f, background color: #0b0b1f, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "li:nth-child(5) > span"
+                ],
+                "html": "<span data-ar=\"وفورات تكلفة مرصودة عبر لوحة تحليل سوق مؤتمتة\">Cost savings identified — automated market-analysis dashboard</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #716f8f, background color: #0b0b1f, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".svc-note[data-reveal=\"\"] > span"
+                ],
+                "html": "<span data-ar=\"الأرقام من مشاريع العمارة المؤسسية والتحول الرقمي التي قادها أحمد بدير في السعودية.\">Figures from enterprise-architecture and transformation engagements led by Ahmed Bedeer in KSA.</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#why > .head-split > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">04</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#approach > .section__head--center.section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">05</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "li:nth-child(1) > small > span"
+                ],
+                "html": "<span data-ar=\"30 دقيقة · مكالمة فيديو · مجانًا\">30 minutes · video call · free</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "span[data-ar=\"النطاق يُقفل عند الانطلاق\"]"
+                ],
+                "html": "<span data-ar=\"النطاق يُقفل عند الانطلاق\">Scope locked at kickoff</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "li:nth-child(3) > small > span"
+                ],
+                "html": "<span data-ar=\"دفعات حسب المعالم · الملفات عند السداد الكامل\">Milestone payments · files on full settlement</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#learn > .head-split > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">06</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".section__head--center.section__head.is-in > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">08</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "span[data-ar=\"تعمل في الرعاية الصحية؟\"]"
+                ],
+                "html": "<span data-ar=\"تعمل في الرعاية الصحية؟\">Working in healthcare?</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 248
+          }
+        ]
+      }
+    },
+    {
+      "path": "/erp/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "CanvasOne ERP — Code & Canvas proposal",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 14397,
+      "h1": [
+        "Run your entire business on one canvas."
+      ],
+      "panels": [
+        {
+          "id": "hero",
+          "heading": "Run your entire business on one canvas.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 890
+        },
+        {
+          "id": "challenge",
+          "heading": "Growth exposes every gap in how you operate",
+          "y": 1229
+        },
+        {
+          "id": "platform",
+          "heading": "One platform. One source of truth.",
+          "y": 2677
+        },
+        {
+          "id": "modules",
+          "heading": "Twelve modules, working as one team",
+          "y": 3497
+        },
+        {
+          "id": "sectors",
+          "heading": "Built for your industry, not a generic template",
+          "y": 4815
+        },
+        {
+          "id": "compliance",
+          "heading": "Designed for the rules of your market",
+          "y": 5799
+        },
+        {
+          "id": "tech",
+          "heading": "Enterprise architecture that grows with you",
+          "y": 6766
+        },
+        {
+          "id": "journey",
+          "heading": "Clear scope, fixed timeline, no surprises",
+          "y": 7623
+        },
+        {
+          "id": "why",
+          "heading": "Where creativity meets technology",
+          "y": 9600
+        },
+        {
+          "id": "builder",
+          "heading": "Three minutes to a proposal tailored to you",
+          "y": 10718
+        },
+        {
+          "id": "faq",
+          "heading": "Straight answers, up front",
+          "y": 12099
+        },
+        {
+          "id": "contact",
+          "heading": "Ready to see your whole business on one canvas?",
+          "y": 13145
+        }
+      ],
+      "excess": [
+        {
+          "tag": "DIV",
+          "cls": "marquee__track",
+          "text": "Finance & Accounting Sales & CRM Procurement Inventory & Warehousing M",
+          "x": 0,
+          "width": 8236
+        },
+        {
+          "tag": "SPAN",
+          "cls": "marquee__item",
+          "text": "Inventory & Warehousing",
+          "x": 1037,
+          "width": 411
+        },
+        {
+          "tag": "SPAN",
+          "cls": "marquee__item",
+          "text": "Manufacturing",
+          "x": 1496,
+          "width": 283
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 1496,
+          "width": 26
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1499,
+          "width": 22
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1515,
+          "width": 1
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1509,
+          "width": 1
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1504,
+          "width": 1
+        },
+        {
+          "tag": "SPAN",
+          "cls": "marquee__item",
+          "text": "HR & Payroll",
+          "x": 1828,
+          "width": 256
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 1828,
+          "width": 26
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1830,
+          "width": 15
+        },
+        {
+          "tag": "circle",
+          "cls": {},
+          "text": "",
+          "x": 1833,
+          "width": 9
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1848,
+          "width": 3
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1845,
+          "width": 3
+        },
+        {
+          "tag": "SPAN",
+          "cls": "marquee__item",
+          "text": "Point of Sale",
+          "x": 2131,
+          "width": 257
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 2131,
+          "width": 26
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/services/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Solutions — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 8681,
+      "h1": [
+        "All our solutions. Creative. Technical."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "All our solutions. Creative. Technical.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 751
+        },
+        {
+          "id": "technology",
+          "heading": "Ahmed Bedeer",
+          "y": 928
+        },
+        {
+          "id": "creative",
+          "heading": "Mustafa Aboalazm",
+          "y": 2689
+        },
+        {
+          "id": "healthcare",
+          "heading": "Built for clinics and hospitals in KSA and Egypt.",
+          "y": 4849
+        },
+        {
+          "id": "combined",
+          "heading": "When you need the Code and the Canvas together.",
+          "y": 6042
+        },
+        {
+          "id": "not-sure",
+          "heading": "Not sure which service fits your problem?",
+          "y": 6831
+        },
+        {
+          "id": "",
+          "heading": "The Home of Business Development.",
+          "y": 7318
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "nodes": [
+              {
+                "target": [
+                  "#technology > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">01</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#technology > .svc-note > span"
+                ],
+                "html": "<span data-ar=\"تريد النطاق الكامل والمخرجات والاعتمادات؟\">Want full scope, deliverables, and credentials?</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#creative > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">02</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#creative > .svc-note > span"
+                ],
+                "html": "<span data-ar=\"تريد منهجية الأربعة فصول وقائمة الأسعار المفصّلة؟\">Want the 4-act method and the à la carte price list?</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#healthcare > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">03</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "span[data-ar=\"تعمل في الرعاية الصحية؟\"]"
+                ],
+                "html": "<span data-ar=\"تعمل في الرعاية الصحية؟\">Working in healthcare?</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#combined > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">04</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 3
+          },
+          {
+            "id": "color-contrast",
+            "count": 279
+          }
+        ]
+      }
+    },
+    {
+      "path": "/technology-services/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Technology Services — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 11203,
+      "h1": [
+        "Architecting digital transformation."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Architecting digital transformation.",
+          "y": 0
+        },
+        {
+          "id": "credentials",
+          "heading": "Credentials used in every relevant engagement.",
+          "y": 920
+        },
+        {
+          "id": "results",
+          "heading": "Numbers from real engagements.",
+          "y": 1607
+        },
+        {
+          "id": "services",
+          "heading": "Architecture. Transformation. Data. Cloud. Advisory.",
+          "y": 2178
+        },
+        {
+          "id": "capabilities",
+          "heading": "Where the depth lives.",
+          "y": 6289
+        },
+        {
+          "id": "model",
+          "heading": "An engagement model built for decisions.",
+          "y": 7622
+        },
+        {
+          "id": "who",
+          "heading": "One founder leads every technology engagement — not a sales team.",
+          "y": 8363
+        },
+        {
+          "id": "",
+          "heading": "Have a transformation to architect?",
+          "y": 9210
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 9840
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/creative-services/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Creative Services — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 10965,
+      "h1": [
+        "Identity built as an operating system."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Identity built as an operating system.",
+          "y": 0
+        },
+        {
+          "id": "proof",
+          "heading": "",
+          "y": 920
+        },
+        {
+          "id": "services",
+          "heading": "Strategy, identity, systems & production.",
+          "y": 1298
+        },
+        {
+          "id": "a-la-carte",
+          "heading": "Single pieces. Inside your brand system.",
+          "y": 6555
+        },
+        {
+          "id": "method",
+          "heading": "Four acts. One brand that works.",
+          "y": 7185
+        },
+        {
+          "id": "who",
+          "heading": "One founder leads every creative engagement — brief to handover.",
+          "y": 8199
+        },
+        {
+          "id": "",
+          "heading": "Have a brand to shape?",
+          "y": 9045
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 9602
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/healthcare/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Healthcare Solutions — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 7512,
+      "h1": [
+        "Working in healthcare? Let’s talk specifics."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Working in healthcare? Let’s talk specifics.",
+          "y": 0
+        },
+        {
+          "id": "credentials",
+          "heading": "Clinical context from the first call.",
+          "y": 869
+        },
+        {
+          "id": "services",
+          "heading": "Built for clinics and hospitals in KSA and Egypt.",
+          "y": 1756
+        },
+        {
+          "id": "who",
+          "heading": "A named founder on every engagement — no account layer in between.",
+          "y": 4995
+        },
+        {
+          "id": "",
+          "heading": "Bring your challenge. We’ll bring the context.",
+          "y": 5567
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 6150
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/about/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "About — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 7302,
+      "h1": [
+        "We build what businesses need to grow — by design."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "We build what businesses need to grow — by design.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 786
+        },
+        {
+          "id": "position",
+          "heading": "Business development delivered through technology and design — not despite them.",
+          "y": 963
+        },
+        {
+          "id": "why",
+          "heading": "Not a generic studio. Not a consultancy either.",
+          "y": 1922
+        },
+        {
+          "id": "tracks",
+          "heading": "One co-founder per track. Both oriented to BD.",
+          "y": 2966
+        },
+        {
+          "id": "glance",
+          "heading": "One discipline. Two tracks. Zero open-ended retainers.",
+          "y": 4215
+        },
+        {
+          "id": "methodology",
+          "heading": "8 stages. Every engagement.",
+          "y": 4613
+        },
+        {
+          "id": "book",
+          "heading": "Ready to build something that actually moves the needle?",
+          "y": 5352
+        },
+        {
+          "id": "",
+          "heading": "Unlock the Potential of IT to Streamline Operations and Boost Productivity.",
+          "y": 5865
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/our-story/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Our Story — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 6403,
+      "h1": [
+        "Our Story+"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Our Story+",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "Let's Begin Crafting Our Story.",
+          "y": 679
+        },
+        {
+          "id": "architecture",
+          "heading": "The Home of Architecture.",
+          "y": 1277
+        },
+        {
+          "id": "identity",
+          "heading": "The Home of Identity.",
+          "y": 1952
+        },
+        {
+          "id": "healthcare",
+          "heading": "The Home of Healthcare.",
+          "y": 2625
+        },
+        {
+          "id": "data",
+          "heading": "The Home of Data.",
+          "y": 3297
+        },
+        {
+          "id": "media",
+          "heading": "The Home of Media.",
+          "y": 3938
+        },
+        {
+          "id": "",
+          "heading": "Hope you enjoyed the journey.",
+          "y": 4574
+        },
+        {
+          "id": "",
+          "heading": "What service appealed to you or that we could provide for you?",
+          "y": 5040
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/methodology/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Methodology — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 5681,
+      "h1": [
+        "Business-Asset Alignment. Not just delivery."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Business-Asset Alignment. Not just delivery.",
+          "y": 0
+        },
+        {
+          "id": "stages",
+          "heading": "Eight stages. Every engagement.",
+          "y": 729
+        },
+        {
+          "id": "layers",
+          "heading": "Ends first. Then assets.",
+          "y": 2285
+        },
+        {
+          "id": "matrix",
+          "heading": "So you always know why a decision was made.",
+          "y": 2852
+        },
+        {
+          "id": "",
+          "heading": "Want to see the methodology applied?",
+          "y": 3739
+        },
+        {
+          "id": "",
+          "heading": "Unlock the Potential of IT to Streamline Operations and Boost Productivity.",
+          "y": 4244
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/team/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Team — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 6108,
+      "h1": [
+        "Two Minds. One Ecosystem."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Two Minds. One Ecosystem.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "Ahmed M. Bedeer",
+          "y": 643
+        },
+        {
+          "id": "together",
+          "heading": "Where the Canvas meets the Code.",
+          "y": 1626
+        },
+        {
+          "id": "career",
+          "heading": "Freelancer? Connect to our development.",
+          "y": 2904
+        },
+        {
+          "id": "",
+          "heading": "One brief. Two disciplines. Zero handoff gaps.",
+          "y": 4317
+        },
+        {
+          "id": "",
+          "heading": "What service appealed to you or that we could provide for you?",
+          "y": 4745
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "hp",
+          "text": "",
+          "x": -9502,
+          "width": 8
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/pricing-faq/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Pricing & FAQ — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 5834,
+      "h1": [
+        "Transparent pricing. No surprises."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Transparent pricing. No surprises.",
+          "y": 0
+        },
+        {
+          "id": "how-we-charge",
+          "heading": "Milestone-based. Not time-based.",
+          "y": 729
+        },
+        {
+          "id": "pricing",
+          "heading": "23 productized services. Fixed scope. Clear delivery.",
+          "y": 1927
+        },
+        {
+          "id": "faq",
+          "heading": "Common questions, direct answers.",
+          "y": 3367
+        },
+        {
+          "id": "",
+          "heading": "Clear scope from the first call.",
+          "y": 4440
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "nodes": [
+              {
+                "target": [
+                  "#pricing > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">02</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "span[data-ar=\"الهوية والإبداع\"]"
+                ],
+                "html": "<span data-ar=\"الهوية والإبداع\">Brand &amp; Creative</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #727090, background color: #0d0d21, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "span[data-ar=\"البيانات وتطوير الأعمال\"]"
+                ],
+                "html": "<span data-ar=\"البيانات وتطوير الأعمال\">Data &amp; BD</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #727090, background color: #0d0d21, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "span[data-ar=\"الرعاية الصحية\"]"
+                ],
+                "html": "<span data-ar=\"الرعاية الصحية\">Healthcare</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #727090, background color: #0d0d21, font size: 10.9pt (14.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".grid--side-l > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">03</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 153
+          }
+        ]
+      }
+    },
+    {
+      "path": "/contact/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Contact — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 2903,
+      "h1": [
+        "Can’t wait to hear from you."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Can’t wait to hear from you.",
+          "y": 0
+        },
+        {
+          "id": "message",
+          "heading": "Send us a message",
+          "y": 614
+        },
+        {
+          "id": "channels",
+          "heading": "Direct Contact",
+          "y": 1613
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9898,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 128
+          }
+        ]
+      }
+    },
+    {
+      "path": "/blog/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Insights Hub — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 4745,
+      "h1": [
+        "The Insights Hub."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "The Insights Hub.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "Why Most Startups Waste Money Building the Wrong Product",
+          "y": 670
+        },
+        {
+          "id": "articles",
+          "heading": "All Articles",
+          "y": 1304
+        },
+        {
+          "id": "",
+          "heading": "Get insights before everyone else.",
+          "y": 3748
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9898,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/why-startups-waste-money-wrong-product/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Why Most Startups Waste Money Building the Wrong Product — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 8323,
+      "h1": [
+        "Why Most Startups Waste Money Building the Wrong Product"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "How to Turn a Business Idea Into a Market-Ready Digital Product — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 9421,
+      "h1": [
+        "From Idea to Market-Ready Product: The 6-Step Strategic Framework"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/why-software-development-alone-wont-solve-your-business-problems/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Why Software Development Alone Won't Solve Your Business Problems — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 7931,
+      "h1": [
+        "Why Software Development Alone Won't Solve Your Business Problems"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/what-digital-transformation-actually-means-for-smes/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "What Digital Transformation Actually Means for SMEs — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 8133,
+      "h1": [
+        "What Digital Transformation Actually Means for SMEs in 2026"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/how-product-thinking-creates-sustainable-business-growth/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "How Product Thinking Creates Sustainable Business Growth — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 8655,
+      "h1": [
+        "Product Thinking: The Framework That Turns Features Into Business Outcomes"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/why-most-brands-look-different-but-feel-the-same/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Why Most Brands Look Different but Feel the Same — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 8812,
+      "h1": [
+        "Why Most Brands Look Different but Feel the Same"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/design-systems-operating-system-modern-digital-products/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Design Systems: The Operating System of Modern Digital Products — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 7374,
+      "h1": [
+        "Design Systems: The Operating System of Modern Digital Products"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/experience-design-business-growth-driver/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Experience Design as a Business Growth Driver — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 7374,
+      "h1": [
+        "Experience Design as a Business Growth Driver"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/case-studies/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Our Work — Case Studies & Delivered Projects · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 5201,
+      "h1": [
+        "Built to deliver. Not just to impress."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Built to deliver. Not just to impress.",
+          "y": 0
+        },
+        {
+          "id": "project-01",
+          "heading": "صيدليتي — Pharmacy OS",
+          "y": 683
+        },
+        {
+          "id": "project-02",
+          "heading": "زاد — Worship Companion",
+          "y": 1514
+        },
+        {
+          "id": "project-03",
+          "heading": "نايل فارما — ERP Platform",
+          "y": 2575
+        },
+        {
+          "id": "",
+          "heading": "Founder portfolios — brands and architecture.",
+          "y": 3397
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 3838
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Books Library — Arabic Design & Brand References · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 3612,
+      "h1": [
+        "Code & Canvas Books"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Code & Canvas Books",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "أساسيات التسويق Marketing Fundamentals",
+          "y": 612
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 2250
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 140
+          }
+        ]
+      }
+    },
+    {
+      "path": "/books/marketing-fundamentals/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Marketing Fundamentals — أساسيات التسويق · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 3741,
+      "h1": [
+        "أساسيات التسويق Marketing Fundamentals"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات التسويق Marketing Fundamentals",
+          "y": 0
+        },
+        {
+          "id": "chapters",
+          "heading": "الجزء 01 · مقدمة في التسويق Part 01 — Introduction to Marketing",
+          "y": 1168
+        },
+        {
+          "id": "",
+          "heading": "أساسيات الهوية البصرية · Basics of Visual Identity",
+          "y": 1865
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 2378
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/marketing-fundamentals/read/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Reader — Marketing Fundamentals · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 918,
+      "h1": [],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات التسويق",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [
+        {
+          "url": "http://localhost:3000/assets/books/marketing-fundamentals/manifest.json",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "path": "/books/basics-of-visual-identity/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Basics of Visual Identity — أساسيات الهوية البصرية · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 5815,
+      "h1": [
+        "أساسيات الهوية البصرية Basics of Visual Identity"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات الهوية البصرية Basics of Visual Identity",
+          "y": 0
+        },
+        {
+          "id": "chapters",
+          "heading": "ثلاث رحلات · 16 فصلاً",
+          "y": 1241
+        },
+        {
+          "id": "",
+          "heading": "أساسيات التصميم الجرافيكي · Basics of Graphic Design",
+          "y": 3965
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 4452
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/basics-of-visual-identity/read/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Reader — Basics of Visual Identity · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 958,
+      "h1": [],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات الهوية البصرية",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [
+        {
+          "url": "http://localhost:3000/assets/books/basics-of-visual-identity/manifest.json",
+          "status": 404
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "count": 40
+          }
+        ]
+      }
+    },
+    {
+      "path": "/books/basics-of-graphic-design/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Basics of Graphic Design — أساسيات التصميم الجرافيكي · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 3272,
+      "h1": [
+        "أساسيات التصميم الجرافيكي Basics of Graphic Design"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات التصميم الجرافيكي Basics of Graphic Design",
+          "y": 0
+        },
+        {
+          "id": "chapters",
+          "heading": "",
+          "y": 1241
+        },
+        {
+          "id": "",
+          "heading": "دليل تجربة وواجهة المستخدم · UI/UX Handbook",
+          "y": 1470
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 1909
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/basics-of-graphic-design/read/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Reader — Basics of Graphic Design · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 918,
+      "h1": [],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات التصميم الجرافيكي",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [
+        {
+          "url": "http://localhost:3000/assets/books/basics-of-graphic-design/manifest.json",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "path": "/books/ui-ux-handbook/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "UI/UX Handbook — دليل تجربة وواجهة المستخدم · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 3220,
+      "h1": [
+        "دليل تجربة وواجهة المستخدم UI/UX Handbook"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "دليل تجربة وواجهة المستخدم UI/UX Handbook",
+          "y": 0
+        },
+        {
+          "id": "chapters",
+          "heading": "",
+          "y": 1190
+        },
+        {
+          "id": "",
+          "heading": "أساسيات التسويق · Marketing Fundamentals",
+          "y": 1418
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 1858
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/login/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Login - Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 1428,
+      "h1": [
+        "Welcome back"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Welcome back",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9518,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 79
+          }
+        ]
+      }
+    },
+    {
+      "path": "/register/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Register - Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 1676,
+      "h1": [
+        "Create your account"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Create your account",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9518,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/forgot-password/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Forgot Password - Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 1418,
+      "h1": [
+        "Forgot your password?"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Forgot your password?",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9518,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/reset-password/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Reset Password - Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 1418,
+      "h1": [
+        "Reset your password"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Reset your password",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9518,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/account/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Account Center - Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 1394,
+      "h1": [
+        "Account Center"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Account Center",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/cart/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Cart - Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 1234,
+      "h1": [
+        "Your Cart"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Your Cart",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/checkout/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Checkout - Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 1559,
+      "h1": [
+        "Checkout"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Checkout",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 94
+          },
+          {
+            "id": "link-in-text-block",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "path": "/thank-you/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Thank you - Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 1686,
+      "h1": [
+        "Thank you, friend! 🎉"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Thank you, friend! 🎉",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/privacy-policy/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Privacy Policy — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 2655,
+      "h1": [
+        "Privacy Policy"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Privacy Policy",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/terms-of-use/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Terms of Use — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 2490,
+      "h1": [
+        "Terms of Use"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Terms of Use",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/cookie-policy/",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "Cookie Policy — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 2117,
+      "h1": [
+        "Cookie Policy"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Cookie Policy",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/404.html",
+      "width": 1440,
+      "lang": "en",
+      "status": 200,
+      "title": "404 — Lost · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 1440,
+      "height": 1458,
+      "h1": [
+        "Lost in the void"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Lost in the void",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "Code & Canvas — الهوية والتقنية والبيانات، مبنية حول نتيجة أعمال",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 16022,
+      "h1": [
+        "الهوية والتقنية والبيانات — مبنية حول نتيجة أعمال."
+      ],
+      "panels": [
+        {
+          "id": "top",
+          "heading": "الهوية والتقنية والبيانات — مبنية حول نتيجة أعمال.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 1755
+        },
+        {
+          "id": "studio",
+          "heading": "ممارستان. طاولة واحدة.",
+          "y": 2058
+        },
+        {
+          "id": "solutions",
+          "heading": "حلول متكاملة تدفع نمو أعمالك.",
+          "y": 3612
+        },
+        {
+          "id": "work",
+          "heading": "مبنيّة لتُنجز. لا لتُبهر فقط.",
+          "y": 4973
+        },
+        {
+          "id": "why",
+          "heading": "لسنا منفّذي طلبات. بل صنّاع حلول.",
+          "y": 7166
+        },
+        {
+          "id": "approach",
+          "heading": "العمل الجيد يبدأ بـ حوار جيد.",
+          "y": 9089
+        },
+        {
+          "id": "learn",
+          "heading": "ما نفكر فيه. وما كتبناه.",
+          "y": 10418
+        },
+        {
+          "id": "erp",
+          "heading": "أدِر شركتك كلها من لوحة واحدة.",
+          "y": 11848
+        },
+        {
+          "id": "contact",
+          "heading": "اختر خطوتك التالية.",
+          "y": 12531
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "nodes": [
+              {
+                "target": [
+                  "#studio > .head-split > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">01</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#solutions > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">02</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "small[data-ar=\"TOGAF · CPHIMS · من ⁦$800⁩\"]"
+                ],
+                "html": "<small data-ar=\"TOGAF · CPHIMS · من ⁦$800⁩\">TOGAF · CPHIMS · من ⁦$800⁩</small>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "a[data-track-id=\"creative\"] > .track__meta > small"
+                ],
+                "html": "<small data-ar=\"من الاستراتيجية للتسليم · من ⁦$170⁩\">من الاستراتيجية للتسليم · من ⁦$170⁩</small>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "a[data-track-id=\"healthcare\"] > .track__meta > small"
+                ],
+                "html": "<small data-ar=\"CBAHI · EMRAM · NORA · من ⁦$1,500⁩\">CBAHI · EMRAM · NORA · من ⁦$1,500⁩</small>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "small[data-ar=\"المؤسسان معًا · من ⁦$1,500⁩\"]"
+                ],
+                "html": "<small data-ar=\"المؤسسان معًا · من ⁦$1,500⁩\">المؤسسان معًا · من ⁦$1,500⁩</small>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#work > .head-split > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">03</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "span[data-ar=\"جاهزية HIMSS المرحلة 6 المحققة\"]"
+                ],
+                "html": "<span data-ar=\"جاهزية HIMSS المرحلة 6 المحققة\">جاهزية HIMSS المرحلة 6 المحققة</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #716f8f, background color: #0b0b1f, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".numbers > li:nth-child(3) > span"
+                ],
+                "html": "<span data-ar=\"إقفال شهري أسرع — مسارات دورة إيرادات منمذجة\">إقفال شهري أسرع — مسارات دورة إيرادات منمذجة</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #716f8f, background color: #0b0b1f, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#why > .head-split > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">04</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#approach > .section__head--center.section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">05</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".is-in:nth-child(1) > small > span"
+                ],
+                "html": "<span data-ar=\"30 دقيقة · مكالمة فيديو · مجانًا\">30 دقيقة · مكالمة فيديو · مجانًا</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#learn > .head-split > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">06</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#contact > .section__head--center.section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">08</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 88
+          }
+        ]
+      }
+    },
+    {
+      "path": "/erp/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "CanvasOne ERP · عرض Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 19488,
+      "h1": [
+        "أدِر شركتك كلها من لوحة واحدة."
+      ],
+      "panels": [
+        {
+          "id": "hero",
+          "heading": "أدِر شركتك كلها من لوحة واحدة.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 1270
+        },
+        {
+          "id": "challenge",
+          "heading": "النمو يكشف كل فجوة في طريقة إدارتك",
+          "y": 1735
+        },
+        {
+          "id": "platform",
+          "heading": "منصة واحدة. مصدر واحد للحقيقة.",
+          "y": 3850
+        },
+        {
+          "id": "modules",
+          "heading": "١٢ وحدة تعمل كفريق واحد",
+          "y": 4805
+        },
+        {
+          "id": "sectors",
+          "heading": "حلول جاهزة لقطاعك، لا قوالب عامة",
+          "y": 6839
+        },
+        {
+          "id": "compliance",
+          "heading": "مصمم لقوانين السوق الذي تعمل فيه",
+          "y": 8114
+        },
+        {
+          "id": "tech",
+          "heading": "بنية مؤسسية تنمو معك",
+          "y": 9575
+        },
+        {
+          "id": "journey",
+          "heading": "نطاق واضح، ومدة محددة، ولا مفاجآت",
+          "y": 10891
+        },
+        {
+          "id": "why",
+          "heading": "حيث يلتقي الإبداع بالتقنية",
+          "y": 12814
+        },
+        {
+          "id": "builder",
+          "heading": "ثلاث دقائق تفصلك عن عرض مُفصّل لشركتك",
+          "y": 14472
+        },
+        {
+          "id": "faq",
+          "heading": "إجابات واضحة قبل أن تسأل",
+          "y": 17138
+        },
+        {
+          "id": "contact",
+          "heading": "جاهز لترى شركتك كاملة على لوحة واحدة؟",
+          "y": 18168
+        }
+      ],
+      "excess": [
+        {
+          "tag": "DIV",
+          "cls": "marquee__track",
+          "text": "المالية والمحاسبة المبيعات وإدارة العملاء المشتريات المخازن والمستودعا",
+          "x": 0,
+          "width": 7214
+        },
+        {
+          "tag": "SPAN",
+          "cls": "marquee__item",
+          "text": "المبيعات وإدارة العملاء",
+          "x": 294,
+          "width": 290
+        },
+        {
+          "tag": "SPAN",
+          "cls": "marquee__item",
+          "text": "المشتريات",
+          "x": 631,
+          "width": 184
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 631,
+          "width": 18
+        },
+        {
+          "tag": "circle",
+          "cls": {},
+          "text": "",
+          "x": 636,
+          "width": 2
+        },
+        {
+          "tag": "circle",
+          "cls": {},
+          "text": "",
+          "x": 645,
+          "width": 2
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 633,
+          "width": 15
+        },
+        {
+          "tag": "SPAN",
+          "cls": "marquee__item",
+          "text": "المخازن والمستودعات",
+          "x": 863,
+          "width": 287
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 863,
+          "width": 18
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 865,
+          "width": 14
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 866,
+          "width": 13
+        },
+        {
+          "tag": "SPAN",
+          "cls": "marquee__item",
+          "text": "التصنيع",
+          "x": 1198,
+          "width": 156
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 1198,
+          "width": 18
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1199,
+          "width": 15
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1211,
+          "width": 1
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 1207,
+          "width": 1
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/services/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "الحلول — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 15262,
+      "h1": [
+        "كل حلولنا. إبداعية. تقنية."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "كل حلولنا. إبداعية. تقنية.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 611
+        },
+        {
+          "id": "technology",
+          "heading": "Ahmed Bedeer",
+          "y": 968
+        },
+        {
+          "id": "creative",
+          "heading": "Mustafa Aboalazm",
+          "y": 4262
+        },
+        {
+          "id": "healthcare",
+          "heading": "مبنية للعيادات والمستشفيات في السعودية ومصر.",
+          "y": 8735
+        },
+        {
+          "id": "combined",
+          "heading": "عندما تحتاج الكود والكانفاس معًا.",
+          "y": 10901
+        },
+        {
+          "id": "not-sure",
+          "heading": "لست متأكدًا أي خدمة تناسب مشكلتك؟",
+          "y": 12242
+        },
+        {
+          "id": "",
+          "heading": "موطن تطوير الأعمال.",
+          "y": 12794
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "nodes": [
+              {
+                "target": [
+                  "#technology > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">01</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#creative > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">02</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#healthcare > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">03</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "#combined > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">04</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 3
+          },
+          {
+            "id": "color-contrast",
+            "count": 129
+          }
+        ]
+      }
+    },
+    {
+      "path": "/technology-services/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "خدمات التقنية — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 19268,
+      "h1": [
+        "نصمّم عمارة التحول الرقمي."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "نصمّم عمارة التحول الرقمي.",
+          "y": 0
+        },
+        {
+          "id": "credentials",
+          "heading": "اعتمادات تُستخدم في كل مشروع ذي صلة.",
+          "y": 1061
+        },
+        {
+          "id": "results",
+          "heading": "أرقام من مشاريع حقيقية.",
+          "y": 2251
+        },
+        {
+          "id": "services",
+          "heading": "عمارة. تحوّل. بيانات. سحابة. استشارات.",
+          "y": 3322
+        },
+        {
+          "id": "capabilities",
+          "heading": "حيث يكمن العمق.",
+          "y": 10352
+        },
+        {
+          "id": "model",
+          "heading": "نموذج تعاون مبني لاتخاذ القرار.",
+          "y": 13804
+        },
+        {
+          "id": "who",
+          "heading": "مؤسس واحد يقود كل مشروع تقني — لا فريق مبيعات.",
+          "y": 14854
+        },
+        {
+          "id": "",
+          "heading": "لديك تحوّل يحتاج إلى عمارة؟",
+          "y": 16071
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 16767
+        }
+      ],
+      "excess": [
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "دفعات حسب المعالم",
+          "x": -11,
+          "width": 118
+        },
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "السعودية + مصر · عن بُعد",
+          "x": -141,
+          "width": 130
+        },
+        {
+          "tag": "I",
+          "cls": "",
+          "text": "",
+          "x": -49,
+          "width": 14
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": -49,
+          "width": 14
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": -38,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "السعودية + مصر · عن بُعد",
+          "x": -117,
+          "width": 56
+        },
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "العربية والإنجليزية",
+          "x": -279,
+          "width": 138
+        },
+        {
+          "tag": "I",
+          "cls": "",
+          "text": "",
+          "x": -179,
+          "width": 14
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": -179,
+          "width": 14
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": -168,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "العربية والإنجليزية",
+          "x": -255,
+          "width": 64
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/creative-services/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "الخدمات الإبداعية — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 18307,
+      "h1": [
+        "هوية مبنية كنظام تشغيل."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "هوية مبنية كنظام تشغيل.",
+          "y": 0
+        },
+        {
+          "id": "proof",
+          "heading": "",
+          "y": 1122
+        },
+        {
+          "id": "services",
+          "heading": "استراتيجية، هوية، أنظمة وإنتاج.",
+          "y": 1707
+        },
+        {
+          "id": "a-la-carte",
+          "heading": "قطعة واحدة. داخل نظام علامتك.",
+          "y": 11313
+        },
+        {
+          "id": "method",
+          "heading": "أربعة فصول. علامة واحدة تعمل.",
+          "y": 12763
+        },
+        {
+          "id": "who",
+          "heading": "مؤسس واحد يقود كل مشروع إبداعي — من الموجز إلى التسليم.",
+          "y": 13945
+        },
+        {
+          "id": "",
+          "heading": "لديك علامة تريد صياغتها؟",
+          "y": 15053
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 15806
+        }
+      ],
+      "excess": [
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "العربية والإنجليزية",
+          "x": -139,
+          "width": 138
+        },
+        {
+          "tag": "I",
+          "cls": "",
+          "text": "",
+          "x": -39,
+          "width": 14
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": -39,
+          "width": 14
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": -28,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "العربية والإنجليزية",
+          "x": -115,
+          "width": 64
+        },
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "العبور، مصر · عن بُعد",
+          "x": -254,
+          "width": 114
+        },
+        {
+          "tag": "I",
+          "cls": "",
+          "text": "",
+          "x": -177,
+          "width": 14
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": -177,
+          "width": 14
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": -166,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "العبور، مصر · عن بُعد",
+          "x": -230,
+          "width": 40
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/healthcare/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "حلول الرعاية الصحية — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 12761,
+      "h1": [
+        "تعمل في الرعاية الصحية؟ لنتحدث بالتفاصيل."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "تعمل في الرعاية الصحية؟ لنتحدث بالتفاصيل.",
+          "y": 0
+        },
+        {
+          "id": "credentials",
+          "heading": "سياق سريري من المكالمة الأولى.",
+          "y": 1174
+        },
+        {
+          "id": "services",
+          "heading": "مبنية للعيادات والمستشفيات في السعودية ومصر.",
+          "y": 2927
+        },
+        {
+          "id": "who",
+          "heading": "مؤسس مُسمّى لكل مشروع — لا طبقة حسابات بينكما.",
+          "y": 8391
+        },
+        {
+          "id": "",
+          "heading": "أحضر تحدّيك. سنأتي بالسياق.",
+          "y": 9346
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 10259
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/about/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "من نحن — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 11443,
+      "h1": [
+        "نبني ما تحتاجه الأعمال لتنمو — بالتصميم."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "نبني ما تحتاجه الأعمال لتنمو — بالتصميم.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 776
+        },
+        {
+          "id": "position",
+          "heading": "تطوير الأعمال يُقدَّم عبر التقنية والتصميم — لا رغمًا عنهما.",
+          "y": 995
+        },
+        {
+          "id": "why",
+          "heading": "لسنا استوديو عامًا. ولسنا شركة استشارات أيضًا.",
+          "y": 1925
+        },
+        {
+          "id": "tracks",
+          "heading": "شريك مؤسس لكل مسار. كلاهما موجَّه لتطوير الأعمال.",
+          "y": 4015
+        },
+        {
+          "id": "glance",
+          "heading": "تخصص واحد. مساران. صفر عقود مفتوحة.",
+          "y": 6479
+        },
+        {
+          "id": "methodology",
+          "heading": "8 مراحل. في كل مشروع.",
+          "y": 7095
+        },
+        {
+          "id": "book",
+          "heading": "مستعد لبناء شيء يحرّك المؤشر فعلًا؟",
+          "y": 8361
+        },
+        {
+          "id": "",
+          "heading": "أطلق إمكانات التقنية لتبسيط العمليات وزيادة الإنتاجية.",
+          "y": 8924
+        }
+      ],
+      "excess": [
+        {
+          "tag": "DIV",
+          "cls": "stat",
+          "text": "23 خدمة مُنتجة",
+          "x": -102,
+          "width": 102
+        },
+        {
+          "tag": "SPAN",
+          "cls": "stat__num stat__num--ltr",
+          "text": "23",
+          "x": -76,
+          "width": 50
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "23",
+          "x": -76,
+          "width": 50
+        },
+        {
+          "tag": "P",
+          "cls": "stat__label",
+          "text": "خدمة مُنتجة",
+          "x": -76,
+          "width": 50
+        },
+        {
+          "tag": "DIV",
+          "cls": "stat",
+          "text": "2 دولتان السعودية · مصر",
+          "x": -208,
+          "width": 106
+        },
+        {
+          "tag": "SPAN",
+          "cls": "stat__num stat__num--ltr",
+          "text": "2",
+          "x": -168,
+          "width": 25
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "2",
+          "x": -168,
+          "width": 25
+        },
+        {
+          "tag": "P",
+          "cls": "stat__label",
+          "text": "دولتان السعودية · مصر",
+          "x": -182,
+          "width": 54
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/our-story/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "قصتنا — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 9050,
+      "h1": [
+        "قصتنا+"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "قصتنا+",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "لنبدأ في صياغة قصتنا.",
+          "y": 645
+        },
+        {
+          "id": "architecture",
+          "heading": "موطن العمارة.",
+          "y": 1526
+        },
+        {
+          "id": "identity",
+          "heading": "موطن الهوية.",
+          "y": 2424
+        },
+        {
+          "id": "healthcare",
+          "heading": "موطن الرعاية الصحية.",
+          "y": 3319
+        },
+        {
+          "id": "data",
+          "heading": "موطن البيانات.",
+          "y": 4215
+        },
+        {
+          "id": "media",
+          "heading": "موطن الإعلام.",
+          "y": 5081
+        },
+        {
+          "id": "",
+          "heading": "نأمل أن تكون قد استمتعت بالرحلة.",
+          "y": 5910
+        },
+        {
+          "id": "",
+          "heading": "ما الخدمة التي لفتت انتباهك أو التي يمكننا تقديمها لك؟",
+          "y": 6502
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/methodology/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "المنهجية — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 8575,
+      "h1": [
+        "مواءمة الأعمال مع الأصول. لا مجرد تسليم."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "مواءمة الأعمال مع الأصول. لا مجرد تسليم.",
+          "y": 0
+        },
+        {
+          "id": "stages",
+          "heading": "ثماني مراحل. في كل مشروع.",
+          "y": 695
+        },
+        {
+          "id": "layers",
+          "heading": "الغايات أولًا. ثم الأصول.",
+          "y": 3767
+        },
+        {
+          "id": "matrix",
+          "heading": "لتعرف دائمًا لماذا اتُّخذ القرار.",
+          "y": 4496
+        },
+        {
+          "id": "",
+          "heading": "تريد رؤية المنهجية مطبّقة؟",
+          "y": 5388
+        },
+        {
+          "id": "",
+          "heading": "أطلق إمكانات التقنية لتبسيط العمليات وزيادة الإنتاجية.",
+          "y": 6056
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/team/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "الفريق — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 9030,
+      "h1": [
+        "عقلان. منظومة واحدة."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "عقلان. منظومة واحدة.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "Ahmed M. Bedeer",
+          "y": 630
+        },
+        {
+          "id": "together",
+          "heading": "حيث يلتقي الكانفاس بالكود.",
+          "y": 2152
+        },
+        {
+          "id": "career",
+          "heading": "مستقل؟ انضم إلى فريق تطويرنا.",
+          "y": 4118
+        },
+        {
+          "id": "",
+          "heading": "موجز واحد. تخصصان. صفر فجوات تسليم.",
+          "y": 6027
+        },
+        {
+          "id": "",
+          "heading": "ما الخدمة التي لفتت انتباهك أو التي يمكننا تقديمها لك؟",
+          "y": 6482
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "hp",
+          "text": "",
+          "x": -9982,
+          "width": 8
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/pricing-faq/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "الأسعار والأسئلة الشائعة — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 9502,
+      "h1": [
+        "أسعار شفافة. بلا مفاجآت."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أسعار شفافة. بلا مفاجآت.",
+          "y": 0
+        },
+        {
+          "id": "how-we-charge",
+          "heading": "حسب المعالم. لا حسب الوقت.",
+          "y": 620
+        },
+        {
+          "id": "pricing",
+          "heading": "23 خدمة مُنتجة. نطاق ثابت. تسليم واضح.",
+          "y": 2536
+        },
+        {
+          "id": "faq",
+          "heading": "أسئلة شائعة، إجابات مباشرة.",
+          "y": 5354
+        },
+        {
+          "id": "",
+          "heading": "نطاق واضح من المكالمة الأولى.",
+          "y": 6964
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "nodes": [
+              {
+                "target": [
+                  "#pricing > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">02</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".grid--side-l > .section__head > .kicker > .kicker__num"
+                ],
+                "html": "<span class=\"kicker__num\">03</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #6e6c8d, background color: #05051a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 31
+          }
+        ]
+      }
+    },
+    {
+      "path": "/contact/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "تواصل معنا — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 5736,
+      "h1": [
+        "لا نطيق الانتظار لنسمع منك."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 0
+        },
+        {
+          "id": "message",
+          "heading": "أرسل لنا رسالة",
+          "y": 447
+        },
+        {
+          "id": "channels",
+          "heading": "تواصل مباشر",
+          "y": 2318
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9982,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 39
+          }
+        ]
+      }
+    },
+    {
+      "path": "/blog/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "مركز الرؤى — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 9569,
+      "h1": [
+        "مركز الرؤى."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "مركز الرؤى.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "لماذا تهدر معظم الشركات الناشئة أموالها في بناء المنتج الخطأ",
+          "y": 990
+        },
+        {
+          "id": "articles",
+          "heading": "كل المقالات",
+          "y": 1721
+        },
+        {
+          "id": "",
+          "heading": "احصل على الرؤى قبل الجميع.",
+          "y": 7157
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9982,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/why-startups-waste-money-wrong-product/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "لماذا تهدر معظم الشركات الناشئة أموالها في بناء المنتج الخطأ — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 15552,
+      "h1": [
+        "لماذا تهدر معظم الشركات الناشئة أموالها في بناء المنتج الخطأ"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "من الفكرة إلى منتج جاهز للسوق: الإطار الاستراتيجي من ست خطوات — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 17781,
+      "h1": [
+        "من الفكرة إلى منتج جاهز للسوق: الإطار الاستراتيجي من ست خطوات"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/why-software-development-alone-wont-solve-your-business-problems/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "لماذا لن يحل تطوير البرمجيات وحده مشاكل عملك — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 14879,
+      "h1": [
+        "لماذا لن يحل تطوير البرمجيات وحده مشاكل عملك"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/what-digital-transformation-actually-means-for-smes/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "ماذا يعني التحول الرقمي فعلًا للشركات الصغيرة والمتوسطة في 2026 — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 15820,
+      "h1": [
+        "ماذا يعني التحول الرقمي فعلًا للشركات الصغيرة والمتوسطة في 2026"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/how-product-thinking-creates-sustainable-business-growth/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "التفكير المنتجي: الإطار الذي يحوّل الميزات إلى نتائج أعمال — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 16555,
+      "h1": [
+        "التفكير المنتجي: الإطار الذي يحوّل الميزات إلى نتائج أعمال"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/why-most-brands-look-different-but-feel-the-same/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "لماذا تبدو معظم العلامات مختلفة لكنها تُشعرك بالشيء نفسه — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 17022,
+      "h1": [
+        "لماذا تبدو معظم العلامات مختلفة لكنها تُشعرك بالشيء نفسه"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/design-systems-operating-system-modern-digital-products/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "أنظمة التصميم: نظام التشغيل للمنتجات الرقمية الحديثة — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 14128,
+      "h1": [
+        "أنظمة التصميم: نظام التشغيل للمنتجات الرقمية الحديثة"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/blog/experience-design-business-growth-driver/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "تصميم التجربة كمحرك لنمو الأعمال — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 14613,
+      "h1": [
+        "تصميم التجربة كمحرك لنمو الأعمال"
+      ],
+      "panels": [],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/case-studies/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "أعمالنا — دراسات حالة ومشاريع مُسلَّمة · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 6734,
+      "h1": [
+        "مبنية لتُنجز. لا لتبهر فحسب."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "مبنية لتُنجز. لا لتبهر فحسب.",
+          "y": 0
+        },
+        {
+          "id": "project-01",
+          "heading": "صيدليتي — Pharmacy OS",
+          "y": 620
+        },
+        {
+          "id": "project-02",
+          "heading": "زاد — Worship Companion",
+          "y": 1607
+        },
+        {
+          "id": "project-03",
+          "heading": "نايل فارما — ERP Platform",
+          "y": 2697
+        },
+        {
+          "id": "",
+          "heading": "أعمال المؤسسين — العلامات والعمارة.",
+          "y": 3677
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 4233
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "المكتبة — مراجع عربية في التصميم والعلامة · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 6106,
+      "h1": [
+        "كتب Code & Canvas"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "كتب Code & Canvas",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "أساسيات التسويق Marketing Fundamentals",
+          "y": 574
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 3604
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 16
+          }
+        ]
+      }
+    },
+    {
+      "path": "/books/marketing-fundamentals/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "أساسيات التسويق — Marketing Fundamentals · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 5588,
+      "h1": [
+        "أساسيات التسويق Marketing Fundamentals"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات التسويق Marketing Fundamentals",
+          "y": 0
+        },
+        {
+          "id": "chapters",
+          "heading": "الجزء 01 · مقدمة في التسويق Part 01 — Introduction to Marketing",
+          "y": 1532
+        },
+        {
+          "id": "",
+          "heading": "أساسيات الهوية البصرية · Basics of Visual Identity",
+          "y": 2543
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 3086
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/marketing-fundamentals/read/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "القارئ — أساسيات التسويق · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 918,
+      "h1": [],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات التسويق",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "BUTTON",
+          "cls": "btn btn--ghost btn--sm",
+          "text": "⛶ ملء الشاشة",
+          "x": -6,
+          "width": 121
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [
+        {
+          "url": "http://localhost:3000/assets/books/marketing-fundamentals/manifest.json",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "path": "/books/basics-of-visual-identity/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "أساسيات الهوية البصرية — Basics of Visual Identity · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 7345,
+      "h1": [
+        "أساسيات الهوية البصرية Basics of Visual Identity"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات الهوية البصرية Basics of Visual Identity",
+          "y": 0
+        },
+        {
+          "id": "chapters",
+          "heading": "ثلاث رحلات · 16 فصلاً",
+          "y": 1602
+        },
+        {
+          "id": "",
+          "heading": "أساسيات التصميم الجرافيكي · Basics of Graphic Design",
+          "y": 4281
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 4844
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/basics-of-visual-identity/read/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "القارئ — أساسيات الهوية البصرية · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 918,
+      "h1": [],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات الهوية البصرية",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "BUTTON",
+          "cls": "btn btn--ghost btn--sm",
+          "text": "⛶ ملء الشاشة",
+          "x": -4,
+          "width": 121
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [
+        {
+          "url": "http://localhost:3000/assets/books/basics-of-visual-identity/manifest.json",
+          "status": 404
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "count": 11
+          }
+        ]
+      }
+    },
+    {
+      "path": "/books/basics-of-graphic-design/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "أساسيات التصميم الجرافيكي — Basics of Graphic Design · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 4846,
+      "h1": [
+        "أساسيات التصميم الجرافيكي Basics of Graphic Design"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات التصميم الجرافيكي Basics of Graphic Design",
+          "y": 0
+        },
+        {
+          "id": "chapters",
+          "heading": "",
+          "y": 1602
+        },
+        {
+          "id": "",
+          "heading": "دليل تجربة وواجهة المستخدم · UI/UX Handbook",
+          "y": 1783
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 2345
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/basics-of-graphic-design/read/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "القارئ — أساسيات التصميم الجرافيكي · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 918,
+      "h1": [],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أساسيات التصميم الجرافيكي",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [
+        {
+          "url": "http://localhost:3000/assets/books/basics-of-graphic-design/manifest.json",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "path": "/books/ui-ux-handbook/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "دليل تجربة وواجهة المستخدم — UI/UX Handbook · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 4782,
+      "h1": [
+        "دليل تجربة وواجهة المستخدم UI/UX Handbook"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "دليل تجربة وواجهة المستخدم UI/UX Handbook",
+          "y": 0
+        },
+        {
+          "id": "chapters",
+          "heading": "",
+          "y": 1556
+        },
+        {
+          "id": "",
+          "heading": "أساسيات التسويق · Marketing Fundamentals",
+          "y": 1737
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 2280
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/login/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "تسجيل الدخول - Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 2622,
+      "h1": [
+        "أهلًا بعودتك"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أهلًا بعودتك",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9982,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 24
+          }
+        ]
+      }
+    },
+    {
+      "path": "/register/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "إنشاء حساب - Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 2884,
+      "h1": [
+        "أنشئ حسابك"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أنشئ حسابك",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9982,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/forgot-password/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "نسيت كلمة المرور - Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 2622,
+      "h1": [
+        "نسيت كلمة المرور؟"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "نسيت كلمة المرور؟",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9982,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/reset-password/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "إعادة تعيين كلمة المرور - Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 2622,
+      "h1": [
+        "إعادة تعيين كلمة المرور"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "إعادة تعيين كلمة المرور",
+          "y": 0
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9982,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/account/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "مركز الحساب - Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 3222,
+      "h1": [
+        "مركز الحساب"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "مركز الحساب",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/cart/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "السلة - Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 2512,
+      "h1": [
+        "سلة التسوق"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "سلة التسوق",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/checkout/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "إتمام الشراء - Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 3196,
+      "h1": [
+        "إتمام الشراء"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "إتمام الشراء",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": [],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "count": 1
+          },
+          {
+            "id": "color-contrast",
+            "count": 29
+          }
+        ]
+      }
+    },
+    {
+      "path": "/thank-you/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "شكرًا لك - Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 3877,
+      "h1": [
+        "شكرًا، صديقنا! 🎉"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "شكرًا، صديقنا! 🎉",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/privacy-policy/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "سياسة الخصوصية — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 3506,
+      "h1": [
+        "سياسة الخصوصية"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "سياسة الخصوصية",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/terms-of-use/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "شروط الاستخدام — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 3385,
+      "h1": [
+        "شروط الاستخدام"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "شروط الاستخدام",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/cookie-policy/",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "سياسة ملفات تعريف الارتباط — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 2981,
+      "h1": [
+        "سياسة ملفات تعريف الارتباط"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "سياسة ملفات تعريف الارتباط",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/404.html",
+      "width": 390,
+      "lang": "ar",
+      "status": 200,
+      "title": "404 — تائه · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 390,
+      "height": 2662,
+      "h1": [
+        "تائه في الفراغ"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "تائه في الفراغ",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Code & Canvas — Business Development, By Design",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 16488,
+      "h1": [
+        "Brand, technology and data — built around a business outcome."
+      ],
+      "panels": [
+        {
+          "id": "top",
+          "heading": "Brand, technology and data — built around a business outcome.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 1789
+        },
+        {
+          "id": "studio",
+          "heading": "Two practices. One table.",
+          "y": 2105
+        },
+        {
+          "id": "solutions",
+          "heading": "Integrated solutions that drive business growth.",
+          "y": 3678
+        },
+        {
+          "id": "work",
+          "heading": "Built to deliver. Not just to impress.",
+          "y": 5086
+        },
+        {
+          "id": "why",
+          "heading": "Not order takers. Solution makers.",
+          "y": 7358
+        },
+        {
+          "id": "approach",
+          "heading": "Good work starts with a good conversation.",
+          "y": 9474
+        },
+        {
+          "id": "learn",
+          "heading": "What we think. What we wrote.",
+          "y": 10809
+        },
+        {
+          "id": "erp",
+          "heading": "Run your entire business on one canvas.",
+          "y": 12235
+        },
+        {
+          "id": "contact",
+          "heading": "Choose your next move.",
+          "y": 12948
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/services/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Solutions — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 15608,
+      "h1": [
+        "All our solutions. Creative. Technical."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "All our solutions. Creative. Technical.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 610
+        },
+        {
+          "id": "technology",
+          "heading": "Ahmed Bedeer",
+          "y": 926
+        },
+        {
+          "id": "creative",
+          "heading": "Mustafa Aboalazm",
+          "y": 4424
+        },
+        {
+          "id": "healthcare",
+          "heading": "Built for clinics and hospitals in KSA and Egypt.",
+          "y": 9021
+        },
+        {
+          "id": "combined",
+          "heading": "When you need the Code and the Canvas together.",
+          "y": 11163
+        },
+        {
+          "id": "not-sure",
+          "heading": "Not sure which service fits your problem?",
+          "y": 12575
+        },
+        {
+          "id": "",
+          "heading": "The Home of Business Development.",
+          "y": 13146
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/technology-services/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Technology Services — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 19373,
+      "h1": [
+        "Architecting digital transformation."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Architecting digital transformation.",
+          "y": 0
+        },
+        {
+          "id": "credentials",
+          "heading": "Credentials used in every relevant engagement.",
+          "y": 1111
+        },
+        {
+          "id": "results",
+          "heading": "Numbers from real engagements.",
+          "y": 2299
+        },
+        {
+          "id": "services",
+          "heading": "Architecture. Transformation. Data. Cloud. Advisory.",
+          "y": 3413
+        },
+        {
+          "id": "capabilities",
+          "heading": "Where the depth lives.",
+          "y": 10504
+        },
+        {
+          "id": "model",
+          "heading": "An engagement model built for decisions.",
+          "y": 13898
+        },
+        {
+          "id": "who",
+          "heading": "One founder leads every technology engagement — not a sales team.",
+          "y": 15034
+        },
+        {
+          "id": "",
+          "heading": "Have a transformation to architect?",
+          "y": 16209
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 16934
+        }
+      ],
+      "excess": [
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "Milestone-based payment",
+          "x": 302,
+          "width": 154
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "Milestone-based payment",
+          "x": 352,
+          "width": 80
+        },
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "KSA + Egypt · Remote",
+          "x": 456,
+          "width": 133
+        },
+        {
+          "tag": "I",
+          "cls": "",
+          "text": "",
+          "x": 480,
+          "width": 14
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 480,
+          "width": 14
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 491,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "KSA + Egypt · Remote",
+          "x": 506,
+          "width": 59
+        },
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "Arabic & English",
+          "x": 589,
+          "width": 127
+        },
+        {
+          "tag": "I",
+          "cls": "",
+          "text": "",
+          "x": 613,
+          "width": 14
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 613,
+          "width": 14
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 624,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "Arabic & English",
+          "x": 639,
+          "width": 53
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/creative-services/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Creative Services — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 17901,
+      "h1": [
+        "Identity built as an operating system."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Identity built as an operating system.",
+          "y": 0
+        },
+        {
+          "id": "proof",
+          "heading": "",
+          "y": 1107
+        },
+        {
+          "id": "services",
+          "heading": "Strategy, identity, systems & production.",
+          "y": 1711
+        },
+        {
+          "id": "a-la-carte",
+          "heading": "Single pieces. Inside your brand system.",
+          "y": 10997
+        },
+        {
+          "id": "method",
+          "heading": "Four acts. One brand that works.",
+          "y": 12419
+        },
+        {
+          "id": "who",
+          "heading": "One founder leads every creative engagement — brief to handover.",
+          "y": 13656
+        },
+        {
+          "id": "",
+          "heading": "Have a brand to shape?",
+          "y": 14769
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 15462
+        }
+      ],
+      "excess": [
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "2 structured revision rounds",
+          "x": 329,
+          "width": 154
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "2 structured revision rounds",
+          "x": 379,
+          "width": 80
+        },
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "Arabic & English",
+          "x": 483,
+          "width": 127
+        },
+        {
+          "tag": "I",
+          "cls": "",
+          "text": "",
+          "x": 507,
+          "width": 14
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 507,
+          "width": 14
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 518,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "Arabic & English",
+          "x": 533,
+          "width": 53
+        },
+        {
+          "tag": "LI",
+          "cls": "",
+          "text": "Al Obour, Egypt · Remote",
+          "x": 610,
+          "width": 133
+        },
+        {
+          "tag": "I",
+          "cls": "",
+          "text": "",
+          "x": 634,
+          "width": 14
+        },
+        {
+          "tag": "svg",
+          "cls": {},
+          "text": "",
+          "x": 634,
+          "width": 14
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "x": 645,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "Al Obour, Egypt · Remote",
+          "x": 660,
+          "width": 59
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/healthcare/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Healthcare Solutions — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 12808,
+      "h1": [
+        "Working in healthcare? Let’s talk specifics."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Working in healthcare? Let’s talk specifics.",
+          "y": 0
+        },
+        {
+          "id": "credentials",
+          "heading": "Clinical context from the first call.",
+          "y": 1180
+        },
+        {
+          "id": "services",
+          "heading": "Built for clinics and hospitals in KSA and Egypt.",
+          "y": 2991
+        },
+        {
+          "id": "who",
+          "heading": "A named founder on every engagement — no account layer in between.",
+          "y": 8404
+        },
+        {
+          "id": "",
+          "heading": "Bring your challenge. We’ll bring the context.",
+          "y": 9403
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 10368
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/about/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "About — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 11607,
+      "h1": [
+        "We build what businesses need to grow — by design."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "We build what businesses need to grow — by design.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 794
+        },
+        {
+          "id": "position",
+          "heading": "Business development delivered through technology and design — not despite them.",
+          "y": 1002
+        },
+        {
+          "id": "why",
+          "heading": "Not a generic studio. Not a consultancy either.",
+          "y": 1913
+        },
+        {
+          "id": "tracks",
+          "heading": "One co-founder per track. Both oriented to BD.",
+          "y": 4001
+        },
+        {
+          "id": "glance",
+          "heading": "One discipline. Two tracks. Zero open-ended retainers.",
+          "y": 6483
+        },
+        {
+          "id": "methodology",
+          "heading": "8 stages. Every engagement.",
+          "y": 7171
+        },
+        {
+          "id": "book",
+          "heading": "Ready to build something that actually moves the needle?",
+          "y": 8519
+        },
+        {
+          "id": "",
+          "heading": "Unlock the Potential of IT to Streamline Operations and Boost Productivity.",
+          "y": 9123
+        }
+      ],
+      "excess": [
+        {
+          "tag": "DIV",
+          "cls": "stat",
+          "text": "23 Productized services",
+          "x": 333,
+          "width": 132
+        },
+        {
+          "tag": "SPAN",
+          "cls": "stat__num stat__num--ltr",
+          "text": "23",
+          "x": 380,
+          "width": 39
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "23",
+          "x": 380,
+          "width": 39
+        },
+        {
+          "tag": "P",
+          "cls": "stat__label",
+          "text": "Productized services",
+          "x": 359,
+          "width": 80
+        },
+        {
+          "tag": "DIV",
+          "cls": "stat",
+          "text": "2 Countries KSA · Egypt",
+          "x": 465,
+          "width": 116
+        },
+        {
+          "tag": "SPAN",
+          "cls": "stat__num stat__num--ltr",
+          "text": "2",
+          "x": 514,
+          "width": 20
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "text": "2",
+          "x": 514,
+          "width": 20
+        },
+        {
+          "tag": "P",
+          "cls": "stat__label",
+          "text": "Countries KSA · Egypt",
+          "x": 491,
+          "width": 64
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/team/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Team — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 9137,
+      "h1": [
+        "Two Minds. One Ecosystem."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Two Minds. One Ecosystem.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "Ahmed M. Bedeer",
+          "y": 631
+        },
+        {
+          "id": "together",
+          "heading": "Where the Canvas meets the Code.",
+          "y": 2071
+        },
+        {
+          "id": "career",
+          "heading": "Freelancer? Connect to our development.",
+          "y": 4178
+        },
+        {
+          "id": "",
+          "heading": "One brief. Two disciplines. Zero handoff gaps.",
+          "y": 6189
+        },
+        {
+          "id": "",
+          "heading": "What service appealed to you or that we could provide for you?",
+          "y": 6701
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "hp",
+          "text": "",
+          "x": -9982,
+          "width": 8
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/contact/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Contact — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 5785,
+      "h1": [
+        "Can’t wait to hear from you."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Can’t wait to hear from you.",
+          "y": 0
+        },
+        {
+          "id": "message",
+          "heading": "Send us a message",
+          "y": 483
+        },
+        {
+          "id": "channels",
+          "heading": "Direct Contact",
+          "y": 2396
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9982,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/pricing-faq/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Pricing & FAQ — Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 9413,
+      "h1": [
+        "Transparent pricing. No surprises."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Transparent pricing. No surprises.",
+          "y": 0
+        },
+        {
+          "id": "how-we-charge",
+          "heading": "Milestone-based. Not time-based.",
+          "y": 654
+        },
+        {
+          "id": "pricing",
+          "heading": "23 productized services. Fixed scope. Clear delivery.",
+          "y": 2587
+        },
+        {
+          "id": "faq",
+          "heading": "Common questions, direct answers.",
+          "y": 5440
+        },
+        {
+          "id": "",
+          "heading": "Clear scope from the first call.",
+          "y": 7010
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/case-studies/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Our Work — Case Studies & Delivered Projects · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 6591,
+      "h1": [
+        "Built to deliver. Not just to impress."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Built to deliver. Not just to impress.",
+          "y": 0
+        },
+        {
+          "id": "project-01",
+          "heading": "صيدليتي — Pharmacy OS",
+          "y": 601
+        },
+        {
+          "id": "project-02",
+          "heading": "زاد — Worship Companion",
+          "y": 1591
+        },
+        {
+          "id": "project-03",
+          "heading": "نايل فارما — ERP Platform",
+          "y": 2625
+        },
+        {
+          "id": "",
+          "heading": "Founder portfolios — brands and architecture.",
+          "y": 3583
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 4152
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Books Library — Arabic Design & Brand References · Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 6072,
+      "h1": [
+        "Code & Canvas Books"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Code & Canvas Books",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "أساسيات التسويق Marketing Fundamentals",
+          "y": 541
+        },
+        {
+          "id": "",
+          "heading": "Can’t Wait To Hear From You.",
+          "y": 3632
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -199,
+          "width": 788
+        }
+      ],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/checkout/",
+      "width": 390,
+      "lang": "en",
+      "status": 200,
+      "title": "Checkout - Code & Canvas",
+      "dir": "ltr",
+      "scrollWidth": 390,
+      "height": 3146,
+      "h1": [
+        "Checkout"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "Checkout",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 358,
+        "scrollWidth": 356
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "Code & Canvas — الهوية والتقنية والبيانات، مبنية حول نتيجة أعمال",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 10393,
+      "h1": [
+        "الهوية والتقنية والبيانات — مبنية حول نتيجة أعمال."
+      ],
+      "panels": [
+        {
+          "id": "top",
+          "heading": "الهوية والتقنية والبيانات — مبنية حول نتيجة أعمال.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 1118
+        },
+        {
+          "id": "studio",
+          "heading": "ممارستان. طاولة واحدة.",
+          "y": 1274
+        },
+        {
+          "id": "solutions",
+          "heading": "حلول متكاملة تدفع نمو أعمالك.",
+          "y": 2243
+        },
+        {
+          "id": "work",
+          "heading": "مبنيّة لتُنجز. لا لتُبهر فقط.",
+          "y": 3906
+        },
+        {
+          "id": "why",
+          "heading": "لسنا منفّذي طلبات. بل صنّاع حلول.",
+          "y": 5082
+        },
+        {
+          "id": "approach",
+          "heading": "العمل الجيد يبدأ بـ حوار جيد.",
+          "y": 6262
+        },
+        {
+          "id": "learn",
+          "heading": "ما نفكر فيه. وما كتبناه.",
+          "y": 7210
+        },
+        {
+          "id": "erp",
+          "heading": "أدِر شركتك كلها من لوحة واحدة.",
+          "y": 8191
+        },
+        {
+          "id": "contact",
+          "heading": "اختر خطوتك التالية.",
+          "y": 8682
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/services/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "الحلول — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 8869,
+      "h1": [
+        "كل حلولنا. إبداعية. تقنية."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "كل حلولنا. إبداعية. تقنية.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 754
+        },
+        {
+          "id": "technology",
+          "heading": "Ahmed Bedeer",
+          "y": 937
+        },
+        {
+          "id": "creative",
+          "heading": "Mustafa Aboalazm",
+          "y": 2653
+        },
+        {
+          "id": "healthcare",
+          "heading": "مبنية للعيادات والمستشفيات في السعودية ومصر.",
+          "y": 4879
+        },
+        {
+          "id": "combined",
+          "heading": "عندما تحتاج الكود والكانفاس معًا.",
+          "y": 6158
+        },
+        {
+          "id": "not-sure",
+          "heading": "لست متأكدًا أي خدمة تناسب مشكلتك؟",
+          "y": 6974
+        },
+        {
+          "id": "",
+          "heading": "موطن تطوير الأعمال.",
+          "y": 7470
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/technology-services/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "خدمات التقنية — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 11330,
+      "h1": [
+        "نصمّم عمارة التحول الرقمي."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "نصمّم عمارة التحول الرقمي.",
+          "y": 0
+        },
+        {
+          "id": "credentials",
+          "heading": "اعتمادات تُستخدم في كل مشروع ذي صلة.",
+          "y": 846
+        },
+        {
+          "id": "results",
+          "heading": "أرقام من مشاريع حقيقية.",
+          "y": 1530
+        },
+        {
+          "id": "services",
+          "heading": "عمارة. تحوّل. بيانات. سحابة. استشارات.",
+          "y": 2052
+        },
+        {
+          "id": "capabilities",
+          "heading": "حيث يكمن العمق.",
+          "y": 6324
+        },
+        {
+          "id": "model",
+          "heading": "نموذج تعاون مبني لاتخاذ القرار.",
+          "y": 7772
+        },
+        {
+          "id": "who",
+          "heading": "مؤسس واحد يقود كل مشروع تقني — لا فريق مبيعات.",
+          "y": 8486
+        },
+        {
+          "id": "",
+          "heading": "لديك تحوّل يحتاج إلى عمارة؟",
+          "y": 9348
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 9966
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/creative-services/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "الخدمات الإبداعية — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 10999,
+      "h1": [
+        "هوية مبنية كنظام تشغيل."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "هوية مبنية كنظام تشغيل.",
+          "y": 0
+        },
+        {
+          "id": "proof",
+          "heading": "",
+          "y": 846
+        },
+        {
+          "id": "services",
+          "heading": "استراتيجية، هوية، أنظمة وإنتاج.",
+          "y": 1203
+        },
+        {
+          "id": "a-la-carte",
+          "heading": "قطعة واحدة. داخل نظام علامتك.",
+          "y": 6492
+        },
+        {
+          "id": "method",
+          "heading": "أربعة فصول. علامة واحدة تعمل.",
+          "y": 7154
+        },
+        {
+          "id": "who",
+          "heading": "مؤسس واحد يقود كل مشروع إبداعي — من الموجز إلى التسليم.",
+          "y": 8203
+        },
+        {
+          "id": "",
+          "heading": "لديك علامة تريد صياغتها؟",
+          "y": 9065
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 9635
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/healthcare/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "حلول الرعاية الصحية — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 7754,
+      "h1": [
+        "تعمل في الرعاية الصحية؟ لنتحدث بالتفاصيل."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "تعمل في الرعاية الصحية؟ لنتحدث بالتفاصيل.",
+          "y": 0
+        },
+        {
+          "id": "credentials",
+          "heading": "سياق سريري من المكالمة الأولى.",
+          "y": 946
+        },
+        {
+          "id": "services",
+          "heading": "مبنية للعيادات والمستشفيات في السعودية ومصر.",
+          "y": 1852
+        },
+        {
+          "id": "who",
+          "heading": "مؤسس مُسمّى لكل مشروع — لا طبقة حسابات بينكما.",
+          "y": 5257
+        },
+        {
+          "id": "",
+          "heading": "أحضر تحدّيك. سنأتي بالسياق.",
+          "y": 5819
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 6389
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/about/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "من نحن — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 7200,
+      "h1": [
+        "نبني ما تحتاجه الأعمال لتنمو — بالتصميم."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "نبني ما تحتاجه الأعمال لتنمو — بالتصميم.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "",
+          "y": 790
+        },
+        {
+          "id": "position",
+          "heading": "تطوير الأعمال يُقدَّم عبر التقنية والتصميم — لا رغمًا عنهما.",
+          "y": 973
+        },
+        {
+          "id": "why",
+          "heading": "لسنا استوديو عامًا. ولسنا شركة استشارات أيضًا.",
+          "y": 1881
+        },
+        {
+          "id": "tracks",
+          "heading": "شريك مؤسس لكل مسار. كلاهما موجَّه لتطوير الأعمال.",
+          "y": 2969
+        },
+        {
+          "id": "glance",
+          "heading": "تخصص واحد. مساران. صفر عقود مفتوحة.",
+          "y": 4291
+        },
+        {
+          "id": "methodology",
+          "heading": "8 مراحل. في كل مشروع.",
+          "y": 4671
+        },
+        {
+          "id": "book",
+          "heading": "مستعد لبناء شيء يحرّك المؤشر فعلًا؟",
+          "y": 5386
+        },
+        {
+          "id": "",
+          "heading": "أطلق إمكانات التقنية لتبسيط العمليات وزيادة الإنتاجية.",
+          "y": 5835
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/team/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "الفريق — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 6028,
+      "h1": [
+        "عقلان. منظومة واحدة."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "عقلان. منظومة واحدة.",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "Ahmed M. Bedeer",
+          "y": 630
+        },
+        {
+          "id": "together",
+          "heading": "حيث يلتقي الكانفاس بالكود.",
+          "y": 1629
+        },
+        {
+          "id": "career",
+          "heading": "مستقل؟ انضم إلى فريق تطويرنا.",
+          "y": 2790
+        },
+        {
+          "id": "",
+          "heading": "موجز واحد. تخصصان. صفر فجوات تسليم.",
+          "y": 4222
+        },
+        {
+          "id": "",
+          "heading": "ما الخدمة التي لفتت انتباهك أو التي يمكننا تقديمها لك؟",
+          "y": 4629
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "hp",
+          "text": "",
+          "x": -9898,
+          "width": 8
+        },
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/contact/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "تواصل معنا — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 2852,
+      "h1": [
+        "لا نطيق الانتظار لنسمع منك."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 0
+        },
+        {
+          "id": "message",
+          "heading": "أرسل لنا رسالة",
+          "y": 609
+        },
+        {
+          "id": "channels",
+          "heading": "تواصل مباشر",
+          "y": 1590
+        }
+      ],
+      "excess": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "x": -9462,
+          "width": 179
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/pricing-faq/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "الأسعار والأسئلة الشائعة — Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 5859,
+      "h1": [
+        "أسعار شفافة. بلا مفاجآت."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "أسعار شفافة. بلا مفاجآت.",
+          "y": 0
+        },
+        {
+          "id": "how-we-charge",
+          "heading": "حسب المعالم. لا حسب الوقت.",
+          "y": 727
+        },
+        {
+          "id": "pricing",
+          "heading": "23 خدمة مُنتجة. نطاق ثابت. تسليم واضح.",
+          "y": 1957
+        },
+        {
+          "id": "faq",
+          "heading": "أسئلة شائعة، إجابات مباشرة.",
+          "y": 3408
+        },
+        {
+          "id": "",
+          "heading": "نطاق واضح من المكالمة الأولى.",
+          "y": 4460
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/case-studies/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "أعمالنا — دراسات حالة ومشاريع مُسلَّمة · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 5323,
+      "h1": [
+        "مبنية لتُنجز. لا لتبهر فحسب."
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "مبنية لتُنجز. لا لتبهر فحسب.",
+          "y": 0
+        },
+        {
+          "id": "project-01",
+          "heading": "صيدليتي — Pharmacy OS",
+          "y": 680
+        },
+        {
+          "id": "project-02",
+          "heading": "زاد — Worship Companion",
+          "y": 1565
+        },
+        {
+          "id": "project-03",
+          "heading": "نايل فارما — ERP Platform",
+          "y": 2638
+        },
+        {
+          "id": "",
+          "heading": "أعمال المؤسسين — العلامات والعمارة.",
+          "y": 3515
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 3958
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/books/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "المكتبة — مراجع عربية في التصميم والعلامة · Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 3556,
+      "h1": [
+        "كتب Code & Canvas"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "كتب Code & Canvas",
+          "y": 0
+        },
+        {
+          "id": "",
+          "heading": "أساسيات التسويق Marketing Fundamentals",
+          "y": 596
+        },
+        {
+          "id": "",
+          "heading": "لا نطيق الانتظار لنسمع منك.",
+          "y": 2192
+        }
+      ],
+      "excess": [
+        {
+          "tag": "SPAN",
+          "cls": "closing__border",
+          "text": "",
+          "x": -644,
+          "width": 2728
+        }
+      ],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    },
+    {
+      "path": "/checkout/",
+      "width": 1440,
+      "lang": "ar",
+      "status": 200,
+      "title": "إتمام الشراء - Code & Canvas",
+      "dir": "rtl",
+      "scrollWidth": 1440,
+      "height": 1593,
+      "h1": [
+        "إتمام الشراء"
+      ],
+      "panels": [
+        {
+          "id": "",
+          "heading": "إتمام الشراء",
+          "y": 0
+        }
+      ],
+      "excess": [],
+      "nav": {
+        "width": 1240,
+        "scrollWidth": 1238
+      },
+      "errors": [],
+      "failedResponses": []
+    }
+  ]
+}

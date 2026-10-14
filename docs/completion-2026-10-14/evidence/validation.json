@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-14",
+  "htmlFilesChecked": 42,
+  "sharedChromePages": 41,
+  "staleChrome": 0,
+  "linkCheckerProblems": 0,
+  "isolatedGeneratedOutputsMatched": 48,
+  "builtHTMLMatches": 42,
+  "buildExcludesToolingDocsTests": true,
+  "javascriptSyntax": "passed",
+  "pythonCompileall": "passed",
+  "gitDiffCheck": "passed",
+  "playwright": {
+    "passed": 242,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "productionValidated": false
+}

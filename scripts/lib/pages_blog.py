@@ -128,7 +128,7 @@ def hub(posts):
             <h3 id="sub-title"><span data-ar="احصل على الرؤى">Get insights</span> <span class="grad-text" data-ar="قبل الجميع.">before everyone else.</span></h3>
             <p data-ar="أطر جديدة ودراسات حالة وأدلة استراتيجية — تصلك عند نشرها. تركيز على الاستراتيجية. بلا حشو.">New frameworks, case studies, and strategic guides — delivered when they're published. Strategy-focused. No filler.</p>
           </div>
-          <form class="form subscribe" data-form="contact" data-whatsapp="" data-mail="info@codeandcanvas.net" data-subject="Newsletter subscription — Code &amp; Canvas" data-endpoint="" novalidate>
+          <form class="form subscribe" data-form="contact" data-integration="newsletter" data-whatsapp="" data-mail="info@codeandcanvas.net" data-subject="Newsletter subscription — Code &amp; Canvas" data-endpoint="" novalidate>
             <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
             <div class="subscribe__row">
               <div class="field"><label class="sr-only" for="sub-email" data-ar="بريدك الإلكتروني">Your e-mail</label><input id="sub-email" name="email" type="email" required placeholder="you@company.com" autocomplete="email" /><span class="field__err" data-ar="أدخل بريدًا صحيحًا">Please enter a valid e-mail</span></div>

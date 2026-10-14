@@ -4,16 +4,16 @@ Standalone, bilingual (English / Arabic, LTR / RTL) Code & Canvas site built wit
 
 | Route | What it is |
 | --- | --- |
-| `/` | Homepage (clean editorial layout, no card grids): hero, stats, intro, four service tracks, CanvasOne ERP teaser, why us, approach, closing CTA |
+| `/` | Homepage (editorial sections and purposeful cards): compact hero → selected work → studio → service tracks → approach, resources and contact paths |
 | `/erp/` | CanvasOne ERP interactive proposal (modules, industries, compliance, timeline, package builder, FAQ, print-to-PDF) |
 | `/services/` · `/technology-services/` · `/creative-services/` · `/healthcare/` | Solutions hub + the three tracks (23 services: AB-01…06, MA-01…10, HC-01…05, CC-01/02) |
 | `/about/` · `/our-story/` · `/methodology/` · `/team/` | Studio, story, methodology, founders |
 | `/pricing-faq/` · `/contact/` (`#book`) | Packages, payment terms, FAQ · contact form, channels, booking card |
 | `/case-studies/` | Work: Pharmacy OS, Zad, Nile Pharma ERP |
 | `/blog/` · `/blog/<slug>/` | Insights Hub + 8 articles (2 hub cards are "coming soon" — they never had an article on the live site) |
-| `/books/` · `/books/<slug>/` · `/books/<slug>/read/` | Digital library, 4 book landings, interactive reader shell (free preview + purchase gate) |
-| `/login/` `/register/` `/forgot-password/` `/reset-password/` `/account/` | Auth + Account Center UI shells (no backend yet) |
-| `/cart/` `/checkout/` `/thank-you/` | localStorage cart + checkout shell (payment gateway not connected) |
+| `/books/` · `/books/<slug>/` · `/books/<slug>/read/` | Digital library, 4 book landings, public-preview readers; no online purchase or paid access |
+| `/login/` `/register/` `/forgot-password/` `/reset-password/` `/account/` | Explicitly unavailable auth UI + local saved-book previews |
+| `/cart/` `/checkout/` `/thank-you/` | Single-copy local shortlist + availability inquiry; no checkout success/receipt simulation |
 | `/privacy-policy/` `/terms-of-use/` `/cookie-policy/` · `/404.html` | Legal drafts (the live site had none — pending legal review) · not-found page |
 
 The header is a floating pill (`partials/top.html`): round brand mark + wordmark, uppercase links, language + WhatsApp round buttons, Contact CTA; the burger takes over below 1024px.
@@ -26,7 +26,7 @@ python3 scripts/gen-pages.py && node scripts/sync-chrome.mjs && node scripts/che
 
 `gen-pages.py` also rewrites `_redirects`, `sitemap.xml`, `robots.txt` and `manus-routes.json` from the page registry. `sync-chrome.mjs` injects the shared `<head>` / nav / footer from `partials/` between the `<!-- cc:head/top/bottom -->` markers of every page (`--check` to verify in CI). `check-links.mjs` validates tag balance, internal links (honouring `_redirects`) and anchors.
 
-Both pages share one design system — dark navy canvas, violet / teal / pink gradients, glass panels, preloader, scroll progress, cursor glow, tilt and magnetic buttons — taken from the CanvasOne ERP proposal.
+The routes share one design system — dark navy canvas, violet / teal / pink gradients, glass panels, preloader, scroll progress, cursor glow, tilt and magnetic buttons — taken from the CanvasOne ERP proposal.
 
 ## Run locally
 
@@ -56,7 +56,7 @@ assets/
 ├── js/site.js           shared runtime: language, icons, preloader, reveal, tilt, nav, progress, CC.track() analytics hook…
 ├── js/home.js           homepage behaviour (meta per language; sections are plain CSS/HTML)
 ├── js/pages.js          inner pages: tabs, FAQ, filters, forms (contact / demo), booking hook, TOC, account panels
-├── js/shop.js           localStorage cart, checkout shell, account library
+├── js/shop.js           trusted-ID shortlist, availability inquiry, saved previews
 ├── js/reader.js         interactive book reader (manifest or free preview, notes, fullscreen)
 ├── css/pages.css        inner-page components (hero, tiles, tiers, forms, prose, reader, cart, auth…)
 ├── js/erp-data.js       ALL ERP copy, bilingual { ar, en }
@@ -87,7 +87,7 @@ docs/
 
 ## Fonts
 
-Typography roles (English): **Signate Grotesk** (Black) for headings, **Raleway** for titles (card titles, kickers, buttons, nav, italic accent words) and **Poppins** for subtitles and body copy. The files are self-hosted from `assets/fonts/` (TTF, declared in `assets/css/ds.css`). Arabic uses Alexandria (headings / titles) and IBM Plex Sans Arabic (body), and the wordmark uses Comfortaa — those three still load from Google Fonts in each page `<head>`. Check the Signate Grotesk licence covers web embedding before going public; converting the TTFs to WOFF2 would cut their size.
+English roles remain Signate Grotesk (headings), Raleway (titles/buttons) and Poppins (body). Existing TTF files now have lossless WOFF2 web versions, used by `ds.css`. Alexandria, IBM Plex Sans Arabic and Comfortaa are self-hosted WOFF2 with adjacent OFL licenses; no Google Fonts request is needed. Provenance: [`assets/fonts/SOURCES.md`](assets/fonts/SOURCES.md). **Signate web-embedding permission still needs owner approval.**
 
 ## Deploy to Vercel
 
@@ -106,21 +106,38 @@ vercel --prod   # production deploy
 
 **Custom domain:** Project → *Settings → Domains* → add `codeandcanvas.net` + `www.codeandcanvas.net` (redirect www → apex). At the registrar point `A @ → 76.76.21.21` and `CNAME www → cname.vercel-dns.com`. Keep the WordPress host alive until the Vercel deployment is verified, then switch DNS — the legacy URLs keep working through the redirects. HTTPS is automatic.
 
-What the config does: `trailingSlash: true` (`/services` → `/services/`), `cleanUrls: true`, `404.html` served for unknown paths, `/assets/fonts/*` cached for a year, CSS/JS for an hour with stale-while-revalidate, HTML always revalidated, plus `X-Content-Type-Options` / `X-Frame-Options` / `Referrer-Policy` / `Permissions-Policy` headers. No environment variables are needed — the integration hooks (`data-endpoint`, `data-booking-url`, payment) are plain attributes in the HTML, see *Integration points*.
+What the config does: `trailingSlash: true` (`/services` → `/services/`), `cleanUrls: true`, `404.html` served for unknown paths, `/assets/fonts/*` cached for a year, CSS/JS for an hour with stale-while-revalidate, HTML always revalidated, plus `X-Content-Type-Options` / `X-Frame-Options` / `Referrer-Policy` / `Permissions-Policy` headers. Static preview needs no environment variables. Optional real integrations require a separately implemented backend and approved public configuration in `assets/js/config.js`; never put secrets there. See *Integration points*.
 
 ## Integration points (no backend is bundled)
 
-| Hook | Where | What to do |
-| --- | --- | --- |
-| **Contact form** | `/contact/` → `form[data-form="contact"]` (`scripts/lib/pages_contact.py`) | Set `data-endpoint="https://…"` to POST the form as JSON (`{name,email,phone,company,inquiry,budget,message,lang,page}`); a 2xx response shows the success state. Empty endpoint = hand-off to WhatsApp (`data-whatsapp`) or `mailto:` (`data-mail`) with the message pre-filled. Honeypot field `_hp`. |
-| **Booking** | `/contact/#book` → `section#book[data-booking-url]` | Put your Calendly / Cal.com / TidyCal URL in `data-booking-url`; every `[data-book]` button then opens it. Empty = WhatsApp + form fallback. Legacy `/about#book` links hop client-side. |
-| **Newsletter** | `/blog/` subscribe form (`data-form="contact"`, `data-subject`) | Same contract as the contact form: set `data-endpoint` to your list provider's JSON endpoint (Mailchimp/Brevo/Buttondown…). |
-| **Auth** | `/login/`, `/register/`, `/forgot-password/`, `/reset-password/`, `/account/` (`pages_shop.py`) | Forms are `data-form="demo"` (`data-next` = where to go after "success"). Replace with real `fetch()` calls in `assets/js/pages.js › submitDemo` or point the forms at your auth API. The Google button is a plain link to `/login/?provider=google` — wire your OAuth start URL there. The live site's 2FA step (6-digit / recovery code) is kept as a collapsible block. |
-| **Cart & payment** | `assets/js/shop.js` | Cart = `localStorage["cc-cart"]`; purchases unlock books via `localStorage["cc-library"]` (demo). Implement `checkout(cart, data)` with Moyasar / Tap / Paymob / Stripe and persist entitlements server-side. `[data-add]` buttons carry `data-title/-price/-currency`. |
-| **Book content** | `assets/js/reader.js` → `/assets/books/<slug>/manifest.json` | Publish `{ "parts":[{ "title", "slides":[{ "kicker","title","html" }] }], "free_parts": n }` (serve it behind your entitlement check). Without a manifest the reader shows the free preview generated from the landing page copy + the purchase gate. Reading position and notes are stored locally (`cc-reader-*`, `cc-notes-*`). |
-| **Imagery** | every `.art[data-slot="…"]` | CSS/SVG art tiles stand in for the WordPress stock images; replace by slot name (`blog/<slug>/cover`, `work/pharmacy-os`, `books/<slug>/cover`, …). |
-| **Analytics** | `assets/js/site.js › CC.track()` | Every meaningful click carries `data-track="<event>"` (+ `data-track-*` props). `CC.track()` pushes `{event:'cc', name, …props}` to `window.dataLayer` and dispatches a `cc:track` DOM event — plug GTM / GA4 / Plausible in by listening to either. Events fired today: `book-call`, `see-services`, `offer`, `duo`, `track`, `work`, `post`, `book`, `erp`, `whatsapp`, `phone`, `email`, `portfolio`, `lang-toggle`, `form-submit`, `add-to-cart`, `checkout`. Pre-filled inquiries: `/contact/?inquiry=<CODE>` selects the matching service in the form. |
-| **Hosting** | `_redirects`, `404.html`, `manus-routes.json` | Netlify / Cloudflare Pages read `_redirects` natively; for Vercel convert to `vercel.json` rewrites. The dev server honours `_redirects` too. |
+The authoritative contract is [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md). The previous localStorage purchase/auth simulation has been removed.
+
+| Feature | Current behavior |
+| --- | --- |
+| Contact / newsletter / careers | Manual WhatsApp/email drafts by default, explicitly **not sent**. Optional same-origin `/api/` endpoint succeeds only on 2xx JSON `{accepted:true}`. Timeout/error keeps inputs. |
+| Booking | Manual link by default; approved HTTPS scheduler can be set in public config, preserving service context. Click ≠ confirmed booking. |
+| Accounts / payments | Unavailable; no fake sign-in, reset, order, receipt or entitlement. Google login disabled. Real commerce needs a server-led release. |
+| Books | Single-copy saved IDs in `cc-cart`, catalogue-generated display data, local preview list/count, public reader content. `cc-library` is not ownership. |
+| Measurement | Bounded local diagnostics; configured first-party collector sends only after consent, respecting DNT/GPC. Footer permits withdrawal. No personal form values or URL queries in events. |
+| Artwork / evidence | Three labeled scope diagrams, not screenshots. Real client proof/portraits/permissions remain gates in [`docs/ASSET-AND-CLAIM-REGISTER.md`](docs/ASSET-AND-CLAIM-REGISTER.md). |
+| Hosting | Generated `_redirects` and `vercel.json`. Local slash redirects preserve query strings. Production cutover remains unperformed. |
+
+## Regression and source consistency
+
+```sh
+npm ci
+npx playwright install chromium
+npm run generate         # Python 3 + shared chrome sync
+npm run check            # links/anchors/tag balance + isolated generator parity
+npm test                 # Chromium flows, bilingual route matrix, geometry and axe
+npm run build
+```
+
+`npm run test:flows`, `npm run test:matrix`, and `npm run test:a11y` run subsets. `PW_EXECUTABLE_PATH`, optional JSON `PW_BROWSER_ARGS`, and `TEST_BASE_URL` support an existing browser/local server. Tests abort external traffic and mock API responses: no message or payment is sent. They do not certify a live provider, physical devices, screen readers, Safari/Firefox or production Lighthouse/CrUX.
+
+`check-links.mjs` is lightweight static validation, not a full HTML validator, CSS audit, icon audit or browser accessibility test. `check-generated.mjs` regenerates 48 outputs in a temporary directory and compares bytes without overwriting the workspace. The sitemap no longer claims a fresh last-modified date simply because the generator ran. Update generators first, then regenerate—never fix generated inner HTML alone.
+
+Latest implementation report: [`docs/completion-2026-10-14/REPORT.md`](docs/completion-2026-10-14/REPORT.md). Historical audit: [`docs/audit/verification-2026-10-14/REPORT.md`](docs/audit/verification-2026-10-14/REPORT.md). These are deliberately separate; audit screenshots/results do not validate later code.
 
 ## Scope
 

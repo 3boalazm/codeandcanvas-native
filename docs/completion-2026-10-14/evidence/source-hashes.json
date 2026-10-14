@@ -1,0 +1,683 @@
+{
+  "branch": "arena/e48bf0e9-codeandcanvas-native",
+  "head": "4b0e854ae3f90cecd56d8f75e8e7fd29c0a5a41f",
+  "note": "Uncommitted workspace snapshot after the final 242-test run; documentation/export scripts may postdate tests. No GitHub publication implied.",
+  "files": [
+    {
+      "path": "404.html",
+      "sha256": "69b9c6085a5e329227d27a55ab82c880e1fab3a62b64805dd5afee5769ee590d"
+    },
+    {
+      "path": "_redirects",
+      "sha256": "5f9b0c0d3e16e83e196b271057cf190f1f60283948d3035af251e494061f1b65"
+    },
+    {
+      "path": "about/index.html",
+      "sha256": "2624ffe636b8b4fc46363c57d5e40c1e287b27e5cccc63f2a786985590320a1d"
+    },
+    {
+      "path": "account/index.html",
+      "sha256": "2322fc4a14e3933f95c5821ade36a533d280ff52058320285da9e419e7a4c406"
+    },
+    {
+      "path": "assets/brand/icon-navy.svg",
+      "sha256": "8eca35ee1a0df5dc5a031db1d81dab1e568af6711ecf38cf0dba82f55bece3bc"
+    },
+    {
+      "path": "assets/brand/icon-white.svg",
+      "sha256": "022d44d37d16669d92eefcf490397d473129874471d78e71fd05b82d9b34b37c"
+    },
+    {
+      "path": "assets/brand/logo-navy-horizontal.svg",
+      "sha256": "fa2a3446f8ee69383f12acd60947d7bdf80f7f883fe30ff912292cbaa05f97eb"
+    },
+    {
+      "path": "assets/brand/logo-white-horizontal.svg",
+      "sha256": "aed372cc0053ddabce324e5dec65b568bb924584e2cf6877ccb1195cdceedae9"
+    },
+    {
+      "path": "assets/brand/og-default.png",
+      "sha256": "4b5b64b0cc00eca1b86d1067686ef47c1b07339528a5e6e81661a7cb6f023331"
+    },
+    {
+      "path": "assets/brand/work/nile-pharma-erp.svg",
+      "sha256": "f25818e5160e6a517e755a5052aad433c83266ca62d3f3829b5960ee798e4ae7"
+    },
+    {
+      "path": "assets/brand/work/pharmacy-os.svg",
+      "sha256": "b00e654a6601df875fa5bd42293c67343264aca6ea0a6509d41938b43a01e50c"
+    },
+    {
+      "path": "assets/brand/work/zad.svg",
+      "sha256": "485c16934e12c6f779c9741ddef14844a54fafb4c65dec8cc3f1284688df18cb"
+    },
+    {
+      "path": "assets/css/completion.css",
+      "sha256": "8866dc156bab538d53c3425b19609d5ce9a48c7f50e09457509fabb1a5222ff6"
+    },
+    {
+      "path": "assets/css/ds.css",
+      "sha256": "931b3f586068ec2ef9f353290187363ae89a0a1eb28a7bf2b4e294005f585396"
+    },
+    {
+      "path": "assets/css/erp.css",
+      "sha256": "da6579de6d0ff84521160a56674382702036b71c59db400f4878d80dd1dba7b5"
+    },
+    {
+      "path": "assets/css/fonts.css",
+      "sha256": "fb7cedb59fd5771e162d99a918f0a7714691b46ebc4d11562bbcaf5be3d7885d"
+    },
+    {
+      "path": "assets/css/home.css",
+      "sha256": "e0e879b8f40215a90190209c63fe5d02447273103d1dd494ed0830904cca59d2"
+    },
+    {
+      "path": "assets/css/pages.css",
+      "sha256": "f29f20a599a8a5f54c73be577bb0e2bc739716b810b593ea373a1daeed0dfc5d"
+    },
+    {
+      "path": "assets/fonts/Poppins-Bold.ttf",
+      "sha256": "ec26b37105adacad70aca3692f80e3dab073f06639daa80f8adcede6af60d76c"
+    },
+    {
+      "path": "assets/fonts/Poppins-Bold.woff2",
+      "sha256": "caa616f628bc49175ba1d44d79ee3b2e78dcc5be3c539e825249602ea9e84a17"
+    },
+    {
+      "path": "assets/fonts/Poppins-Italic.ttf",
+      "sha256": "ae7e4720592b6bb0116cb913f3cab80146a8828df173ef2fd9d9ef55f4b46258"
+    },
+    {
+      "path": "assets/fonts/Poppins-Italic.woff2",
+      "sha256": "779a48c03a3e797a06ae047907c3fd8a18570385bce18395c69066f9567aa78d"
+    },
+    {
+      "path": "assets/fonts/Poppins-Light.ttf",
+      "sha256": "bf1a7f964eb1751f56419265ce6650e6476eea7cc6e6573fa57573dcc52b5312"
+    },
+    {
+      "path": "assets/fonts/Poppins-Light.woff2",
+      "sha256": "6fd484d64a58db5fa8f06f78136424237b453544e1a339c7f99e1eded57be897"
+    },
+    {
+      "path": "assets/fonts/Poppins-Medium.ttf",
+      "sha256": "2f7f76a33726fc628136d9a004af7741d5e164b67b4e1353d0660c1c7f84a35a"
+    },
+    {
+      "path": "assets/fonts/Poppins-Medium.woff2",
+      "sha256": "de2b110b4ef00a67c1547f3929a0ac92dc7a1ea99ce4d6f20c5f144933edbc65"
+    },
+    {
+      "path": "assets/fonts/Poppins-Regular.ttf",
+      "sha256": "577dfb678b8fc1bda8ef0fabd74611675013ae08ae3b0045b8adcb1c6fa01eb9"
+    },
+    {
+      "path": "assets/fonts/Poppins-Regular.woff2",
+      "sha256": "e6d88e1af9cc4f6492b477b850c5439b0c06d7303b394df9eeb018ead1542916"
+    },
+    {
+      "path": "assets/fonts/Poppins-SemiBold.ttf",
+      "sha256": "3d081a1e7273a2d8ff6632187a73624e639f78586a14c227a27067c2b6be8353"
+    },
+    {
+      "path": "assets/fonts/Poppins-SemiBold.woff2",
+      "sha256": "1f273828c8c1fa0c2010ade227ecafa023909d3c8fe2e4f0a7ae1cbcbbcf5790"
+    },
+    {
+      "path": "assets/fonts/Raleway-Bold.ttf",
+      "sha256": "ca9de8b3be7ccd4b80774a9c7dd56a98c49c276771c5957729b5958d1d579112"
+    },
+    {
+      "path": "assets/fonts/Raleway-Bold.woff2",
+      "sha256": "9296e4ec4ef7da5f92a515983e509b03edabec7383d46e3bfec7c0883188f02b"
+    },
+    {
+      "path": "assets/fonts/Raleway-BoldItalic.ttf",
+      "sha256": "647fb029a65c0cd0b5a64a1d178ee4e118731e963cb1ef62cf24427b8b251c2a"
+    },
+    {
+      "path": "assets/fonts/Raleway-BoldItalic.woff2",
+      "sha256": "f15e20c888feb8646c111cdd9427b5a697df0041843dd95e83a044e6b9ee5e64"
+    },
+    {
+      "path": "assets/fonts/Raleway-ExtraBold.ttf",
+      "sha256": "a89c06c1793eb0b173c2101744cf53ea66f8b24b360f5aef7649f6f2b7120e9e"
+    },
+    {
+      "path": "assets/fonts/Raleway-ExtraBold.woff2",
+      "sha256": "bba06a1f936354416e17a1bd4873578619f27c17a1f8f7b5c25c1ca6f0e1709e"
+    },
+    {
+      "path": "assets/fonts/Raleway-Italic.ttf",
+      "sha256": "f9c5e089b4bb57662171cc7120e1dcae8d66432b4447dd7a7babb0c5e06aa93e"
+    },
+    {
+      "path": "assets/fonts/Raleway-Italic.woff2",
+      "sha256": "140b8f28e6f62a7c1a119817436c71c9ead6730fada1ef9bd0d30d9106188f14"
+    },
+    {
+      "path": "assets/fonts/Raleway-Medium.ttf",
+      "sha256": "3d8a045b2c853ee51e5d734d3b53eacf3f5f5290d6b5b862134af53b29dd6818"
+    },
+    {
+      "path": "assets/fonts/Raleway-Medium.woff2",
+      "sha256": "736c560dab1a99cc9016dadb1fd42713741ab1d0ca4633297d6b864370d0edae"
+    },
+    {
+      "path": "assets/fonts/Raleway-Regular.ttf",
+      "sha256": "20e4ae409ffbe8bfd2af14d7f717398408ae8b481005beccb83d62ef4052b681"
+    },
+    {
+      "path": "assets/fonts/Raleway-Regular.woff2",
+      "sha256": "94ccad30e3fa328b6f859201f259bb3136da8462c8fcb6fd4c228d5858c08fd9"
+    },
+    {
+      "path": "assets/fonts/Raleway-SemiBold.ttf",
+      "sha256": "b7680f30199f65ce3b2620713f7cb27a175560ea7402e0b4cba01c5d54508a17"
+    },
+    {
+      "path": "assets/fonts/Raleway-SemiBold.woff2",
+      "sha256": "daaa78272c85201fe1701f057204a18f50bc68e0b17b697fde119a718463dfeb"
+    },
+    {
+      "path": "assets/fonts/Raleway-SemiBoldItalic.ttf",
+      "sha256": "b8d486395fa65b66cb63321cb4a277d51035fe4d0bd9b49edf8322ea9d55c42c"
+    },
+    {
+      "path": "assets/fonts/Raleway-SemiBoldItalic.woff2",
+      "sha256": "7e5f78ad1ccfb52f36419445bf77a95702e663b61377f141a1437a57a79c8df2"
+    },
+    {
+      "path": "assets/fonts/SOURCES.md",
+      "sha256": "030fb5e738e10be51206e721a807e20cedd2910327ab56ad9c2ac959939d6b45"
+    },
+    {
+      "path": "assets/fonts/alexandria-OFL.txt",
+      "sha256": "491200f67c5d48f10cf090b6a86a61abc1e3ab9c496e43e6787ffb5601a43e34"
+    },
+    {
+      "path": "assets/fonts/alexandria-arabic-wght-normal.woff2",
+      "sha256": "e8d8ca61d4da1a1a38b9454dbae92be589185efc7af0af6046f6a11c60476e99"
+    },
+    {
+      "path": "assets/fonts/alexandria-latin-wght-normal.woff2",
+      "sha256": "98ccec0bc3c456332f8fd0fcaf81d26a4e010b7fc093f9781938f976df9ffbc4"
+    },
+    {
+      "path": "assets/fonts/comfortaa-OFL.txt",
+      "sha256": "c89ab37b152eaa07dc5e8d100d6ffb968226a0c4988bdff16a97e73174e9c77c"
+    },
+    {
+      "path": "assets/fonts/comfortaa-latin-wght-normal.woff2",
+      "sha256": "408f20ae9895ceefa460a383d76497a91abc469e3d00b49f080efc7f4b12c60e"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-OFL.txt",
+      "sha256": "1c32ddc3fc6efd167cdcbe475195287f2dc26ed1a4c92fbe31c87ceaffe44f98"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-arabic-300-normal.woff2",
+      "sha256": "441410df8013ca6c9a732c0497bb65aa6c9fc4abeb917b907a38fabe44263e2c"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2",
+      "sha256": "6010e7fd0dce5d527583951750728cbe3c895efbd16aa0f809ab8c824878c9d8"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2",
+      "sha256": "90aef64fea9794f232332e907d45810ab268d1a11721340025eba2a2cdb36d5c"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2",
+      "sha256": "16734a5adb27b0f363e566cbbeacec480da0dc0baa19c8f0053251c2e2bc0eac"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2",
+      "sha256": "04c730b4292731ccedadd5bd80756124364ae4923895145d9cd7b1f28e443de1"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-cyrillic-ext-300-normal.woff2",
+      "sha256": "2fff61c7ed83ed8a3ac19e3e7079f8f293e8485a1994b01e88b69056fecdf295"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-cyrillic-ext-400-normal.woff2",
+      "sha256": "1144843a05a0eaef92032c0406ee3f001804f2caddba9522e8a265e0a79d46ea"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-cyrillic-ext-500-normal.woff2",
+      "sha256": "93ae908392a01f9af1f73e86e99f1665f899a5b58fe9e56517abd199e47dcd01"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-cyrillic-ext-600-normal.woff2",
+      "sha256": "95875e4fa8928fa68e01e53e0b2cdb0f6dbec1ac61d9af493bb05d2ed230f350"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-cyrillic-ext-700-normal.woff2",
+      "sha256": "0c4e072fcf4f07a388448ae321d51fd3915797371a7378270e5630c6d023ea6b"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-latin-300-normal.woff2",
+      "sha256": "dde6d3b23792b89c365f557d8af5fac776118517e1aa20921a3e0ed67b1d7ef8"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2",
+      "sha256": "9ed8dcb02e6c7246de4c120295fafa39a7bb73085f4951a4524a07dc911069f2"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2",
+      "sha256": "be6a3b2e37f3ad67aa822a55ce356d28c416331c97530a1ec076c2118240ca2d"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2",
+      "sha256": "63f4757271e403f7baec0862f284ffaa4560ea6096ba9fe8bc6e585ca656e724"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2",
+      "sha256": "ae2d59f91ecf9f7ed279e4a1fc1a9da8170fb0ce5b9152917a8f759033f5777c"
+    },
+    {
+      "path": "assets/fonts/signategrotesk-black.ttf",
+      "sha256": "f8a54120376beb37534275e5d6fe0834f978fa5d107d45ee87c50e504c247982"
+    },
+    {
+      "path": "assets/fonts/signategrotesk-black.woff2",
+      "sha256": "eb4e178ba4e795122a15045b3a56187ae2ff7873e3511550b9d3745e862c7614"
+    },
+    {
+      "path": "assets/js/book-catalog.js",
+      "sha256": "94b6cc7a76ace7227c6f92e416bef3f6f0f9cc6ac4aad86cab1ee6cfb90cec11"
+    },
+    {
+      "path": "assets/js/config.js",
+      "sha256": "d74fbde68d321ace562e3799f1edb3b13aa45116fec8ec2e71da01271ce68ccf"
+    },
+    {
+      "path": "assets/js/erp-app.js",
+      "sha256": "15cbc6f7d7561758cdca56ade7ead7f6b7a26567097cda774728bd4ecbb2eb64"
+    },
+    {
+      "path": "assets/js/erp-data.js",
+      "sha256": "e709d1decfd8faad2b28f56ae3bcd75b12cb09c5351c6a55b390798fa16a250d"
+    },
+    {
+      "path": "assets/js/home.js",
+      "sha256": "7b0ecd74ce274e5f9d9436976ae6880cc714da520757cd19a20a7b43682ef510"
+    },
+    {
+      "path": "assets/js/pages.js",
+      "sha256": "2828e540af1d6ba390c1f5108f7fad4d3477caed69e582130be33c0116739242"
+    },
+    {
+      "path": "assets/js/reader.js",
+      "sha256": "76f407771db623b51b4d4714aed26705b480e925e7164bbf80b0682179aaed89"
+    },
+    {
+      "path": "assets/js/shop.js",
+      "sha256": "c3a81f383c10a2ace151703d84c9c37ebc9a0856df977816c2118d0abbecd67f"
+    },
+    {
+      "path": "assets/js/site.js",
+      "sha256": "2e78cd1b3194d30c2196661227059706de6056f5a8891256642fab35e4937f95"
+    },
+    {
+      "path": "blog/design-systems-operating-system-modern-digital-products/index.html",
+      "sha256": "b2f0ef41fcaa6715b2e0fbdffd1932f63c08262048086dff82ca084db6d821ea"
+    },
+    {
+      "path": "blog/experience-design-business-growth-driver/index.html",
+      "sha256": "4b129143b78f47e08ed77fdf662dd7adb27083eb170f9ea6648d2fbe0e440c4d"
+    },
+    {
+      "path": "blog/how-product-thinking-creates-sustainable-business-growth/index.html",
+      "sha256": "17bd36b772317503b7174ba0fca448fb7ae403280a78580ab860b1d7b4a813fe"
+    },
+    {
+      "path": "blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/index.html",
+      "sha256": "b1a129513b7d93fb9372d428642a09626e8e46e7b44f3708227784951fbc7b4f"
+    },
+    {
+      "path": "blog/index.html",
+      "sha256": "29274a6b3ee3f31e05100aad333aa1e5d48b46c1655613d7ac4cbffc73606b76"
+    },
+    {
+      "path": "blog/what-digital-transformation-actually-means-for-smes/index.html",
+      "sha256": "31726881cd7aedeaa52fe5db47519e482593fe04beb60e3ce4d728590c081fef"
+    },
+    {
+      "path": "blog/why-most-brands-look-different-but-feel-the-same/index.html",
+      "sha256": "4e7fc46e4439fc6266375cb6675cd97dea98eec77c376f42ebccd3b00a7e9c64"
+    },
+    {
+      "path": "blog/why-software-development-alone-wont-solve-your-business-problems/index.html",
+      "sha256": "0498fe9750406ce0bf98d72bba7aeda125f5c5bc283e344df1c94d6b4164b39a"
+    },
+    {
+      "path": "blog/why-startups-waste-money-wrong-product/index.html",
+      "sha256": "9a1dead4f2edb4656f9dc9078731adedf23d907b800aa66a8a237d7e565e7bfc"
+    },
+    {
+      "path": "books/basics-of-graphic-design/index.html",
+      "sha256": "a193a6bf83e16b8473fb6520736737c7156a5b38f9cb5274166f39ef30ed77b2"
+    },
+    {
+      "path": "books/basics-of-graphic-design/read/index.html",
+      "sha256": "6138baeec3b5d340ac3e629fdeb78302a463b5082989b65ae5c201121f73ffab"
+    },
+    {
+      "path": "books/basics-of-visual-identity/index.html",
+      "sha256": "bfcc37779cbef3b9277b9d88abefcf69e414f1d84e15a4f8d38b24e30158e68d"
+    },
+    {
+      "path": "books/basics-of-visual-identity/read/index.html",
+      "sha256": "7e90080deb8199dc9b7c28c1231be9f80cb3539f0a09b25085d444027d011a01"
+    },
+    {
+      "path": "books/index.html",
+      "sha256": "50af9337bd3ff74c02ddfca61d8ad2e37c9f50b21448ec08a80483e67d87b0c2"
+    },
+    {
+      "path": "books/marketing-fundamentals/index.html",
+      "sha256": "3d6473ad501b9fcb94dec81daee1e47dc94edd1224406c78548cabdf2d231107"
+    },
+    {
+      "path": "books/marketing-fundamentals/read/index.html",
+      "sha256": "2ac0036daed43e306ab17197c4d264c2b4fd4ce9b913788155c9c35e2559d2de"
+    },
+    {
+      "path": "books/ui-ux-handbook/index.html",
+      "sha256": "ad339aa637b1ae39e3acf06c97f039e58fbb26588199e0a76f2fe7d1dbbef421"
+    },
+    {
+      "path": "build.sh",
+      "sha256": "bb8bc37658004f23032c7bb20d953e21289f68101a9b5ab6a942a4096940b0aa"
+    },
+    {
+      "path": "cart/index.html",
+      "sha256": "7af94091f3b7d0877e4c644661e6b57514dd7fc3a5322a3576746cb89da1e253"
+    },
+    {
+      "path": "case-studies/index.html",
+      "sha256": "0beb8e23af33202e2304a7abe8186210bc9c8954f96672d5fe163b8c3c160c80"
+    },
+    {
+      "path": "checkout/index.html",
+      "sha256": "e853398a3f98fc8b32879353a6631b3872ba535edc78f3b2a9ce07f426669658"
+    },
+    {
+      "path": "contact/index.html",
+      "sha256": "f988d46aabe4a34a5c719da3ecb5a980e5443d063fbeb68bd51eeec3414dee83"
+    },
+    {
+      "path": "cookie-policy/index.html",
+      "sha256": "d619e13eb522134b4fe91f3d7a028662005397b8cc79279466e00977dd92e025"
+    },
+    {
+      "path": "creative-services/index.html",
+      "sha256": "4bb1cc2d88a5d020c897f88ceadf07b7720286ace12dddf334cdd902896151ef"
+    },
+    {
+      "path": "dev-server.mjs",
+      "sha256": "9dd685c8b21465519deac2ec234d37d937d12f91a1fb937ab0bdcee7b0f61eaf"
+    },
+    {
+      "path": "erp/index.html",
+      "sha256": "f5414c5e6f9d5b3d92cd7bd91edc7fea9a65aa3f546ec98552880ca671768ff9"
+    },
+    {
+      "path": "forgot-password/index.html",
+      "sha256": "b3b7e198d1c30f13f77e439d26f5e4a0adb3ca4fd423b020e505dcc96a7de381"
+    },
+    {
+      "path": "healthcare/index.html",
+      "sha256": "72539b9c8dc37cb2dd4d8224e81e85a558258acb0624072234b5283cbd8af68f"
+    },
+    {
+      "path": "index.html",
+      "sha256": "7ad479bdbdd4df1fc7a42a4e690a362eee4c527b716890168d5c6777730b2451"
+    },
+    {
+      "path": "login/index.html",
+      "sha256": "3907b0c1429bb76ca373c239b18ff0481bccb651e9d4663155be86ba73804a15"
+    },
+    {
+      "path": "manus-routes.json",
+      "sha256": "4768d8163a0c986e7b3ad1823b93d639fe6426eb058be424c95a5964f1eb246a"
+    },
+    {
+      "path": "methodology/index.html",
+      "sha256": "e6a86b350fca8f7b741365b104c24008ac709d91d97449b28aecadb5cb6b564b"
+    },
+    {
+      "path": "our-story/index.html",
+      "sha256": "d2803b3f6ebefaca820b8ed407fdefbb0e7bc93e88a037c737a948d837862a91"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "770fbe3fcaca0eec8b081e9d723045eee655bb2b6a07f290a37b90371e87ada3"
+    },
+    {
+      "path": "package.json",
+      "sha256": "2b45117e38b17d06c8956af354875854e0cd937966420ab5079084ab74bda718"
+    },
+    {
+      "path": "partials/bottom.html",
+      "sha256": "343b80588666f52d071b31e86a31f0d301c0c505c099af29fee866dd2b2b7a0e"
+    },
+    {
+      "path": "partials/head.html",
+      "sha256": "e57752acd83f980c785513f0398f5ab3f556e8f9697bc7dc0fc2c90221ab2be6"
+    },
+    {
+      "path": "partials/top.html",
+      "sha256": "49401a96b984594903d461d5a6c13af5ceb4bc0c7350b639c96e492ebda6c80d"
+    },
+    {
+      "path": "playwright.config.mjs",
+      "sha256": "f8b6624ca0d6b85bc1aca166144ce470339bc35667286fa73721f78579295677"
+    },
+    {
+      "path": "pricing-faq/index.html",
+      "sha256": "a8358099f13a70be563538f4db14d0f274b913777ecf360d02f85d43b6cb108d"
+    },
+    {
+      "path": "privacy-policy/index.html",
+      "sha256": "13fe1850bd0f4b9502409ea892aaaf3857db2f8a5e95c8c0a78527c2aa43e312"
+    },
+    {
+      "path": "register/index.html",
+      "sha256": "2ded50b437e1953a0e9112a39aa709d769c8a08a1da51e0ba44797db9f07dd02"
+    },
+    {
+      "path": "reset-password/index.html",
+      "sha256": "6b983be1a2ca1f64a7508de96c51e5f0a998e10f433df119504cb6aad1036680"
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "2c80f3692f93014f1ef22d50474ceacacad18b82e1e0368e04d483fe7709eb56"
+    },
+    {
+      "path": "scripts/audit-text.py",
+      "sha256": "7aa4a6fab4f07e9add2e397f3c16da39af63e52a17d6e6a9e9f88b7ce5ab0182"
+    },
+    {
+      "path": "scripts/capture-completion.mjs",
+      "sha256": "b3f49ee824801fca50af20252509aab9c1b3092e25fc79d06d6f2e2bb2d76987"
+    },
+    {
+      "path": "scripts/check-generated.mjs",
+      "sha256": "f30d56f6ecb403e97d4c1c2cda8d962ccae60d71f8a78005ad1f77c552bd31ce"
+    },
+    {
+      "path": "scripts/check-links.mjs",
+      "sha256": "09609537bd7db5857b9c58337a2b308ef8bf0907497a610e99fef95884fb6896"
+    },
+    {
+      "path": "scripts/export-test-evidence.mjs",
+      "sha256": "ae7adb161a66568205162e4ff682d3ed83a44eac52d030b83c81cf6730977199"
+    },
+    {
+      "path": "scripts/gen-pages.py",
+      "sha256": "2b68089b0b6ff3133f04b88e34164e3b4a3b1db7b4abde1b2c6fd4dc9d18dd1c"
+    },
+    {
+      "path": "scripts/lib/_reorder.py",
+      "sha256": "eb5187bc0ee5305e44fc12aed6b0ed07040032b3753412761e28fa0dd6795aea"
+    },
+    {
+      "path": "scripts/lib/catalog.py",
+      "sha256": "62dd955e92eed334f7c735785a5757902bedafc959626199ea074b12e3edd270"
+    },
+    {
+      "path": "scripts/lib/h.py",
+      "sha256": "719a1d94bfa964919be5f3ea61350e72cb035b8793067dfc763708c1aa64140f"
+    },
+    {
+      "path": "scripts/lib/pages_about.py",
+      "sha256": "fb88cdc143c817bc025d85ec80d6f85aec751e1a6667899dc445d6579fc4f06c"
+    },
+    {
+      "path": "scripts/lib/pages_blog.py",
+      "sha256": "bb58fa7e0d5beeb62f3a60d654b8cd97dafd269d8decc70483f9630aa94c33dd"
+    },
+    {
+      "path": "scripts/lib/pages_books.py",
+      "sha256": "04792effc9d205e4d071bc8aa70a0d3b1b4e50367d3cdf5427409189d7a85779"
+    },
+    {
+      "path": "scripts/lib/pages_contact.py",
+      "sha256": "fbad33cb1e73729e1765ded0b8404f69316a1634afa5666ccaec658d15df7730"
+    },
+    {
+      "path": "scripts/lib/pages_creative.py",
+      "sha256": "834112af21407a6c8059182c109d2f2c3cc99c3804bd3003c3939b44e9542977"
+    },
+    {
+      "path": "scripts/lib/pages_healthcare.py",
+      "sha256": "9c229be990ed229fafde9df2e36f02e0d853089e6a377b50489837457c24376a"
+    },
+    {
+      "path": "scripts/lib/pages_legal.py",
+      "sha256": "e7197edc443c393475d36a2387442ee692abc5acbf7c9d7ba004a1dbcb0d371b"
+    },
+    {
+      "path": "scripts/lib/pages_methodology.py",
+      "sha256": "c37b48fc3c7886b186ec5d7984efee11fe132f0d4a8b1443a84aba5ebb9879f3"
+    },
+    {
+      "path": "scripts/lib/pages_pricing.py",
+      "sha256": "1a426ecb7e2ec8362352c831fa73318a038c17b678aa67f8c6c86b872780b25f"
+    },
+    {
+      "path": "scripts/lib/pages_services.py",
+      "sha256": "073cc4ed8c7467e6a75e8a3c6d36f971e871c404007ae3cc0e05fd9520ee6c35"
+    },
+    {
+      "path": "scripts/lib/pages_shop.py",
+      "sha256": "6abd22a71cd6abe0ecb97a635e74e5f6436a4e2816269f0619cc0b980c8ba8ce"
+    },
+    {
+      "path": "scripts/lib/pages_story.py",
+      "sha256": "2eaa780634d9200644f3a08ba9f9f480fb206830c1c4d5691757e2914f47f1f0"
+    },
+    {
+      "path": "scripts/lib/pages_team.py",
+      "sha256": "89688219e763e0c89c093a01f46fdc7f436d3115a976f7345dffc681bed1fccc"
+    },
+    {
+      "path": "scripts/lib/pages_technology.py",
+      "sha256": "a4194512803bb3aab15926ff5aa3ed2dcec171dabfc16a9620ad8cff339dbbd9"
+    },
+    {
+      "path": "scripts/lib/pages_work.py",
+      "sha256": "c9e92d1e3185f826adf316ed65090dc5a285d08665daccfd4deb5c8573456221"
+    },
+    {
+      "path": "scripts/lib/posts/__init__.py",
+      "sha256": "945207e528cd2c2c35adb10692c04986d162d66349c0c086fcfb978fab038188"
+    },
+    {
+      "path": "scripts/lib/posts/p01_wrong_product.py",
+      "sha256": "5f6e01208c2d3b699ef9bea59adb9ef11fe3c89b88766696a17b1ce1563d5e79"
+    },
+    {
+      "path": "scripts/lib/posts/p02_idea_to_product.py",
+      "sha256": "873fed681a50b5a05653aa8b70fc42604906cd108416253e74df9b659c52d44c"
+    },
+    {
+      "path": "scripts/lib/posts/p03_software_alone.py",
+      "sha256": "8606d8e5e23116713d29ea0391c7b7f04aeabbacd5ddb22fc80c84d979a7204b"
+    },
+    {
+      "path": "scripts/lib/posts/p04_digital_transformation_smes.py",
+      "sha256": "27c00c970cd70034299aa228431d8ecdea5bbd6ab03aa2177f782d1ca24d9685"
+    },
+    {
+      "path": "scripts/lib/posts/p05_product_thinking.py",
+      "sha256": "67cab71b23cf9a7ce25dfea7b1b426a367dc6f84d85d8f6cfb9c2cac34520ddc"
+    },
+    {
+      "path": "scripts/lib/posts/p06_brands_feel_the_same.py",
+      "sha256": "810575065fdada144333bead7468136145da5d036ea3dd6dd051089d20cde648"
+    },
+    {
+      "path": "scripts/lib/posts/p08_design_systems.py",
+      "sha256": "4b05684036188a6b33686f65891c9e6d8a7d0812c8bb1a6bcacd82a8196c019b"
+    },
+    {
+      "path": "scripts/lib/posts/p10_experience_design.py",
+      "sha256": "db3abd8af5f189223f9af71d70580181949cac781c3686669fa6ede9375ab34a"
+    },
+    {
+      "path": "scripts/make-og.mjs",
+      "sha256": "5317f274de89473d16c4ff99d471b3d8012fe54a0bd36b7a538010ad9581d049"
+    },
+    {
+      "path": "scripts/sync-chrome.mjs",
+      "sha256": "5c8a07fef086139bae473365c4ecaf26b2c38bfd332ab64b05fa6326238e44d3"
+    },
+    {
+      "path": "services/index.html",
+      "sha256": "abcf2f99af4d20fb7d4cee91dadc1f646e022b32d211b15af60eb08af62881fd"
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "d4d81376c291aba75b2722a01a89fd42a7ec715dd2ee250a341b4f0dcd1a1579"
+    },
+    {
+      "path": "team/index.html",
+      "sha256": "a3e6da3856773e9e85e06fff0b6597ba44a3c1c225da2f8628eea780f4b13c76"
+    },
+    {
+      "path": "technology-services/index.html",
+      "sha256": "d9b097a4beb55cd3be3c615aa49aeb63f54f76c114becd20e27527153ce539f8"
+    },
+    {
+      "path": "terms-of-use/index.html",
+      "sha256": "c160a4f722d6e547eb5316b1dbb38e7ce4f97e18b633c87e88549be79efefe84"
+    },
+    {
+      "path": "tests/accessibility.spec.mjs",
+      "sha256": "b86902d1cd6a40f4053b2e002962917e105291bb2e0bf19723a970d1e073da08"
+    },
+    {
+      "path": "tests/flows.spec.mjs",
+      "sha256": "7d9551bbb1468fbb11b9a80682021f0573d2bb15a6d53f8a866db7ff754a5fe8"
+    },
+    {
+      "path": "tests/helpers.mjs",
+      "sha256": "235b8bf6d34dc645ff249f2c265c888cba2b694982d353af814f00b5d77a3321"
+    },
+    {
+      "path": "tests/matrix.spec.mjs",
+      "sha256": "08d9f67d84af85067b248a18960f66314d49cfc6aba555170c8c70f21889d510"
+    },
+    {
+      "path": "thank-you/index.html",
+      "sha256": "e896bc75cf3df2f6c6987ea1700a31b875b467b322ce8cb37b411a34ea1875b5"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "44a610e09618692f84d4f0e1475eed7a7e0573099b0c1eb3a1b2683baf455d41"
+    }
+  ]
+}

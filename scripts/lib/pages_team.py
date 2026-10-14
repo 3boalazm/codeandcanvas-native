@@ -110,7 +110,7 @@ def build():
             <p class="section__lead" data-ar="نعمل مع مستقلين موهوبين في التصميم والهندسة والمحتوى من المنطقة. أخبرنا بقصتك — نردّ على كل طلب جادّ.">We work with talented freelancers in design, engineering, and content across the region. Tell us your story — every serious application gets a reply.</p>
             <ul class="hero__chips" aria-label="What we look for" data-ar-label="ما الذي نبحث عنه"><li>{icon('pen')}<span data-ar="التصميم">Design</span></li><li>{icon('layers')}<span data-ar="الهندسة">Engineering</span></li><li>{icon('sparkles')}<span data-ar="المحتوى والإنتاج">Content &amp; Production</span></li></ul>
           </header>
-          <form class="form-card glass form" data-form="contact" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Freelancer application — Code &amp; Canvas" data-endpoint="" novalidate data-reveal>
+          <form class="form-card glass form" data-form="contact" data-integration="career" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Freelancer application — Code &amp; Canvas" data-endpoint="" novalidate data-reveal>
             <h3 data-ar="الطلب">Career</h3>
             <p class="lead" data-ar="نموذج حواري — املأ ما يناسبك وأرسل.">Conversational form — fill what applies and send.</p>
             <input class="hp" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" />

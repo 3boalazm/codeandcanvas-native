@@ -13,6 +13,6 @@ cp -R assets dist/
 for d in */; do
   d="${d%/}"
   case "$d" in assets|dist|docs|node_modules|partials|scripts) continue ;; esac
-  [ -d "$d" ] && cp -R "$d" dist/
+  if [ -f "$d/index.html" ]; then cp -R "$d" dist/; fi
 done
 printf 'Static site built in dist/\n'

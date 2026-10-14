@@ -37,7 +37,8 @@
   /* ------------------------------------------------------------------ */
   /*  FAQ accordion                                                      */
   /* ------------------------------------------------------------------ */
-  $$('.faq').forEach((list) => {
+  $$('.faq').forEach((list, listIndex) => {
+    $$('.faq__item', list).forEach((item, i) => { const q = $('.faq__q', item), a = $('.faq__a', item); if (!q || !a) return; a.id ||= `faq-answer-${listIndex}-${i}`; q.setAttribute('aria-controls', a.id); });
     list.addEventListener('click', (e) => {
       const q = e.target.closest('.faq__q');
       if (!q || !list.contains(q)) return;
@@ -65,12 +66,20 @@
   $$('[data-tabs]').forEach((tabs) => {
     const scope = tabs.dataset.tabs;
     const panels = $$(`[data-panel][data-scope="${scope}"]`);
+    $$('.tab', tabs).forEach((tab) => { const panel = panels.find(p => p.dataset.panel === tab.dataset.tab); if (!panel) return; tab.id ||= `tab-${scope}-${tab.dataset.tab}`; panel.id ||= `panel-${scope}-${tab.dataset.tab}`; tab.setAttribute('aria-controls', panel.id); panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', tab.id); });
     const activate = (key) => {
-      $$('.tab', tabs).forEach((t) => { const on = t.dataset.tab === key; t.classList.toggle('is-active', on); t.setAttribute('aria-selected', String(on)); });
+      $$('.tab', tabs).forEach((t) => { const on = t.dataset.tab === key; t.classList.toggle('is-active', on); t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
       panels.forEach((p) => { p.hidden = p.dataset.panel !== key; if (!p.hidden) CC.refresh(); });
       moveTabIndicator(tabs);
     };
     tabs.addEventListener('click', (e) => { const t = e.target.closest('.tab'); if (t) activate(t.dataset.tab); });
+    tabs.addEventListener('keydown', (e) => {
+      const list = $$('.tab', tabs), index = list.indexOf(document.activeElement);
+      if (index < 0 || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
+      e.preventDefault(); const dir = root.dir === 'rtl' ? -1 : 1;
+      const next = e.key === 'Home' ? 0 : e.key === 'End' ? list.length - 1 : (index + (e.key === 'ArrowRight' ? dir : -dir) + list.length) % list.length;
+      activate(list[next].dataset.tab); list[next].focus();
+    });
     const first = $('.tab.is-active', tabs) || $('.tab', tabs);
     if (first) activate(first.dataset.tab);
     addEventListener('resize', () => moveTabIndicator(tabs), { passive: true });
@@ -93,7 +102,7 @@
       });
       $$('[data-filter-empty]').forEach((el) => { el.hidden = items.some((it) => !it.hidden); });
     };
-    group.addEventListener('click', (e) => { const b = e.target.closest('[data-filter]'); if (b) apply(b.dataset.filter); });
+    group.addEventListener('click', (e) => { const b = e.target.closest('[data-filter]'); if (b) { apply(b.dataset.filter); CC.track('filter', { filter: b.dataset.filter }); } });
     const fromHash = location.hash.replace('#', '');
     if (fromHash && buttons.some((b) => b.dataset.filter === fromHash)) apply(fromHash);
   });
@@ -101,26 +110,40 @@
   /* ------------------------------------------------------------------ */
   /*  Forms                                                              */
   /*                                                                     */
-  /*  <form data-form="contact" data-endpoint="https://…" data-whatsapp="966545520750" data-mail="info@…">
-  /*    · data-endpoint  — optional JSON POST target (Formspree, Fluent Forms API, a Worker, …).
-  /*                       Leave empty / "#" to use the WhatsApp + e-mail fallback only.
+  /*  <form data-form="contact" data-endpoint="/api/contact" data-whatsapp="966545520750" data-mail="info@…">
+  /*    · data-endpoint  — optional same-origin /api/ JSON POST target, accepted:true contract.
+  /*                       Leave empty to use the explicit WhatsApp / email draft handoff.
   /*    · data-form="demo" — UI shell (auth / cart / checkout): validates, then shows a
   /*                       "connect a backend" notice instead of sending anything.
   /* ------------------------------------------------------------------ */
   const t = (en, ar) => (CC.lang === 'ar' ? ar : en);
 
   function validate(form) {
-    let ok = true;
-    $$('.field', form).forEach((f) => {
-      const input = $('input, select, textarea', f);
-      if (!input) return;
+    let first = null;
+    Array.from(form.elements).forEach((input, i) => {
+      if (!input.willValidate) return;
+      const group = input.closest('.field, .check') || input.parentElement;
       let valid = input.checkValidity();
-      if (valid && input.dataset.match) { const other = $(input.dataset.match, form); valid = !other || other.value === input.value; }
-      f.classList.toggle('is-invalid', !valid);
+      if (input.minLength > 0 && input.value && input.value.length < input.minLength) valid = false;
+      if (valid && input.dataset.match) valid = input.value === $(input.dataset.match, form)?.value;
+      group?.classList.toggle('is-invalid', !valid);
       input.setAttribute('aria-invalid', String(!valid));
-      if (!valid && ok) { input.focus(); ok = false; }
+      let error = group?.querySelector('.field__err');
+      if (!error && !valid) {
+        error = document.createElement('span'); error.className = 'field__err';
+        error.textContent = input.type === 'checkbox' ? t('Please confirm your agreement to continue.', 'يرجى تأكيد موافقتك للمتابعة.') : t('Please check this field.', 'يرجى مراجعة هذا الحقل.');
+        group?.append(error);
+      }
+      if (error) {
+        error.id ||= `${form.id || 'form-' + Array.from(document.forms).indexOf(form)}-error-${i}`;
+        const desc = new Set((input.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean));
+        desc.add(error.id); input.setAttribute('aria-describedby', [...desc].join(' '));
+        error.hidden = valid;
+      }
+      if (!valid && !first) first = input;
     });
-    return ok;
+    first?.focus();
+    return !first;
   }
 
   if (window.CC) CC.validateForm = validate;
@@ -147,43 +170,46 @@
   }
 
   async function submitContact(form, data) {
-    const endpoint = (form.dataset.endpoint || '').trim();
+    const kind = form.dataset.integration || 'contact';
+    const cfg = window.CC_CONFIG || {};
+    const endpoint = (form.dataset.endpoint || cfg[`${kind}Endpoint`] || (kind === 'books' ? cfg.contactEndpoint : '') || '').trim();
+    const subject = encodeURIComponent(form.dataset.subject || 'Website inquiry — Code & Canvas');
+    const bodyTxt = composeMessage(data);
     const wa = (form.dataset.whatsapp || '').replace(/\D/g, '');
     const mail = form.dataset.mail || 'info@codeandcanvas.net';
-    const subject = encodeURIComponent(form.dataset.subject || `Website inquiry — ${data.inquiry || 'General'}`);
-    const bodyTxt = composeMessage(data);
     const waLink = wa ? `https://wa.me/${wa}?text=${encodeURIComponent(bodyTxt)}` : '';
     const mailLink = `mailto:${mail}?subject=${subject}&body=${encodeURIComponent(bodyTxt)}`;
-    const fallback = `<p>${esc(t('You can also send the same message directly:', 'يمكنك أيضًا إرسال الرسالة نفسها مباشرة:'))}</p><p>${waLink ? `<a href="${waLink}" target="_blank" rel="noopener">WhatsApp</a> · ` : ''}<a href="${mailLink}">${esc(mail)}</a></p>`;
-
-    if (endpoint && endpoint !== '#') {
+    const fallback = `<p>${esc(t('Send it yourself using one of these channels:', 'أرسل الرسالة بنفسك عبر إحدى القنوات:'))}</p><p>${waLink ? `<a href="${esc(waLink)}" target="_blank" rel="noopener">WhatsApp</a> · ` : ''}<a href="${esc(mailLink)}">${esc(mail)}</a></p>`;
+    if (endpoint) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), cfg.requestTimeoutMs || 12000);
       try {
-        const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ ...data, page: location.href, lang: CC.lang }) });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        showStatus(form, 'ok', `<strong>${esc(t('Thank you — your message is in.', 'شكرًا لك — وصلتنا رسالتك.'))}</strong> ${esc(t('We reply within one business day (KSA / Egypt hours).', 'نرد خلال يوم عمل واحد (بتوقيت السعودية / مصر).'))}`);
-        form.reset();
-        return;
-      } catch (err) {
-        showStatus(form, 'err', `<strong>${esc(t('The form service did not respond.', 'لم تستجب خدمة النموذج.'))}</strong> ${fallback}`);
-        return;
-      }
+        // Never POST personal information to arbitrary or malformed configured URLs.
+        if (!endpoint.startsWith('/api/') || new URL(endpoint, location.origin).origin !== location.origin) throw new Error('Invalid endpoint');
+        const res = await fetch(endpoint, { method: 'POST', credentials: 'same-origin', signal: controller.signal,
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ ...data, page: location.pathname, lang: CC.lang, kind }) });
+        const result = await res.json();
+        if (!res.ok || result.accepted !== true) throw new Error('Request not accepted');
+        CC.track('form-success', { form: kind });
+        showStatus(form, 'ok', `<strong>${esc(t('Your request was received.', 'تم استلام طلبك.'))}</strong> ${esc(t('We will follow up using your contact details.', 'سنتابع معك عبر بيانات التواصل التي أرسلتها.'))}`);
+        form.reset(); return 'accepted';
+      } catch {
+        CC.track('form-error', { form: kind });
+        showStatus(form, 'err', `<strong>${esc(t('We could not confirm delivery. Please try again or contact us directly.', 'لم نتمكن من تأكيد الاستلام. حاول مجددًا أو تواصل معنا مباشرة.'))}</strong>${fallback}`);
+        return 'failed';
+      } finally { clearTimeout(timer); }
     }
-    // No endpoint configured → hand the message to WhatsApp (or e-mail) with the fields pre-filled.
-    const target = waLink || mailLink;
-    window.open(target, '_blank', 'noopener');
-    showStatus(form, 'ok', `<strong>${esc(t('Opening your message…', 'جارٍ فتح رسالتك…'))}</strong> ${esc(t('If nothing opened, use one of these links:', 'إن لم يُفتح شيء، استخدم أحد هذين الرابطين:'))}${fallback}`);
+    CC.track('form-handoff', { form: kind, channel: wa ? 'whatsapp' : 'email' });
+    window.open(waLink || mailLink, '_blank', 'noopener');
+    showStatus(form, 'ok', `<strong>${esc(t('Your draft is ready — it has not been sent yet.', 'مسودة رسالتك جاهزة — لم تُرسل بعد.'))}</strong> ${esc(t('Finish sending in WhatsApp or your email app. Opening this link does not confirm a booking or subscription.', 'أكمل الإرسال في واتساب أو تطبيق البريد. فتح الرابط لا يؤكد حجزًا أو اشتراكًا.'))}${fallback}`);
+    return 'handoff';
   }
+  CC.submitContact = submitContact;
 
   function submitDemo(form) {
-    const next = form.dataset.next;
-    const note = form.dataset.note || t('UI shell — this action needs the backend connected (see README › Integration points).', 'واجهة فقط — هذا الإجراء يحتاج ربط الباك-إند (انظر README › Integration points).');
-    if (next) {
-      try { sessionStorage.setItem('cc-demo-note', note); } catch { /* ignore */ }
-      location.href = next;
-      return;
-    }
-    showStatus(form, 'ok', `<strong>${esc(t('Looks good.', 'تمام.'))}</strong> ${esc(note)}`);
-    CC.toast(t('UI shell: no backend connected yet', 'واجهة فقط: لم يُربط الباك-إند بعد'));
+    // No simulated sign-in, password reset, order or entitlement in the public build.
+    showStatus(form, 'err', `<strong>${esc(t('Online accounts are not available yet.', 'الحسابات الإلكترونية غير متاحة حاليًا.'))}</strong> ${esc(t('Nothing was submitted or changed. You can read the free previews or contact us for help.', 'لم تُرسل البيانات ولم يتغير شيء. يمكنك قراءة المعاينات المجانية أو التواصل معنا للمساعدة.'))} <a href="/books/">${esc(t('Explore previews', 'تصفّح المعاينات'))}</a>`);
   }
 
 
@@ -193,24 +219,28 @@
   /* ------------------------------------------------------------------ */
   // Legacy WordPress deep-link: /about#book → booking card now lives on /contact/#book
   if (location.hash === '#book' && !$('#book')) location.replace('/contact/#book');
-  const bookUrl = ($('#book')?.dataset.bookingUrl || '').trim();
-  if (bookUrl) $$('[data-book]').forEach((a) => { a.href = bookUrl; a.target = '_blank'; a.rel = 'noopener'; });
+  const configuredBooking = ($('#book')?.dataset.bookingUrl || window.CC_CONFIG?.bookingUrl || '').trim();
+  let bookUrl = '';
+  try { const u = new URL(configuredBooking); if (u.protocol === 'https:' && !u.username && !u.password) bookUrl = u.href; } catch { /* keep manual booking link */ }
+  if (bookUrl) $$('[data-book]').forEach((a) => { const url = new URL(bookUrl); const service = new URLSearchParams(location.search).get('inquiry'); if (/^(AB|MA|HC|CC)-\d{2}$/.test(service || '')) url.searchParams.set('service', service); a.href = url.href; a.target = '_blank'; a.rel = 'noopener'; });
 
   $$('form[data-form]').forEach((form) => {
     form.noValidate = true;
-    $$('input, select, textarea', form).forEach((i) => i.addEventListener('input', () => { i.closest('.field')?.classList.remove('is-invalid'); i.removeAttribute('aria-invalid'); }));
+    $$('input, select, textarea', form).forEach((i) => i.addEventListener('input', () => { i.closest('.field, .check')?.classList.remove('is-invalid'); i.removeAttribute('aria-invalid'); (i.getAttribute('aria-describedby') || '').split(/\s+/).forEach(id => { const error = document.getElementById(id); if (error?.classList.contains('field__err')) error.hidden = true; }); }));
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (form.dataset.submitting === 'true') return;
       if ($('[name="_hp"]', form)?.value) return; // honeypot
       if (!validate(form)) return;
       const btn = $('[type="submit"]', form);
-      btn?.classList.add('is-busy');
+      form.dataset.submitting = 'true';
+      if (btn) { btn.disabled = true; btn.classList.add('is-busy'); }
       try {
         const data = serialize(form);
-        if (window.CC && CC.track) CC.track('form-submit', { form: form.dataset.form || 'form', inquiry: data.inquiry || '' });
+        if (window.CC && CC.track) CC.track('form-attempt', { form: form.dataset.integration || form.dataset.form || 'contact', service: (data.inquiry || '').match(/^(AB|MA|HC|CC)-\d{2}/)?.[0] || '' });
         if (form.dataset.form === 'contact') await submitContact(form, data);
         else submitDemo(form, data);
-      } finally { btn?.classList.remove('is-busy'); }
+      } finally { delete form.dataset.submitting; if (btn) { btn.disabled = false; btn.classList.remove('is-busy'); } }
     });
   });
 

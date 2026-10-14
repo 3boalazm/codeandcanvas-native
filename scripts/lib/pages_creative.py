@@ -185,11 +185,7 @@ def build():
         </ul>
       </section>
 
-      {closing("CAN'T WAIT TO HEAR FROM YOU", 'نتطلع لسماعك',
-               '<span data-ar="لا نطيق الانتظار">Can’t Wait To</span><br /><span class="grad-text" data-ar="لنسمع منك.">Hear From You.</span>',
-               'Book an appointment, get started with a brief, or browse the full catalogue of services.',
-               'احجز موعدًا، أو ابدأ بموجز مختصر، أو تصفّح كتالوج الخدمات الكامل.',
-               [btn('Book an Appointment', 'احجز موعدًا', '/contact/#book'), btn('Get Started', 'ابدأ الآن', '/contact/', 'glass'), btn('Full Services', 'كل الخدمات', '/services/', 'ghost', 'arrow')])}
+
 '''
     return [page('/creative-services/', title='Creative Services — Code & Canvas', title_ar='الخدمات الإبداعية — Code & Canvas',
                  desc='Identity built as an operating system: 10 creative services — logo sprint, brand identity essentials, full brand system, design systems, web, print, production, and retainers — led by Mustafa Aboalazm. Bilingual AR/EN.',

@@ -144,6 +144,7 @@
         const key = `__en_${dst}`;
         if (el[key] === undefined) el[key] = el.getAttribute(dst) ?? '';
         el.setAttribute(dst, useAr ? el.getAttribute(src) : el[key]);
+        if (el.tagName === 'OPTGROUP' && src === 'data-ar-label') { el.__groupLabel ??= el.label; el.label = useAr ? el.getAttribute(src) : el.__groupLabel; }
       });
     });
   }
@@ -374,25 +375,68 @@
 
   /* ------------------------------------------------------------------ */
   /*  Measurement hook (provider-agnostic)                               */
-  /*  CC.track(name, props) → window.dataLayer (GTM / GA4 ready) + a      */
+  /*  CC.track(name, props) → bounded local diagnostic window.dataLayer + a      */
   /*  `cc:track` DOM event. No third-party script ships with the site;    */
-  /*  wire a provider by listening to the event or loading GTM.           */
+  /*  optional same-origin delivery requires consent; see docs/INTEGRATIONS.md.           */
   /*  Elements opt in with data-track="name" (+ data-track-* props).      */
   /* ------------------------------------------------------------------ */
+  const eventKeys = new Set(['id', 'service', 'from', 'form', 'channel', 'filter', 'to']);
   function track(name, props = {}) {
-    const payload = { event: 'cc', name, lang, path: location.pathname, ...props };
-    try { (window.dataLayer = window.dataLayer || []).push(payload); } catch (e) { /* ignore */ }
-    try { document.dispatchEvent(new CustomEvent('cc:track', { detail: payload })); } catch (e) { /* ignore */ }
+    const payload = { event: 'cc', name: String(name).slice(0, 50), lang, path: location.pathname };
+    // No form values, email, query strings, full URLs, order IDs, notes or billing data.
+    Object.entries(props).forEach(([key, value]) => {
+      if (eventKeys.has(key) && /^[a-zA-Z0-9_./-]{1,80}$/.test(String(value))) payload[key] = String(value);
+    });
+    try {
+      const queue = window.dataLayer = Array.isArray(window.dataLayer) ? window.dataLayer : [];
+      queue.push(payload); if (queue.length > 100) queue.splice(0, queue.length - 100);
+    } catch { /* optional local diagnostics */ }
+    try { document.dispatchEvent(new CustomEvent('cc:track', { detail: payload })); } catch { /* optional */ }
+    const endpoint = window.CC_CONFIG?.analyticsEndpoint;
+    const permitted = store.get('cc-analytics-consent') === 'granted' && navigator.doNotTrack !== '1' && !navigator.globalPrivacyControl;
+    if (permitted && typeof endpoint === 'string' && endpoint.startsWith('/api/') && new URL(endpoint, location.origin).origin === location.origin) {
+      fetch(endpoint, { method: 'POST', credentials: 'same-origin', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).catch(() => {});
+    }
     return payload;
   }
   document.addEventListener('click', (e) => {
-    const el = e.target.closest('[data-track]');
+    const el = e.target.closest('a, [data-track]');
     if (!el) return;
     const props = {};
     Object.keys(el.dataset).forEach((k) => { if (k !== 'track' && k.startsWith('track')) props[k.slice(5).toLowerCase()] = el.dataset[k]; });
-    if (el.href) props.href = el.getAttribute('href');
-    track(el.dataset.track, props);
+    let name = el.dataset.track;
+    const href = el.getAttribute('href') || '';
+    const url = href ? new URL(href, location.href) : null;
+    if (!name && url) {
+      if (url.hostname === 'wa.me') name = 'whatsapp';
+      else if (url.protocol === 'mailto:') name = 'email';
+      else if (url.protocol === 'tel:') name = 'phone';
+      else if (url.origin === location.origin && url.pathname === '/contact/') name = url.hash === '#book' ? 'book-call' : 'contact';
+      else if (el.closest('.svc, .sdetail, .pkg')) name = 'service-detail';
+      else if (el.closest('.nav, .footer')) name = 'navigation';
+    }
+    if (!name) return;
+    props.from ||= el.closest('section[id]')?.id || (el.closest('.nav') ? 'header' : el.closest('.footer') ? 'footer' : 'page');
+    const service = url?.searchParams.get('inquiry') || el.closest('.sdetail')?.id;
+    if (/^(AB|MA|HC|CC)-\d{2}$/i.test(service || '')) props.service = service.toUpperCase();
+    track(name, props);
   }, { capture: true, passive: true });
+
+  // Optional first-party collector. Consent is required; no provider is bundled.
+  if (window.CC_CONFIG?.analyticsEndpoint) {
+    const bar = document.createElement('aside'); bar.className = 'consent-bar glass'; bar.setAttribute('aria-label', 'Usage measurement');
+    const settings = document.createElement('button'); settings.type = 'button'; settings.className = 'text-link';
+    const renderConsent = () => {
+      const ar = lang === 'ar';
+      settings.textContent = ar ? 'إعدادات قياس الاستخدام' : 'Measurement settings';
+      bar.setAttribute('aria-label', ar ? 'قياس الاستخدام' : 'Usage measurement');
+      bar.innerHTML = `<p>${ar ? 'هل تسمح بقياس استخدام الموقع؟ لا نرسل بيانات النماذج أو محتوى رسائلك. يمكنك تغيير اختيارك من التذييل.' : 'Allow usage measurement? We never send form values or message content. Change your choice in the footer.'}</p><div class="btn-row"><button type="button" class="btn btn--primary" data-choice="granted">${ar ? 'أوافق' : 'Allow'}</button><button type="button" class="btn btn--glass" data-choice="denied">${ar ? 'لا أوافق' : 'Decline'}</button></div>`;
+      bar.hidden = !!store.get('cc-analytics-consent') || navigator.doNotTrack === '1' || !!navigator.globalPrivacyControl;
+    };
+    bar.addEventListener('click', (e) => { const b = e.target.closest('[data-choice]'); if (!b) return; store.set('cc-analytics-consent', b.dataset.choice); bar.hidden = true; settings.focus(); if (b.dataset.choice === 'granted') track('page-view'); });
+    settings.addEventListener('click', () => { bar.hidden = false; bar.querySelector('button')?.focus(); });
+    document.body.append(bar); $('.footer__bottom')?.append(settings); listeners.push(renderConsent); renderConsent();
+  }
 
   let toastTimer;
   function toast(msg) {
@@ -453,6 +497,7 @@
     bindScroll();
     startPreloader();
     document.documentElement.classList.remove('i18n-pending');
+    track('page-view');
   }
 
   window.CC = {

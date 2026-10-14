@@ -1,0 +1,62 @@
+{
+  "browser": "153.0.8010.0",
+  "shots": [
+    {
+      "name": "home-en-desktop",
+      "route": "/",
+      "lang": "en",
+      "width": 1440,
+      "height": 900,
+      "scrollY": 0
+    },
+    {
+      "name": "home-ar-mobile",
+      "route": "/",
+      "lang": "ar",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0
+    },
+    {
+      "name": "home-ar-320",
+      "route": "/",
+      "lang": "ar",
+      "width": 320,
+      "height": 900,
+      "scrollY": 0
+    },
+    {
+      "name": "home-work-en",
+      "route": "/",
+      "lang": "en",
+      "width": 1440,
+      "height": 900,
+      "scrollY": 633
+    },
+    {
+      "name": "case-study-ar",
+      "route": "/case-studies/",
+      "lang": "ar",
+      "width": 390,
+      "height": 844,
+      "scrollY": 1432
+    },
+    {
+      "name": "contact-ar",
+      "route": "/contact/?inquiry=HC-03",
+      "lang": "ar",
+      "width": 390,
+      "height": 844,
+      "scrollY": 403
+    },
+    {
+      "name": "reader-ar",
+      "route": "/books/marketing-fundamentals/read/",
+      "lang": "ar",
+      "width": 1440,
+      "height": 900,
+      "scrollY": 0
+    }
+  ],
+  "note": "Viewport captures with real self-hosted fonts, reduced motion, external network aborted. No production or physical-device claim."
+}

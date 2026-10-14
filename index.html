@@ -14,24 +14,26 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/canvasone-touch.css" />
     <title>Code & Canvas — Business Development, By Design</title>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-atmosphere" aria-hidden="true">
+      <span class="site-atmosphere__orb site-atmosphere__orb--violet"></span>
+      <span class="site-atmosphere__orb site-atmosphere__orb--teal"></span>
+      <span class="site-atmosphere__grid"></span>
+      <span class="site-atmosphere__grain"></span>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><i class="scroll-progress__bar"></i></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="site-header" id="site-header">
       <div class="nav-shell">
         <a class="brand" href="#top" aria-label="Code & Canvas home">
-          <span class="brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none">
-              <rect x="4.5" y="4.5" width="39" height="39" rx="13" stroke="currentColor" stroke-width="1.7" />
-              <path d="M18.5 17.5 12.5 24l6 6.5M29.5 17.5l6 6.5-6 6.5M26.5 14.5l-5 19" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M34.5 9.5v5m-2.5-2.5h5" stroke="#57E2D2" stroke-width="1.5" stroke-linecap="round" />
-            </svg>
-          </span>
-          <span class="brand__wordmark">Code <span>&amp;</span> Canvas</span>
+          <img class="brand__logo" src="/assets/brand/logo-white-horizontal.svg" alt="" width="130" height="54" />
         </a>
 
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
@@ -61,20 +63,61 @@
           <div class="hero__grain"></div>
         </div>
         <div class="hero__content wrap">
-          <p class="eyebrow hero__eyebrow"><span class="eyebrow__dot"></span>MENA · Brand · Technology · Transformation · Data</p>
-          <h1 id="hero-title">Business Development<br /><span>By <em>Design</em></span></h1>
-          <p class="hero__thesis"><span>BD</span><i></i>The core discipline behind every engagement</p>
-          <ul class="hero__disciplines" aria-label="Our disciplines">
-            <li><span></span>Brand Identity</li>
-            <li><span></span>Enterprise Architecture</li>
-            <li><span></span>Digital Transformation</li>
-            <li><span></span>Data &amp; Analytics</li>
-          </ul>
-          <div class="hero__actions">
-            <a class="button button--outline" href="https://codeandcanvas.net/our-story">Our profile</a>
-            <a class="button button--outline button--teal" href="#solutions">Our services</a>
-            <a class="button button--quiet" href="#intro"><span aria-hidden="true">↓</span> Learn more</a>
+          <div class="hero__copy">
+            <p class="eyebrow hero__eyebrow"><span class="eyebrow__dot"></span>MENA · Brand · Technology · Transformation · Data</p>
+            <h1 id="hero-title">Business Development<br /><span>By <em>Design</em></span></h1>
+            <p class="hero__thesis"><span>BD</span><i></i>The core discipline behind every engagement</p>
+            <ul class="hero__disciplines" aria-label="Our disciplines">
+              <li><span></span>Brand Identity</li>
+              <li><span></span>Enterprise Architecture</li>
+              <li><span></span>Digital Transformation</li>
+              <li><span></span>Data &amp; Analytics</li>
+            </ul>
+            <div class="hero__actions">
+              <a class="button button--outline" href="https://codeandcanvas.net/our-story">Our profile</a>
+              <a class="button button--outline button--teal" href="#solutions">Our services</a>
+              <a class="button button--quiet" href="#intro"><span aria-hidden="true">↓</span> Learn more</a>
+            </div>
           </div>
+          <aside class="hero__visual" aria-hidden="true">
+            <div class="studio-board">
+              <div class="studio-board__chrome">
+                <span class="studio-board__lights"><i></i><i></i><i></i></span>
+                <span class="studio-board__brand">C&amp;C / ENGAGEMENT FLOW</span>
+                <span class="studio-board__status"><i></i> BUSINESS-FIRST</span>
+              </div>
+              <div class="studio-board__heading">
+                <p class="studio-board__kicker">THE C&amp;C APPROACH</p>
+                <p class="studio-board__title">Start with the<br /><span>outcome.</span></p>
+                <p class="studio-board__lead">Strategy, design, and engineering — around one business goal.</p>
+              </div>
+              <div class="studio-board__flow">
+                <article class="studio-stage">
+                  <span class="studio-stage__number">01</span><span class="studio-stage__label">LISTEN</span>
+                  <strong>Understand the outcome</strong><small>30 minutes · no pressure</small>
+                </article>
+                <article class="studio-stage">
+                  <span class="studio-stage__number">02</span><span class="studio-stage__label">SHAPE</span>
+                  <strong>Set a clear scope</strong><small>Deliverables and milestones</small>
+                </article>
+                <article class="studio-stage">
+                  <span class="studio-stage__number">03</span><span class="studio-stage__label">DELIVER</span>
+                  <strong>Move forward together</strong><small>Milestone-based delivery</small>
+                </article>
+              </div>
+              <div class="studio-board__footer">
+                <span class="studio-board__chip">Clear scope</span>
+                <span class="studio-board__chip">One integrated team</span>
+                <span class="studio-board__chip">Business outcomes</span>
+              </div>
+            </div>
+            <div class="hero-float hero-float--one">
+              <span class="hero-float__icon">✓</span><span><small>FIRST STEP</small><strong>Listen before you build</strong></span>
+            </div>
+            <div class="hero-float hero-float--two">
+              <span class="hero-float__icon">↗</span><span><small>HOW WE WORK</small><strong>Scope before milestones</strong></span>
+            </div>
+          </aside>
           <a class="hero__scroll" href="#intro" aria-label="Scroll to discover"><span></span></a>
         </div>
       </section>
@@ -405,8 +448,7 @@
         <div class="footer-main">
           <div class="footer-brand-column">
             <a class="brand brand--footer" href="#top" aria-label="Code & Canvas home">
-              <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="4.5" y="4.5" width="39" height="39" rx="13" stroke="currentColor" stroke-width="1.7"/><path d="M18.5 17.5 12.5 24l6 6.5M29.5 17.5l6 6.5-6 6.5M26.5 14.5l-5 19" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M34.5 9.5v5m-2.5-2.5h5" stroke="#57E2D2" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-              <span class="brand__wordmark">Code <span>&amp;</span> Canvas</span>
+              <img class="brand__logo" src="/assets/brand/logo-white-horizontal.svg" alt="" width="142" height="59" />
             </a>
             <p>Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
             <div class="credential-list" aria-label="Credentials and frameworks"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
@@ -431,5 +473,6 @@
 
     <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
     <script src="/script.js" defer></script>
+    <script src="/canvasone-touch.js" defer></script>
   </body>
 </html>

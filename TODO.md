@@ -5,9 +5,10 @@
 - [x] Preserve the existing Code & Canvas production website and its domain; do not publish, replace, redirect, or change DNS for the live site during this task.
 - [x] Implement the page as native website code, not WordPress.
 
-## 2. Complete responsive homepage aligned to the references — complete
+## 2. Complete responsive homepage aligned to the references — in progress
 - [x] Rebuild the supplied Code & Canvas homepage as a long-form, responsive page for desktop and mobile.
 - [x] Follow the supplied page screenshot and the previously approved interactive presentation's visual direction: dark canvas, purple glow, luminous teal accents, restrained glass-like cards, readable typography, and controlled motion.
+- [ ] Apply additional visual touches from the CanvasOne ERP presentation: use a split, dashboard-style hero panel built from existing Code & Canvas approach content; add the original brand mark, ambient violet/teal lighting, restrained floating glass callouts, scroll progress and active-section navigation, pointer-responsive light/tilt, and subtle section reveals. Respect reduced-motion settings and do not invent business metrics, clients, or claims.
 - [x] Preserve Code & Canvas's existing identity and the content currently visible at `https://codeandcanvas.net/`.
 
 ## 3. Preserve accurate commercial content and navigation — complete
@@ -24,13 +25,13 @@
 - [x] Ensure the page remains usable and legible on phone and desktop layouts.
 - [x] Use balanced animation and clear calls to action.
 
-## 6. Verify the build and keep the deliverable in preview — complete
-- [x] Run the available project checks and verify the rendered desktop and mobile layouts.
+## 6. Verify the build and keep the deliverable in preview — in progress
+- [ ] Rebuild and verify the updated desktop and mobile layouts and interactive touches.
 - [x] Deliver source in the new private repository and a preview link if available.
 - [x] Do not treat a preview as production publication or change the production site/domain without a separate explicit request.
 
-## Verified behavior
-- Static build succeeds with no install-time dependencies.
-- The homepage and `manus-routes.json` return HTTP 200 in local and WebDev preview.
-- Browser checks at 320, 360, 390, 768, 1024, and 1440 CSS pixels show no horizontal overflow and no broken on-page anchors.
-- Desktop/mobile browser runs report no page errors; the mobile menu and 6/4/5 service filters behave as intended.
+## Existing verified behavior
+- The earlier static build succeeded with no install-time dependencies.
+- Before the latest visual update, the homepage and `manus-routes.json` returned HTTP 200 in local and WebDev preview.
+- Before the latest visual update, browser checks at 320, 360, 390, 768, 1024, and 1440 CSS pixels showed no horizontal overflow or broken on-page anchors.
+- Before the latest visual update, desktop/mobile browser runs reported no page errors; the mobile menu and 6/4/5 service filters behaved as intended.

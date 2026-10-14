@@ -18,6 +18,8 @@
 - الزجاج (`glass`) لم يعد يُنتج أي تأثير في `ds.css`: صار سطحًا صلبًا، والتمويه محصور في ما يغطي المحتوى فعلًا (كبسولة التنقل، قائمة الجوال، الشريط اللاصق، التنبيهات).
 - `assets/css/pages.css`: كتل جديدة فقط حيث لزم (`.cs__*` للأعمال، `.tier*/.milestones` للتسعير، `.panel--deep`، `.reader__lock`)،
   وحذف قواعد قديمة متعارضة (9 قواعد `.cs*`).
+- `assets/css/home.css`: كتلة الهيرو أُعيدت كتابتها (`.hero__discipline/.hero__bd/.hero__visual` + مكوّن `.flow*` للنافذة)،
+  وحُذفت القواعد الميتة `.hero__card* .ways .way` (لا صفحة تستخدمها بعد استرجاع الهيرو)، كما حُذف `.thesis` الميت من قاعدة RTL في `ds.css`.
 
 ### صفحات أُعيد كتابتها بالكامل (مُنفَّذة ومصوّرة)
 | الصفحة | ما تغيّر فعليًا |
@@ -35,7 +37,7 @@
 | `/blog/` | v3: صفوف مقال فعلية (رقم · تصنيف · عنوان · مقتطف · كاتب) بدل شبكة بطاقات برسوم مُتخيَّلة، ولوحة «الأكثر قراءة» بلوحة رمزية، وشريط أرقام، وحُذفت زخارف `art` الوهمية من الصفحة وصفحة المقال |
 | `/contact/` | v3: هيرو يطلب المشكلة لا «العرض»، وشرائح «ما يحدث بعد الإرسال» الثلاث، ولوحات القنوات/الحجز على `.panel` بدل الزجاج |
 | `/books/` | v3: هيرو صريح (المعاينة مجانية والشراء غير متاح)، وشبكة الكتب على `.panel` |
-| `/` (الرئيسية) | بطاقات «المشكلة» الأربع صارت روابط خدمات + CTA استفسار مستقل (كان الرابط يُبتلع داخل بطاقة كاملة) |
+| `/` (الرئيسية) | **استُرجِع هيرو «Business Development, By Design» بطلب المالك** (مرجع بصري مرفق): شارة النظام، عنوان عرض بثلاثة أسطر و«By Design» مائل متدرّج بخط فُرشاة، شريحة `BD · The core discipline behind every engagement`، المقدمة الأصلية، أزرار `Our services` (→`#solutions`) / `Our profile` (→`/our-story/`) / `Learn more` (→`#fit`)، وشرائح التخصصات الأربع. العمود الأيمن صار نافذة «C&C / ENGAGEMENT FLOW» (`.flow`): شريط بمصابيح ونبضة `BUSINESS-FIRST`، ثم `THE C&C APPROACH` · `Start with the outcome.` · خطوات `01 LISTEN / 02 SHAPE / 03 DELIVER` · شرائح `Clear scope / One integrated team / Business outcomes`، مع شريحتين عائمتين (`FIRST STEP` و`HOW WE WORK` موجودتان في `ds.css` منذ الأصل). بطاقات «three ways in» أُزيلت من الهيرو لأن المسارات الثلاثة نفسها مستمرة في `#solutions`، وبطاقات «المشكلة» الأربع بقيت روابط خدمات + CTA استفسار مستقل |
 | الادعاءات | حُذف رقمان ماليان بلا مصدر: `pages_story.py` («تكلفة الخروج $50K–$200K») و`posts/p01_wrong_product.py` («$250K») |
 
 ### العربية المستقلة (تفصيلها الهندسي في §2)
@@ -126,8 +128,11 @@
 npm ci
 npm run generate && npm run check      # 41/84/91
 npm run build                          # dist/ = 84 HTML
+# الاستضافة المتصفحية: /tmp يُمسح بين الجلسات. الاسترجاع:
+#   npm i --no-save @sparticuz/chromium → /tmp/chromium
+#   inflate(al2023.tar.br + swiftshader.tar.br) عبر lib/lambdafs.js → /tmp/al2023/lib
 PW_EXECUTABLE_PATH=/tmp/chromium PW_BROWSER_ARGS='["--no-sandbox","--no-zygote","--disable-dev-shm-usage","--use-gl=angle","--use-angle=swiftshader","--enable-unsafe-swiftshader"]' \
-  LD_LIBRARY_PATH=/tmp/chromium-libs/lib npx playwright test      # 361 passed
+  LD_LIBRARY_PATH=/tmp/al2023/lib npx playwright test      # 362 passed
 grep -rc 'data-ar' ar/index.html       # 0
 ```
 

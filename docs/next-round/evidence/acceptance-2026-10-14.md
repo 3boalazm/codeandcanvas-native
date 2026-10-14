@@ -81,3 +81,34 @@ New screenshots in `docs/next-round/evidence/`: `en-blog-1440.png`, `en-books-14
 same folder). The suite run covers the rewritten routes and their Arabic twins in both
 viewports, plus the 32 axe scans and the whole flows suite (newsletter/career endpoints,
 book filters, reader gate, form contract) — unchanged and unskipped.
+
+## Hero round — homepage hero restored from the owner's reference (2026-10-15)
+
+```
+41 page(s) carry chrome markers · 0 out of date
+84 HTML files checked · 0 problem(s)
+Generator parity: 91 outputs match isolated regeneration.
+```
+
+```
+Running 362 tests using 1 worker
+  362 passed (9.1m)
+```
+
+`/` no longer carries the v3 hero. The section is the one in the owner's screenshot:
+the eyebrow strip, the three-line display title with the gradient italic “By Design” and
+its brush stroke, the `BD` discipline pill, the original lead paragraph, the three CTAs
+(`Our services` → `#solutions`, `Our profile` → `/our-story/`, `Learn more` → `#fit`),
+the four discipline chips, and the `C&C / ENGAGEMENT FLOW` window with
+`01 LISTEN / 02 SHAPE / 03 DELIVER` plus the two floating chips. Every new string carries
+its `data-ar` twin, so the Arabic site was regenerated (`node scripts/gen-ar.mjs` → 42
+pages written).
+
+Screenshots: `en-home-1440.png` (new), `ar-home-1440.png` and `ar-home-390.png` (re-shot —
+they previously showed the v3 hero).
+
+Honest notes: the floating chips overlap the window corners by design at ≥1025px and become
+static below the card at ≤1024px so they can never widen the document; the hero itself
+carries no booking button (matching the reference) — booking stays in `#contact` and in the
+section CTAs. The dead `.hero__card* / .ways / .way` rules and the dead `.thesis` RTL
+selector were deleted rather than left behind.

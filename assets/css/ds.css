@@ -632,7 +632,7 @@ html[lang='ar'] .pri__pill { letter-spacing: 0; font-size: 12px; }
 [dir='rtl'] .round-arrow .ico, [dir='rtl'] .nav__actions .btn .ico { transform: scaleX(-1); }
 [dir='rtl'] .btn:hover .flip .ico { transform: scaleX(-1) translateX(4px); }
 [dir='rtl'] .step__card, [dir='rtl'] .card { text-align: start; }
-[dir='rtl'] .thesis, [dir='rtl'] .eyebrow { direction: rtl; }
+[dir='rtl'] .eyebrow { direction: rtl; }
 .footer__brandcol .nav__brand { display: inline-flex; }
 
 @media (max-width: 1180px) { .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

@@ -112,3 +112,58 @@ static below the card at ≤1024px so they can never widen the document; the her
 carries no booking button (matching the reference) — booking stays in `#contact` and in the
 section CTAs. The dead `.hero__card* / .ways / .way` rules and the dead `.thesis` RTL
 selector were deleted rather than left behind.
+
+## v3 round — `/erp/` and the account/shop shells (2026-10-15)
+
+```
+41 page(s) carry chrome markers · 0 out of date
+84 HTML files checked · 0 problem(s)
+Generator parity: 91 outputs match isolated regeneration.
+```
+
+```
+npx playwright test tests/matrix.spec.mjs --grep "route /(login|register|forgot-password|reset-password|account|cart|checkout|thank-you)/"
+  32 passed (34.4s)
+npx playwright test tests/flows.spec.mjs tests/accessibility.spec.mjs
+  58 passed (2.8m)
+npx playwright test --workers=1        # full suite, same frozen tree
+  362 passed (8.5m)
+```
+
+`/erp/` now uses the same numbered section heads as every v3 page (`.sec-head` +
+`.sec-head__no`: teal number, uppercase kicker), with `--stack` on the platform and
+compliance sections. The three status chips that used to float over the dashboard mock —
+covering the KPI row, the sales chart and the invoice list, and colliding with each other
+once the Arabic labels ran longer — are now a static three-up row under the mock at every
+width (`grid-template-columns: repeat(3, …)`, two columns ≤720px). A new honesty line
+(`hero.dash.note`, AR + EN) states that the interface shown is illustrative sample data,
+not a customer screenshot and not a promised result. Two decorative blobs were deleted and
+nine gradient/glow accents flattened, so the page stops competing with its own content.
+
+`.sec-head--center` was fixed in `ds.css`: it centred inside the left column of a
+two-column grid, so a "centred" head never actually sat on the page axis. It now stacks and
+centres (verified: the three centred heads on `/erp/` sit at the container axis at 1440).
+
+The eight account/shop shells moved from the legacy `.section__title` / `.section__lead` /
+`.oops` heads to the same `.phero` component every other inner page uses (crumbs, `.eyebrow`,
+`.phero__title`, `.hero__lead`), plus a `--tight` variant for the auth pages. The
+"accounts are not available yet" notice moved out of the form card to page level, and the
+card is now only the form container. Contracts kept verbatim: `data-form="demo"` +
+`data-next`, `_hp` honeypot, `data-match="#f-password"`, `data-checkout` /
+`data-integration="books"` / `data-whatsapp` / `data-mail` / `data-subject`, `[data-pay]`,
+`[data-cart-total]`, `[data-cart-empty]`, `[data-library*]`, `.cart-table` markup, and every
+field id/name. Dead CSS (`auth__head`, `auth__alt`, `auth__foot`, `auth__brand`,
+`auth__title`, `auth__card--wide`) was deleted rather than left behind; `pages.css` went from
+85855 to 85016 bytes.
+
+Geometry: no horizontal overflow on `/erp/` and `/ar/erp/` at 360/390/1024/1440
+(`documentElement.scrollWidth === clientWidth` in both languages), verified with a
+per-element overflow sweep.
+
+Screenshots: `v3-erp-hero-1440-2026-10-15.png`, `v3-erp-hero-ar-1440-2026-10-15.png`,
+`v3-shell-login-1440-2026-10-15.png`, `v3-shell-login-390-2026-10-15.png`,
+`v3-shell-login-ar-1440-2026-10-15.png`, `v3-shell-cart-1440-2026-10-15.png`,
+`v3-shell-cart-ar-1440-2026-10-15.png`.
+
+Still v2 (unchanged this round): the eight long-form articles, the two book detail pages,
+`cookie-policy` / `pricing-faq` / `privacy-policy` / `terms-of-use`, and `/404.html`.

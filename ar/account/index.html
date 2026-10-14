@@ -89,15 +89,16 @@
 
     <main id="main">
 
-      <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         <nav class="crumbs" aria-label="مسار التنقل"><a href="/ar/">الرئيسية</a><i>›</i><span aria-current="page">الكتب المحفوظة</span></nav>
-        <h1 class="section__title" id="page-title">كتبك المحفوظة</h1>
-        <p class="section__lead">قائمة على هذا الجهاز فقط، وليست مكتبة مشتريات أو حسابًا مسجّلًا. المعاينات مجانية؛ الشراء الإلكتروني غير متاح حاليًا.</p>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span>قائمة محلية · بلا حساب</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s">كتبك المحفوظة</h1>
+        <p class="hero__lead" data-reveal style="--d:.16s">قائمة على هذا الجهاز فقط، وليست مكتبة مشتريات أو حسابًا مسجّلًا. المعاينات مجانية؛ الشراء الإلكتروني غير متاح حاليًا.</p>
+      </section>
+      <section class="section container section--flush-top" id="library" aria-label="المعاينات المحفوظة">
         <p class="notice"><b data-library-count>0</b> <span>كتب محفوظة</span></p>
-        <section id="library" aria-label="المعاينات المحفوظة">
-          <div class="grid grid--3" data-library hidden></div>
-          <p data-library-empty>قائمتك فارغة. احفظ كتابًا من المكتبة للعودة إليه هنا.</p>
-        </section>
+        <div class="grid grid--3" data-library hidden></div>
+        <p data-library-empty>قائمتك فارغة. احفظ كتابًا من المكتبة للعودة إليه هنا.</p>
         <div class="btn-row" style="margin-top:24px"><a class="btn btn--primary magnetic" href="/ar/books/"><span>تصفّح الكتب</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/ar/cart/"><span>إدارة القائمة</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
       </section>
     </main>

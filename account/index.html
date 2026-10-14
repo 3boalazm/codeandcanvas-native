@@ -92,15 +92,16 @@
 
     <main id="main">
 
-      <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><span aria-current="page" data-ar="الكتب المحفوظة">Saved books</span></nav>
-        <h1 class="section__title" id="page-title" data-ar="كتبك المحفوظة">Your saved books</h1>
-        <p class="section__lead" data-ar="قائمة على هذا الجهاز فقط، وليست مكتبة مشتريات أو حسابًا مسجّلًا. المعاينات مجانية؛ الشراء الإلكتروني غير متاح حاليًا.">A shortlist on this device, not a purchase library or signed-in account. Previews are free; online purchasing is not available yet.</p>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="قائمة محلية · بلا حساب">A local list · no account</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s" data-ar="كتبك المحفوظة">Your saved books</h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="قائمة على هذا الجهاز فقط، وليست مكتبة مشتريات أو حسابًا مسجّلًا. المعاينات مجانية؛ الشراء الإلكتروني غير متاح حاليًا.">A shortlist on this device, not a purchase library or signed-in account. Previews are free; online purchasing is not available yet.</p>
+      </section>
+      <section class="section container section--flush-top" id="library" aria-label="Saved previews" data-ar-label="المعاينات المحفوظة">
         <p class="notice"><b data-library-count>0</b> <span data-ar="كتب محفوظة">saved books</span></p>
-        <section id="library" aria-label="Saved previews" data-ar-label="المعاينات المحفوظة">
-          <div class="grid grid--3" data-library hidden></div>
-          <p data-library-empty data-ar="قائمتك فارغة. احفظ كتابًا من المكتبة للعودة إليه هنا.">Your list is empty. Save a book from the library to return to it here.</p>
-        </section>
+        <div class="grid grid--3" data-library hidden></div>
+        <p data-library-empty data-ar="قائمتك فارغة. احفظ كتابًا من المكتبة للعودة إليه هنا.">Your list is empty. Save a book from the library to return to it here.</p>
         <div class="btn-row" style="margin-top:24px"><a class="btn btn--primary magnetic" href="/books/"><span data-ar="تصفّح الكتب">Explore books</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/cart/"><span data-ar="إدارة القائمة">Manage shortlist</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
       </section>
     </main>

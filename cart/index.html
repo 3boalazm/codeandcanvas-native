@@ -92,9 +92,13 @@
 
     <main id="main">
 
-      <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/books/" data-ar="الكتب">Books</a><i>›</i><span aria-current="page" data-ar="القائمة">Shortlist</span></nav>
-        <h1 class="section__title" id="page-title" data-ar="قائمة الكتب المحفوظة">Your book shortlist</h1>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="قائمة محلية · ليست طلب شراء">A local list · not an order</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s" data-ar="قائمة الكتب المحفوظة">Your book shortlist</h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="محفوظة على هذا الجهاز فقط. الشراء الإلكتروني غير متاح حاليًا، والأسعار استرشادية حتى تُؤكَّد في عرض مكتوب.">Saved on this device only. Online purchasing is not available yet, and the prices stay indicative until they are confirmed in a written offer.</p>
+      </section>
+      <section class="section container section--flush-top" aria-label="Shortlist" data-ar-label="القائمة">
         <div class="grid grid--side" data-cart>
           <div>
             <div class="table-wrap" data-cart-table hidden>

@@ -92,12 +92,14 @@
 
     <main id="main">
 
-      <section class="auth container" aria-labelledby="auth-title">
+      <section class="phero container phero--center phero--tight" aria-labelledby="auth-title">
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="كلمة مرور جديدة · معاينة فقط">New password · preview only</span></span>
+        <h1 class="phero__title" id="auth-title" data-reveal style="--d:.08s" data-ar="إعادة تعيين كلمة المرور">Reset your password</h1>
+        <p class="hero__lead auth__sub" data-reveal style="--d:.16s"><span data-ar="اختر كلمة مرور جديدة لحسابك.">Choose a new password for your account.</span></p>
+        <p class="notice" role="note" data-reveal style="--d:.24s" data-ar="الحسابات الإلكترونية غير متاحة حاليًا. هذه النماذج لا تسجّل الدخول ولا تنشئ حسابًا ولا ترسل كلمات مرور. تصفّح المعاينات المجانية أو تواصل معنا.">Online accounts are not available yet. These forms do not sign in, create accounts or send passwords. Explore the free previews or contact us.</p>
+      </section>
+      <section class="auth container" aria-label="Account form" data-ar-label="نموذج الحساب">
         <div class="auth__card glass glass--deep">
-          <a class="auth__brand" href="/"><img src="/assets/brand/icon-white.svg" alt="" width="28" height="28" />Code &amp; Canvas</a>
-          <h1 class="auth__title" id="auth-title" data-ar="إعادة تعيين كلمة المرور">Reset your password</h1>
-          <p class="auth__sub"><span data-ar="اختر كلمة مرور جديدة لحسابك.">Choose a new password for your account.</span></p>
-          <p class="notice" role="note" data-ar="الحسابات الإلكترونية غير متاحة حاليًا. هذه النماذج لا تسجّل الدخول ولا تنشئ حسابًا ولا ترسل كلمات مرور. تصفّح المعاينات المجانية أو تواصل معنا.">Online accounts are not available yet. These forms do not sign in, create accounts or send passwords. Explore the free previews or contact us.</p>
           
           <form method="post" class="form" data-form="demo" data-next="/login/" novalidate>
             <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
@@ -108,7 +110,6 @@
             <div class="form__status" role="status" aria-live="polite"></div>
           </form>
         </div>
-        
       </section>
 
     </main>

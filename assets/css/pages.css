@@ -15,6 +15,7 @@
 html[lang='en'] .phero__title { line-height: 1.04; }
 .phero__title .grad-text { padding-inline-end: .06em; }
 .phero .hero__lead { max-width: 720px; font-size: clamp(16.5px, 1.4vw, 19.5px); }
+.phero--tight { padding-top: calc(var(--nav-h) + clamp(24px, 3.5vw, 56px)); padding-bottom: clamp(26px, 3.2vw, 44px); }
 .phero__split { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 5vw, 70px); align-items: center; }
 .phero__aside { display: grid; gap: 14px; }
 .phero__meta { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; color: var(--ink-3); font-size: 14px; }
@@ -222,17 +223,8 @@ html[lang='ar'] .badge { letter-spacing: 0; text-transform: none; font-size: 12.
 .form-card > .lead { color: var(--ink-2); font-size: 15px; margin-bottom: 24px; }
 
 /* ---------- Auth shells ---------- */
-.auth { min-height: 100svh; display: grid; place-items: center; padding: calc(var(--nav-h) + 40px) 0 80px; }
-.auth__card { width: min(480px, 100%); padding: clamp(26px, 3.5vw, 44px); border-radius: var(--r-lg); }
-.auth__card--wide { width: min(560px, 100%); }
-.auth__head { text-align: center; margin-bottom: 26px; }
-.auth__head .card__icon { margin: 0 auto 18px; }
-.auth__head h1 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 8px; }
-.auth__head p { color: var(--ink-2); font-size: 15px; }
-.auth__alt { display: flex; align-items: center; gap: 14px; margin: 22px 0; color: var(--ink-3); font-size: 13px; }
-.auth__alt::before, .auth__alt::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-.auth__foot { margin-top: 22px; text-align: center; font-size: 14px; color: var(--ink-2); }
-.auth__foot a { color: var(--teal); font-weight: 600; }
+.auth { display: grid; justify-items: center; padding-block: clamp(18px, 2.6vw, 32px) clamp(52px, 6.5vw, 96px); }
+.auth__card { width: min(520px, 100%); padding: clamp(26px, 3.5vw, 44px); border-radius: var(--r-lg); }
 .btn--google { width: 100%; justify-content: center; background: #fff; color: #111; border: 0; }
 .btn--google:hover { background: #f1f0ff; }
 .btn--google svg { width: 18px; height: 18px; }
@@ -662,9 +654,6 @@ html[lang='ar'] .post__lang-note { display: inline-flex; }
 @media (max-width: 640px) { .subscribe__row { grid-template-columns: 1fr; } .prose .num-list > li { grid-template-columns: 36px 1fr; } .post__stats { grid-template-columns: 1fr; } .prose .case__stats { grid-template-columns: 1fr; } }
 
 /* ---------- Additions: auth / shop / legal / work / books ---------- */
-.auth__brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--f-title); font-weight: 700; font-size: 15px; color: #fff; margin-bottom: 22px; }
-.auth__title { font-size: clamp(26px, 3vw, 34px); margin-bottom: 8px; }
-.auth__sub { color: var(--ink-2); font-size: 15px; margin-bottom: 24px; }
 .auth__sub a { color: var(--teal); font-weight: 600; }
 .auth__or { display: flex; align-items: center; gap: 14px; margin: 18px 0; color: var(--ink-3); font-size: 13px; }
 .auth__or::before, .auth__or::after { content: ''; flex: 1; height: 1px; background: var(--line); }

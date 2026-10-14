@@ -92,10 +92,13 @@
 
     <main id="main">
 
-      <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/cart/" data-ar="القائمة">Shortlist</a><i>›</i><span aria-current="page" data-ar="التوفر">Availability</span></nav>
-        <h1 class="section__title" id="page-title" data-ar="استفسر عن توفر الكتب">Ask about book availability</h1>
-        <p class="section__lead" data-ar="الشراء الإلكتروني غير متاح حاليًا. هذه رسالة استفسار فقط: لا ندفع ولا نفتح محتوى مدفوعًا، والسعر النهائي والتوفر يُؤكدان قبل أي اتفاق.">Online purchasing is not available yet. This is an inquiry only: no payment or paid access. Availability and final pricing are confirmed before any agreement.</p>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="استفسار توفر · بلا دفع">Availability inquiry · no payment</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s" data-ar="استفسر عن توفر الكتب">Ask about book availability</h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="الشراء الإلكتروني غير متاح حاليًا. هذه رسالة استفسار فقط: لا ندفع ولا نفتح محتوى مدفوعًا، والسعر النهائي والتوفر يُؤكدان قبل أي اتفاق.">Online purchasing is not available yet. This is an inquiry only: no payment or paid access. Availability and final pricing are confirmed before any agreement.</p>
+      </section>
+      <section class="section container section--flush-top" aria-label="Availability inquiry" data-ar-label="استفسار التوفر">
         <form method="post" class="grid grid--side form" data-checkout data-integration="books" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Book availability" novalidate>
           <div class="form-card glass">
             <h2 data-ar="بيانات التواصل">Contact details</h2>

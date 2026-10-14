@@ -89,12 +89,14 @@
 
     <main id="main">
 
-      <section class="auth container" aria-labelledby="auth-title">
+      <section class="phero container phero--center phero--tight" aria-labelledby="auth-title">
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span>كلمة مرور جديدة · معاينة فقط</span></span>
+        <h1 class="phero__title" id="auth-title" data-reveal style="--d:.08s">إعادة تعيين كلمة المرور</h1>
+        <p class="hero__lead auth__sub" data-reveal style="--d:.16s"><span>اختر كلمة مرور جديدة لحسابك.</span></p>
+        <p class="notice" role="note" data-reveal style="--d:.24s">الحسابات الإلكترونية غير متاحة حاليًا. هذه النماذج لا تسجّل الدخول ولا تنشئ حسابًا ولا ترسل كلمات مرور. تصفّح المعاينات المجانية أو تواصل معنا.</p>
+      </section>
+      <section class="auth container" aria-label="نموذج الحساب">
         <div class="auth__card glass glass--deep">
-          <a class="auth__brand" href="/ar/"><img src="/assets/brand/icon-white.svg" alt="" width="28" height="28" />Code &amp; Canvas</a>
-          <h1 class="auth__title" id="auth-title">إعادة تعيين كلمة المرور</h1>
-          <p class="auth__sub"><span>اختر كلمة مرور جديدة لحسابك.</span></p>
-          <p class="notice" role="note">الحسابات الإلكترونية غير متاحة حاليًا. هذه النماذج لا تسجّل الدخول ولا تنشئ حسابًا ولا ترسل كلمات مرور. تصفّح المعاينات المجانية أو تواصل معنا.</p>
           
           <form method="post" class="form" data-form="demo" data-next="/login/" novalidate>
             <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
@@ -105,7 +107,6 @@
             <div class="form__status" role="status" aria-live="polite"></div>
           </form>
         </div>
-        
       </section>
 
     </main>

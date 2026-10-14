@@ -89,9 +89,13 @@
 
     <main id="main">
 
-      <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         <nav class="crumbs" aria-label="مسار التنقل"><a href="/ar/">الرئيسية</a><i>›</i><a href="/ar/books/">الكتب</a><i>›</i><span aria-current="page">القائمة</span></nav>
-        <h1 class="section__title" id="page-title">قائمة الكتب المحفوظة</h1>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span>قائمة محلية · ليست طلب شراء</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s">قائمة الكتب المحفوظة</h1>
+        <p class="hero__lead" data-reveal style="--d:.16s">محفوظة على هذا الجهاز فقط. الشراء الإلكتروني غير متاح حاليًا، والأسعار استرشادية حتى تُؤكَّد في عرض مكتوب.</p>
+      </section>
+      <section class="section container section--flush-top" aria-label="القائمة">
         <div class="grid grid--side" data-cart>
           <div>
             <div class="table-wrap" data-cart-table hidden>

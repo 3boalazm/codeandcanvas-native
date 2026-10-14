@@ -89,10 +89,13 @@
 
     <main id="main">
 
-      <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         <nav class="crumbs" aria-label="مسار التنقل"><a href="/ar/">الرئيسية</a><i>›</i><a href="/ar/cart/">القائمة</a><i>›</i><span aria-current="page">التوفر</span></nav>
-        <h1 class="section__title" id="page-title">استفسر عن توفر الكتب</h1>
-        <p class="section__lead">الشراء الإلكتروني غير متاح حاليًا. هذه رسالة استفسار فقط: لا ندفع ولا نفتح محتوى مدفوعًا، والسعر النهائي والتوفر يُؤكدان قبل أي اتفاق.</p>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span>استفسار توفر · بلا دفع</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s">استفسر عن توفر الكتب</h1>
+        <p class="hero__lead" data-reveal style="--d:.16s">الشراء الإلكتروني غير متاح حاليًا. هذه رسالة استفسار فقط: لا ندفع ولا نفتح محتوى مدفوعًا، والسعر النهائي والتوفر يُؤكدان قبل أي اتفاق.</p>
+      </section>
+      <section class="section container section--flush-top" aria-label="استفسار التوفر">
         <form method="post" class="grid grid--side form" data-checkout data-integration="books" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Book availability" novalidate>
           <div class="form-card glass">
             <h2>بيانات التواصل</h2>

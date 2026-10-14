@@ -1,0 +1,147 @@
+# -*- coding: utf-8 -*-
+"""Scaffolds the inner pages of codeandcanvas.net as static HTML.
+
+    python3 scripts/gen-pages.py && node scripts/sync-chrome.mjs
+
+The committed HTML files are the deliverable; this script only exists so the
+repeated structures (service cards, closings, breadcrumbs) stay consistent.
+Copy is the live WordPress copy (English) with Arabic twins in data-ar.
+"""
+import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'lib'))
+from catalog import SERVICES, TRACKS, href  # noqa: E402
+from h import esc, t, th, icon, arrow, svc_card, svc_grid, crumbs, closing, btn, page  # noqa: E402
+
+import pages_services, pages_technology, pages_creative, pages_healthcare, pages_about, pages_story, pages_methodology, pages_team, pages_pricing, pages_contact, pages_blog, pages_work, pages_books, pages_shop, pages_legal  # noqa: E402
+
+BUILDERS = [pages_services.build, pages_technology.build, pages_creative.build, pages_healthcare.build, pages_about.build, pages_story.build, pages_methodology.build, pages_team.build, pages_pricing.build, pages_contact.build, pages_blog.build, pages_work.build, pages_books.build, pages_shop.build, pages_legal.build]
+
+import json  # noqa: E402
+from datetime import date  # noqa: E402
+import h  # noqa: E402
+from posts import all_posts  # noqa: E402
+from pages_books import BOOKS  # noqa: E402
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE = 'https://codeandcanvas.net'
+
+# Legacy WordPress URLs → native routes (Netlify/Vercel/Cloudflare `_redirects` syntax).
+STATIC_REDIRECTS = [
+    ('/blogs/', '/blog/'), ('/blogs', '/blog/'),
+    ('/healthcare-hub/', '/healthcare/'), ('/healthcare-hub', '/healthcare/'),
+    ('/solutions', '/services/'), ('/solutions/', '/services/'),
+    ('/book', '/contact/#book'), ('/book/', '/contact/#book'),
+    ('/our-team/', '/team/'), ('/our-team', '/team/'), ('/elementor-6205/', '/team/'),
+    ('/account-center/', '/account/'), ('/account-center', '/account/'), ('/my-account/', '/account/'), ('/my-account', '/account/'),
+    ('/shop/', '/books/'), ('/shop', '/books/'), ('/product/', '/books/'), ('/product-category/*', '/books/'),
+    ('/wp-login.php', '/login/'), ('/wp-admin/*', '/login/'),
+    ('/strategic-branding-differentiation-vs-visual-identity/', '/blog/why-most-brands-look-different-but-feel-the-same/'),
+    ('/full-brand-identity/', '/creative-services/#ma-03'), ('/it-solutions/', '/technology-services/'), ('/data-analysis/', '/technology-services/#ab-03'),
+    ('/feed/', '/blog/'), ('/feed', '/blog/'),
+]
+
+
+def write(rel, text):
+    path = os.path.join(ROOT, rel)
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(text)
+    print('wrote', rel)
+
+
+def meta_files():
+    pages = [p for p in h.REGISTRY if not p[0].endswith('.html')]
+    # --- redirects ---
+    lines = ['# codeandcanvas.net — legacy WordPress URLs → native routes (301)', '# Format: <from> <to> [status]  (Netlify / Cloudflare Pages / Vercel-compatible)', '']
+    for a, b in STATIC_REDIRECTS:
+        lines.append(f'{a} {b} 301')
+    lines.append('')
+    lines.append('# Blog: posts moved from the site root into /blog/ (+ fixed mis-slugged duplicates)')
+    for post in all_posts():
+        lines.append(f'/{post["slug"]}/ /blog/{post["slug"]}/ 301')
+        lines.append(f'/{post["slug"]} /blog/{post["slug"]}/ 301')
+        for alias in post.get('aliases', []):
+            lines.append(f'/{alias}/ /blog/{post["slug"]}/ 301')
+            lines.append(f'/{alias} /blog/{post["slug"]}/ 301')
+    lines.append('')
+    lines.append('# Books: WooCommerce product URLs → native landings')
+    for b in BOOKS:
+        for alias in b.get('aliases', []):
+            lines.append(f'{alias} /books/{b["slug"]}/ 301')
+            if alias.endswith('/'):
+                lines.append(f'{alias[:-1]} /books/{b["slug"]}/ 301')
+    lines.append('')
+    lines.append('# Fallbacks')
+    lines.append('/index.html / 301')
+    lines.append('/* /404.html 404')
+    write('_redirects', '\n'.join(lines) + '\n')
+    # --- sitemap.xml ---
+    today = date.today().isoformat()
+    pri = lambda p: '1.0' if p == '/' else ('0.9' if p.count('/') == 2 else '0.7')
+    urls = [('/', '1.0'), ('/erp/', '0.8')] + [(p[0], pri(p[0])) for p in pages if not any(p[0].startswith(x) for x in ('/login', '/register', '/forgot', '/reset', '/account', '/cart', '/checkout', '/thank-you'))]
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    for u, pr in urls:
+        xml.append(f'  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod><priority>{pr}</priority></url>')
+    xml.append('</urlset>')
+    write('sitemap.xml', '\n'.join(xml) + '\n')
+    # --- robots.txt ---
+    write('robots.txt', f'User-agent: *\nAllow: /\nDisallow: /account/\nDisallow: /cart/\nDisallow: /checkout/\nDisallow: /thank-you/\nDisallow: /reset-password/\n\nSitemap: {SITE}/sitemap.xml\n')
+    # --- manus-routes.json (host route manifest) ---
+    routes = [{'path': '/', 'title': 'Code & Canvas — Business Development, By Design'}, {'path': '/erp/', 'title': 'CanvasOne ERP — Code & Canvas'}]
+    routes += [{'path': p[0], 'title': p[1]} for p in pages]
+    routes.append({'path': '/404.html', 'title': '404 — Lost · Code & Canvas', 'notFound': True})
+    write('manus-routes.json', json.dumps({'routes': routes, 'redirects': [{'from': a, 'to': b, 'status': 301} for a, b in STATIC_REDIRECTS]}, ensure_ascii=False, indent=1) + '\n')
+    # --- vercel.json (static deploy: `sh build.sh` → dist/) ---
+    from urllib.parse import unquote
+    seen, vredirects = set(), []
+
+    def vr(src, dst):
+        src = unquote(src)
+        if src.endswith('/*'):
+            src = src[:-2] + '/(.*)'
+        if src.endswith('/') and src != '/':
+            src = src[:-1]  # trailingSlash:true normalises both forms onto the slash-less source
+        if src in seen or src == dst.rstrip('/') or not src:
+            return
+        seen.add(src)
+        vredirects.append({'source': src, 'destination': dst, 'permanent': True})
+
+    for a, b in STATIC_REDIRECTS:
+        vr(a, b)
+    for post in all_posts():
+        vr(f'/{post["slug"]}/', f'/blog/{post["slug"]}/')
+        for alias in post.get('aliases', []):
+            vr(f'/{alias}/', f'/blog/{post["slug"]}/')
+    for b in BOOKS:
+        for alias in b.get('aliases', []):
+            vr(alias, f'/books/{b["slug"]}/')
+    vercel = {
+        '$schema': 'https://openapi.vercel.sh/vercel.json',
+        'framework': None,
+        'buildCommand': 'sh build.sh',
+        'outputDirectory': 'dist',
+        'installCommand': '',
+        'cleanUrls': True,
+        'trailingSlash': True,
+        'redirects': vredirects,
+        'headers': [
+            {'source': '/(.*)', 'headers': [
+                {'key': 'X-Content-Type-Options', 'value': 'nosniff'},
+                {'key': 'X-Frame-Options', 'value': 'SAMEORIGIN'},
+                {'key': 'Referrer-Policy', 'value': 'strict-origin-when-cross-origin'},
+                {'key': 'Permissions-Policy', 'value': 'camera=(), microphone=(), geolocation=()'},
+            ]},
+            {'source': '/assets/fonts/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=31536000, immutable'}]},
+            {'source': '/assets/(css|js|brand)/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=3600, stale-while-revalidate=86400'}]},
+            {'source': '/(.*)\\.html', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=0, must-revalidate'}]},
+        ],
+    }
+    write('vercel.json', json.dumps(vercel, ensure_ascii=False, indent=2) + '\n')
+
+
+if __name__ == '__main__':
+    for b in BUILDERS:
+        for out in b():
+            print('wrote', os.path.relpath(out))
+    meta_files()

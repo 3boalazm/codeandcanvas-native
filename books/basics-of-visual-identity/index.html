@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="أساسيات الهوية البصرية — Basics of Visual Identity · Code &amp; Canvas" data-desc-ar="رحلة من اللوجو للنظام الكامل — إزاي تبني هوية بصرية بتتعرف، وتتفكر، وتفضل في دماغ الناس. من الاستراتيجية، للحرفة، للتطبيق.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Basics of Visual Identity — أساسيات الهوية البصرية · Code &amp; Canvas</title>
+    <meta name="description" content="A journey from the logo to the complete system — how to build a visual identity that gets recognised, remembered, and stays in people’s minds. From strategy, to craft, to application." />
+    <meta property="og:type" content="book" />
+    <meta property="og:title" content="Basics of Visual Identity — أساسيات الهوية البصرية · Code &amp; Canvas" />
+    <meta property="og:description" content="A journey from the logo to the complete system — how to build a visual identity that gets recognised, remembered, and stays in people’s minds. From strategy, to craft, to application." />
+    <meta property="og:url" content="https://codeandcanvas.net/books/basics-of-visual-identity/" />
+    <link rel="canonical" href="https://codeandcanvas.net/books/basics-of-visual-identity/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <!-- /cc:head -->
+  </head>
+  <body class="is-loading" data-nav="books">
+    <!-- cc:top -->
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__pill container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <span class="nav__mark" aria-hidden="true"><img src="/assets/brand/icon-white.svg" alt="" width="26" height="26" /></span>
+          <span class="nav__word" aria-hidden="true">Code<em>&amp;</em>Canvas</span>
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a class="only-mobile" href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="nav__round lang-btn" id="langBtn" type="button"></button>
+          <a class="nav__round" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="WhatsApp" data-ar-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
+          <a class="btn btn--primary nav__cta magnetic" href="/contact/" data-key="contact"><span data-ar="تواصل">Contact</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="nav__round burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <section class="phero container" aria-labelledby="page-title">
+        <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/books/" data-ar="الكتب">Books</a><i>›</i><span aria-current="page" data-ar="أساسيات الهوية البصرية">Basics of Visual Identity</span></nav>
+        <div class="book-hero">
+          <div data-reveal><div class="art art--pink " data-slot="books/basics-of-visual-identity/cover" aria-hidden="true"><span class="art__mark" style="font-size:96px;font-family:var(--f-num);font-style:italic;font-weight:800">VI</span><span class="art__cap">Basics of Visual Identity · Mustafa Aboalazm · 2026</span></div></div>
+          <div>
+            <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="المكتبة · الكتاب الثاني">Library · Basics of Visual Identity</span></span>
+            <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span lang="ar" dir="rtl">أساسيات الهوية البصرية</span><br /><span class="grad-text" style="font-size:.6em">Basics of Visual Identity</span></h1>
+            <p class="person__tag" data-reveal style="--d:.12s">1st Edition · 2026 · v1.0 · Mustafa Aboalazm · 2026</p>
+            <p class="hero__lead" data-reveal style="--d:.16s" data-ar="رحلة من اللوجو للنظام الكامل — إزاي تبني هوية بصرية بتتعرف، وتتفكر، وتفضل في دماغ الناس. من الاستراتيجية، للحرفة، للتطبيق.">A journey from the logo to the complete system — how to build a visual identity that gets recognised, remembered, and stays in people’s minds. From strategy, to craft, to application.</p>
+            <div class="stats__inner glass" style="margin-top:20px;grid-template-columns:repeat(3,1fr)" data-reveal style="--d:.2s"><div class="stat"><span class="stat__num stat__num--ltr">16</span><p class="stat__label" data-ar="فصلاً">Chapters</p></div><div class="stat"><span class="stat__num stat__num--ltr">3</span><p class="stat__label" data-ar="رحلات">Journeys</p></div><div class="stat"><span class="stat__num stat__num--ltr">2026</span><p class="stat__label" data-ar="إصدار">Edition</p></div></div>
+            <div class="pill-list" style="margin-top:16px" data-reveal><span class="pill">الاستراتيجية</span><span class="pill">الحرفة البصرية</span><span class="pill">المهنة</span></div>
+            
+            <div class="book-hero__buy glass">
+              <span class="book__price" dir="ltr">199 <small data-ar="ريال سعودي · دفعة واحدة · وصول دائم">SAR · one-time · lifetime access</small></span>
+              <button class="btn btn--primary" type="button" data-add="basics-of-visual-identity" data-title="Basics of Visual Identity" data-title-ar="أساسيات الهوية البصرية" data-price="199" data-currency="SAR"><i data-icon="cart" aria-hidden="true"></i><span data-ar="أضف إلى السلة">Add to cart</span></button>
+              <a class="btn btn--glass" href="/books/basics-of-visual-identity/read/"><i data-icon="grid" aria-hidden="true"></i><span data-ar="افتح المعاينة المجانية">Open the free preview</span></a>
+              <small class="form__hint" data-ar="بعد الشراء يُفتح الكتاب كاملًا في القارئ التفاعلي من حسابك.">After purchase the full book unlocks in the interactive reader from your account.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="section container section--flush-top" id="chapters" aria-labelledby="toc-title">
+        <div class="section__head" data-reveal><p class="kicker"><span data-ar="الفهرس">TABLE OF CONTENTS</span></p><h2 class="section__title" id="toc-title" lang="ar" dir="rtl">ثلاث رحلات · 16 فصلاً</h2></div>
+        <div class="grid grid--side-l" dir="rtl" lang="ar" style="display:block;max-width:900px">
+        <div class="chapter" data-reveal>
+          <p class="kicker"><span>الرحلة الأولى · 4 فصول · التفكير قبل التصميم</span></p>
+          <h3 class="section__title" style="font-size:clamp(22px,2.4vw,30px)">الاستراتيجية</h3>
+          <p class="section__lead" style="margin-bottom:16px">الهوية القوية بتبدأ في الدماغ — في فهم البراند والسوق والناس — قبل ما تفتح أي برنامج.</p>
+          <div class="faq faq--chapters">
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">أ</i> إيه هي الهوية البصرية؟ <small>الفصل الأول · اللوجو مش البراند</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>خمس مصطلحات بتتلخبط مع بعض طول الوقت — البراند، البراندنج، هوية البراند، الهوية البصرية، واللوجو — وكل واحدة حاجة مختلفة.</p><p class="quote quote--sm">الهوية البصرية هي النظام البصري المتكامل اللي بيمثّل البراند من خلال عناصر تصميم متّسقة بتخلّي الناس تتعرف عليه، وتفتكره، وتثق فيه.</p><div class="pill-list"><span class="pill">البراند = إحساس</span><span class="pill">الهوية = نظام كامل</span><span class="pill">اللوجو = عنصر واحد</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">ب</i> ليه الناس بتشتري البراندات؟ <small>الفصل الثاني · الشراء قرار عاطفي</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>في رفّ المحل، عشرة منتجات بنفس الجودة وبنفس السعر. ليه إيد المستهلك بتمتدّ لواحد بالذات؟ مش عشان هو الأحسن — عشان هو البراند اللي بيحسّه.</p><p class="quote quote--sm">البراند مش موجود على المنتج — هو موجود في عقل العميل. الحضور الذهني أهم من الولاء.</p><div class="pill-list"><span class="pill">الثقة</span><span class="pill">الألفة</span><span class="pill">الإدراك</span><span class="pill">الرابط العاطفي</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">ج</i> استراتيجية البراند <small>الفصل الثالث · قبل أي بكسل</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>التموضع هو المكان اللي البراند بياخده في عقل العميل مقارنةً بالمنافسين. مش اللي إنت بتقوله عن نفسك — اللي العميل بيفتكره عنك.</p><p class="quote quote--sm">بدء التصميم قبل الاستراتيجية = لو مش عارف البراند واقف فين، أي لوجو هترسمه هيبقى تخمين. الاستراتيجية هي البوصلة.</p><div class="pill-list"><span class="pill">مين جمهورك؟</span><span class="pill">ليه أنت مختلف؟</span><span class="pill">خريطة التموضع</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">د</i> شخصية وصوت البراند <small>الفصل الرابع · لو البراند كان شخص</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>الشخصية هي اللي بتخلّي البراند إنسان بدل شعار جامد. وأسهل طريقة تحدّدها: حرّك البراند على مجموعة مؤشّرات بين طرفين.</p><p class="quote quote--sm">لما تحتار في لون أو خط، ارجع للشخصية — هي إجابتك. براند مرِح + عصري مستحيل يبقى لونه رمادي وخطّه كلاسيكي.</p><div class="pill-list"><span class="pill">النبرة</span><span class="pill">الرسالة</span><span class="pill">مؤشّرات الشخصية</span></div></div></div></div>
+          </div>
+        </div>
+        <div class="chapter" data-reveal>
+          <p class="kicker"><span>الرحلة الثانية · 7 فصول · بناء النظام البصري</span></p>
+          <h3 class="section__title" style="font-size:clamp(22px,2.4vw,30px)">الحرفة البصرية</h3>
+          <p class="section__lead" style="margin-bottom:16px">من الفكرة للنظام — شعار، ألوان، خطوط، ولغة بصرية كاملة. هنا بنحوّل الاستراتيجية لعناصر ملموسة.</p>
+          <div class="faq faq--chapters">
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">01</i> الاكتشاف والبحث <small>الفصل الخامس · التصميم يبدأ بالبحث</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>قبل ما تفتح أي برنامج، لازم تفهم الأرض اللي واقف عليها. تحليل المنافسين بصرياً على تلات محاور: شعاراتهم، ألوانهم، وخطوطهم.</p><p class="quote quote--sm">لو كل المنافسين أزرق، الأزرق هيخلّيك تايه — هنا فرصة التميّز.</p><div class="pill-list"><span class="pill">ديموجرافيكس</span><span class="pill">سيكوجرافيك</span><span class="pill">سلوك</span><span class="pill">شخصيات الجمهور</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">02</i> الاتجاه الإبداعي <small>الفصل السادس · الموودبورد أداة تفكير</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>الموودبورد مش مجرد صور حلوة مجمّعة — هو أداة تفكير. والأقاليم البصرية بتقدّم 2-3 اتجاهات مختلفة جذرياً لنفس البراند فالعميل بيختار الروح قبل التفاصيل.</p><p class="quote quote--sm">كلمات التصميم هي الجسر بين الاستراتيجية والفيجوال — اختَر 3-5 كلمات وخلّي كل عنصر يخدمها.</p><div class="pill-list"><span class="pill">بساطة نوردية</span><span class="pill">حِرفي عتيق</span><span class="pill">فخامة بوتيك</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">03</i> تصميم الشعار <small>الفصل السابع · اللوجو وشّ البراند</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>خمسة أنواع للشعار، وستة مبادئ بتفصل اللوجو اللي بيعيش سنين عن اللي بيتنسى بعد شهر.</p><p class="quote quote--sm">اختبر قبل ما تسلّم: التحجيم (واضح في 16بكسل؟) — التعرّف (يتفرق عن المنافس؟) — الوضوح (يشتغل أبيض وأسود؟).</p><div class="pill-list"><span class="pill">الكلمة</span><span class="pill">الحرف</span><span class="pill">الرمز</span><span class="pill">المركّب</span><span class="pill">الخاتم</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">04</i> أنظمة الألوان <small>الفصل الثامن · اللون يوصل للإحساس</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>اللون بيوصل للإحساس قبل ما العقل يقرا أي كلمة. قاعدة 60/30/10: توزيع متوازن بيمنع التشتّت.</p><p class="quote quote--sm">التباين شرط — معيار 4.5:1 للنص العادي على الأقل. لون جميل مش مقروء = فشل.</p><div class="pill-list"><span class="pill">60٪ أساسي</span><span class="pill">30٪ ثانوي</span><span class="pill">10٪ مميِّز</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">05</i> التايبوجرافي في الهوية <small>الفصل التاسع · الخط بيتكلم</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>اختيار الخط مش جمالي بس — هو قرار في صوت البراند. القاعدة الذهبية: تباين مش تشابه — ادمج خطّين مختلفين بوضوح لكن من نفس المزاج.</p><div class="pill-list"><span class="pill">Serif = تقليدي</span><span class="pill">Sans = عصري</span><span class="pill">Script = أنيق</span><span class="pill">Display = معبّر</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">06</i> اللغة البصرية <small>الفصل العاشر · تعرّف بلا لوجو</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>لما تشوف بوست وتعرف صاحبه قبل ما تقرا الاسم — دي اللغة البصرية شغّالة. خمسة عناصر: أشكال، ملامس، أنماط، أيقونات، وعناصر مساندة.</p><div class="pill-list"><span class="pill">سُمك ثابت</span><span class="pill">زوايا موحَّدة</span><span class="pill">وزن بصري واحد</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">07</i> اتجاه التصوير <small>الفصل الحادي عشر · الصور بتحكي</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>أسلوب التصوير جزء من الهوية بنفس قوة اللون. صورتين بنفس المنتج بأسلوبين مختلفين بيدّوا إحساسين متناقضين.</p><p class="quote quote--sm">ثبّت أربع حاجات: الإضاءة · المعالجة اللونية · التكوين · معالجة الموضوع. لما كل ده واحد، الصور بتبان من نفس العائلة.</p><div class="pill-list"><span class="pill">مؤسسي</span><span class="pill">حياتي</span><span class="pill">تحريري</span></div></div></div></div>
+          </div>
+        </div>
+        <div class="chapter" data-reveal>
+          <p class="kicker"><span>الرحلة الثالثة · 5 فصول · التطبيق والتقديم</span></p>
+          <h3 class="section__title" style="font-size:clamp(22px,2.4vw,30px)">المهنة</h3>
+          <p class="section__lead" style="margin-bottom:16px">النظام في الواقع — تطبيق الهوية، توثيقها في دليل، تقديمها للعميل، وبناء مشروع كامل من الصفر.</p>
+          <div class="faq faq--chapters">
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">08</i> تطبيقات الهوية <small>الفصل الثاني عشر · الهوية في الشارع</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>اللحظة الحقيقية للهوية مش في الملف — في الكارت اللي العميل بيمسكه، الباكدج اللي بيتفتح، والبوست اللي بيتشاف وسط مية بوست.</p><p class="quote quote--sm">اختبر الهوية على أصعب تطبيق من البداية: لو اللوجو شغّال على أيقونة موبايل 24 بكسل وعلى لافتة 3 متر — يبقى نظامك متين.</p><div class="pill-list"><span class="pill">كروت العمل</span><span class="pill">اللافتات</span><span class="pill">السوشيال</span><span class="pill">الموك أب</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">09</i> دليل الهوية <small>الفصل الثالث عشر · دستور الاتساق</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>من غير دليل، الهوية بتتفكّك بعد أول شهر. لما الهوية تخرج من إيدك لإيد ناس تانية — سوشيال، مطبعة، فريق ماركتنج — لازم قواعد تحميها.</p><div class="pill-list"><span class="pill">استخدام اللوجو</span><span class="pill">المسموح والممنوع</span><span class="pill">التخطيطات</span><span class="pill">أصول السوشيال</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">10</i> تقديم الهوية <small>الفصل الرابع عشر · أحسن هوية ممكن تتقتل</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>دي نقطة نادراً ما تتغطّى — مع إنها بتفرق بين قبول المشروع ورفضه. العميل مش بيشتري التصميم، بيشتري القصة.</p><p class="quote quote--sm">اخترت اللون ده عشان حلو = ضعف. اخترت اللون ده عشان بيميّزك عن 3 منافسين كلهم أزرق = احتراف. كل قرار لازم يرجع للاستراتيجية.</p><div class="pill-list"><span class="pill">السياق أولاً</span><span class="pill">المنطق</span><span class="pill">الكشف</span><span class="pill">الدفاع</span></div></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">11</i> أنظمة العالم الحقيقي <small>الفصل الخامس عشر · لما البراند يكبر</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>معمار البراند هو إزاي تنظّم العلاقة بين البراند الأم ومنتجاته. تلات نماذج رئيسية: بيت العلامات، البراند المعبّر، والبراند الموحَّد.</p><p class="quote quote--sm">الهوية الناجحة بتتصمّم عشان تكبر — رمز بسيط بيتمدّد على آلاف التطبيقات أحسن من رسمة معقّدة.</p></div></div></div>
+            <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span><i class="chapter__k">12</i> المشروع + ورش العمل <small>الفصل السادس عشر · مشروع كامل</small></span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>الخلاصة والتحدّي — تطبيق كل ما اتعلّمته في مشروع هوية بصرية كاملة من الصفر: من الاستراتيجية للدليل.</p><p class="quote quote--sm">اختر براند بتحبّه، وكمّل إطار التحليل عليه. هتتعلم من تحليل الناجحين أكتر من أي كتاب.</p><div class="pill-list"><span class="pill">تحليل البراند</span><span class="pill">بناء النظام</span><span class="pill">التوثيق</span><span class="pill">التقديم</span></div></div></div></div>
+          </div>
+        </div></div>
+      </section>
+
+      <section class="section container section--tight" aria-labelledby="next-title">
+        <div class="callout glass glass--deep" data-reveal>
+          <div>
+            <p class="kicker"><span data-ar="الكتاب التالي في المكتبة">NEXT IN THE LIBRARY</span></p>
+            <h3 id="next-title"><span lang="ar" dir="rtl">أساسيات التصميم الجرافيكي</span> <span class="grad-text">· Basics of Graphic Design</span></h3>
+            <p data-ar="مدخل عملي لأساسيات التصميم الجرافيكي — المبادئ والتكوين واللون والخط — للمحترفين والمبتدئين على حد سواء.">A practical introduction to the fundamentals of graphic design — principles, composition, colour, and type — for professionals and beginners alike.</p>
+          </div>
+          <div class="callout__actions"><a class="btn btn--glass" href="/books/"><span data-ar="← المكتبة">← The Library</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--primary magnetic" href="/books/basics-of-graphic-design/"><span data-ar="أساسيات التصميم الجرافيكي ←">Basics of Graphic Design →</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+        </div>
+      </section>
+
+      
+      <section class="section container section--tight" aria-label="Next step" data-ar-label="الخطوة التالية">
+        <div class="closing" data-reveal>
+          <span class="closing__border" aria-hidden="true"></span>
+          <div class="closing__inner glass glass--deep">
+            <p class="kicker kicker--center"><span data-ar="نتطلع لسماعك">CAN'T WAIT TO HEAR FROM YOU</span></p>
+            <h2 class="closing__title"><span data-ar="لا نطيق الانتظار">Can’t Wait To</span><br /><span class="grad-text" data-ar="لنسمع منك.">Hear From You.</span></h2>
+            <p class="closing__text" data-ar="أسئلة عن هذا الكتاب أو تراخيص جماعية أو نسخة تدريبية مخصصة؟ كلمنا.">Questions about this book, bulk licences, or a custom training edition? Talk to us.</p>
+            <div class="hero__ctas hero__ctas--center"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز موعدًا">Book an Appointment</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/contact/"><span data-ar="ابدأ الآن">Get Started</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--ghost" href="/services/"><span data-ar="كل الخدمات">Full Services</span><i class="flip" data-icon="arrow"></i></a></div>
+            <p class="closing__contact"><a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a> · <a class="ltr" href="tel:+966545520750">+966 54 552 0750</a> · <a class="ltr" href="tel:+201092500454">+20 109 250 0454</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+    <script src="/assets/js/shop.js"></script>
+  </body>
+</html>

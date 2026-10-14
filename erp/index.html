@@ -51,12 +51,11 @@
 
   <!-- ░░ Navigation ░░ -->
   <header class="nav" id="nav">
-    <div class="nav__inner container">
-      <div class="nav__brand">
-        <a href="/" aria-label="Code & Canvas — home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="Code & Canvas" class="nav__logo" width="96" height="40" /></a>
-        <span class="nav__sep" aria-hidden="true"></span>
-        <a class="wordmark wordmark--sm" href="#top" aria-label="CanvasOne"><span>Canvas</span><b>One</b></a>
-      </div>
+    <div class="nav__pill container">
+      <a class="nav__brand" href="/" aria-label="Code & Canvas — home" data-ar-label="Code & Canvas — الرئيسية">
+        <span class="nav__mark" aria-hidden="true"><img src="/assets/brand/icon-white.svg" alt="" width="26" height="26" /></span>
+        <span class="nav__word" aria-hidden="true">Canvas<em>One</em></span>
+      </a>
       <nav class="nav__links" id="navLinks" aria-label="Sections">
         <a href="#platform" data-t="ui.nav.platform"></a>
         <a href="#modules" data-t="ui.nav.modules"></a>
@@ -67,10 +66,10 @@
         <a href="#faq" data-t="ui.nav.faq"></a>
       </nav>
       <div class="nav__actions">
-        <button class="icon-btn" id="printBtn" type="button" data-t-title="ui.print" data-icon="printer"></button>
-        <button class="lang-btn" id="langBtn" type="button"></button>
-        <a class="btn btn--primary btn--sm magnetic" href="#builder" data-t="ui.cta"></a>
-        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+        <button class="nav__round lang-btn" id="langBtn" type="button"></button>
+        <button class="nav__round" id="printBtn" type="button" data-t-title="ui.print" data-icon="printer"></button>
+        <a class="btn btn--primary nav__cta magnetic" href="#builder" data-t="ui.cta"></a>
+        <button class="nav__round burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>

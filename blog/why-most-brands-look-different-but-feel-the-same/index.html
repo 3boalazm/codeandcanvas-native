@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="لماذا تبدو معظم العلامات مختلفة لكنها تُشعرك بالشيء نفسه — Code &amp; Canvas" data-desc-ar="13.8 تريليون دولار من القيمة السوقية تقودها السمعة. معظم العلامات تهدر هذه القيمة — لأنها خلطت بين التصميم والعلامة.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Why Most Brands Look Different but Feel the Same — Code &amp; Canvas</title>
+    <meta name="description" content="$13.8T of market cap is reputation-driven. Most brands are leaking that value — because they confused design for brand." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Why Most Brands Look Different but Feel the Same — Code &amp; Canvas" />
+    <meta property="og:description" content="$13.8T of market cap is reputation-driven. Most brands are leaking that value — because they confused design for brand." />
+    <meta property="og:url" content="https://codeandcanvas.net/blog/why-most-brands-look-different-but-feel-the-same/" />
+    <link rel="canonical" href="https://codeandcanvas.net/blog/why-most-brands-look-different-but-feel-the-same/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <!-- /cc:head -->
+  </head>
+  <body class="is-loading" data-nav="blog">
+    <!-- cc:top -->
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__pill container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <span class="nav__mark" aria-hidden="true"><img src="/assets/brand/icon-white.svg" alt="" width="26" height="26" /></span>
+          <span class="nav__word" aria-hidden="true">Code<em>&amp;</em>Canvas</span>
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a class="only-mobile" href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="nav__round lang-btn" id="langBtn" type="button"></button>
+          <a class="nav__round" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="WhatsApp" data-ar-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
+          <a class="btn btn--primary nav__cta magnetic" href="/contact/" data-key="contact"><span data-ar="تواصل">Contact</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="nav__round burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <article class="post container" aria-labelledby="post-title">
+        <header class="post__head">
+          <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/blog/" data-ar="الرؤى">Insights</a><i>›</i><span aria-current="page" data-ar="استراتيجية العلامة">Brand Strategy</span></nav>
+          <div class="post__meta" data-reveal><span class="badge" data-ar="استراتيجية العلامة">Brand Strategy</span><span><i data-icon="clock" aria-hidden="true"></i>10 <span data-ar="دقائق قراءة">min read</span></span><span><i data-icon="calendar" aria-hidden="true"></i>June 2026</span><span><span class="author"><span class="avatar">MA</span><span data-ar="مصطفى أبو العزم">Mustafa Aboalazm</span></span></span></div>
+          <h1 class="post__title" id="post-title" data-reveal style="--d:.06s" data-ar="لماذا تبدو معظم العلامات مختلفة لكنها تُشعرك بالشيء نفسه">Why Most Brands Look Different but Feel the Same</h1>
+          <p class="post__excerpt" data-reveal style="--d:.12s" data-ar="13.8 تريليون دولار من القيمة السوقية تقودها السمعة. معظم العلامات تهدر هذه القيمة — لأنها خلطت بين التصميم والعلامة.">$13.8T of market cap is reputation-driven. Most brands are leaking that value — because they confused design for brand.</p>
+          <p class="post__lang-note" data-ar="هذه المقالة منشورة بالإنجليزية كما كُتبت.">This article is published in English.</p>
+        </header>
+        <div class="post__cover" data-reveal>
+          <div class="art art--wide art--pink" data-slot="blog/why-most-brands-look-different-but-feel-the-same/cover"><span class="art__mark" style="font-size:96px">🎯</span><span class="art__cap">Brand Strategy · Code &amp; Canvas</span></div>
+        </div>
+        <div class="post__layout">
+          <div class="post__body prose" dir="ltr" lang="en">
+            <div class="post__stats"><div><strong>$13.8T</strong><span>of S&amp;P 500 market cap driven by corporate reputation alone — 2025</span></div><div><strong>15–25%</strong><span>Price premium a strong brand commands over competitors with equivalent services</span></div><div><strong>23%</strong><span>Revenue increase from consistent brand presentation across all touchpoints</span></div></div>
+            
+<h2 id="not-what-you-say">A Brand Is Not What You Say It Is</h2>
+<p>As Head of Brand Strategy at Code &amp; Canvas, I often see founders obsess over the hex codes of their logos while their market share evaporates into a "red ocean" of commoditized rivals. They have invested in design but neglected the <strong>brand</strong> — a mistake that quietly erodes shareholder value and weakens competitive moats.</p>
+<p>The reality is that reputation now asserts itself as a market-pricing mechanism. In 2025, corporate reputation alone accounted for <strong>$13.8 trillion</strong> of the S&amp;P 500 market capitalization, representing 26% of total market value. Yet many companies continue to leak value because they treat branding as a decorative layer rather than a strategic operating system. A brand is not what you say it is; <em>it is what the market feels it is.</em></p>
+<blockquote class="pull">A brand is not what you say it is. It is what the market feels it is — and that feeling is built long before a prospect opens your website.</blockquote>
+
+<h2 id="sameness">The Sameness Paradox</h2>
+<p>The most common misconception in contemporary business is the conflation of "brand" with "visual identity". A logo is merely a visual shorthand — a symbol meant to signify origin and quality. While an iconic mark is powerful, its strength is derived from the meaning imbued within it over decades of consistent performance.</p>
+<p>A brand, properly defined, is a <strong>meaning-making system</strong>. At Code &amp; Canvas, we view the brand as the "operating system" of the business, influencing every department from product development to HR. When a brand is buried three layers deep under marketing as a "departmental function," it loses its strategic impact.</p>
+<h3>Positioning vs. Visual Identity</h3>
+<p>The reason many brands "feel the same" despite looking different is a failure of positioning. Positioning is the practice of establishing a unique and distinctive niche within a competitive landscape — the strategic "why" that informs the visual "how."</p>
+<p>Apple's brand identity is characterized by a minimalist logo and white space, but its brand <em>image</em> is one of innovation and reliability. Its visual coherence transforms consistency into emotional credibility. <strong>If the positioning is weak, the most beautiful design in the world will fail to resonate.</strong></p>
+
+<h2 id="moat">The Economic Moat: Trust and Pricing Power</h2>
+<p>The financial implications of a strong, differentiated brand are not theoretical — they are quantifiable. Companies with top-quartile design and reputation scores outperform their industry counterparts by as much as two-to-one in revenue growth and total returns to shareholders.</p>
+<ol class="num-list">
+<li><strong>Enhanced Pricing Power</strong><p>A strong brand functions as a hedge against price sensitivity. A company with a robust brand can command a <strong>15–25% price premium</strong> over competitors with equivalent services — moving the buyer's focus from "what does it cost?" to "what is it worth?"</p></li>
+<li><strong>Lower Customer Acquisition Costs</strong><p>Strong brands do the "pre-selling" work. When prospects arrive already familiar with and predisposed to trust a company, the sales cycle can be shortened by <strong>30% or more</strong> — making performance campaigns cheaper and more effective.</p></li>
+<li><strong>Talent Acquisition and Retention</strong><p><strong>80% of employees</strong> between 18 and 30 will leave a company if they perceive its brand to be weak. A strong brand acts as a cultural compass, attracting high-quality talent who evaluate employers based on the professionalism of their public presence.</p></li>
+</ol>
+
+<h2 id="neurological">The Neurological Anchor: Why Feeling Trumps Looking</h2>
+<p>Dual-process theory suggests that <strong>95% of human decisions</strong> happen below the threshold of conscious awareness in "System 1" — the fast, automatic processing center of the brain. Emotional branding targets this 95%, building stored associations through repetition.</p>
+<p>When a brand consistently evokes warmth, aspiration, or belonging, these responses are encoded in the limbic system before the conscious "System 2" brain can perform a rational assessment. <em>Performance marketing targets the final 5% of the decision — the rational justification.</em> If you only optimize for clicks and scrolls, you are harvesting what the brand built — but not planting new seeds.</p>
+<div class="callout-box"><span class="callout-box__icon">🧠</span><div><strong>Neurological Principle</strong><p>Consistent brand presentation increases revenue by <strong>23%</strong> because it creates a reliable pattern that reduces the brain's "search cost" at the point of purchase. Familiarity feels like trust. Trust justifies the price.</p></div></div>
+
+<h2 id="mistakes">Common Branding Mistakes to Avoid</h2>
+<div class="principles">
+<article class="is-bad"><span class="layer__k">Mistake 01</span><h3>Failure to Stay in Your Lane</h3><p>Colgate's 1982 frozen dinners. Customers trusted Colgate for toothpaste — not food. Deviate from core expertise too suddenly and the brand fails before the product is even evaluated.</p></article>
+<article class="is-bad"><span class="layer__k">Mistake 02</span><h3>Prioritizing Creativity Over Clarity</h3><p>Forcing users to decode navigation is a business cost. Refined experiences earn attention through seamless utility — not visual complexity that begs for admiration.</p></article>
+<article class="is-bad"><span class="layer__k">Mistake 03</span><h3>The Logo-First Fallacy</h3><p>Many B2B leaders believe they have "done" their brand because they have a logo and a website. <strong>Rebranding without repositioning is merely "paint on rust."</strong></p></article>
+<article class="is-bad"><span class="layer__k">Mistake 04</span><h3>Inconsistent Touchpoints</h3><p><strong>88% of online consumers</strong> are less likely to return after a single bad experience. If a brand promises innovation on its website but delivers a clumsy mobile experience, trust is broken.</p></article>
+</div>
+
+<h2 id="framework">The Strategic Framework: Building a Memorable Brand</h2>
+<p>At Code &amp; Canvas, we employ a multi-phased methodology to ensure brand identity is strategically aligned with business objectives.</p>
+<ol class="num-list">
+<li><strong>Deep Analysis</strong><p>Before any pixels are moved, we conduct a business and market audit — identifying misalignments between internal employee perception and external market portrayal. We ask: What problem do you actually solve, and what does life look like for the customer once it is solved?</p></li>
+<li><strong>Strategic Positioning</strong><p>We define the brand's market architecture — articulating the <strong>Brand Essence</strong> (the "what, how, and why") and the <strong>Brand Compass</strong> (purpose, vision, and mission). We select 2–3 Brand Archetypes to connect with customers on an emotional, human level.</p></li>
+<li><strong>Identity System Development</strong><p>Only after strategy is set do we translate it into design — <strong>Flexible Visual Systems</strong> with variable fonts, animated illustrations, and living icons that adapt across social media, VR, and physical spaces without losing core identity.</p></li>
+<li><strong>Implementation and Governance</strong><p>Comprehensive Brand Guidelines and Design Systems serve as the "single source of truth." For large enterprises, a Figma design system can accelerate simple development tasks by <strong>47%</strong> and reduce design rework significantly.</p></li>
+</ol>
+
+<h2 id="examples">Real-World Examples of Strategic Clarity</h2>
+<div class="principles">
+<article><span class="layer__k">Case · GE Reset</span><h3>Narrative Simplification → 4× Market Value</h3><p>GE restructured into three focused entities (GE Aerospace, GE Vernova, GE HealthCare). By simplifying its narrative into brand-led chapters, GE's market value quadrupled within two years.</p></article>
+<article><span class="layer__k">Case · Airbnb 2014</span><h3>"Belong Anywhere" — Community Over Rooms</h3><p>Airbnb shifted from a room-booking platform to a mission of global belonging. Soft color palettes and human-centered imagery fostered community — justifying market dominance.</p></article>
+<article><span class="layer__k">Case · NVIDIA 2025</span><h3>Strategic Clarity → 51.6% Reputation Value</h3><p>By aligning its brand with AI and semiconductors, NVIDIA's reputation contribution reached 51.6% of total market cap in 2025 — topping the S&amp;P 500 rankings.</p></article>
+<article><span class="layer__k">Case · AI Curation</span><h3>Human Authorship Remains Central</h3><p>GenAI can generate 1,500 candidate names in hours but often lacks cultural nuance. The emerging skillset — <strong>prompt literacy and data evaluation</strong> — requires human expertise to safeguard creative integrity.</p></article>
+</div>
+
+            
+<aside class="cta-box">
+  <div><p class="meta">Code &amp; Canvas · Brand Identity &amp; Strategic Positioning</p><h3>Ready to build a brand the market actually feels differently about?</h3><p>Our brand strategy practice combines deep strategic positioning work with the design system execution to ensure your identity is a competitive moat — not a decorative layer.</p></div>
+  <div class="cta-box__actions"><a class="btn btn--primary" href="/creative-services/"><span>Explore Brand Services</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/contact/#book"><span>Book a Discovery Call</span></a></div>
+</aside>
+            <section class="takeaways" id="takeaways"><h2>Actionable Takeaways for Leadership</h2><p class="meta">Five commitments that build lasting brand equity</p><ol class="tk-list tk-list--num"><li><strong>Audit your perception gap:</strong> Conduct interviews with customers and employees to see if your internal "truth" matches your external "story."</li><li><strong>Invest in infrastructure, not just tactics:</strong> Treat your brand and design system as a managed portfolio — balancing legacy strengths with emerging demands.</li><li><strong>Lead from the top:</strong> The CEO should act as the "Chief Meaning Officer" — ensuring every initiative reinforces the core narrative.</li><li><strong>Focus on emotional resilience:</strong> In volatile markets, your reputation is your hedge. Invest in the "slow work" of building emotional availability before you need to harvest it.</li><li><strong>Measure what matters:</strong> Track brand health indicators like consideration, price premium tolerance, and internal alignment — not just traffic and impressions.</li></ol></section>
+            <h2 id="faq">Frequently Asked Questions</h2><p class="meta">Common questions on brand strategy, design systems, and creative practice.</p><div class="faq faq--prose">
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>How do I know if my brand positioning is weak?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>Key signs include high bounce rates, frequent customer questions about what makes you different, lost deals to competitors with similar pricing, and internal teams that struggle to explain the company's purpose.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Is a design system worth the cost for a startup?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>A design system requires an upfront investment but pays for itself by reducing development time by up to <strong>31%</strong> and ensuring consistency that builds trust as you scale. For very simple products, a basic style guide may suffice until complexity increases.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Can a brand change its positioning?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>Yes — but it must be handled carefully. Google successfully evolved from a simple search engine to a diversified tech conglomerate by slowly expanding into adjacent categories while maintaining a consistent visual and verbal identity.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Why does consistency matter so much in branding?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>Consistency builds familiarity, and familiarity breeds recognition. It takes <strong>5–7 brand impressions</strong> before a consumer recognizes your brand — consistency ensures those impressions reinforce each other rather than confusing the user.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>How does branding impact company valuation?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>Acquirers view a strong brand as a proxy for customer loyalty and revenue sustainability. A strong brand signals an asset that will continue generating value post-acquisition; a weak brand is viewed as a risk requiring further investment.</p></div></div></div></div>
+            <aside class="author-box">
+              <span class="avatar avatar--lg">MA</span>
+              <div><strong>Mustafa Aboalazm</strong><p class="meta">Head of Brand Strategy · Co-Founder · Code &amp; Canvas · Al Obour, Egypt</p><p>Systemic Identity Architect and Senior Brand Designer with 9+ years building brand systems across MENA. Former Media Director at Nile Pharma Food. Co-Founder of Code &amp; Canvas — where enterprise architecture meets strategic creative practice.</p><div class="author-box__links"><a class="text-link" href="/services/"><span data-ar="خدماتنا ←">Our Services →</span></a><a class="text-link" href="/contact/"><span data-ar="اعمل معنا ←">Work With Us →</span></a><a class="text-link" href="https://aboalazm-os.vercel.app/work" target=_blank rel=noopener><span data-ar="الأعمال ↗">Portfolio ↗</span></a></div></div>
+            </aside>
+          </div>
+          <aside class="post__side">
+            <nav class="toc glass" aria-label="On this page" data-ar-label="في هذه الصفحة"><h4 data-ar="في هذه الصفحة">On this page</h4><div class="toc__list"><a href="#not-what-you-say">A Brand Is Not What You Say It Is</a><a href="#sameness">The Sameness Paradox</a><a href="#moat">The Economic Moat: Trust and Pricing Power</a><a href="#neurological">The Neurological Anchor: Why Feeling Trumps Looking</a><a href="#mistakes">Common Branding Mistakes to Avoid</a><a href="#framework">The Strategic Framework: Building a Memorable Brand</a><a href="#examples">Real-World Examples of Strategic Clarity</a><a href="#takeaways">Actionable Takeaways for Leadership</a><a href="#faq">Frequently Asked Questions</a></div></nav>
+            <div class="card glass book-card" style="margin-top:14px">
+              <p class="kicker"><span data-ar="ناقش هذا المقال">Discuss this article</span></p>
+              <p data-ar="احجز مكالمة استكشافية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.">Book a 30-minute discovery call — we come prepared, not with a pitch.</p>
+              <div class="book-card__actions"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة مجانية">Book a Free Call</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+            </div>
+          </aside>
+        </div>
+        <section class="related">
+          <div class="head-split"><h2 class="section__title" style="font-size:clamp(22px,2.4vw,30px)" data-ar="تابع القراءة">Continue reading</h2><a class="text-link" href="/blog/"><span data-ar="كل الرؤى ←">View all insights →</span></a></div>
+          <div class="post-grid">
+          <a class="card glass post-card" href="/blog/design-systems-operating-system-modern-digital-products/"><div class="art art--pink"><span class="art__mark" style="font-size:44px">⚙️</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">Design Systems</span></div><h3>Design Systems: The Operating System of Modern Digital Products</h3><div class="post-card__foot"><span>5 min read · June 2026</span></div></div></a>
+          <div class="card glass post-card is-soon"><div class="art art--pink"><span class="art__mark" style="font-size:44px">🤖</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">Creative Strategy</span></div><h3>Creative Strategy in the Age of Generative AI</h3><div class="post-card__foot"><span class="badge">Coming soon</span></div></div></div>
+          <a class="card glass post-card" href="/blog/why-startups-waste-money-wrong-product/"><div class="art art--violet"><span class="art__mark" style="font-size:44px">💡</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">Product Strategy</span></div><h3>Why Most Startups Waste Money Building the Wrong Product</h3><div class="post-card__foot"><span>8 min read · June 2026</span></div></div></a>
+          </div>
+        </section>
+      </article>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+  </body>
+</html>

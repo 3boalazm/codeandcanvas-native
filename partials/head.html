@@ -1,0 +1,22 @@
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="المنهجية — Code &amp; Canvas" data-desc-ar="مواءمة الأعمال مع الأصول لا مجرد تسليم. منهجية Code &amp; Canvas ذات المراحل الثماني — استكشاف BMM وموجز المشروع وبحث القدرات والوضع المستهدف وفق TOGAF ADM والمفهوم والبناء والتحقق والإطلاق — إضافة إلى مصفوفة مواءمة الأعمال مع التقنية.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Methodology — Code &amp; Canvas</title>
+    <meta name="description" content="Business-Asset Alignment, not just delivery. The 8-stage Code &amp; Canvas methodology — BMM discovery, engagement brief, capability research, TOGAF ADM target state, concept, build, validation, and launch — plus the Business-to-Technology Alignment Matrix." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Methodology — Code &amp; Canvas" />
+    <meta property="og:description" content="Business-Asset Alignment, not just delivery. The 8-stage Code &amp; Canvas methodology — BMM discovery, engagement brief, capability research, TOGAF ADM target state, concept, build, validation, and launch — plus the Business-to-Technology Alignment Matrix." />
+    <meta property="og:url" content="https://codeandcanvas.net/methodology/" />
+    <link rel="canonical" href="https://codeandcanvas.net/methodology/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <!-- /cc:head -->
+  </head>
+  <body class="is-loading" data-nav="about">
+    <!-- cc:top -->
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__pill container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <span class="nav__mark" aria-hidden="true"><img src="/assets/brand/icon-white.svg" alt="" width="26" height="26" /></span>
+          <span class="nav__word" aria-hidden="true">Code<em>&amp;</em>Canvas</span>
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a class="only-mobile" href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="nav__round lang-btn" id="langBtn" type="button"></button>
+          <a class="nav__round" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="WhatsApp" data-ar-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
+          <a class="btn btn--primary nav__cta magnetic" href="/contact/" data-key="contact"><span data-ar="تواصل">Contact</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="nav__round burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <!-- ░░ Hero ░░ -->
+      <section class="phero container phero--center" aria-labelledby="page-title">
+        <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/about/" data-ar="من نحن">About</a><i>›</i><span aria-current="page" data-ar="المنهجية">Methodology</span></nav>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="منهجيتنا">Our Methodology</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مواءمة الأعمال مع الأصول.">Business-Asset Alignment.</span><br /><span class="grad-text" data-ar="لا مجرد تسليم.">Not just delivery.</span></h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="معظم المشاريع تسلّم مخرجات. مشاريعنا تسلّم مواءمة — رابطًا قابلًا للتتبع بين أهدافك وقدراتك وتقنيتك وبياناتك. كل مرحلة مقصودة. لا يُبنى شيء بلا سبب عمل.">Most engagements deliver outputs. Ours deliver alignment — a traceable connection between your goals, capabilities, technology, and data. Every phase is intentional. Nothing is built without a business reason.</p>
+        <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة استكشافية">Book a Discovery Call</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="#stages"><span data-ar="استعرض المراحل الثماني">See the 8 stages</span><i class="flip" data-icon="arrowDown"></i></a></div>
+      </section>
+
+      <!-- ░░ 8 stages ░░ -->
+      <section class="section container section--tight" id="stages" aria-labelledby="stages-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">01</span><span data-ar="العملية من 8 مراحل">The 8-stage process</span></p>
+          <h2 class="section__title" id="stages-title"><span data-ar="ثماني مراحل.">Eight stages.</span> <span class="grad-text" data-ar="في كل مشروع.">Every engagement.</span></h2>
+        </header>
+        <ol class="steps steps--2col">
+          <li data-reveal style="--d:0.00s">
+            <div>
+              <p class="person__role" data-ar="الأساس">Foundation</p>
+              <h3 data-ar="الاستكشاف وأهداف الأعمال">Discovery &amp; Business Goals</h3>
+              <p data-ar="نبدأ بنموذج دوافع الأعمال — نرسم رؤيتك وأهدافك واستراتيجياتك وتكتيكاتك قبل أي قرار تصميمي. ينتج عن ذلك سلسلة قابلة للتتبع من النية التجارية إلى نطاق التسليم. لا شيء يُفترض؛ كل شيء يُؤكَّد كتابةً.">We start with the Business Motivation Model — mapping your vision, goals, strategies, and tactics before a single design decision is made. This produces a traceable chain from commercial intent to deliverable scope. Nothing is assumed; everything is confirmed in writing.</p>
+              <div class="steps__meta"><span>BMM</span><span>Stakeholder Workshop</span><span>Goals Map</span></div>
+            </div>
+          </li>
+          <li data-reveal style="--d:0.05s">
+            <div>
+              <p class="person__role" data-ar="المواءمة">Alignment</p>
+              <h3 data-ar="الانطلاق + موجز المشروع">Kickoff + Engagement Brief</h3>
+              <p data-ar="تأكيد رسمي للنطاق ومواءمة أصحاب المصلحة واعتماد موجز المشروع. يحدد الموجز شكل النجاح وما هو خارج النطاق وكيف تُتخذ القرارات. هنا تُستحق دفعة المعلم الأول.">Formal scope confirmation, stakeholder alignment, and engagement brief sign-off. The brief defines what success looks like, what is out of scope, and how decisions will be made. First milestone payment is triggered here.</p>
+              <div class="steps__meta"><span>Engagement Brief</span><span>Scope Matrix</span><span>RACI</span></div>
+            </div>
+          </li>
+          <li data-reveal style="--d:0.10s">
+            <div>
+              <p class="person__role" data-ar="التشخيص">Diagnosis</p>
+              <h3 data-ar="بحث القدرات">Capability Research</h3>
+              <p data-ar="رسم تدفق القيمة وخريطة حرارية للقدرات — لتحديد ما هو معطّل أو مفقود أو غير متوائم مع أهدافك التجارية. هذه هي طبقة التشخيص التي تجعل كل قرار لاحق قابلًا للدفاع عنه لا حدسيًا.">Value stream mapping and capability heatmap — identifying what&#x27;s broken, missing, or misaligned with your commercial objectives. This is the diagnostic layer that makes every downstream decision defensible, not intuitive.</p>
+              <div class="steps__meta"><span>Capability Map</span><span>Value Stream Analysis</span><span>Heatmap</span></div>
+            </div>
+          </li>
+          <li data-reveal style="--d:0.15s">
+            <div>
+              <p class="person__role" data-ar="العمارة">Architecture</p>
+              <h3 data-ar="الاستراتيجية وتصميم الوضع المستهدف">Strategy &amp; Target State Design</h3>
+              <p data-ar="تصميم الوضع المستهدف المرتكز على TOGAF ADM. إنتاج مصفوفة مواءمة الأعمال مع التقنية — تربط كل هدف استراتيجي بقدرة أو أصل تقني أو مبادرة بيانات. ولمشاريع العلامة: المنصة الاستراتيجية والتموضع وعمارة العلامة.">TOGAF ADM-grounded target state design. Business-to-Technology Alignment Matrix produced — linking every strategic objective to a capability, technology asset, or data initiative. For brand engagements: strategic platform, positioning, and brand architecture.</p>
+              <div class="steps__meta"><span>TOGAF ADM</span><span>ArchiMate</span><span>Alignment Matrix</span><span>Brand Platform</span></div>
+            </div>
+          </li>
+          <li data-reveal style="--d:0.00s">
+            <div>
+              <p class="person__role" data-ar="الابتكار">Creation</p>
+              <h3 data-ar="تطوير المفهوم">Concept Development</h3>
+              <p data-ar="مفاهيم متوائمة مع الاستراتيجية — لا مع الجماليات أو التفضيل الشخصي. تُقيَّم مفاهيم العلامة مقابل المنصة الاستراتيجية، وخيارات العمارة مقابل نموذج القدرات، ونماذج التحليلات مقابل قرارات الأعمال التي يجب أن تمكّنها.">Concepts aligned to strategy — not to aesthetics or personal preference. Brand concepts are evaluated against the strategic platform. Architecture options are evaluated against the capability model. Analytics models are evaluated against business decisions they must enable.</p>
+              <div class="steps__meta"><span>Brand Concepts</span><span>Architecture Options</span><span>Analytics Models</span></div>
+            </div>
+          </li>
+          <li data-reveal style="--d:0.05s">
+            <div>
+              <p class="person__role" data-ar="الإنتاج">Production</p>
+              <h3 data-ar="التصميم والبناء">Design &amp; Build</h3>
+              <p data-ar="إنتاج كامل — منظومات هوية بصرية أو وثائق معمارية أو بناء لوحات مؤشرات أو تطوير منتجات رقمية. كل مخرج قابل للتتبع إلى متطلب عمل حُدد في المراحل 1–5. لا توسّع في النطاق ولا إضافات غير موثقة.">Full production — visual identity systems, architecture documentation, dashboard builds, or digital product development. Every output is traceable to a business requirement established in phases 1–5. No scope creep; no undocumented additions.</p>
+              <div class="steps__meta"><span>Figma</span><span>Adobe Suite</span><span>Sparx EA</span><span>Power BI</span></div>
+            </div>
+          </li>
+          <li data-reveal style="--d:0.10s">
+            <div>
+              <p class="person__role" data-ar="التحقق">Validation</p>
+              <h3 data-ar="التحقق والصقل">Validation &amp; Refinement</h3>
+              <p data-ar="دورة مراجعة منظمة بنطاق تعديل محدد. بوابة اعتماد العميل قبل التسليم النهائي. تُتتبّع التعديلات مقابل الموجز الأصلي — تُوثَّق تغييرات النطاق، وإن كانت جوهرية تستدعي تعديلًا في النطاق. تُستحق دفعة المعلم الثاني عند الاعتماد.">Structured review cycle with defined revision scope. Client sign-off gate before final delivery. Revisions are tracked against the original brief — changes to scope are documented and, if significant, trigger a scope amendment. Second milestone payment is triggered at sign-off.</p>
+              <div class="steps__meta"><span>Revision Rounds</span><span>Sign-off Gate</span><span>Scope Amendment</span></div>
+            </div>
+          </li>
+          <li data-reveal style="--d:0.15s">
+            <div>
+              <p class="person__role" data-ar="التسليم">Handover</p>
+              <h3 data-ar="الإطلاق والترسيخ">Launch &amp; Embed</h3>
+              <p data-ar="النشر ووثائق التسليم ودعم ما بعد الإطلاق حيثما ينطبق. تسليم الملفات مشروط بالسداد الكامل. ولمشاريع العمارة المؤسسية والاستشارات: الإشراف على التنفيذ متاح كاتفاق منفصل.">Deployment, handover documentation, and post-launch support where applicable. File release is conditional on full settlement. For EA and advisory engagements: implementation oversight is available as a separate retainer.</p>
+              <div class="steps__meta"><span>Handover Pack</span><span>Post-Launch Support</span><span>Implementation Oversight</span></div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ░░ Diagnostic layers ░░ -->
+      <section class="section container section--flush-top" id="layers" aria-labelledby="layers-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">02</span><span data-ar="طبقتا التشخيص">The Two Diagnostic Layers</span></p>
+          <h2 class="section__title" id="layers-title"><span data-ar="الغايات أولًا.">Ends first.</span> <span class="grad-text" data-ar="ثم الأصول.">Then assets.</span></h2>
+        </header>
+        <div class="grid grid--2">
+          <article class="card glass tile" data-tilt data-reveal>
+            <p class="person__role" data-ar="نموذج دوافع الأعمال (BMM)">Business Motivation Model (BMM)</p>
+            <h3 data-ar="نبدأ بالغايات لا بالوسائل.">We start with ends, not means.</h3>
+            <p data-ar-html="قبل أي عمل تصميمي أو معماري، نرسم &lt;strong&gt;أهداف عملك ← استراتيجياتك ← تكتيكاتك ← قدراتك&lt;/strong&gt; باستخدام نموذج دوافع الأعمال. ينتج عن ذلك سلسلة قابلة للتتبع — من الرؤية وصولًا إلى القدرة أو عنصر العلامة المحدد الذي يحققها. لا يُبنى شيء بلا سبب عمل.">Before any design or architecture work begins, we map your <strong>business goals → strategies → tactics → capabilities</strong> using the Business Motivation Model. This produces a traceable chain — from vision down to the specific capability or brand element that delivers it. Nothing is built without a business reason.</p>
+          </article>
+          <article class="card glass tile" data-tilt data-reveal style="--d:.08s">
+            <p class="person__role" data-ar="تدفق القيمة + رسم القدرات">Value Stream + Capability Mapping</p>
+            <h3 data-ar="ثم نربط تلك الغايات بأصولك.">Then we connect those ends to your assets.</h3>
+            <p data-ar-html="نبني &lt;strong&gt;خرائط قدرات الأعمال&lt;/strong&gt; ونوائمها مع تدفقات القيمة — لتحديد أي القدرات معطّلة أو مفقودة أو غير متوائمة مع أهدافك التجارية. هذه هي طبقة التشخيص التي تجعل كل قرار لاحق قابلًا للدفاع عنه لا حدسيًا.">We construct <strong>business capability maps</strong> and align them to value streams — identifying which capabilities are broken, missing, or misaligned with your commercial objectives. This is the diagnostic layer that makes every downstream decision defensible, not intuitive.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ░░ Matrix ░░ -->
+      <section class="section container section--flush-top" id="matrix" aria-labelledby="matrix-title">
+        <header class="section__head" data-reveal>
+          <p class="kicker"><span class="kicker__num">03</span><span data-ar="مصفوفة مواءمة الأعمال مع التقنية">Business-to-Technology Alignment Matrix</span></p>
+          <h2 class="section__title" id="matrix-title"><span data-ar="لتعرف دائمًا">So you always know</span> <span class="grad-text" data-ar="لماذا اتُّخذ القرار.">why a decision was made.</span></h2>
+          <p class="section__lead" data-ar="مصفوفة تتبّع تربط أهداف الأعمال بالقدرات والأصول التقنية ومبادرات التحول. كل مشروع ينتج نسخة منها — لتعرف دائمًا سبب كل قرار.">A traceability matrix linking business goals to capabilities, technology assets, and transformation initiatives. Every engagement produces a version of this — so you always know why a decision was made.</p>
+        </header>
+        <div class="table-wrap glass" data-reveal>
+          <table class="matrix">
+            <thead><tr><th scope="col" data-ar="هدف العمل">Business Goal</th><th scope="col" data-ar="قدرة العلامة">Brand Capability</th><th scope="col" data-ar="الأصل التقني">Technology Asset</th><th scope="col" data-ar="البيانات / التحليلات">Data / Analytics</th><th scope="col" data-ar="التحول">Transformation</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" data-ar="النمو ودخول السوق">Growth &amp; Market Entry</th><td>●</td><td>◐</td><td>◐</td><td>●</td></tr>
+              <tr><th scope="row" data-ar="الكفاءة التشغيلية">Operational Efficiency</th><td>○</td><td>●</td><td>●</td><td>●</td></tr>
+              <tr><th scope="row" data-ar="المصداقية الرقمية">Digital Credibility</th><td>●</td><td>●</td><td>○</td><td>◐</td></tr>
+              <tr><th scope="row" data-ar="الامتثال التنظيمي">Regulatory Compliance</th><td>◐</td><td>●</td><td>◐</td><td>●</td></tr>
+              <tr><th scope="row" data-ar="الرؤية الاستراتيجية">Strategic Insight</th><td>○</td><td>◐</td><td>●</td><td>◐</td></tr>
+            </tbody>
+          </table>
+          <p class="matrix__legend"><span>● <span data-ar="محرك أساسي">Primary driver</span></span><span>◐ <span data-ar="داعم">Supporting</span></span><span>○ <span data-ar="غير مباشر">Indirect</span></span></p>
+        </div>
+      </section>
+
+      <!-- ░░ Payment + CTA ░░ -->
+      <section class="section container section--tight" aria-labelledby="cta-title">
+        <div class="notice notice--violet" data-reveal><i data-icon="wallet" aria-hidden="true"></i><p data-ar-html="&lt;strong&gt;الدفع حسب المعالم — لا حسب الوقت.&lt;/strong&gt; الخدمات ذات الطابع الإبداعي: 50% عند الانطلاق · 25% عند اعتماد الاستراتيجية · 25% عند التسليم النهائي. خدمات الاستشارات والعمارة المؤسسية: 50% عند الانطلاق · 50% عند التسليم. تسليم الملفات مشروط بالسداد الكامل. تُحتسب على المدفوعات المتأخرة 2% شهريًا بعد 14 يومًا."><strong>Payment is milestone-based — not time-based.</strong> Brand-heavy services: 50% Kickoff · 25% Strategy Sign-off · 25% Final. Advisory and EA services: 50% Kickoff · 50% Final. File release is conditional on full settlement. Late payments accrue at 2% per month after 14 days.</p></div>
+        <div class="callout glass glass--deep" data-reveal style="margin-top:18px">
+          <div>
+            <h3 id="cta-title" data-ar="تريد رؤية المنهجية مطبّقة؟">Want to see the methodology applied?</h3>
+            <p data-ar="احجز مكالمة استكشافية مدتها 30 دقيقة. سنشرح لك كيف تنطبق العملية ذات المراحل الثماني على مشروعك تحديدًا — ونعطيك صورة واضحة عن شكل المخرجات.">Book a 30-minute discovery call. We'll walk you through how the 8-stage process applies to your specific engagement — and give you a clear picture of what the output looks like.</p>
+          </div>
+          <div class="callout__actions"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة استكشافية">Book a Discovery Call</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="text-link" href="/pricing-faq/"><span data-ar="الأسعار والأسئلة الشائعة ←">Pricing &amp; FAQ →</span></a></div>
+        </div>
+      </section>
+
+      
+      <section class="section container section--tight" aria-label="Next step" data-ar-label="الخطوة التالية">
+        <div class="closing" data-reveal>
+          <span class="closing__border" aria-hidden="true"></span>
+          <div class="closing__inner glass glass--deep">
+            <p class="kicker kicker--center"><span data-ar="موطن الابتكار">THE HOME OF INNOVATION</span></p>
+            <h2 class="closing__title"><span data-ar="أطلق إمكانات التقنية">Unlock the Potential of IT</span><br /><span class="grad-text" data-ar="لتبسيط العمليات وزيادة الإنتاجية.">to Streamline Operations and Boost Productivity.</span></h2>
+            <p class="closing__text" data-ar="ابدأ بقصتنا، أو احجز موعدًا وأحضر مشكلة العمل — ونحن نُحضر الهيكل.">Start with our story, or book an appointment and bring the business problem — we’ll bring the structure.</p>
+            <div class="hero__ctas hero__ctas--center"><a class="btn btn--primary magnetic" href="/our-story/"><span data-ar="ابدأ الآن">Get Started</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/contact/#book"><span data-ar="احجز موعدًا">Book an Appointment</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+            <p class="closing__contact"><a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a> · <a class="ltr" href="tel:+966545520750">+966 54 552 0750</a> · <a class="ltr" href="tel:+201092500454">+20 109 250 0454</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+  </body>
+</html>

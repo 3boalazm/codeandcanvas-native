@@ -1,10 +1,12 @@
 {
   "name": "codeandcanvas-site",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
-  "description": "Code & Canvas native static site: bilingual homepage + CanvasOne ERP proposal",
+  "description": "Code & Canvas native static site: bilingual marketing site, blog, books and the CanvasOne ERP proposal",
   "scripts": {
     "dev": "node dev-server.mjs",
+    "sync": "node scripts/sync-chrome.mjs",
+    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs",
     "build": "sh ./build.sh"
   }
 }

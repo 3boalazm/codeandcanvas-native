@@ -4,8 +4,27 @@ Standalone, bilingual (English / Arabic, LTR / RTL) Code & Canvas site built wit
 
 | Route | What it is |
 | --- | --- |
-| `/` | Homepage: hero, services catalogue (15 services, filterable), CanvasOne ERP teaser, why us, approach, contact |
-| `/erp/` | CanvasOne ERP interactive proposal (modules, industries, compliance, delivery timeline, package builder, FAQ, print-to-PDF) |
+| `/` | Homepage (clean editorial layout, no card grids): hero, stats, intro, four service tracks, CanvasOne ERP teaser, why us, approach, closing CTA |
+| `/erp/` | CanvasOne ERP interactive proposal (modules, industries, compliance, timeline, package builder, FAQ, print-to-PDF) |
+| `/services/` · `/technology-services/` · `/creative-services/` · `/healthcare/` | Solutions hub + the three tracks (23 services: AB-01…06, MA-01…10, HC-01…05, CC-01/02) |
+| `/about/` · `/our-story/` · `/methodology/` · `/team/` | Studio, story, methodology, founders |
+| `/pricing-faq/` · `/contact/` (`#book`) | Packages, payment terms, FAQ · contact form, channels, booking card |
+| `/case-studies/` | Work: Pharmacy OS, Zad, Nile Pharma ERP |
+| `/blog/` · `/blog/<slug>/` | Insights Hub + 8 articles (2 hub cards are "coming soon" — they never had an article on the live site) |
+| `/books/` · `/books/<slug>/` · `/books/<slug>/read/` | Digital library, 4 book landings, interactive reader shell (free preview + purchase gate) |
+| `/login/` `/register/` `/forgot-password/` `/reset-password/` `/account/` | Auth + Account Center UI shells (no backend yet) |
+| `/cart/` `/checkout/` `/thank-you/` | localStorage cart + checkout shell (payment gateway not connected) |
+| `/privacy-policy/` `/terms-of-use/` `/cookie-policy/` · `/404.html` | Legal drafts (the live site had none — pending legal review) · not-found page |
+
+The header is a floating pill (`partials/top.html`): round brand mark + wordmark, uppercase links, language + WhatsApp round buttons, Contact CTA; the burger takes over below 1024px.
+
+All inner pages are **generated** — edit `scripts/lib/pages_*.py` (and `scripts/lib/posts/*.py` for articles), never the HTML:
+
+```sh
+python3 scripts/gen-pages.py && node scripts/sync-chrome.mjs && node scripts/check-links.mjs
+```
+
+`gen-pages.py` also rewrites `_redirects`, `sitemap.xml`, `robots.txt` and `manus-routes.json` from the page registry. `sync-chrome.mjs` injects the shared `<head>` / nav / footer from `partials/` between the `<!-- cc:head/top/bottom -->` markers of every page (`--check` to verify in CI). `check-links.mjs` validates tag balance, internal links (honouring `_redirects`) and anchors.
 
 Both pages share one design system — dark navy canvas, violet / teal / pink gradients, glass panels, preloader, scroll progress, cursor glow, tilt and magnetic buttons — taken from the CanvasOne ERP proposal.
 
@@ -35,10 +54,23 @@ assets/
 ├── css/home.css         homepage-only components
 ├── css/erp.css          ERP-only components (+ print stylesheet)
 ├── js/site.js           shared runtime: language, icons, preloader, reveal, tilt, nav, progress…
-├── js/home.js           homepage behaviour (filters, marquee, orbit, meta per language)
+├── js/home.js           homepage behaviour (orbit, hero parallax, meta per language)
+├── js/pages.js          inner pages: tabs, FAQ, filters, forms (contact / demo), booking hook, TOC, account panels
+├── js/shop.js           localStorage cart, checkout shell, account library
+├── js/reader.js         interactive book reader (manifest or free preview, notes, fullscreen)
+├── css/pages.css        inner-page components (hero, tiles, tiers, forms, prose, reader, cart, auth…)
 ├── js/erp-data.js       ALL ERP copy, bilingual { ar, en }
 ├── js/erp-app.js        ERP rendering and interactions
 └── brand/               Code & Canvas logos (SVG)
+scripts/
+├── gen-pages.py         builds every inner page + _redirects / sitemap.xml / robots.txt / manus-routes.json
+├── sync-chrome.mjs      injects partials/{head,top,bottom}.html into all pages (--check in CI)
+├── check-links.mjs      static QA: tag balance, internal links, anchors
+└── lib/                 catalog.py (23 services), h.py (HTML helpers), pages_*.py (one per page), posts/ (articles)
+partials/                shared head / nav / footer chrome
+docs/
+├── SITEMAP.md           map of the live codeandcanvas.net (every URL, page blueprints, redirects, build phases)
+└── sitemap.json         the same route list, machine-readable
 ```
 
 ## Language
@@ -52,9 +84,41 @@ assets/
 
 Typography roles (English): **Signate Grotesk** (Black) for headings, **Raleway** for titles (card titles, kickers, buttons, nav, italic accent words) and **Poppins** for subtitles and body copy. The files are self-hosted from `assets/fonts/` (TTF, declared in `assets/css/ds.css`). Arabic uses Alexandria (headings / titles) and IBM Plex Sans Arabic (body), and the wordmark uses Comfortaa — those three still load from Google Fonts in each page `<head>`. Check the Signate Grotesk licence covers web embedding before going public; converting the TTFs to WOFF2 would cut their size.
 
+## Deploy to Vercel
+
+The repo is Vercel-ready — `vercel.json` is generated by `scripts/gen-pages.py` (build command, output dir, 301 redirects for every legacy WordPress URL, cache + security headers), so it always matches `_redirects`.
+
+**One-time setup (dashboard):** Vercel → *Add New → Project* → import `3boalazm/codeandcanvas-native` → Framework Preset **Other** → leave Build Command / Output Directory as detected from `vercel.json` (`sh build.sh` → `dist`) → *Deploy*. Every push to the production branch redeploys; other branches get preview URLs.
+
+**Or from the terminal:**
+
+```sh
+npm i -g vercel
+vercel login
+vercel          # first run links the folder to a project and creates a preview
+vercel --prod   # production deploy
+```
+
+**Custom domain:** Project → *Settings → Domains* → add `codeandcanvas.net` + `www.codeandcanvas.net` (redirect www → apex). At the registrar point `A @ → 76.76.21.21` and `CNAME www → cname.vercel-dns.com`. Keep the WordPress host alive until the Vercel deployment is verified, then switch DNS — the legacy URLs keep working through the redirects. HTTPS is automatic.
+
+What the config does: `trailingSlash: true` (`/services` → `/services/`), `cleanUrls: true`, `404.html` served for unknown paths, `/assets/fonts/*` cached for a year, CSS/JS for an hour with stale-while-revalidate, HTML always revalidated, plus `X-Content-Type-Options` / `X-Frame-Options` / `Referrer-Policy` / `Permissions-Policy` headers. No environment variables are needed — the integration hooks (`data-endpoint`, `data-booking-url`, payment) are plain attributes in the HTML, see *Integration points*.
+
+## Integration points (no backend is bundled)
+
+| Hook | Where | What to do |
+| --- | --- | --- |
+| **Contact form** | `/contact/` → `form[data-form="contact"]` (`scripts/lib/pages_contact.py`) | Set `data-endpoint="https://…"` to POST the form as JSON (`{name,email,phone,company,inquiry,budget,message,lang,page}`); a 2xx response shows the success state. Empty endpoint = hand-off to WhatsApp (`data-whatsapp`) or `mailto:` (`data-mail`) with the message pre-filled. Honeypot field `_hp`. |
+| **Booking** | `/contact/#book` → `section#book[data-booking-url]` | Put your Calendly / Cal.com / TidyCal URL in `data-booking-url`; every `[data-book]` button then opens it. Empty = WhatsApp + form fallback. Legacy `/about#book` links hop client-side. |
+| **Newsletter** | `/blog/` subscribe form (`data-form="contact"`, `data-subject`) | Same contract as the contact form: set `data-endpoint` to your list provider's JSON endpoint (Mailchimp/Brevo/Buttondown…). |
+| **Auth** | `/login/`, `/register/`, `/forgot-password/`, `/reset-password/`, `/account/` (`pages_shop.py`) | Forms are `data-form="demo"` (`data-next` = where to go after "success"). Replace with real `fetch()` calls in `assets/js/pages.js › submitDemo` or point the forms at your auth API. The Google button is a plain link to `/login/?provider=google` — wire your OAuth start URL there. The live site's 2FA step (6-digit / recovery code) is kept as a collapsible block. |
+| **Cart & payment** | `assets/js/shop.js` | Cart = `localStorage["cc-cart"]`; purchases unlock books via `localStorage["cc-library"]` (demo). Implement `checkout(cart, data)` with Moyasar / Tap / Paymob / Stripe and persist entitlements server-side. `[data-add]` buttons carry `data-title/-price/-currency`. |
+| **Book content** | `assets/js/reader.js` → `/assets/books/<slug>/manifest.json` | Publish `{ "parts":[{ "title", "slides":[{ "kicker","title","html" }] }], "free_parts": n }` (serve it behind your entitlement check). Without a manifest the reader shows the free preview generated from the landing page copy + the purchase gate. Reading position and notes are stored locally (`cc-reader-*`, `cc-notes-*`). |
+| **Imagery** | every `.art[data-slot="…"]` | CSS/SVG art tiles stand in for the WordPress stock images; replace by slot name (`blog/<slug>/cover`, `work/pharmacy-os`, `books/<slug>/cover`, …). |
+| **Hosting** | `_redirects`, `404.html`, `manus-routes.json` | Netlify / Cloudflare Pages read `_redirects` natively; for Vercel convert to `vercel.json` rewrites. The dev server honours `_redirects` too. |
+
 ## Scope
 
-This repository contains an independently developed site for review. It does not modify the existing production website, its domain, DNS, or any production deployment. Pricing, service details, contact methods and destination links were taken from <https://codeandcanvas.net/>. Navigation links to the current service, story and contact pages point at the live site until those routes are rebuilt separately. `manus-routes.json` lists the preview routes (`/` and `/erp/`).
+This repository contains an independently developed site for review. It does not modify the existing production website, its domain, DNS, or any production deployment. Pricing, service details, contact methods and destination links were taken from <https://codeandcanvas.net/>. Every public route of the live site now has a native twin (see `docs/SITEMAP.md` §6 for the URL map and `_redirects` for the legacy URLs). `manus-routes.json` lists all routes and redirects.
 
 ## Before publishing the ERP page
 

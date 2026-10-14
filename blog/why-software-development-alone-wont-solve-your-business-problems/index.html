@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="لماذا لن يحل تطوير البرمجيات وحده مشاكل عملك — Code &amp; Canvas" data-desc-ar="البرمجيات عامل تمكين لا استراتيجية. «فخ البنّاء» يكلّف المليارات — والسبب الجذري ليس الكود أبدًا.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Why Software Development Alone Won&#x27;t Solve Your Business Problems — Code &amp; Canvas</title>
+    <meta name="description" content="Software is an enabler, not a strategy. The Builder&#x27;s Trap costs billions — and the root cause is never the code." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Why Software Development Alone Won&#x27;t Solve Your Business Problems — Code &amp; Canvas" />
+    <meta property="og:description" content="Software is an enabler, not a strategy. The Builder&#x27;s Trap costs billions — and the root cause is never the code." />
+    <meta property="og:url" content="https://codeandcanvas.net/blog/why-software-development-alone-wont-solve-your-business-problems/" />
+    <link rel="canonical" href="https://codeandcanvas.net/blog/why-software-development-alone-wont-solve-your-business-problems/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <!-- /cc:head -->
+  </head>
+  <body class="is-loading" data-nav="blog">
+    <!-- cc:top -->
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__pill container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <span class="nav__mark" aria-hidden="true"><img src="/assets/brand/icon-white.svg" alt="" width="26" height="26" /></span>
+          <span class="nav__word" aria-hidden="true">Code<em>&amp;</em>Canvas</span>
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a class="only-mobile" href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="nav__round lang-btn" id="langBtn" type="button"></button>
+          <a class="nav__round" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="WhatsApp" data-ar-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
+          <a class="btn btn--primary nav__cta magnetic" href="/contact/" data-key="contact"><span data-ar="تواصل">Contact</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="nav__round burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <article class="post container" aria-labelledby="post-title">
+        <header class="post__head">
+          <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/blog/" data-ar="الرؤى">Insights</a><i>›</i><span aria-current="page" data-ar="استراتيجية المنتج">Product Strategy</span></nav>
+          <div class="post__meta" data-reveal><span class="badge" data-ar="استراتيجية المنتج">Product Strategy</span><span><i data-icon="clock" aria-hidden="true"></i>8 <span data-ar="دقائق قراءة">min read</span></span><span><i data-icon="calendar" aria-hidden="true"></i>June 2026</span><span><span class="author"><span class="avatar">CC</span><span data-ar="تحرير Code &amp; Canvas">Code &amp; Canvas Editorial</span></span></span></div>
+          <h1 class="post__title" id="post-title" data-reveal style="--d:.06s" data-ar="لماذا لن يحل تطوير البرمجيات وحده مشاكل عملك">Why Software Development Alone Won&#x27;t Solve Your Business Problems</h1>
+          <p class="post__excerpt" data-reveal style="--d:.12s" data-ar="البرمجيات عامل تمكين لا استراتيجية. «فخ البنّاء» يكلّف المليارات — والسبب الجذري ليس الكود أبدًا.">Software is an enabler, not a strategy. The Builder&#x27;s Trap costs billions — and the root cause is never the code.</p>
+          <p class="post__lang-note" data-ar="هذه المقالة منشورة بالإنجليزية كما كُتبت.">This article is published in English.</p>
+        </header>
+        <div class="post__cover" data-reveal>
+          <div class="art art--wide art--violet" data-slot="blog/why-software-development-alone-wont-solve-your-business-problems/cover"><span class="art__mark" style="font-size:96px">🚧</span><span class="art__cap">Product Strategy · Code &amp; Canvas</span></div>
+        </div>
+        <div class="post__layout">
+          <div class="post__body prose" dir="ltr" lang="en">
+            <div class="post__stats"><div><strong>42%</strong><span>of startups fail — no market need, not bad code</span></div><div><strong>$3.4T</strong><span>Global digital transformation spend projected in 2026</span></div><div><strong>62%</strong><span>of those initiatives will fail</span></div></div>
+            
+<h2 id="builders-trap">The Builder's Trap: Why Efficiency Isn't Excellence</h2>
+<p>In the current digital landscape, there is a recurring pattern of failure that costs organizations billions: a company identifies a business challenge, hires a development team, and builds a technically flawless piece of software — only to find that it has <strong>zero impact on the bottom line</strong>. This is the Builder's Trap.</p>
+<p>Developing a successful digital product is not down to luck, a stroke of genius, or simply "trying hard enough" to write clean code. While technical execution is vital, it is <em>secondary to making the right strategic decisions.</em> Research indicates that 42% of startups fail not because of bad technology, but because they built something the market simply did not want.</p>
+<blockquote class="pull">Businesses invest in a "shiny hammer" and go looking for a nail — rather than starting with a specific, painful customer problem.</blockquote>
+
+<h2 id="feature-first">The Problem: The Hidden Costs of Feature-First Thinking</h2>
+<p>Most organizations treat software development as a linear execution project: concept, development, testing, and launch. This model is optimized for <em>building things right</em> — but dangerously silent on whether you are <strong>building the right thing.</strong></p>
+<h3>The Sunk Cost Fallacy</h3>
+<p>Once a team begins writing code, they become emotionally and financially attached to the solution. This leads to <strong>"feature bloat"</strong> — adding a laundry list of features in a desperate attempt to create value, resulting in a bloated, unmaintainable product with a vague value proposition. The later you discover your strategy is flawed, the more catastrophic the impact on capital and reputation.</p>
+<h3>Premature Scaling: The Silent Killer</h3>
+<p>According to the Startup Genome Report, <strong>70% of startups scale prematurely</strong>. They invest heavily in marketing and infrastructure for a product that hasn't reached Strong PMF. Scaling an unvalidated product is like filling a bucket with a hole in it — you pour expensive resources into a leaky system.</p>
+<div class="callout-box"><span class="callout-box__icon">⚠️</span><div><strong>Warning Sign</strong><p>If your team is debating marketing channels before you have a <strong>flattening retention curve</strong>, you are scaling prematurely. Stop. Validate. Then scale.</p></div></div>
+
+<h2 id="why-wrong">Why Most Companies Get It Wrong</h2>
+<p>The root causes of product failure are rarely technical. They are strategic and psychological.</p>
+<ol class="num-list">
+<li><strong>Falling in Love with the Idea, Not the Problem</strong><p>Founders become obsessed with their "unique" solution rather than identifying a real, painful problem that people will pay to solve.</p></li>
+<li><strong>Confusing Interest with Intent</strong><p>"That sounds cool" is not validation — it is politeness. Real validation is tied to <strong>observable behavior</strong>: time, attention, money, or formal commitment.</p></li>
+<li><strong>Designing for Ego, Not the User</strong><p>Decision-makers dictate UI/UX based on personal preference rather than user data and behavioral patterns observed in the field.</p></li>
+<li><strong>Treating Launch as the Finish Line</strong><p>The launch is the <strong>starting line</strong>. A product is a living system requiring constant iteration based on live usage data — not a project to close.</p></li>
+</ol>
+
+<h2 id="framework">The Strategic Framework: Product Thinking &amp; The Three-Layer Journey</h2>
+<p>To escape the Builder's Trap, Code &amp; Canvas applies <strong>Product Thinking</strong> — an outcome-led methodology that views products as living systems and addresses four critical risks: Desirability, Feasibility, Viability, and Usability.</p>
+<div class="layers">
+<article class="layer"><span class="layer__k">Layer 1 · Desirability</span><h3>Problem-Market Fit</h3><p class="layer__q">"Does a real, painful problem exist for a large enough audience?"</p><p>Before a single line of code is written, prove the problem exists and is painful enough. Use the <strong>7+ Pain Rule</strong>: ask your target audience to rate their pain on a scale of 1–10. People pay to solve 7+ pain points — they only "think about" solving 5–6.</p><p><strong>Action:</strong> Conduct problem interviews to understand the "Day-in-the-Life" of your customer. Don't ask what they want — observe how they solve the problem today.</p></article>
+<article class="layer"><span class="layer__k">Layer 2 · Feasibility &amp; Usability</span><h3>Solution-Market Fit</h3><p class="layer__q">"Does your approach address the validated problem effectively?"</p><p>Use the <strong>Riskiest Assumption Test (RAT)</strong> — the smallest experiment to test your biggest assumption. A landing page or a 3-minute demo video is enough. Focus on Time-to-Value (TTV): in 2026, if a user cannot experience the "Aha!" moment in <strong>under 60 seconds</strong>, they will churn.</p><p><strong>Action:</strong> Run a RAT before committing to any engineering sprint. The experiment must be designed to produce a binary yes/no answer — not a "maybe."</p></article>
+<article class="layer"><span class="layer__k">Layer 3 · Viability</span><h3>Product-Market Fit</h3><p class="layer__q">"Does the implemented product create enough value to sustain a business?"</p><p>Apply the <strong>Sean Ellis 40% Test</strong>: if at least 40% of surveyed users say they would be "very disappointed" if the product disappeared, you have a foundation for PMF. Below 40% — you are building a "nice-to-have."</p><p><strong>Action:</strong> Monitor cohort retention curves. Quantitative validation comes when curves flatten at a meaningful level rather than declining toward zero.</p></article>
+</div>
+
+<h2 id="real-world">Real-World Application: Validation vs. Unguided Development</h2>
+<div class="principles">
+<article class="is-good"><span class="layer__k">✅ Validated First · Dropbox</span><h3>3-Minute Video, No Product Built</h3><p>Released a demo video instead of a product. Waitlist jumped from 5,000 to 75,000 in 24 hours — proving massive demand before a single line of production code was written.</p></article>
+<article class="is-bad"><span class="layer__k">❌ Built First · GE Digital</span><h3>Billions Lost, No Operational Reality</h3><p>GE attempted a massive "digital industrial" overhaul — building overlapping software products without cross-functional alignment. The project failed in 2019 after billions in investment.</p></article>
+<article class="is-bad"><span class="layer__k">❌ Economics Skipped · M-Xchange</span><h3>Shut Down After 3 Months</h3><p>Despite strong corporate backing, this B2B marketplace failed because its revenue model was never validated. They built Layer 3 without ever confirming Layers 1 or 2.</p></article>
+<article class="is-good"><span class="layer__k">✅ Evidence-Led · Buffer</span><h3>Landing Page Before Product</h3><p>CEO tested pricing intent with a landing page before writing code. Only after seeing real sign-ups at real price points did the team commit to development — saving months of misdirected effort.</p></article>
+</div>
+
+            
+<aside class="cta-box">
+  <div><p class="meta">Code &amp; Canvas · Product Strategy &amp; Digital Transformation</p><h3>Building software without a validated strategy? Let&#x27;s fix that first.</h3><p>Our Product Strategy and MVP Development teams apply the Product Thinking framework to ensure your technology investment drives measurable business outcomes — not just working code with zero users.</p></div>
+  <div class="cta-box__actions"><a class="btn btn--primary" href="/contact/#book"><span>Book a Free Discovery Call</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/services/"><span>Explore Services</span></a></div>
+</aside>
+            <section class="takeaways" id="takeaways"><h2>Key Takeaways for Innovation Leaders</h2><p class="meta">What to apply starting Monday</p><ul class="tk-list"><li><strong>Get Out of the Building:</strong> There are no facts inside your office. Interact with users in their environment to see how they solve the problem today.</li><li><strong>Ruthless Prioritization:</strong> Use RICE or MoSCoW frameworks to identify the 20% of features that deliver 80% of value. Cut everything else.</li><li><strong>Build a Painkiller, Not a Vitamin:</strong> People pay to remove urgent pain. "Nice-to-have" benefits are the first thing cut in a budget review.</li><li><strong>Treat the Launch as a Starting Line:</strong> Post-launch iteration based on live behavioral data is where real product development begins.</li><li><strong>Pivoting is a Strategy:</strong> A pivot is a strategic redirect based on evidence. Slack and Instagram found fit only after major pivots. Continuing without evidence is not persistence — it's waste.</li></ul></section>
+            <h2 id="faq">Frequently Asked Questions</h2><p class="meta">Common questions on product validation, market fit, and digital transformation.</p><div class="faq faq--prose">
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>What is the difference between an MVP and a Riskiest Assumption Test (RAT)?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>An MVP is the first version of a product designed to gather feedback — it still requires some level of development. A RAT is leaner: it focuses on testing the single most critical assumption that could kill the business (e.g., <strong>"Will people pay for this?"</strong>) through low-cost experiments like landing pages or videos before building anything.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Why do 62% of digital transformations in SMEs fail?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>The primary failure pattern is buying technology before diagnosing the business problem. Many businesses invest in new tools (like a CRM) without mapping their sales workflow or identifying which processes are actually worth automating. <strong>Tool-first thinking produces chaotically fast, chaotic processes</strong> — not transformation.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>What is the Sean Ellis 40% Test?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>It is a benchmark for Product-Market Fit. If at least <strong>40% of your surveyed users say they would be "very disappointed"</strong> if your product disappeared, you have achieved a baseline for PMF. If you are below 40%, you are likely building a "nice-to-have" rather than a "must-have" — and should not increase marketing spend.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>What is a &quot;North Star Metric&quot;?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>A North Star Metric is the single metric that best captures the core value your product delivers to users and predicts long-term business success — e.g., <strong>"Weekly Active Projects Created"</strong> for a project management tool. It aligns all teams around a shared definition of value that isn't a vanity metric.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>How often should a product roadmap be reviewed?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>Roadmaps should be living documents. For young products in dynamic markets, they should be reviewed and adjusted based on user data and market signals at <strong>least monthly</strong>. A roadmap that hasn't changed in six months is a plan that hasn't been tested against reality.</p></div></div></div></div>
+            <aside class="author-box">
+              <span class="avatar avatar--lg">CC</span>
+              <div><strong>Code &amp; Canvas Editorial</strong><p class="meta">Product Strategy · Enterprise Architecture · Brand Identity · MENA</p><p>Code &amp; Canvas is a digital product studio and advisory firm operating across KSA and Egypt. We specialize in enterprise architecture, healthcare informatics, brand identity, and product strategy — helping organizations bridge the gap between innovation and measurable impact.</p><div class="author-box__links"><a class="text-link" href="/services/"><span data-ar="خدماتنا ←">Our Services →</span></a><a class="text-link" href="/contact/"><span data-ar="اعمل معنا ←">Work With Us →</span></a><a class="text-link" href="/our-story/"><span data-ar="قصتنا ←">Our Story →</span></a></div></div>
+            </aside>
+          </div>
+          <aside class="post__side">
+            <nav class="toc glass" aria-label="On this page" data-ar-label="في هذه الصفحة"><h4 data-ar="في هذه الصفحة">On this page</h4><div class="toc__list"><a href="#builders-trap">The Builder&#x27;s Trap: Why Efficiency Isn&#x27;t Excellence</a><a href="#feature-first">The Problem: The Hidden Costs of Feature-First Thinking</a><a href="#why-wrong">Why Most Companies Get It Wrong</a><a href="#framework">The Strategic Framework: Product Thinking &amp;amp; The Three-Layer Journey</a><a href="#real-world">Real-World Application: Validation vs. Unguided Development</a><a href="#takeaways">Key Takeaways for Innovation Leaders</a><a href="#faq">Frequently Asked Questions</a></div></nav>
+            <div class="card glass book-card" style="margin-top:14px">
+              <p class="kicker"><span data-ar="ناقش هذا المقال">Discuss this article</span></p>
+              <p data-ar="احجز مكالمة استكشافية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.">Book a 30-minute discovery call — we come prepared, not with a pitch.</p>
+              <div class="book-card__actions"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة مجانية">Book a Free Call</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+            </div>
+          </aside>
+        </div>
+        <section class="related">
+          <div class="head-split"><h2 class="section__title" style="font-size:clamp(22px,2.4vw,30px)" data-ar="تابع القراءة">Continue reading</h2><a class="text-link" href="/blog/"><span data-ar="كل الرؤى ←">View all insights →</span></a></div>
+          <div class="post-grid">
+          <a class="card glass post-card" href="/blog/why-startups-waste-money-wrong-product/"><div class="art art--violet"><span class="art__mark" style="font-size:44px">💡</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">Product Strategy</span></div><h3>Why Most Startups Waste Money Building the Wrong Product</h3><div class="post-card__foot"><span>8 min read · June 2026</span></div></div></a>
+          <a class="card glass post-card" href="/blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/"><div class="art art--violet"><span class="art__mark" style="font-size:44px">🗺️</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">Product Strategy</span></div><h3>From Idea to Market-Ready Product: The 6-Step Strategic Framework</h3><div class="post-card__foot"><span>7 min read · June 2026</span></div></div></a>
+          <a class="card glass post-card" href="/blog/what-digital-transformation-actually-means-for-smes/"><div class="art art--violet"><span class="art__mark" style="font-size:44px">⚡</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">Digital Transformation</span></div><h3>What Digital Transformation Actually Means for SMEs in 2026</h3><div class="post-card__foot"><span>9 min read · June 2026</span></div></div></a>
+          </div>
+        </section>
+      </article>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+  </body>
+</html>

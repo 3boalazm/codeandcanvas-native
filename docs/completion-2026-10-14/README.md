@@ -1,5 +1,7 @@
 # Completion sprint delivery
 
+> **Post-report update:** implementation was committed, pushed and merged by user request through [PR #3](https://github.com/3boalazm/codeandcanvas-native/pull/3). Earlier “not pushed/merged” statements below and in the original report describe the pre-merge delivery. See [merge receipt](MERGE-RECEIPT.md) and [next-chat handover](../NEXT-CHAT-HANDOFF.md). Test evidence remains unchanged.
+
 - [Arabic implementation report](REPORT.md)
 - [Google Docs](https://docs.google.com/document/d/1zGDWZVb9uZjUHnmX03RATIhKO06IKrhbWgLSoMmdgbI/edit)
 - [Linear ABO-18 — In Progress](https://linear.app/aboalazm/issue/ABO-18)

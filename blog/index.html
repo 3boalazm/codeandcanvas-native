@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="مركز الرؤى — Code &amp; Canvas" data-desc-ar="الاستراتيجية والعمارة وأنظمة العلامة والتفكير المنتجي والتحول الرقمي. أطر ورؤى للقادة الذين يبنون مؤسسات في المنطقة — بلا مصطلحات رنانة.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Insights Hub — Code &amp; Canvas</title>
+    <meta name="description" content="Strategy, architecture, brand systems, product thinking, and digital transformation. Frameworks and insights for leaders building organizations across MENA — without the buzzwords." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Insights Hub — Code &amp; Canvas" />
+    <meta property="og:description" content="Strategy, architecture, brand systems, product thinking, and digital transformation. Frameworks and insights for leaders building organizations across MENA — without the buzzwords." />
+    <meta property="og:url" content="https://codeandcanvas.net/blog/" />
+    <link rel="canonical" href="https://codeandcanvas.net/blog/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <!-- /cc:head -->
+  </head>
+  <body class="is-loading" data-nav="blog">
+    <!-- cc:top -->
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__inner container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <img class="nav__logo" src="/assets/brand/logo-white-horizontal.svg" alt="" width="96" height="40" />
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+          <a class="only-mobile" href="/contact/#book" data-ar="لنتحدث">Let’s talk</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="lang-btn" id="langBtn" type="button"></button>
+          <a class="btn btn--primary btn--sm magnetic" href="/contact/#book"><span data-ar="لنتحدث">Let’s talk</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <!-- ░░ Hero ░░ -->
+      <section class="phero container" aria-labelledby="page-title">
+        <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><span aria-current="page" data-ar="الرؤى">Insights</span></nav>
+        <div class="phero__split">
+          <div>
+            <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="Code &amp; Canvas · قاعدة المعرفة">Code &amp; Canvas · Knowledge Base</span></span>
+            <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مركز">The</span> <span class="grad-text" data-ar="الرؤى.">Insights</span> <span data-ar="">Hub.</span></h1>
+            <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="الاستراتيجية والعمارة وأنظمة العلامة والتفكير المنتجي والتحول الرقمي. &lt;strong&gt;أطر ورؤى للقادة&lt;/strong&gt; الذين يبنون مؤسسات في المنطقة — بلا مصطلحات رنانة.">Strategy, architecture, brand systems, product thinking, and digital transformation. <strong>Frameworks and insights for leaders</strong> building organizations across MENA — without the buzzwords.</p>
+            <div class="pill-list" data-reveal style="--d:.22s"><span class="pill">Brand Identity</span><span class="pill">Brand Strategy</span><span class="pill">Creative Strategy</span><span class="pill">Design Systems</span><span class="pill">Digital Transformation</span><span class="pill">Experience Design</span><span class="pill">Product Strategy</span><span class="pill">Product Thinking</span></div>
+          </div>
+          <div class="phero__aside" data-reveal style="--d:.2s">
+            <div class="stats__inner glass" style="grid-template-columns:repeat(2,1fr)">
+              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="8" data-latin="1">8</span></span><p class="stat__label" data-ar-html="مقالات&lt;br /&gt;منشورة">Articles<br />published</p></div>
+              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="8" data-latin="1">8</span></span><p class="stat__label" data-ar-html="موضوعات&lt;br /&gt;مغطاة">Topics<br />covered</p></div>
+              <div class="stat"><span class="stat__num stat__num--ltr">~58</span><p class="stat__label" data-ar-html="دقيقة إجمالي&lt;br /&gt;وقت القراءة">Min total<br />reading time</p></div>
+              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="2" data-latin="1">2</span></span><p class="stat__label" data-ar-html="وجهتا نظر&lt;br /&gt;المؤسسين">Founder<br />perspectives</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ Featured ░░ -->
+      <section class="section container section--tight" aria-labelledby="feat-title">
+        <p class="kicker" data-reveal><span data-ar="مقال مميز · الأكثر قراءة">Featured Article · Most Read</span></p>
+        <a class="card glass post-card post-card--featured post-card--hero" href="/blog/why-startups-waste-money-wrong-product/" data-reveal>
+          <div class="art art--violet" data-slot="blog/why-startups-waste-money-wrong-product"><span class="art__mark" style="font-size:84px">💡</span><span class="art__cap" data-ar="⭐ الأكثر قراءة · يونيو 2026">⭐ Most Read · June 2026</span></div>
+          <div class="post-card__body">
+            <div class="post-card__meta"><span class="badge" data-ar="استراتيجية المنتج">Product Strategy</span><span>June 2026 · 8 <span data-ar="دقائق قراءة">min read</span></span></div>
+            <h2 id="feat-title" data-ar="لماذا تهدر معظم الشركات الناشئة أموالها في بناء المنتج الخطأ">Why Most Startups Waste Money Building the Wrong Product</h2>
+            <p data-ar="42% من الشركات الناشئة تفشل بسبب غياب الحاجة في السوق — لا بسبب تقنية سيئة. تعرّف على إطار «رحلة الملاءمة ثلاثية الطبقات» الذي يفصل بين من يبني الشيء الصحيح ومن ينفّذ الشيء الخطأ بإتقان.">42% of startups fail due to lack of market need — not bad technology. Discover the Three-Layer PMF Journey framework that separates organizations that build the right thing from those that execute the wrong thing flawlessly.</p>
+            <div class="post-card__foot"><span class="author"><span class="avatar">CC</span><span data-ar="تحرير Code &amp; Canvas">Code &amp; Canvas Editorial</span></span><span class="text-link"><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+          </div>
+        </a>
+      </section>
+
+      <!-- ░░ All articles ░░ -->
+      <section class="section container section--flush-top" id="articles" aria-labelledby="all-title">
+        <div class="toolbar" data-reveal>
+          <h2 class="section__title" id="all-title" style="font-size:clamp(24px,2.6vw,34px)" data-ar="كل المقالات">All Articles</h2>
+          <div class="filters" role="group" aria-label="Browse by topic" data-ar-label="تصفّح حسب الموضوع" data-filter-group="#post-list"><button class="filter is-active" type="button" data-filter="all" aria-pressed="true"><span data-ar="الكل">All</span><b>8</b></button><button class="filter" type="button" data-filter="product" aria-pressed="false"><span data-ar="استراتيجية المنتج">Product Strategy</span><b>3</b></button><button class="filter" type="button" data-filter="transformation" aria-pressed="false"><span data-ar="التحول الرقمي">Digital Transformation</span><b>1</b></button><button class="filter" type="button" data-filter="thinking" aria-pressed="false"><span data-ar="التفكير المنتجي">Product Thinking</span><b>1</b></button><button class="filter" type="button" data-filter="brand" aria-pressed="false"><span data-ar="العلامة والتصميم">Brand &amp; Design</span><b>3</b></button></div>
+        </div>
+        <div class="post-grid" id="post-list">
+          <a class="card glass post-card" href="/blog/why-startups-waste-money-wrong-product/" data-category="product" data-reveal style="--d:0.00s">
+            <div class="art art--violet" data-slot="blog/why-startups-waste-money-wrong-product"><span class="art__mark" style="font-size:48px">💡</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="استراتيجية المنتج">Product Strategy</span><span>8 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="لماذا تهدر معظم الشركات الناشئة أموالها في بناء المنتج الخطأ">Why Most Startups Waste Money Building the Wrong Product</h3>
+              <p data-ar="42% من الشركات الناشئة تفشل بسبب غياب الحاجة في السوق — لا بسبب تقنية سيئة. تعرّف على إطار «رحلة الملاءمة ثلاثية الطبقات» الذي يفصل بين من يبني الشيء الصحيح ومن ينفّذ الشيء الخطأ بإتقان.">42% of startups fail due to lack of market need. The Three-Layer PMF Journey framework that changes everything about how you build.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">CC</span><span data-ar="تحرير Code &amp; Canvas">Code &amp; Canvas Editorial</span></span><span><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+            </div>
+          </a>
+          <a class="card glass post-card" href="/blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/" data-category="product" data-reveal style="--d:0.06s">
+            <div class="art art--violet" data-slot="blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product"><span class="art__mark" style="font-size:48px">🗺️</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="استراتيجية المنتج">Product Strategy</span><span>7 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="من الفكرة إلى منتج جاهز للسوق: الإطار الاستراتيجي من ست خطوات">From Idea to Market-Ready Product: The 6-Step Strategic Framework</h3>
+              <p data-ar="ست بوابات يجب أن يمر بها كل فريق. نقل التركيز من التنفيذ إلى الاستكشاف — قبل كتابة سطر واحد من كود الإنتاج.">Six gates every team must pass. Shifting focus from execution to discovery — before a line of production code is written.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">CC</span><span data-ar="تحرير Code &amp; Canvas">Code &amp; Canvas Editorial</span></span><span><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+            </div>
+          </a>
+          <a class="card glass post-card" href="/blog/why-software-development-alone-wont-solve-your-business-problems/" data-category="product" data-reveal style="--d:0.12s">
+            <div class="art art--violet" data-slot="blog/why-software-development-alone-wont-solve-your-business-problems"><span class="art__mark" style="font-size:48px">🚧</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="استراتيجية المنتج">Product Strategy</span><span>8 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="لماذا لن يحل تطوير البرمجيات وحده مشاكل عملك">Why Software Development Alone Won&#x27;t Solve Your Business Problems</h3>
+              <p data-ar="البرمجيات عامل تمكين لا استراتيجية. «فخ البنّاء» يكلّف المليارات — والسبب الجذري ليس الكود أبدًا.">Software is an enabler, not a strategy. The Builder&#x27;s Trap costs billions — and the root cause is never the code.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">CC</span><span data-ar="تحرير Code &amp; Canvas">Code &amp; Canvas Editorial</span></span><span><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+            </div>
+          </a>
+          <a class="card glass post-card" href="/blog/what-digital-transformation-actually-means-for-smes/" data-category="transformation" data-reveal style="--d:0.00s">
+            <div class="art art--violet" data-slot="blog/what-digital-transformation-actually-means-for-smes"><span class="art__mark" style="font-size:48px">⚡</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="التحول الرقمي">Digital Transformation</span><span>9 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="ماذا يعني التحول الرقمي فعلًا للشركات الصغيرة والمتوسطة في 2026">What Digital Transformation Actually Means for SMEs in 2026</h3>
+              <p data-ar="خارطة طريق من 18 شهرًا. 4 ركائز. عائد قابل للقياس عند كل بوابة سبرنت — بلا مصطلحات رنانة.">An 18-month roadmap. 4 pillars. Measurable ROI at each sprint gate — without the buzzwords.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">CC</span><span data-ar="تحرير Code &amp; Canvas">Code &amp; Canvas Editorial</span></span><span><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+            </div>
+          </a>
+          <a class="card glass post-card" href="/blog/how-product-thinking-creates-sustainable-business-growth/" data-category="thinking" data-reveal style="--d:0.06s">
+            <div class="art art--violet" data-slot="blog/how-product-thinking-creates-sustainable-business-growth"><span class="art__mark" style="font-size:48px">🧠</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="التفكير المنتجي">Product Thinking</span><span>6 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="التفكير المنتجي: الإطار الذي يحوّل الميزات إلى نتائج أعمال">Product Thinking: The Framework That Turns Features Into Business Outcomes</h3>
+              <p data-ar="منهجية تقودها النتائج تتعامل مع المنتجات كأنظمة حية — تخفف المخاطر وتدفع النمو الذي يقوده المنتج.">An outcome-led methodology that treats products as living systems — mitigating risk and driving PLG.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">CC</span><span data-ar="تحرير Code &amp; Canvas">Code &amp; Canvas Editorial</span></span><span><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+            </div>
+          </a>
+          <a class="card glass post-card" href="/blog/why-most-brands-look-different-but-feel-the-same/" data-category="brand" data-reveal style="--d:0.12s">
+            <div class="art art--pink" data-slot="blog/why-most-brands-look-different-but-feel-the-same"><span class="art__mark" style="font-size:48px">🎯</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="استراتيجية العلامة">Brand Strategy</span><span>10 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="لماذا تبدو معظم العلامات مختلفة لكنها تُشعرك بالشيء نفسه">Why Most Brands Look Different but Feel the Same</h3>
+              <p data-ar="13.8 تريليون دولار من القيمة السوقية تقودها السمعة. معظم العلامات تهدر هذه القيمة — لأنها خلطت بين التصميم والعلامة.">$13.8T of market cap is reputation-driven. Most brands are leaking that value — because they confused design for brand.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">MA</span><span data-ar="مصطفى أبو العزم">Mustafa Aboalazm</span></span><span><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+            </div>
+          </a>
+          <a class="card glass post-card" href="/blog/design-systems-operating-system-modern-digital-products/" data-category="brand" data-reveal style="--d:0.00s">
+            <div class="art art--pink" data-slot="blog/design-systems-operating-system-modern-digital-products"><span class="art__mark" style="font-size:48px">⚙️</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="أنظمة التصميم">Design Systems</span><span>5 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="أنظمة التصميم: نظام التشغيل للمنتجات الرقمية الحديثة">Design Systems: The Operating System of Modern Digital Products</h3>
+              <p data-ar="بدون نظام تصميم، منتجك يراكم «دين تصميم». 10–15 مليون دولار تُهدر سنويًا. إليك حالة العائد على الاستثمار.">Without a design system, your product is accumulating design debt. $10–15M lost annually. Here is the ROI case.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">MA</span><span data-ar="مصطفى أبو العزم">Mustafa Aboalazm</span></span><span><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+            </div>
+          </a>
+          <a class="card glass post-card" href="/blog/experience-design-business-growth-driver/" data-category="brand" data-reveal style="--d:0.06s">
+            <div class="art art--pink" data-slot="blog/experience-design-business-growth-driver"><span class="art__mark" style="font-size:48px">🌟</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="تصميم التجربة">Experience Design</span><span>5 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="تصميم التجربة كمحرك لنمو الأعمال">Experience Design as a Business Growth Driver</h3>
+              <p data-ar="كل دولار في تجربة المستخدم يعود بـ 100 دولار إيرادات. 86% من العملاء يدفعون أكثر مقابل تجربة متفوقة. التصميم بنية تحتية — لا زينة.">$1 in UX returns $100 in revenue. 86% of customers pay more for superior experience. Design is infrastructure — not decoration.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">MA</span><span data-ar="مصطفى أبو العزم">Mustafa Aboalazm</span></span><span><span data-ar="اقرأ المقال ←">Read the article →</span></span></div>
+            </div>
+          </a>
+          <div class="card glass post-card is-soon" data-category="brand" data-reveal style="--d:0.00s">
+            <div class="art art--pink" data-slot="blog/soon"><span class="art__mark" style="font-size:48px">🏛️</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="هوية العلامة">Brand Identity</span><span>4 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="من هوية العلامة إلى أنظمة العلامة">From Brand Identity to Brand Systems</h3>
+              <p data-ar="الأدلة الثابتة عفا عليها الزمن. التطور من الشعار إلى نظام حي — ولماذا يحدد ما إذا كانت علامتك ستتوسع أم تتصدع.">Static manuals are obsolete. The evolution from logo to living system — and why it determines whether your brand scales or fractures.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">MA</span><span data-ar="مصطفى أبو العزم">Mustafa Aboalazm</span></span><span><span class="badge" data-ar="قريبًا">Coming soon</span></span></div>
+            </div>
+          </div>
+          <div class="card glass post-card is-soon" data-category="brand" data-reveal style="--d:0.06s">
+            <div class="art art--pink" data-slot="blog/soon"><span class="art__mark" style="font-size:48px">🤖</span></div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><span class="badge" data-ar="الاستراتيجية الإبداعية">Creative Strategy</span><span>4 <span data-ar="دقائق">min</span></span></div>
+              <h3 data-ar="الاستراتيجية الإبداعية في عصر الذكاء الاصطناعي التوليدي">Creative Strategy in the Age of Generative AI</h3>
+              <p data-ar="يستطيع الذكاء الاصطناعي التوليدي إنتاج 1,500 اسم في ساعات. وفي الوقت نفسه جعل الحكم البشري أثمن من أي وقت مضى.">GenAI can generate 1,500 names in hours. It has simultaneously made human judgment more valuable than ever.</p>
+              <div class="post-card__foot"><span class="author"><span class="avatar">MA</span><span data-ar="مصطفى أبو العزم">Mustafa Aboalazm</span></span><span><span class="badge" data-ar="قريبًا">Coming soon</span></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ Subscribe ░░ -->
+      <section class="section container section--tight" aria-labelledby="sub-title">
+        <div class="callout glass glass--deep" data-reveal>
+          <div>
+            <p class="kicker"><span data-ar="ابقَ على اطلاع · بلا رسائل مزعجة">Stay Informed · No Spam</span></p>
+            <h3 id="sub-title"><span data-ar="احصل على الرؤى">Get insights</span> <span class="grad-text" data-ar="قبل الجميع.">before everyone else.</span></h3>
+            <p data-ar="أطر جديدة ودراسات حالة وأدلة استراتيجية — تصلك عند نشرها. تركيز على الاستراتيجية. بلا حشو.">New frameworks, case studies, and strategic guides — delivered when they're published. Strategy-focused. No filler.</p>
+          </div>
+          <form class="form subscribe" data-form="contact" data-whatsapp="" data-mail="info@codeandcanvas.net" data-subject="Newsletter subscription — Code &amp; Canvas" data-endpoint="" novalidate>
+            <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+            <div class="subscribe__row">
+              <div class="field"><label class="sr-only" for="sub-email" data-ar="بريدك الإلكتروني">Your e-mail</label><input id="sub-email" name="email" type="email" required placeholder="you@company.com" autocomplete="email" /><span class="field__err" data-ar="أدخل بريدًا صحيحًا">Please enter a valid e-mail</span></div>
+              <input type="hidden" name="inquiry" value="Newsletter subscription" />
+              <button class="btn btn--primary" type="submit"><span data-ar="اشترك ←">Subscribe →</span></button>
+            </div>
+            <div class="form__status" role="status" aria-live="polite"></div>
+            <ul class="promises promises--inline" aria-label="Promises" data-ar-label="وعود"><li><i data-icon="check" aria-hidden="true"></i><span data-ar="بلا رسائل مزعجة أبدًا">No spam, ever</span></li><li><i data-icon="check" aria-hidden="true"></i><span data-ar="إلغاء الاشتراك في أي وقت">Unsubscribe anytime</span></li><li><i data-icon="check" aria-hidden="true"></i><span data-ar="رؤى المنتج والعلامة فقط">Product &amp; Brand insights only</span></li><li><i data-icon="check" aria-hidden="true"></i><span data-ar="السعودية + مصر · MENA">KSA + Egypt · MENA</span></li></ul>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+  </body>
+</html>

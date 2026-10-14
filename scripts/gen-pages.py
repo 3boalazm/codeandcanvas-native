@@ -14,9 +14,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'lib'))
 from catalog import SERVICES, TRACKS, href  # noqa: E402
 from h import esc, t, th, icon, arrow, svc_card, svc_grid, crumbs, closing, btn, page  # noqa: E402
 
-import pages_services, pages_technology, pages_creative, pages_healthcare, pages_about, pages_story, pages_methodology, pages_team, pages_pricing, pages_contact  # noqa: E402
+import pages_services, pages_technology, pages_creative, pages_healthcare, pages_about, pages_story, pages_methodology, pages_team, pages_pricing, pages_contact, pages_blog  # noqa: E402
 
-BUILDERS = [pages_services.build, pages_technology.build, pages_creative.build, pages_healthcare.build, pages_about.build, pages_story.build, pages_methodology.build, pages_team.build, pages_pricing.build, pages_contact.build]
+BUILDERS = [pages_services.build, pages_technology.build, pages_creative.build, pages_healthcare.build, pages_about.build, pages_story.build, pages_methodology.build, pages_team.build, pages_pricing.build, pages_contact.build, pages_blog.build]
 
 if __name__ == '__main__':
     for b in BUILDERS:

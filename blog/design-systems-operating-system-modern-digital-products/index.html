@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="أنظمة التصميم: نظام التشغيل للمنتجات الرقمية الحديثة — Code &amp; Canvas" data-desc-ar="بدون نظام تصميم، منتجك يراكم «دين تصميم». 10–15 مليون دولار تُهدر سنويًا. إليك حالة العائد على الاستثمار.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Design Systems: The Operating System of Modern Digital Products — Code &amp; Canvas</title>
+    <meta name="description" content="Without a design system, your product is accumulating design debt. $10–15M lost annually. Here is the ROI case." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Design Systems: The Operating System of Modern Digital Products — Code &amp; Canvas" />
+    <meta property="og:description" content="Without a design system, your product is accumulating design debt. $10–15M lost annually. Here is the ROI case." />
+    <meta property="og:url" content="https://codeandcanvas.net/blog/design-systems-operating-system-modern-digital-products/" />
+    <link rel="canonical" href="https://codeandcanvas.net/blog/design-systems-operating-system-modern-digital-products/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Comfortaa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <!-- /cc:head -->
+  </head>
+  <body class="is-loading" data-nav="blog">
+    <!-- cc:top -->
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__inner container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <img class="nav__logo" src="/assets/brand/logo-white-horizontal.svg" alt="" width="96" height="40" />
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الحلول">Solutions</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+          <a class="only-mobile" href="/contact/#book" data-ar="لنتحدث">Let’s talk</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="lang-btn" id="langBtn" type="button"></button>
+          <a class="btn btn--primary btn--sm magnetic" href="/contact/#book"><span data-ar="لنتحدث">Let’s talk</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <article class="post container" aria-labelledby="post-title">
+        <header class="post__head">
+          <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/blog/" data-ar="الرؤى">Insights</a><i>›</i><span aria-current="page" data-ar="أنظمة التصميم">Design Systems</span></nav>
+          <div class="post__meta" data-reveal><span class="badge" data-ar="أنظمة التصميم">Design Systems</span><span><i data-icon="clock" aria-hidden="true"></i>5 <span data-ar="دقائق قراءة">min read</span></span><span><i data-icon="calendar" aria-hidden="true"></i>June 2026</span><span><span class="author"><span class="avatar">MA</span><span data-ar="مصطفى أبو العزم">Mustafa Aboalazm</span></span></span></div>
+          <h1 class="post__title" id="post-title" data-reveal style="--d:.06s" data-ar="أنظمة التصميم: نظام التشغيل للمنتجات الرقمية الحديثة">Design Systems: The Operating System of Modern Digital Products</h1>
+          <p class="post__excerpt" data-reveal style="--d:.12s" data-ar="بدون نظام تصميم، منتجك يراكم «دين تصميم». 10–15 مليون دولار تُهدر سنويًا. إليك حالة العائد على الاستثمار.">Without a design system, your product is accumulating design debt. $10–15M lost annually. Here is the ROI case.</p>
+          <p class="post__lang-note" data-ar="هذه المقالة منشورة بالإنجليزية كما كُتبت.">This article is published in English.</p>
+        </header>
+        <div class="post__cover" data-reveal>
+          <div class="art art--wide art--pink" data-slot="blog/design-systems-operating-system-modern-digital-products/cover"><span class="art__mark" style="font-size:96px">⚙️</span><span class="art__cap">Design Systems · Code &amp; Canvas</span></div>
+        </div>
+        <div class="post__layout">
+          <div class="post__body prose" dir="ltr" lang="en">
+            <div class="post__stats"><div><strong>47%</strong><span>Reduction in simple development tasks when a mature design system is in use</span></div><div><strong>$10–15M</strong><span>Annual losses for large enterprises without design systems — duplicated effort &amp; delays</span></div><div><strong>23%</strong><span>Revenue increase from consistent brand presentation across all touchpoints</span></div></div>
+            
+<h2 id="what-it-is">What a Design System Actually Is</h2>
+<p>In the current digital economy, elite organizations no longer view design as a decorative layer — they treat it as the <strong>operating system</strong> of the business. A design system is not merely a style guide; it is a comprehensive framework of reusable components, guidelines, and shared practices that ensures consistency across every touchpoint.</p>
+<p>At Code &amp; Canvas, we believe that without a design system, your product is already accumulating <em>"design debt"</em> — a hidden tax that erodes shareholder value and slows innovation. The question is not whether you need one, but how much debt you have already accumulated by not having one.</p>
+<blockquote class="pull">Design debt is invisible until it becomes catastrophic. A design system is the infrastructure that prevents quiet, compounding inconsistency from becoming an expensive crisis.</blockquote>
+
+<h2 id="atomic">The Architecture of the System: Atomic Foundations</h2>
+<p>The most effective design systems utilize the <strong>Atomic Design</strong> methodology, constructing user interfaces from the smallest building blocks into complex compositions. This provides a shared vocabulary that keeps design and engineering aligned — and stops teams from "reinventing the wheel" for every new feature.</p>
+<div class="principles">
+<article><span class="layer__k">⬤</span><h3>Atoms — Fundamental Building Blocks</h3><p>Buttons, inputs, icons, color tokens, and typography scales. The DNA of the entire system — change an atom and every molecule that uses it updates automatically.</p></article>
+<article><span class="layer__k">◎</span><h3>Molecules — Atoms in Combination</h3><p>Groups of atoms functioning as a unit: a search bar (input + button + icon), a form field (label + input + error state), or a notification badge.</p></article>
+<article><span class="layer__k">❖</span><h3>Organisms &amp; Pages — Full Compositions</h3><p>Complex UI components composed of molecules — full headers, product grids, pricing tables — assembled into the final layouts that define real-world user experiences.</p></article>
+</div>
+
+<h2 id="roi">The Economic Impact: ROI of Scalable Infrastructure</h2>
+<p>The financial implications of implementing a design system are quantifiable and significant. Research indicates that consistent brand presentation increases revenue by <strong>23%</strong> and improves marketing efficiency through 3.5× higher brand visibility.</p>
+<ol class="num-list">
+<li><strong>Accelerated Time-to-Market</strong><p>Design systems revolutionize development efficiency. Utilizing a system can reduce time spent on simple development tasks by as much as <strong>47%</strong> and accelerate prototype development by <strong>40–60%</strong>. One high-tech firm executive reported these efficiencies translated into more than <strong>$10 million in annual savings</strong>.</p></li>
+<li><strong>Eliminating the "$13M Problem"</strong><p>Large enterprises without design systems often lose between <strong>$10 million and $15 million annually</strong> through duplicated effort and release delays. When multiple teams build the same components independently, the costs accumulate quietly through inconsistent user experiences and mounting technical debt.</p></li>
+<li><strong>Lower Customer Acquisition Costs</strong><p>A consistent brand system serves as a neurological anchor, building stored associations in the consumer's "System 1" brain. This reduces the brain's "search cost" at the point of purchase — creating a <strong>compounding advantage</strong> that makes subsequent performance marketing campaigns cheaper and more effective.</p></li>
+</ol>
+
+<h2 id="trust">Building Brand Trust Through Consistency</h2>
+<p>In 2025, corporate reputation alone accounted for <strong>$13.8 trillion of the S&amp;P 500 market capitalization</strong>. A design system acts as the "single source of truth," ensuring that every interaction reinforces the same brand narrative.</p>
+<div class="principles">
+<article><span class="layer__k">Trust Signal 01</span><h3>68% Abandon Unpolished Products</h3><p>68% of users will abandon products that appear unpolished or difficult to navigate — regardless of the underlying product quality. Inconsistency signals incompetence.</p></article>
+<article><span class="layer__k">Trust Signal 02</span><h3>3.4× More Brand Advocates</h3><p>Users experiencing consistent branding are <strong>3.4× more likely to become brand advocates</strong> — a compounding acquisition channel that performance marketing cannot replicate.</p></article>
+</div>
+
+<h2 id="future">The Future: AI Integration and Curated Systems</h2>
+<p>The emergence of <strong>Generative AI</strong> is transforming design systems from passive libraries into intelligent partners. To be "AI-ready," a design system must be machine-readable — using meaningful naming conventions and structured documentation in JSON or YAML format.</p>
+<div class="compare">
+<article class="is-bad"><h3>Legacy System ✕</h3><p class="layer__q">Static PDF guidelines</p><ul><li>PDF that goes out of date immediately</li><li>Teams interpret rules independently</li><li>Cannot be parsed by AI agents</li><li>Requires manual updates for every new platform</li></ul></article>
+<article class="is-good"><h3>AI-Ready System ✓</h3><p class="layer__q">Living, machine-readable infrastructure</p><ul><li>Figma components with semantic tokens</li><li>JSON/YAML documentation AI can parse</li><li>AI agents automate documentation &amp; variants</li><li>Updates propagate instantly across all touchpoints</li></ul></article>
+</div>
+<p>While AI handles the production of assets, <em>human expertise remains essential</em> for cultural nuance, conceptual coherence, and ethical stewardship. The designer's role shifts from manual maker to <strong>reflective curator</strong> — governing what the system produces, not producing it manually.</p>
+
+            
+<aside class="cta-box">
+  <div><p class="meta">Code &amp; Canvas · Visual &amp; Design Systems</p><h3>Ready to build the design infrastructure your product needs to scale?</h3><p>Our MA-04 Visual &amp; Design Systems service takes your brand identity and transforms it into a scalable, team-ready Figma component library with token-driven architecture and full documentation.</p></div>
+  <div class="cta-box__actions"><a class="btn btn--primary" href="/creative-services/#ma-04"><span>Explore Design Systems</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/contact/#book"><span>Book a Discovery Call</span></a></div>
+</aside>
+            <section class="takeaways" id="takeaways"><h2>Actionable Takeaways for Leadership</h2><p class="meta">Five principles for successful design system implementation</p><ol class="tk-list tk-list--num"><li><strong>Treat design systems as infrastructure:</strong> Not a side project — a strategic platform investment that enables long-term scalability and competitive resilience.</li><li><strong>Establish clear ownership:</strong> Successful systems require dedicated governance and cross-functional alignment to prevent them from becoming outdated orphan documentation.</li><li><strong>Bridge the design-engineering gap:</strong> Use the design system to create a shared language — reducing "lost in translation" errors during handoffs from design to development.</li><li><strong>Measure what matters:</strong> Track development speed, rework reduction, and time-to-market improvements — not just visual consistency scores.</li><li><strong>Pilot with purpose:</strong> Select a high-impact upcoming product or service as the proof-of-concept for your new design system — not a legacy project with existing complexity.</li></ol></section>
+            <h2 id="faq">Frequently Asked Questions</h2><p class="meta">Common questions on brand strategy, design systems, and creative practice.</p><div class="faq faq--prose">
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>What is the difference between a design system and a component library?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>A component library is one part of a design system — the collection of reusable UI components. A design system is the complete infrastructure: <strong>design tokens, component library, usage documentation, governance processes, and the principles</strong> that govern how all of these are applied across the organization.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>How long does it take to build a design system?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>A minimum viable design system — covering the most frequently used atoms and molecules — can be built in 4–8 weeks. A mature, fully documented system covering all organisms, templates, and AI-ready token structures typically takes 3–6 months, depending on the product's complexity.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>Should a startup invest in a design system early?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>Yes — with scope calibrated to size. A startup needs a basic token system (colors, type, spacing) and a small component library immediately. This prevents design debt from accumulating during the most critical growth phase, when inconsistency becomes fastest to establish and slowest to undo.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>How does a design system reduce Customer Acquisition Cost?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>By building consistent brand presentation across every touchpoint, a design system creates neurological familiarity — reducing the 'search cost' a potential customer incurs when evaluating your brand. Familiar brands require less persuasion, shortening sales cycles and reducing the media spend required to convert a prospect.</p></div></div></div>
+      <div class="faq__item"><button class="faq__q" type="button" aria-expanded="false"><span>What does it mean for a design system to be &#x27;AI-ready&#x27;?</span><span class="pm" aria-hidden="true"></span></button><div class="faq__a"><div><p>An AI-ready system uses <strong>semantic naming conventions</strong> — tokens named by function (e.g., 'color-action-primary') rather than appearance (e.g., 'blue-500') — and structured documentation in JSON or YAML. This allows AI agents to parse the component tree, automate spec generation, and produce campaign variations while preserving the brand's unique visual DNA.</p></div></div></div></div>
+            <aside class="author-box">
+              <span class="avatar avatar--lg">MA</span>
+              <div><strong>Mustafa Aboalazm</strong><p class="meta">Head of Brand Strategy · Co-Founder · Code &amp; Canvas · Al Obour, Egypt</p><p>Systemic Identity Architect and Senior Brand Designer with 9+ years building brand systems across MENA. Former Media Director at Nile Pharma Food. Co-Founder of Code &amp; Canvas — where enterprise architecture meets strategic creative practice.</p><div class="author-box__links"><a class="text-link" href="/services/"><span data-ar="خدماتنا ←">Our Services →</span></a><a class="text-link" href="/contact/"><span data-ar="اعمل معنا ←">Work With Us →</span></a><a class="text-link" href="https://aboalazm-os.vercel.app/work" target=_blank rel=noopener><span data-ar="الأعمال ↗">Portfolio ↗</span></a></div></div>
+            </aside>
+          </div>
+          <aside class="post__side">
+            <nav class="toc glass" aria-label="On this page" data-ar-label="في هذه الصفحة"><h4 data-ar="في هذه الصفحة">On this page</h4><div class="toc__list"><a href="#what-it-is">What a Design System Actually Is</a><a href="#atomic">The Architecture of the System: Atomic Foundations</a><a href="#roi">The Economic Impact: ROI of Scalable Infrastructure</a><a href="#trust">Building Brand Trust Through Consistency</a><a href="#future">The Future: AI Integration and Curated Systems</a><a href="#takeaways">Actionable Takeaways for Leadership</a><a href="#faq">Frequently Asked Questions</a></div></nav>
+            <div class="card glass book-card" style="margin-top:14px">
+              <p class="kicker"><span data-ar="ناقش هذا المقال">Discuss this article</span></p>
+              <p data-ar="احجز مكالمة استكشافية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.">Book a 30-minute discovery call — we come prepared, not with a pitch.</p>
+              <div class="book-card__actions"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة مجانية">Book a Free Call</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+            </div>
+          </aside>
+        </div>
+        <section class="related">
+          <div class="head-split"><h2 class="section__title" style="font-size:clamp(22px,2.4vw,30px)" data-ar="تابع القراءة">Continue reading</h2><a class="text-link" href="/blog/"><span data-ar="كل الرؤى ←">View all insights →</span></a></div>
+          <div class="post-grid">
+          <a class="card glass post-card" href="/blog/why-most-brands-look-different-but-feel-the-same/"><div class="art art--pink"><span class="art__mark" style="font-size:44px">🎯</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">Brand Strategy</span></div><h3>Why Most Brands Look Different but Feel the Same</h3><div class="post-card__foot"><span>10 min read · June 2026</span></div></div></a>
+          <div class="card glass post-card is-soon"><div class="art art--pink"><span class="art__mark" style="font-size:44px">🤖</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">Creative Strategy</span></div><h3>Creative Strategy in the Age of Generative AI</h3><div class="post-card__foot"><span class="badge">Coming soon</span></div></div></div>
+          <a class="card glass post-card" href="/blog/experience-design-business-growth-driver/"><div class="art art--pink"><span class="art__mark" style="font-size:44px">🌟</span></div><div class="post-card__body"><div class="post-card__meta"><span class="badge">Experience Design</span></div><h3>Experience Design as a Business Growth Driver</h3><div class="post-card__foot"><span>5 min read · June 2026</span></div></div></a>
+          </div>
+        </section>
+      </article>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="مركز الحساب">Account Center</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+  </body>
+</html>

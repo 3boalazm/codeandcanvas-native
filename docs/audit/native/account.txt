@@ -1,0 +1,27 @@
+Home › Account Center
+Account Center
+CC Guest guest@codeandcanvas.net
+Overview My Library Orders Profile Security
+Sign out
+0 Books in your library
+0 Items in cart
+— Past orders
+Account UI ready — backend pending This is the complete Account Center UI (library, orders, profile, security). Connect it to your auth service via the integration points documented in the README.
+My Library
+Your library is empty Books you purchase appear here and open in the interactive reader.
+Browse the library
+Orders
+No orders yet Your order history and invoices will appear here.
+Profile
+Full name This field is required
+Email Please enter a valid e-mail
+Phone Please enter a valid phone
+Company (optional) This field is required
+Save changes
+Security
+Current password At least 8 characters
+New password At least 8 characters
+Confirm new password At least 8 characters
+Update password
+Two-factor authentication (2FA) Add an authenticator app to protect your account — enabled once the backend is connected.
+Enable 2FA

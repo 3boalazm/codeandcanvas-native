@@ -1,0 +1,12 @@
+Code & Canvas
+Create your account
+Already have one? Sign in
+Continue with Google
+or register with email
+Full name This field is required
+Email Please enter a valid e-mail
+Phone (optional) Please enter a valid phone
+Password At least 8 characters At least 8 characters.
+Confirm password At least 8 characters
+I agree to the Terms of Use and Privacy Policy .
+Create Account

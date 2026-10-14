@@ -78,7 +78,7 @@
 
   function render() {
     const cart = load();
-    renderBadges(cart); renderCart(cart); renderSummary(cart); renderLibrary();
+    renderBadges(cart); renderCart(cart); renderSummary(cart); renderLibrary(); renderOrder();
   }
 
   /* INTEGRATION POINT — payment provider */
@@ -88,8 +88,36 @@
     cart.forEach((i) => lib.add(i.id));
     localStorage.setItem(LIB, JSON.stringify([...lib]));
     localStorage.removeItem(KEY);
-    sessionStorage.setItem('cc-demo-note', t(`Order received for ${data.email}. Payment integration pending — books unlocked in demo mode.`, `تم استلام الطلب لـ ${data.email}. تكامل الدفع قيد التجهيز — فُتحت الكتب في وضع العرض.`));
+    const now = new Date();
+    const order = {
+      id: `CC-${now.getFullYear().toString().slice(2)}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`,
+      date: now.toISOString(), name: data.name || data.first_name || '', email: data.email || '', pay: data.pay || 'card',
+      items: cart, subtotal: total(cart), total: total(cart), currency: cart[0]?.currency || 'SAR',
+    };
+    sessionStorage.setItem('cc-last-order', JSON.stringify(order));
+    sessionStorage.setItem('cc-demo-note', t(`Payment integration pending — books unlocked in demo mode.`, `تكامل الدفع قيد التجهيز — فُتحت الكتب في وضع العرض.`));
     location.href = '/thank-you/';
+  }
+
+  /* /thank-you/ — order summary from the session (no backend) */
+  function renderOrder() {
+    const root = $('[data-order]');
+    if (!root) return;
+    let order = null;
+    try { order = JSON.parse(sessionStorage.getItem('cc-last-order') || 'null'); } catch { order = null; }
+    const set = (sel, v) => { const el = $(sel, root); if (el) el.textContent = v; };
+    const note = $('[data-order-note]', root);
+    if (!order) { if (note) note.hidden = false; set('[data-order-name]', t('friend', 'صديقنا')); return; }
+    const PAY = { card: ['Credit card / mada', 'بطاقة ائتمان / مدى'], transfer: ['Bank transfer', 'تحويل بنكي'], wallet: ['E-wallet (Egypt)', 'محفظة إلكترونية (مصر)'] };
+    set('[data-order-name]', (order.name || order.email.split('@')[0] || t('friend', 'صديقنا')).split(' ')[0]);
+    set('[data-order-id]', order.id);
+    set('[data-order-date]', new Date(order.date).toLocaleDateString(ar() ? 'ar-EG' : 'en-GB', { year: 'numeric', month: 'short', day: 'numeric' }));
+    set('[data-order-email]', order.email || '—');
+    set('[data-order-pay]', (PAY[order.pay] || PAY.card)[ar() ? 1 : 0]);
+    set('[data-order-subtotal]', fmt(order.subtotal, order.currency));
+    set('[data-order-total]', fmt(order.total, order.currency));
+    const items = $('[data-order-items]', root);
+    if (items) items.innerHTML = order.items.map((i) => `<div><span>${ar() ? i.title_ar : i.title} × ${i.qty}</span><b>${fmt(i.price * i.qty, i.currency)}</b></div>`).join('');
   }
 
   document.addEventListener('click', (e) => {

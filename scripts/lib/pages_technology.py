@@ -12,7 +12,7 @@ def ticks(items, ar_items, cls='ticks'):
     return f'<ul class="{cls}">' + ''.join(f'<li data-ar="{esc(a)}">{esc(e)}</li>' for e, a in zip(items, ar_items)) + '</ul>'
 
 
-def detail(code, *, cls, tag_list, included=None, included_ar=None, tiers=None, price_note=None, price_note_ar=None, lead_by=('Ahmed Bedeer', 'أحمد بدير'), featured=False, cta=('Book a Discovery Call', 'احجز مكالمة استكشافية')):
+def detail(code, *, cls, tag_list, included=None, included_ar=None, tiers=None, price_note=None, price_note_ar=None, lead_by=('Ahmed Bedeer', 'أحمد بدير'), featured=False, badge=('Most Requested', 'الأكثر طلبًا'), cta=('Book a Discovery Call', 'احجز مكالمة استكشافية')):
     s = SERVICES[code]
     inc = ''
     if included:
@@ -23,7 +23,7 @@ def detail(code, *, cls, tag_list, included=None, included_ar=None, tiers=None, 
             f'<div class="tier{" tier--star" if tr.get("star") else ""}"><b data-ar="{esc(tr["name_ar"])}">{esc(tr["name"])}</b><strong>{esc(tr["price"])}</strong><p data-ar="{esc(tr["desc_ar"])}">{esc(tr["desc"])}</p><small data-ar="{esc(tr["dur_ar"])}">{esc(tr["dur"])}</small></div>'
             for tr in tiers)
         tier_html = f'<h4 data-ar="صيغ المشروع">Engagement tiers</h4><div class="tiers">{rows}</div>'
-    star = '<span class="sdetail__star" aria-hidden="true">⭐</span>' if featured else ''
+    star = f'<span class="sdetail__star" aria-hidden="true">⭐</span><span class="sdetail__badge" data-ar="{esc(badge[1])}">{esc(badge[0])}</span>' if featured else ''
     note = f'<small data-ar="{esc(price_note_ar)}">{esc(price_note)}</small>' if price_note else ''
     price = (t(s['price'], s['price_ar'], tag='strong') if s.get('price_ar') else f'<strong>{esc(s["price"])}</strong>')
     dur = t(s['dur'], s['dur_ar']) if s.get('dur_ar') else f'<span>{esc(s["dur"])}</span>'
@@ -81,7 +81,7 @@ def build():
           </div>
           <div class="phero__aside" data-reveal style="--d:.2s">
             <div class="stats__inner glass" style="grid-template-columns:repeat(2,1fr)">
-              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="10" data-latin="1">10</span>+</span><p class="stat__label" data-ar-html="سنوات في&lt;br /&gt;السعودية والمنطقة">Years across<br />KSA &amp; MENA</p></div>
+              <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="7" data-latin="1">7</span>+</span><p class="stat__label" data-ar-html="سنوات في&lt;br /&gt;السعودية والمنطقة">Years across<br />KSA &amp; MENA</p></div>
               <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="3" data-latin="1">3</span></span><p class="stat__label" data-ar-html="أطر&lt;br /&gt;معمارية">Architecture<br />frameworks</p></div>
               <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="85" data-latin="1">85</span>%</span><p class="stat__label" data-ar-html="جاهزية HIMSS&lt;br /&gt;المرحلة 6 المحققة">HIMSS Stage 6<br />readiness achieved</p></div>
               <div class="stat"><span class="stat__num stat__num--ltr"><span data-count="12" data-latin="1">12</span>+</span><p class="stat__label" data-ar-html="معيارًا تقنيًا&lt;br /&gt;ومعيار امتثال">Tech &amp;<br />compliance stds</p></div>
@@ -98,7 +98,7 @@ def build():
             <p class="person__role" data-ar="مهندس معماري مؤسسي · متخصص في التحول الرقمي">Enterprise Architect · Digital Transformation Specialist</p>
             <h2 id="bio-title">Ahmed Bedeer</h2>
             <p class="person__tag" data-ar="شريك مؤسس · Code &amp; Canvas · الخبر، السعودية">Co-Founder · Code &amp; Canvas · Al Khobar, KSA</p>
-            <p data-ar="مهندس معماري مؤسسي ومتخصص في التحول الرقمي بخبرة تتجاوز 10 سنوات في السعودية — عبر قطاعات الرعاية الصحية والحكومة والقطاع الخاص. حاصل على شهادة CPHIMS وبخبرة فعلية في تقييمات HIMSS EMRAM. خبرة في عمارة TOGAF/NORA واختيار موردي أنظمة HIS والهجرة السحابية وتحليلات البيانات وبناء قدرات العمارة المؤسسية بما يتماشى مع رؤية 2030.">Enterprise Architect and Digital Transformation Specialist with 10+ years in KSA — working across healthcare, government, and private sector. CPHIMS-certified with active HIMSS EMRAM assessment experience. Expertise in TOGAF/NORA architecture, HIS vendor selection, cloud migration, data analytics, and EA capability building aligned to Vision 2030.</p>
+            <p data-ar="مهندس معماري مؤسسي ومتخصص في التحول الرقمي بخبرة تتجاوز 7 سنوات في السعودية — عبر قطاعات الرعاية الصحية والحكومة والقطاع الخاص. حاصل على شهادة CPHIMS وبخبرة فعلية في تقييمات HIMSS EMRAM. خبرة في عمارة TOGAF/NORA واختيار موردي أنظمة HIS والهجرة السحابية وتحليلات البيانات وبناء قدرات العمارة المؤسسية بما يتماشى مع رؤية 2030.">Enterprise Architect and Digital Transformation Specialist with 7+ years in KSA — working across healthcare, government, and private sector. CPHIMS-certified with active HIMSS EMRAM assessment experience. Expertise in TOGAF/NORA architecture, HIS vendor selection, cloud migration, data analytics, and EA capability building aligned to Vision 2030.</p>
             <div class="creds" aria-label="Skills" data-ar-label="المهارات"><span>TOGAF</span><span>NORA</span><span>CPHIMS</span><span>EMRAM</span><span>ArchiMate</span><span>Sparx EA</span><span>Java · Spring</span><span>Power BI</span><span>FHIR · HL7</span><span>Vision 2030</span></div>
             <div class="person__links">
               <a href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener" title="Ahmed's Portfolio">{icon('link')}<span data-ar="الأعمال">Portfolio</span></a>

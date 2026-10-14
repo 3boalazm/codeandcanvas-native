@@ -160,6 +160,17 @@ def book_page(b, idx):
         <div class="section__head" data-reveal><p class="kicker"><span data-ar="الفهرس">TABLE OF CONTENTS</span></p><h2 class="section__title" id="toc-title" lang="ar" dir="rtl">ثلاث رحلات · 16 فصلاً</h2></div>
         <div class="grid grid--side-l" dir="rtl" lang="ar" style="display:block;max-width:900px">{vi_chapters()}</div>
       </section>'''
+    elif b['slug'] == 'marketing-fundamentals':
+        toc = f'''
+      <section class="section container section--flush-top" id="chapters" aria-labelledby="toc-title">
+        <div class="section__head" data-reveal><p class="kicker"><span data-ar="الجزء الافتتاحي · معاينة مجانية">OPENING PART · FREE PREVIEW</span></p><h2 class="section__title" id="toc-title"><span lang="ar" dir="rtl">الجزء 01 · مقدمة في التسويق</span><br /><span class="grad-text" style="font-size:.6em">Part 01 — Introduction to Marketing</span></h2><p class="section__lead" lang="ar" dir="rtl">مقدمة في التسويق — الأساس الذي يبدأ منه كل شيء قبل الإعلانات والمحتوى والعلامة التجارية.</p></div>
+        <div class="grid grid--3" data-reveal>
+          <article class="card glass tile"><span class="chapter__k">01</span><h3>What Is Marketing?</h3><p lang="ar" dir="rtl">ما هو التسويق؟</p></article>
+          <article class="card glass tile"><span class="chapter__k">02</span><h3>The Evolution</h3><p lang="ar" dir="rtl">تطوّر التسويق</p></article>
+          <article class="card glass tile"><span class="chapter__k">03</span><h3>The Ecosystem</h3><p lang="ar" dir="rtl">منظومة التسويق</p></article>
+        </div>
+        <div class="notice glass" data-reveal style="margin-top:18px">{icon('box')}<div><b data-ar="A MODERN GUIDE · 2026 — 15 جزءًا · 258 شريحة">A MODERN GUIDE · 2026 — 15 parts · 258 slides</b><p data-ar="يُعرض الفهرس الكامل داخل القارئ بعد الشراء — افتح المعاينة المجانية للاطلاع على الجزء الأول. اختصارات القارئ: ← → للتنقل · F للشاشة الكاملة.">The full table of contents is shown inside the reader after purchase — open the free preview to browse Part 01. Reader shortcuts: ← → to navigate · F for fullscreen.</p></div></div>
+      </section>'''
     else:
         toc = f'''
       <section class="section container section--flush-top" id="chapters" aria-labelledby="toc-title">

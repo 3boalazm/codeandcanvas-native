@@ -1,0 +1,17 @@
+Home › Cart › Checkout
+Checkout
+Billing details
+Full name This field is required
+Email Please enter a valid e-mail
+Phone Please enter a valid phone
+Country Saudi Arabia Egypt United Arab Emirates Kuwait Qatar Bahrain Oman Jordan Other Choose a country
+Payment method
+Credit card / mada Visa · Mastercard · mada · Apple Pay
+Bank transfer We send account details after the order
+E-wallet (Egypt) Vodafone Cash · InstaPay
+I agree to the Terms of Use .
+Your order
+Total 0 SAR
+Pay now
+Payment gateway connects via shop.js › checkout() — see README.
+← Back to cart

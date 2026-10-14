@@ -101,7 +101,7 @@ def build():
           </div>
         </div>
         <div id="svc-list">
-        {_d('MA-03', 'brand', featured=True, lead_by=lead_by,
+        {_d('MA-03', 'brand', featured=True, badge=('Most Popular', 'الأكثر شيوعًا'), lead_by=lead_by,
             tag_list=['Brand Strategy', 'Logo System', 'Bilingual AR/EN', 'Brand Elements', '25–40 pg Guidelines', 'Training Workshop', '30-day Support'],
             included=['Extended discovery & competitor research', 'Purpose · Vision · Mission · Values', 'Positioning · UVP · Personality · Archetype', 'Tone of voice · Brand story', 'Complete logo system (all formats)', 'Bilingual lockup — designed, not translated', 'Brand elements: patterns · icons · photo direction', '8+ applications · Brand training workshop'],
             included_ar=['استكشاف موسّع وبحث في المنافسين', 'الغاية · الرؤية · الرسالة · القيم', 'التموضع · عرض القيمة الفريد · الشخصية · النموذج الأصلي', 'نبرة الصوت · قصة العلامة', 'منظومة شعار كاملة (بكل الصيغ)', 'تركيب ثنائي اللغة — مصمَّم لا مترجَم', 'عناصر العلامة: أنماط · أيقونات · توجيه التصوير', '+8 تطبيقات · ورشة تدريب على العلامة'],

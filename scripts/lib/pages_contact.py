@@ -59,6 +59,11 @@ def build():
               <li><span data-ar="مكتب السعودية">KSA Office</span><b data-ar="المروج، الرياض · الخبر · السعودية">Al Murouj, Riyadh · Al Khobar · KSA</b></li>
               <li><span data-ar="مكتب مصر">Egypt Office</span><b data-ar="مدينة العبور · القاهرة · مصر">Al Obour City · Cairo · Egypt</b></li>
             </ul>
+            <div class="contact-maps">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Murouj,+Riyadh,+Saudi+Arabia" target="_blank" rel="noopener"><span data-ar="الرياض على الخريطة">Riyadh on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Khobar,+Saudi+Arabia" target="_blank" rel="noopener"><span data-ar="الخبر على الخريطة">Al Khobar on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Obour+City,+Cairo,+Egypt" target="_blank" rel="noopener"><span data-ar="العبور على الخريطة">Al Obour on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            </div>
             <div class="art art--wide art--map" data-slot="contact/map" aria-hidden="true" style="margin-top:auto;aspect-ratio:16/7"><span class="art__cap" data-ar="الرياض · الخبر · القاهرة">RIYADH · AL KHOBAR · CAIRO</span></div>
           </article>
           <article class="card glass contact-card contact-card--wa" data-reveal style="--d:.16s">

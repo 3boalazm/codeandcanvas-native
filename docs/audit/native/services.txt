@@ -1,0 +1,182 @@
+Home › Solutions
+Brand · Technology · Healthcare · Data · Media
+All our solutions.
+Creative. Technical.
+Two co-founders. Two disciplines. 23 productized services across enterprise architecture, healthcare IT, digital transformation, data, brand identity, design systems, web, and media. Tap any service for full scope, deliverables, and pricing.
+Technology 6
+Creative 10
+Healthcare 5
+Combined 2
+23 Productized
+services
+9 + Years across
+both practices
+40 + Brands &
+orgs served
+KSA+EG MENA
+coverage
+AB { } THE CODE
+TECHNOLOGY TRACK · AL KHOBAR, KSA
+Ahmed Bedeer
+Enterprise Architect & Digital Transformation Specialist · Al Khobar, KSA
+CPHIMS TOGAF EMRAM NORA
+Portfolio
+Technology Services
+WhatsApp · KSA
+01 Technology Services · EA · Healthcare IT · Cloud · Data
+Architecture, transformation, data.
+Built for decisions.
+Six productized engagements — every artifact traces back to the Business-to-Technology Alignment Matrix. Milestone-based, not open-ended.
+AB-01 TOGAF · NORA
+Enterprise Architecture & Strategy
+End-to-end TOGAF-aligned engagements — from current-state assessment to target-state vision and a phased transition roadmap with clear governance. Every decision traces back to the Business-to-Technology Alignment Matrix.
+$1,000 – $5,000 2–8 weeks · TOGAF ADM
+AB-02 CPHIMS · EMRAM
+Healthcare Digital Transformation
+Hospital and clinic transformations executed against HIMSS Stage 6+ readiness — from EHR selection and interoperability rollout to CBAHI readiness and NORA compliance architecture. Delivered by an active HIMSS EMRAM assessor.
+$3,000 – $8,000 4–8 weeks · CPHIMS-delivered
+AB-03 Power BI · Python
+Data Architecture & Analytics
+From data governance design to ODS → EDW pipelines and production BI platforms — the data foundation that feeds dashboards, ML models, and executive decisions. Not retrospective reporting; decision intelligence.
+$800 – $3,500 1–4 weeks · Power BI · Python
+AB-04 Java · Spring Boot
+Solution Architecture
+API-first architectures in Java/Spring Boot and Node.js — microservices, REST APIs, database design, and OODA-driven analysis bridging product and platform. From concept to deployable architecture documentation.
+Custom scope Java · Spring · PostgreSQL
+AB-05 Docker · K8s
+Cloud & Platform Modernization
+Architecture-first cloud migration and platform modernization — workload assessment, provider evaluation, HA/DR posture, risk register, and a 3-year TCO model. Built to reduce risk, not just lift and shift.
+$2,500 – $6,000 3–6 weeks · Docker · K8s
+AB-06 WEEKLY · RETAINER
+Executive & PMO Advisory
+Trusted advisor to chairmen, CIOs, and PMOs — vendor proposals, weekly governance support, and SME consultation across the program lifecycle. Provides an independent architecture voice at the decision table.
+Weekly · Retainer PMO · SOW Review · Advisory
+Want full scope, deliverables, and credentials? Open Technology Services
+MA ✦ THE CANVAS
+CREATIVE TRACK · AL OBOUR, EGYPT
+Mustafa Aboalazm
+Senior Brand Identity Designer & Systemic Identity Architect · Al Obour, Egypt
+Brand Strategy 9+ Years 20+ Brands AR + EN
+Portfolio
+Creative Services
+WhatsApp · EG
+02 Creative Studio · Brand · Design · Web · Media
+Identity built as
+an operating system.
+Ten services — from a $170 logo sprint to a full brand system, custom platforms, and monthly retainers. Bilingual AR/EN as standard.
+MA-01 BRAND IDENTITY
+Logo Design Sprint
+3 strategic concept directions built from scratch — each grounded in your brand personality and market position. One direction refined to final, delivered in every format you'll ever need.
+$170 – $260 7–10 days · 50/50
+MA-02 RECOMMENDED
+Brand Identity Essentials
+Brand audit + competitor research + full logo system + colour + typography + 12–18 page visual standards guide + 3 key applications. The right scope for most emerging brands.
+$640 – $1,065 3–4 weeks · 50/25/25
+MA-03 FLAGSHIP
+Full Brand System
+Not a logo — an operating system for your brand. Full strategy document, complete visual identity, bilingual lockup (AR/EN), brand elements, 25–40 page guidelines, and a training workshop.
+$1,490 – $2,975+ 5–7 weeks · 50/25/25
+MA-04 DESIGN SYSTEMS
+Visual & Design Systems
+Token-driven design systems for digital and print — social media kits, presentation templates, Figma component libraries. Built so your team can run the brand without always needing a designer.
+$340 – $1,500+ 2–4 weeks · Custom
+MA-05 WORDPRESS
+Web Design & WordPress
+Responsive websites designed in Figma, built on WordPress. UX-led, brand-aligned, mobile-first, bilingual AR/EN with full RTL support. Includes SEO setup and 6-month post-launch support.
+$255 – $1,105 2–5 weeks · 50/50
+MA-06 NEXT.JS · CUSTOM
+Custom Web Platform
+Next.js for SaaS founders and ambitious brands — performance-first, bilingual EN/AR + RTL, Lighthouse 90+ score. Full source code ownership.
+$1,275 – $2,975 4–8 weeks · 50/25/25
+MA-07 PRINT · PACKAGING
+Print & Packaging Design
+Production-ready print collateral — packaging, brochures, banners, roll-ups, flyers, posters. Proper CMYK file prep for offset and digital print. Bleed, trim marks, and print-ready PDFs included.
+From $22 3–7 days · À la carte
+MA-08 PRODUCTION
+Art Direction & Production
+Photography, videography, scripting, voice-over, and audio engineering — full content production for campaigns, social media, and YouTube. Direction-led, bilingual scripted.
+Custom scope 1–2 weeks · 50/50
+MA-09 MONTHLY RETAINER
+Social Media Design Retainer
+15–20 brand-consistent social designs per month. Custom templates inside your design system — not stock, not Canva. Figma source files included.
+$170 – $255 / mo Monthly · min. 3 months
+MA-10 FULL RETAINER
+Full Marketing Design Retainer
+Social + print + digital + light video. One retainer — all your brand's content needs from a designer who knows your brand inside out.
+$425 – $640 / mo Monthly · min. 3 months
+Want the 4-act method and the à la carte price list? Open Creative Services
+03 Healthcare · CPHIMS · EMRAM · CBAHI · NORA
+Built for clinics and hospitals
+in KSA and Egypt.
+Five engagements that combine both disciplines — trust-building identity, CPHIMS-led transformation, and CBAHI-aligned decision intelligence.
+HC-01 HC · COMBINED ✦
+Clinic Digital Launch
+Brand identity + bilingual digital presence + booking system + Google presence + social kit — one healthcare-focused engagement. CBAHI-aware · NORA-compliant · AR+EN.
+$3,500 – $7,000+ 5–7 weeks · Combined
+HC-02 HC · COMBINED
+Healthcare Business Intelligence
+Clinical operational data → executive dashboards → business-development insight → commercial decisions. CBAHI KPI library included as standard.
+$1,500 – $3,500 2–3 weeks · CBAHI KPIs
+HC-03 HC · CPHIMS
+HIS Selection Advisory
+Evidence-based HIS vendor selection with clinical workflow mapping, vendor scoring, an RFP template, and contract review.
+$2,500 – $5,000 3–5 weeks · CBAHI + NORA
+HC-04 HC · BRAND
+Clinic Brand Identity Kit
+A complete identity system built for healthcare — patient trust signals, regulatory-aware design, and bilingual Arabic/English delivery.
+$1,500 – $2,500 3–4 weeks · 8-stage V2
+HC-05 HC · EMRAM
+Healthcare EA Assessment
+TOGAF-anchored assessment with EMRAM stage scoring, CBAHI readiness gap report, NORA alignment, and a 90-day technology roadmap.
+$1,500 – $3,500 2–3 weeks · CPHIMS-delivered
+Working in healthcare? Open Healthcare Solutions
+04 Combined packages · One brief · Both founders
+When you need the Code and the Canvas together.
+Two packages where brand, technology, and business development run as one engagement — no hand-off gaps between two vendors.
+CC-01 BRAND + TECH · FLAGSHIP
+Digital Launch Package ✦
+Brand identity + bilingual website + digital launch system with scalable positioning. One brief, both founders, zero hand-off gaps — the fastest route from idea to a market-ready presence.
+$3,500 – $7,000+ 6–8 weeks · 50/25/25
+CC-02 BUSINESS DEVELOPMENT
+Business Development Advisory
+Positioning, offer design, and go-to-market structure for founders and SMEs — the business-development layer that decides what brand and technology should be built in the first place.
+$1,500 – $4,000 2–4 weeks · 50/50
+USD · SAR · EGP PRICING & FAQ
+How we charge — and why there are no surprises
+Creative engagements 50 / 25 / 25 · Advisory & EA 50 / 50 · Scope locked at kickoff · Files released on full settlement.
+10 FAQs Payment terms · Policies · Currencies
+NOT SURE?
+Not sure which service
+fits your problem?
+Tell us the business problem — we'll propose the lightest engagement that gets you a confident decision. Clear scope from the first call, or we won't follow up.
+Book a Free 30-Min Call
+WhatsApp · KSA (Tech)
+WhatsApp · EG (Creative)
+05 Freelancer? Connect to our development
+Freelancer?
+Connect to our development.
+We work with talented freelancers in design, engineering, and content across the region. Tell us your story — every serious application gets a reply.
+Design
+Engineering
+Content & Production
+Career
+Conversational form — fill what applies and send.
+Your Name * Please enter your name
+Live in?
+Email * Please enter a valid e-mail
+Your Skill Spark
+Your Chapters of Growth
+Portfolio URL
+CV URL
+Your Daily free time
+- Select - Daytime Nighttime
+Your Different Ink
+Your note
+Submit
+Opens in WhatsApp or e-mail until a form endpoint is connected.
+THE HOME OF BUSINESS DEVELOPMENT
+The Home of
+Business Development.
+Read how two disciplines became one studio — and why every engagement starts with the business outcome, not the deliverable.
+Our Story Book a Free Discovery Call
+info@codeandcanvas.net · +966 54 552 0750 · +20 109 250 0454

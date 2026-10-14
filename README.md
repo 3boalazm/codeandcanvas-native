@@ -1,5 +1,7 @@
 # Code & Canvas — native site
 
+> **Next chat / استكمال المشروع:** اقرأ [`docs/NEXT-CHAT-HANDOFF.md`](docs/NEXT-CHAT-HANDOFF.md) أولًا. إصلاحات الجولة السابقة اندمجت عبر [PR #3](https://github.com/3boalazm/codeandcanvas-native/pull/3)، لكن التفوير الشامل وقبول الإنتاج لم يكتملَا. [إيصال الدمج وحدود النشر](docs/completion-2026-10-14/MERGE-RECEIPT.md).
+
 Standalone, bilingual (English / Arabic, LTR / RTL) Code & Canvas site built with semantic HTML, CSS and vanilla JavaScript. It is native website code, not a WordPress theme, and has no runtime framework or package dependencies.
 
 | Route | What it is |

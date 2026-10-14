@@ -184,6 +184,14 @@
     CC.toast(t('UI shell: no backend connected yet', 'واجهة فقط: لم يُربط الباك-إند بعد'));
   }
 
+
+  /* ------------------------------------------------------------------ */
+  /*  Booking hook — <section id="book" data-booking-url="https://calendly.com/…">  */
+  /*  When a scheduler URL is set, every [data-book] button opens it.    */
+  /* ------------------------------------------------------------------ */
+  const bookUrl = ($('#book')?.dataset.bookingUrl || '').trim();
+  if (bookUrl) $$('[data-book]').forEach((a) => { a.href = bookUrl; a.target = '_blank'; a.rel = 'noopener'; });
+
   $$('form[data-form]').forEach((form) => {
     form.noValidate = true;
     $$('input, select, textarea', form).forEach((i) => i.addEventListener('input', () => { i.closest('.field')?.classList.remove('is-invalid'); i.removeAttribute('aria-invalid'); }));

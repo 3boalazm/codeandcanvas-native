@@ -113,6 +113,56 @@ carries no booking button (matching the reference) — booking stays in `#contac
 section CTAs. The dead `.hero__card* / .ways / .way` rules and the dead `.thesis` RTL
 selector were deleted rather than left behind.
 
+## Long-form round — the eight articles are bilingual (2026-10-15)
+
+```
+41 page(s) carry chrome markers · 0 out of date
+84 HTML files checked · 0 problem(s)
+Generator parity: 91 outputs match isolated regeneration.
+```
+
+```
+node scripts/gen-ar.mjs
+  Arabic pages: 42 written          # no "English-only long-form" line any more
+```
+
+How the translation is wired (no runtime translation, no JavaScript):
+
+- `scripts/lib/posts/ar/<article>.py` holds one article's Arabic (`AR = dict(body=…, side=…)`),
+  written in the same markup as the English original so the shared CSS applies unchanged.
+- `pages_blog.py` emits it as `<template data-ar-swap="#post-body|#post-side">` next to the
+  English article; `arize.mjs` performs the swap while writing `/ar/blog/<slug>/`, and the
+  template ships to neither page.
+- Section ids are identical to the English source, so the sidebar contents, in-page anchors
+  and deep links behave the same in both languages. The English page links to its Arabic twin
+  (and back); the "published in English" note does not exist on the Arabic side.
+
+Measured per page (browser `innerText` of `<main>`, not attributes):
+
+| article | Arabic share | leftover `data-ar*` | leftover templates |
+| --- | --- | --- | --- |
+| why-startups-waste-money-wrong-product | 0.968 | 0 | 0 |
+| how-to-turn-a-business-idea-… | 0.980 | 0 | 0 |
+| why-software-development-alone-… | 0.969 | 0 | 0 |
+| what-digital-transformation-actually-means-for-smes | 0.980 | 0 | 0 |
+| how-product-thinking-creates-sustainable-business-growth | 0.983 | 0 | 0 |
+| why-most-brands-look-different-but-feel-the-same | 0.971 | 0 | 0 |
+| design-systems-operating-system-modern-digital-products | 0.975 | 0 | 0 |
+| experience-design-business-growth-driver | 0.976 | 0 | 0 |
+
+Figures, quotes and case data were carried across unchanged — only the language changed.
+
+### Arabic display type was set with Latin leading
+
+Two sizes overlapped once Arabic carried its dots and vowels: the page hero (70px on 1.22)
+and the article title (60px on 1.12). A sweep of all 42 Arabic pages for multi-line headings
+≥ 28px with leading below 1.28 flagged **25 pages**. Arabic-only rules now step down and open
+up `.phero__title` (→ 62px / 1.42), `.post__title` (→ 52px / 1.45), `.prose h2` (1.4),
+`.closing__title` (→ 54px / 1.4) and `.who__name` (1.45); the same sweep afterwards reports
+**1 page** (a deliberate team name on `/ar/team/`). Evidence: `ar-leading-before-after-2026-10-15.png`
+— the same Arabic article title rendered at the old Latin metrics above and the new Arabic ones
+below.
+
 ## v3 round — `/erp/` and the account/shop shells (2026-10-15)
 
 ```

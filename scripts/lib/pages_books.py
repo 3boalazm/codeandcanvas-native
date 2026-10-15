@@ -83,7 +83,7 @@ def cover(b, size='48px', extra=''):
 def book_card(b, i):
     chips = ''.join(f'<span>{esc(c)}</span>' for c in b['chips'])
     return f'''
-          <article class="card glass book{'' if b['available'] else ' is-soon'}" data-category="{b['cat']}" data-reveal style="--d:{(i % 3) * .06:.2f}s">
+          <article class="panel book{'' if b['available'] else ' is-soon'}" data-category="{b['cat']}" data-reveal style="--d:{(i % 3) * .06:.2f}s">
             <a href="/books/{b['slug']}/" aria-label="{esc(b['title'])}">{cover(b)}</a>
             <div class="book__body">
               <div class="post-card__meta"><span class="badge" data-ar="{esc(b['cat_label_ar'])}">{esc(b['cat_label'])}</span><span>{esc(b['edition'])}</span></div>
@@ -100,18 +100,18 @@ def hub():
     filt = ''.join(f'<button class="filter{" is-active" if k == "all" else ""}" type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}"><span data-ar="{esc(ar)}">{esc(en)}</span></button>'
                    for k, en, ar in [('all', 'All', 'الكل'), ('design', 'Brand & Design', 'علامة وتصميم'), ('marketing', 'Marketing', 'تسويق'), ('technology', 'Technology', 'تكنولوجيا')])
     body = f'''
-      <section class="phero container phero--center" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         {crumbs([('Home', 'الرئيسية', '/'), ('Books', 'الكتب', None)])}
-        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="المكتبة الرقمية">The Digital Library</span></span>
-        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="كتب">Code &amp; Canvas</span> <span class="grad-text" data-ar="Code &amp; Canvas">Books</span></h1>
-        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="أدلة عملية في التصميم، التسويق، والتكنولوجيا — للمحترفين والمبتدئين على حد سواء.">Practical guides in design, marketing, and technology — for professionals and beginners alike.</p>
-        <div class="filters filters--center" role="group" aria-label="Filter books" data-ar-label="تصفية الكتب" data-filter-group="#book-list" data-reveal style="--d:.22s">{filt}</div>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="المكتبة الرقمية">The digital library</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مراجع عربية">Arabic references</span> <span class="grad-text" data-ar="مكتوبة للعمل الفعلي.">written for the actual work.</span></h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="أربعة أدلة في التصميم والتسويق والتقنية — مكتوبة بالعربية من البداية لا مترجمة، بمصطلح عربي واضح. &lt;strong&gt;المعاينة العامة مجانية، والشراء الإلكتروني غير متاح بعد&lt;/strong&gt;، فاحفظ قائمتك أو اسأل عن التوفّر.">Four guides in design, marketing and technology — written in Arabic first rather than translated, with a deliberate Arabic vocabulary. <strong>Public previews are free and online purchasing is not available yet</strong>, so save a shortlist or ask about availability.</p>
+        <div class="filters" role="group" aria-label="Filter books" data-ar-label="تصفية الكتب" data-filter-group="#book-list" data-reveal style="--d:.22s">{filt}</div>
       </section>
 
       <section class="section container section--flush-top" aria-label="Books" data-ar-label="الكتب">
         <div class="book-grid" id="book-list">{cards}
         </div>
-        <ul class="promises" data-reveal>
+        <ul class="promises promises--inline" data-reveal>
           <li>{icon('lock')}<span data-ar="أسعار استرشادية · ريال سعودي">Indicative prices · SAR</span></li>
           <li>{icon('globe')}<span data-ar="قارئ تفاعلي عربي RTL">Interactive Arabic RTL reader</span></li>
           <li>{icon('check')}<span data-ar="معاينات عامة متاحة">Public previews available</span></li>

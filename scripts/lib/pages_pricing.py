@@ -4,53 +4,29 @@ S-codes mapped to the unified catalogue (AB / MA / HC / CC)."""
 from catalog import SERVICES, TRACKS, href
 from h import esc, icon, crumbs, closing, btn, page, svc_grid
 
-# (code, note_en, note_ar, star, bullets_en, bullets_ar, [price_override, dur_override])
+# Pricing page shows the published range, duration, fit and deliverables straight
+# from the catalogue — no second copy of scope text that can drift out of sync.
+# (code, tier note en, tier note ar, star)
 PKG = {
     'tech': [
-        ('AB-01', 'Two tiers · ex-S03 / S04', 'مستويان · S03 / S04 سابقًا', False,
-         ['EA Quick-Start ($1,000 – $2,500 · 2 weeks): current state across BDAT layers · capability gap analysis · Business-to-Technology Alignment Matrix · 90-day action plan · ArchiMate / Sparx EA documentation',
-          'Transformation Advisory ($3,000 – $8,000 · 4–8 weeks): governance model design · phased roadmap · NORA & Vision 2030 alignment · KPI framework · stakeholder presentation'],
-         ['البداية السريعة للعمارة المؤسسية (⁦$1,000 – $2,500⁩ · أسبوعان): الوضع الحالي عبر طبقات BDAT · تحليل فجوات القدرات · مصفوفة مواءمة الأعمال مع التقنية · خطة عمل لـ 90 يومًا · توثيق ArchiMate / Sparx EA',
-          'استشارات التحول (⁦$3,000 – $8,000⁩ · ⁦4–8⁩ أسابيع): تصميم نموذج الحوكمة · خارطة طريق مرحلية · مواءمة NORA ورؤية 2030 · إطار مؤشرات الأداء · عرض لأصحاب المصلحة']),
-        ('AB-05', '3–6 weeks · Architecture-first', '⁦3–6⁩ أسابيع · العمارة أولًا', False,
-         ['Workload assessment', 'Provider evaluation matrix', 'Migration sequencing plan', 'Risk register', 'Cloud governance framework'],
-         ['تقييم أحمال العمل', 'مصفوفة تقييم مزوّدي الخدمة', 'خطة تسلسل الهجرة', 'سجل المخاطر', 'إطار حوكمة السحابة']),
-        ('AB-04', '3–5 days · .NET', '⁦3–5⁩ أيام · .NET', False,
-         ['Automated .NET source analysis', 'Application landscape map', 'Service dependency map', 'Technical documentation', 'Replaces weeks of manual discovery'],
-         ['تحليل آلي لمصدر .NET', 'خريطة مشهد التطبيقات', 'خريطة اعتماديات الخدمات', 'توثيق تقني', 'يحل محل أسابيع من الاستكشاف اليدوي']),
+        ('AB-01', 'Two tiers · assessment or full advisory', 'مستويان · تقييم أو استشارات كاملة', True),
+        ('AB-05', '3–6 weeks · architecture-first', '⁦3–6⁩ أسابيع · العمارة أولًا', False),
+        ('AB-04', 'Scoped per engagement', 'يُحدَّد لكل مشروع', False),
     ],
     'brand': [
-        ('MA-03', 'Flagship · 8-stage V2', 'الباقة الرئيسية · منهجية V2 من 8 مراحل', True,
-         ['Logo system (5+ variants)', 'Brand strategy document', 'Color + typography system', 'Brand guidelines (AR + EN)', 'Full stationery kit', 'Social media template pack'],
-         ['منظومة شعار (+5 نسخ)', 'وثيقة استراتيجية العلامة', 'نظام ألوان وخطوط', 'دليل العلامة (عربي + إنجليزي)', 'حزمة قرطاسية كاملة', 'حزمة قوالب سوشيال ميديا']),
-        ('MA-02', 'Includes Brand Audit + Refresh tier ($500 – $1,500 · 1–2 weeks)', 'يتضمن مستوى تدقيق وتجديد العلامة (⁦$500 – $1,500⁩ · ⁦1–2⁩ أسبوع)', False,
-         ['Brand health diagnosis', 'Stay / update / rebrand decision', 'Targeted refresh delivery', 'Updated guidelines'],
-         ['تشخيص صحة العلامة', 'قرار الإبقاء / التحديث / إعادة البناء', 'تسليم تجديد موجّه', 'دليل محدَّث']),
-        ('CC-01', '6–8 weeks · Flagship', '⁦6–8⁩ أسابيع · الباقة الرئيسية', True,
-         ['Brand identity system', 'Bilingual website (AR + EN)', 'Digital architecture', 'Booking system + GA4 + SEO', 'Social media kit', '30-day post-launch support'],
-         ['منظومة هوية العلامة', 'موقع ثنائي اللغة (عربي + إنجليزي)', 'عمارة رقمية', 'نظام حجوزات + GA4 + SEO', 'حزمة سوشيال ميديا', 'دعم 30 يومًا بعد الإطلاق']),
+        ('MA-03', 'Flagship · the full system', 'الباقة الرئيسية · المنظومة الكاملة', True),
+        ('MA-02', 'The usual starting point', 'نقطة البداية المعتادة', False),
+        ('CC-01', '6–8 weeks · brand + build together', '⁦6–8⁩ أسابيع · الهوية والبناء معًا', True),
     ],
     'data': [
-        ('AB-03', 'Power BI · Python', 'Power BI · Python', False,
-         ['Operational data → executive dashboards', 'Power BI or Tableau delivery', 'Python data pipeline (if needed)', 'Decision intelligence framing', 'Entry point to AB-01'],
-         ['بيانات تشغيلية ← لوحات تنفيذية', 'تسليم عبر Power BI أو Tableau', 'خط بيانات Python (عند الحاجة)', 'تأطير ذكاء القرارات', 'نقطة دخول إلى AB-01']),
-        ('CC-02', '2–4 weeks · Framework + execution', '⁦2–4⁩ أسابيع · إطار + تنفيذ', False,
-         ['Market entry strategy', 'Commercial positioning (framework)', 'BD framework / BD pipeline design', 'Go-to-market (execution) plan'],
-         ['استراتيجية دخول السوق', 'التموضع التجاري (إطار)', 'إطار تطوير الأعمال / تصميم خط التطوير', 'خطة الوصول إلى السوق (تنفيذ)']),
+        ('AB-03', 'Power BI · Python pipelines', 'Power BI · خطوط Python', False),
+        ('CC-02', 'Framework + execution', 'إطار + تنفيذ', False),
     ],
     'health': [
-        ('HC-01', '5–7 weeks · Brand + Tech', '⁦5–7⁩ أسابيع · هوية + تقنية', True,
-         ['Brand identity + bilingual digital presence', 'Booking system + Google presence', 'CBAHI-aware design', 'NORA-compliant patient comms', 'AR + EN as standard'],
-         ['هوية العلامة + حضور رقمي ثنائي اللغة', 'نظام حجوزات + حضور على Google', 'تصميم واعٍ بمتطلبات CBAHI', 'تواصل مع المرضى متوافق مع NORA', 'عربي + إنجليزي كمعيار']),
-        ('HC-03', '3–5 weeks · CBAHI + NORA', '⁦3–5⁩ أسابيع · CBAHI + NORA', False,
-         ['Clinical workflow mapping', 'Vendor scoring matrix (10+ vendors)', 'RFP template', 'Contract review checklist', '⚠ Wrong HIS: $50K–$200K exposure'],
-         ['رسم مسارات العمل السريرية', 'مصفوفة تقييم المورّدين (+10 مورّدين)', 'قالب طلب العروض (RFP)', 'قائمة مراجعة العقد', '⚠ نظام HIS خاطئ: تعرّض بقيمة ⁦$50K–$200K⁩']),
-        ('HC-02', '2–3 weeks · CBAHI KPIs', '⁦2–3⁩ أسابيع · مؤشرات CBAHI', False,
-         ['Clinical operational data → dashboards', 'CBAHI KPI library included', 'BD insight layer', 'Executive reporting format'],
-         ['بيانات تشغيلية سريرية ← لوحات مؤشرات', 'مكتبة مؤشرات CBAHI مضمّنة', 'طبقة رؤى تطوير الأعمال', 'صيغة تقارير تنفيذية']),
-        ('HC-05', '2–3 weeks · CPHIMS-delivered', '⁦2–3⁩ أسابيع · بتنفيذ CPHIMS', False,
-         ['EMRAM stage scoring', 'CBAHI readiness gap report', 'NORA alignment review', '90-day technology roadmap'],
-         ['تحديد مرحلة EMRAM', 'تقرير فجوات الجاهزية لـ CBAHI', 'مراجعة المواءمة مع NORA', 'خارطة طريق تقنية لمدة 90 يومًا']),
+        ('HC-01', '5–7 weeks · brand + technology', '⁦5–7⁩ أسابيع · هوية + تقنية', True),
+        ('HC-03', '3–5 weeks · scored vendor selection', '⁦3–5⁩ أسابيع · اختيار موزون للمورّدين', False),
+        ('HC-02', '2–3 weeks · CBAHI KPI library', '⁦2–3⁩ أسابيع · مكتبة مؤشرات CBAHI', False),
+        ('HC-05', '2–3 weeks · CPHIMS-delivered', '⁦2–3⁩ أسابيع · بتنفيذ CPHIMS', False),
     ],
 }
 ALSO = {'tech': ['AB-02', 'AB-06'], 'brand': ['MA-01', 'MA-04', 'MA-05', 'MA-06', 'MA-07', 'MA-08', 'MA-09', 'MA-10'], 'data': [], 'health': ['HC-04']}
@@ -90,21 +66,22 @@ FAQ = [
 ]
 
 
-def pkg(code, note, note_ar, star, bul, bul_ar, delay=0.0):
+def pkg(code, note, note_ar, star, delay=0.0):
     s = SERVICES[code]
-    tr = TRACKS[s['track']]
-    items = ''.join(f'<li data-ar="{esc(a)}">{esc(e)}</li>' for e, a in zip(bul, bul_ar))
+    items = ''.join(f'<li data-ar="{esc(a)}">{esc(e)}</li>' for e, a in zip(s['out'], s['out_ar']))
     price_ar = s.get('price_ar') or s['price']
+    dur_ar = s.get('dur_ar') or s['dur']
     return f'''
-          <article class="card glass tier tier--pkg{' tier--star' if star else ''}" data-reveal style="--d:{delay:.2f}s">
+          <article class="panel tier tier--pkg{' tier--star' if star else ''}" data-reveal style="--d:{delay:.2f}s">
             <div class="tier__head">
-              <span class="svc__code">{code}{' ⭐' if star else ''}</span>
+              <span class="tier__code">{code}{' ✦' if star else ''}</span>
               <h3><a href="{href(code)}" data-ar="{esc(s['title_ar'])}">{esc(s['title'])}</a></h3>
               <p class="tier__note" data-ar="{esc(note_ar)}">{esc(note)}</p>
             </div>
-            <p class="tier__price"><strong data-ar="{esc(price_ar)}">{esc(s['price'])}</strong><span data-ar="{esc(s.get('dur_ar') or s['dur'])}">{esc(s['dur'])}</span></p>
+            <p class="tier__price"><strong data-ar="{esc(price_ar)}">{esc(s['price'])}</strong><span data-ar="{esc(dur_ar)}">{esc(s['dur'])}</span></p>
+            <p class="tier__who" data-ar="{esc(s['for_ar'])}">{esc(s['for_'])}</p>
             <ul class="ticks ticks--dense">{items}</ul>
-            <a class="text-link" href="{href(code)}"><span data-ar="تفاصيل الخدمة ←">Service details →</span></a>
+            <a class="text-link" href="{href(code)}" data-track="service-detail" data-track-id="{code}"><span data-ar="تفاصيل الخدمة">Service details</span>{icon('arrowUpRight', 'flip')}</a>
           </article>'''
 
 
@@ -135,8 +112,8 @@ def build():
         {crumbs([('Home', 'الرئيسية', '/'), ('Solutions', 'الحلول', '/services/'), ('Pricing & FAQ', 'الأسعار والأسئلة الشائعة', None)])}
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="أسعار شفافة.">Transparent pricing.</span><br /><span class="grad-text" data-ar="بلا مفاجآت.">No surprises.</span></h1>
-        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="نطاق ثابت. دفعات حسب المعالم. لكل مشروع سعر واضح ومخرج محدد ونتيجة أعمال قابلة للتتبع — قبل أن توقّع أي شيء.">Fixed scope. Milestone-based payment. Every engagement has a clear price, a defined deliverable, and a traceable business outcome — before you sign anything.</p>
-        <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s">{btn('Book a Free Discovery Call', 'احجز مكالمة استكشافية مجانية', '/contact/#book')}{btn('Service pricing', 'أسعار الخدمات', '#pricing', 'glass', 'arrowDown')}</div>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="كل خدمة من الخدمات الـ23 لها نطاق سعري منشور ومدة معلنة ومخرجات مكتوبة. الدفعات مرتبطة بمعالم، والنطاق يُثبَّت قبل بدء العمل — فلا مفاجآت في الفاتورة.">Every one of the 23 services has a published price range, a stated duration and written deliverables. Payments follow milestones and scope is locked before work starts — so there are no invoice surprises.</p>
+        <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s">{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}{btn('Jump to service pricing', 'اذهب إلى أسعار الخدمات', '#pricing', 'glass', 'arrowDown')}</div>
       </section>
 
       <nav class="subnav subnav--sticky container" data-spy aria-label="Pricing sections" data-ar-label="أقسام الأسعار"><a href="#pricing" data-ar="الخدمات والأسعار">Services &amp; pricing</a><a href="#how-we-charge" data-ar="شروط الدفع">Payment terms</a><a href="#faq" data-ar="الأسئلة الشائعة">FAQ</a></nav>
@@ -147,8 +124,8 @@ def build():
           <h2 class="section__title" id="charge-title"><span data-ar="حسب المعالم.">Milestone-based.</span> <span class="grad-text" data-ar="لا حسب الوقت.">Not time-based.</span></h2>
           <p class="section__lead" data-ar="تُقسَّم الدفعات على معالم محددة — لا تُحتسب بالساعة أو بالشهر. تُسلَّم الملفات فقط عند السداد الكامل.">Payment is split across defined milestones — not billed by the hour or the month. Files are only released upon full settlement.</p>
         </header>
-        <div class="grid grid--2">
-          <article class="card glass tile" data-tilt data-reveal>
+        <div class="grid grid--2 grid--top">
+          <article class="panel tier" data-reveal>
             <span class="card__icon">{icon('pen')}</span>
             <h3 data-ar="الهوية والإبداع">Brand &amp; Creative</h3>
             <p class="tile__sub" data-ar="MA-01 → MA-10 · CC-01 · HC-01 · HC-04">MA-01 → MA-10 · CC-01 · HC-01 · HC-04</p>
@@ -158,7 +135,7 @@ def build():
               <li><b>25%</b><span data-ar="التسليم النهائي">Final Delivery</span></li>
             </ol>
           </article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.08s">
+          <article class="panel tier" data-reveal style="--d:.08s">
             <span class="card__icon">{icon('layers')}</span>
             <h3 data-ar="التقنية والاستشارات">Technology &amp; Advisory</h3>
             <p class="tile__sub">AB-01 → AB-06 · CC-02 · HC-02 · HC-03 · HC-05</p>
@@ -169,7 +146,7 @@ def build():
           </article>
         </div>
         <div class="notice notice--violet" data-reveal style="margin-top:18px">{icon('alert')}<p data-ar-html="&lt;strong&gt;تسليم الملفات مشروط بالسداد الكامل.&lt;/strong&gt; تُحتسب على المدفوعات المتأخرة 2% شهريًا بعد 14 يومًا."><strong>File release is conditional on full payment.</strong> Late payments accrue at 2% per month after 14 days.</p></div>
-        <div class="grid grid--3" style="margin-top:18px">
+        <div class="grid grid--3 grid--top" style="margin-top:18px">
           <article class="card glass tile" data-tilt data-reveal><span class="card__icon">{icon('lock')}</span><h3 data-ar="الملفات عند السداد الكامل">Files on Full Settlement</h3><p data-ar="كل المخرجات — الملفات المصدرية والوثائق والأدلة — تُسلَّم فقط عند سداد 100%. بلا استثناءات.">All deliverables — source files, documentation, guidelines — are released only upon 100% payment. No exceptions.</p></article>
           <article class="card glass tile" data-tilt data-reveal style="--d:.07s"><span class="card__icon">{icon('receipt')}</span><h3 data-ar="النطاق يُثبَّت عند الانطلاق">Scope Locked at Kickoff</h3><p data-ar="يُحدَّد النطاق ويُعتمد قبل بدء العمل. الطلبات خارج النطاق تُسعَّر بشكل منفصل — ولا تُستوعب بصمت أبدًا.">Scope is defined and signed off before work begins. Out-of-scope requests are quoted separately — never silently absorbed.</p></article>
           <article class="card glass tile" data-tilt data-reveal style="--d:.14s"><span class="card__icon">{icon('wallet')}</span><h3>USD · SAR · EGP</h3><p data-ar="الأسعار معروضة بالدولار الأمريكي. تُؤكَّد المعادلات بالريال السعودي / الجنيه المصري عند التعاقد. يُقبل التحويل البنكي أو الدفع الرقمي.">Pricing shown in USD. Equivalent SAR/EGP rates confirmed at contract. Bank transfer or digital payment accepted.</p></article>

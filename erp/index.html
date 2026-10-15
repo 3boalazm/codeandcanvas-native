@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-lang-mirror="/ar/erp/">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -35,7 +35,6 @@
   <link rel="preload" href="/assets/fonts/signategrotesk-black.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/css/fonts.css" />
     <link rel="stylesheet" href="/assets/css/ds.css" />
-    <link rel="stylesheet" href="/assets/css/completion.css" />
   <link rel="stylesheet" href="/assets/css/erp.css" />
 </head>
 <body class="is-loading">
@@ -99,6 +98,7 @@
           <a class="btn btn--glass btn--lg" href="#modules" data-t="hero.secondary"></a>
         </div>
         <ul class="hero__chips" id="heroChips" data-reveal style="--d:.65s"></ul>
+        <p class="hero__note" data-t="hero.dash.note"></p>
       </div>
 
       <div class="hero__visual" data-reveal style="--d:.3s">
@@ -158,10 +158,12 @@
 
     <!-- ░░ Challenge ░░ -->
     <section class="section container" id="challenge">
-      <header class="section__head" data-reveal>
-        <p class="kicker"><span class="kicker__num">01</span><span data-t="challenge.kicker"></span></p>
-        <h2 class="section__title" data-t="challenge.title"></h2>
-        <p class="section__lead" data-t="challenge.lead"></p>
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>01</b><span data-t="challenge.kicker"></span></p>
+          <h2 data-t="challenge.title"></h2>
+          <p class="lead" data-t="challenge.lead"></p>
+        </div>
       </header>
       <div class="pains" id="pains"></div>
 
@@ -177,10 +179,10 @@
 
     <!-- ░░ Platform ░░ -->
     <section class="section container platform" id="platform">
-      <div class="platform__copy" data-reveal>
-        <p class="kicker"><span class="kicker__num">02</span><span data-t="platform.kicker"></span></p>
-        <h2 class="section__title" data-t="platform.title"></h2>
-        <p class="section__lead" data-t="platform.lead"></p>
+      <div class="platform__copy sec-head sec-head--stack" data-reveal>
+        <p class="sec-head__no"><b>02</b><span data-t="platform.kicker"></span></p>
+        <h2 data-t="platform.title"></h2>
+        <p class="lead" data-t="platform.lead"></p>
         <ul class="checklist" id="platformPoints"></ul>
       </div>
       <div class="orbit" id="orbit" data-reveal style="--d:.2s">
@@ -197,10 +199,12 @@
 
     <!-- ░░ Modules ░░ -->
     <section class="section container" id="modules">
-      <header class="section__head" data-reveal>
-        <p class="kicker"><span class="kicker__num">03</span><span data-t="modulesSection.kicker"></span></p>
-        <h2 class="section__title" data-t="modulesSection.title"></h2>
-        <p class="section__lead" data-t="modulesSection.lead"></p>
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>03</b><span data-t="modulesSection.kicker"></span></p>
+          <h2 data-t="modulesSection.title"></h2>
+          <p class="lead" data-t="modulesSection.lead"></p>
+        </div>
       </header>
       <div class="modx" data-reveal>
         <div class="modx__grid" id="modGrid" role="tablist" aria-orientation="horizontal"></div>
@@ -212,10 +216,12 @@
 
     <!-- ░░ Sectors ░░ -->
     <section class="section container" id="sectors">
-      <header class="section__head" data-reveal>
-        <p class="kicker"><span class="kicker__num">04</span><span data-t="sectorsSection.kicker"></span></p>
-        <h2 class="section__title" data-t="sectorsSection.title"></h2>
-        <p class="section__lead" data-t="sectorsSection.lead"></p>
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>04</b><span data-t="sectorsSection.kicker"></span></p>
+          <h2 data-t="sectorsSection.title"></h2>
+          <p class="lead" data-t="sectorsSection.lead"></p>
+        </div>
       </header>
       <div class="tabs" id="sectorTabs" role="tablist" data-reveal></div>
       <div class="sector glass" id="sectorPanel" data-reveal role="tabpanel" aria-live="polite"></div>
@@ -225,10 +231,10 @@
     <section class="section container" id="compliance">
       <div class="compliance glass glass--deep" data-reveal>
         <div class="compliance__head">
-          <div>
-            <p class="kicker"><span class="kicker__num">05</span><span data-t="compliance.kicker"></span></p>
-            <h2 class="section__title" data-t="compliance.title"></h2>
-            <p class="section__lead" data-t="compliance.lead"></p>
+          <div class="sec-head sec-head--stack">
+            <p class="sec-head__no"><b>05</b><span data-t="compliance.kicker"></span></p>
+            <h2 data-t="compliance.title"></h2>
+            <p class="lead" data-t="compliance.lead"></p>
           </div>
           <div class="market-switch" id="marketSwitch" role="tablist"></div>
         </div>
@@ -239,29 +245,35 @@
 
     <!-- ░░ Tech ░░ -->
     <section class="section container" id="tech">
-      <header class="section__head section__head--center" data-reveal>
-        <p class="kicker"><span class="kicker__num">06</span><span data-t="tech.kicker"></span></p>
-        <h2 class="section__title" data-t="tech.title"></h2>
+      <header class="sec-head sec-head--center" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>06</b><span data-t="tech.kicker"></span></p>
+          <h2 data-t="tech.title"></h2>
+        </div>
       </header>
       <div class="tech" id="techGrid"></div>
     </section>
 
     <!-- ░░ Journey ░░ -->
     <section class="section container" id="journey">
-      <header class="section__head" data-reveal>
-        <p class="kicker"><span class="kicker__num">07</span><span data-t="journey.kicker"></span></p>
-        <h2 class="section__title" data-t="journey.title"></h2>
-        <p class="section__lead" data-t="journey.lead"></p>
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>07</b><span data-t="journey.kicker"></span></p>
+          <h2 data-t="journey.title"></h2>
+          <p class="lead" data-t="journey.lead"></p>
+        </div>
       </header>
       <ol class="timeline" id="timeline"><span class="timeline__rail"><i id="timelineFill"></i></span></ol>
     </section>
 
     <!-- ░░ Why us ░░ -->
     <section class="section container" id="why">
-      <header class="section__head section__head--center" data-reveal>
-        <p class="kicker"><span class="kicker__num">08</span><span data-t="why.kicker"></span></p>
-        <h2 class="section__title section__title--xl"><span class="grad-text" data-t="why.title"></span></h2>
-        <p class="section__lead" data-t="why.lead"></p>
+      <header class="sec-head sec-head--center" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>08</b><span data-t="why.kicker"></span></p>
+          <h2><span class="grad-text" data-t="why.title"></span></h2>
+          <p class="lead" data-t="why.lead"></p>
+        </div>
       </header>
       <div class="pillars" id="pillars"></div>
       <ul class="promises glass" id="promises" data-reveal></ul>
@@ -269,10 +281,12 @@
 
     <!-- ░░ Builder ░░ -->
     <section class="section container" id="builder">
-      <header class="section__head" data-reveal>
-        <p class="kicker"><span class="kicker__num">09</span><span data-t="builder.kicker"></span></p>
-        <h2 class="section__title" data-t="builder.title"></h2>
-        <p class="section__lead" data-t="builder.lead"></p>
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>09</b><span data-t="builder.kicker"></span></p>
+          <h2 data-t="builder.title"></h2>
+          <p class="lead" data-t="builder.lead"></p>
+        </div>
       </header>
       <div class="builder" data-reveal>
         <form class="builder__form glass" id="builderForm" onsubmit="return false">
@@ -288,9 +302,11 @@
 
     <!-- ░░ FAQ ░░ -->
     <section class="section container section--narrow" id="faq">
-      <header class="section__head section__head--center" data-reveal>
-        <p class="kicker"><span class="kicker__num">10</span><span data-t="faqSection.kicker"></span></p>
-        <h2 class="section__title" data-t="faqSection.title"></h2>
+      <header class="sec-head sec-head--center" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>10</b><span data-t="faqSection.kicker"></span></p>
+          <h2 data-t="faqSection.title"></h2>
+        </div>
       </header>
       <div class="faq" id="faqList"></div>
     </section>

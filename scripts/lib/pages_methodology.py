@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """/methodology/ — live copy of codeandcanvas.net/methodology/."""
-from h import esc, icon, crumbs, closing, btn, page
+from h import esc, icon, crumbs, closing, btn, page, sec_head, steps3, facts
 
 PHASES = [
     ('01', 'Foundation', 'الأساس', 'Discovery & Business Goals', 'الاستكشاف وأهداف الأعمال',
@@ -48,52 +48,53 @@ MATRIX = [
 
 
 def build():
-    phases = ''.join(f'''
-          <li data-reveal style="--d:{(i % 4) * .05:.2f}s">
-            <div>
-              <p class="person__role" data-ar="{esc(par)}">{esc(pen)}</p>
-              <h3 data-ar="{esc(tar)}">{esc(ten)}</h3>
-              <p data-ar="{esc(dar)}">{esc(den)}</p>
-              <div class="steps__meta">{''.join(f'<span>{esc(x)}</span>' for x in tags)}</div>
-            </div>
-          </li>''' for i, (n, pen, par, ten, tar, den, dar, tags) in enumerate(PHASES))
+    phases = steps3([
+        (n, f'{ten} — {pen}', f'{tar} — {par}', den, dar, ' · '.join(tags), ' · '.join(tags))
+        for n, pen, par, ten, tar, den, dar, tags in PHASES])
     rows = ''.join(f'''
               <tr><th scope="row" data-ar="{esc(ar)}">{esc(en)}</th><td>{a}</td><td>{b}</td><td>{c}</td><td>{d}</td></tr>''' for en, ar, a, b, c, d in MATRIX)
 
     body = f'''
       <!-- ░░ Hero ░░ -->
-      <section class="phero container phero--center" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         {crumbs([('Home', 'الرئيسية', '/'), ('About', 'من نحن', '/about/'), ('Methodology', 'المنهجية', None)])}
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="منهجيتنا">Our Methodology</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مواءمة الأعمال مع الأصول.">Business-Asset Alignment.</span><br /><span class="grad-text" data-ar="لا مجرد تسليم.">Not just delivery.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar="معظم المشاريع تسلّم مخرجات. مشاريعنا تسلّم مواءمة — رابطًا قابلًا للتتبع بين أهدافك وقدراتك وتقنيتك وبياناتك. كل مرحلة مقصودة. لا يُبنى شيء بلا سبب عمل.">Most engagements deliver outputs. Ours deliver alignment — a traceable connection between your goals, capabilities, technology, and data. Every phase is intentional. Nothing is built without a business reason.</p>
-        <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s">{btn('Book a Discovery Call', 'احجز مكالمة استكشافية', '/contact/#book')}{btn('See the 8 stages', 'استعرض المراحل الثماني', '#stages', 'glass', 'arrowDown')}</div>
+        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}{btn('See the 8 stages', 'استعرض المراحل الثماني', '#stages', 'glass', 'arrowDown')}</div>
+      </section>
+
+      <!-- ░░ At a glance ░░ -->
+      <section class="section container section--tight" aria-label="The methodology at a glance" data-ar-label="المنهجية في أرقام">
+        {facts([('Stages in every engagement', 'مرحلة في كل مشروع', '8', True),
+                ('Diagnostic layers before any build', 'طبقتا تشخيص قبل أي بناء', '2', True),
+                ('Stages with a named deliverable', 'مرحلة لها مخرج مسمّى', '8', True),
+                ('Productized services on this process', 'خدمة مُنتجة تعمل بهذه العملية', '23', True)])}
       </section>
 
       <!-- ░░ 8 stages ░░ -->
       <section class="section container section--tight" id="stages" aria-labelledby="stages-title">
-        <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">01</span><span data-ar="العملية من 8 مراحل">The 8-stage process</span></p>
-          <h2 class="section__title" id="stages-title"><span data-ar="ثماني مراحل.">Eight stages.</span> <span class="grad-text" data-ar="في كل مشروع.">Every engagement.</span></h2>
-        </header>
-        <ol class="steps steps--2col">{phases}
-        </ol>
+        {sec_head('01', 'THE PROCESS', 'العملية',
+                  '<span id="stages-title" data-ar="ثماني مراحل.">Eight stages.</span> <span class="grad-text" data-ar="في كل مشروع.">Every engagement.</span>',
+                  'One process runs every engagement, whichever track owns it. Each stage ends with a named deliverable you keep — no stage is «internal work» you never see.',
+                  'عملية واحدة تدير كل مشروع أيًّا كان مساره. كل مرحلة تنتهي بمخرج مسمّى تحتفظ به — لا مرحلة «عمل داخلي» لا تراها.')}
+        {phases}
       </section>
 
       <!-- ░░ Diagnostic layers ░░ -->
       <section class="section container section--flush-top" id="layers" aria-labelledby="layers-title">
-        <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">02</span><span data-ar="طبقتا التشخيص">The Two Diagnostic Layers</span></p>
-          <h2 class="section__title" id="layers-title"><span data-ar="الغايات أولًا.">Ends first.</span> <span class="grad-text" data-ar="ثم الأصول.">Then assets.</span></h2>
-        </header>
+        {sec_head('02', 'DIAGNOSIS', 'التشخيص',
+                  '<span id="layers-title" data-ar="الغايات أولًا.">Ends first.</span> <span class="grad-text" data-ar="ثم الأصول.">Then assets.</span>',
+                  'Two diagnostic layers decide everything that follows: what you are trying to achieve, and which assets can actually achieve it.',
+                  'طبقتان تشخيصيتان تحدّدان كل ما يلي: ما تسعى إلى تحقيقه، وأي الأصول قادرة على تحقيقه فعلًا.')}
         <div class="grid grid--2">
-          <article class="card glass tile" data-tilt data-reveal>
-            <p class="person__role" data-ar="نموذج دوافع الأعمال (BMM)">Business Motivation Model (BMM)</p>
+          <article class="panel tier" data-reveal>
+            <p class="tier__code" data-ar="نموذج دوافع الأعمال (BMM)">Business Motivation Model (BMM)</p>
             <h3 data-ar="نبدأ بالغايات لا بالوسائل.">We start with ends, not means.</h3>
             <p data-ar-html="قبل أي عمل تصميمي أو معماري، نرسم &lt;strong&gt;أهداف عملك ← استراتيجياتك ← تكتيكاتك ← قدراتك&lt;/strong&gt; باستخدام نموذج دوافع الأعمال. ينتج عن ذلك سلسلة قابلة للتتبع — من الرؤية وصولًا إلى القدرة أو عنصر العلامة المحدد الذي يحققها. لا يُبنى شيء بلا سبب عمل.">Before any design or architecture work begins, we map your <strong>business goals → strategies → tactics → capabilities</strong> using the Business Motivation Model. This produces a traceable chain — from vision down to the specific capability or brand element that delivers it. Nothing is built without a business reason.</p>
           </article>
-          <article class="card glass tile" data-tilt data-reveal style="--d:.08s">
-            <p class="person__role" data-ar="تدفق القيمة + رسم القدرات">Value Stream + Capability Mapping</p>
+          <article class="panel tier" data-reveal style="--d:.08s">
+            <p class="tier__code" data-ar="تدفق القيمة + رسم القدرات">Value Stream + Capability Mapping</p>
             <h3 data-ar="ثم نربط تلك الغايات بأصولك.">Then we connect those ends to your assets.</h3>
             <p data-ar-html="نبني &lt;strong&gt;خرائط قدرات الأعمال&lt;/strong&gt; ونوائمها مع تدفقات القيمة — لتحديد أي القدرات معطّلة أو مفقودة أو غير متوائمة مع أهدافك التجارية. هذه هي طبقة التشخيص التي تجعل كل قرار لاحق قابلًا للدفاع عنه لا حدسيًا.">We construct <strong>business capability maps</strong> and align them to value streams — identifying which capabilities are broken, missing, or misaligned with your commercial objectives. This is the diagnostic layer that makes every downstream decision defensible, not intuitive.</p>
           </article>
@@ -102,12 +103,11 @@ def build():
 
       <!-- ░░ Matrix ░░ -->
       <section class="section container section--flush-top" id="matrix" aria-labelledby="matrix-title">
-        <header class="section__head" data-reveal>
-          <p class="kicker"><span class="kicker__num">03</span><span data-ar="مصفوفة مواءمة الأعمال مع التقنية">Business-to-Technology Alignment Matrix</span></p>
-          <h2 class="section__title" id="matrix-title"><span data-ar="لتعرف دائمًا">So you always know</span> <span class="grad-text" data-ar="لماذا اتُّخذ القرار.">why a decision was made.</span></h2>
-          <p class="section__lead" data-ar="مصفوفة تتبّع تربط أهداف الأعمال بالقدرات والأصول التقنية ومبادرات التحول. كل مشروع ينتج نسخة منها — لتعرف دائمًا سبب كل قرار.">A traceability matrix linking business goals to capabilities, technology assets, and transformation initiatives. Every engagement produces a version of this — so you always know why a decision was made.</p>
-        </header>
-        <div class="table-wrap glass" data-reveal>
+        {sec_head('03', 'TRACEABILITY', 'التتبع',
+                  '<span id="matrix-title" data-ar="لتعرف دائمًا">So you always know</span> <span class="grad-text" data-ar="لماذا اتُّخذ القرار.">why a decision was made.</span>',
+                  'A traceability matrix linking business goals to capabilities, technology assets, and transformation initiatives. Every engagement produces a version of this — so you always know why a decision was made.',
+                  'مصفوفة تتبّع تربط أهداف الأعمال بالقدرات والأصول التقنية ومبادرات التحول. كل مشروع ينتج نسخة منها — لتعرف دائمًا سبب كل قرار.')}
+        <div class="tbl-wrap panel" data-reveal>
           <table class="matrix">
             <thead><tr><th scope="col" data-ar="هدف العمل">Business Goal</th><th scope="col" data-ar="قدرة العلامة">Brand Capability</th><th scope="col" data-ar="الأصل التقني">Technology Asset</th><th scope="col" data-ar="البيانات / التحليلات">Data / Analytics</th><th scope="col" data-ar="التحول">Transformation</th></tr></thead>
             <tbody>{rows}
@@ -119,8 +119,8 @@ def build():
 
       <!-- ░░ Payment + CTA ░░ -->
       <section class="section container section--tight" aria-labelledby="cta-title">
-        <div class="notice notice--violet" data-reveal>{icon('wallet')}<p data-ar-html="&lt;strong&gt;الدفع حسب المعالم — لا حسب الوقت.&lt;/strong&gt; الخدمات ذات الطابع الإبداعي: 50% عند الانطلاق · 25% عند اعتماد الاستراتيجية · 25% عند التسليم النهائي. خدمات الاستشارات والعمارة المؤسسية: 50% عند الانطلاق · 50% عند التسليم. تسليم الملفات مشروط بالسداد الكامل. تُحتسب على المدفوعات المتأخرة 2% شهريًا بعد 14 يومًا."><strong>Payment is milestone-based — not time-based.</strong> Brand-heavy services: 50% Kickoff · 25% Strategy Sign-off · 25% Final. Advisory and EA services: 50% Kickoff · 50% Final. File release is conditional on full settlement. Late payments accrue at 2% per month after 14 days.</p></div>
-        <div class="callout glass glass--deep" data-reveal style="margin-top:18px">
+        <div class="notice notice--violet" data-reveal>{icon('wallet')}<p data-ar-html="&lt;strong&gt;الدفع مرتبط بالمعالم لا بالساعات.&lt;/strong&gt; تُطلق المرحلة التالية بعد اعتماد مخرج المرحلة السابقة، وتسليم الملفات مشروط بالسداد الكامل. جدول المعالم الكامل ونسبه منشور في &lt;a href=&quot;/pricing-faq/#how-we-charge&quot;&gt;الأسعار وشروط الدفع&lt;/a&gt;."><strong>Payment follows milestones, not hours.</strong> The next stage starts when the previous stage's deliverable is signed off, and file release is conditional on full settlement. The full schedule and percentages are published in <a href="/pricing-faq/#how-we-charge">pricing &amp; payment terms</a>.</p></div>
+        <div class="callout panel" data-reveal style="margin-top:18px">
           <div>
             <h3 id="cta-title" data-ar="تريد رؤية المنهجية مطبّقة؟">Want to see the methodology applied?</h3>
             <p data-ar="احجز مكالمة استكشافية مدتها 30 دقيقة. سنشرح لك كيف تنطبق العملية ذات المراحل الثماني على مشروعك تحديدًا — ونعطيك صورة واضحة عن شكل المخرجات.">Book a 30-minute discovery call. We'll walk you through how the 8-stage process applies to your specific engagement — and give you a clear picture of what the output looks like.</p>

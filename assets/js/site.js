@@ -102,7 +102,14 @@
   /*  Language                                                           */
   /* ------------------------------------------------------------------ */
   const LANGS = ['ar', 'en'];
+  /* /ar/ documents declare data-lang-lock: their copy is Arabic in the markup, so the
+     runtime never re-picks a language for them and never swaps anything. */
+  const LOCKED_LANG = (() => {
+    const lock = document.documentElement.getAttribute('data-lang-lock');
+    return LANGS.includes(lock) ? lock : null;
+  })();
   const pickLang = () => {
+    if (LOCKED_LANG) return LOCKED_LANG;
     const q = new URLSearchParams(location.search).get('lang');
     if (LANGS.includes(q)) return q;
     const saved = store.get('cc-lang') || store.get('c1-lang');
@@ -172,6 +179,7 @@
   }
 
   function setLang(next) {
+    if (LOCKED_LANG) { location.href = LOCKED_LANG === 'ar' ? '/ar/' : '/'; return; }
     if (next === lang || !LANGS.includes(next)) return;
     document.body.classList.add('is-switching');
     setTimeout(() => {
@@ -350,7 +358,29 @@
   }
 
   function bindChrome() {
-    $('#langBtn')?.addEventListener('click', () => { track('lang-toggle', { to: lang === 'ar' ? 'en' : 'ar' }); setLang(lang === 'ar' ? 'en' : 'ar'); });
+    $('#langBtn')?.addEventListener('click', (event) => {
+      const btn = event.currentTarget;
+      track('lang-toggle', { to: lang === 'ar' ? 'en' : 'ar' });
+      // On /ar/… the server renders a real link; follow it, but keep the query
+      // string so deep links (for example ?inquiry=HC-03) survive the switch.
+      if (btn.tagName === 'A') {
+        const href = btn.getAttribute('href') || '/';
+        const query = location.search.replace(/([?&])lang=(ar|en)&?/, '$1').replace(/[?&]$/, '').replace('?&', '?').replace('&$', '');
+        if (query) {
+          event.preventDefault();
+          location.href = href + query + location.hash;
+        }
+        return;
+      }
+      const mirror = document.documentElement.getAttribute('data-lang-mirror');
+      if (mirror && !LOCKED_LANG) {
+        const target = lang === 'ar' ? mirror.replace(/^\/ar(?=\/|$)/, '') || '/' : mirror;
+        const query = location.search.replace(/([?&])lang=(ar|en)&?/, '$1').replace(/[?&]$/, '').replace('?&', '?');
+        location.href = target + query + location.hash;
+        return;
+      }
+      setLang(lang === 'ar' ? 'en' : 'ar');
+    });
 
     // Mark the current page in the shared header: <body data-nav="services"> ↔ <a data-key="services">
     const key = document.body.dataset.nav;

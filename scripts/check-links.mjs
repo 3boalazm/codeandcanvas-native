@@ -11,7 +11,7 @@ import { join, relative, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(fileURLToPath(import.meta.url), '..', '..');
-const SKIP = new Set(['node_modules', 'dist', '.git', 'partials', 'docs', 'scripts', 'Unselected files']);
+const SKIP = new Set(['node_modules', 'dist', '.git', 'partials', 'docs', 'scripts', 'Unselected files', 'test-results', 'playwright-report']);
 const VOID = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
 
 function walk(dir, out = []) {

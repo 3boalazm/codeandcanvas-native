@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr" data-title-ar="توفر الكتب — Code &amp; Canvas" data-desc-ar="استفسر عن توفر الكتب. لا يتم تحصيل أي دفع إلكتروني.">
+<html lang="en" dir="ltr" data-title-ar="توفر الكتب — Code &amp; Canvas" data-desc-ar="استفسر عن توفر الكتب. لا يتم تحصيل أي دفع إلكتروني." data-lang-mirror="/ar/checkout/">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -9,7 +9,11 @@
     <meta property="og:title" content="Book availability — Code &amp; Canvas" />
     <meta property="og:description" content="Ask about book availability. No online payment is collected." />
     <meta property="og:url" content="https://codeandcanvas.net/checkout/" />
+    <meta property="og:locale" content="en_US" />
     <link rel="canonical" href="https://codeandcanvas.net/checkout/" />
+    <link rel="alternate" hreflang="en" href="https://codeandcanvas.net/checkout/" />
+    <link rel="alternate" hreflang="ar" href="https://codeandcanvas.net/ar/checkout/" />
+    <link rel="alternate" hreflang="x-default" href="https://codeandcanvas.net/checkout/" />
     <!-- cc:head -->
     <meta name="theme-color" content="#05051a" />
     <meta property="og:site_name" content="Code &amp; Canvas" />
@@ -37,7 +41,6 @@
     <link rel="stylesheet" href="/assets/css/fonts.css" />
     <link rel="stylesheet" href="/assets/css/ds.css" />
     <link rel="stylesheet" href="/assets/css/pages.css" />
-    <link rel="stylesheet" href="/assets/css/completion.css" />
     <noscript><style>body.is-loading{overflow:auto}#preloader{display:none!important}[data-reveal],.split .w{opacity:1!important;transform:none!important;filter:none!important}form{display:none!important}[data-panel][hidden]{display:block!important}</style></noscript>
     <!-- /cc:head -->
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/checkout/#webpage","url":"https://codeandcanvas.net/checkout/","name":"Book availability — Code & Canvas","description":"Ask about book availability. No online payment is collected.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/assets/brand/og-default.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"Shortlist","item":"https://codeandcanvas.net/cart/"},{"@type":"ListItem","position":3,"name":"Availability"}]}]}</script>
@@ -45,7 +48,7 @@
   </head>
   <body class="is-loading" data-nav="books">
     <!-- cc:top -->
-    <noscript><div class="notice container" style="padding-top:110px">Forms and interactive tools require JavaScript. <a href="mailto:info@codeandcanvas.net">Email us instead</a>. <span lang="ar" dir="rtl">تحتاج النماذج والأدوات التفاعلية إلى JavaScript. يمكنك التواصل عبر البريد.</span></div></noscript>
+    <noscript><div class="notice container" style="padding-top:110px" data-ar-html="تحتاج النماذج والأدوات التفاعلية إلى JavaScript. يمكنك التواصل عبر &lt;a href=&quot;mailto:info@codeandcanvas.net&quot;&gt;البريد الإلكتروني&lt;/a&gt; بدلًا من ذلك.">Forms and interactive tools require JavaScript. <a href="mailto:info@codeandcanvas.net">Email us instead</a>.</div></noscript>
     <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
     <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
 
@@ -89,10 +92,13 @@
 
     <main id="main">
 
-      <section class="section container" style="padding-top:calc(var(--nav-h) + 40px)" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><a href="/cart/" data-ar="القائمة">Shortlist</a><i>›</i><span aria-current="page" data-ar="التوفر">Availability</span></nav>
-        <h1 class="section__title" id="page-title" data-ar="استفسر عن توفر الكتب">Ask about book availability</h1>
-        <p class="section__lead" data-ar="الشراء الإلكتروني غير متاح حاليًا. هذه رسالة استفسار فقط: لا ندفع ولا نفتح محتوى مدفوعًا، والسعر النهائي والتوفر يُؤكدان قبل أي اتفاق.">Online purchasing is not available yet. This is an inquiry only: no payment or paid access. Availability and final pricing are confirmed before any agreement.</p>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="استفسار توفر · بلا دفع">Availability inquiry · no payment</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s" data-ar="استفسر عن توفر الكتب">Ask about book availability</h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="الشراء الإلكتروني غير متاح حاليًا. هذه رسالة استفسار فقط: لا ندفع ولا نفتح محتوى مدفوعًا، والسعر النهائي والتوفر يُؤكدان قبل أي اتفاق.">Online purchasing is not available yet. This is an inquiry only: no payment or paid access. Availability and final pricing are confirmed before any agreement.</p>
+      </section>
+      <section class="section container section--flush-top" aria-label="Availability inquiry" data-ar-label="استفسار التوفر">
         <form method="post" class="grid grid--side form" data-checkout data-integration="books" data-whatsapp="201092500454" data-mail="info@codeandcanvas.net" data-subject="Book availability" novalidate>
           <div class="form-card glass">
             <h2 data-ar="بيانات التواصل">Contact details</h2>

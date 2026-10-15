@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(fileURLToPath(import.meta.url), '..', '..');
 const CHECK = process.argv.includes('--check');
-const SKIP_DIRS = new Set(['node_modules', 'dist', '.git', 'partials', 'docs', 'scripts', 'assets', 'Unselected files']);
+const SKIP_DIRS = new Set(['node_modules', 'dist', '.git', 'partials', 'docs', 'scripts', 'assets', 'Unselected files', 'test-results', 'playwright-report']);
 
 const PARTIALS = {
   head: readFileSync(join(ROOT, 'partials/head.html'), 'utf8'),
@@ -43,6 +43,9 @@ function walk(dir, out = []) {
 let changed = 0;
 let touched = 0;
 for (const file of walk(ROOT)) {
+  // ar/** is derived output: gen-ar.mjs rewrites it from the synced English page,
+  // so syncing English partials into it would undo the Arabic chrome.
+  if (relative(ROOT, file).split(/[\\/]/)[0] === 'ar') continue;
   const src = readFileSync(file, 'utf8');
   let out = src;
   let hasMarkers = false;

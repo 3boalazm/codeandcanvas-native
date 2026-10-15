@@ -1,9 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { isolate, visit } from './helpers.mjs';
-const routes = JSON.parse(readFileSync(new URL('../manus-routes.json',import.meta.url))).routes.map(r=>r.path);
+const entries = JSON.parse(readFileSync(new URL('../manus-routes.json',import.meta.url))).routes;
+/* /ar/… documents fix their own language in the markup (data-lang-lock), so they are
+   checked as Arabic only — the English pages are still checked in both languages. */
+const targets = entries.flatMap(r=>(r.lang==='ar'?['ar']:['en','ar']).flatMap(lang=>[390,1440].map(width=>({route:r.path,lang,width}))));
 test.beforeEach(async ({page})=>isolate(page));
-for(const route of routes) for(const lang of ['en','ar']) for(const width of [390,1440]) {
+for(const {route,lang,width} of targets) {
   test(`route ${route} ${lang} ${width}`,async({page},info)=>{
     await page.setViewportSize({width,height:900});
     const errors=[],badAssets=[];

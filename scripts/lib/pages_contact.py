@@ -9,7 +9,7 @@ Integration points (see README › Integration points):
     "Book a Free Strategy Call" button opens it; empty = WhatsApp + form.
 """
 from catalog import SERVICES
-from h import esc, icon, crumbs, closing, btn, page
+from h import esc, icon, crumbs, closing, btn, page, sec_head, facts
 
 INQUIRY_GROUPS = [
     ('Brand & Creative', 'الهوية والإبداع', ['MA-01', 'MA-02', 'MA-03', 'MA-04', 'MA-05', 'MA-06', 'MA-07', 'MA-08', 'MA-09', 'MA-10']),
@@ -27,11 +27,21 @@ def build():
 
     body = f'''
       <!-- ░░ Hero ░░ -->
-      <section class="phero container phero--center" aria-labelledby="page-title">
+      <section class="phero container phero--left" aria-labelledby="page-title">
         {crumbs([('Home', 'الرئيسية', '/'), ('Contact', 'تواصل معنا', None)])}
-        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="تواصل معنا">Get In Touch</span></span>
-        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="لا نطيق الانتظار">Can’t wait to</span><br /><span class="grad-text" data-ar="لنسمع منك.">hear from you.</span></h1>
-        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="كل مشروع يبدأ بمحادثة. اختر القناة الأنسب لك — وسنرد خلال يوم عمل واحد.">Every engagement starts with a conversation. Pick the channel that works best for you — we'll respond within one business day.</p>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="تواصل معنا">Get in touch</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="أخبرنا بالمشكلة.">Tell us the problem.</span><br /><span class="grad-text" data-ar="وسنوجّهك إلى الخطوة الأولى.">We point you to the first step.</span></h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="لا نطلب عرضًا تقديميًا ولا مواصفات جاهزة. &lt;strong&gt;رسالة واحدة تصف ما تريد تغييره كافية&lt;/strong&gt; — ونرد خلال يوم عمل واحد بقناة واضحة: مكالمة، سعر، أو «لسنا الخيار المناسب».">No deck and no finished specification required. <strong>One message describing what you want to change is enough</strong> — we reply within one business day with a clear next step: a call, a price, or an honest “we are not the right fit”.</p>
+        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Message us on WhatsApp', 'راسلنا على واتساب', 'https://wa.me/966545520750', 'primary', 'chat')}{btn('Jump to the form', 'اذهب إلى النموذج', '#message', 'glass', 'arrowDown')}</div>
+      </section>
+
+      <!-- ░░ What happens next ░░ -->
+      <section class="section container section--tight" aria-label="What happens after you send" data-ar-label="ما يحدث بعد الإرسال">
+        <div class="grid grid--3 grid--top" data-reveal>
+          <article class="panel tier"><span class="tier__code">01</span><h3 data-ar="نقرأ الرسالة كاملة">We read the whole message</h3><p data-ar="قبل أي رد — نحدد هل القرار تقني أم علامة أم صحي، ومن المؤسس الذي يقوده.">Before any reply — we place the decision: technology, brand or healthcare, and which founder leads it.</p></article>
+          <article class="panel tier" data-reveal style="--d:.06s"><span class="tier__code">02</span><h3 data-ar="نرد بخطوة محددة">We reply with one next step</h3><p data-ar="مكالمة 30 دقيقة، أو نطاق وسعر مباشر في البريد إن كانت الخدمة منشورة في الكتالوج.">A 30-minute call, or a scope and price straight by e-mail when the service is already published in the catalogue.</p></article>
+          <article class="panel tier" data-reveal style="--d:.12s"><span class="tier__code">03</span><h3 data-ar="إن لم نكن مناسبين نقولها">If we are the wrong fit, we say so</h3><p data-ar="ونوجّهك إلى نوع الجهة التي تحل مشكلتك — لا نُبقي المحادثة مفتوحة بلا سبب.">And we point you to the kind of provider that does solve it — we do not keep a conversation open for its own sake.</p></article>
+        </div>
       </section>
 
       <!-- ░░ Form + booking ░░ -->
@@ -67,7 +77,7 @@ def build():
           </form>
 
           <aside class="side" id="book" data-booking-url="" data-reveal style="--d:.1s">
-            <div class="card glass glass--deep book-card">
+            <div class="panel tier">
               <span class="card__icon">{icon('calendar')}</span>
               <h3 data-ar="تفضّل مكالمة مجدولة؟">Prefer a scheduled call?</h3>
               <p data-ar="احجز جلسة استراتيجية مجانية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.">Book a free 30-min strategy session — we come prepared, not with a pitch.</p>
@@ -81,7 +91,7 @@ def build():
                 <li data-ar="أو نخبرك بصراحة إن لم نكن الخيار المناسب">— or tell you directly if we’re not the right match</li>
               </ul>
             </div>
-            <div class="card glass book-card" style="margin-top:14px">
+            <div class="panel tier" style="margin-top:14px">
               <p class="kicker"><span data-ar="ساعات العمل">Office hours</span></p>
               <ul class="kv">
                 <li><span data-ar="السعودية">KSA</span><b class="ltr">Sun – Thu · 9:00 – 18:00 AST</b></li>
@@ -96,7 +106,7 @@ def build():
       <!-- ░░ Channels ░░ -->
       <section class="section container section--tight section--flush-top" id="channels" aria-label="Contact channels" data-ar-label="قنوات التواصل">
         <div class="contact-grid">
-          <article class="card glass contact-card" data-reveal>
+          <article class="panel contact-card" data-reveal>
             <span class="card__icon">{icon('phoneCall')}</span>
             <h3 data-ar="تواصل مباشر">Direct Contact</h3>
             <ul class="kv">
@@ -111,7 +121,7 @@ def build():
               <a href="https://behance.net/aboalazm" target="_blank" rel="noopener" title="Behance">{icon('pen')}<span>Behance</span></a>
             </div>
           </article>
-          <article class="card glass contact-card" data-reveal style="--d:.08s">
+          <article class="panel contact-card" data-reveal style="--d:.08s">
             <span class="card__icon">{icon('pin')}</span>
             <h3 data-ar="مواقعنا">Our Locations</h3>
             <ul class="kv">
@@ -125,7 +135,7 @@ def build():
             </div>
             <div class="art art--wide art--map" data-slot="contact/map" aria-hidden="true" style="margin-top:auto;aspect-ratio:16/7"><span class="art__cap" data-ar="الرياض · الخبر · القاهرة">RIYADH · AL KHOBAR · CAIRO</span></div>
           </article>
-          <article class="card glass contact-card contact-card--wa" data-reveal style="--d:.16s">
+          <article class="panel contact-card contact-card--wa" data-reveal style="--d:.16s">
             <span class="card__icon">{icon('chat')}</span>
             <h3 data-ar="أسرع استجابة">Fastest Response</h3>
             <a class="wa-big" href="https://wa.me/966545520750" target="_blank" rel="noopener">

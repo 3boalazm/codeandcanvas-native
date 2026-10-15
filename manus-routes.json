@@ -10,19 +10,19 @@
   },
   {
    "path": "/services/",
-   "title": "Solutions — Code & Canvas"
+   "title": "Solutions — 23 productized services · Code & Canvas"
   },
   {
    "path": "/technology-services/",
-   "title": "Technology Services — Code & Canvas"
+   "title": "Technology Services — Enterprise architecture, data and cloud · Code & Canvas"
   },
   {
    "path": "/creative-services/",
-   "title": "Creative Services — Code & Canvas"
+   "title": "Creative Services — Brand systems, web and production · Code & Canvas"
   },
   {
    "path": "/healthcare/",
-   "title": "Healthcare Solutions — Code & Canvas"
+   "title": "Healthcare Solutions — Clinics and hospitals in KSA and Egypt · Code & Canvas"
   },
   {
    "path": "/about/",
@@ -86,7 +86,7 @@
   },
   {
    "path": "/case-studies/",
-   "title": "Our Work — Case Studies & Delivered Projects · Code & Canvas"
+   "title": "Work — Three shipped systems, documented scope · Code & Canvas"
   },
   {
    "path": "/books/",
@@ -168,6 +168,201 @@
    "path": "/404.html",
    "title": "404 — Lost · Code & Canvas",
    "notFound": true
+  },
+  {
+   "path": "/ar/services/",
+   "title": "الحلول — 23 خدمة مُنتجة · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/technology-services/",
+   "title": "خدمات التقنية — العمارة المؤسسية والبيانات والسحابة · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/creative-services/",
+   "title": "الخدمات الإبداعية — أنظمة العلامة والويب والإنتاج · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/healthcare/",
+   "title": "حلول الرعاية الصحية — العيادات والمستشفيات في السعودية ومصر · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/about/",
+   "title": "من نحن — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/our-story/",
+   "title": "قصتنا — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/methodology/",
+   "title": "المنهجية — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/team/",
+   "title": "الفريق — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/pricing-faq/",
+   "title": "الأسعار والأسئلة الشائعة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/contact/",
+   "title": "تواصل معنا — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/",
+   "title": "مركز الرؤى — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/why-startups-waste-money-wrong-product/",
+   "title": "لماذا تهدر معظم الشركات الناشئة أموالها في بناء المنتج الخطأ — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/",
+   "title": "من الفكرة إلى منتج جاهز للسوق: الإطار الاستراتيجي من ست خطوات — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/why-software-development-alone-wont-solve-your-business-problems/",
+   "title": "لماذا لن يحل تطوير البرمجيات وحده مشاكل عملك — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/what-digital-transformation-actually-means-for-smes/",
+   "title": "ماذا يعني التحول الرقمي فعلًا للشركات الصغيرة والمتوسطة في 2026 — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/how-product-thinking-creates-sustainable-business-growth/",
+   "title": "التفكير المنتجي: الإطار الذي يحوّل الميزات إلى نتائج أعمال — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/why-most-brands-look-different-but-feel-the-same/",
+   "title": "لماذا تبدو معظم العلامات مختلفة لكنها تُشعرك بالشيء نفسه — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/design-systems-operating-system-modern-digital-products/",
+   "title": "أنظمة التصميم: نظام التشغيل للمنتجات الرقمية الحديثة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/experience-design-business-growth-driver/",
+   "title": "تصميم التجربة كمحرك لنمو الأعمال — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/case-studies/",
+   "title": "أعمالنا — ثلاثة أنظمة مُسلَّمة بنطاق موثق · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/",
+   "title": "المكتبة — مراجع عربية في التصميم والعلامة · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/marketing-fundamentals/",
+   "title": "أساسيات التسويق — Marketing Fundamentals · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/marketing-fundamentals/read/",
+   "title": "القارئ — أساسيات التسويق · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/basics-of-visual-identity/",
+   "title": "أساسيات الهوية البصرية — Basics of Visual Identity · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/basics-of-visual-identity/read/",
+   "title": "القارئ — أساسيات الهوية البصرية · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/basics-of-graphic-design/",
+   "title": "أساسيات التصميم الجرافيكي — Basics of Graphic Design · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/basics-of-graphic-design/read/",
+   "title": "القارئ — أساسيات التصميم الجرافيكي · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/ui-ux-handbook/",
+   "title": "دليل تجربة وواجهة المستخدم — UI/UX Handbook · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/login/",
+   "title": "تسجيل الدخول - Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/register/",
+   "title": "إنشاء حساب - Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/forgot-password/",
+   "title": "نسيت كلمة المرور - Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/reset-password/",
+   "title": "إعادة تعيين كلمة المرور - Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/account/",
+   "title": "الكتب المحفوظة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/cart/",
+   "title": "قائمة الكتب المحفوظة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/checkout/",
+   "title": "توفر الكتب — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/thank-you/",
+   "title": "معلومات الطلب — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/privacy-policy/",
+   "title": "سياسة الخصوصية — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/terms-of-use/",
+   "title": "شروط الاستخدام — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/cookie-policy/",
+   "title": "سياسة ملفات تعريف الارتباط — Code & Canvas",
+   "lang": "ar"
   }
  ],
  "redirects": [

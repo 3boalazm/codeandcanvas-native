@@ -8,9 +8,10 @@ import { execFileSync } from 'node:child_process';
 const root = fileURLToPath(new URL('../',import.meta.url));
 const temp = mkdtempSync(join(tmpdir(),'cc-generated-'));
 try {
-  for (const file of ['scripts','partials','index.html','erp/index.html']) cpSync(join(root,file),join(temp,file),{recursive:true});
+  for (const file of ['scripts','partials','index.html','erp/index.html','assets/js/erp-data.js']) cpSync(join(root,file),join(temp,file),{recursive:true});
   execFileSync('python3',['scripts/gen-pages.py'],{cwd:temp,stdio:'pipe'});
   execFileSync(process.execPath,['scripts/sync-chrome.mjs'],{cwd:temp,stdio:'pipe'});
+  execFileSync(process.execPath,['scripts/gen-ar.mjs'],{cwd:temp,stdio:'pipe'});
   const files=[];
   function walk(dir){for(const e of readdirSync(dir,{withFileTypes:true})){if(['scripts','partials'].includes(e.name))continue;const p=join(dir,e.name);if(e.isDirectory())walk(p);else files.push(relative(temp,p));}}
   walk(temp);

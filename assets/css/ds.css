@@ -371,6 +371,7 @@ html[lang='en'] .pillars .card h3 { font-family: var(--f-accent); font-style: it
 .closing__inner { border-radius: 0; padding: clamp(40px, 5.4vw, 72px) clamp(22px, 4vw, 64px); text-align: center; background: radial-gradient(680px 320px at 50% 0%, rgba(122, 85, 224, .22), transparent 72%), var(--panel); }
 .closing__icon { width: 72px; height: 72px; margin: 0 auto 28px; filter: drop-shadow(0 0 30px rgba(139,108,255,.8)); animation: bob 6s ease-in-out infinite; }
 .closing__title { font-size: clamp(32px, 5vw, 66px); font-weight: 800; }
+html[lang='ar'] .closing__title { font-size: clamp(28px, 4vw, 54px); line-height: 1.4; }
 .closing__text { max-width: 640px; margin: 22px auto 0; color: var(--ink-2); font-size: clamp(16px, 1.3vw, 18.5px); }
 .closing__contact { margin-top: 30px; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 26px; font-size: 14.5px; color: var(--ink-2); }
 .closing__contact a { display: inline-flex; align-items: center; gap: 8px; transition: color .3s; direction: ltr; }

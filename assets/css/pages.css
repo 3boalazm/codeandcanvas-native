@@ -13,6 +13,10 @@
 .phero--center .hero__lead, .phero--center .hero__ctas, .phero--center .hero__chips { margin-inline: auto; justify-content: center; }
 .phero__title { font-size: clamp(36px, 5vw, 70px); font-weight: 800; margin: 22px 0 20px; line-height: 1.22; text-wrap: balance; }
 html[lang='en'] .phero__title { line-height: 1.04; }
+/* Arabic sits its vowels and dots above and below the letters, so a display size that reads
+   tight-but-fine in Latin overlaps in Arabic. Measured: at 1440 the page hero and the article
+   title both ran < 1.25 leading on multi-line Arabic headings. */
+html[lang='ar'] .phero__title { font-size: clamp(33px, 4.2vw, 62px); line-height: 1.42; }
 .phero__title .grad-text { padding-inline-end: .06em; }
 .phero .hero__lead { max-width: 720px; font-size: clamp(16.5px, 1.4vw, 19.5px); }
 .phero--tight { padding-top: calc(var(--nav-h) + clamp(24px, 3.5vw, 56px)); padding-bottom: clamp(26px, 3.2vw, 44px); }
@@ -267,6 +271,7 @@ html[lang='ar'] .badge { letter-spacing: 0; text-transform: none; font-size: 12.
 .post { padding-top: calc(var(--nav-h) + clamp(48px, 7vw, 96px)); }
 .post__head { max-width: 860px; margin: 0 auto; text-align: center; }
 .post__title { font-size: clamp(32px, 4.4vw, 60px); font-weight: 800; line-height: 1.12; margin: 20px 0 18px; text-wrap: balance; }
+html[lang='ar'] .post__title { font-size: clamp(28px, 3.6vw, 52px); line-height: 1.45; }
 .post__excerpt { color: var(--ink-2); font-size: clamp(16.5px, 1.4vw, 19px); max-width: 720px; margin-inline: auto; }
 .post__meta { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 20px; margin-top: 24px; color: var(--ink-3); font-size: 14px; }
 .post__meta .ico { font-size: 15px; color: var(--teal); }
@@ -297,6 +302,7 @@ html[lang='ar'] .post__nav small { letter-spacing: 0; text-transform: none; }
 html[lang='ar'] .prose { font-size: 17px; line-height: 1.95; }
 .prose > * + * { margin-top: 1.1em; }
 .prose h2 { color: #fff; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin-top: 2em; scroll-margin-top: calc(var(--nav-h) + 24px); }
+html[lang='ar'] .prose h2 { line-height: 1.4; }
 .prose h3 { color: #fff; font-size: clamp(19px, 1.7vw, 23px); margin-top: 1.7em; scroll-margin-top: calc(var(--nav-h) + 24px); }
 .prose h4 { color: #fff; font-size: 17px; margin-top: 1.4em; }
 .prose h2 + *, .prose h3 + *, .prose h4 + * { margin-top: .6em; }
@@ -880,6 +886,7 @@ html[lang='ar'] .tier__price strong { font-size: 18px; }
 .who__side { display: grid; gap: 10px; position: sticky; top: calc(var(--nav-h) + 24px); }
 .who__mono { display: grid; place-items: center; width: 84px; height: 84px; border: 1px solid var(--line-2); border-radius: var(--r); background: var(--panel-2); font-family: var(--f-num); font-size: 26px; font-weight: 800; letter-spacing: .06em; color: var(--teal); }
 .who__name { font-family: var(--f-title); font-size: clamp(24px, 2.6vw, 34px); font-weight: 800; letter-spacing: -.02em; }
+html[lang='ar'] .who__name { line-height: 1.45; }
 .who__role { color: var(--ink-3); font-size: 14px; line-height: 1.6; }
 .who__links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 6px; }
 .who__links .text-link { font-size: 13.5px; }

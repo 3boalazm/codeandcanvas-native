@@ -246,6 +246,55 @@ const LOCKED_SCRIPT = `<script>
     </script>`;
 
 /**
+ * Locate one element by `#id` or `.class` and return its [start, end) offsets.
+ * Deliberately not a selector engine: long-form articles are the only callers, and a
+ * selector we cannot resolve must fail loudly instead of shipping an English block.
+ */
+function findElement(html, sel) {
+  const byId = sel.startsWith('#');
+  if (!byId && !sel.startsWith('.')) throw new Error(`findElement: only "#id" and ".class" are supported, got "${sel}"`);
+  const want = sel.slice(1);
+  const re = byId ? /id="([^"]*)"/g : /class="([^"]*)"/g;
+  let m;
+  while ((m = re.exec(html))) {
+    if (byId ? m[1] !== want : !m[1].split(/\s+/).includes(want)) continue;
+    const openStart = html.lastIndexOf('<', m.index);
+    const tag = /^<([a-zA-Z0-9-]+)/.exec(html.slice(openStart))?.[1];
+    if (!tag) continue;
+    const openEnd = html.indexOf('>', m.index) + 1;
+    const closeEnd = findClose(html, openEnd, tag);
+    if (closeEnd > -1) return { start: openStart, end: closeEnd, tag };
+  }
+  return null;
+}
+
+/**
+ * `<template data-ar-swap="#post-body">…</template>` — a committed, build-time translation of
+ * one page block (long-form articles). The Arabic replaces its English counterpart in the
+ * Arabic twin only, and an optional `data-ar-drop` removes an element that no longer applies
+ * (the "published in English" note). The template itself never survives into either page.
+ */
+function applySwaps(html) {
+  const re = /<template\b[^>]*\sdata-ar-swap="([^"]+)"([^>]*)>([\s\S]*?)<\/template>\s*/;
+  let out = html;
+  for (let i = 0; i < 40; i += 1) {
+    const m = out.match(re);
+    if (!m) break;
+    const [, sel, rest, content] = m;
+    const drop = rest.match(/data-ar-drop="([^"]+)"/)?.[1];
+    out = out.slice(0, m.index) + out.slice(m.index + m[0].length);
+    const target = findElement(out, sel);
+    if (!target) throw new Error(`applySwaps: no element matches "${sel}"`);
+    out = out.slice(0, target.start) + content.trim() + out.slice(target.end);
+    if (drop) {
+      const victim = findElement(out, drop);
+      if (victim) out = out.slice(0, victim.start) + out.slice(victim.end);
+    }
+  }
+  return out;
+}
+
+/**
  * @param {string} html   finished English page
  * @param {{enPath: string, arPath: string}} opts
  * @returns {string}      standalone Arabic page
@@ -307,6 +356,7 @@ export function arize(html, { enPath, arPath, dict = null, untranslated = false 
   if (dict) {
     body = resolveDict(body, dict);
   }
+  body = applySwaps(body);
   body = swapContent(body, 'data-ar-html', true);
   body = swapContent(body, 'data-ar', false);
   body = swapAttr(body, 'data-ar-label', 'aria-label');

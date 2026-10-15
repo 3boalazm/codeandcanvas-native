@@ -193,6 +193,28 @@ def article(p, by_slug):
     toc_html = ''.join(f'<a href="#{i}">{esc(t)}</a>' for i, t in toc_items)
     links = ''.join(f'<a class="text-link" href="{h}"{" target=_blank rel=noopener" if h.startswith("http") else ""}><span data-ar="{esc(ar)}">{esc(en)}</span></a>' for en, ar, h in a['links'])
 
+    ar = p.get('ar')
+    if ar:
+        note_ar = 'منشورة بالإنجليزية كما كُتبت · <a href="/ar/blog/%s/" hreflang="ar" lang="ar">اقرأها بالعربية</a>' % p['slug']
+        lang_note = ('<p class="post__lang-note" data-ar-html="%s">Published in English as written · '
+                     '<a href="/ar/blog/%s/" hreflang="ar" lang="ar">Read it in Arabic</a>.</p>' % (esc(note_ar), p['slug']))
+        swaps = '''
+        <!-- Committed Arabic translation: scripts/lib/arize.mjs swaps these two blocks into
+             /ar/blog/%s/ at build time, so the Arabic twin needs no JavaScript. -->
+        <template data-ar-swap="#post-body" data-ar-drop=".post__lang-note">
+          <div class="post__body prose" dir="rtl" lang="ar">
+%s
+          </div>
+        </template>
+        <template data-ar-swap="#post-side">
+          <aside class="post__side">
+%s
+          </aside>
+        </template>
+''' % (p['slug'], ar['body'], ar['side'])
+    else:
+        lang_note = '<p class="post__lang-note" data-ar="هذه المقالة منشورة بالإنجليزية كما كُتبت.">This article is published in English.</p>'
+        swaps = ''
     body = f'''
       <article class="post container" aria-labelledby="post-title">
         <header class="post__head">
@@ -200,13 +222,13 @@ def article(p, by_slug):
           <div class="post__meta" data-reveal><span class="badge" data-ar="{esc(p['cat_ar'])}">{esc(p['cat'])}</span><span>{icon('clock')}{p['minutes']} <span data-ar="دقائق قراءة">min read</span></span><span>{icon('calendar')}{p['date']}</span><span>{_author_chip(p['author'])}</span></div>
           <h1 class="post__title" id="post-title" data-reveal style="--d:.06s" data-ar="{esc(p['title_ar'])}">{esc(p['title'])}</h1>
           <p class="post__excerpt" data-reveal style="--d:.12s" data-ar="{esc(p['excerpt_ar'])}">{esc(p['excerpt'])}</p>
-          <p class="post__lang-note" data-ar="هذه المقالة منشورة بالإنجليزية كما كُتبت.">This article is published in English.</p>
+          {lang_note}
         </header>
         <div class="post__cover" data-reveal>
-          <div class="art art--wide {'art--pink' if p['author'] == 'ma' else 'art--violet'}" data-slot="blog/{p['slug']}/cover"><span class="art__mark" style="font-size:96px">{p['emoji']}</span><span class="art__cap">{esc(p['cat'])} · Code &amp; Canvas</span></div>
+          <div class="art art--wide {'art--pink' if p['author'] == 'ma' else 'art--violet'}" data-slot="blog/{p['slug']}/cover"><span class="art__mark" style="font-size:96px">{p['emoji']}</span><span class="art__cap" data-ar="{esc(p['cat_ar'])} · Code &amp; Canvas">{esc(p['cat'])} · Code &amp; Canvas</span></div>
         </div>
         <div class="post__layout">
-          <div class="post__body prose" dir="ltr" lang="en">
+          <div class="post__body prose" id="post-body" dir="ltr" lang="en">
             <div class="post__stats">{stats}</div>
             {p['body']}
             {cta_html}
@@ -217,7 +239,7 @@ def article(p, by_slug):
               <div><strong>{esc(a['name'])}</strong><p class="meta">{esc(p.get('author_line') or a['line'])}</p><p>{esc(p.get('author_bio') or a['bio'])}</p><div class="author-box__links">{links}</div></div>
             </aside>
           </div>
-          <aside class="post__side">
+          <aside class="post__side" id="post-side">
             <nav class="toc panel" aria-label="On this page" data-ar-label="في هذه الصفحة"><h4 data-ar="في هذه الصفحة">On this page</h4><div class="toc__list">{toc_html}</div></nav>
             <div class="panel tier" style="margin-top:14px">
               <p class="kicker"><span data-ar="ناقش هذا المقال">Discuss this article</span></p>
@@ -226,6 +248,7 @@ def article(p, by_slug):
             </div>
           </aside>
         </div>
+        {swaps}
         <section class="related">
           <div class="head-split"><h2 class="section__title" style="font-size:clamp(22px,2.4vw,30px)" data-ar="تابع القراءة">Continue reading</h2><a class="text-link" href="/blog/"><span data-ar="كل الرؤى ←">View all insights →</span></a></div>
           <div class="post-list">{related}

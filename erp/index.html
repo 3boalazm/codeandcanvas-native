@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-lang-mirror="/ar/erp/">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CanvasOne ERP — Code & Canvas</title>
+  <meta name="description" content="CanvasOne ERP by Code & Canvas — one platform for finance, sales, inventory, HR and e-invoicing, built for Saudi Arabia and Egypt." />
+  <meta name="theme-color" content="#05051a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CanvasOne ERP — Code & Canvas" />
+  <meta property="og:description" content="Run your entire business on one canvas." />
+  <meta property="og:url" content="https://codeandcanvas.net/erp/" />
+  <meta property="og:site_name" content="Code &amp; Canvas" />
+  <meta property="og:image" content="https://codeandcanvas.net/assets/brand/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://codeandcanvas.net/assets/brand/og-default.png" />
+  <link rel="canonical" href="https://codeandcanvas.net/erp/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/erp/#webpage","url":"https://codeandcanvas.net/erp/","name":"CanvasOne ERP — Code & Canvas","description":"CanvasOne ERP by Code & Canvas — one platform for finance, sales, inventory, HR and e-invoicing, built for Saudi Arabia and Egypt.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"}},{"@type":"SoftwareApplication","name":"CanvasOne ERP","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://codeandcanvas.net/erp/","description":"One platform for finance, sales, inventory, HR and e-invoicing, built for Saudi Arabia and Egypt.","provider":{"@id":"https://codeandcanvas.net/#org"},"offers":{"@type":"Offer","url":"https://codeandcanvas.net/erp/#builder","priceCurrency":"SAR","description":"Modular pricing — configure your plan with the builder."}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"CanvasOne ERP"}]}]}</script>
+  <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preload" href="/assets/fonts/signategrotesk-black.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/css/fonts.css" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+  <link rel="stylesheet" href="/assets/css/erp.css" />
+</head>
+<body class="is-loading">
+  <a class="skip-link" href="#top" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+  <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+  <!-- ░░ Preloader ░░ -->
+  <div class="preloader" id="preloader" aria-hidden="true" data-word="Canvas|One" data-text-en="Preparing your proposal…" data-text-ar="جارٍ تجهيز العرض…"></div>
+
+  <!-- ░░ Ambient background ░░ -->
+  <div class="ambient" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+    <span class="blob blob--4"></span>
+    <span class="ambient__grid"></span>
+    <span class="ambient__grain"></span>
+  </div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+  <!-- ░░ Navigation ░░ -->
+  <header class="nav" id="nav">
+    <div class="nav__pill container">
+      <a class="nav__brand" href="/" aria-label="Code & Canvas — home" data-ar-label="Code & Canvas — الرئيسية">
+        <img class="nav__logo" src="/assets/brand/icon-white.svg" alt="" width="40" height="40" />
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Sections">
+        <a href="#platform" data-t="ui.nav.platform"></a>
+        <a href="#modules" data-t="ui.nav.modules"></a>
+        <a href="#sectors" data-t="ui.nav.sectors"></a>
+        <a href="#compliance" data-t="ui.nav.compliance"></a>
+        <a href="#journey" data-t="ui.nav.journey"></a>
+        <a href="#why" data-t="ui.nav.why"></a>
+        <a href="#faq" data-t="ui.nav.faq"></a>
+      </nav>
+      <div class="nav__actions">
+        <button class="nav__round lang-btn" id="langBtn" type="button"></button>
+        <button class="nav__round" id="printBtn" type="button" data-t-title="ui.print" data-icon="printer"></button>
+        <a class="btn btn--primary nav__cta magnetic" href="#builder" data-t="ui.cta"></a>
+        <button class="nav__round burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ░░ Hero ░░ -->
+    <section class="hero container" id="hero">
+      <div class="hero__copy">
+        <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span><span data-t="hero.eyebrow"></span></p>
+        <h1 class="hero__title">
+          <span class="line split" data-t="hero.titleA"></span>
+          <span class="line line--accent">
+            <span class="split grad-text" data-t="hero.titleB"></span>
+            <svg class="brush" viewBox="0 0 420 28" preserveAspectRatio="none" aria-hidden="true"><path d="M4 18 C 80 6, 160 4, 236 10 S 372 22, 416 8"/></svg>
+          </span>
+        </h1>
+        <p class="hero__lead" data-reveal style="--d:.35s" data-t="hero.lead"></p>
+        <div class="hero__ctas" data-reveal style="--d:.5s">
+          <a class="btn btn--primary btn--lg magnetic js-book" href="#builder"><span data-t="hero.primary"></span><i data-icon="arrow" class="flip"></i></a>
+          <a class="btn btn--glass btn--lg" href="#modules" data-t="hero.secondary"></a>
+        </div>
+        <ul class="hero__chips" id="heroChips" data-reveal style="--d:.65s"></ul>
+        <p class="hero__note" data-t="hero.dash.note"></p>
+      </div>
+
+      <div class="hero__visual" data-reveal style="--d:.3s">
+        <div class="dash glass" id="dash" data-parallax>
+          <div class="dash__bar">
+            <span class="dash__dots"><i></i><i></i><i></i></span>
+            <span class="dash__title" data-t="hero.dash.title"></span>
+            <span class="dash__search" data-icon="search"></span>
+          </div>
+          <div class="dash__body">
+            <aside class="dash__side">
+              <span class="dash__ico is-active" data-icon="grid"></span>
+              <span class="dash__ico" data-icon="wallet"></span>
+              <span class="dash__ico" data-icon="box"></span>
+              <span class="dash__ico" data-icon="users"></span>
+              <span class="dash__ico" data-icon="receipt"></span>
+              <span class="dash__ico" data-icon="chart"></span>
+            </aside>
+            <div class="dash__main">
+              <div class="dash__kpis" id="dashKpis"></div>
+              <div class="dash__row">
+                <div class="dash__chart">
+                  <p class="dash__label" data-t="hero.dash.chart"></p>
+                  <svg viewBox="0 0 300 120" class="chart" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="gArea" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8b6cff" stop-opacity=".55"/><stop offset="1" stop-color="#8b6cff" stop-opacity="0"/></linearGradient>
+                      <linearGradient id="gLine" x1="0" x2="1"><stop offset="0" stop-color="#3fd6c4"/><stop offset=".5" stop-color="#8b6cff"/><stop offset="1" stop-color="#ee5ba3"/></linearGradient>
+                    </defs>
+                    <g class="chart__bars"></g>
+                    <path class="chart__area" d="M0,96 C25,90 40,70 60,74 S100,52 120,58 S160,40 180,44 S220,22 240,28 S280,12 300,8 L300,120 L0,120Z" fill="url(#gArea)"/>
+                    <path class="chart__line" d="M0,96 C25,90 40,70 60,74 S100,52 120,58 S160,40 180,44 S220,22 240,28 S280,12 300,8" fill="none" stroke="url(#gLine)" stroke-width="3" stroke-linecap="round"/>
+                    <path class="chart__target" d="M0,70 L300,30" stroke="rgba(255,255,255,.35)" stroke-dasharray="4 6" stroke-width="1.5"/>
+                    <circle class="chart__dot" cx="300" cy="8" r="5"/>
+                  </svg>
+                </div>
+                <div class="dash__inv">
+                  <p class="dash__label" data-t="hero.dash.invoices"></p>
+                  <ul id="dashInv"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="float-chip glass float-chip--1" data-depth="1.6"><i data-icon="check"></i><span data-t="hero.dash.float1"></span></div>
+        <div class="float-chip glass float-chip--2" data-depth="2.2"><i data-icon="alert"></i><span data-t="hero.dash.float2"></span></div>
+        <div class="float-chip glass float-chip--3" data-depth="1.2"><i data-icon="users"></i><span data-t="hero.dash.float3"></span></div>
+      </div>
+    </section>
+
+    <!-- ░░ Stats ░░ -->
+    <section class="stats container" aria-label="Key facts">
+      <div class="stats__inner glass" id="stats"></div>
+    </section>
+
+    <!-- ░░ Marquee ░░ -->
+    <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+    <!-- ░░ Challenge ░░ -->
+    <section class="section container" id="challenge">
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>01</b><span data-t="challenge.kicker"></span></p>
+          <h2 data-t="challenge.title"></h2>
+          <p class="lead" data-t="challenge.lead"></p>
+        </div>
+      </header>
+      <div class="pains" id="pains"></div>
+
+      <div class="compare glass" data-reveal>
+        <div class="compare__switch" role="tablist" id="compareSwitch">
+          <button role="tab" type="button" data-mode="before" data-t="challenge.compare.before"></button>
+          <button role="tab" type="button" data-mode="after" data-t="challenge.compare.after" class="is-active"></button>
+          <span class="compare__thumb"></span>
+        </div>
+        <ul class="compare__list" id="compareList" data-mode="after"></ul>
+      </div>
+    </section>
+
+    <!-- ░░ Platform ░░ -->
+    <section class="section container platform" id="platform">
+      <div class="platform__copy sec-head sec-head--stack" data-reveal>
+        <p class="sec-head__no"><b>02</b><span data-t="platform.kicker"></span></p>
+        <h2 data-t="platform.title"></h2>
+        <p class="lead" data-t="platform.lead"></p>
+        <ul class="checklist" id="platformPoints"></ul>
+      </div>
+      <div class="orbit" id="orbit" data-reveal style="--d:.2s">
+        <div class="orbit__ring orbit__ring--1"></div>
+        <div class="orbit__ring orbit__ring--2"></div>
+        <div class="orbit__ring orbit__ring--3"></div>
+        <div class="orbit__core glass">
+          <img src="/assets/brand/icon-white.svg" alt="" width="54" height="54" />
+          <span data-t="platform.core"></span>
+        </div>
+        <div class="orbit__spin" id="orbitSpin"></div>
+      </div>
+    </section>
+
+    <!-- ░░ Modules ░░ -->
+    <section class="section container" id="modules">
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>03</b><span data-t="modulesSection.kicker"></span></p>
+          <h2 data-t="modulesSection.title"></h2>
+          <p class="lead" data-t="modulesSection.lead"></p>
+        </div>
+      </header>
+      <div class="modx" data-reveal>
+        <div class="modx__grid" id="modGrid" role="tablist" aria-orientation="horizontal"></div>
+        <article class="modx__panel glass" id="modPanel" role="tabpanel" aria-live="polite"></article>
+      </div>
+      <!-- full module list, used for print/PDF -->
+      <div class="print-only" id="modPrint"></div>
+    </section>
+
+    <!-- ░░ Sectors ░░ -->
+    <section class="section container" id="sectors">
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>04</b><span data-t="sectorsSection.kicker"></span></p>
+          <h2 data-t="sectorsSection.title"></h2>
+          <p class="lead" data-t="sectorsSection.lead"></p>
+        </div>
+      </header>
+      <div class="tabs" id="sectorTabs" role="tablist" data-reveal></div>
+      <div class="sector glass" id="sectorPanel" data-reveal role="tabpanel" aria-live="polite"></div>
+    </section>
+
+    <!-- ░░ Compliance ░░ -->
+    <section class="section container" id="compliance">
+      <div class="compliance glass glass--deep" data-reveal>
+        <div class="compliance__head">
+          <div class="sec-head sec-head--stack">
+            <p class="sec-head__no"><b>05</b><span data-t="compliance.kicker"></span></p>
+            <h2 data-t="compliance.title"></h2>
+            <p class="lead" data-t="compliance.lead"></p>
+          </div>
+          <div class="market-switch" id="marketSwitch" role="tablist"></div>
+        </div>
+        <p class="compliance__headline" id="complianceHeadline"></p>
+        <div class="compliance__grid" id="complianceGrid"></div>
+      </div>
+    </section>
+
+    <!-- ░░ Tech ░░ -->
+    <section class="section container" id="tech">
+      <header class="sec-head sec-head--center" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>06</b><span data-t="tech.kicker"></span></p>
+          <h2 data-t="tech.title"></h2>
+        </div>
+      </header>
+      <div class="tech" id="techGrid"></div>
+    </section>
+
+    <!-- ░░ Journey ░░ -->
+    <section class="section container" id="journey">
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>07</b><span data-t="journey.kicker"></span></p>
+          <h2 data-t="journey.title"></h2>
+          <p class="lead" data-t="journey.lead"></p>
+        </div>
+      </header>
+      <ol class="timeline" id="timeline"><span class="timeline__rail"><i id="timelineFill"></i></span></ol>
+    </section>
+
+    <!-- ░░ Why us ░░ -->
+    <section class="section container" id="why">
+      <header class="sec-head sec-head--center" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>08</b><span data-t="why.kicker"></span></p>
+          <h2><span class="grad-text" data-t="why.title"></span></h2>
+          <p class="lead" data-t="why.lead"></p>
+        </div>
+      </header>
+      <div class="pillars" id="pillars"></div>
+      <ul class="promises glass" id="promises" data-reveal></ul>
+    </section>
+
+    <!-- ░░ Builder ░░ -->
+    <section class="section container" id="builder">
+      <header class="sec-head" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>09</b><span data-t="builder.kicker"></span></p>
+          <h2 data-t="builder.title"></h2>
+          <p class="lead" data-t="builder.lead"></p>
+        </div>
+      </header>
+      <div class="builder" data-reveal>
+        <form class="builder__form glass" id="builderForm" onsubmit="return false">
+          <fieldset><legend data-t="builder.marketQ"></legend><div class="seg" id="bMarket"></div></fieldset>
+          <fieldset><legend data-t="builder.sizeQ"></legend><div class="seg" id="bSize"></div></fieldset>
+          <fieldset><legend data-t="builder.deployQ"></legend><div class="seg" id="bDeploy"></div></fieldset>
+          <fieldset><legend data-t="builder.sectorQ"></legend><div class="chips" id="bSector"></div></fieldset>
+          <fieldset><legend data-t="builder.modulesQ"></legend><div class="chips chips--modules" id="bModules"></div></fieldset>
+        </form>
+        <aside class="builder__summary glass glass--deep" id="builderSummary"></aside>
+      </div>
+    </section>
+
+    <!-- ░░ FAQ ░░ -->
+    <section class="section container section--narrow" id="faq">
+      <header class="sec-head sec-head--center" data-reveal>
+        <div>
+          <p class="sec-head__no"><b>10</b><span data-t="faqSection.kicker"></span></p>
+          <h2 data-t="faqSection.title"></h2>
+        </div>
+      </header>
+      <div class="faq" id="faqList"></div>
+    </section>
+
+    <!-- ░░ Closing ░░ -->
+    <section class="section container" id="contact">
+      <div class="closing" data-reveal>
+        <div class="closing__border" aria-hidden="true"></div>
+        <div class="closing__inner">
+          <img src="/assets/brand/icon-white.svg" alt="" class="closing__icon" width="72" height="72" />
+          <h2 class="closing__title"><span data-t="closing.title"></span><br /><span class="grad-text" data-t="closing.titleB"></span></h2>
+          <p class="closing__text" data-t="closing.text"></p>
+          <div class="hero__ctas hero__ctas--center">
+            <a class="btn btn--primary btn--lg magnetic js-book" href="#builder"><i data-icon="calendar"></i><span data-t="closing.primary"></span></a>
+            <a class="btn btn--glass btn--lg" href="#builder" data-t="closing.secondary"></a>
+          </div>
+          <p class="closing__contact" id="closingContact"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/assets/brand/logo-white-horizontal.svg" alt="Code & Canvas" width="120" height="50" />
+        <p data-t="footer.tagline"></p>
+      </div>
+      <div class="footer__meta">
+        <p data-t="footer.product"></p>
+        <a class="text-link back" href="/"><i data-icon="arrow"></i><span data-ar="العودة إلى موقع Code & Canvas">Back to Code & Canvas</span></a>
+        <p><span id="footerYear"></span> © Code & Canvas. <span data-t="footer.rights"></span></p>
+        <p class="footer__muted" data-t="footer.confidential"></p>
+      </div>
+      <a class="to-top" href="#top" data-t-title="ui.top" data-icon="arrowUp"></a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="/assets/js/config.js"></script>
+    <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/erp-data.js"></script>
+  <script src="/assets/js/erp-app.js"></script>
+</body>
+</html>

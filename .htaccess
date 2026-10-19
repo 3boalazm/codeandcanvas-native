@@ -1,0 +1,84 @@
+# Generated from _redirects for Hostinger (LiteSpeed/Apache)
+Options -Indexes
+DirectoryIndex index.html
+DirectorySlash On
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
+AddType image/svg+xml .svg
+AddType font/woff2 .woff2
+AddType application/manifest+json .webmanifest
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+# www -> apex
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+
+# Hide the Git checkout that Hostinger's Git deploy leaves in public_html
+RewriteRule (^|/)\.git(/|$) - [R=404,L]
+
+# /index.html -> /
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Legacy WordPress URLs -> native routes
+RewriteRule ^blogs/?$ /blog/ [R=301,L,NE]
+RewriteRule ^healthcare-hub/?$ /healthcare/ [R=301,L,NE]
+RewriteRule ^solutions/?$ /services/ [R=301,L,NE]
+RewriteRule ^book/?$ /contact/#book [R=301,L,NE]
+RewriteRule ^our-team/?$ /team/ [R=301,L,NE]
+RewriteRule ^elementor-6205/?$ /team/ [R=301,L,NE]
+RewriteRule ^account-center/?$ /account/ [R=301,L,NE]
+RewriteRule ^my-account/?$ /account/ [R=301,L,NE]
+RewriteRule ^shop/?$ /books/ [R=301,L,NE]
+RewriteRule ^product/?$ /books/ [R=301,L,NE]
+RewriteRule ^product-category(/.*)?$ /books/ [R=301,L,NE]
+RewriteRule ^wp-login\.php/?$ /login/ [R=301,L,NE]
+RewriteRule ^wp-admin(/.*)?$ /login/ [R=301,L,NE]
+RewriteRule ^strategic-branding-differentiation-vs-visual-identity/?$ /blog/why-most-brands-look-different-but-feel-the-same/ [R=301,L,NE]
+RewriteRule ^full-brand-identity/?$ /creative-services/#ma-03 [R=301,L,NE]
+RewriteRule ^it-solutions/?$ /technology-services/ [R=301,L,NE]
+RewriteRule ^data-analysis/?$ /technology-services/#ab-03 [R=301,L,NE]
+RewriteRule ^feed/?$ /blog/ [R=301,L,NE]
+RewriteRule ^why-startups-waste-money-wrong-product/?$ /blog/why-startups-waste-money-wrong-product/ [R=301,L,NE]
+RewriteRule ^how-to-turn-a-business-idea-into-a-market-ready-digital-product/?$ /blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/ [R=301,L,NE]
+RewriteRule ^why-software-development-alone-wont-solve-your-business-problems/?$ /blog/why-software-development-alone-wont-solve-your-business-problems/ [R=301,L,NE]
+RewriteRule ^what-digital-transformation-actually-means-for-smes/?$ /blog/what-digital-transformation-actually-means-for-smes/ [R=301,L,NE]
+RewriteRule ^how-product-thinking-creates-sustainable-business-growth/?$ /blog/how-product-thinking-creates-sustainable-business-growth/ [R=301,L,NE]
+RewriteRule ^why-most-brands-look-different-but-feel-the-same/?$ /blog/why-most-brands-look-different-but-feel-the-same/ [R=301,L,NE]
+RewriteRule ^design-systems-operating-system-modern-digital-products/?$ /blog/design-systems-operating-system-modern-digital-products/ [R=301,L,NE]
+RewriteRule ^from-brand-identity-to-brand-systems/?$ /blog/design-systems-operating-system-modern-digital-products/ [R=301,L,NE]
+RewriteRule ^experience-design-business-growth-driver/?$ /blog/experience-design-business-growth-driver/ [R=301,L,NE]
+RewriteRule ^creative-strategy-in-the-age-of-generative-ai/?$ /blog/experience-design-business-growth-driver/ [R=301,L,NE]
+RewriteRule ^product/marketing-fundamentals/?$ /books/marketing-fundamentals/ [R=301,L,NE]
+RewriteRule ^basics-of-brand-identity/?$ /books/basics-of-visual-identity/ [R=301,L,NE]
+RewriteRule ^product/basics-of-visual-identity/?$ /books/basics-of-visual-identity/ [R=301,L,NE]
+RewriteRule ^product/basics-of-graphic-design/?$ /books/basics-of-graphic-design/ [R=301,L,NE]
+RewriteRule ^product/دليل-تجربة-وواجهة-المستخدم/?$ /books/ui-ux-handbook/ [R=301,L,NE]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+<FilesMatch "\.html$">
+Header set Cache-Control "public, max-age=0, must-revalidate"
+</FilesMatch>
+<FilesMatch "\.(woff2?|ttf|otf)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(css|js|svg|png|jpe?g|webp)$">
+Header set Cache-Control "public, max-age=3600, stale-while-revalidate=86400"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml text/xml application/xml text/plain
+</IfModule>

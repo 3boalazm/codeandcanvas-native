@@ -1,0 +1,68 @@
+# codeandcanvas.net — legacy WordPress URLs → native routes (301)
+# Format: <from> <to> [status]  (Netlify / Cloudflare Pages / Vercel-compatible)
+
+/blogs/ /blog/ 301
+/blogs /blog/ 301
+/healthcare-hub/ /healthcare/ 301
+/healthcare-hub /healthcare/ 301
+/solutions /services/ 301
+/solutions/ /services/ 301
+/book /contact/#book 301
+/book/ /contact/#book 301
+/our-team/ /team/ 301
+/our-team /team/ 301
+/elementor-6205/ /team/ 301
+/account-center/ /account/ 301
+/account-center /account/ 301
+/my-account/ /account/ 301
+/my-account /account/ 301
+/shop/ /books/ 301
+/shop /books/ 301
+/product/ /books/ 301
+/product-category/* /books/ 301
+/wp-login.php /login/ 301
+/wp-admin/* /login/ 301
+/strategic-branding-differentiation-vs-visual-identity/ /blog/why-most-brands-look-different-but-feel-the-same/ 301
+/full-brand-identity/ /creative-services/#ma-03 301
+/it-solutions/ /technology-services/ 301
+/data-analysis/ /technology-services/#ab-03 301
+/feed/ /blog/ 301
+/feed /blog/ 301
+
+# Blog: posts moved from the site root into /blog/ (+ fixed mis-slugged duplicates)
+/why-startups-waste-money-wrong-product/ /blog/why-startups-waste-money-wrong-product/ 301
+/why-startups-waste-money-wrong-product /blog/why-startups-waste-money-wrong-product/ 301
+/how-to-turn-a-business-idea-into-a-market-ready-digital-product/ /blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/ 301
+/how-to-turn-a-business-idea-into-a-market-ready-digital-product /blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/ 301
+/why-software-development-alone-wont-solve-your-business-problems/ /blog/why-software-development-alone-wont-solve-your-business-problems/ 301
+/why-software-development-alone-wont-solve-your-business-problems /blog/why-software-development-alone-wont-solve-your-business-problems/ 301
+/what-digital-transformation-actually-means-for-smes/ /blog/what-digital-transformation-actually-means-for-smes/ 301
+/what-digital-transformation-actually-means-for-smes /blog/what-digital-transformation-actually-means-for-smes/ 301
+/how-product-thinking-creates-sustainable-business-growth/ /blog/how-product-thinking-creates-sustainable-business-growth/ 301
+/how-product-thinking-creates-sustainable-business-growth /blog/how-product-thinking-creates-sustainable-business-growth/ 301
+/why-most-brands-look-different-but-feel-the-same/ /blog/why-most-brands-look-different-but-feel-the-same/ 301
+/why-most-brands-look-different-but-feel-the-same /blog/why-most-brands-look-different-but-feel-the-same/ 301
+/design-systems-operating-system-modern-digital-products/ /blog/design-systems-operating-system-modern-digital-products/ 301
+/design-systems-operating-system-modern-digital-products /blog/design-systems-operating-system-modern-digital-products/ 301
+/from-brand-identity-to-brand-systems/ /blog/design-systems-operating-system-modern-digital-products/ 301
+/from-brand-identity-to-brand-systems /blog/design-systems-operating-system-modern-digital-products/ 301
+/experience-design-business-growth-driver/ /blog/experience-design-business-growth-driver/ 301
+/experience-design-business-growth-driver /blog/experience-design-business-growth-driver/ 301
+/creative-strategy-in-the-age-of-generative-ai/ /blog/experience-design-business-growth-driver/ 301
+/creative-strategy-in-the-age-of-generative-ai /blog/experience-design-business-growth-driver/ 301
+
+# Books: WooCommerce product URLs → native landings
+/product/marketing-fundamentals/ /books/marketing-fundamentals/ 301
+/product/marketing-fundamentals /books/marketing-fundamentals/ 301
+/basics-of-brand-identity/ /books/basics-of-visual-identity/ 301
+/basics-of-brand-identity /books/basics-of-visual-identity/ 301
+/product/basics-of-visual-identity/ /books/basics-of-visual-identity/ 301
+/product/basics-of-visual-identity /books/basics-of-visual-identity/ 301
+/product/basics-of-graphic-design/ /books/basics-of-graphic-design/ 301
+/product/basics-of-graphic-design /books/basics-of-graphic-design/ 301
+/product/%d8%af%d9%84%d9%8a%d9%84-%d8%aa%d8%ac%d8%b1%d8%a8%d8%a9-%d9%88%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%ae%d8%af%d9%85/ /books/ui-ux-handbook/ 301
+/product/%d8%af%d9%84%d9%8a%d9%84-%d8%aa%d8%ac%d8%b1%d8%a8%d8%a9-%d9%88%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%ae%d8%af%d9%85 /books/ui-ux-handbook/ 301
+
+# Fallbacks
+/index.html / 301
+/* /404.html 404

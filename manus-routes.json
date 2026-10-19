@@ -1,0 +1,505 @@
+{
+ "routes": [
+  {
+   "path": "/",
+   "title": "Code & Canvas — Business Development, By Design"
+  },
+  {
+   "path": "/erp/",
+   "title": "CanvasOne ERP — Code & Canvas"
+  },
+  {
+   "path": "/services/",
+   "title": "Solutions — 23 productized services · Code & Canvas"
+  },
+  {
+   "path": "/technology-services/",
+   "title": "Technology Services — Enterprise architecture, data and cloud · Code & Canvas"
+  },
+  {
+   "path": "/creative-services/",
+   "title": "Creative Services — Brand systems, web and production · Code & Canvas"
+  },
+  {
+   "path": "/healthcare/",
+   "title": "Healthcare Solutions — Clinics and hospitals in KSA and Egypt · Code & Canvas"
+  },
+  {
+   "path": "/about/",
+   "title": "About — Code & Canvas"
+  },
+  {
+   "path": "/our-story/",
+   "title": "Our Story — Code & Canvas"
+  },
+  {
+   "path": "/methodology/",
+   "title": "Methodology — Code & Canvas"
+  },
+  {
+   "path": "/team/",
+   "title": "Team — Code & Canvas"
+  },
+  {
+   "path": "/pricing-faq/",
+   "title": "Pricing & FAQ — Code & Canvas"
+  },
+  {
+   "path": "/contact/",
+   "title": "Contact — Code & Canvas"
+  },
+  {
+   "path": "/blog/",
+   "title": "Insights Hub — Code & Canvas"
+  },
+  {
+   "path": "/blog/why-startups-waste-money-wrong-product/",
+   "title": "Why Most Startups Waste Money Building the Wrong Product — Code & Canvas"
+  },
+  {
+   "path": "/blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/",
+   "title": "How to Turn a Business Idea Into a Market-Ready Digital Product — Code & Canvas"
+  },
+  {
+   "path": "/blog/why-software-development-alone-wont-solve-your-business-problems/",
+   "title": "Why Software Development Alone Won't Solve Your Business Problems — Code & Canvas"
+  },
+  {
+   "path": "/blog/what-digital-transformation-actually-means-for-smes/",
+   "title": "What Digital Transformation Actually Means for SMEs — Code & Canvas"
+  },
+  {
+   "path": "/blog/how-product-thinking-creates-sustainable-business-growth/",
+   "title": "How Product Thinking Creates Sustainable Business Growth — Code & Canvas"
+  },
+  {
+   "path": "/blog/why-most-brands-look-different-but-feel-the-same/",
+   "title": "Why Most Brands Look Different but Feel the Same — Code & Canvas"
+  },
+  {
+   "path": "/blog/design-systems-operating-system-modern-digital-products/",
+   "title": "Design Systems: The Operating System of Modern Digital Products — Code & Canvas"
+  },
+  {
+   "path": "/blog/experience-design-business-growth-driver/",
+   "title": "Experience Design as a Business Growth Driver — Code & Canvas"
+  },
+  {
+   "path": "/case-studies/",
+   "title": "Work — Three shipped systems, documented scope · Code & Canvas"
+  },
+  {
+   "path": "/books/",
+   "title": "Books Library — Arabic Design & Brand References · Code & Canvas"
+  },
+  {
+   "path": "/books/marketing-fundamentals/",
+   "title": "Marketing Fundamentals — أساسيات التسويق · Code & Canvas"
+  },
+  {
+   "path": "/books/marketing-fundamentals/read/",
+   "title": "Reader — Marketing Fundamentals · Code & Canvas"
+  },
+  {
+   "path": "/books/basics-of-visual-identity/",
+   "title": "Basics of Visual Identity — أساسيات الهوية البصرية · Code & Canvas"
+  },
+  {
+   "path": "/books/basics-of-visual-identity/read/",
+   "title": "Reader — Basics of Visual Identity · Code & Canvas"
+  },
+  {
+   "path": "/books/basics-of-graphic-design/",
+   "title": "Basics of Graphic Design — أساسيات التصميم الجرافيكي · Code & Canvas"
+  },
+  {
+   "path": "/books/basics-of-graphic-design/read/",
+   "title": "Reader — Basics of Graphic Design · Code & Canvas"
+  },
+  {
+   "path": "/books/ui-ux-handbook/",
+   "title": "UI/UX Handbook — دليل تجربة وواجهة المستخدم · Code & Canvas"
+  },
+  {
+   "path": "/login/",
+   "title": "Login - Code & Canvas"
+  },
+  {
+   "path": "/register/",
+   "title": "Register - Code & Canvas"
+  },
+  {
+   "path": "/forgot-password/",
+   "title": "Forgot Password - Code & Canvas"
+  },
+  {
+   "path": "/reset-password/",
+   "title": "Reset Password - Code & Canvas"
+  },
+  {
+   "path": "/account/",
+   "title": "Saved books — Code & Canvas"
+  },
+  {
+   "path": "/cart/",
+   "title": "Saved book shortlist — Code & Canvas"
+  },
+  {
+   "path": "/checkout/",
+   "title": "Book availability — Code & Canvas"
+  },
+  {
+   "path": "/thank-you/",
+   "title": "Request information — Code & Canvas"
+  },
+  {
+   "path": "/privacy-policy/",
+   "title": "Privacy Policy — Code & Canvas"
+  },
+  {
+   "path": "/terms-of-use/",
+   "title": "Terms of Use — Code & Canvas"
+  },
+  {
+   "path": "/cookie-policy/",
+   "title": "Cookie Policy — Code & Canvas"
+  },
+  {
+   "path": "/404.html",
+   "title": "404 — Lost · Code & Canvas",
+   "notFound": true
+  },
+  {
+   "path": "/ar/services/",
+   "title": "الحلول — 23 خدمة مُنتجة · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/technology-services/",
+   "title": "خدمات التقنية — العمارة المؤسسية والبيانات والسحابة · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/creative-services/",
+   "title": "الخدمات الإبداعية — أنظمة العلامة والويب والإنتاج · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/healthcare/",
+   "title": "حلول الرعاية الصحية — العيادات والمستشفيات في السعودية ومصر · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/about/",
+   "title": "من نحن — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/our-story/",
+   "title": "قصتنا — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/methodology/",
+   "title": "المنهجية — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/team/",
+   "title": "الفريق — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/pricing-faq/",
+   "title": "الأسعار والأسئلة الشائعة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/contact/",
+   "title": "تواصل معنا — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/",
+   "title": "مركز الرؤى — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/why-startups-waste-money-wrong-product/",
+   "title": "لماذا تهدر معظم الشركات الناشئة أموالها في بناء المنتج الخطأ — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/how-to-turn-a-business-idea-into-a-market-ready-digital-product/",
+   "title": "من الفكرة إلى منتج جاهز للسوق: الإطار الاستراتيجي من ست خطوات — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/why-software-development-alone-wont-solve-your-business-problems/",
+   "title": "لماذا لن يحل تطوير البرمجيات وحده مشاكل عملك — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/what-digital-transformation-actually-means-for-smes/",
+   "title": "ماذا يعني التحول الرقمي فعلًا للشركات الصغيرة والمتوسطة في 2026 — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/how-product-thinking-creates-sustainable-business-growth/",
+   "title": "التفكير المنتجي: الإطار الذي يحوّل الميزات إلى نتائج أعمال — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/why-most-brands-look-different-but-feel-the-same/",
+   "title": "لماذا تبدو معظم العلامات مختلفة لكنها تُشعرك بالشيء نفسه — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/design-systems-operating-system-modern-digital-products/",
+   "title": "أنظمة التصميم: نظام التشغيل للمنتجات الرقمية الحديثة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/experience-design-business-growth-driver/",
+   "title": "تصميم التجربة كمحرك لنمو الأعمال — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/case-studies/",
+   "title": "أعمالنا — ثلاثة أنظمة مُسلَّمة بنطاق موثق · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/",
+   "title": "المكتبة — مراجع عربية في التصميم والعلامة · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/marketing-fundamentals/",
+   "title": "أساسيات التسويق — Marketing Fundamentals · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/marketing-fundamentals/read/",
+   "title": "القارئ — أساسيات التسويق · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/basics-of-visual-identity/",
+   "title": "أساسيات الهوية البصرية — Basics of Visual Identity · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/basics-of-visual-identity/read/",
+   "title": "القارئ — أساسيات الهوية البصرية · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/basics-of-graphic-design/",
+   "title": "أساسيات التصميم الجرافيكي — Basics of Graphic Design · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/basics-of-graphic-design/read/",
+   "title": "القارئ — أساسيات التصميم الجرافيكي · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/books/ui-ux-handbook/",
+   "title": "دليل تجربة وواجهة المستخدم — UI/UX Handbook · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/login/",
+   "title": "تسجيل الدخول - Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/register/",
+   "title": "إنشاء حساب - Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/forgot-password/",
+   "title": "نسيت كلمة المرور - Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/reset-password/",
+   "title": "إعادة تعيين كلمة المرور - Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/account/",
+   "title": "الكتب المحفوظة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/cart/",
+   "title": "قائمة الكتب المحفوظة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/checkout/",
+   "title": "توفر الكتب — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/thank-you/",
+   "title": "معلومات الطلب — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/privacy-policy/",
+   "title": "سياسة الخصوصية — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/terms-of-use/",
+   "title": "شروط الاستخدام — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/cookie-policy/",
+   "title": "سياسة ملفات تعريف الارتباط — Code & Canvas",
+   "lang": "ar"
+  }
+ ],
+ "redirects": [
+  {
+   "from": "/blogs/",
+   "to": "/blog/",
+   "status": 301
+  },
+  {
+   "from": "/blogs",
+   "to": "/blog/",
+   "status": 301
+  },
+  {
+   "from": "/healthcare-hub/",
+   "to": "/healthcare/",
+   "status": 301
+  },
+  {
+   "from": "/healthcare-hub",
+   "to": "/healthcare/",
+   "status": 301
+  },
+  {
+   "from": "/solutions",
+   "to": "/services/",
+   "status": 301
+  },
+  {
+   "from": "/solutions/",
+   "to": "/services/",
+   "status": 301
+  },
+  {
+   "from": "/book",
+   "to": "/contact/#book",
+   "status": 301
+  },
+  {
+   "from": "/book/",
+   "to": "/contact/#book",
+   "status": 301
+  },
+  {
+   "from": "/our-team/",
+   "to": "/team/",
+   "status": 301
+  },
+  {
+   "from": "/our-team",
+   "to": "/team/",
+   "status": 301
+  },
+  {
+   "from": "/elementor-6205/",
+   "to": "/team/",
+   "status": 301
+  },
+  {
+   "from": "/account-center/",
+   "to": "/account/",
+   "status": 301
+  },
+  {
+   "from": "/account-center",
+   "to": "/account/",
+   "status": 301
+  },
+  {
+   "from": "/my-account/",
+   "to": "/account/",
+   "status": 301
+  },
+  {
+   "from": "/my-account",
+   "to": "/account/",
+   "status": 301
+  },
+  {
+   "from": "/shop/",
+   "to": "/books/",
+   "status": 301
+  },
+  {
+   "from": "/shop",
+   "to": "/books/",
+   "status": 301
+  },
+  {
+   "from": "/product/",
+   "to": "/books/",
+   "status": 301
+  },
+  {
+   "from": "/product-category/*",
+   "to": "/books/",
+   "status": 301
+  },
+  {
+   "from": "/wp-login.php",
+   "to": "/login/",
+   "status": 301
+  },
+  {
+   "from": "/wp-admin/*",
+   "to": "/login/",
+   "status": 301
+  },
+  {
+   "from": "/strategic-branding-differentiation-vs-visual-identity/",
+   "to": "/blog/why-most-brands-look-different-but-feel-the-same/",
+   "status": 301
+  },
+  {
+   "from": "/full-brand-identity/",
+   "to": "/creative-services/#ma-03",
+   "status": 301
+  },
+  {
+   "from": "/it-solutions/",
+   "to": "/technology-services/",
+   "status": 301
+  },
+  {
+   "from": "/data-analysis/",
+   "to": "/technology-services/#ab-03",
+   "status": 301
+  },
+  {
+   "from": "/feed/",
+   "to": "/blog/",
+   "status": 301
+  },
+  {
+   "from": "/feed",
+   "to": "/blog/",
+   "status": 301
+  }
+ ]
+}

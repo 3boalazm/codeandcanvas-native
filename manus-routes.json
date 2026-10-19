@@ -165,6 +165,10 @@
    "title": "Cookie Policy — Code & Canvas"
   },
   {
+   "path": "/profile/",
+   "title": "Company Profile 2026 — Business Development, By Design · Code & Canvas"
+  },
+  {
    "path": "/404.html",
    "title": "404 — Lost · Code & Canvas",
    "notFound": true
@@ -362,6 +366,11 @@
   {
    "path": "/ar/cookie-policy/",
    "title": "سياسة ملفات تعريف الارتباط — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/profile/",
+   "title": "الملف التعريفي ٢٠٢٦ — Code & Canvas",
    "lang": "ar"
   }
  ],

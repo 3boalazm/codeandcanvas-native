@@ -71,6 +71,21 @@ def build():
         <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s">{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}{btn('Our story', 'قصتنا', '/our-story/', 'glass')}{btn('Meet the team', 'تعرّف على الفريق', '/team/', 'ghost', 'arrow')}</div>
       </section>
 
+      <!-- ░░ Company profile ░░ -->
+      <section class="section container section--tight" aria-label="Company profile" data-ar-label="الملف التعريفي">
+        <div class="callout panel" data-reveal>
+          <div>
+            <p class="kicker"><span data-ar="الملف التعريفي 2026">COMPANY PROFILE 2026</span></p>
+            <h3 data-ar="٣٥ خدمة، ٥ عروض توقيع، وسبعة محاور قدرات — في ملف واحد.">35 services, five signature offers and seven capability pillars — in one document.</h3>
+            <p data-ar="نسخة A4 جاهزة للاجتماعات والعروض، ونسخة تفاعلية يمكن تصفيتها والبحث فيها وفتح كل رابط حي منها.">An A4 copy ready for meetings and pitches, plus an interactive version you can filter, search and open every live link from.</p>
+          </div>
+          <div class="callout__actions">
+            {btn('Open the profile', 'افتح الملف التعريفي', '/profile/')}
+            <a class="text-link" href="/profile/code-canvas-profile-2026.pdf" download="Code-and-Canvas-Company-Profile-2026.pdf"><span data-ar="تحميل PDF ←">Download the PDF →</span></a>
+          </div>
+        </div>
+      </section>
+
       <!-- ░░ Studio at a glance ░░ -->
       <section class="section container section--tight" aria-label="Studio at a glance" data-ar-label="الاستوديو في أرقام">
         {facts([('Years across both tracks', 'سنوات عبر كلا المسارين', '9+', True),

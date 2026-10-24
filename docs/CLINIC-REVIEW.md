@@ -24,3 +24,10 @@ Suggested invitation:
 - Follow-up price appears only for paid follow-ups; duration/window/notes only for available follow-ups. Online price/duration require online availability. Same-day cutoff, cancellation notice, additional branches, payment details, existing-system name, different reception hours, and age-data justification follow their relevant parent choices.
 - Hidden controls are disabled and excluded from review/copy/download/WhatsApp reports. Draft values are retained locally so changing a choice back restores prior details.
 - Partially filled working hours may now be skipped. Contradictory supplied ranges still show a correction message; missing times export as unspecified.
+
+## Named doctor questionnaires
+- `/amro-alahawany-review/`: دكتور عمرو الأهواني, original prototype.
+- `/osama-shoier-review/`: دكتور أسامة شعير, prototype https://dr-osama-shoier.vercel.app/index.html.
+- `/clinic-review/` remains an Amro alias for existing shared links and drafts.
+- Shared JS uses a fixed `data-doctor` profile allowlist. Draft keys, downloaded filenames, report headings and long-message WhatsApp introductions are doctor-specific. Both use the existing studio recipient +201092500454.
+- All three HTML pages are standalone, hand-authored, noindex pages; update common markup consistently. No additional clinic services, prices or policies have been assumed for Osama.

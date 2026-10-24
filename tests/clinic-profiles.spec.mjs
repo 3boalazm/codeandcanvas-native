@@ -1,0 +1,25 @@
+import { test, expect } from '@playwright/test';
+test('doctor pages have distinct names, prototypes, drafts and exports', async ({ page }) => {
+ await page.goto('/amro-alahawany-review/');
+ await expect(page.locator('h1')).toContainText('عمرو الأهواني');
+ await expect(page.locator('.prototype')).toHaveAttribute('href','https://prototype-ttxw.vercel.app/');
+ await page.getByLabel('إيه أكتر حاجة عجبتك؟').fill('إجابة عمرو الخاصة');
+ await page.goto('/osama-shoier-review/');
+ await expect(page.locator('h1')).toContainText('أسامة شعير');
+ await expect(page.locator('.prototype')).toHaveAttribute('href','https://dr-osama-shoier.vercel.app/index.html');
+ await expect(page.getByLabel('إيه أكتر حاجة عجبتك؟')).toHaveValue('');
+ await page.getByLabel('إيه أكتر حاجة عجبتك؟').fill('إجابة أسامة الخاصة');
+ await page.getByRole('button',{name:'المراجعة',exact:true}).click();
+ await expect(page.locator('.summary-group').first()).not.toContainText('إجابة عمرو الخاصة');
+ const downloadPromise = page.waitForEvent('download');
+ await page.getByRole('button',{name:'تنزيل ملف الإجابات'}).click();
+ const download = await downloadPromise;
+ expect(download.suggestedFilename()).toBe('dr-osama-review.txt');
+ const stream = await download.createReadStream();
+ const chunks = [];for await (const chunk of stream) chunks.push(chunk);
+ const content = Buffer.concat(chunks).toString('utf8');
+ expect(content).toContain('أسامة شعير');
+ expect(content).not.toContain('عمرو');
+ await page.goto('/clinic-review/');
+ await expect(page.getByLabel('إيه أكتر حاجة عجبتك؟')).toHaveValue('إجابة عمرو الخاصة');
+});

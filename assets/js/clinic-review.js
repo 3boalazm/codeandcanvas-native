@@ -1,7 +1,12 @@
 /* Private-link intake; deliberately client-only. Never claims delivery or stores patient data. */
 (() => {
 'use strict';
-const KEY = 'cc-clinic-review-amro-v1';
+const profiles = {
+ amro: {name:'عمرو الأهواني', key:'cc-clinic-review-amro-v1', file:'dr-amro-review.txt'},
+ osama: {name:'أسامة شعير', key:'cc-clinic-review-osama-v1', file:'dr-osama-review.txt'}
+};
+const doctor = profiles[document.body.dataset.doctor] || profiles.amro;
+const KEY = doctor.key;
 const groups = [
  {name:'انطباعك', title:'أولًا، إيه رأي حضرتك؟', desc:'افتح نسخة التطبيق وجرّب تحجز كأنك مريض. وبعدها احكي لنا ببساطة.', fields:[
  ['impression','التجربة كانت عاملة إزاي؟',['سهلة وواضحة','حلوة، مع شوية تعديلات','محتاجة تبسيط','لسه ما جربتش']],
@@ -153,7 +158,7 @@ function validSchedule(only) {
  }
  return true;
 }
-function report() {return 'مراجعة تطبيق دكتور عمرو — Code & Canvas\n\n'+groups.map(g=>g.name+'\n'+activeFields(g).map(([id,label,type])=>label+'\n'+displayAnswer(id,type)).join('\n\n')).join('\n\n────────\n\n');}
+function report() {return `مراجعة تطبيق دكتور ${doctor.name} — Code & Canvas\n\n`+groups.map(g=>g.name+'\n'+activeFields(g).map(([id,label,type])=>label+'\n'+displayAnswer(id,type)).join('\n\n')).join('\n\n────────\n\n');}
 function render(focus=false){
  const review=step===groups.length;
  $('step-count').textContent=`${step+1} / ${groups.length+1} — ${review?'مراجعة وإرسال':'خطوة صغيرة ونقرّب أكتر'}`;
@@ -181,11 +186,11 @@ $('panel').addEventListener('click',async e=>{
 
  if(e.target.id==='whatsapp'){
  const text=report();const long=text.length>3500;
- window.open('https://wa.me/201092500454?text='+encodeURIComponent(long?'أهلًا فريق Code & Canvas، دي مراجعتي لتطبيق دكتور عمرو. هرفق ملف الإجابات في المحادثة.':text),'_blank','noopener,noreferrer');
+ window.open('https://wa.me/201092500454?text='+encodeURIComponent(long?`أهلًا فريق Code & Canvas، دي مراجعتي لتطبيق دكتور ${doctor.name}. هرفق ملف الإجابات في المحادثة.`:text),'_blank','noopener,noreferrer');
  $('delivery-status').textContent=long?'الإجابات طويلة: نزّل ملف الإجابات وأرفقه في واتساب. لم يتم إرسال شيء تلقائيًا.':'كمّل الإرسال داخل واتساب. لو ما فتحش، انسخ الإجابات أو نزّلها.';
  }
  if(e.target.id==='copy'){try{await navigator.clipboard.writeText(report());$('delivery-status').textContent='تم النسخ ✓ ابعت الإجابات لفريق الاستوديو في محادثتك.';}catch{$('delivery-status').textContent='النسخ مش متاح في المتصفح ده. تقدر تنزّل الملف بدلًا منه.';}}
- if(e.target.id==='download'){const url=URL.createObjectURL(new Blob(['\uFEFF'+report()],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='dr-amro-review.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('delivery-status').textContent='تم تجهيز الملف للتنزيل. أرفقه في محادثة الاستوديو لإرسال إجاباتك.';}
+ if(e.target.id==='download'){const url=URL.createObjectURL(new Blob(['\uFEFF'+report()],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=doctor.file;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('delivery-status').textContent='تم تجهيز الملف للتنزيل. أرفقه في محادثة الاستوديو لإرسال إجاباتك.';}
 });
 render();if(!storageOK)$('saved').textContent='الحفظ غير متاح في المتصفح ده';
 })();

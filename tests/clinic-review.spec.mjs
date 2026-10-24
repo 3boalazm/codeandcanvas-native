@@ -34,8 +34,6 @@ test('weekly hours validate, copy only to working days, persist and export',asyn
  await page.getByLabel('حالة يوم السبت',{exact:true}).selectOption('عمل');
  await page.getByLabel('حالة يوم الأحد',{exact:true}).selectOption('عمل');
  await page.getByLabel('حالة يوم الاثنين',{exact:true}).selectOption('إجازة');
- await page.getByRole('button',{name:'نكمل ←',exact:true}).click();
- await expect(page.getByRole('alert')).toContainText('اختار بداية ونهاية العمل');
  await page.getByLabel('بداية العمل — السبت',{exact:true}).fill('17:00');
  await page.getByLabel('نهاية العمل — السبت',{exact:true}).fill('21:00');
  await page.getByLabel('بداية العمل — الأحد',{exact:true}).fill('17:00');
@@ -60,4 +58,34 @@ test('old drafts are retained and new structured answers are optional',async({pa
  await page.getByRole('button',{name:'المراجعة',exact:true}).click();
  await expect(page.locator('.summary-group').nth(1)).toContainText('٣٠ دقيقة');
  await expect(page.locator('.summary-group').nth(2)).toContainText('السبت مساءً');
+});
+
+test('dependent visit fields only appear when applicable and stay out of review',async({page})=>{
+ await page.goto('/clinic-review/');
+ await expect(page.locator('.optional-notice')).toContainText('كل المعلومات المدخلة اختيارية');
+ await page.getByRole('button',{name:'الزيارات',exact:true}).click();
+ const fee=page.getByLabel('سعر المتابعة لو منفصل (جنيه)',{exact:true});
+ await expect(fee).toBeHidden();
+ await page.getByLabel('هل المتابعة متاحة؟',{exact:true}).selectOption('نعم، بسعر منفصل');
+ await expect(fee).toBeVisible();
+ await fee.fill('250');
+ await page.getByLabel('هل المتابعة متاحة؟',{exact:true}).selectOption('مشمولة في الكشف بشروط');
+ await expect(fee).toBeHidden();
+ await expect(page.getByLabel('مدة المتابعة',{exact:true})).toBeVisible();
+ await page.getByLabel('هل المتابعة متاحة؟',{exact:true}).selectOption('غير متاحة');
+ await expect(page.getByLabel('مدة المتابعة',{exact:true})).toBeHidden();
+ await expect(page.getByLabel('سعر الاستشارة أونلاين لو متاحة (جنيه)',{exact:true})).toBeHidden();
+ await page.getByLabel('نعم',{exact:true}).check();
+ await expect(page.getByLabel('سعر الاستشارة أونلاين لو متاحة (جنيه)',{exact:true})).toBeVisible();
+ await page.reload();
+ await expect(page.getByLabel('مدة المتابعة',{exact:true})).toBeHidden();
+ await page.getByRole('button',{name:'المراجعة',exact:true}).click();
+ await expect(page.locator('.summary-group').nth(1)).not.toContainText('سعر المتابعة لو منفصل');
+});
+test('incomplete optional hours do not prevent skipping to review',async({page})=>{
+ await page.goto('/clinic-review/');
+ await page.getByRole('button',{name:'المواعيد',exact:true}).click();
+ await page.getByLabel('حالة يوم السبت',{exact:true}).selectOption('عمل');
+ await page.getByRole('button',{name:'المراجعة',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'كده الصورة وضحت. شكرًا لحضرتك ✳'})).toBeVisible();
 });

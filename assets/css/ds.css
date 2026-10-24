@@ -68,7 +68,8 @@
   --f-num: 'Raleway', 'Alexandria', sans-serif;
   --f-mark: 'Comfortaa', 'Raleway', sans-serif;
 
-  --container: 1240px;
+  --container: 1760px;
+  --page-gutter: clamp(24px, 3vw, 56px);
   --nav-h: 76px;
 }
 html[lang='en'] {
@@ -112,7 +113,8 @@ html[lang='en'] h1, html[lang='en'] h2 { letter-spacing: .005em; line-height: 1.
 p { margin: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 
-.container { width: min(var(--container), 100% - 48px); margin-inline: auto; }
+/* Fluid desktop canvas; keep readable text limits on individual copy blocks. */
+.container { width: min(var(--container), calc(100% - var(--page-gutter) * 2)); margin-inline: auto; }
 
 /* Icons */
 .ico { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }

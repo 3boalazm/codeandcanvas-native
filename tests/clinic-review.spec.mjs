@@ -28,3 +28,36 @@ test('mobile layout and accessibility',async({page})=>{
  await page.getByRole('button',{name:'المراجعة',exact:true}).click();
  expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
 });
+test('weekly hours validate, copy only to working days, persist and export',async({page})=>{
+ await page.goto('/clinic-review/');
+ await page.getByRole('button',{name:'المواعيد',exact:true}).click();
+ await page.getByLabel('حالة يوم السبت',{exact:true}).selectOption('عمل');
+ await page.getByLabel('حالة يوم الأحد',{exact:true}).selectOption('عمل');
+ await page.getByLabel('حالة يوم الاثنين',{exact:true}).selectOption('إجازة');
+ await page.getByRole('button',{name:'نكمل ←',exact:true}).click();
+ await expect(page.getByRole('alert')).toContainText('اختار بداية ونهاية العمل');
+ await page.getByLabel('بداية العمل — السبت',{exact:true}).fill('17:00');
+ await page.getByLabel('نهاية العمل — السبت',{exact:true}).fill('21:00');
+ await page.getByLabel('بداية العمل — الأحد',{exact:true}).fill('17:00');
+ await page.getByLabel('نهاية العمل — الأحد',{exact:true}).fill('20:00');
+ await page.getByLabel('بداية الراحة (اختياري) — السبت',{exact:true}).fill('19:00');
+ await page.getByLabel('نهاية الراحة (اختياري) — السبت',{exact:true}).fill('19:30');
+ await page.locator('[data-copy="day_0"]').click();
+ await expect(page.getByLabel('نهاية العمل — الأحد',{exact:true})).toHaveValue('21:00');
+ await expect(page.getByLabel('حالة يوم الاثنين',{exact:true})).toHaveValue('إجازة');
+ await page.reload();
+ await expect(page.getByLabel('نهاية الراحة (اختياري) — الأحد',{exact:true})).toHaveValue('19:30');
+ await page.getByRole('button',{name:'المراجعة',exact:true}).click();
+ await expect(page.locator('.summary-group').nth(2)).toContainText('عمل: 17:00 – 21:00، راحة: 19:00 – 19:30');
+});
+test('old drafts are retained and new structured answers are optional',async({page})=>{
+ await page.goto('/clinic-review/');
+ await page.evaluate(()=>localStorage.setItem('cc-clinic-review-amro-v1',JSON.stringify({step:1,answers:{first:'٥٠٠ جنيه، نصف ساعة',hours:'السبت مساءً'}})));
+ await page.reload();
+ await expect(page.getByLabel('إجابتك السابقة عن الكشف',{exact:true})).toHaveValue('٥٠٠ جنيه، نصف ساعة');
+ await page.getByLabel('مدة الكشف أول مرة',{exact:true}).selectOption('٣٠ دقيقة');
+ await page.getByLabel('سعر الكشف أول مرة (جنيه)',{exact:true}).fill('500');
+ await page.getByRole('button',{name:'المراجعة',exact:true}).click();
+ await expect(page.locator('.summary-group').nth(1)).toContainText('٣٠ دقيقة');
+ await expect(page.locator('.summary-group').nth(2)).toContainText('السبت مساءً');
+});

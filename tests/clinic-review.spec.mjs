@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+test('doctor can save, restore, review, export and clear feedback', async ({ page }) => {
+ await page.goto('/clinic-review/');
+ await expect(page.locator('html')).toHaveAttribute('dir','rtl');
+ await page.getByLabel('إيه أكتر حاجة عجبتك؟').fill('رحلة الحجز واضحة');
+ await page.getByLabel('حلوة، مع شوية تعديلات',{exact:true}).check();
+ await page.getByRole('button',{name:'نكمل ←',exact:true}).click();
+ await page.reload();
+ await expect(page.getByRole('heading',{name:'كل زيارة، ولها تفاصيلها'})).toBeVisible();
+ await page.getByRole('button',{name:'انطباعك'}).click();
+ await expect(page.getByLabel('إيه أكتر حاجة عجبتك؟')).toHaveValue('رحلة الحجز واضحة');
+ await page.getByRole('button',{name:'المراجعة',exact:true}).click();
+ await expect(page.locator('.summary-group').first()).toContainText('رحلة الحجز واضحة');
+ await expect(page.locator('.summary-group').nth(1)).toContainText('نحدده معًا');
+ const downloadPromise=page.waitForEvent('download');
+ await page.getByRole('button',{name:'تنزيل ملف الإجابات'}).click();
+ expect((await downloadPromise).suggestedFilename()).toBe('dr-amro-review.txt');
+ page.once('dialog',d=>d.accept());
+ await page.getByRole('button',{name:'مسح المسودة من الجهاز'}).click();
+ await expect(page.getByLabel('إيه أكتر حاجة عجبتك؟')).toHaveValue('');
+});
+test('mobile layout and accessibility',async({page})=>{
+ await page.setViewportSize({width:390,height:844});
+ await page.goto('/clinic-review/');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
+ await page.getByRole('button',{name:'المراجعة',exact:true}).click();
+ expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
+});

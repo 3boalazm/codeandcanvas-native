@@ -11,7 +11,7 @@ const groups = [
  ['first','الكشف أول مرة: السعر والمدة؟','text','مثلًا: ٥٠٠ جنيه — ٣٠ دقيقة'],
  ['follow','المتابعة: السعر والمدة وشروطها؟','area','خلال كام يوم؟ وهل في متابعة مشمولة في الكشف؟'],
  ['online','هل الاستشارة أونلاين متاحة؟',['نعم','لا','نقرر بعدين']],
- ['extra','تفاصيل الأونلاين أو أي خدمة إضافية','area','لو متاحة: اسم الخدمة، سعرها، ومدتها.']]},
+ ['extra','أي خدمات إضافية أو ملاحظات على الزيارات (اختياري)','area','اسم الخدمة، سعرها ومدتها لو متاحة، أو أي مدة مختلفة.']]},
  {name:'المواعيد', title:'نظبطها على إيقاع العيادة', desc:'ممكن الدكتور أو الاستقبال يكمّل الجزء ده. التفاصيل دي هتساعدنا نمنع تضارب المواعيد.',fields:[
  ['hours','أيام ومواعيد العمل، والراحة والإجازات؟','area','مثلًا: السبت والاثنين ٥–٩ مساءً، راحة ٧–٧:٣٠. الجمعة إجازة.'],
  ['capacity','عدد المرضى وطريقة توزيع المواعيد؟','area','الحد الأقصى يوميًا أو لكل فترة؟ كل ١٥/٣٠ دقيقة، حسب مدة الخدمة، ولا ترتيب استقبال؟'],
@@ -71,7 +71,7 @@ groups[3].fields = [
  choice('manager','مين المسؤول عن تأكيد وتعديل الحجوزات؟',['الاستقبال','الدكتور','الدكتور والاستقبال','اختيار آخر']),
  choice('closure_manager','مين يقدر يوقف الحجز ويضيف إجازات؟',['الاستقبال','الدكتور فقط','الدكتور والاستقبال','اختيار آخر']),
  choice('reception_hours','مواعيد تواصل الاستقبال',['نفس ساعات العيادة','مواعيد مختلفة']),
- ['reception_notes','اسم المسؤول ومواعيد التواصل المختلفة','area','اسم المسؤول وأي تفاصيل إضافية'],
+ ['reception_notes','مواعيد التواصل المختلفة','area','اسم المسؤول وأي تفاصيل إضافية'],
  groups[3].fields[4],
  choice('current_system','بتديروا الحجوزات حاليًا إزاي؟',['دفتر أو ورق','واتساب أو مكالمات','تقويم Google','نظام حجز موجود','اختيار آخر']),
  ['reminders','وسائل التذكير المطلوبة',{multi:['واتساب','رسالة SMS','مكالمة','بدون تذكيرات','نحددها لاحقًا']}],
@@ -80,6 +80,11 @@ groups[3].fields = [
 groups[4].fields.splice(2,1,
  ['patient_fields','بيانات المريض الضرورية للحجز',{multi:['الاسم','رقم الهاتف','الفئة العمرية','تاريخ الميلاد','نحددها لاحقًا']}],
  ['data_notes','سبب الاحتياج للعمر أو أي بيانات إضافية','area','من غير إضافة بيانات مرضى فعلية.']);
+groups[3].fields.push(
+ ['branch_details','عناوين ومواعيد الفروع الإضافية','area','اسم كل فرع، عنوانه ومواعيده.'],
+ ['payment_details','تفاصيل الدفع الإلكتروني أو العربون','area','الوسيلة، وقيمة العربون وشروطه لو مطلوب.'],
+ ['system_details','اسم نظام الحجز الحالي','text','اسم النظام المستخدم حاليًا']
+);
 // Older drafts remain visible/editable rather than silently discarded.
 const legacy = [
  [1,'first','إجابتك السابقة عن الكشف'],[1,'follow','إجابتك السابقة عن المتابعة'],
@@ -92,7 +97,33 @@ try { const saved = JSON.parse(localStorage.getItem(KEY) || 'null'); if(saved &&
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function save() { try {localStorage.setItem(KEY,JSON.stringify({answers,step}));storageOK=true;}catch{storageOK=false;} $('saved').textContent=storageOK?'المسودة محفوظة على جهازك ✓':'الحفظ غير متاح — نزّل إجاباتك قبل ما تقفل'; }
-function field([id,label,type,placeholder]) {
+// Hidden details stay in the local draft, but are disabled and excluded from exports.
+const followEnabled = () => ['نعم، بسعر منفصل','مشمولة في الكشف بشروط'].includes(answers.follow_available);
+const conditions = {
+ follow_price: () => answers.follow_available === 'نعم، بسعر منفصل',
+ follow_duration: followEnabled, follow_window: followEnabled, follow_notes: followEnabled,
+ online_price: () => answers.online === 'نعم', online_duration: () => answers.online === 'نعم',
+ same_day_cutoff: () => answers.same_day === 'نعم',
+ cancel_notice: () => ['مسموح من التطبيق','عن طريق الاستقبال فقط'].includes(answers.changes),
+ reception_notes: () => answers.reception_hours === 'مواعيد مختلفة',
+ branch_details: () => answers.branches === 'أكثر من فرع',
+ payment_details: () => ['دفع إلكتروني','عربون والباقي في العيادة'].includes(answers.payment),
+ system_details: () => answers.current_system === 'نظام حجز موجود',
+ data_notes: () => (answers.patient_fields || '').split(' | ').some(v => ['الفئة العمرية','تاريخ الميلاد'].includes(v))
+};
+function visible(id) { return !conditions[id] || conditions[id](); }
+function activeFields(group) { return group.fields.filter(([id]) => visible(id)); }
+function field(def) {
+ return `<div data-field="${def[0]}" ${visible(def[0])?'':'hidden'}>${fieldControl(def)}</div>`;
+}
+function syncConditions() {
+ document.querySelectorAll('[data-field]').forEach(wrapper => {
+  const show = visible(wrapper.dataset.field);
+  wrapper.hidden = !show;
+  wrapper.querySelectorAll('input,select,textarea,button').forEach(control => { control.disabled = !show; });
+ });
+}
+function fieldControl([id,label,type,placeholder]) {
  const val=answers[id]||'';
  if(type==='day') return `<fieldset class="field day-row"><legend>${esc(label)}</legend><label class="hint" for="${id}">حالة يوم ${esc(label)}</label><select id="${id}" name="${id}" data-day="${id}">${['','عمل','إجازة','نحدده معًا'].map(o=>`<option value="${o}" ${val===o?'selected':''}>${o||'اختار حالة اليوم'}</option>`).join('')}</select><div id="${id}_hours" class="day-hours" ${val==='عمل'?'':'hidden'}>${[['start','بداية العمل'],['end','نهاية العمل'],['break_start','بداية الراحة (اختياري)'],['break_end','نهاية الراحة (اختياري)']].map(([key,title])=>`<div><label for="${id}_${key}">${title} — ${esc(label)}</label><input type="time" id="${id}_${key}" name="${id}_${key}" value="${esc(answers[id+'_'+key]||'')}"></div>`).join('')}<button type="button" class="text-button copy-day" data-copy="${id}">تطبيق ساعات اليوم على باقي أيام العمل</button></div></fieldset>`;
  if(type && type.options) return `<div class="field"><label for="${id}">${esc(label)}</label><select id="${id}" name="${id}"><option value="">اختار أو سيبها لبعدين</option>${type.options.map(o=>`<option value="${esc(o)}" ${val===o?'selected':''}>${esc(o)}</option>`).join('')}</select></div>`;
@@ -116,14 +147,13 @@ function validSchedule(only) {
  const id='day_'+i;if((only&&id!==only)||answers[id]!=='عمل')continue;
  const a=answers[id+'_start'],b=answers[id+'_end'],c=answers[id+'_break_start'],d=answers[id+'_break_end'];
  let message='';
- if(!a||!b)message='اختار بداية ونهاية العمل، أو خلّي اليوم «نحدده معًا».';
- else if(a>=b)message='نهاية العمل لازم تكون بعد البداية. الفترات بعد منتصف الليل اكتبها في الملاحظات.';
- else if((c||d)&&(!c||!d||c>=d||c<a||d>b))message='اختار بداية ونهاية الراحة بالترتيب وداخل ساعات العمل.';
+ if(a&&b&&a>=b)message='نهاية العمل لازم تكون بعد البداية. الفترات بعد منتصف الليل اكتبها في الملاحظات.';
+ else if((c&&d&&c>=d)||(a&&c&&c<a)||(b&&d&&d>b))message='اختار بداية ونهاية الراحة بالترتيب وداخل ساعات العمل.';
  if(message){const p=document.createElement('p');p.id='schedule-error';p.className='schedule-error';p.setAttribute('role','alert');p.textContent=days[i]+': '+message;$(id+'_hours').append(p);$(id+'_start').focus();return false;}
  }
  return true;
 }
-function report() {return 'مراجعة تطبيق دكتور عمرو — Code & Canvas\n\n'+groups.map(g=>g.name+'\n'+g.fields.map(([id,label,type])=>label+'\n'+displayAnswer(id,type)).join('\n\n')).join('\n\n────────\n\n');}
+function report() {return 'مراجعة تطبيق دكتور عمرو — Code & Canvas\n\n'+groups.map(g=>g.name+'\n'+activeFields(g).map(([id,label,type])=>label+'\n'+displayAnswer(id,type)).join('\n\n')).join('\n\n────────\n\n');}
 function render(focus=false){
  const review=step===groups.length;
  $('step-count').textContent=`${step+1} / ${groups.length+1} — ${review?'مراجعة وإرسال':'خطوة صغيرة ونقرّب أكتر'}`;
@@ -132,10 +162,11 @@ function render(focus=false){
  $('back').hidden=step===0; $('next').hidden=review;
  $('next').textContent=step===groups.length-1?'نراجع الإجابات ←':'نكمل ←';
  if(!review){const g=groups[step];$('panel').innerHTML=`<span class="kicker">${String(step+1).padStart(2,'0')} / LET’S MAKE IT YOURS</span><h2 tabindex="-1">${g.title}</h2><p class="description">${g.desc}</p>${g.fields.map(field).join('')}`;}
- else {$('panel').innerHTML=`<span class="kicker">READY WHEN YOU ARE</span><h2 tabindex="-1">كده الصورة وضحت. شكرًا لحضرتك ✳</h2><p class="description">راجع إجاباتك، وارجع لأي خطوة لتعديلها. الأسئلة اللي سيبتها هنحددها سوا. لسه ما اتبعتش أي إجابات للاستوديو.</p>${groups.map(g=>`<section class="summary-group"><h3>${g.name}</h3><dl>${g.fields.map(([id,label,type])=>`<dt>${esc(label)}</dt><dd>${esc(displayAnswer(id,type))}</dd>`).join('')}</dl></section>`).join('')}<div class="delivery"><button type="button" class="primary" id="whatsapp">فتح واتساب الاستوديو ↗</button><button type="button" class="secondary" id="copy">نسخ الإجابات</button><button type="button" class="secondary" id="download">تنزيل ملف الإجابات</button></div><p class="hint">واتساب الاستوديو: <b dir="ltr">+20 109 250 0454</b>. فتح واتساب لا يعني الإرسال؛ اضغط إرسال هناك. لو الرسالة طويلة، نزّل الملف وأرفقه في المحادثة.</p><p id="delivery-status" role="status"></p>`;}
+ else {$('panel').innerHTML=`<span class="kicker">READY WHEN YOU ARE</span><h2 tabindex="-1">كده الصورة وضحت. شكرًا لحضرتك ✳</h2><p class="description">راجع إجاباتك، وارجع لأي خطوة لتعديلها. الأسئلة اللي سيبتها هنحددها سوا. لسه ما اتبعتش أي إجابات للاستوديو.</p>${groups.map(g=>`<section class="summary-group"><h3>${g.name}</h3><dl>${activeFields(g).map(([id,label,type])=>`<dt>${esc(label)}</dt><dd>${esc(displayAnswer(id,type))}</dd>`).join('')}</dl></section>`).join('')}<div class="delivery"><button type="button" class="primary" id="whatsapp">فتح واتساب الاستوديو ↗</button><button type="button" class="secondary" id="copy">نسخ الإجابات</button><button type="button" class="secondary" id="download">تنزيل ملف الإجابات</button></div><p class="hint">واتساب الاستوديو: <b dir="ltr">+20 109 250 0454</b>. فتح واتساب لا يعني الإرسال؛ اضغط إرسال هناك. لو الرسالة طويلة، نزّل الملف وأرفقه في المحادثة.</p><p id="delivery-status" role="status"></p>`;}
+ syncConditions();
  if(focus)$('panel').querySelector('h2').focus();
 }
-$('review-form').addEventListener('input', e=>{if(e.target.name){const el=e.target; answers[el.name]=el.type==='checkbox'?[...$('review-form').querySelectorAll(`input[name="${el.name}"]:checked`)].map(n=>n.value).join(' | '):el.value;if(el.dataset.day)$(el.name+'_hours').hidden=el.value!=='عمل';save();}});
+$('review-form').addEventListener('input', e=>{if(e.target.name){const el=e.target; answers[el.name]=el.type==='checkbox'?[...$('review-form').querySelectorAll(`input[name="${el.name}"]:checked`)].map(n=>n.value).join(' | '):el.value;if(el.dataset.day)$(el.name+'_hours').hidden=el.value!=='عمل';syncConditions();save();}});
 $('review-form').addEventListener('submit',e=>{e.preventDefault();if(!$('review-form').reportValidity()||!validSchedule())return;if(step<groups.length){step++;save();render(true);}});
 $('back').addEventListener('click',()=>{if(step>0){step--;save();render(true);}});
 $('steps').addEventListener('click',e=>{const button=e.target.closest('[data-step]');if(button){if(!validSchedule()||!$('review-form').reportValidity())return;step=Number(button.dataset.step);save();render(true);}});

@@ -18,3 +18,9 @@ Suggested invitation:
 - Working days require start/end and a valid, ordered break inside the working period before advancing to review. Copy-hours action applies to already-selected working days only.
 - Numeric service fees and patient capacity; duration, follow-up, booking-window, cancellation, administration and payment choices; multi-select reminders and necessary patient fields. Free-text notes remain for exceptions and “other”.
 - Draft v1 is retained. Old combined free-text answers are shown as editable legacy notes when present, and included in review/export. Closed or undecided days do not export stale hours.
+
+## Conditional details and optional intake
+- A persistent introductory notice states that all information is optional and questions may be skipped.
+- Follow-up price appears only for paid follow-ups; duration/window/notes only for available follow-ups. Online price/duration require online availability. Same-day cutoff, cancellation notice, additional branches, payment details, existing-system name, different reception hours, and age-data justification follow their relevant parent choices.
+- Hidden controls are disabled and excluded from review/copy/download/WhatsApp reports. Draft values are retained locally so changing a choice back restores prior details.
+- Partially filled working hours may now be skipped. Contradictory supplied ranges still show a correction message; missing times export as unspecified.

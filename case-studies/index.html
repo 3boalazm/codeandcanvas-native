@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="أعمالنا — ثلاثة أنظمة مُسلَّمة بنطاق موثق · Code &amp; Canvas" data-desc-ar="نظام تشغيل الصيدليات (منصة متعددة المستأجرين)، وزاد (تطبيق عبادات يعمل دون اتصال)، ومنصة نايل فارما ERP — كل واحد مكتوب كموجز وقيود ودور ومنهج ومخرجات وما يمكن نشره فعلًا." data-lang-mirror="/ar/case-studies/">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Work — Three shipped systems, documented scope · Code &amp; Canvas</title>
+    <meta name="description" content="Pharmacy OS (multi-tenant pharmacy platform), Zad (offline-first worship PWA) and the Nile Pharma ERP — each written as brief, constraints, role, approach, artifacts, and exactly what can be published." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Work — Three shipped systems, documented scope · Code &amp; Canvas" />
+    <meta property="og:description" content="Pharmacy OS (multi-tenant pharmacy platform), Zad (offline-first worship PWA) and the Nile Pharma ERP — each written as brief, constraints, role, approach, artifacts, and exactly what can be published." />
+    <meta property="og:url" content="https://codeandcanvas.net/case-studies/" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="https://codeandcanvas.net/case-studies/" />
+    <link rel="alternate" hreflang="en" href="https://codeandcanvas.net/case-studies/" />
+    <link rel="alternate" hreflang="ar" href="https://codeandcanvas.net/ar/case-studies/" />
+    <link rel="alternate" hreflang="x-default" href="https://codeandcanvas.net/case-studies/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <meta property="og:site_name" content="Code &amp; Canvas" />
+    <meta property="og:image" content="https://codeandcanvas.net/assets/brand/og-default.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Code &amp; Canvas — Brand, technology and data, built around a business outcome." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://codeandcanvas.net/assets/brand/og-default.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/signategrotesk-black.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/css/fonts.css" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <noscript><style>body.is-loading{overflow:auto}#preloader{display:none!important}[data-reveal],.split .w{opacity:1!important;transform:none!important;filter:none!important}form{display:none!important}[data-panel][hidden]{display:block!important}</style></noscript>
+    <!-- /cc:head -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/case-studies/#webpage","url":"https://codeandcanvas.net/case-studies/","name":"Work — Three shipped systems, documented scope · Code & Canvas","description":"Pharmacy OS (multi-tenant pharmacy platform), Zad (offline-first worship PWA) and the Nile Pharma ERP — each written as brief, constraints, role, approach, artifacts, and exactly what can be published.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/assets/brand/og-default.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"Work"}]}]}</script>
+  </head>
+  <body class="is-loading" data-nav="work">
+    <!-- cc:top -->
+    <noscript><div class="notice container" style="padding-top:110px" data-ar-html="تحتاج النماذج والأدوات التفاعلية إلى JavaScript. يمكنك التواصل عبر &lt;a href=&quot;mailto:info@codeandcanvas.net&quot;&gt;البريد الإلكتروني&lt;/a&gt; بدلًا من ذلك.">Forms and interactive tools require JavaScript. <a href="mailto:info@codeandcanvas.net">Email us instead</a>.</div></noscript>
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__pill container">
+        <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <img class="nav__logo" src="/assets/brand/icon-white.svg" alt="" width="40" height="40" />
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الخدمات">Services</a>
+          <a href="/healthcare/" data-key="healthcare" data-ar="الرعاية الصحية">Healthcare</a>
+          <a href="/case-studies/" data-key="work" data-ar="أعمالنا">Work</a>
+          <a href="/pricing-faq/" data-key="pricing" data-ar="الأسعار">Pricing</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/blog/" data-key="blog" data-ar="المدونة">Insights</a>
+          <a href="/books/" data-key="books" data-ar="الكتب">Books</a>
+          <a class="only-mobile" href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="nav__round lang-btn" id="langBtn" type="button"></button>
+          <a class="nav__round" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="WhatsApp" data-ar-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
+          <a class="btn btn--primary nav__cta magnetic" href="/contact/" data-key="contact"><span data-ar="تواصل">Contact</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="nav__round burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <!-- ░░ Hero ░░ -->
+      <section class="phero container phero--left" aria-labelledby="page-title">
+        <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><span aria-current="page" data-ar="أعمالنا">Work</span></nav>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="ثلاثة أنظمة · 2024–2026 · عربية أولًا">Three systems · 2024–2026 · Arabic-first</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مشاريع حقيقية">Real projects,</span><br /><span class="grad-text" data-ar="وثائق نطاق لا شعارات.">documented scope — not badges.</span></h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="كل مشروع أدناه مكتوب بالترتيب نفسه: الموجز، القيود، دورنا، المنهج، المخرجات، ثم ما يمكن نشره فعلًا وما لا يمكن. لن تجد هنا «نتائج مضمونة» أو لقطات شاشة لعميل لم يوافق على نشرها.">Every project below is written in the same order: brief, constraints, our role, approach, artifacts — then exactly what can be published and what cannot. You will not find “proven results” or screenshots from a client who has not approved publication.</p>
+        <nav class="subnav container" aria-label="Projects" data-ar-label="المشاريع" data-reveal style="--d:.22s"><a href="#pharmacy-os">01 · <span data-ar="صيدليتي">Pharmacy OS</span></a><a href="#zad">02 · <span data-ar="زاد">Zad</span></a><a href="#nile-pharma">03 · <span data-ar="نايل فارما">Nile Pharma ERP</span></a></nav>
+        <div class="facts" data-reveal><div><span data-ar="مشاريع هذه الصفحة">Projects on this page</span><b class="ltr">3</b></div><div><span data-ar="متاح للاستخدام العام">Publicly usable</span><b class="ltr">1</b></div><div><span data-ar="تحت اتفاقية سرية">Under NDA</span><b class="ltr">1</b></div><div><span data-ar="رسوم توضيحية">Concept diagrams</span><b class="ltr">3</b></div></div>
+      </section>
+
+      
+      <section class="section container work-case" id="pharmacy-os" aria-labelledby="cs-01-title">
+        <span class="anchor-alias" id="project-01" aria-hidden="true"></span>
+        <div class="cs__grid" data-reveal>
+          <div class="cs__text">
+            <p class="sec-head__no"><b>01</b><span data-ar="رعاية صحية · SaaS متعدد المستأجرين · 2024–2026">Healthcare · Multi-tenant SaaS · 2024–2026</span></p>
+            <h2 class="cs__title" id="cs-01-title"><span lang="ar" dir="rtl" data-ar="صيدليتي">صيدليتي</span> <span class="grad-text">Pharmacy OS</span></h2>
+            <p class="person__tag" data-ar="صيدلية دكتور">Doctor Pharmacy</p>
+            <p class="cs__brief" data-ar="سلسلة صيدليات تدير نقطة البيع والمخزون والروشتات والمالية في أدوات منفصلة، بلا صورة واحدة للوردية أو الفرع.">A pharmacy chain running point of sale, stock, prescriptions and finance in separate tools, with no single view of a shift or a branch.</p>
+            <div class="cs__block"><b data-ar="القيود">Constraints</b><ul class="svc-row__list"><li data-ar="العربية RTL كواجهة أساسية، لا طبقة مترجمة">Arabic RTL as the primary interface, not a translated skin</li><li data-ar="متعدد المستأجرين من اليوم الأول — لا يرى فرع بيانات فرع آخر">Multi-tenant from day one — branches must not see each other’s data</li><li data-ar="يعمل على أجهزة الكاشير الموجودة بالفعل في الفروع">Must work on the counter hardware already in the branches</li><li data-ar="مسارات صيدلية حقيقية: أرقام التشغيلات والصلاحية وربط الروشتات">Pharmacy workflows: batch numbers, expiry and prescription linking</li></ul></div>
+            <div class="cs__block"><b data-ar="دورنا">Our role</b><p data-ar="العمارة والتنفيذ الكامل من الاستوديو — نموذج البيانات وحدود تعدد المستأجرين ونظام الواجهة العربية وترتيب إطلاق الوحدات.">Architecture and full-stack delivery by the studio — data model, multi-tenant boundaries, RTL interface system and the module rollout order.</p></div>
+            <div class="cs__block"><b data-ar="المنهج">Approach</b><ul class="svc-row__list"><li data-ar="نمذجة يوم الصيدلية أولًا: الكاشير، الوردية، استلام المخزون، الروشتة، إقفال الشهر">Modelled the pharmacy day first: counter, shift, stock receipt, prescription, month-end</li><li data-ar="قاعدة واحدة لعزل المستأجرين مُنفَّذة في طبقة البيانات لا في كل شاشة">One tenant-isolation rule enforced at the data layer, not in each screen</li><li data-ar="التسليم بوحدات، كل وحدة قابلة للاستخدام في الأسبوع الذي تُسلَّم فيه">Shipped in modules, each one usable the week it was delivered</li></ul></div>
+            <div class="cs__block"><b data-ar="المخرجات">Artifacts</b><div class="cs__artifacts"><div><b data-ar="14 وحدة مُسلَّمة">14 modules shipped</b><span data-ar="نقطة البيع والفوترة والمخزون واستلام البضاعة والروشتات وسجلات العملاء والورديات والتقارير">Point of sale, invoicing, inventory and goods receipt, prescriptions, customer records, shifts, reports</span></div><div><b data-ar="نموذج بيانات متعدد المستأجرين">Multi-tenant data model</b><span data-ar="عزل المستأجرين وتجميع الفروع والصلاحيات لكل فرع">Tenant isolation, branch roll-ups and per-branch permissions</span></div><div><b data-ar="نظام واجهة ثنائي اللغة">Bilingual interface system</b><span data-ar="مكوّنات RTL-first مُعاد استخدامها في كل الوحدات">RTL-first components reused across every module</span></div></div></div>
+            <div class="pill-list" style="margin-top:16px"><span class="pill">Next.js</span><span class="pill">NestJS</span><span class="pill">TypeScript</span><span class="pill">Prisma</span><span class="pill">Postgres</span><span class="pill">PWA</span></div>
+            <div class="cs__evidence">
+              <b data-ar="حالة النشر والدليل">Publication status &amp; evidence</b>
+              <p data-ar="لا لقطات عامة. الشاشات تحتوي بيانات فروع، وأي عرض منشور يحتاج موافقة كتابية من العميل أولًا.">No public screenshots. Screens contain branch data, so any published view would need written client approval first.</p>
+              <div class="hero__ctas" style="margin-top:14px"><span class="tag-soft tag-soft--warn" data-ar="منتج حي، نشر خاص">Live product, private deployment</span><a class="btn btn--primary" href="/contact/?inquiry=custom#message" data-track="service-inquiry" data-track-service="custom"><span data-ar="ناقش بناءً مشابهًا">Discuss a similar build</span><i class="flip" data-icon="arrowUpRight" aria-hidden="true"></i></a></div>
+            </div>
+          </div>
+          <figure class="case-visual">
+            <img src="/assets/brand/work/pharmacy-os.svg" width="960" height="600" loading="lazy" alt="Pharmacy OS — conceptual scope diagram, not a screenshot" data-ar-alt="رسم توضيحي لنطاق نظام الصيدليات — ليس لقطة شاشة" />
+            <figcaption data-ar="رسم توضيحي مبني على النطاق الموثق للمشروع، وليس لقطة من واجهة المنتج ولا إثباتًا لنتيجة تجارية.">Conceptual illustration of the project’s documented scope — not a product screenshot and not evidence of a commercial outcome.</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="section container work-case" id="zad" aria-labelledby="cs-02-title">
+        <span class="anchor-alias" id="project-02" aria-hidden="true"></span>
+        <div class="cs__grid" data-reveal>
+          <figure class="case-visual">
+            <img src="/assets/brand/work/zad.svg" width="960" height="600" loading="lazy" alt="Zad — conceptual scope diagram, not a screenshot" data-ar-alt="رسم توضيحي لنطاق تطبيق زاد — ليس لقطة شاشة" />
+            <figcaption data-ar="رسم توضيحي مبني على النطاق الموثق للمشروع، وليس لقطة من واجهة المنتج ولا إثباتًا لنتيجة تجارية.">Conceptual illustration of the project’s documented scope — not a product screenshot and not evidence of a commercial outcome.</figcaption>
+          </figure>
+          <div class="cs__text">
+            <p class="sec-head__no"><b>02</b><span data-ar="تطبيق ويب · يعمل دون اتصال · مشروع عام · 2026">PWA · Offline-first · Public project · 2026</span></p>
+            <h2 class="cs__title" id="cs-02-title"><span lang="ar" dir="rtl" data-ar="زاد">زاد</span> <span class="grad-text">Zad</span></h2>
+            <p class="person__tag" data-ar="رفيق العبادات">Worship Companion</p>
+            <p class="cs__brief" data-ar="رفيق عبادة للاستخدام اليومي في عشر ذي الحجة — يُستخدم في أماكن ضعيفة الاتصال أو بلا اتصال.">A daily-use worship companion for the first ten days of Dhul-Hijjah — used in places with weak or no connectivity.</p>
+            <div class="cs__block"><b data-ar="القيود">Constraints</b><ul class="svc-row__list"><li data-ar="قابل للاستخدام دون اتصال بالكامل — حالة عدم الاتصال هي الحالة الطبيعية">Fully usable offline — the offline state is the normal state</li><li data-ar="ثنائي اللغة عربي/إنجليزي مع عرض RTL صحيح">Bilingual Arabic/English with correct RTL presentation</li><li data-ar="خطوط مقروءة للنص القرآني على مقاسات الهاتف">Readable type for Quranic text at phone sizes</li><li data-ar="بلا حساب ولا تتبّع ولا تسجيل">No account, no tracking, nothing to sign up for</li></ul></div>
+            <div class="cs__block"><b data-ar="دورنا">Our role</b><p data-ar="الفكرة وتصميم الواجهة وتنفيذ الواجهة الأمامية، بما في ذلك استراتيجية البيانات دون اتصال ونظام الخطوط.">Concept, interface design and front-end implementation, including the offline data strategy and type system.</p></div>
+            <div class="cs__block"><b data-ar="المنهج">Approach</b><ul class="svc-row__list"><li data-ar="تخزين البيانات عند أول تحميل؛ كل الميزات الأساسية تعمل مع إيقاف الشبكة">Data cached on first load; every core feature works with the radio off</li><li data-ar="اختبار الخطوط العربية على شاشة صغيرة قبل بناء مبدّل اللغة">Arabic typography tested on a small screen before the language switch was built</li><li data-ar="حركة الإصبع ومدى الوصول بالإبهام حكما التخطيط أكثر من تصميم الشاشة الكبيرة">Gesture and thumb reach drove the layout more than the desktop comp</li></ul></div>
+            <div class="cs__block"><b data-ar="المخرجات">Artifacts</b><div class="cs__artifacts"><div><b data-ar="12 وحدة عبادات">12 worship modules</b><span data-ar="مواقيت الصلاة والقبلة والمصحف والأذكار والتسبيح والرقية وأسماء الله ورمضان والحج وقسم الأطفال">Prayer times, Qibla, Quran, adhkar, tasbih, Ruqyah, Asmaa Allah, Ramadan, Hajj, kids section</span></div><div><b data-ar="طبقة بيانات تعمل دون اتصال">Offline-first data layer</b><span data-ar="Service worker وتخزين محلي — بلا طلبات شبكة للقراءة الأساسية">Service worker and local storage — no network calls required for core reading</span></div><div><b data-ar="إصدار عام">Public release</b><span data-ar="منشور للعامة، متاح للاستخدام دون حساب">Deployed publicly, open for anyone to use without an account</span></div></div></div>
+            <div class="pill-list" style="margin-top:16px"><span class="pill">PWA</span><span class="pill">Service Worker</span><span class="pill">Vanilla JS</span><span class="pill">localStorage</span><span class="pill">Vercel</span></div>
+            <div class="cs__evidence">
+              <b data-ar="حالة النشر والدليل">Publication status &amp; evidence</b>
+              <p data-ar="التطبيق الحي هو الإثبات — يمكن لأي شخص فتحه واستخدام وضع عدم الاتصال.">The live app is the evidence — anyone can open it and use the offline state.</p>
+              <div class="hero__ctas" style="margin-top:14px"><a class="btn btn--glass" href="https://zadullashr.vercel.app/" target="_blank" rel="noopener"><span data-ar="افتح التطبيق الحي ↗">Open the live app ↗</span><i class="flip" data-icon="arrowUpRight" aria-hidden="true"></i></a><a class="btn btn--primary" href="/contact/?inquiry=custom#message" data-track="service-inquiry" data-track-service="custom"><span data-ar="ناقش بناءً مشابهًا">Discuss a similar build</span><i class="flip" data-icon="arrowUpRight" aria-hidden="true"></i></a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section container work-case" id="nile-pharma" aria-labelledby="cs-03-title">
+        <span class="anchor-alias" id="project-03" aria-hidden="true"></span>
+        <div class="cs__grid" data-reveal>
+          <div class="cs__text">
+            <p class="sec-head__no"><b>03</b><span data-ar="ERP أدوية · نظام داخلي · 2026">Pharma ERP · Internal system · 2026</span></p>
+            <h2 class="cs__title" id="cs-03-title"><span lang="ar" dir="rtl" data-ar="نايل فارما">نايل فارما</span> <span class="grad-text">Nile Pharma ERP</span></h2>
+            <p class="person__tag" data-ar="النيل للأدوية والأغذية والمكملات">Nile Pharma, Food &amp; Supplements</p>
+            <p class="cs__brief" data-ar="موزّع أدوية يدير دورة البيع الكاملة على الورق وجداول البيانات — بما يشمل المخزون الحساس للصلاحية وحوافز المناديب.">A pharmaceutical distributor running the full sales cycle on paper and spreadsheets — including expiry-sensitive stock and rep incentives.</p>
+            <div class="cs__block"><b data-ar="القيود">Constraints</b><ul class="svc-row__list"><li data-ar="تخصيص FEFO إلزامي وليس تفضيلًا">FEFO allocation is compulsory, not a best effort</li><li data-ar="مخزون الأمانة يُتتبع منفصلًا عن المخزون المملوك">Consignment (amanah) stock must be tracked separately from owned stock</li><li data-ar="حوافز المناديب تُحسب من التحصيل الفعلي لا من الفواتير الصادرة">Rep incentives calculated from actual collections, not invoices issued</li><li data-ar="الفريق يجب أن يواصل العمل أثناء الانتقال — لا نافذة توقف">The team had to keep working during rollout — no downtime window</li></ul></div>
+            <div class="cs__block"><b data-ar="دورنا">Our role</b><p data-ar="تحليل الأعمال وتصميم النظام وتسليم وحدات ERP مع فريق العمليات لدى العميل.">Business analysis, system design and delivery of the ERP modules with the client’s operations team.</p></div>
+            <div class="cs__block"><b data-ar="المنهج">Approach</b><ul class="svc-row__list"><li data-ar="رسم دورة البيع من البداية للنهاية مع المناديب قبل تصميم أي شاشة">Mapped the sales cycle end to end with the reps before designing any screen</li><li data-ar="تطبيق FEFO في محرّك التخصيص حتى لا تتجاوزه أي شاشة">FEFO enforced in the allocation engine so no screen can bypass it</li><li data-ar="قواعد الحوافز مكتوبة كمعادلات ومراجعة مع الإدارة المالية">Incentive rules written down as formulas and reviewed with finance</li></ul></div>
+            <div class="cs__block"><b data-ar="المخرجات">Artifacts</b><div class="cs__artifacts"><div><b data-ar="10 وحدات ERP">10 ERP modules</b><span data-ar="الكتالوج والمخزون والأمانة وأوامر البيع FEFO والفوترة والتحصيل والحوافز">Catalogue, inventory, consignment, FEFO sales orders, invoicing, collections, incentives</span></div><div><b data-ar="محرّك التخصيص">Allocation engine</b><span data-ar="قواعد FEFO مُطبَّقة على كل أمر مع مسار تدقيق">FEFO rules applied to every order, with an audit trail</span></div><div><b data-ar="حساب الحوافز">Incentive calculation</b><span data-ar="ترتيب المناديب والمستحقات مشتق من المبالغ المحصّلة">Rep ranking and payouts derived from collected amounts</span></div></div></div>
+            <div class="pill-list" style="margin-top:16px"><span class="pill">React 18</span><span class="pill">RTL</span><span class="pill">IBM Plex Sans Arabic</span><span class="pill">FEFO logic</span></div>
+            <div class="cs__evidence">
+              <b data-ar="حالة النشر والدليل">Publication status &amp; evidence</b>
+              <p data-ar="لا يمكن نشر أي شيء: الأحجام التجارية والهوامش وبيانات المناديب كلها تحت اتفاقية سرية. ما يمكن مناقشته في مكالمة هو منهج التصميم لا الأرقام.">Nothing can be published: commercial volumes, margins and rep data are all under NDA. What can be discussed on a call is the design approach, not the numbers.</p>
+              <div class="hero__ctas" style="margin-top:14px"><span class="tag-soft tag-soft--warn" data-ar="نظام داخلي — اتفاقية سرية">Internal system — NDA</span><a class="btn btn--primary" href="/contact/?inquiry=custom#message" data-track="service-inquiry" data-track-service="custom"><span data-ar="ناقش تحديًا مشابهًا">Discuss a similar challenge</span><i class="flip" data-icon="arrowUpRight" aria-hidden="true"></i></a></div>
+            </div>
+          </div>
+          <figure class="case-visual">
+            <img src="/assets/brand/work/nile-pharma-erp.svg" width="960" height="600" loading="lazy" alt="Nile Pharma ERP — conceptual scope diagram, not a screenshot" data-ar-alt="رسم توضيحي لنطاق منصة ERP — ليس لقطة شاشة" />
+            <figcaption data-ar="رسم توضيحي مبني على النطاق الموثق للمشروع، وليس لقطة من واجهة المنتج ولا إثباتًا لنتيجة تجارية.">Conceptual illustration of the project’s documented scope — not a product screenshot and not evidence of a commercial outcome.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ░░ What these cases do not claim ░░ -->
+      <section class="section container section--tight" id="limits" aria-labelledby="lim-title">
+        
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>LIMITS</b><span data-ar="ما لا تدّعيه هذه الصفحة">WHAT THIS SECTION DOES NOT CLAIM</span></p>
+            <h2><span id="lim-title" data-ar="لا أرقام امتثال">No audited numbers,</span> <span class="grad-text" data-ar="ولا صور عميل.">no borrowed client imagery.</span></h2>
+            <p class="lead" data-ar="ثلاثة حدود نقولها مسبقًا — حتى لا يكتشفها أحد لاحقًا.">Three honest limits, stated up front — so nobody has to discover them later.</p>
+          </div>
+          
+        </header>
+        <div class="grid-3">
+          <article class="panel mini" data-reveal><h3 data-ar="لا نتائج مُدقّقة">No audited outcomes</h3><p data-ar="لم تُقس نتائج تجارية لهذه المشاريع بأداة مستقلة، ولا ننشر نسبًا مستنتجة. أي رقم في الموقع يظهر مع أصله وحدوده.">No commercial outcome for these projects has been measured by an independent tool, and we do not publish inferred percentages. Where a number appears on this site it comes with its source and limits.</p></article>
+          <article class="panel mini" data-reveal style="--d:.05s"><h3 data-ar="لا مواد عميل محمية">No protected client material</h3><p data-ar="الرسوم الثلاثة رسوم توضيحية للنطاق، لا لقطات منتج. مواد العميل المحمية باتفاقية سرية لا تُنشر — يمكن مناقشته شفهيًا في مكالمة.">The three visuals are scope diagrams, not product screenshots. Client material under NDA is not published — it can be discussed on a call.</p></article>
+          <article class="panel mini" data-reveal style="--d:.1s"><h3 data-ar="لا شهادات">No testimonials</h3><p data-ar="لم نطلب ولن نخترع شهادات عملاء. من يريد مرجعًا تجاريًا يطلبه في المكالمة، ويُتعامل معه وفق ما يسمح به العقد.">We have not solicited and will not invent client testimonials. Anyone who wants a reference asks on the call, and it is handled within what each contract allows.</p></article>
+        </div>
+        <div class="callout panel" data-reveal style="margin-top:22px">
+          <div>
+            <h3 data-ar="تريد أن ترى نظامًا أكمل؟">Want to see a working system?</h3>
+            <p data-ar="تطبيق زاد منشور للعامة ويمكن فتحه الآن — الوحدات الإحدى عشرة الأخرى تعمل دون اتصال، وهذا أسرع دليل يمكننا تقديمه.">The Zad app is public and you can open it right now — eleven of its modules work offline, and that is the fastest proof we can offer.</p>
+          </div>
+          <div class="callout__actions">
+            <a class="btn btn--glass" href="https://zadullashr.vercel.app/" target="_blank" rel="noopener"><span data-ar="افتح زاد ↗">Open Zad ↗</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة 30 دقيقة">Book a 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="section container section--tight" aria-label="Next step" data-ar-label="الخطوة التالية">
+        <div class="closing" data-reveal>
+          <span class="closing__border" aria-hidden="true"></span>
+          <div class="closing__inner glass glass--deep">
+            <p class="kicker kicker--center"><span data-ar="الخطوة التالية">NEXT STEP</span></p>
+            <h2 class="closing__title"><span data-ar="لديك نظام">Have a system</span> <span class="grad-text" data-ar="يستحق التوثيق؟">worth documenting?</span></h2>
+            <p class="closing__text" data-ar="أحضر الحالة وسنقول لك أي شكل من الثلاثة تحتاج فعلًا — منتج أو منصة أو علامة.">Bring the situation and we will tell you which of the three shapes — product, platform or brand — it actually needs.</p>
+            <div class="hero__ctas hero__ctas--center"><a class="btn btn--primary magnetic" href="/contact/#book"><span data-ar="احجز مكالمة 30 دقيقة">Book a 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/services/"><span data-ar="الخدمات">Services</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+            <p class="closing__contact"><a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a> · <a class="ltr" href="tel:+966545520750">+966 54 552 0750</a> · <a class="ltr" href="tel:+201092500454">+20 109 250 0454</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="تطوير الأعمال، بالتصميم.&lt;br /&gt;العلامة · التقنية · التحول · البيانات.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Business Development, By Design.<br />Brand · Technology · Transformation · Data.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Credentials and frameworks" data-ar-label="الاعتمادات والأطر"><span>TOGAF</span><span>CPHIMS</span><span>EMRAM</span><span>NORA</span><span>CBAHI</span></div>
+            <p class="footer__loc"><span data-ar="الخبر، السعودية">Al Khobar, KSA</span> <b>·</b> <span data-ar="العبور، مصر">Al Obour, Egypt</span></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التقنية">TECHNOLOGY</h3>
+            <a href="/technology-services/" data-ar="خدمات التقنية">Technology Services</a>
+            <a href="/technology-services/#ab-01" data-ar="العمارة المؤسسية والاستراتيجية">Enterprise Architecture &amp; Strategy</a>
+            <a href="/technology-services/#ab-02" data-ar="التحول الرقمي">Digital Transformation</a>
+            <a href="/technology-services/#ab-05" data-ar="التحديث السحابي وتحديث المنصات">Cloud &amp; Platform Modernization</a>
+            <a href="/technology-services/#ab-03" data-ar="هندسة البيانات والتحليلات">Data Architecture &amp; Analytics</a>
+            <a href="/technology-services/#ab-04" data-ar="عمارة الحلول">Solution Architecture</a>
+            <a href="/technology-services/#ab-06" data-ar="الاستشارات التنفيذية ومكاتب إدارة المشاريع">Executive &amp; PMO Advisory</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الإبداع">CREATIVE</h3>
+            <a href="/creative-services/" data-ar="الخدمات الإبداعية">Creative Services</a>
+            <a href="/creative-services/#ma-03" data-ar="منظومة العلامة الكاملة ✦">Full Brand System ✦</a>
+            <a href="/creative-services/#ma-02" data-ar="أساسيات الهوية البصرية">Brand Identity Essentials</a>
+            <a href="/creative-services/#ma-05" data-ar="تصميم المواقع و WordPress">Web Design &amp; WordPress</a>
+            <a href="/creative-services/#ma-06" data-ar="منصات ويب مخصّصة">Custom Web Platform</a>
+            <a href="/creative-services/#ma-04" data-ar="أنظمة التصميم">Design Systems</a>
+            <a href="/creative-services/#ma-09" data-ar="السوشيال ميديا والتسويق (اشتراكات)">Social &amp; Marketing Retainers</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الرعاية الصحية">HEALTHCARE</h3>
+            <a href="/healthcare/" data-ar="حلول الرعاية الصحية">Healthcare Solutions</a>
+            <a href="/healthcare/#hc-01" data-ar="الإطلاق الرقمي للعيادات ✦">Clinic Digital Launch ✦</a>
+            <a href="/healthcare/#hc-02" data-ar="ذكاء الأعمال الصحي">Healthcare BI</a>
+            <a href="/healthcare/#hc-03" data-ar="استشارات اختيار نظام HIS">HIS Selection Advisory</a>
+            <a href="/healthcare/#hc-04" data-ar="هوية العيادة">Clinic Brand Identity</a>
+            <a href="/healthcare/#hc-05" data-ar="العمارة المؤسسية الصحية + EMRAM">Healthcare EA + EMRAM</a>
+            <span class="footer__note">CPHIMS · EMRAM · CBAHI · NORA</span>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو">STUDIO</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/methodology/" data-ar="منهجيتنا">Methodology</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+            <a href="/blog/" data-ar="المدونة">Insights &amp; Blog</a>
+            <a href="/books/" data-ar="كتب ومصادر">Books &amp; Resources</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/account/" data-ar="كتبي المحفوظة">Saved Books</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/contact/#book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/config.js"></script>
+    <script src="/assets/js/site.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+  </body>
+</html>

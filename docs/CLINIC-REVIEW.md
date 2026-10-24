@@ -12,3 +12,9 @@ Share `/clinic-review/` on the deployed studio domain. This is an Arabic, mobile
 
 Suggested invitation:
 > دكتور عمرو، مساء الخير 🌿 جهزنا لحضرتك مساحة صغيرة من Code & Canvas تشوف فيها نسخة التطبيق وتقول لنا رأيك، ونظبط تفاصيل الحجز على طريقة شغل العيادة. الأسئلة بسيطة، ومش لازم تجاوب عليها كلها مرة واحدة؛ الإجابات بتتحفظ على نفس الجهاز. وفي الآخر تقدر تبعتها لنا على واتساب. أي تفاصيل لسه مش جاهزة نكمّلها سوا.
+
+## Structured choices update
+- Per-weekday undecided/working/closed selectors, time pickers and optional break ranges. No preselected clinic schedule or policy. Times are same-day, clinic-local; overnight or split shifts go in schedule notes.
+- Working days require start/end and a valid, ordered break inside the working period before advancing to review. Copy-hours action applies to already-selected working days only.
+- Numeric service fees and patient capacity; duration, follow-up, booking-window, cancellation, administration and payment choices; multi-select reminders and necessary patient fields. Free-text notes remain for exceptions and “other”.
+- Draft v1 is retained. Old combined free-text answers are shown as editable legacy notes when present, and included in review/export. Closed or undecided days do not export stale hours.

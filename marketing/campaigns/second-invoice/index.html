@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>«الفاتورة التانية» — لوحة كامبين Code &amp; Canvas</title>
+<meta name="description" content="لوحة كامبين Code & Canvas: 5 بوستات عن التكلفة المخفية للتطوير الرخيص — كوبي مصري وإنجليزي وتصميمات 1080×1350 و1080×1920." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  @font-face { font-family:'Alexandria'; src:url('/assets/fonts/alexandria-arabic-wght-normal.woff2') format('woff2'); font-weight:100 900; font-display:swap; }
+  @font-face { font-family:'PlexArabic'; src:url('/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2') format('woff2'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'PlexArabic'; src:url('/assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2') format('woff2'); font-weight:500; font-display:swap; }
+  @font-face { font-family:'PlexArabic'; src:url('/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2') format('woff2'); font-weight:600; font-display:swap; }
+  @font-face { font-family:'Poppins'; src:url('/assets/fonts/Poppins-SemiBold.woff2') format('woff2'); font-weight:600; font-display:swap; }
+  @font-face { font-family:'Poppins'; src:url('/assets/fonts/Poppins-Medium.woff2') format('woff2'); font-weight:500; font-display:swap; }
+  @font-face { font-family:'Raleway'; src:url('/assets/fonts/Raleway-ExtraBold.woff2') format('woff2'); font-weight:800; font-display:swap; }
+  :root{
+    --bg:#04040c; --ink:#f7f5ff; --ink-2:rgba(231,229,250,.74); --ink-3:#948fae;
+    --violet:#8b6cff; --teal:#3fd6c4; --pink:#ee5ba3; --gold:#f3c77a;
+    --line:rgba(255,255,255,.09); --panel:rgba(255,255,255,.035);
+    --grad:linear-gradient(100deg,#3fd6c4 0%,#8b6cff 50%,#ee5ba3 100%);
+    --f-head:'Alexandria',system-ui,sans-serif; --f-body:'PlexArabic','Alexandria',sans-serif;
+    --lat:'Poppins',system-ui,sans-serif; --num:'Raleway',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(52vw 44vh at 90% 0%,rgba(243,199,122,.16),transparent 70%),
+               radial-gradient(50vw 40vh at 6% 22%,rgba(139,108,255,.16),transparent 72%),
+               radial-gradient(46vw 40vh at 78% 96%,rgba(238,91,163,.10),transparent 72%),
+               linear-gradient(180deg,#0a0a20,#030309 70%)}
+  a{color:inherit}
+  .wrap{width:min(1180px,92vw);margin-inline:auto}
+  .lat{font-family:var(--lat);letter-spacing:.18em;text-transform:uppercase;font-size:11px;font-weight:600}
+  .num{font-family:var(--num);font-weight:800}
+  header.top{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:rgba(4,4,12,.76);border-bottom:1px solid var(--line)}
+  .top__in{display:flex;align-items:center;gap:20px;padding:13px 0}
+  .top img{height:32px;width:auto;display:block}
+  .top .badge{margin-inline-start:auto;font-size:12.5px;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.15);color:var(--ink-2);white-space:nowrap}
+  .hero{padding:clamp(52px,8vw,110px) 0 48px}
+  .kicker{display:inline-flex;align-items:center;gap:10px;color:var(--gold)}
+  .kicker i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px 3px rgba(243,199,122,.55)}
+  h1{font-family:var(--f-head);font-weight:800;line-height:1.1;margin:20px 0 0;font-size:clamp(42px,7.4vw,96px);letter-spacing:-.015em}
+  h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{font-size:clamp(17px,2vw,21px);color:var(--ink-2);max-width:62ch;margin:24px 0 0}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .chip{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:999px;padding:8px 16px;font-size:13.5px;color:var(--ink-2)}
+  .chip b{color:#fff}
+  section{padding:clamp(44px,5vw,76px) 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+  .sec-head h2{font-family:var(--f-head);font-weight:700;font-size:clamp(24px,3vw,34px);margin:0}
+  .sec-head span{color:var(--ink-3);font-size:14px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:900px){.grid3{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px 22px}
+  .card h3{margin:0 0 10px;font-family:var(--f-head);font-size:17px;font-weight:700}
+  .card p{margin:0;color:var(--ink-2);font-size:15.5px}
+  .card .lat{color:var(--gold);display:block;margin-bottom:12px}
+  .arc{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  @media(max-width:900px){.arc{grid-template-columns:1fr 1fr}}
+  .beat{border-top:2px solid rgba(255,255,255,.12);padding-top:14px}
+  .beat:nth-child(1){border-top-color:var(--gold)}.beat:nth-child(2){border-top-color:var(--gold)}
+  .beat:nth-child(3){border-top-color:var(--violet)}.beat:nth-child(4){border-top-color:var(--teal)}
+  .beat:nth-child(5){border-top-color:var(--pink)}
+  .beat b{display:block;font-family:var(--f-head);font-size:15.5px;margin-bottom:4px}
+  .beat small{color:var(--ink-3);font-size:13.5px;line-height:1.7;display:block}
+  .post{display:grid;grid-template-columns:.62fr 1fr;gap:clamp(18px,3vw,42px);padding:clamp(26px,3vw,40px) 0;border-top:1px solid var(--line)}
+  .post:first-of-type{border-top:0}
+  @media(max-width:880px){.post{grid-template-columns:1fr}}
+  .shot{display:grid;grid-template-columns:1fr .62fr;gap:10px;align-items:start}
+  .shot img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#08080f}
+  .post__head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .post__head .idx{font-family:var(--num);font-size:26px;font-weight:800;color:var(--gold);line-height:1}
+  .post__head h3{font-family:var(--f-head);font-size:clamp(20px,2.4vw,27px);margin:0;font-weight:700}
+  .tag{font-family:var(--lat);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.16);color:var(--ink-2)}
+  .meta{display:grid;gap:8px;margin:14px 0 18px;font-size:14.5px;color:var(--ink-2)}
+  .meta b{color:#fff;font-weight:600}
+  details{border:1px solid var(--line);border-radius:12px;padding:0 16px;background:rgba(255,255,255,.02);margin-top:10px}
+  details+details{margin-top:8px}
+  summary{cursor:pointer;padding:12px 0;font-size:14px;font-weight:600;color:var(--ink-2);list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";font-family:var(--num);color:var(--gold);margin-inline-end:10px}
+  details[open] summary::before{content:"–"}
+  pre{margin:0 0 16px;white-space:pre-wrap;word-break:break-word;font-family:var(--f-body);font-size:15px;line-height:1.95;color:var(--ink)}
+  .tags{font-family:var(--lat);font-size:12.5px;color:var(--teal);word-break:break-word}
+  .spec{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:900px){.spec{grid-template-columns:1fr 1fr}}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{text-align:right;padding:13px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-family:var(--lat);font-weight:600}
+  td b{color:#fff}
+  .swatch{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .sw{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-3);font-family:var(--lat)}
+  .sw i{width:16px;height:16px;border-radius:4px;display:block}
+  footer{padding:44px 0 70px;border-top:1px solid var(--line);color:var(--ink-3);font-size:14px}
+  footer a{color:var(--ink-2)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__in">
+    <img src="/assets/brand/logo-white-horizontal.svg" alt="Code &amp; Canvas" />
+    <span class="badge">حملة 05 بوستات · فيسبوك + إنستجرام</span>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <div class="kicker lat"><i></i> Campaign board · The second invoice</div>
+  <h1>الفاتورة <em>التانية</em></h1>
+  <p class="lede">حملة تانية لنفس البراند بفكرة مختلفة: مش «إزاي تدخل السوق»، لكن «تمن إنك تدخله بسرعة». خمس بوستات بتفكّ التكلفة المخفية للتطوير الرخيص — بلوك بصري جديد: بانل هادي فوق، صورة دافئة تحت، وشريط التدرّج هو الخط الوحيد اللي بينهم.</p>
+  <div class="chips">
+    <span class="chip"><b>5</b> بوستات · فكرة واحدة</span>
+    <span class="chip"><b>4</b> بوستات بصور · <b>1</b> تايبوجرافي</span>
+    <span class="chip"><b>10</b> تصميمات: 1080×1350 + 1080×1920</span>
+    <span class="chip"><b>2</b> لغات: مصري + إنجليزي</span>
+    <span class="chip"><b>10</b> أيام نشر · 22 نوفمبر – 1 ديسمبر 2026</span>
+    <span class="chip">هوية <b>Code &amp; Canvas</b> كاملة</span>
+  </div>
+</div>
+
+<section id="idea">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lat" style="color:var(--teal)">01 — The big idea</span>
+      <h2>التوفير بيرجع فاتورة</h2>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <span class="lat">Audience</span>
+        <h3>اللي بيدور على أرخص عرض</h3>
+        <p>صاحب بيزنس عنده فكرة أو نظام شغال بالفعل، بيوازن بين عروض أسعار، ولسه مش شايف إن القرار ده مش سعري — ده قرار تكلفة مؤجّلة.</p>
+      </div>
+      <div class="card">
+        <span class="lat">Message</span>
+        <h3>«رخيص» = أول قسط</h3>
+        <p>الرسالة واحدة في الخمس بوستات: السعر اللي بتشوفه مش السعر اللي هتدفعه. الباقي بيوصل بعدين، في صورة إعادة بناء، وترحيل بيانات، وفريق بيدفع تمن الفهم من الأول.</p>
+      </div>
+      <div class="card">
+        <span class="lat">Difference</span>
+        <h3>بلوك بصري منفصل</h3>
+        <p>مش تكرار لكامبين «من فكرة لمنتج»: تقسيم أفقي صارم (بانل/صورة)، تايبوجرافي أكبر، دوتون دافئ ذهبي بدل البنفسجي البارد، وشريط تدرّج واحد بدل الجلوات.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="arc">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lat" style="color:var(--violet)">02 — The arc</span>
+      <h2>قوس الحملة</h2>
+    </div>
+    <div class="arc">
+        <div class="beat"><b>01 الادعاء</b><small>«رخيص» = أول قسط. إعادة تعريف كلمة مطمّنة.</small></div>
+        <div class="beat"><b>02 التفصيل</b><small>3 فواتير بتوصل بعدين: إعادة بناء، ترحيل، فريق.</small></div>
+        <div class="beat"><b>03 السبب</b><small>كل ترقيع بيغلي اللي بعده. ليه التكلفة بتزيد.</small></div>
+        <div class="beat"><b>04 المقارنة</b><small>الأغلى إنك تعمله مرتين: مرة ومرة صح.</small></div>
+        <div class="beat"><b>05 الخطوة</b><small>30 دقيقة على اللي بنيته — توصية واحدة مكتوبة.</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="posts">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lat" style="color:var(--gold)">03 — The posts</span>
+      <h2>خمس بوستات — الكوبي والتصميم</h2>
+      <span>اضغط على أي قسم لفتح الكابشن</span>
+    </div>
+
+      <article class="post" id="post-01">
+        <div class="shot">
+          <a href="/marketing/campaigns/second-invoice/assets/feed/01.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/feed/01.png" alt="صورة قريبة لإيصال ورقي ملفوف على سطح داكن، بإضاءة دافئة وخلفية سودا، وفوقها عنوان عربي كبير «الرخيص مش رخيص.» وشريط تدرّج لوني بيفصل بين النص والصورة." loading="lazy"></a>
+          <a href="/marketing/campaigns/second-invoice/assets/story/01.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/story/01.png" alt="نسخة الستوري — الرخيص مش رخيص" loading="lazy"></a>
+        </div>
+        <div>
+          <div class="post__head">
+            <span class="idx">01</span>
+            <h3>الرخيص مش رخيص</h3>
+            <span class="tag">THE HOOK</span>
+          </div>
+          <div class="meta">
+            <div><b>الهدف:</b> إيقاف السكرول بإعادة تعريف كلمة مريحة («رخيص») — وتأسيس منطق الحملة كلها في بوست واحد.</div>
+            <div><b>الجمهور:</b> مؤسس/صاحب بيزنس بيقارن عروض أسعار، وبيختار بالأرقام اللي في أول العرض.</div>
+            <div><b>التصميم:</b> البوست الأول بصورة إيصال ملفوف على أسود، والنص فوق في بانل هادي والبنت دي في النص التحتاني.</div>
+          </div>
+          <details>
+            <summary>الكابشن — مصري</summary>
+            <pre>«رخيص» دي كلمة مطمّنة. وهي أول قسط.
+
+أي رقم بتسمعه قبل ما تعرف مين هيدفع، وإيه أقل نسخة بتحل الوجع، وإزاي المشروع هيكبر بعد سنة — الرقم ده ناقص. والناقص بيرجع، بعدين، وبفايدة.
+
+واللي بيدفع بعدين مش انت لوحدك:
+الفريق بيدفع وقته في كود محدش صمّمه، والعميل بيدفع انتظار، والبيزنس بيدفع فرص ضاعت في الشهور اللي راحت في التصليح.
+
+السؤال مش «مين أرخص؟»
+السؤال: «إيه اللي هيتدفع تاني بعد كده؟»
+
+في 4 بوستات جاية هنفكّ الفاتورة التانية بند بند.
+
+عايز تعرف إيه اللي مستنيك في فاتورتك؟ codeandcanvas.net/contact</pre>
+          </details>
+          <details>
+            <summary>Caption — English</summary>
+            <pre dir="ltr" style="text-align:left">&quot;Cheap&quot; is a reassuring word. It&#x27;s also the first instalment.
+
+Any price you hear before you know who pays, what the smallest version is, and how this grows in a year — that price is incomplete. And incomplete prices come back. Later. With interest.
+
+You&#x27;re not the only one paying:
+the team pays in hours spent on code nobody designed, the customer pays in waiting, and the business pays in opportunities that expired quietly while you were patching.
+
+The question isn&#x27;t &quot;who&#x27;s cheapest?&quot;
+It&#x27;s: &quot;what gets paid for twice?&quot;
+
+The next 4 posts take the second invoice apart, line by line.
+
+Want to see what&#x27;s waiting on yours? codeandcanvas.net/contact</pre>
+          </details>
+          <details>
+            <summary>كومنت أول + هاشتاجات</summary>
+            <pre>اكتب «فاتورة» في كومنت، ونبعتلك الـ6 بنود اللي بنقيسها قبل أي مشروع — على الخاص، مجانًا. 👇</pre>
+            <p class="tags">#الفاتورة_التانية #CodeAndCanvas #تكلفة_التطوير #تطوير_برمجيات #منتج_رقمي #ريادة_أعمال #السوق_المصري #براند_وتقنية</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="post" id="post-02">
+        <div class="shot">
+          <a href="/marketing/campaigns/second-invoice/assets/feed/02.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/feed/02.png" alt="تصميم تايبوجرافي أسود بعنوان عربي كبير «3 فواتير بتوصل بعدين.» بخط متدرّج الألوان، وتحته قائمة بثلاث بنود مرقّمة: إعادة بناء، نقل بيانات، فريق جديد." loading="lazy"></a>
+          <a href="/marketing/campaigns/second-invoice/assets/story/02.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/story/02.png" alt="نسخة الستوري — 3 فواتير" loading="lazy"></a>
+        </div>
+        <div>
+          <div class="post__head">
+            <span class="idx">02</span>
+            <h3>3 فواتير</h3>
+            <span class="tag">THE INVOICES</span>
+          </div>
+          <div class="meta">
+            <div><b>الهدف:</b> تفكيك التكلفة المخفية لثلاث بنود ملموسة — بوست تعليمي قابل للحفظ.</div>
+            <div><b>الجمهور:</b> اللي لسه مش مقتنع إن الاختصار مشكلة (لسه بيدور على أرخص عرض).</div>
+            <div><b>التصميم:</b> بوست تايبوجرافي على أسود: عنوان ضخم + دفتر فواتير من 3 سطور (01 / 02 / 03) بخطوط فاصلة هادية.</div>
+          </div>
+          <details>
+            <summary>الكابشن — مصري</summary>
+            <pre>3 فواتير بتوصل بعد ما تكون فاكر إنك وفّرت.
+
+01 · إعادة بناء
+أول ما المشروع يكبر، الهيكل اللي اتبنى على السريع بيقف عند أول توسّع. تبدأ تعدّل، بعدين تفك، بعدين تبني من الأول — بنفس الميزانية، تاني.
+
+02 · نقل بيانات
+الترحيل من نظام لنظام بيوقف الشغل أيام، وبيكسر حاجات كانت شغالة، وبيخلّي الفريق يشتغل على التوالي بدل ما يبني.
+
+03 · فريق جديد
+كل مطوّر جديد بيدفع تمن إنه يفهم كود محدش وثّقه — وده من وقت المشروع، مش من وقت حد تاني.
+
+التلاتة مش تكاليف تقنية. دول تكاليف قرارات اتاخدت قبل ما حد يسأل: «إيه أقل نسخة بتحل الوجع؟»</pre>
+          </details>
+          <details>
+            <summary>Caption — English</summary>
+            <pre dir="ltr" style="text-align:left">Three invoices arrive after you&#x27;ve convinced yourself you saved money.
+
+01 · Rebuild
+The moment the project grows, a structure built in a hurry stops at its first expansion. You tweak, then you unpick, then you start again — with the same budget, a second time.
+
+02 · Data migration
+Moving from one system to another freezes work for days, breaks things that used to run, and turns the team into a maintenance crew instead of a build team.
+
+03 · New team
+Every new developer pays the cost of understanding code nobody documented — out of your project&#x27;s time, not anyone else&#x27;s.
+
+None of these are technical costs. They&#x27;re decisions that were made before anyone asked: &quot;what is the smallest version that solves the pain?&quot;</pre>
+          </details>
+          <details>
+            <summary>كومنت أول + هاشتاجات</summary>
+            <pre>أي بند من التلاتة حصل معاك؟ 01 / 02 / 03 — اكتب الرقم. 👇</pre>
+            <p class="tags">#الفاتورة_التانية #CodeAndCanvas #الديون_التقنية #تكلفة_مخفية #إدارة_مشاريع #تطوير_برمجيات #ريادة_أعمال</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="post" id="post-03">
+        <div class="shot">
+          <a href="/marketing/campaigns/second-invoice/assets/feed/03.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/feed/03.png" alt="صورة قريبة لحيطة خرسانية متشققة بترقيعات رمادية قديمة، بإضاءة جانبية حادة، وفوقها عنوان عربي كبير «كل ترقيع بيغلي اللي بعده.»" loading="lazy"></a>
+          <a href="/marketing/campaigns/second-invoice/assets/story/03.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/story/03.png" alt="نسخة الستوري — كل ترقيع بيغلي اللي بعده" loading="lazy"></a>
+        </div>
+        <div>
+          <div class="post__head">
+            <span class="idx">03</span>
+            <h3>كل ترقيع بيغلي اللي بعده</h3>
+            <span class="tag">THE PATCH</span>
+          </div>
+          <div class="meta">
+            <div><b>الهدف:</b> تفسير **ليه** التكلفة بتزيد — مش بس إنها بتزيد. بوست بيخلي القارئ يبص على مشروعه هو.</div>
+            <div><b>الجمهور:</b> صاحب مشروع عنده نظام شغال، حاسس إن كل تعديل بقى بياخد وقت أكتر.</div>
+            <div><b>التصميم:</b> صورة حيطة متشققة ومرقّعة — تشبيه مباشر لكود بيترقّع.</div>
+          </div>
+          <details>
+            <summary>الكابشن — مصري</summary>
+            <pre>الكود اللي مش متصمّم بيعمل حاجة واحدة صحّ: بيخلّي كل إضافة أغلى من اللي قبلها.
+
+أول ترقيع بياخد يوم. التاني بياخد أسبوع. والتالت بيخلّي حد في الفريق يقول: «الأحسن نعيد من الأول».
+
+ومش لأن المطوّر وحش. لأن كل سطر جديد اتبنى فوق افتراض محدش كتبه، وقرار محدش سجّله، وحاجة محدش سأل عنها.
+
+التوفير الحقيقي مش في إنك تترقّع أسرع. إنك تدفع مرة واحدة في التصميم، بدل ما تدفع كل مرة في التنفيذ.
+
+عندك نظام بيترقّع؟ خلّينا نشوفه: codeandcanvas.net/contact</pre>
+          </details>
+          <details>
+            <summary>Caption — English</summary>
+            <pre dir="ltr" style="text-align:left">Undesigned code does one thing well: it makes every next addition more expensive than the last.
+
+The first patch takes a day. The second takes a week. The third makes someone on the team say: &quot;we should just start over.&quot;
+
+Not because the developer is bad. Because every new line was built on top of an assumption nobody wrote down, a decision nobody recorded, a question nobody asked.
+
+Real saving isn&#x27;t patching faster. It&#x27;s paying once, in design, instead of every single time in delivery.
+
+Running on patches? Let&#x27;s look at it: codeandcanvas.net/contact</pre>
+          </details>
+          <details>
+            <summary>كومنت أول + هاشتاجات</summary>
+            <pre>علامة إن نظامك داخل مرحلة الترقيع: كل فيتشر جديد بيطلب «تعديل في 4 أماكن». لو ده بيحصل، اكتب «نفس المشكلة». 👇</pre>
+            <p class="tags">#الفاتورة_التانية #CodeAndCanvas #الديون_التقنية #كود_نظيف #معمارية_البرمجيات #تطوير_برمجيات #تقنية_للأعمال</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="post" id="post-04">
+        <div class="shot">
+          <a href="/marketing/campaigns/second-invoice/assets/feed/04.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/feed/04.png" alt="صورة داخلية لمبنى تحت الإنشاء بسقالات معدنية وشعاع ضوء، وفوقها عنوان عربي كبير على ثلاث سطور «الأغلى إنك تعمله مرتين.»" loading="lazy"></a>
+          <a href="/marketing/campaigns/second-invoice/assets/story/04.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/story/04.png" alt="نسخة الستوري — الأغلى إنك تعمله مرتين" loading="lazy"></a>
+        </div>
+        <div>
+          <div class="post__head">
+            <span class="idx">04</span>
+            <h3>الأغلى إنك تعمله مرتين</h3>
+            <span class="tag">THE COMPARISON</span>
+          </div>
+          <div class="meta">
+            <div><b>الهدف:</b> المقارنة اللي بتقفل الجدل — مفيش «رخيص» و«غالي»، فيه «مرة» و«مرتين».</div>
+            <div><b>الجمهور:</b> اللي بيوازن بين عرضين ومحتاج جملة واحدة تحسم.</div>
+            <div><b>التصميم:</b> صورة مبنى تحت الإنشاء بالسقالات — البناء الحقيقي، مش الديمو.</div>
+          </div>
+          <details>
+            <summary>الكابشن — مصري</summary>
+            <pre>الأغلى في السوق مش أكبر مشروع. الأغلى إنك تعمله مرتين.
+
+مرة رخيصة: سعر أقل، تسليم أسرع، وديمو بيبهر في الاجتماع. وبعد شهور بتبدأ الكلمة اللي بتفضح كل حاجة: «النسخة التانية».
+
+مرة صح: تصميم قبل أول سطر كود، قرارات مكتوبة، وموديولات بتتحرك لوحدها لما تكبر.
+
+الاتنين بيتحاسبوا بالفلوس.
+واحد بس لسه شغال بعد السنة الأولى.</pre>
+          </details>
+          <details>
+            <summary>Caption — English</summary>
+            <pre dir="ltr" style="text-align:left">The most expensive thing on the market isn&#x27;t the biggest project. It&#x27;s doing yours twice.
+
+The cheap round: lower price, faster delivery, a demo that shines in the meeting. And months later, the phrase that gives everything away — &quot;version two.&quot;
+
+The right round: design before the first line of code, decisions written down, modules that move on their own as you grow.
+
+Both get paid for in money.
+Only one is still running after year one.</pre>
+          </details>
+          <details>
+            <summary>كومنت أول + هاشتاجات</summary>
+            <pre>سؤال واحد يفرّق: «لو المشروع ده كبر 3 أضعاف بكرة — إيه أول حاجة هتقف؟» لو مفيش إجابة، اكتب «مفيش إجابة». 👇</pre>
+            <p class="tags">#الفاتورة_التانية #CodeAndCanvas #تكلفة_التطوير #MVP #بناء_منتج #ريادة_أعمال #السوق_المصري</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="post" id="post-05">
+        <div class="shot">
+          <a href="/marketing/campaigns/second-invoice/assets/feed/05.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/feed/05.png" alt="صورة قريبة لإيدين على لابتوب في أوضة ضلمة وإضاءة الشاشة، وفوقها عنوان عربي كبير «قبل ما تدفع المرة التانية.» وسطر تواصل." loading="lazy"></a>
+          <a href="/marketing/campaigns/second-invoice/assets/story/05.png" target="_blank" rel="noopener"><img src="/marketing/campaigns/second-invoice/assets/story/05.png" alt="نسخة الستوري — قبل ما تدفع المرة التانية" loading="lazy"></a>
+        </div>
+        <div>
+          <div class="post__head">
+            <span class="idx">05</span>
+            <h3>قبل ما تدفع المرة التانية</h3>
+            <span class="tag">THE ASK</span>
+          </div>
+          <div class="meta">
+            <div><b>الهدف:</b> تحويل واضح ومنخفض المخاطرة (30 دقيقة، من غير عرض تقديمي) — يقفل الحملة.</div>
+            <div><b>الجمهور:</b> كل اللي اتعرّف على المشكلة في البوستات الأربعة.</div>
+            <div><b>التصميم:</b> صورة لابتوب في أوضة ضلمة + CTA في البانل العلوي.</div>
+          </div>
+          <details>
+            <summary>الكابشن — مصري</summary>
+            <pre>قبل ما تدفع المرة التانية — خلّينا نشوف إيه اللي هيتصلّح.
+
+ابعتلنا اللي بنيته: كود، لينك، أو ملفات. وفي 30 دقيقة بنقولك:
+· إيه اللي هيقف أول ما المشروع يكبر
+· إيه اللي هيتدفع تاني قريب
+· وإيه اللي ينفع يفضل زي ما هو
+
+من غير عرض تقديمي، ومن غير «إحنا الأفضل». جلسة واحدة، وتوصية واضحة.
+
+codeandcanvas.net/contact
++20 109 250 0454</pre>
+          </details>
+          <details>
+            <summary>Caption — English</summary>
+            <pre dir="ltr" style="text-align:left">Before you pay the second time — let&#x27;s see what&#x27;s going to break.
+
+Send us what you built: the code, a link, or the files. In 30 minutes we&#x27;ll tell you:
+· what stops first when the project grows
+· what gets paid for again soon
+· and what&#x27;s genuinely fine as it is
+
+No pitch deck, no &quot;we&#x27;re the best.&quot; One session, one clear recommendation.
+
+codeandcanvas.net/contact
++20 109 250 0454</pre>
+          </details>
+          <details>
+            <summary>كومنت أول + هاشتاجات</summary>
+            <pre>الجلسة 30 دقيقة، أونلاين، ومجانًا. بنخرج منها بتوصية واحدة مكتوبة — حتى لو التوصية إنك متغيّرش حاجة دلوقتي. 👇</pre>
+            <p class="tags">#الفاتورة_التانية #CodeAndCanvas #مراجعة_تقنية #تطوير_برمجيات #استشارة_تقنية #ريادة_أعمال #براند_وتقنية</p>
+          </details>
+        </div>
+      </article>
+  </div>
+</section>
+
+<section id="design">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lat" style="color:var(--teal)">04 — Design system</span>
+      <h2>نظام التصميم</h2>
+    </div>
+    <div class="spec">
+      <div class="card"><span class="lat">Layout</span><h3>تقسيم أفقي</h3><p>بانل أسود علوي (600 / 880px) + باند صورة تحت + شريط تدرّج 3px على الخط الفاصل. النص دايمًا في البانل، الصورة عمرها ما بتاكل النص.</p></div>
+      <div class="card"><span class="lat">Type</span><h3>أكبر وأضيق</h3><p>Alexandria 800 بحجم يوصل 116px (فيد) و130px (ستوري) على interlacing 1.12 — أضخم من الكامبين الأول بـ20% وأهدى.</p></div>
+      <div class="card"><span class="lat">Photography</span><h3>دوتون دافئ</h3><p>عاجي/ذهبي بدل البنفسجي: تكحيل دافئ + 13% تينت من لون البوست + حبيبات 2. الصور مفهومية، مفيش أشخاص بيتكلموا باسم البراند.</p></div>
+      <div class="card"><span class="lat">Chrome</span><h3>عنصرين بس</h3><p>اللوجو فوق يمين + فهرس 01/05 فوق شمال. مفيش شبكة، ولا زوايا، ولا خطوط تحت — كل حاجة تانية بتشيل عين القارئ من العنوان.</p></div>
+    </div>
+    <div class="swatch">
+      <span class="sw"><i style="background:#04040c"></i>#04040C canvas</span>
+      <span class="sw"><i style="background:#f3c77a"></i>#F3C77A gold</span>
+      <span class="sw"><i style="background:#8b6cff"></i>#8B6CFF violet</span>
+      <span class="sw"><i style="background:#3fd6c4"></i>#3FD6C4 teal</span>
+      <span class="sw"><i style="background:#ee5ba3"></i>#EE5BA3 pink</span>
+      <span class="sw"><i style="background:linear-gradient(100deg,#3fd6c4,#8b6cff,#ee5ba3)"></i>brand gradient</span>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lat" style="color:var(--pink)">05 — Schedule</span>
+      <h2>جدول النشر</h2>
+      <span>القاهرة / الرياض · 8:00–9:30 م</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>البوست</th><th>التاريخ</th><th>اليوم</th><th>الوقت</th><th>ملاحظة</th></tr></thead>
+      <tbody>
+      <tr><td><b>01</b></td><td>الرخيص مش رخيص</td><td>22 نوفمبر 2026</td><td>الأحد</td><td>8:00–9:30 م</td><td>افتتاحية</td></tr>
+      <tr><td><b>02</b></td><td>3 فواتير</td><td>24 نوفمبر 2026</td><td>الثلاثاء</td><td>8:00–9:30 م</td><td>حفظ ومشاركة</td></tr>
+      <tr><td><b>03</b></td><td>كل ترقيع بيغلي اللي بعده</td><td>26 نوفمبر 2026</td><td>الخميس</td><td>8:00–9:30 م</td><td>Boost</td></tr>
+      <tr><td><b>04</b></td><td>الأغلى إنك تعمله مرتين</td><td>29 نوفمبر 2026</td><td>الأحد</td><td>8:00–9:30 م</td><td>حسم المقارنة</td></tr>
+      <tr><td><b>05</b></td><td>قبل ما تدفع المرة التانية</td><td>1 ديسمبر 2026</td><td>الثلاثاء</td><td>8:00–9:30 م</td><td>CTA</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 8px">Code &amp; Canvas — Business Development, By Design.</p>
+    <p style="margin:0">الملفات: <code>assets/feed/01–05.png</code> · <code>assets/story/01–05.png</code> · <code>captions.md</code> · <code>campaign-kit.zip</code> — والتواصل: <a href="https://codeandcanvas.net/contact">codeandcanvas.net/contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

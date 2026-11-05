@@ -10,3 +10,6 @@ dist/
 # Browser test outputs (curated evidence belongs in docs/completion-*)
 test-results/
 playwright-report/
+
+# Campaign deliverables (built for Drive upload)
+marketing/campaigns/from-idea-to-market/campaign-kit.zip

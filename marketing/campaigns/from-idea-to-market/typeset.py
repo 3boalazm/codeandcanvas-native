@@ -25,12 +25,13 @@ AR_PUNCT = "\u060c\u061b\u061f"
 
 
 def tokenize(text):
-    """Split into [('sp', ' ') | ('ar'|'lat', word)] tokens.
+    """Split into [('sp', ' ') | ('ar'|'lat', phrase)] tokens.
 
-    Words are shaped as whole runs so HarfBuzz resolves neutral punctuation
-    inside them (a trailing full stop lands on the left of an Arabic word),
-    and the whitespace between them is a plain advance in the paragraph
-    direction — which keeps mixed Arabic/Latin sentences correctly spaced.
+    Adjacent words of the same script are merged into one run (with their
+    spaces) so a Latin phrase inside an Arabic sentence — "Pharmacy OS" —
+    keeps its own left-to-right order instead of being flipped word by word.
+    Whitespace between two different scripts stays a plain advance, which
+    keeps mixed lines correctly spaced.
     """
     tokens = []
     for chunk in re.split(r"(\s+)", text):
@@ -40,7 +41,13 @@ def tokenize(text):
             tokens.append(("sp", " "))
             continue
         kind = "ar" if ARABIC.search(chunk) else "lat"
-        tokens.append((kind, chunk))
+        if (len(tokens) >= 2 and tokens[-1][0] == "sp"
+                and tokens[-2][0] == kind):
+            tokens[-1] = (kind, " ")
+            tokens.pop()
+            tokens.append((kind, tokens.pop()[1] + " " + chunk))
+        else:
+            tokens.append((kind, chunk))
     return tokens
 
 

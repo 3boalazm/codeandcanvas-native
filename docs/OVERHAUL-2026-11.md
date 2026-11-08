@@ -33,6 +33,8 @@ User request: implement every audit item, generate section-appropriate design so
 - **Font licence:** Signate Grotesk replaced by self-hosted Space Grotesk (SIL OFL, licence committed); the two Signate font files were deleted; a claim gate blocks re-introduction.
 - **Stale patch:** reviewed `01a13976-…-d60ae74be3b3.patch` (1.9 MB, an already-applied historical full-repo diff) and deleted it.
 - **Restructure:** Homepage + Work + Services + Studio + Contact rebuilt as one system.
+- **Redirect integrity:** removed two stale post aliases (`p08` → `from-brand-identity-to-brand-systems`, `p10` → `creative-strategy-in-the-age-of-generative-ai`) that pointed one legacy source at two different articles after p07/p09 were published. `scripts/gen-pages.py` now refuses to emit any redirect source with conflicting destinations; `_redirects`, `vercel.json` and `dist/.htaccess` are regenerated from one validated table.
+- **Documentation:** `README.md`, `docs/INTEGRATIONS.md` and `TODO.md` rewritten for the real first-party architecture; 2026-10 plan/report/hand-off/sitemap documents marked historical with pointers to the current docs.
 
 ## Visual system added (section-appropriate, never fake client work)
 

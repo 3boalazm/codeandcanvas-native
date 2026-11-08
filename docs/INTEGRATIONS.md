@@ -1,101 +1,95 @@
 # Integration contracts and launch gates
 
-Updated 2026-10-14. This is the contract for the **current completion-sprint implementation**, not the older demo checkout. No backend, payment gateway, scheduler or analytics provider is bundled or enabled.
+**Updated 2026-11-08 for the 2026-11 overhaul.** This describes the code that is actually on this branch. The older "no backend bundled / all endpoints empty" contract is obsolete; see the historical note at the end. Authoritative companion documents: [`docs/LEAD-PIPELINE.md`](LEAD-PIPELINE.md), [`docs/MEASUREMENT-PLAN.md`](MEASUREMENT-PLAN.md), [`docs/PUBLISH-GATE.md`](PUBLISH-GATE.md).
 
-## 1. Public configuration
+## 0. What runs where
 
-Edit `assets/js/config.js`; it is loaded before `site.js` on all routes, including ERP. Do not put secrets, provider tokens or trusted commerce prices in a public script.
+| Layer | Implementation | Deployed how |
+| --- | --- | --- |
+| Browser | `assets/js/config.js` → `site.js`, `pages.js`, `booking.js` | Static files from `dist/` |
+| Public API | `server/api.mjs` (zero runtime dependencies, Node ≥ 20) | `dev-server.mjs` locally; **must** be a same-origin Node service / serverless function in production |
+| Lead Desk | `server/crm.html` served at `/crm/` by the API | Token-gated, `noindex`; `build.sh` ships only the static shell at `dist/crm/index.html` |
+| Store | `.data/leads.json`, `bookings.json`, `subscribers.json`, `events.jsonl`, `notifications.log` | File-backed, single node, **gitignored**. Replace with an encrypted managed database before launch |
+| Measurement | Consent-gated first-party `/api/events`; GA4 / GTM / Clarity IDs are empty | No third-party script is injected without an approved ID **and** explicit consent |
+
+`npm run dev` starts `dev-server.mjs`, which serves the static tree, forwards `/api/*` and `/crm/` to `createApi()`, honours `_redirects` and binds `0.0.0.0`. On pure static hosting the API is absent: every form then fails **closed** with an explicit "draft prepared, not sent yet" WhatsApp/email hand-off. Nothing is silently claimed as delivered.
+
+## 1. Public configuration (`assets/js/config.js`)
 
 ```js
 window.CC_CONFIG = Object.freeze({
-  contactEndpoint: '',        // e.g. /api/contact
-  newsletterEndpoint: '',     // e.g. /api/newsletter
-  careerEndpoint: '',         // e.g. /api/career
-  bookingUrl: '',             // approved HTTPS scheduler URL
-  analyticsEndpoint: '',      // e.g. /api/events; explicit opt-in required
+  contactEndpoint: '/api/contact',
+  newsletterEndpoint: '/api/newsletter',
+  careerEndpoint: '/api/career',
+  bookingEndpoint: '/api/booking',
+  slotsEndpoint: '/api/booking/slots',
+  analyticsEndpoint: '/api/events',
+  bookingUrl: '',          // optional approved HTTPS scheduler; empty = first-party /book/
+  bookingPath: '/book/',
   requestTimeoutMs: 12000,
+  measurement: Object.freeze({ ga4MeasurementId: '', gtmContainerId: '', clarityProjectId: '' }),
 });
 ```
 
-All defaults deliberately remain empty. A form's nonempty `data-endpoint` overrides its configured endpoint. Only same-origin paths beginning `/api/` are accepted. Do not point the browser directly at a third-party form vendor: implement a server-side adapter. An invalid endpoint fails closed with a manual contact option, not an automatic fallback submission.
+Only same-origin paths beginning `/api/` are accepted. Never put tokens, secrets or trusted prices in this public file. A form's non-empty `data-endpoint` overrides its configured endpoint. Third-party measurement IDs stay empty until the legal policies are signed off; loading a provider requires **both** a configured ID and `cc-analytics-consent=granted`.
+
+Runtime secrets come from the environment only: `CC_ADMIN_TOKEN` (Lead Desk + admin API), `CC_NOTIFY_WEBHOOK` (optional notification target), `CC_DATA_DIR` (optional store location), `CC_BUILD_COMMIT` (build fingerprint). The `cc-local-admin` default is review-only and `dev-server.mjs` warns when it is unset.
 
 ## 2. Form contract
 
-`POST /api/<kind>` with `Content-Type: application/json`, `Accept: application/json`, same-origin credentials and a cancellable timeout.
+`POST /api/contact`, `/api/newsletter`, `/api/career` with `Content-Type: application/json` and same-origin credentials. `pages.js` sends the form's named fields plus `page` (pathname), `lang` (`en`/`ar`) and `kind`. The contact form uses `first_name`, `last_name`, `email`, `organization`, `inquiry`, `message`, `consent`; newsletter/career use their rendered controls. The `_hp` honeypot is checked client-side and rejected server-side. There is **no payment/order payload**.
 
-Payload is the form's named fields, trimmed strings, plus:
+Server-side rules (`server/api.mjs`):
 
-- `page`: pathname, without query string;
-- `lang`: `en` or `ar`;
-- `kind`: `contact`, `newsletter`, `career` or `books`.
+- 64 KB payload cap; JSON must parse; `originOk` refuses cross-origin requests.
+- Valid email, explicit `consent` (`true` / `on` / `yes`) and a name are required. Contact messages must be ≥ 5 characters and may not contain more than three URLs.
+- Rate limit: 12 POSTs per IP per 60 s (429), plus 90 events per IP per 60 s.
+- Idempotency: the same `kind + email + message` within 10 minutes returns the original lead with `duplicate: true` (HTTP 200) instead of creating a second one.
+- Leads get an id, score (organization +2, service code +2, long message +1, phone +1), stage (`qualified` at ≥ 4, else `new`), `notes[]`, `history[]`, a hashed IP and a `createdAt`. Newsletter submissions also create a `pending_confirmation` subscriber record — frontend "request received" is **not** a confirmed subscription.
+- Success is `201 {"accepted":true,"id":"lead-…", ...}` (or `200` for duplicates). The browser only confirms on 2xx + `accepted === true`; anything else keeps the inputs, emits `form-error` and shows the manual fallback.
 
-Examples of actual fields: contact uses `first_name`, `last_name`, `email`, `organization`, `inquiry`, `message`; career/newsletter use their rendered named controls. Book availability uses `name`, `email`, optional `phone`, `consent`, `inquiry` and a `message` containing catalogue IDs/titles. There is **no payment/order payload**. The `_hp` honeypot is checked locally and not included in the JSON. Backend validation remains mandatory; client validation is not a security control.
-
-The only accepted success response is **2xx + valid JSON containing `accepted: true`**:
-
-```json
-{"accepted": true}
-```
-
-An empty 204, HTML response, malformed JSON, `accepted:false`, HTTP/network error or timeout does not confirm receipt. Failure preserves inputs, restores the submit button, offers explicit manual channels and emits `form-error`. Success clears the form and emits `form-success`. Concurrent submission from the same form is guarded. Timeout means the browser could not confirm delivery; it does **not** prove the server did no work. Implement server deduplication/idempotency before enabling production retry workflows.
-
-With no endpoint, the browser prepares a WhatsApp/email draft. It says **not sent yet** and asks the visitor to finish in the selected app. A popup may be blocked; the status always includes clickable fallback links. This is `form-handoff`, never a confirmed lead, booking or subscription. Tests intercept `window.open` and abort external traffic; no real messages were sent.
-
-### Backend owner must supply before activation
-
-- Approved destination, access/retention/deletion policy, operational owner and delivery monitoring.
-- Server-side validation/size limits, origin/CSRF controls, rate limiting and abuse protection.
-- Secret management on the server, not in this repository or browser config.
-- Durable acceptance semantics: return `accepted:true` only after durable receipt/queueing, not before.
-- Newsletter consent and any required double opt-in/unsubscribe process. Frontend “request received” is not a confirmed list subscription.
-- Staging tests for delivery, timeout/retry, duplicate requests and provider failure. Current tests mock this contract; they do not validate a deployed provider.
+`docs/MEASUREMENT-PLAN.md` lists the nine canonical funnel events: `page_view`, `service_view`, `case_study_view`, `cta_click`, `form_start`, `form_submit`, `booking_confirmed`, `lead_qualified`, `lead_converted`. Legacy short names (`form-success`, `form-error`, `form-handoff`, `page-view`) still work for existing dashboards.
 
 ## 3. Booking
 
-Only valid HTTPS `bookingUrl` values without embedded credentials are used. The contact page preserves a valid service code as `?service=HC-03`, etc. Empty/malformed configuration leaves the explicit manual WhatsApp link. Clicking/opening a scheduler is **not** a confirmed booking. A production booking conversion needs the scheduler's trusted confirmation/webhook integration and an approved privacy policy.
+`GET /api/booking/slots` returns `{ accepted, dates, date, slots, timezone: 'AST' }`; `GET /api/booking/slots?date=YYYY-MM-DD` returns that day's 30-minute slots with `available` flags. Only published business dates are accepted.
+
+`POST /api/booking` requires `name`, valid `email`, `consent`, a `specialty` (`brand`, `product`, `technology`, `healthcare`, `general`), a published `date` and an available `time`. `timezone` accepts the published labels `AST` (UTC+3), `EET` (UTC+2), `UTC` and the IANA aliases `Asia/Riyadh`, `Africa/Cairo`, `Etc/UTC`, `Etc/GMT`; unsupported zones are rejected with 422 rather than silently relabelled. `assets/js/booking.js` preselects `AST`/`EET` from `Intl.DateTimeFormat().resolvedOptions().timeZone`.
+
+A confirmed booking returns `201 {"accepted":true,"id":"book-…","leadId":"lead-…","date","time","timezone","calendarUrl"}`; the same slot cannot be booked twice (409). `GET /api/booking/<id>/calendar.ics` serves a `VEVENT` with the correct UTC offset. Every confirmed booking also creates/links a qualified CRM lead and emits `booking_confirmed` + `lead_qualified`. Clicking a scheduler link or opening `/book/` is **never** by itself a confirmed booking.
 
 ## 4. Measurement
 
-`CC.track(name, props)` produces a bounded, in-memory diagnostic `window.dataLayer` (maximum 100 entries) and a `cc:track` DOM event. With empty `analyticsEndpoint`, no analytics network request is made.
+`CC.track(name, props)` writes a bounded `window.dataLayer` (max 100 entries), dispatches `cc:track`, and — only with consent + no DNT/GPC + a same-origin `/api/` endpoint — POSTs a **single event object** `{ event:'cc', name, lang, path, ...allowlisted props }` to `/api/events`. The collector accepts `202` for a valid `[a-z0-9_.-]+` name and `400` for anything else; it never receives form values, message bodies, emails, phone numbers or URL query strings. `EVENT_KEYS` allowlists `id, service, from, form, channel, filter, to`. DNT, GPC and consent withdrawal are honoured; the footer "Measurement settings" link lets a visitor change their choice.
 
-With a same-origin collector configured, events are sent only after the visitor chooses **Allow**. **Decline** is equally available; settings in the footer allow withdrawal. Do Not Track (`1`) and Global Privacy Control suppress transmission even if consent was previously stored. The collector uses POST JSON; it must not depend on a browser secret. Do not attach an unconsented GTM/third-party listener to the diagnostic event and bypass this contract.
+## 5. Lead Desk / admin API
 
-Payload: `{event:'cc', name, lang, path}` plus allowlisted identifiers only: `id`, `service`, `from`, `form`, `channel`, `filter`, `to`. Identifiers are length/character restricted. Automatic events exclude form values, email, notes, full URLs and URL queries. No visitor fingerprint, user ID, transaction or order ID is generated. Collectors/hosting still see network metadata; minimize logging and approve retention independently.
+All admin routes require `Authorization: Bearer <CC_ADMIN_TOKEN>`, header `x-cc-token` or `?token=…`; missing/incorrect values return 401.
 
-Current event families:
+| Route | Method | Result |
+| --- | --- | --- |
+| `/api/health` | GET | `200 {ok:true, service, commit, store:'file'}` |
+| `/crm/` | GET | noindex Lead Desk HTML |
+| `/api/leads` | GET | `{accepted:true, leads:[…]}` |
+| `/api/bookings` | GET | `{accepted:true, bookings:[…]}` |
+| `/api/stats` | GET | counts + `byStage` |
+| `/api/export.csv` | GET | CSV of id, createdAt, kind, name, email, organization, inquiry, stage, score |
+| `/api/leads/<id>` | PATCH | `{stage, note}` → stage transition (case-insensitive) + history entry |
 
-| Family | Meaning |
-| --- | --- |
-| `page-view` | Initial view with prior consent, or landing view when consent is granted; local-only if not allowed |
-| `book-call`, `contact`, `whatsapp`, `email`, `phone` | Intent/click, not confirmed conversion |
-| `service-inquiry`, `service-detail`, `service-finder`, `offer`, `track` | Service interest; valid context carried where available |
-| `navigation`, `work`, `post`, `book`, `portfolio`, `erp`, `duo`, `see-services` | Navigation/editorial interest |
-| `filter`, `lang-toggle` | Interface use |
-| `form-attempt` | Passed client validation; not receipt |
-| `form-handoff` | Manual draft prepared; not sent |
-| `form-success` | Configured backend returned the accepted contract |
-| `form-error` | Receipt could not be confirmed |
-| `save-book`, `remove-book` | Local shortlist operations, not add-to-cart revenue/purchase |
+Stages are lower-case internally: `new · qualified · proposal · won · lost`; the Lead Desk labels them `New · Qualified · Proposal · Won · Lost`.
 
-Do not use click, handoff or shortlist events as purchase/lead totals. There is no `purchase` conversion in this build. Provider deployment, dashboards, retention and production privacy acceptance remain release gates.
+## 6. Static-host fallback
 
-## 5. Books and accounts
+With no API available, `pages.js` prepares a WhatsApp/email draft, says **not sent yet**, and provides clickable fallback links. `booking.js` says "We could not confirm the booking" and offers the same manual channels; it never displays a fake confirmation. Tests intercept `window.open` and abort external traffic — no real messages are sent during QA.
 
-- `cc-cart` is a **single-copy local shortlist** of known catalogue IDs, not a shopping transaction. `assets/js/book-catalog.js` is generated from `scripts/lib/pages_books.py`.
-- Stored titles/prices/quantities/unknown IDs are not trusted. Display values come from the generated catalogue, which itself is **not server payment authority**.
-- `/account/` shows saved previews and a live local count, not an authenticated library. Cross-tab storage changes refresh it.
-- `/checkout/` is an availability inquiry. It neither charges nor creates an order or grants paid access. `/thank-you/` is not a receipt.
-- Auth/reset/2FA forms are explicitly unavailable UI; no login, reset, redirect-success or token is fabricated. Google login is disabled. Legacy `cc-library` values grant no access.
-- Public reader content comes from inline public previews. No nonexistent manifest is requested. Position/notes are local only. Any optional future manifest HTML must be trusted and sanitized before publication; the current runtime is not a paid-content protection boundary.
+## 7. Gates before production activation
 
-A commerce release requires server authentication, secure sessions, authorization, server prices, order state, verified signed payment webhooks, idempotency, refund/access policy and protected content delivery. Do not reintroduce localStorage ownership or serve full paid manifests from public static assets.
+- Deploy the API same-origin behind TLS; replace `.data/` with an encrypted managed store with backups, retention/deletion policy and access control.
+- Set a real `CC_ADMIN_TOKEN`; configure an approved mail/notification provider instead of the log/webhook stub.
+- Qualified legal sign-off on the jurisdiction-specific policy wording; confirm retention (24 months leads / 90 days events) and the double opt-in process for newsletters.
+- Staging delivery, timeout/retry, duplicate and provider-failure tests. `npm run verify:api` (23 checks) validates the local reference implementation, not a deployed provider.
+- `npm run verify:live` against the real domain **after** an approved release. A green build is not deployment proof.
 
-## 6. Storage / index / deployment
+## Historical note
 
-Local keys: `cc-lang`, `cc-cart`, `cc-reader-*`, `cc-notes-*`, optional `cc-analytics-consent`; session key `cc-pre`. Clear in browser settings. Storage-denied/malformed states fail safely and do not claim a book was saved.
-
-Auth, shortlist, checkout, status and reader routes have `noindex, follow` and are excluded from the sitemap. Crawling is allowed so robots can read `noindex`; robots rules are not access control. Arabic remains a client-side language on the same URL. No dedicated `/ar/` URLs or hreflang are claimed.
-
-Generate: `npm run generate`; check: `npm run check`; build: `npm run build`; browser tests: `npm test` after `npm ci && npx playwright install chromium`. `npm run check` verifies 48 generated outputs in a temporary directory without rewriting the workspace. `build.sh` ships route directories/assets only, not tests/docs/tooling.
-
-No merge, production deployment, DNS change or real external submission was performed in this sprint. Production headers/redirects, actual form/measurement delivery, physical devices, Safari/Firefox, assistive technology and production performance remain separately required checks.
+The 2026-10-14 version of this file documented a backend-less site with all endpoints empty and a purely manual hand-off. That contract was superseded on 2026-11-08 by the first-party pipeline above. The old behaviour is retained **only** as the static-host fallback. `docs/audit/*` and `docs/completion-2026-10-14/*` are historical evidence, not current instructions.

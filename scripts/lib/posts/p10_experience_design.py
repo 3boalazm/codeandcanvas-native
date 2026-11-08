@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Live URL was /creative-strategy-in-the-age-of-generative-ai/ (WP title "… – Copy") but the
-# article is "Experience Design as a Business Growth Driver". Published under the hub slug;
-# the old URL redirects here (see _redirects).
+# The old WordPress "… – Copy" URL /creative-strategy-in-the-age-of-generative-ai/ used to
+# hold this text. That slug is now a real, separate article (p09), so it must NOT be an
+# alias here: one redirect source must never have two different destinations.
 POST = dict(
     slug='experience-design-business-growth-driver',
-    aliases=['creative-strategy-in-the-age-of-generative-ai'],
+    aliases=[],
     title='Experience Design as a Business Growth Driver',
     title_ar='تصميم التجربة كمحرك لنمو الأعمال',
     cat='Experience Design', cat_ar='تصميم التجربة', minutes=5, date='June 2026', author='ma', emoji='🌟',

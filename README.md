@@ -1,150 +1,112 @@
 # Code & Canvas — native site
 
-> **Next chat / استكمال المشروع:** اقرأ [`docs/NEXT-CHAT-HANDOFF.md`](docs/NEXT-CHAT-HANDOFF.md) أولًا. إصلاحات الجولة السابقة اندمجت عبر [PR #3](https://github.com/3boalazm/codeandcanvas-native/pull/3)، لكن التفوير الشامل وقبول الإنتاج لم يكتملَا. [إيصال الدمج وحدود النشر](docs/completion-2026-10-14/MERGE-RECEIPT.md).
+> **Current state (2026-11-08):** the 2026-11 audit overhaul is implemented and verified on `arena/f3440ff7-codeandcanvas-native`. Start with [`docs/OVERHAUL-2026-11.md`](docs/OVERHAUL-2026-11.md) for the staged closure, [`docs/PRODUCTION-VERIFICATION.md`](docs/PRODUCTION-VERIFICATION.md) for what the live domain actually serves, and [`docs/PUBLISH-GATE.md`](docs/PUBLISH-GATE.md) before any release. **Nothing on this branch has been merged or deployed.** Older `docs/*-2026-10-14` files are historical snapshots, not current instructions.
 
-Standalone, bilingual (English / Arabic, LTR / RTL) Code & Canvas site built with semantic HTML, CSS and vanilla JavaScript. It is native website code, not a WordPress theme, and has no runtime framework or package dependencies.
+A standalone, bilingual (English / Arabic, LTR / RTL) Code & Canvas site: semantic HTML, one CSS design system and vanilla JavaScript for the browser, plus a zero-dependency Node service for the first-party lead pipeline. No runtime framework, no WordPress, no third-party tracker loaded by default.
 
 | Route | What it is |
 | --- | --- |
-| `/` | Homepage (editorial sections and purposeful cards): compact hero → selected work → studio → service tracks → approach, resources and contact paths |
-| `/erp/` | CanvasOne ERP interactive proposal (modules, industries, compliance, timeline, package builder, FAQ, print-to-PDF) |
-| `/services/` · `/technology-services/` · `/creative-services/` · `/healthcare/` | Solutions hub + the three tracks (23 services: AB-01…06, MA-01…10, HC-01…05, CC-01/02) |
-| `/about/` · `/our-story/` · `/methodology/` · `/team/` | Studio, story, methodology, founders |
-| `/pricing-faq/` · `/contact/` (`#book`) | Packages, payment terms, FAQ · contact form, channels, booking card |
-| `/case-studies/` | Work: Pharmacy OS, Zad, Nile Pharma ERP |
-| `/blog/` · `/blog/<slug>/` | Insights Hub + 8 articles (2 hub cards are "coming soon" — they never had an article on the live site) |
-| `/books/` · `/books/<slug>/` · `/books/<slug>/read/` | Digital library, 4 book landings, public-preview readers; no online purchase or paid access |
-| `/login/` `/register/` `/forgot-password/` `/reset-password/` `/account/` | Explicitly unavailable auth UI + local saved-book previews |
-| `/cart/` `/checkout/` `/thank-you/` | Single-copy local shortlist + availability inquiry; no checkout success/receipt simulation |
-| `/privacy-policy/` `/terms-of-use/` `/cookie-policy/` · `/404.html` | Legal drafts (the live site had none — pending legal review) · not-found page |
+| `/` | Value-first homepage: positioning, selected work, four pillars, trust strip (`/claims/`), markets and content funnel |
+| `/work/` · `/work/<slug>/` | Visual portfolio hub + 4 **labelled concept studies** (brand system, packaging, product UI, web experience) with an evidence gate |
+| `/case-studies/` | The three documented shipped systems (unchanged evidence caveats) |
+| `/services/` · 7 `/services/<slug>/` | 23-service catalogue, four positioning pillars, plus standalone landings with `Service` + `FAQPage` JSON-LD |
+| `/technology-services/` · `/creative-services/` · `/healthcare/` · `/methodology/` · `/pricing-faq/` | Existing track, methodology and pricing pages |
+| `/book/` | First-party 30-minute booking: specialty → published slots → timezone → consent → server confirmation → `.ics` |
+| `/contact/` | Consent-aware contact form posting to `/api/contact`; explicit manual hand-off only when the API cannot confirm |
+| `/claims/` | Public evidence register for every removed / qualified claim |
+| `/saudi-arabia/` · `/egypt/` | City-level local pages, unified NAP, `ProfessionalService` schema; no invented addresses or reviews |
+| `/resources/` | Honest status of the books / accounts / checkout flows |
+| `/blog/` · 10 `/blog/<slug>/` | Insights hub with **all 10 articles published** (including the two previously "coming soon"), article → service → work → CTA → book funnel |
+| `/about/` · `/our-story/` · `/team/` | Studio, story and founders — labelled illustrative artwork, real photography is an owner gate |
+| `/erp/` · `/clinic-review/` | CanvasOne ERP proposal and the standalone Arabic clinic intake review |
+| `/privacy-policy/` · `/terms-of-use/` · `/cookie-policy/` · `/404.html` | November 2026 v2.0 policies describing the real API and consent flow |
+| `/crm/` | Token-gated, `noindex` Lead Desk: `New · Qualified · Proposal · Won · Lost` |
+| `/books/` · `/login/` · `/register/` · `/account/` · `/cart/` · `/checkout/` · `/thank-you/` | Legacy screens kept out of the main journey, noindex, with visible "unavailable" notices and no fake auth/payment/entitlement |
 
-The header is a floating pill (`partials/top.html`): round brand mark + wordmark, uppercase links, language + WhatsApp round buttons, Contact CTA; the burger takes over below 1024px.
+Every route above has a real Arabic twin under `/ar/…` (and `/ar/erp/`), generated from the same source at build time — not a JavaScript translation shell.
 
-All inner pages are **generated** — edit `scripts/lib/pages_*.py` (and `scripts/lib/posts/*.py` for articles), never the HTML:
-
-```sh
-python3 scripts/gen-pages.py && node scripts/sync-chrome.mjs && node scripts/check-links.mjs
-```
-
-`gen-pages.py` also rewrites `_redirects`, `sitemap.xml`, `robots.txt` and `manus-routes.json` from the page registry. `sync-chrome.mjs` injects the shared `<head>` / nav / footer from `partials/` between the `<!-- cc:head/top/bottom -->` markers of every page (`--check` to verify in CI). `check-links.mjs` validates tag balance, internal links (honouring `_redirects`) and anchors.
-
-The routes share one design system — dark navy canvas, violet / teal / pink gradients, glass panels, preloader, scroll progress, cursor glow, tilt and magnetic buttons — taken from the CanvasOne ERP proposal.
-
-## Run locally
+## Quick start
 
 ```sh
-npm run dev
+npm ci                 # Node >= 20; devDependencies are QA/build tooling only
+npm run dev            # static site + /api/* + /crm/ on 0.0.0.0:3000
 ```
 
-Open <http://localhost:3000> (home) and <http://localhost:3000/erp/> (ERP). `PORT=4000 npm run dev` changes the port. The dev server is a zero-dependency Node script (`dev-server.mjs`).
+Open <http://localhost:3000/>, `/ar/`, `/book/`, `/work/` and `/crm/`. Set `CC_ADMIN_TOKEN` before exposing the service anywhere; the built-in `cc-local-admin` is review-only. The Lead Desk token field takes that value. Lead data is written to `.data/` (gitignored — it contains personal data).
 
-## Build
+`PORT=4000 npm run dev` changes the port; `node dev-server.mjs dist` serves the built `dist/` tree instead.
 
-```sh
-npm run build
-```
-
-Static files are written to `dist/`. Preview with `node dev-server.mjs dist`.
-
-## Structure
+## Architecture
 
 ```
-index.html               homepage (English markup; Arabic sits beside it in data-ar* attributes)
-erp/index.html           ERP proposal shell (content is rendered from erp-data.js)
+index.html · erp/index.html · partials/{head,top,bottom}.html
 assets/
-├── css/ds.css           shared design system (tokens, glass, buttons, nav, footer, timeline…)
-├── css/home.css         homepage-only components
-├── css/erp.css          ERP-only components (+ print stylesheet)
-├── js/site.js           shared runtime: language, icons, preloader, reveal, tilt, nav, progress, CC.track() analytics hook…
-├── js/home.js           homepage behaviour (meta per language; sections are plain CSS/HTML)
-├── js/pages.js          inner pages: tabs, FAQ, filters, forms (contact / demo), booking hook, TOC, account panels
-├── js/shop.js           trusted-ID shortlist, availability inquiry, saved previews
-├── js/reader.js         interactive book reader (manifest or free preview, notes, fullscreen)
-├── css/pages.css        inner-page components (hero, tiles, tiers, forms, prose, reader, cart, auth…)
-├── js/erp-data.js       ALL ERP copy, bilingual { ar, en }
-├── js/erp-app.js        ERP rendering and interactions
-└── brand/               Code & Canvas logos (SVG) + og-default.png (1200×630 social card)
+├── css/ds.css · home.css · pages.css · erp.css · live.css   (live.css = additive RTL-safe growth layer)
+├── js/config.js · site.js · home.js · pages.js · booking.js · erp-app.js · shop.js · reader.js
+├── fonts/             self-hosted OFL fonts (Space Grotesk, Alexandria, IBM Plex Sans Arabic, Comfortaa)
+├── media/*.webp       10 generated illustrations, always captioned as illustrative
+└── brand/og/*.png     35 per-route 1200×630 social cards
 scripts/
-├── gen-pages.py         builds every inner page + _redirects / sitemap.xml / robots.txt / manus-routes.json
-├── sync-chrome.mjs      injects partials/{head,top,bottom}.html into all pages (--check in CI)
-├── check-links.mjs      static QA: tag balance, internal links, anchors
-├── audit-text.py        dumps the visible English text of every page to docs/audit/native/ (content QA)
-├── make-og.mjs          renders assets/brand/og-default.png (needs @resvg/resvg-js, see file header)
-└── lib/                 catalog.py (23 services), h.py (HTML helpers + JSON-LD), pages_*.py (one per page), posts/ (articles), _reorder.py (dev helper: reorder page blocks)
-partials/                shared head / nav / footer chrome
-docs/
-├── SITEMAP.md           map of the live codeandcanvas.net (every URL, page blueprints, redirects, build phases)
-├── sitemap.json         the same route list, machine-readable
-├── OVERHAUL-PLAN.md     work plan of the 2026-10 overhaul (phases, research method)
-├── OVERHAUL-REPORT.md   what the overhaul changed and why (final report)
-└── audit/               GAP-REPORT.md (live → native content gaps), REVIEW.md (cross-team site review), native/*.txt (text dumps)
+├── gen-pages.py       writes every inner page + _redirects / sitemap.xml / robots.txt / manus-routes.json / vercel.json
+├── sync-chrome.mjs    injects shared head/nav/footer between <!-- cc:head/top/bottom --> markers
+├── gen-ar.mjs         builds /ar/ twins (scripts/lib/arize.mjs swaps data-ar* attributes)
+├── check-links.mjs · check-generated.mjs · check-claims.mjs · optimize-media.mjs   static QA gates
+├── smoke-api.mjs · verify-live.mjs                                                runtime + live-domain QA
+└── lib/               catalog.py, data_growth.py, h.py, pages_*.py, posts/*.py
+server/api.mjs         zero-dependency first-party API (leads, bookings, events, ICS, CRM)
+server/crm.html        noindex Lead Desk UI
+dev-server.mjs         combined static + API + CRM server for local preview
+build.sh               copies the deployable static tree to dist/ (incl. dist/.htaccess, dist/crm/)
+tests/                 566 Playwright tests (matrix, Arabic, flows, a11y, layout, visual)
 ```
+
+**Generated output is committed and never hand-edited.** Edit `scripts/lib/pages_*.py` / `scripts/lib/posts/*.py` / `scripts/lib/data_growth.py`, then `npm run generate`. `npm run check` verifies chrome parity, internal links/anchors, generator↔output parity, claim/consent/OG/route gates and media assets. The generator refuses to emit a redirect source with two different destinations.
+
+## First-party pipeline (what replaced the old manual hand-off)
+
+`assets/js/config.js` points at same-origin `/api/*` endpoints by default. `server/api.mjs` validates consent, honeypot, origin, payload size and rate limits; deduplicates submissions; stores leads durably; scores and stages them; publishes booking slots; blocks double-booking; emits `.ics`; records consent-gated measurement events; and exposes token-protected reads, stage PATCH, CSV export and a notification log/webhook. See [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md) and [`docs/LEAD-PIPELINE.md`](docs/LEAD-PIPELINE.md).
+
+On **pure static hosting** (Hostinger `public_html`, Vercel static output) `server/api.mjs` cannot run. The site then fails closed: forms keep the user's input and show an explicit WhatsApp/email draft saying **nothing was sent**. A real production lead pipeline therefore requires `server/api.mjs` deployed as a same-origin Node service (or an equivalent serverless function) plus an encrypted managed database, a real `CC_ADMIN_TOKEN`, mail delivery and backups.
+
+## Verification / publish gate
+
+```sh
+npm run gate           # generate → check → 566 Playwright tests → build
+npm run verify:api     # 23 first-party pipeline checks
+npm run dev            # human preview approval
+npm run verify:live    # AFTER an approved production release, against the real domain
+```
+
+`npm run gate` currently exits 0. A green GitHub Actions run is **not** proof of deployment: `.github/workflows/deploy-hostinger.yml` runs `gate → deploy (environment: production) → verify-live`, and the production environment requires a human reviewer configured by the repository owner. See [`docs/PUBLISH-GATE.md`](docs/PUBLISH-GATE.md).
+
+Chromium is installed normally in CI. In restricted sandboxes `playwright.config.mjs` also accepts `PW_EXECUTABLE_PATH` / `PW_LD_LIBRARY_PATH` for an npm-hosted Chromium.
 
 ## Language
 
-- `?lang=ar` / `?lang=en` forces a language. The choice is remembered (`localStorage`, key `cc-lang`) and shared by `/` and `/erp/`. With no choice, Arabic browsers get Arabic and everything else gets English.
-- **Homepage:** write English in the HTML and put the Arabic in `data-ar="…"` on the same element (`data-ar-html` when the text contains markup, `data-ar-label` / `data-ar-title` for attributes). Page title and meta description per language live in `home.js`.
-- **ERP:** edit `assets/js/erp-data.js`; every text field is `{ ar: '…', en: '…' }`.
-- Use CSS logical properties (`margin-inline-start`, `inset-inline-end`…) so one rule serves both directions. Wrap prices and numeric ranges in Arabic strings with LRI/PDI isolates (`⁦…⁩`) so they keep their visual order.
+`?lang=ar` / `?lang=en` forces a language, remembered in `localStorage` (`cc-lang`). English lives in the HTML; Arabic sits in `data-ar` on the same element (`data-ar-html` for markup, `data-ar-label` / `data-ar-title` for attributes). `scripts/lib/arize.mjs` produces standalone Arabic HTML files under `/ar/` and rewrites root links except `/assets/` and `/api/`. Use CSS logical properties (`margin-inline-start`, `inset-inline-end`) so one rule serves both directions.
 
-## Fonts
+## Fonts and artwork
 
-English roles remain Signate Grotesk (headings), Raleway (titles/buttons) and Poppins (body). Existing TTF files now have lossless WOFF2 web versions, used by `ds.css`. Alexandria, IBM Plex Sans Arabic and Comfortaa are self-hosted WOFF2 with adjacent OFL licenses; no Google Fonts request is needed. Provenance: [`assets/fonts/SOURCES.md`](assets/fonts/SOURCES.md). **Signate web-embedding permission still needs owner approval.**
+All faces are self-hosted and served from `/assets/fonts/`; no Google Fonts request is made. Signate Grotesk was replaced by **Space Grotesk** (SIL OFL, licence committed at `assets/fonts/space-grotesk-OFL.txt`) on 2026-11-08 because web-embedding permission was never confirmed; the two Signate files were deleted. Provenance: [`assets/fonts/SOURCES.md`](assets/fonts/SOURCES.md). Ten abstract 16:9 illustrations were generated, converted to 1600px WebP (q82) and used with visible "illustrative — not client work / screenshot / photo" captions. Real licensed founder photography and permissioned client screenshots remain owner gates.
 
-## Deploy to Vercel
+## Deployment
 
-The repo is Vercel-ready — `vercel.json` is generated by `scripts/gen-pages.py` (build command, output dir, 301 redirects for every legacy WordPress URL, cache + security headers), so it always matches `_redirects`.
+- **Hostinger (current live host):** `npm run build` → upload `dist/` to `public_html`. `build.sh` generates `dist/.htaccess` from `_redirects` (47 rules), ships `dist/crm/index.html` (static shell only) and copies every route folder. The API must be deployed separately as described above.
+- **Vercel:** `vercel.json` is generated by `scripts/gen-pages.py` from the same redirect table (build `sh build.sh`, output `dist`). It is a static-only deployment unless a serverless API is added.
+- **Custom domain:** the live domain is `https://codeandcanvas.net`; do not switch DNS until `npm run verify:live` passes after deployment.
 
-**One-time setup (dashboard):** Vercel → *Add New → Project* → import `3boalazm/codeandcanvas-native` → Framework Preset **Other** → leave Build Command / Output Directory as detected from `vercel.json` (`sh build.sh` → `dist`) → *Deploy*. Every push to the production branch redeploys; other branches get preview URLs.
+As of 2026-11-08 the live domain still serves the **pre-overhaul build**: `/book/` redirects to `/contact/#book`, `/work/` is a 404 body, `/blog/` still marks two articles "Coming soon" and `/contact/` has no consent field. Full details: [`docs/PRODUCTION-VERIFICATION.md`](docs/PRODUCTION-VERIFICATION.md).
 
-**Or from the terminal:**
+## Remaining owner / legal gates (not code work)
 
-```sh
-npm i -g vercel
-vercel login
-vercel          # first run links the folder to a project and creates a preview
-vercel --prod   # production deploy
-```
+1. Human preview approval, then merge to `main`.
+2. Configure `environment: production` required reviewers.
+3. Deploy the Node API same-origin with an encrypted managed database, real `CC_ADMIN_TOKEN` and an approved mail provider.
+4. Qualified legal sign-off on jurisdiction-specific policy wording.
+5. Licensed founder/team photos, verified Google Business Profiles, street addresses and permissioned local references.
+6. Permissioned real client screenshots/outcomes before upgrading any concept study to a client case.
+7. `npm run verify:live` on the live domain after deployment.
 
-**Custom domain:** Project → *Settings → Domains* → add `codeandcanvas.net` + `www.codeandcanvas.net` (redirect www → apex). At the registrar point `A @ → 76.76.21.21` and `CNAME www → cname.vercel-dns.com`. Keep the WordPress host alive until the Vercel deployment is verified, then switch DNS — the legacy URLs keep working through the redirects. HTTPS is automatic.
+## Historical documents
 
-What the config does: `trailingSlash: true` (`/services` → `/services/`), `cleanUrls: true`, `404.html` served for unknown paths, `/assets/fonts/*` cached for a year, CSS/JS for an hour with stale-while-revalidate, HTML always revalidated, plus `X-Content-Type-Options` / `X-Frame-Options` / `Referrer-Policy` / `Permissions-Policy` headers. Static preview needs no environment variables. Optional real integrations require a separately implemented backend and approved public configuration in `assets/js/config.js`; never put secrets there. See *Integration points*.
-
-## Integration points (no backend is bundled)
-
-The authoritative contract is [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md). The previous localStorage purchase/auth simulation has been removed.
-
-| Feature | Current behavior |
-| --- | --- |
-| Contact / newsletter / careers | Manual WhatsApp/email drafts by default, explicitly **not sent**. Optional same-origin `/api/` endpoint succeeds only on 2xx JSON `{accepted:true}`. Timeout/error keeps inputs. |
-| Booking | Manual link by default; approved HTTPS scheduler can be set in public config, preserving service context. Click ≠ confirmed booking. |
-| Accounts / payments | Unavailable; no fake sign-in, reset, order, receipt or entitlement. Google login disabled. Real commerce needs a server-led release. |
-| Books | Single-copy saved IDs in `cc-cart`, catalogue-generated display data, local preview list/count, public reader content. `cc-library` is not ownership. |
-| Measurement | Bounded local diagnostics; configured first-party collector sends only after consent, respecting DNT/GPC. Footer permits withdrawal. No personal form values or URL queries in events. |
-| Artwork / evidence | Three labeled scope diagrams, not screenshots. Real client proof/portraits/permissions remain gates in [`docs/ASSET-AND-CLAIM-REGISTER.md`](docs/ASSET-AND-CLAIM-REGISTER.md). |
-| Hosting | Generated `_redirects` and `vercel.json`. Local slash redirects preserve query strings. Production cutover remains unperformed. |
-
-## Regression and source consistency
-
-```sh
-npm ci
-npx playwright install chromium
-npm run generate         # Python 3 + shared chrome sync
-npm run check            # links/anchors/tag balance + isolated generator parity
-npm test                 # Chromium flows, bilingual route matrix, geometry and axe
-npm run build
-```
-
-`npm run test:flows`, `npm run test:matrix`, and `npm run test:a11y` run subsets. `PW_EXECUTABLE_PATH`, optional JSON `PW_BROWSER_ARGS`, and `TEST_BASE_URL` support an existing browser/local server. Tests abort external traffic and mock API responses: no message or payment is sent. They do not certify a live provider, physical devices, screen readers, Safari/Firefox or production Lighthouse/CrUX.
-
-`check-links.mjs` is lightweight static validation, not a full HTML validator, CSS audit, icon audit or browser accessibility test. `check-generated.mjs` regenerates 48 outputs in a temporary directory and compares bytes without overwriting the workspace. The sitemap no longer claims a fresh last-modified date simply because the generator ran. Update generators first, then regenerate—never fix generated inner HTML alone.
-
-Latest implementation report: [`docs/completion-2026-10-14/REPORT.md`](docs/completion-2026-10-14/REPORT.md). Historical audit: [`docs/audit/verification-2026-10-14/REPORT.md`](docs/audit/verification-2026-10-14/REPORT.md). These are deliberately separate; audit screenshots/results do not validate later code.
-
-## Scope
-
-This repository contains an independently developed site for review. It does not modify the existing production website, its domain, DNS, or any production deployment. Pricing, service details, contact methods and destination links were taken from <https://codeandcanvas.net/>. Every public route of the live site now has a native twin (see `docs/SITEMAP.md` §6 for the URL map and `_redirects` for the legacy URLs). `manus-routes.json` lists all routes and redirects.
-
-## Before publishing the ERP page
-
-`assets/js/erp-data.js`: confirm that the compliance claims (KSA: ZATCA phase 2, VAT 15%, GOSI / WPS-Mudad, Hijri calendar; Egypt: ETA e-invoice / e-receipt, VAT 14%, social insurance), module features and go-live durations match the licensed product. The proposal deliberately contains no client counts, logos, testimonials or prices. The homepage teaser avoids the compliance claims on purpose.
+`docs/OVERHAUL-PLAN.md`, `docs/OVERHAUL-REPORT.md`, `docs/NEXT-CHAT-HANDOFF.md`, `docs/SITEMAP.md`, `docs/audit/*` and `docs/completion-2026-10-14/*` describe the 2026-10 baseline and the audit that motivated this work. They are kept as evidence, not as current operating instructions.

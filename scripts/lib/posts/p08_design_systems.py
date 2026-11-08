@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Live URL was /from-brand-identity-to-brand-systems/ (WP title "… – Copy"); the hub
-# card linked /design-systems-operating-system-modern-digital-products/ (404). We publish
-# under the hub slug and redirect the old one (see _redirects).
+# The old WordPress "… – Copy" URL /from-brand-identity-to-brand-systems/ used to hold
+# this text. That slug is now a real, separate article (p07), so it must NOT be an alias
+# here: two different redirect targets for one source would be ambiguous on every host.
 POST = dict(
     slug='design-systems-operating-system-modern-digital-products',
-    aliases=['from-brand-identity-to-brand-systems'],
+    aliases=[],
     title='Design Systems: The Operating System of Modern Digital Products',
     title_ar='أنظمة التصميم: نظام التشغيل للمنتجات الرقمية الحديثة',
     cat='Design Systems', cat_ar='أنظمة التصميم', minutes=5, date='June 2026', author='ma', emoji='⚙️',

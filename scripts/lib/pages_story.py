@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """/our-story/ — the five practices the studio grew out of, told as chapters.
 v3 layout: numbered heads, mono chapter plates, dense index of the chapters."""
-from h import esc, icon, crumbs, closing, btn, page, sec_head, facts
+from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, studio_figure
 
 CHAPTERS = [
     dict(id='architecture', num='01', accent='tech', kicker='Technology & Architecture', kicker_ar='التقنية والعمارة',
@@ -22,8 +22,8 @@ CHAPTERS = [
          cap='MA · Brand Systems', cap2='Brand systems built across sectors', cap2_ar='أنظمة علامة عبر قطاعات مختلفة', flip=True),
     dict(id='healthcare', num='03', accent='health', kicker='Healthcare Vertical', kicker_ar='قطاع الرعاية الصحية',
          title='Where clinical context is built in from day one.', title_ar='حيث يُبنى السياق السريري من اليوم الأول.',
-         lead='Clinical context from the first call — not briefed in on the first call. <strong>CPHIMS. EMRAM. CBAHI. NORA.</strong> Not listed frameworks. Worked credentials.',
-         lead_ar='سياق سريري من أول مكالمة — لا شرح يُقدَّم في أول مكالمة. <strong>CPHIMS. EMRAM. CBAHI. NORA.</strong> ليست أطرًا مُدرجة بل اعتمادات يمارسها الفريق.',
+         lead='Clinical context from the first call — not briefed in on the first call. <strong>CPHIMS. EMRAM. CBAHI. NORA.</strong> Frameworks and readiness criteria we work within; certificate status is documented in the claims register.',
+         lead_ar='سياق سريري من أول مكالمة — لا شرح يُقدَّم في أول مكالمة. <strong>CPHIMS. EMRAM. CBAHI. NORA.</strong> أطر ومعايير نعمل في سياقها؛ وحالة الشهادات موثّقة في سجل الادعاءات.',
          body='Healthcare IT is where a wrong decision costs most — a misaligned HIS is not a licence you cancel, it is years of workarounds and manual reporting. We operate <em>inside</em> the ecosystem: clinical workflow context in every technology recommendation, CBAHI-aware design in every visual decision.',
          body_ar='تقنية الرعاية الصحية هي حيث يكلّف القرار الخاطئ أكثر — النظام غير المتوائم ليس ترخيصًا يُلغى، بل سنوات من الحلول المؤقتة والتقارير اليدوية. نعمل <em>داخل</em> المنظومة: سياق مسارات العمل السريرية في كل توصية تقنية، وتصميم واعٍ بـ CBAHI في كل قرار بصري.',
          pills=['CPHIMS', 'HIMSS EMRAM', 'CBAHI', 'NORA'], href='/healthcare/',
@@ -104,6 +104,13 @@ def build():
       </section>
 
       <!-- ░░ Chapters index ░░ -->
+      <!-- ░░ Studio visual (labelled illustrative artwork) ░░ -->
+{studio_figure('studio-atmosphere', 'THE STUDIO, IN ONE FRAME', 'الاستوديو في إطار واحد',
+        'Abstract illustrative artwork representing the studio disciplines — not a photograph of people or offices',
+        'عمل فني تجريدي توضيحي يمثّل تخصصات الاستوديو — ليس صورة أشخاص أو مقر',
+        'Real, licensed founder and team photography is an owner gate. Until it is supplied, this page uses clearly labelled illustrative artwork instead of invented portraits.',
+        'صور حقيقية مرخّصة للمؤسسين والفريق بوابة بانتظار المالك. إلى أن تُوفَّر، تستخدم هذه الصفحة أعمالًا توضيحية مُعلَّنة بدل صور مُختلقة.')}
+
       <section class="section container section--flush-top" id="chapters" aria-labelledby="chapters-title">
         {sec_head('01', 'THE CHAPTERS', 'الفصول',
                   '<span id="chapters-title" data-ar="كل مسار بنيناه، ومن يقوده.">Every track we built, and who leads it.</span>',

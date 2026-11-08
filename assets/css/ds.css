@@ -7,8 +7,8 @@
    ========================================================================== */
 
 /* ---------- Tokens ---------- */
-/* ---------- Fonts (self-hosted): Signate Grotesk = headings · Raleway = titles · Poppins = subtitles & body ---------- */
-@font-face { font-family: 'Signate Grotesk'; src: url('../fonts/signategrotesk-black.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+/* ---------- Fonts (self-hosted, all OFL): Space Grotesk = headings · Raleway = titles · Poppins = body ---------- */
+@font-face { font-family: 'Space Grotesk'; src: url('../fonts/space-grotesk-latin-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Raleway'; src: url('../fonts/Raleway-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
@@ -73,7 +73,7 @@
   --nav-h: 76px;
 }
 html[lang='en'] {
-  --f-head: 'Signate Grotesk', 'Raleway', system-ui, sans-serif;   /* headings   */
+  --f-head: 'Space Grotesk', 'Alexandria', 'Raleway', system-ui, sans-serif;   /* headings   */
   --f-title: 'Raleway', system-ui, sans-serif;                     /* titles     */
   --f-body: 'Poppins', system-ui, sans-serif;                      /* subtitles + body */
   --f-display: var(--f-title);

@@ -56,6 +56,11 @@ for (const file of walk(ROOT)) {
     out = out.replace(re, (_, open, close) => `${open}\n${body.replace(/\s+$/, '')}\n    ${close}`);
   }
   if (!hasMarkers) continue;
+  // Per-route Open Graph card: <html data-og="…"> is the single source of truth.
+  // The shared head carries {{OG_IMAGE}} so every page gets an honest, distinct
+  // social preview instead of the old site-wide default.
+  const og = (src.match(/<html[^>]*\sdata-og="([^"]+)"/) || [])[1] || '/assets/brand/og-default.png';
+  out = out.split('{{OG_IMAGE}}').join(og);
   touched++;
   if (out !== src) {
     changed++;

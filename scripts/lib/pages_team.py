@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """/team/ — the two founders, what each one owns in the service catalogue, and the
 engagements that require both. v3 layout: numbered heads, ownership rows, dense index."""
-from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, svc_index_row, PERSON_LD
+from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, svc_index_row, PERSON_LD, studio_figure
 from catalog import SERVICES, TRACKS
 
 AHMED = {
@@ -120,6 +120,14 @@ def build():
                 ('Countries — KSA · Egypt', 'دولتان — السعودية · مصر', '2', True)])}
       </section>
 
+      <!-- ░░ Studio visual (labelled illustrative artwork) ░░ -->
+{studio_figure('studio-atmosphere', 'THE STUDIO, IN ONE FRAME', 'الاستوديو في إطار واحد',
+        'Abstract illustrative artwork representing the studio disciplines — not a photograph of people or offices',
+        'عمل فني تجريدي توضيحي يمثّل تخصصات الاستوديو — ليس صورة أشخاص أو مقر',
+        'Real, licensed founder and team photography is an owner gate. Until it is supplied, this page uses clearly labelled illustrative artwork instead of invented portraits.',
+        'صور حقيقية مرخّصة للمؤسسين والفريق بوابة بانتظار المالك. إلى أن تُوفَّر، تستخدم هذه الصفحة أعمالًا توضيحية مُعلَّنة بدل صور مُختلقة.')}
+
+      <!-- ░░ Founders ░░ -->
       {person(AHMED)}
       {person(MUSTAFA, .05)}
 
@@ -161,6 +169,13 @@ def build():
             <div class="field"><label for="f-time" data-ar="وقت فراغك اليومي">Your Daily free time</label>
               <select id="f-time" name="daily_free_time"><option value="" data-ar="- اختر -">- Select -</option><option value="Daytime" data-ar="نهارًا">Daytime</option><option value="Nighttime" data-ar="ليلًا">Nighttime</option></select></div>
             <div class="field"><label for="f-note" data-ar="ملاحظتك">Your note</label><textarea id="f-note" name="message" rows="3"></textarea></div>
+            <div class="check">
+              <label class="book-consent" for="f-consent">
+                <input id="f-consent" name="consent" type="checkbox" required />
+                <span data-ar-html="أوافق على معالجة بياناتي لمراجعة الطلب وتسجيله في نظام العملاء وفق &lt;a href=&quot;/privacy-policy/&quot;&gt;سياسة الخصوصية&lt;/a&gt;.">I agree that my details are processed to review this application and stored in the lead system under the <a href="/privacy-policy/">Privacy Policy</a>.</span>
+              </label>
+              <span class="field__err" data-ar="يرجى تأكيد الموافقة للمتابعة.">Please confirm your agreement to continue.</span>
+            </div>
             <div class="form__actions">
               <button class="btn btn--primary magnetic" type="submit"><span data-ar="إرسال">Submit</span><i class="flip" data-icon="arrowUpRight"></i></button>
               <span class="field__hint" data-ar="يُفتح طلبك في واتساب أو البريد حتى يُربط النموذج بخدمة إرسال.">Opens in WhatsApp or e-mail until a form endpoint is connected.</span>

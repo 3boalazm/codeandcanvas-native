@@ -192,6 +192,8 @@
         const result = await res.json();
         if (!res.ok || result.accepted !== true) throw new Error('Request not accepted');
         CC.track('form-success', { form: kind });
+        CC.track('form_submit', { form: kind, id: result.id }); // canonical funnel event
+        if (result.id) form.dataset.leadId = result.id;
         showStatus(form, 'ok', `<strong>${esc(t('Your request was received.', 'تم استلام طلبك.'))}</strong> ${esc(t('We will follow up using your contact details.', 'سنتابع معك عبر بيانات التواصل التي أرسلتها.'))}`);
         form.reset(); return 'accepted';
       } catch {
@@ -223,10 +225,28 @@
   let bookUrl = '';
   try { const u = new URL(configuredBooking); if (u.protocol === 'https:' && !u.username && !u.password) bookUrl = u.href; } catch { /* keep manual booking link */ }
   if (bookUrl) $$('[data-book]').forEach((a) => { const url = new URL(bookUrl); const service = new URLSearchParams(location.search).get('inquiry'); if (/^(AB|MA|HC|CC)-\d{2}$/.test(service || '')) url.searchParams.set('service', service); a.href = url.href; a.target = '_blank'; a.rel = 'noopener'; });
+  else {
+    // First-party scheduler: specialty → slot → confirmation → calendar invite.
+    const path = window.CC_CONFIG?.bookingPath || '/book/';
+    $$('[data-book]').forEach((a) => {
+      const url = new URL(path, location.origin);
+      const service = new URLSearchParams(location.search).get('inquiry');
+      if (/^(AB|MA|HC|CC)-\d{2}$/.test(service || '')) url.searchParams.set('service', service);
+      a.href = url.pathname + url.search + (location.hash === '#book' ? '' : '');
+    });
+  }
 
   $$('form[data-form]').forEach((form) => {
     form.noValidate = true;
-    $$('input, select, textarea', form).forEach((i) => i.addEventListener('input', () => { i.closest('.field, .check')?.classList.remove('is-invalid'); i.removeAttribute('aria-invalid'); (i.getAttribute('aria-describedby') || '').split(/\s+/).forEach(id => { const error = document.getElementById(id); if (error?.classList.contains('field__err')) error.hidden = true; }); }));
+    // Funnel: one form_start per form, on the first real interaction (never on page load).
+    let started = false;
+    const markStart = () => {
+      if (started || !window.CC?.track) return;
+      started = true;
+      CC.track('form_start', { form: form.dataset.integration || form.dataset.form || 'contact' });
+    };
+    form.addEventListener('focusin', markStart, { passive: true });
+    $$('input, select, textarea', form).forEach((i) => i.addEventListener('input', () => { markStart(); i.closest('.field, .check')?.classList.remove('is-invalid'); i.removeAttribute('aria-invalid'); (i.getAttribute('aria-describedby') || '').split(/\s+/).forEach(id => { const error = document.getElementById(id); if (error?.classList.contains('field__err')) error.hidden = true; }); }));
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (form.dataset.submitting === 'true') return;

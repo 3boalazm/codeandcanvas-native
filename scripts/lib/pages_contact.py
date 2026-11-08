@@ -44,6 +44,17 @@ def build():
         </div>
       </section>
 
+      <!-- ░░ Where your message actually goes ░░ -->
+      <section class="section container section--tight" id="pipeline" aria-labelledby="pipeline-title">
+        <div class="panel panel--deep" data-reveal>
+          <p class="kicker"><span data-ar="استقبال فعلي للعملاء">A REAL LEAD PIPELINE</span></p>
+          <h2 id="pipeline-title" style="font-size:clamp(22px,2.4vw,30px);margin:10px 0" data-ar="رسالتك لا تضيع في مسودة.">Your message does not disappear into a draft.</h2>
+          <p class="lead" data-ar="تُرسل إلى واجهة برمجية من الطرف الأول تُجري التحقّق والحماية من الرسائل المزعجة وتسجيل الموافقة، ثم تُنشئ سجل عميل في نظام إدارة العلاقات، ثم تُطلق إشعارًا للفريق. تبدأ كل فرصة في مرحلة «جديد» أو «مؤهّل» وتنتقل إلى عرض، أو ربح، أو خسارة.">It goes to a first-party API that validates the fields, applies spam protection and records consent; a CRM lead is created, a notification is sent, and every opportunity moves through New → Qualified → Proposal → Won / Lost.</p>
+          <div class="pill-list" style="margin-top:16px"><span class="pill" data-ar="تحقّق">Validation</span><span class="pill" data-ar="حماية من السبام">Spam protection</span><span class="pill" data-ar="موافقة">Consent</span><span class="pill" data-ar="سجل عميل">CRM record</span><span class="pill" data-ar="إشعار">Notification</span><span class="pill" data-ar="مراحل الفرصة">Pipeline stages</span></div>
+          <p class="field__hint" style="margin-top:14px" data-ar="إن لم تكن الخدمة متصلة على الاستضافة، يوضّح الموقع أن الرسالة لم تُرسل ويقدّم قنوات يدوية صريحة — ولا يدّعي نجاحًا وهميًا.">If the endpoint is unavailable on a static host, the site says the message was not sent and offers explicit manual channels — it never claims a fake success.</p>
+        </div>
+      </section>
+
       <!-- ░░ Form + booking ░░ -->
       <section class="section container section--tight" id="message" aria-labelledby="form-title">
         <div class="grid grid--side">
@@ -69,9 +80,16 @@ def build():
               <span class="field__err" data-ar="اختر نوع الاستفسار.">Please select an inquiry type.</span>
             </div>
             <div class="field"><label for="c-msg" data-ar-html="رسالتك &lt;i&gt;*&lt;/i&gt;">Your Message <i>*</i></label><textarea id="c-msg" name="message" rows="5" required minlength="10"></textarea><span class="field__err" data-ar="اكتب رسالة قصيرة.">Please write a short message.</span></div>
+            <div class="check" style="margin-top:6px">
+              <label class="book-consent" for="c-consent">
+                <input id="c-consent" name="consent" type="checkbox" required />
+                <span data-ar-html="أوافق على معالجة بياناتي للرد على هذا الاستفسار وتسجيله في نظام العملاء، وفق &lt;a href=&quot;/privacy-policy/&quot;&gt;سياسة الخصوصية&lt;/a&gt;. يمكنني طلب الحذف عبر info@codeandcanvas.net.">I agree that my details are processed to answer this inquiry and stored as a lead record, as described in the <a href="/privacy-policy/">Privacy Policy</a>. I can request deletion at info@codeandcanvas.net.</span>
+              </label>
+              <span class="field__err" data-ar="يرجى تأكيد الموافقة للمتابعة.">Please confirm your agreement to continue.</span>
+            </div>
             <div class="form__actions">
               <button class="btn btn--primary magnetic" type="submit"><span data-ar="أرسل الرسالة">Send Message</span><i class="flip" data-icon="mail"></i></button>
-              <span class="field__hint" data-ar="نرد خلال يوم عمل واحد. أكمل الإرسال في واتساب عند فتحه.">We reply within one business day. Complete sending in WhatsApp when prompted.</span>
+              <span class="field__hint" data-ar="يُحفظ الطلب كسجل عميل، ويُخطر الفريق، ونرد خلال يوم عمل واحد.">Your inquiry is stored as a lead record, the team is notified, and we reply within one business day.</span>
             </div>
             <div class="form__status" role="status" aria-live="polite"></div>
           </form>
@@ -80,10 +98,10 @@ def build():
             <div class="panel tier">
               <span class="card__icon">{icon('calendar')}</span>
               <h3 data-ar="تفضّل مكالمة مجدولة؟">Prefer a scheduled call?</h3>
-              <p data-ar="احجز جلسة استراتيجية مجانية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.">Book a free 30-min strategy session — we come prepared, not with a pitch.</p>
+              <p data-ar="احجز جلسة استراتيجية مجانية مدتها 30 دقيقة — اختر التخصص والموعد، واحصل على تأكيد ودعوة تقويم. نأتي مستعدين، لا بعرض مبيعات.">Book a free 30-min strategy session — choose a specialty and slot, get a confirmation and a calendar invite. We come prepared, not with a pitch.</p>
               <div class="book-card__actions">
-                <a class="btn btn--primary" data-book href="https://wa.me/966545520750?text=Hi%20Code%20%26%20Canvas%20%E2%80%94%20I%27d%20like%20to%20book%20a%2030-min%20discovery%20call." target="_blank" rel="noopener"><span data-ar="احجز مكالمة استراتيجية مجانية">Book a Free Strategy Call</span><i class="flip" data-icon="arrowUpRight"></i></a>
-                <a class="btn btn--glass" href="/services/"><span data-ar="عرض الخدمات">View Services</span></a>
+                <a class="btn btn--primary" data-book href="/book/" data-track="cta_click" data-track-id="contact-book"><span data-ar="احجز مكالمة استراتيجية مجانية">Book a Free Strategy Call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+                <a class="btn btn--glass" href="/book/"><span data-ar="افتح صفحة الحجز">Open the booking page</span></a>
               </div>
               <ul class="ticks ticks--dense" style="margin-top:18px">
                 <li data-ar="30 دقيقة · عن بُعد · بالعربية أو الإنجليزية">30 minutes · remote · Arabic or English</li>

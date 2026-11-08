@@ -5,8 +5,13 @@ node_modules/
 erp-proposal/
 __pycache__/
 *.pyc
-dist/
+
+# Runtime lead pipeline store — contains personal data, never commit it.
+.data/
 
 # Browser test outputs (curated evidence belongs in docs/completion-*)
 test-results/
 playwright-report/
+
+# Applied historical full-repo patches are not source files.
+*.patch

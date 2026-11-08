@@ -15,8 +15,9 @@ from catalog import SERVICES, TRACKS, href  # noqa: E402
 from h import esc, t, th, icon, arrow, svc_card, svc_grid, crumbs, closing, btn, page  # noqa: E402
 
 import pages_services, pages_technology, pages_creative, pages_healthcare, pages_about, pages_story, pages_methodology, pages_team, pages_pricing, pages_contact, pages_blog, pages_work, pages_books, pages_shop, pages_legal  # noqa: E402
+import pages_portfolio, pages_landing, pages_booking, pages_locations  # noqa: E402
 
-BUILDERS = [pages_services.build, pages_technology.build, pages_creative.build, pages_healthcare.build, pages_about.build, pages_story.build, pages_methodology.build, pages_team.build, pages_pricing.build, pages_contact.build, pages_blog.build, pages_work.build, pages_books.build, pages_shop.build, pages_legal.build]
+BUILDERS = [pages_portfolio.build, pages_landing.build, pages_booking.build, pages_locations.build, pages_services.build, pages_technology.build, pages_creative.build, pages_healthcare.build, pages_about.build, pages_story.build, pages_methodology.build, pages_team.build, pages_pricing.build, pages_contact.build, pages_blog.build, pages_work.build, pages_books.build, pages_shop.build, pages_legal.build]
 
 import json  # noqa: E402
 import h  # noqa: E402
@@ -31,14 +32,24 @@ STATIC_REDIRECTS = [
     ('/blogs/', '/blog/'), ('/blogs', '/blog/'),
     ('/healthcare-hub/', '/healthcare/'), ('/healthcare-hub', '/healthcare/'),
     ('/solutions', '/services/'), ('/solutions/', '/services/'),
-    ('/book', '/contact/#book'), ('/book/', '/contact/#book'),
     ('/our-team/', '/team/'), ('/our-team', '/team/'), ('/elementor-6205/', '/team/'),
-    ('/account-center/', '/account/'), ('/account-center', '/account/'), ('/my-account/', '/account/'), ('/my-account', '/account/'),
+    ('/account-center/', '/resources/'), ('/account-center', '/resources/'), ('/my-account/', '/resources/'), ('/my-account', '/resources/'),
     ('/shop/', '/books/'), ('/shop', '/books/'), ('/product/', '/books/'), ('/product-category/*', '/books/'),
     ('/wp-login.php', '/login/'), ('/wp-admin/*', '/login/'),
     ('/strategic-branding-differentiation-vs-visual-identity/', '/blog/why-most-brands-look-different-but-feel-the-same/'),
     ('/full-brand-identity/', '/creative-services/#ma-03'), ('/it-solutions/', '/technology-services/'), ('/data-analysis/', '/technology-services/#ab-03'),
     ('/feed/', '/blog/'), ('/feed', '/blog/'),
+    # 2026-11 growth layer: new first-party routes and legacy aliases
+    ('/portfolio/', '/work/'), ('/portfolio', '/work/'),
+    ('/our-work/', '/work/'), ('/our-work', '/work/'),
+    ('/book-a-call/', '/book/'), ('/book-a-call', '/book/'),
+    ('/booking/', '/book/'), ('/booking', '/book/'),
+    ('/appointments/', '/book/'),
+    ('/locations/', '/saudi-arabia/'),
+    ('/ksa/', '/saudi-arabia/'), ('/saudi/', '/saudi-arabia/'),
+    ('/eg/', '/egypt/'), ('/egypt-services/', '/egypt/'),
+    ('/evidence/', '/claims/'), ('/claim-register/', '/claims/'),
+    ('/library/', '/resources/'),
 ]
 
 
@@ -94,7 +105,8 @@ def meta_files():
     # --- robots.txt ---
     write('robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
     # --- manus-routes.json (host route manifest) ---
-    routes = [{'path': '/', 'title': 'Code & Canvas — Business Development, By Design'}, {'path': '/erp/', 'title': 'CanvasOne ERP — Code & Canvas'}]
+    routes = [{'path': '/', 'title': 'Code & Canvas — Business Development, By Design'}, {'path': '/erp/', 'title': 'CanvasOne ERP — Code & Canvas'},
+             {'path': '/ar/', 'title': 'Code & Canvas — الرئيسية', 'lang': 'ar'}, {'path': '/ar/erp/', 'title': 'CanvasOne ERP — العربية', 'lang': 'ar'}]
     routes += [{'path': p[0], 'title': p[1]} for p in pages]
     routes.append({'path': '/404.html', 'title': '404 — Lost · Code & Canvas', 'notFound': True})
     routes += [{'path': ('/ar/' if p[0] == '/' else '/ar' + p[0]), 'title': p[2], 'lang': 'ar'} for p in pages]

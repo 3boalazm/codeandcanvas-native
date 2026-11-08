@@ -1,6 +1,9 @@
-# Builds dist/ on every push to main and publishes it to the `hostinger`
-# branch. Hostinger (hPanel → Advanced → Git) deploys that branch into
-# public_html; its auto-deployment webhook fires on the push.
+# Publishes dist/ to the `hostinger` branch ONLY after the mandatory gate,
+# a human production approval, and (post-deploy) live-domain verification.
+#
+# A green Actions run alone is NOT evidence that the site answers: the
+# verify-live job requests the real public domain and fails the workflow if any
+# core route is missing, a 404, or an unresolved shared-head placeholder.
 name: Deploy to Hostinger
 
 on:
@@ -13,20 +16,68 @@ permissions:
 
 concurrency:
   group: deploy-hostinger
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  gate:
+    name: Gate — generate · check · test · build
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
 
-      - name: Build
-        run: sh build.sh
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: 1 · Generate all pages
+        run: npm run generate
+
+      - name: 2 · Source consistency, links, claims, OG assets
+        run: npm run check
+
+      - name: 3 · Playwright + accessibility matrix
+        run: npm test
+
+      - name: 4 · First-party API / CRM / booking smoke test
+        run: npm run verify:api
+
+      - name: 5 · Production build
+        run: npm run build
+
+      - name: Upload dist for deployment
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 3
+
+  deploy:
+    name: Deploy (requires production approval)
+    needs: gate
+    runs-on: ubuntu-latest
+    # The owner must configure this Environment with required reviewers.
+    # Without that protection rule the gate alone does not constitute approval.
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download built site
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
 
       - name: Publish dist/ to the hostinger branch
         run: |
@@ -37,3 +88,19 @@ jobs:
           git add -A
           git commit -q -m "Deploy ${GITHUB_SHA::7}"
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" hostinger
+
+  verify-live:
+    name: Verify the LIVE domain (not just this build)
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Wait for the host to pick up the new branch
+        run: sleep 45
+
+      - name: Request every core route on https://codeandcanvas.net
+        run: npm run verify:live

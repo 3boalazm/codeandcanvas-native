@@ -14,21 +14,28 @@ AUTHORS = {
     'cc': dict(ini='CC', name='Code & Canvas Editorial', name_ar='تحرير Code & Canvas',
                line='Product Strategy · Enterprise Architecture · Brand Identity · MENA',
                bio='Code & Canvas is a digital product studio and advisory firm operating across KSA and Egypt. We specialize in enterprise architecture, healthcare informatics, brand identity, and product strategy — helping organizations bridge the gap between innovation and measurable impact.',
+               bio_ar='Code &amp; Canvas استوديو منتجات رقمية وشركة استشارات تعمل في السعودية ومصر. نتخصّص في العمارة المؤسسية ومعلوماتية الرعاية الصحية وهوية العلامة واستراتيجية المنتج.',
+               line_ar='استراتيجية المنتج · العمارة المؤسسية · هوية العلامة · المنطقة',
                links=[('Our Services →', 'خدماتنا ←', '/services/'), ('Work With Us →', 'اعمل معنا ←', '/contact/'), ('Our Story →', 'قصتنا ←', '/our-story/')]),
     'ma': dict(ini='MA', name='Mustafa Aboalazm', name_ar='مصطفى أبو العزم',
                line='Head of Brand Strategy · Co-Founder · Code & Canvas · Al Obour, Egypt',
-               bio='Systemic Identity Architect and Senior Brand Designer with 9+ years building brand systems across MENA. Former Media Director at Nile Pharma Food. Co-Founder of Code & Canvas — where enterprise architecture meets strategic creative practice.',
+               bio='Co-Founder and Creative Director of Code & Canvas, working across brand systems, visual identity and production. Former Media Director at Nile Pharma Food. Where enterprise architecture meets strategic creative practice.',
+               bio_ar='المؤسس المشارك والمدير الإبداعي في Code &amp; Canvas، يعمل على أنظمة العلامة والهوية البصرية والإنتاج. مدير إعلامي سابق في Nile Pharma Food.',
+               line_ar='استراتيجية العلامة · مؤسس مشارك · العبور، مصر',
                links=[('Our Services →', 'خدماتنا ←', '/services/'), ('Work With Us →', 'اعمل معنا ←', '/contact/'), ('Portfolio ↗', 'الأعمال ↗', 'https://aboalazm-os.vercel.app/work')]),
 }
 
-COMING_SOON = [
-    dict(title='From Brand Identity to Brand Systems', title_ar='من هوية العلامة إلى أنظمة العلامة', cat='Brand Identity', cat_ar='هوية العلامة', minutes=4, emoji='🏛️', author='ma',
-         excerpt='Static manuals are obsolete. The evolution from logo to living system — and why it determines whether your brand scales or fractures.',
-         excerpt_ar='الأدلة الثابتة عفا عليها الزمن. التطور من الشعار إلى نظام حي — ولماذا يحدد ما إذا كانت علامتك ستتوسع أم تتصدع.'),
-    dict(title='Creative Strategy in the Age of Generative AI', title_ar='الاستراتيجية الإبداعية في عصر الذكاء الاصطناعي التوليدي', cat='Creative Strategy', cat_ar='الاستراتيجية الإبداعية', minutes=4, emoji='🤖', author='ma',
-         excerpt='GenAI can generate 1,500 names in hours. It has simultaneously made human judgment more valuable than ever.',
-         excerpt_ar='يستطيع الذكاء الاصطناعي التوليدي إنتاج 1,500 اسم في ساعات. وفي الوقت نفسه جعل الحكم البشري أثمن من أي وقت مضى.'),
-]
+# Both "coming soon" cards were written and published in November 2026.
+COMING_SOON = []
+
+# Illustrative cover artwork per article category. Labelled in the markup as
+# artwork, never as a screenshot, client photo or evidence of a result.
+COVERS = {
+    'Product Strategy': 'digital-product', 'Digital Transformation': 'web-experience',
+    'Product Thinking': 'digital-product', 'Brand Strategy': 'brand-system',
+    'Design Systems': 'digital-product', 'Experience Design': 'web-experience',
+    'Brand Identity': 'blog-brand-systems', 'Creative Strategy': 'blog-ai-strategy',
+}
 
 CAT_KEY = {'Product Strategy': 'product', 'Digital Transformation': 'transformation', 'Product Thinking': 'thinking',
            'Brand Strategy': 'brand', 'Brand Identity': 'brand', 'Design Systems': 'brand', 'Creative Strategy': 'brand', 'Experience Design': 'brand'}
@@ -80,8 +87,8 @@ def hub(posts):
         {crumbs([('Home', 'الرئيسية', '/'), ('Insights', 'الرؤى', None)])}
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="قاعدة معرفة Code &amp; Canvas">Code &amp; Canvas · Knowledge Base</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="أطر ومسائل">Frameworks and problems</span><br /><span class="grad-text" data-ar="من مشاريع فعلية.">from live engagements.</span></h1>
-        <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="الاستراتيجية والعمارة وأنظمة العلامة والتفكير المنتجي والتحول الرقمي — &lt;strong&gt;مكتوبة لفريق يحتاج قرارًا، لا لفريق يبحث عن مصطلحات.&lt;/strong&gt; كل مقال منشور بالإنجليزية، والصفحات العربية متاحة للتنقّل.">Strategy, architecture, brand systems, product thinking and digital transformation — <strong>written for a team that has to decide something, not for one collecting buzzwords.</strong> Articles are published in English; the Arabic site carries the navigation and the summaries.</p>
-        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Start with the most-read', 'ابدأ بالأكثر قراءة', f'#featured', 'primary', 'arrowDown')}{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book', 'glass')}</div>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="الاستراتيجية والعمارة وأنظمة العلامة والتفكير المنتجي والتحول الرقمي — &lt;strong&gt;مكتوبة لفريق يحتاج قرارًا، لا لفريق يبحث عن مصطلحات.&lt;/strong&gt; كل مقال منشور بالعربية والإنجليزية، بصفحة عربية مستقلة — لا مجرد تنقّل مترجم.">Strategy, architecture, brand systems, product thinking and digital transformation — <strong>written for a team that has to decide something, not for one collecting buzzwords.</strong> Every article is published in English and Arabic, with a real Arabic URL — not a translated navigation shell.</p>
+        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Start with the most-read', 'ابدأ بالأكثر قراءة', f'#featured', 'primary', 'arrowDown')}{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/', 'glass')}</div>
       </section>
 
       <!-- ░░ At a glance ░░ -->
@@ -138,8 +145,15 @@ def hub(posts):
               <input type="hidden" name="inquiry" value="Newsletter subscription" />
               <button class="btn btn--primary" type="submit"><span data-ar="اشترك ←">Subscribe →</span></button>
             </div>
+            <div class="check" style="margin-top:8px">
+              <label class="book-consent" for="sub-consent">
+                <input id="sub-consent" name="consent" type="checkbox" required />
+                <span data-ar-html="أوافق على استقبال رؤى Code &amp; Canvas على هذا البريد وفق &lt;a href=&quot;/privacy-policy/&quot;&gt;سياسة الخصوصية&lt;/a&gt;، ويمكنني إلغاء الاشتراك في أي وقت.">I agree to receive Code &amp; Canvas insights at this address under the <a href="/privacy-policy/">Privacy Policy</a>, and I can unsubscribe at any time.</span>
+              </label>
+              <span class="field__err" data-ar="يرجى تأكيد الموافقة للمتابعة.">Please confirm your agreement to continue.</span>
+            </div>
             <div class="form__status" role="status" aria-live="polite"></div>
-            <ul class="promises promises--inline" aria-label="Promises" data-ar-label="وعود"><li>{icon('check')}<span data-ar="بلا رسائل مزعجة أبدًا">No spam, ever</span></li><li>{icon('check')}<span data-ar="إلغاء الاشتراك في أي وقت">Unsubscribe anytime</span></li><li>{icon('check')}<span data-ar="رؤى المنتج والعلامة فقط">Product &amp; Brand insights only</span></li><li>{icon('check')}<span data-ar="السعودية + مصر · MENA">KSA + Egypt · MENA</span></li></ul>
+            <ul class="promises promises--inline" aria-label="Promises" data-ar-label="وعود"><li>{icon('check')}<span data-ar="بلا رسائل مزعجة أبدًا">No spam, ever</span></li><li>{icon('check')}<span data-ar="إلغاء الاشتراك في أي وقت · تأكيد مطلوب">Unsubscribe anytime · consent required</span></li><li>{icon('check')}<span data-ar="رؤى المنتج والعلامة فقط">Product &amp; Brand insights only</span></li><li>{icon('check')}<span data-ar="السعودية + مصر · MENA">KSA + Egypt · MENA</span></li></ul>
           </form>
         </div>
       </section>
@@ -152,9 +166,12 @@ def hub(posts):
 
 def article(p, by_slug):
     a = AUTHORS[p['author']]
+    cover_media = COVERS.get(p['cat'], 'studio-atmosphere')
+    if p.get('og'):
+        cover_media = p['og'].rsplit('/', 1)[-1].replace('.png', '')
     stats = ''.join(f'<div><strong>{esc(n)}</strong><span>{esc(l)}</span></div>' for n, l in p['stats'])
     cta = p.get('cta') or {}
-    prim = cta.get('primary', ('Book a Free Discovery Call', '/contact/#book'))
+    prim = cta.get('primary', ('Book a Free Discovery Call', '/book/'))
     sec = cta.get('secondary', ('Explore Services', '/services/'))
     cta_html = f'''
 <aside class="cta-box">
@@ -186,15 +203,21 @@ def article(p, by_slug):
             cs = next((c for c in COMING_SOON if s in ('creative-strategy-generative-ai-age', 'brand-identity-to-brand-systems') and ((s.startswith('creative') and c['cat'] == 'Creative Strategy') or (s.startswith('brand') and c['cat'] == 'Brand Identity'))), None)
             if cs:
                 related += card(cs, soon=True)
-    toc_items = [(m.group(1), re.sub(r'<[^>]+>', '', m.group(2))) for m in re.finditer(r'<h2 id="([^"]+)">(.*?)</h2>', p['body'])]
-    if tk: toc_items.append(('takeaways', tk[0]))
-    if concl: toc_items.append(('conclusion', concl[0]))
-    if p.get('faq'): toc_items.append(('faq', 'Frequently Asked Questions'))
-    toc_html = ''.join(f'<a href="#{i}">{esc(t)}</a>' for i, t in toc_items)
+    toc_items = []
+    for m in re.finditer(r'<h2 id="([^"]+)"([^>]*)>(.*?)</h2>', p['body'], re.S):
+        ar = re.search(r'data-ar="([^"]+)"', m.group(2))
+        toc_items.append((m.group(1), re.sub(r'<[^>]+>', '', m.group(3)), ar.group(1) if ar else None))
+    if tk: toc_items.append(('takeaways', tk[0], None))
+    if concl: toc_items.append(('conclusion', concl[0], None))
+    if p.get('faq'): toc_items.append(('faq', 'Frequently Asked Questions', 'الأسئلة الشائعة'))
+    toc_html = ''.join(f'<a href="#{i}"' + (f' data-ar="{esc(x)}"' if x else '') + f'>{esc(t)}</a>' for i, t, x in toc_items)
     links = ''.join(f'<a class="text-link" href="{h}"{" target=_blank rel=noopener" if h.startswith("http") else ""}><span data-ar="{esc(ar)}">{esc(en)}</span></a>' for en, ar, h in a['links'])
 
     ar = p.get('ar')
-    if ar:
+    if p.get('bilingual'):
+        lang_note = '<p class="post__lang-note" data-ar="منشورة بالعربية والإنجليزية · صفحة عربية مستقلة.">Published in Arabic and English · standalone Arabic page.</p>'
+        swaps = ''
+    elif ar:
         note_ar = 'منشورة بالإنجليزية كما كُتبت · <a href="/ar/blog/%s/" hreflang="ar" lang="ar">اقرأها بالعربية</a>' % p['slug']
         lang_note = ('<p class="post__lang-note" data-ar-html="%s">Published in English as written · '
                      '<a href="/ar/blog/%s/" hreflang="ar" lang="ar">Read it in Arabic</a>.</p>' % (esc(note_ar), p['slug']))
@@ -225,7 +248,11 @@ def article(p, by_slug):
           {lang_note}
         </header>
         <div class="post__cover" data-reveal>
-          <div class="art art--wide {'art--pink' if p['author'] == 'ma' else 'art--violet'}" data-slot="blog/{p['slug']}/cover"><span class="art__mark" style="font-size:96px">{p['emoji']}</span><span class="art__cap" data-ar="{esc(p['cat_ar'])} · Code &amp; Canvas">{esc(p['cat'])} · Code &amp; Canvas</span></div>
+          <div class="art art--wide {'art--pink' if p['author'] == 'ma' else 'art--violet'}" data-slot="blog/{p['slug']}/cover">
+            <img src="/assets/media/{esc(cover_media)}.webp" alt="Illustrative editorial artwork — not a screenshot or client photo" data-ar-alt="عمل فني تحريري توضيحي — ليس لقطة شاشة أو صورة عميل" width="1600" height="900" loading="eager" decoding="async" />
+            <span class="art__cap" data-ar="{esc(p['cat_ar'])} · Code &amp; Canvas">{esc(p['cat'])} · Code &amp; Canvas</span>
+            <span class="art__cap2" data-ar="عمل توضيحي · ليس إثباتًا">ILLUSTRATIVE ARTWORK · NOT EVIDENCE</span>
+          </div>
         </div>
         <div class="post__layout">
           <div class="post__body prose" id="post-body" dir="ltr" lang="en">
@@ -236,7 +263,7 @@ def article(p, by_slug):
             {faq_html}
             <aside class="author-box">
               <span class="avatar avatar--lg">{a['ini']}</span>
-              <div><strong>{esc(a['name'])}</strong><p class="meta">{esc(p.get('author_line') or a['line'])}</p><p>{esc(p.get('author_bio') or a['bio'])}</p><div class="author-box__links">{links}</div></div>
+              <div><strong data-ar="{esc(a['name_ar'])}">{esc(a['name'])}</strong><p class="meta" data-ar="{esc(a['line_ar'])}">{esc(p.get('author_line') or a['line'])}</p><p data-ar="{esc(a['bio_ar'])}">{esc(p.get('author_bio') or a['bio'])}</p><div class="author-box__links">{links}</div></div>
             </aside>
           </div>
           <aside class="post__side" id="post-side">
@@ -244,11 +271,21 @@ def article(p, by_slug):
             <div class="panel tier" style="margin-top:14px">
               <p class="kicker"><span data-ar="ناقش هذا المقال">Discuss this article</span></p>
               <p data-ar="احجز مكالمة استكشافية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.">Book a 30-minute discovery call — we come prepared, not with a pitch.</p>
-              <div class="book-card__actions">{btn('Book a Free Call', 'احجز مكالمة مجانية', '/contact/#book')}</div>
+              <div class="book-card__actions">{btn('Book a Free Call', 'احجز مكالمة مجانية', '/book/')}</div>
             </div>
           </aside>
         </div>
         {swaps}
+        <!-- ░░ Content funnel: article → service → case study → CTA → lead ░░ -->
+        <section class="section container section--tight" id="content-funnel" aria-labelledby="funnel-title">
+          <header class="sec-head" data-reveal><div><p class="sec-head__no"><b>NEXT</b><span data-ar="الخطوة التالية">THE NEXT STEP</span></p><h2 id="funnel-title" style="font-size:clamp(22px,2.4vw,30px)"><span data-ar="من الفكرة إلى">From the idea to</span> <span class="grad-text" data-ar="قرار قابل للتنفيذ.">an executable decision.</span></h2></div></header>
+          <div class="funnel" data-reveal>
+            <div class="funnel__item"><small data-ar="الخدمة">01 · SERVICE</small><a href="/services/brand-identity-design/" data-ar="هوية العلامة والأنظمة">Brand identity &amp; systems</a><p data-ar="النطاق والمخرجات والخطوات.">Scope, deliverables and steps.</p></div>
+            <div class="funnel__item"><small data-ar="دراسة">02 · WORK</small><a href="/work/bilingual-brand-system/" data-ar="دراسة منظومة العلامة">Brand-system study</a><p data-ar="المنهج مطبّقًا على موجز كامل.">The method on a full brief.</p></div>
+            <div class="funnel__item"><small data-ar="الدعوة">03 · CTA</small><a href="/contact/?inquiry=MA-03#message" data-track="cta_click" data-track-id="article-funnel" data-ar="استفسار بنطاق">Send a scoped inquiry</a><p data-ar="يصل كسجل عميل موثّق.">Arrives as a logged lead.</p></div>
+            <div class="funnel__item"><small data-ar="العميل">04 · LEAD</small><a href="/book/" data-track="cta_click" data-track-id="article-book" data-ar="احجز مكالمة">Book a 30-min call</a><p data-ar="تأكيد حقيقي ودعوة تقويم.">Real confirmation + calendar.</p></div>
+          </div>
+        </section>
         <section class="related">
           <div class="head-split"><h2 class="section__title" style="font-size:clamp(22px,2.4vw,30px)" data-ar="تابع القراءة">Continue reading</h2><a class="text-link" href="/blog/"><span data-ar="كل الرؤى ←">View all insights →</span></a></div>
           <div class="post-list">{related}
@@ -259,11 +296,13 @@ def article(p, by_slug):
     url = f'https://codeandcanvas.net/blog/{p["slug"]}/'
     author_ld = PERSON_LD['mustafa'] if p['author'] == 'ma' else {'@type': 'Organization', '@id': 'https://codeandcanvas.net/#org'}
     article = {'@type': 'Article', 'headline': p['title'], 'description': p['excerpt'], 'url': url, 'mainEntityOfPage': url,
-               'inLanguage': 'en', 'articleSection': p['cat'], 'timeRequired': f'PT{p["minutes"]}M', 'datePublished': '2026-06',
+               'inLanguage': ['en', 'ar'] if p.get('bilingual') else 'en', 'articleSection': p['cat'], 'timeRequired': f'PT{p["minutes"]}M',
+               'datePublished': '2026-11' if p.get('bilingual') else '2026-06',
                'author': author_ld, 'publisher': {'@id': 'https://codeandcanvas.net/#org'},
-               'image': 'https://codeandcanvas.net/assets/brand/og-default.png'}
+               'image': 'https://codeandcanvas.net' + (p.get('og') or '/assets/brand/og-default.png')}
     return page(f'/blog/{p["slug"]}/', title=f'{p.get("page_title") or p["title"]} — Code & Canvas', title_ar=f'{p["title_ar"]} — Code & Canvas',
-                desc=p['excerpt'], desc_ar=p['excerpt_ar'], nav='blog', body=body, og_type='article', ld=[article])
+                desc=p['excerpt'], desc_ar=p['excerpt_ar'], nav='blog', body=body, og_type='article',
+                og_image=p.get('og'), ld=[article])
 
 
 def build():

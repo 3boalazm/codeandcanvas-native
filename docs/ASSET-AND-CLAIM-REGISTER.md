@@ -58,3 +58,33 @@ All eight WebP derivatives are produced by `scripts/optimize-media.mjs`: 1600px 
 - These are **technical** resolutions. The editorial/legal approval rows above remain open: Arabic translations, licensed photography, permission-cleared client screenshots, and claim sources still require owner sign-off.
 
 **Still true:** the generated art makes the site feel alive; it does not close any claim, creative-proof, certification, legal, or production gate.
+
+---
+
+## 2026-11-08 · Founder work archive (text index, no imagery added)
+
+The owner's own portfolio (`https://aboalazm-os.vercel.app/work`, `/work/design`, `/work/development`) and public GitHub repositories were re-indexed into `/work/` as 25 bilingual text cards — 8 identity projects and 17 digital products. Full source/evidence mapping: `docs/FOUNDER-WORK-ARCHIVE.md`.
+
+**No image was copied, hotlinked, or regenerated for these entries.** Each card carries the project's year, a one-line description, stack/discipline chips, and links back to the founder's case study, live deployment and public repository. Four entries also cross-link to our own `/` or `/case-studies/`.
+
+| Material / claim | Current treatment | Required before stronger publication | Suggested reviewer |
+| --- | --- | --- | --- |
+| 25 founder projects | Text index explicitly labelled «Founder work, documented — not verified studio client claims» | Client permission, approved screenshots/photography, written attribution of role/team/date, and evidence source before any is reclassified as a studio client case | Project owner + client |
+| Project imagery on his portfolio | Not republished here; reached only via outbound links | Written publication permission and licensed originals if we ever host them | Founder + rights holder |
+| Numbers quoted from his case studies (64 screens, 21 views, 69 items, 5 languages, 23 routes, 15 modules) | Retained as attributed quotes with a link to the source case study; stale counts about our own build were removed | Dated source, denominator and methodology before any marketing reuse | Editorial + technical founder |
+| Overlap with `/case-studies/` (Zad, Nile Pharma ERP) | Linked to the existing pages with their published evidence limits | Unchanged — see the rows above | Engineering |
+
+The four labelled concept studies, the `/work/` honesty paragraph, the permission → evidence → attribution gate, and the claims/evidence register stay in place. **An archive of links is not a portfolio of proven outcomes.**
+
+---
+
+## 2026-11-08 · Legal registration numbers in the shared footer
+
+The owner supplied two identifiers and asked for them in the footer. They are now rendered on every EN page and its generated `/ar/` twin from `partials/bottom.html` (styled by `.footer__reg` in `assets/css/ds.css`):
+
+| Identifier | Value as published | Status | Required before legal sign-off | Suggested reviewer |
+| --- | --- | --- | --- | --- |
+| Commercial Register | `311891` EN / `٣١١٨٩١` AR | Owner-supplied, published verbatim | Match against the official commercial-register certificate: exact legal entity name, number, issue date and jurisdiction | Legal + studio owner |
+| Tax Registration | `774235055` EN / `٧٧٤٢٣٥٠٥٥` AR | Owner-supplied, published verbatim | Match against the official tax card / VAT registration: exact entity, number and jurisdiction | Legal + studio owner |
+
+The Arabic digits are a locale rendering of the **same** numbers, not different identifiers. These are identifiers, **not** a claim of certification, verification, tax filing status, or legal opinion, and they do **not** close the legal sign-off blocker in `docs/PUBLISH-GATE.md`. No certificate, tax card, or registry lookup was performed in this repository — the figures are published exactly as supplied by the owner and should be checked against the source documents before production.

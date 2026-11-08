@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
-"""/work/ — the visual portfolio hub + four *labelled* concept case studies.
+"""/work/ — the visual portfolio hub, four *labelled* concept case studies, and
+the founder work archive (25 re-indexed projects, see data_founder_work.py).
 
 Honesty contract: generated imagery is illustrative studio artwork. It is never
 captioned as a client deliverable, never presented as a product screenshot and
-never paired with a fabricated result. Real client cases stay in /case-studies/
-with their published evidence limits, and new ones enter through the intake and
-approval process in docs/PORTFOLIO-INTAKE.md.
+never paired with a fabricated result. The archive documents the co-founder's
+own published projects with links back to their sources; it does not promote
+them to verified studio client engagements. Real client cases stay in
+/case-studies/ with their published evidence limits, and new ones enter through
+the permission / evidence / attribution gate described on this page and in
+docs/ASSET-AND-CLAIM-REGISTER.md.
 """
 from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, media_img
 from data_growth import PORTFOLIO, CONCEPT_LABEL, CONCEPT_LABEL_AR, EVIDENCE, EVIDENCE_AR
+from data_founder_work import FOUNDER_WORK, IDENTITY, PRODUCT
 
 MEDIA = '/assets/media/'
 CAT_KEY = {'Brand Identity': 'brand', 'Packaging & Print': 'packaging', 'Digital Products': 'product', 'Web Experiences': 'web'}
@@ -31,6 +36,77 @@ def tile(p, i=0):
           </div>
         </div>
       </article>'''
+
+
+def archive_card(w):
+    """One compact, bilingual archive row. No imagery is republished here: the
+    founder's visuals stay on his own case-study pages, which every card links
+    to. External links are explicitly external; internal ones are rewritten by
+    the AR generator like every other first-party route."""
+    tags = ''.join(
+        f'<li data-ar="{esc(ar)}">{esc(en)}</li>'
+        for en, ar in zip(w['tags'], w['tags_ar'])
+    )
+    links = []
+    if w['case']:
+        links.append(('Case study ↗', 'دراسة الحالة ↗', w['case']))
+    if w['live']:
+        links.append(('Live ↗', 'الموقع المباشر ↗', w['live']))
+    if w['repo']:
+        links.append(('Code ↗', 'الكود ↗', w['repo']))
+    if w['own']:
+        links.append(('Our notes →', 'ملاحظاتنا →', w['own']))
+    link_html = ''.join(
+        f'<a href="{esc(url)}"'
+        + (' target="_blank" rel="noopener noreferrer"' if url.startswith('http') else '')
+        + f'><span data-ar="{esc(ar)}">{esc(en)}</span></a>'
+        for en, ar, url in links
+    )
+    status = (f'<span class="wa-card__status" data-ar="{esc(w["status_ar"])}">{esc(w["status"])}</span>'
+              if w['status'] else '')
+    return f'''
+      <article class="wa-card" data-category="{w['track']}">
+        <div class="wa-card__top"><span class="wa-card__no">{w['no']}</span><span class="wa-card__year">{esc(w['year'])}</span>{status}</div>
+        <h3 data-ar="{esc(w['title_ar'])}">{esc(w['title'])}</h3>
+        <p data-ar="{esc(w['desc_ar'])}">{esc(w['desc'])}</p>
+        <ul class="wa-card__tags">{tags}</ul>
+        <div class="wa-card__links">{link_html}</div>
+      </article>'''
+
+
+def archive_section():
+    """Section 02: the founder's 25 published projects, re-indexed in our
+    two-track order (identity first, then digital products) with a local filter."""
+    cats = [('all', 'All · 25', 'الكل · 25'), ('identity', 'Identity · 8', 'الهوية · 8'), ('product', 'Digital products · 17', 'المنتجات الرقمية · 17')]
+    filters = ''.join(
+        f'<button type="button" class="filter{" is-active" if k == "all" else ""}" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}"><span data-ar="{esc(ar)}">{esc(en)}</span></button>'
+        for k, en, ar in cats
+    )
+    identity = ''.join(archive_card(w) for w in IDENTITY)
+    product = ''.join(archive_card(w) for w in PRODUCT)
+    return f'''
+      <section class="section container section--flush-top" id="archive" aria-labelledby="archive-title">
+        {sec_head('02', 'FOUNDER WORK ARCHIVE', 'أرشيف أعمال المؤسس',
+                  '<span id="archive-title" data-ar="خمسة وعشرون مشروعًا.">Twenty-five projects.</span> <span class="grad-text" data-ar="مصدر واحد للتحقق.">One place to check them.</span>',
+                  'Selected work by co-founder Mustafa Aboalazm, re-indexed in our two-track order. Every entry links back to his own case study, live deployment or public repository.',
+                  'أعمال مختارة للمؤسس الشريك مصطفى أبو العزم، مُرتبة من جديد وفق مسارينا. كل مدخل يعود إلى دراسته الأصلية أو الموقع المباشر أو المستودع العام.')}
+        <div class="work-disclaimer work-disclaimer--archive">
+          {icon('alert')}
+          <div>
+            <strong data-ar="توثيق أعمال المؤسس، وليس ادعاءات عملاء مُثبتة.">Founder work, documented — not verified studio client claims.</strong>
+            <p data-ar="هذه مشاريع نشرها مصطفى في بورتفوليوه الخاص وريبوGitHub العام. نُدرجها هنا كفهرس موثّق يبدأ بالهوية ثم المنتجات الرقمية، مع روابط للتحقق. لا نقدّمها كتعاقدات عملاء مُثبتة للاستوديو، ولا ندّعي نتائج مُقاسة، ولا نعيد نشر صوره دون إذن. الحالات التي لها حدود إثبات منشورة عندنا تظهر في صفحة دراسات الحالة.">These projects were published by Mustafa on his own portfolio and public GitHub repositories. We index them here — identity first, then digital products — with links back to the source. We do not present them as verified studio client engagements, claim measured outcomes, or republish his imagery without permission. Cases with published evidence limits live on our case-studies page.</p>
+          </div>
+        </div>
+        <div class="work-filters" role="group" aria-label="Filter founder work" data-ar-label="تصفية أعمال المؤسس" data-filter-group="#archive">{filters}</div>
+        <h3 class="wa-track" data-category="identity"><span data-ar="المسار ٠١ · أنظمة الهوية">TRACK 01 · IDENTITY SYSTEMS</span><b>8</b></h3>
+        <div class="wa-grid">{identity}
+        </div>
+        <h3 class="wa-track" data-category="product"><span data-ar="المسار ٠٢ · المنتجات الرقمية والهندسة">TRACK 02 · DIGITAL PRODUCTS &amp; ENGINEERING</span><b>17</b></h3>
+        <div class="wa-grid">{product}
+        </div>
+        <p class="live-media-note" data-ar="التصفية تعمل محليًا دون إرسال أي بيانات. الروابط الخارجية تفتح في تبويب جديد.">Filtering runs locally; nothing is sent. External links open in a new tab.</p>
+        <p class="live-media-note"><a href="https://github.com/3boalazm?tab=repositories" target="_blank" rel="noopener noreferrer"><span data-ar="كل المستودعات العامة على GitHub ↗">All public repositories on GitHub ↗</span></a> · <span data-ar="سجل المصادر وحدود الإثبات: docs/FOUNDER-WORK-ARCHIVE.md">Sources and evidence limits: <code>docs/FOUNDER-WORK-ARCHIVE.md</code></span></p>
+      </section>'''
 
 
 def case_page(p):
@@ -107,8 +183,8 @@ def hub():
         {crumbs([('Home', 'الرئيسية', '/'), ('Work', 'أعمالنا', None)])}
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="بورتفوليو إبداعي · دراسات مُعلَّنة">CREATIVE PORTFOLIO · LABELLED STUDIES</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="اعرض الحرفة،">Show the craft,</span><br /><span class="grad-text" data-ar="لا قائمة الخدمات.">not the service list.</span></h1>
-        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="أربع دراسات مفاهيمية تُظهر طريقة تفكير الاستوديو في أنظمة العلامة والتغليف والمنتجات الرقمية وتجارب الويب — كل مشروع مروي بالمشكلة والاستراتيجية والدور والتنفيذ والنتيجة المُعلَنة.">Four concept studies show how the studio thinks about brand systems, packaging, digital products and web experiences — each told through problem, strategy, role, execution and a stated outcome.</p>
-        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('See the concept studies', 'اطّلع على الدراسات', '#studies', 'primary', 'arrowDown')}{btn('Published client cases', 'دراسات عملاء منشورة', '/case-studies/', 'glass', 'layers')}{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/', 'ghost', 'calendar')}</div>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="أربع دراسات مفاهيمية تُظهر طريقة تفكير الاستوديو، يليها أرشيف موثّق بخمسة وعشرين مشروعًا من أعمال المؤسس الشريك — هوية أولًا، ثم منتجات رقمية. كل مدخل بمصدره وحدود إثباته.">Four concept studies show how the studio thinks, followed by a documented archive of 25 projects by our co-founder — identity first, then digital products. Every entry carries its source and its evidence limit.</p>
+        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('See the concept studies', 'اطّلع على الدراسات', '#studies', 'primary', 'arrowDown')}{btn('Founder work · 25', 'أعمال المؤسس · 25', '#archive', 'glass', 'grid')}{btn('Published client cases', 'دراسات عملاء منشورة', '/case-studies/', 'ghost', 'layers')}{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/', 'ghost', 'calendar')}</div>
       </section>
 
       <section class="section container section--tight" aria-label="Portfolio visual" data-ar-label="صورة البورتفوليو">
@@ -139,8 +215,10 @@ def hub():
         <p class="live-media-note" data-ar="التصفية تعمل محليًا دون إرسال أي بيانات.">Filtering runs locally; nothing is sent.</p>
       </section>
 
+      {archive_section()}
+
       <section class="section container section--flush-top" id="intake" aria-labelledby="intake-title">
-        {sec_head('02', 'HOW REAL WORK GETS PUBLISHED', 'كيف تُنشر الأعمال الحقيقية',
+        {sec_head('03', 'HOW REAL WORK GETS PUBLISHED', 'كيف تُنشر الأعمال الحقيقية',
                   '<span id="intake-title" data-ar="من الموجز إلى الإثبات.">From the brief to the evidence.</span>',
                   'The gate a real client case must pass before it replaces — or sits beside — a concept study.',
                   'البوابة التي يجب أن تمر بها أي حالة عميل حقيقية قبل أن تحلّ محل دراسة مفاهيمية أو تجاورها.')}
@@ -152,7 +230,7 @@ def hub():
       </section>
 
       <section class="section container section--flush-top" id="evidence" aria-labelledby="ev-title">
-        {sec_head('03', 'CLAIMS & EVIDENCE REGISTER', 'سجل الادعاءات والأدلة',
+        {sec_head('04', 'CLAIMS & EVIDENCE REGISTER', 'سجل الادعاءات والأدلة',
                   '<span id="ev-title" data-ar="ما ننشره، ولماذا.">What we publish, and why.</span>',
                   'A live register of numbers and claims: published, qualified, removed or resolved. Anything without evidence is rewritten or taken down.',
                   'سجل حيّ للأرقام والادعاءات: منشور، أو مقيَّد، أو محذوف، أو محسوم. أي شيء بلا إثبات يُعاد صياغته أو يُشال.')}
@@ -179,8 +257,8 @@ def hub():
 '''
     return page('/work/', title='Creative Work — Brand, Packaging, Product & Web · Code & Canvas',
                 title_ar='الأعمال الإبداعية — العلامة والتغليف والمنتج والويب · Code & Canvas',
-                desc='A labelled visual portfolio: brand systems, packaging and print, digital products and web experiences. Each concept study states the problem, strategy, role, execution and evidence status.',
-                desc_ar='بورتفوليو بصري مُعلَّن: أنظمة العلامة والتغليف والمطبوعات والمنتجات الرقمية وتجارب الويب. كل دراسة توضّح المشكلة والاستراتيجية والدور والتنفيذ وحالة الإثبات.',
+                desc='A labelled visual portfolio: four concept studies plus a 25-project founder work archive spanning brand identity and digital products. Every entry states its source, role and evidence limit.',
+                desc_ar='بورتفوليو بصري مُعلَّن: أربع دراسات مفاهيمية، يليها أرشيف بخمسة وعشرين مشروعًا من أعمال المؤسس بين أنظمة الهوية والمنتجات الرقمية. كل مدخل يوضّح مصدره ودوره وحدود إثباته.',
                 nav='work', body=body, og_image='/assets/brand/og/work.png', view_track='case_study_view')
 
 

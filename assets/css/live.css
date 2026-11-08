@@ -201,3 +201,39 @@
 /* Article cover disclaimer stays legible over generated artwork. */
 .post__cover .art__cap2 { background: rgba(5,5,26,.62); padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); font-size: 10.5px; letter-spacing: .1em; color: #d7d7ee; z-index: 2; }
 html[lang='ar'] .post__cover .art__cap2 { letter-spacing: 0; font-size: 11.5px; }
+
+/* ---------- Founder work archive (/work/) — 2026-11 ----------
+   Compact, typographic index cards. No external imagery is hotlinked or
+   republished: the founder's visuals stay on his own case-study pages.
+   Logical properties keep the layout correct in the generated RTL twin. */
+.wa-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 1.5vw, 18px); margin-bottom: 18px; }
+.wa-card { position: relative; display: flex; flex-direction: column; gap: 9px; padding: 18px 20px 16px; border: 1px solid var(--live-line); border-radius: var(--r); background: linear-gradient(155deg, rgba(139, 108, 255, .07), rgba(11, 11, 38, .72)); overflow: hidden; transition: border-color .3s, transform .3s var(--ease); }
+.wa-card::before { content: ''; position: absolute; inset-block: 0; inset-inline-start: 0; width: 3px; background: linear-gradient(180deg, var(--live-teal), var(--live-violet)); opacity: .75; }
+.wa-card:hover { border-color: rgba(139, 108, 255, .55); transform: translateY(-3px); }
+.wa-card__top { display: flex; align-items: center; gap: 10px; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.wa-card__no { color: var(--live-teal); font-size: 12px; }
+.wa-card__year { direction: ltr; unicode-bidi: isolate; }
+.wa-card__status { margin-inline-start: auto; padding: 4px 9px; border: 1px solid rgba(243, 199, 122, .34); border-radius: 999px; color: #fbe6bd; background: rgba(243, 199, 122, .07); letter-spacing: .06em; }
+.wa-card h3 { margin: 0; font-family: var(--f-title); font-size: clamp(17px, 1.5vw, 20px); line-height: 1.3; }
+.wa-card p { margin: 0; font-size: 13.5px; line-height: 1.65; color: var(--ink-2); }
+.wa-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 0; padding: 0; list-style: none; }
+.wa-card__tags li { padding: 4px 9px; border: 1px solid var(--live-line); border-radius: 999px; background: var(--live-panel); font-size: 10.5px; line-height: 1.35; color: var(--ink-3); }
+.wa-card__links { display: flex; flex-wrap: wrap; gap: 7px 15px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--live-line); font-size: 12.5px; }
+.wa-card__links a { color: var(--live-teal); font-weight: 700; white-space: nowrap; }
+.wa-card__links a:hover { color: #fff; }
+.wa-track { display: flex; align-items: baseline; gap: 12px; margin: 30px 0 14px; font-family: var(--f-title); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.wa-track b { color: var(--live-violet); font-size: 15px; }
+.wa-track[hidden], .wa-card[hidden] { display: none !important; }
+.work-disclaimer--archive { margin-bottom: 22px; border-color: rgba(111, 226, 203, .3); background: rgba(111, 226, 203, .055); color: #d8f7ef; }
+.work-disclaimer--archive .ico { color: var(--live-teal); }
+.work-disclaimer--archive a { color: var(--live-teal); }
+@media (max-width: 720px) {
+  .wa-grid { grid-template-columns: 1fr; gap: 10px; }
+  .wa-card { padding: 14px 15px 13px; gap: 7px; }
+  .wa-card p { font-size: 13px; line-height: 1.6; }
+  .wa-card__tags li { font-size: 10px; padding: 3px 8px; }
+  .wa-card__links { padding-top: 10px; gap: 6px 12px; font-size: 12px; }
+  .wa-track { margin: 22px 0 10px; font-size: 11px; }
+  .wa-card:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .wa-card:hover { transform: none; } }

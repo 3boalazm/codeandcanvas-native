@@ -164,7 +164,13 @@ for (const file of pages) {
   const key = text.slice(0, 400);
   if (key.length > 80) { const a = bodyHashes.get(key) || []; a.push(r); bodyHashes.set(key, a); }
 
-  /* 9 · stale / future dates in visible copy */
+  /* 9 · stale / future dates in visible copy.
+     /work/ carries the founder archive's documented project years (2019–2026).
+     Those are provenance metadata, each source-linked from the card — not
+     stale editorial copy — so they get one classified note, not 12 hits. */
+  if (/^\/(?:ar\/)?work\/$/.test(r)) {
+    if (html.includes('wa-card__year')) note('provenance', r, 'documented project years in the founder archive — each entry links to its source');
+  } else {
   const seenYears = new Set();
   for (const m of text.matchAll(/\b(20\d{2})\b/g)) {
     const y = +m[1];
@@ -174,6 +180,7 @@ for (const file of pages) {
     seenYears.add(y);
     const ctx = text.slice(Math.max(0, m.index - 55), m.index + 55).replace(/\s+/g, ' ');
     note('dates', r, `${y < 2026 ? 'historical / citation' : 'future'} year ${y} — «${ctx}…»`);
+  }
   }
 }
 

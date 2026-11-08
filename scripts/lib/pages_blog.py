@@ -7,7 +7,7 @@ had an article (404) → shown as "coming soon", not linked. Two posts were publ
 under wrong slugs with a "– Copy" title → re-slugged (see POST['aliases'] + _redirects).
 Articles are English-only on the live site; chrome/meta are bilingual."""
 import re
-from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, PERSON_LD
+from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, PERSON_LD, media_img
 from posts import all_posts
 
 AUTHORS = {
@@ -30,6 +30,16 @@ COMING_SOON = []
 
 # Illustrative cover artwork per article category. Labelled in the markup as
 # artwork, never as a screenshot, client photo or evidence of a result.
+COVERS_BY_SLUG = {
+    'why-startups-waste-money-wrong-product': 'blog-product-strategy',
+    'how-to-turn-a-business-idea-into-a-market-ready-digital-product': 'blog-product-strategy',
+    'why-software-development-alone-wont-solve-your-business-problems': 'blog-product-strategy',
+    'how-product-thinking-creates-sustainable-business-growth': 'blog-product-strategy',
+    'design-systems-operating-system-modern-digital-products': 'blog-design-systems',
+    'experience-design-business-growth-driver': 'blog-experience-design',
+    'what-digital-transformation-actually-means-for-smes': 'blog-experience-design',
+}
+
 COVERS = {
     'Product Strategy': 'digital-product', 'Digital Transformation': 'web-experience',
     'Product Thinking': 'digital-product', 'Brand Strategy': 'brand-system',
@@ -166,9 +176,12 @@ def hub(posts):
 
 def article(p, by_slug):
     a = AUTHORS[p['author']]
-    cover_media = COVERS.get(p['cat'], 'studio-atmosphere')
+    cover_media = COVERS_BY_SLUG.get(p['slug']) or COVERS.get(p['cat'], 'studio-atmosphere')
     if p.get('og'):
         cover_media = p['og'].rsplit('/', 1)[-1].replace('.png', '')
+    cover_img = media_img(cover_media, 'Illustrative editorial artwork — not a screenshot or client photo',
+                           'عمل فني تحريري توضيحي — ليس لقطة شاشة أو صورة عميل',
+                           sizes='(max-width: 720px) 92vw, 900px', eager=True, fetchpriority='high')
     stats = ''.join(f'<div><strong>{esc(n)}</strong><span>{esc(l)}</span></div>' for n, l in p['stats'])
     cta = p.get('cta') or {}
     prim = cta.get('primary', ('Book a Free Discovery Call', '/book/'))
@@ -249,7 +262,7 @@ def article(p, by_slug):
         </header>
         <div class="post__cover" data-reveal>
           <div class="art art--wide {'art--pink' if p['author'] == 'ma' else 'art--violet'}" data-slot="blog/{p['slug']}/cover">
-            <img src="/assets/media/{esc(cover_media)}.webp" alt="Illustrative editorial artwork — not a screenshot or client photo" data-ar-alt="عمل فني تحريري توضيحي — ليس لقطة شاشة أو صورة عميل" width="1600" height="900" loading="eager" decoding="async" />
+            {cover_img}
             <span class="art__cap" data-ar="{esc(p['cat_ar'])} · Code &amp; Canvas">{esc(p['cat'])} · Code &amp; Canvas</span>
             <span class="art__cap2" data-ar="عمل توضيحي · ليس إثباتًا">ILLUSTRATIVE ARTWORK · NOT EVIDENCE</span>
           </div>

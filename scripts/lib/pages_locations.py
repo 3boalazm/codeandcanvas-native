@@ -6,7 +6,7 @@ Local pages publish only the contact details already present on the site — no
 invented street address, no fake map pin, no unapproved branch. A Google
 Business Profile link is deliberately omitted until the owner confirms it.
 """
-from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, ORG_ID, SITE
+from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, ORG_ID, SITE, media_img
 from data_growth import LOCATIONS, EVIDENCE, EVIDENCE_AR, SERVICE_LANDINGS, PILLARS
 
 MEDIA = '/assets/media/'
@@ -34,7 +34,7 @@ def local(x):
 
       <section class="section container section--tight" aria-label="Local visual" data-ar-label="صورة السوق">
         <figure class="live-figure live-figure--wide">
-          <img src="{MEDIA}{esc(x['media'])}.webp" alt="Abstract illustrative artwork for {esc(x['city'])}" data-ar-alt="عمل فني تجريدي توضيحي — {esc(x['city_ar'])}" width="1600" height="900" loading="eager" decoding="async" />
+          {media_img(x['media'], 'Abstract illustrative artwork for ' + x['city'], 'عمل فني تجريدي توضيحي — ' + x['city_ar'], sizes='(max-width: 720px) 92vw, 1200px', eager=True, fetchpriority='high')}
           <figcaption><span data-ar="{esc(x['city_ar'])}">{esc(x['city'])}</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي مجرّد، ليس صورة مقر">ABSTRACT ILLUSTRATION · NOT AN OFFICE PHOTO</span></figcaption>
         </figure>
         <p class="live-media-note" data-ar="لا ننشر عنوان شارع أو خريطة أو ملف أعمال محلي قبل اعتماد المالك. بيانات الاتصال أدناه هي البيانات المنشورة فعلًا على الموقع.">No street address, map pin or business profile is published before owner approval. The contact details below are the ones already published on this site.</p>
@@ -104,7 +104,7 @@ def resources():
 
       <section class="section container section--tight" aria-label="Resources visual" data-ar-label="صورة المصادر">
         <figure class="live-figure live-figure--wide">
-          <img src="{MEDIA}studio-atmosphere.webp" alt="Illustrative studio artwork for the resources library" data-ar-alt="عمل فني توضيحي لمكتبة المصادر" width="1600" height="900" loading="eager" decoding="async" />
+          {media_img('studio-atmosphere', 'Illustrative studio artwork for the resources library', 'عمل فني توضيحي لمكتبة المصادر', sizes='(max-width: 720px) 92vw, 1200px', eager=True)}
           <figcaption><span data-ar="مكتبة المصادر">RESOURCES LIBRARY</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي">ILLUSTRATIVE ARTWORK</span></figcaption>
         </figure>
       </section>
@@ -195,7 +195,7 @@ def claims():
                 title_ar='سجل الادعاءات والأدلة — Code & Canvas',
                 desc='A public register of every number and claim on the site: published, qualified, removed or resolved, with the evidence required to strengthen it.',
                 desc_ar='سجل عام لكل رقم وادعاء في الموقع: منشور أو مقيَّد أو محذوف أو محسوم، مع الإثبات المطلوب لتقويته.',
-                nav='about', body=body, og_image='/assets/brand/og/about.png')
+                nav='about', body=body, og_image='/assets/brand/og/claims.png')
 
 
 def build():

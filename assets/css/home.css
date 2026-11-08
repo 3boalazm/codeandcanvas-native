@@ -384,3 +384,69 @@ html[lang='ar'] .track__for { letter-spacing: 0; text-transform: none; font-size
   body.is-home .closing__title { font-size: 26px; }
   body.is-home .closing__contact { margin-top: 18px; gap: 6px 12px; font-size: 12px; }
 }
+
+/* ==========================================================================
+   MOBILE LITE · pass 2 (2026-11-08) — a lighter phone homepage, richer desktop
+   Pass 1 cut the page from ~17.3kpx to ~8.2kpx. This pass trims the remaining
+   stacked rows, ships 780px artwork to phones, and adds one piece of new
+   illustrative artwork to the methodology band on wider screens only (so the
+   phone never downloads it).
+   ========================================================================== */
+
+/* Desktop/tablet: a quiet generated artwork behind the methodology band.
+   Declared only above 720px — phones do not request this file at all. */
+@media (min-width: 721px) {
+  body.is-home #how.section--band {
+    background-image: linear-gradient(90deg, rgba(5, 5, 26, .94) 0%, rgba(5, 5, 26, .84) 48%, rgba(5, 5, 26, .58) 100%),
+                      url('/assets/media/studio-method.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 720px) {
+  /* A little less vertical air between sections without feeling cramped. */
+  body.is-home .section { padding-block: 34px; }
+  body.is-home .section--tight { padding-block: 22px; }
+  body.is-home .sec-head { padding-block-end: 10px; margin-block-end: 15px; }
+
+  /* Service tracks: 2 compact cards per row instead of 4 stacked rows. */
+  body.is-home .tracks {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px; border-block-start: 0;
+  }
+  body.is-home .track { border-block-end: 0; }
+  body.is-home .track > a {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 8px; padding: 12px; height: 100%;
+    border: 1px solid var(--line); border-radius: 12px;
+    background: var(--panel);
+  }
+  body.is-home .track > a:hover { padding-inline: 12px; background: var(--panel-2); }
+  body.is-home .track__for,
+  body.is-home .track__body p,
+  body.is-home .track__meta small,
+  body.is-home .track > a .round-arrow { display: none; }
+  body.is-home .track__no { font-size: 16px; }
+  body.is-home .track__body h3 { font-size: 13px; line-height: 1.3; margin-block-end: 5px; }
+  body.is-home .track__meta { grid-column: 2; text-align: start; }
+  body.is-home .track__meta b { font-size: 11px; font-family: var(--f-title); color: var(--teal); }
+
+  /* Methodology steps already carry .m-rail in the markup; make them compact. */
+  body.is-home .steps3 > div { flex: 0 0 84%; padding: 14px; }
+  body.is-home .steps3 .step__deliv { font-size: 11.5px; }
+
+  /* Books, market links and ERP band: chips, not stacked cards. */
+  body.is-home .learn__books { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  body.is-home .learn__book { padding: 10px; min-height: 58px; }
+  body.is-home .learn__book-body b { font-size: 11.5px; line-height: 1.35; }
+  body.is-home .learn__books > .text-link { grid-column: 1 / -1; }
+
+  body.is-home .live-crosslinks { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  body.is-home .live-crosslink { padding: 10px 8px; }
+  body.is-home .live-crosslink b { font-size: 11.5px; }
+  body.is-home .live-crosslink a { font-size: 10px; line-height: 1.3; }
+  body.is-home .platform-band__list { display: none; }
+  body.is-home #erp .note-quiet { font-size: 11px; margin-top: 8px; }
+}

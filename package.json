@@ -18,7 +18,8 @@
     "check:claims": "node scripts/check-claims.mjs",
     "gate": "npm run generate && npm run check && npm test && npm run build",
     "verify:live": "node scripts/verify-live.mjs",
-    "verify:api": "node scripts/smoke-api.mjs"
+    "verify:api": "node scripts/smoke-api.mjs",
+    "audit:content": "node scripts/audit-content.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

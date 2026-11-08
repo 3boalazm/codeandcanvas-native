@@ -40,6 +40,7 @@
     <noscript><style>body.is-loading{overflow:auto}#preloader{display:none!important}[data-reveal],.split .w{opacity:1!important;transform:none!important;filter:none!important}form{display:none!important}[data-panel][hidden]{display:block!important}</style></noscript>
     <!-- /cc:head -->
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://codeandcanvas.net/ar/#org","name":"Code & Canvas","alternateName":"كود آند كانفاس","url":"https://codeandcanvas.net/ar/","logo":{"@type":"ImageObject","url":"https://codeandcanvas.net/ar/assets/brand/icon-white.svg"},"image":"https://codeandcanvas.net/ar/assets/brand/og/home.png","description":"A two-founder studio in KSA + Egypt: enterprise architecture, healthcare transformation and data · brand systems, design and web — 23 productized services with fixed scope and milestone-based payment.","email":"info@codeandcanvas.net","telephone":"+966545520750","founder":[{"@id":"https://codeandcanvas.net/ar/team/#ahmed"},{"@id":"https://codeandcanvas.net/ar/team/#mustafa"}],"areaServed":["Saudi Arabia","Egypt","MENA"],"address":[{"@type":"PostalAddress","addressLocality":"Riyadh","addressRegion":"Al Murouj","addressCountry":"SA"},{"@type":"PostalAddress","addressLocality":"Al Khobar","addressCountry":"SA"},{"@type":"PostalAddress","addressLocality":"Al Obour City","addressRegion":"Cairo","addressCountry":"EG"}],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+966545520750","areaServed":"SA","availableLanguage":["ar","en"]},{"@type":"ContactPoint","contactType":"sales","telephone":"+201092500454","areaServed":"EG","availableLanguage":["ar","en"]}],"sameAs":["https://linkedin.com/in/ahmed-bedeer","https://behance.net/aboalazm","https://github.com/ahmedbdeer"]},{"@type":"WebSite","@id":"https://codeandcanvas.net/ar/#website","url":"https://codeandcanvas.net/ar/","name":"Code & Canvas","inLanguage":["en","ar"],"publisher":{"@id":"https://codeandcanvas.net/ar/#org"}},{"@type":"WebPage","@id":"https://codeandcanvas.net/ar/#webpage","url":"https://codeandcanvas.net/ar/","name":"Code & Canvas — العلامة والمنتج والمنظومة، حول نتيجة عمل واحدة","isPartOf":{"@id":"https://codeandcanvas.net/ar/#website"},"about":{"@id":"https://codeandcanvas.net/ar/#org"},"inLanguage":["en","ar"],"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/ar/assets/brand/og/home.png","width":1200,"height":630}},{"@type":"ItemList","name":"Ways to start with Code & Canvas","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Enterprise Architecture & Strategy","url":"https://codeandcanvas.net/ar/technology-services/#ab-01","provider":{"@id":"https://codeandcanvas.net/ar/#org"}}},{"@type":"ListItem","position":2,"item":{"@type":"Service","name":"HIS Selection Advisory","url":"https://codeandcanvas.net/ar/healthcare/#hc-03","provider":{"@id":"https://codeandcanvas.net/ar/#org"}}},{"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Full Brand System","url":"https://codeandcanvas.net/ar/creative-services/#ma-03","provider":{"@id":"https://codeandcanvas.net/ar/#org"}}},{"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Digital Launch Package","url":"https://codeandcanvas.net/ar/services/#cc-01","provider":{"@id":"https://codeandcanvas.net/ar/#org"}}}]},{"@type":"Person","@id":"https://codeandcanvas.net/ar/team/#ahmed","name":"Ahmed M. Bedeer","jobTitle":"Co-Founder · Enterprise Architect · Solution Architect","worksFor":{"@id":"https://codeandcanvas.net/ar/#org"},"url":"https://codeandcanvas.net/ar/team/#ahmed","sameAs":["https://linkedin.com/in/ahmed-bedeer","https://ahmed-bedeer.vercel.app/","https://github.com/ahmedbdeer"]},{"@type":"Person","@id":"https://codeandcanvas.net/ar/team/#mustafa","name":"Mustafa Aboalazm","jobTitle":"Co-Founder · Creative Director · Visual Brand Architect","worksFor":{"@id":"https://codeandcanvas.net/ar/#org"},"url":"https://codeandcanvas.net/ar/team/#mustafa","sameAs":["https://behance.net/aboalazm","https://aboalazm-os.vercel.app/"]}]}</script>
+    <link rel="preload" as="image" href="/assets/media/hero-system-sm.webp" imagesrcset="/assets/media/hero-system-sm.webp 780w, /assets/media/hero-system.webp 1600w" imagesizes="100vw" media="(max-width: 720px)" fetchpriority="high" />
     <link rel="stylesheet" href="/assets/css/home.css" />
     <title>Code &amp; Canvas — العلامة والمنتج والمنظومة، حول نتيجة عمل واحدة</title>
   </head>
@@ -112,7 +113,7 @@
 
         <div class="hero__visual hero__visual--media">
           <figure class="live-figure live-figure--hero" data-reveal style="--d:.28s">
-            <img src="/assets/media/hero-system.webp" alt="عمل فني تجريدي توضيحي: طبقات زجاجية وشرائط لونية متدرّجة" width="1600" height="1200" fetchpriority="high" decoding="async" />
+            <img src="/assets/media/hero-system.webp" srcset="/assets/media/hero-system-sm.webp 780w, /assets/media/hero-system.webp 1600w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 100vw, 46vw" alt="عمل فني تجريدي توضيحي: طبقات زجاجية وشرائط لونية متدرّجة" width="1600" height="1200" loading="eager" fetchpriority="high" decoding="async" />
             <span class="live-figure__float">الاستراتيجية · التصميم · التقنية</span>
             <figcaption><span>دراسة بصرية للاستوديو</span><span class="live-figure__disclaimer">توضيحي — ليس عمل عميل</span></figcaption>
           </figure>
@@ -221,15 +222,15 @@
         </header>
         <div class="work-strip m-rail" tabindex="0" role="group" aria-label="أعمال مختارة">
           <a class="work-card panel" href="/ar/work/bilingual-brand-system/" data-reveal data-track="case_study_view" data-track-id="bilingual-brand-system">
-            <div class="work-card__art"><figure class="live-figure live-figure--plain" style="aspect-ratio:16/10;border:0;border-radius:0"><img src="/assets/media/brand-system.webp" alt="عمل فني توضيحي لمنظومة علامة — ليس عمل عميل" width="1600" height="900" loading="lazy" decoding="async" /></figure></div>
+            <div class="work-card__art"><figure class="live-figure live-figure--plain" style="aspect-ratio:16/10;border:0;border-radius:0"><img src="/assets/media/brand-system.webp" srcset="/assets/media/brand-system-sm.webp 780w, /assets/media/brand-system.webp 1600w" sizes="(max-width: 720px) 84vw, (max-width: 1024px) 46vw, 380px" alt="عمل فني توضيحي لمنظومة علامة — ليس عمل عميل" width="1600" height="900" loading="lazy" decoding="async" /></figure></div>
             <div class="work-card__body"><span class="work-card__meta">دراسة مفاهيمية · أنظمة العلامة</span><h3>منظومة علامة ثنائية اللغة</h3><p>استراتيجية، وتركيب عربي/إنجليزي، ومكتبة رموز، ودليل حوكمة.</p><span class="work-card__foot"><span>المشكلة · الدور · التنفيذ · النتيجة</span><b>افتح ↗</b></span></div>
           </a>
           <a class="work-card panel" href="/ar/work/packaging-print-system/" data-reveal style="--d:.06s" data-track="case_study_view" data-track-id="packaging-print-system">
-            <div class="work-card__art"><figure class="live-figure live-figure--plain" style="aspect-ratio:16/10;border:0;border-radius:0"><img src="/assets/media/packaging.webp" alt="عمل فني توضيحي للتغليف — ليس عبوة عميل" width="1600" height="900" loading="lazy" decoding="async" /></figure></div>
+            <div class="work-card__art"><figure class="live-figure live-figure--plain" style="aspect-ratio:16/10;border:0;border-radius:0"><img src="/assets/media/packaging.webp" srcset="/assets/media/packaging-sm.webp 780w, /assets/media/packaging.webp 1600w" sizes="(max-width: 720px) 84vw, (max-width: 1024px) 46vw, 380px" alt="عمل فني توضيحي للتغليف — ليس عبوة عميل" width="1600" height="900" loading="lazy" decoding="async" /></figure></div>
             <div class="work-card__body"><span class="work-card__meta">دراسة مفاهيمية · التغليف والمطبوعات</span><h3>من الرفّ إلى ملف الطباعة</h3><p>قوالب قصّ، وCMYK، وهوامش، وحزمة تسليم للمطبعة.</p><span class="work-card__foot"><span>مواصفة إنتاج حقيقية</span><b>افتح ↗</b></span></div>
           </a>
           <a class="work-card panel" href="/ar/work/web-experience-rebuild/" data-reveal style="--d:.12s" data-track="case_study_view" data-track-id="web-experience-rebuild">
-            <div class="work-card__art"><figure class="live-figure live-figure--plain" style="aspect-ratio:16/10;border:0;border-radius:0"><img src="/assets/media/web-experience.webp" alt="عمل فني توضيحي لتجربة ويب — ليس لقطة موقع حقيقي" width="1600" height="900" loading="lazy" decoding="async" /></figure></div>
+            <div class="work-card__art"><figure class="live-figure live-figure--plain" style="aspect-ratio:16/10;border:0;border-radius:0"><img src="/assets/media/web-experience.webp" srcset="/assets/media/web-experience-sm.webp 780w, /assets/media/web-experience.webp 1600w" sizes="(max-width: 720px) 84vw, (max-width: 1024px) 46vw, 380px" alt="عمل فني توضيحي لتجربة ويب — ليس لقطة موقع حقيقي" width="1600" height="900" loading="lazy" decoding="async" /></figure></div>
             <div class="work-card__body"><span class="work-card__meta">دراسة مفاهيمية · تجارب الويب</span><h3>قبل / بعد: موقع يستحق المكالمة</h3><p>تراتبية الرسالة، وموضع الإثبات، ودعوة واحدة، ومسار قابل للقياس.</p><span class="work-card__foot"><span>خطة قياس معلنة</span><b>افتح ↗</b></span></div>
           </a>
         </div>
@@ -367,7 +368,7 @@
             </div>
           </header>
 
-          <div class="steps3" data-reveal>
+          <div class="steps3 m-rail" data-reveal tabindex="0" role="group" aria-label="ثلاث مراحل للتسليم">
             <div>
               <span class="stepno">01</span>
               <h3>نطاق قبل أي مال</h3>
@@ -387,6 +388,7 @@
               <span class="step__deliv"><i data-icon="check"></i><span>ملفات وكود وتوثيق</span></span>
             </div>
           </div>
+          <p class="m-rail-hint" aria-hidden="true"><span>اسحب ←</span></p>
 
           <div class="facts" data-reveal style="margin-top:26px">
             <div><span>شروط الدفع — استشارات وعمارة</span><b class="ltr">50 / 50</b></div>

@@ -87,7 +87,7 @@ for (const file of pages) {
   const attrRe = /\s(?:href|src|action)="([^"]*)"/g;
   while ((m = attrRe.exec(src))) {
     const url = m[1];
-    if (!url || url.startsWith('http') || url.startsWith('mailto:') || url.startsWith('tel:') || url.startsWith('data:') || url.startsWith('javascript:')) continue;
+    if (!url || url.startsWith('http') || url.startsWith('mailto:') || url.startsWith('tel:') || url.startsWith('data:') || url.startsWith('javascript:') || url.startsWith('/_vercel/')) continue;
     if (url.startsWith('#')) {
       const id = url.slice(1);
       if (id && id !== 'top' && !idsOf(file).has(id)) problems.push(`${rel}: missing in-page anchor ${url}`);

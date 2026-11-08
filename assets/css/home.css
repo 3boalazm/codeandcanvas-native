@@ -176,3 +176,211 @@ html[lang='ar'] .track__for { letter-spacing: 0; text-transform: none; font-size
   .platform-band__actions { grid-template-columns: 1fr; }
   .work-card__body, .learn__post { padding: 18px; }
 }
+
+/* ==========================================================================
+   MOBILE LITE (<= 720px) — 2026-11-08
+   The phone version used to be a ~17,000px wall of stacked text. This layer
+   turns it into a short, image-led page: a full-bleed hero artwork in the
+   first screen, compact section rhythm and horizontal snap rails instead of
+   long vertical card stacks. Desktop/tablet layouts are untouched; every
+   property is logical so EN (LTR) and AR (RTL) share one implementation.
+   ========================================================================== */
+.hero__lead--compact, .m-rail-hint { display: none; }
+
+@media (max-width: 720px) {
+  /* ---- 1. A much shorter vertical rhythm ---- */
+  body.is-home .section { padding-block: 38px; }
+  body.is-home .section--tight { padding-block: 24px; }
+  body.is-home .sec-head {
+    grid-template-columns: minmax(0, 1fr); gap: 10px;
+    padding-block-end: 12px; margin-block-end: 18px;
+  }
+  body.is-home .sec-head__no { font-size: 11px; gap: 8px; }
+  body.is-home .sec-head__no b { font-size: 17px; }
+  body.is-home .sec-head h2 { font-size: clamp(25px, 7vw, 32px); line-height: 1.2; margin-block: 6px 0; }
+  body.is-home .sec-head .lead,
+  body.is-home .closing__text,
+  body.is-home #erp .platform-band__copy > p:not(.note-quiet),
+  body.is-home #trust > .live-media-note,
+  body.is-home #work > .live-media-note,
+  body.is-home #how .facts { display: none; }
+  body.is-home .sec-head__aside { gap: 6px; }
+  body.is-home .sec-head__aside .text-link { font-size: 13px; }
+
+  /* ---- 2. Hero: artwork first, one screen, one decision ---- */
+  body.is-home .hero--value {
+    position: relative; display: flex; flex-direction: column;
+    /* keep the .container box aligned with the nav pill; the artwork below
+       bleeds to the viewport edges with negative margins instead */
+    padding: 0; min-height: 0; overflow: visible;
+  }
+  body.is-home .hero--value::after {
+    content: ''; position: absolute; inset-inline: 0; inset-block-end: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--live-violet), var(--live-teal), transparent);
+    opacity: .7; pointer-events: none;
+  }
+  body.is-home .hero__visual--media {
+    display: block; position: relative; order: -1;
+    width: calc(100% + 32px); max-width: none; margin: 0 -16px;
+    height: clamp(240px, 66vw, 290px); overflow: hidden;
+  }
+  body.is-home .hero__visual--media .live-figure--hero {
+    height: 100%; aspect-ratio: auto;
+    border: 0; border-radius: 0; box-shadow: none;
+  }
+  body.is-home .hero__visual--media .live-figure img { object-fit: cover; object-position: 50% 42%; }
+  /* An aurora wash makes the artwork feel richer without touching the asset. */
+  body.is-home .hero__visual--media .live-figure::before {
+    content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: radial-gradient(85% 70% at 12% 8%, rgba(139, 108, 255, .3), transparent 72%),
+                radial-gradient(65% 60% at 92% 82%, rgba(63, 214, 196, .22), transparent 72%);
+    mix-blend-mode: screen;
+  }
+  body.is-home .hero__visual--media .live-figure::after {
+    background: linear-gradient(180deg, rgba(5, 5, 26, .34) 0%, transparent 28%, rgba(5, 5, 26, .48) 68%, #05051a 100%);
+  }
+  body.is-home .hero__visual--media .live-figure__float {
+    display: block; inset-block-start: calc(var(--nav-h) + 6px); inset-inline-start: 16px;
+    padding: 6px 11px; font-size: 9.5px; letter-spacing: .08em;
+  }
+  html[lang='ar'] .hero__visual--media .live-figure__float { font-size: 11px; letter-spacing: 0; }
+  body.is-home .hero__visual--media .live-figure figcaption {
+    inset-inline: 16px; inset-block-end: 12px; gap: 6px; font-size: 10px;
+  }
+  body.is-home .hero__visual--media .live-figure figcaption span { padding: 4px 9px; font-size: 10px; }
+  body.is-home .hero__copy {
+    max-width: none; margin-inline: 0;
+    padding: 20px 0 24px; text-align: start;
+  }
+  body.is-home .hero .eyebrow { font-size: 10.5px; letter-spacing: .05em; }
+  body.is-home .hero__value-title {
+    font-size: clamp(32px, 8.8vw, 44px); line-height: 1.07;
+    letter-spacing: -.03em; margin-block: 12px 12px;
+  }
+  body.is-home .hero__lead--full { display: none; }
+  body.is-home .hero__lead--compact {
+    display: block; font-size: 14.5px; line-height: 1.6;
+    max-width: 40ch; margin-inline: 0;
+  }
+  body.is-home .hero__ctas { margin-top: 18px; gap: 8px; }
+  body.is-home .hero__ctas .btn--lg { min-height: 48px; font-size: 15px; padding-block: 12px; }
+  body.is-home .hero__ctas .btn--glass { background: rgba(255, 255, 255, .035); }
+  body.is-home .hero__proof {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px; margin-top: 16px;
+  }
+  body.is-home .hero__proof li {
+    min-width: 0; padding: 7px 9px; border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .14); background: rgba(255, 255, 255, .035);
+    font-size: 10.5px; line-height: 1.25; min-height: 32px;
+    align-items: center; white-space: normal;
+  }
+  body.is-home .hero__proof li span { display: none; }
+  body.is-home .hero__proof li b, body.is-home .hero__proof li a {
+    font-size: 10.5px; line-height: 1.25; overflow-wrap: anywhere;
+  }
+  body.is-home .hero__proof i { flex: none; font-size: 12px; }
+
+  /* ---- 3. Trust strip: four facts in two compact rows ---- */
+  body.is-home .live-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.is-home .live-strip > div { padding: 11px 13px; }
+  body.is-home .live-strip b { font-size: 21px; }
+  body.is-home .live-strip span { font-size: 11.5px; margin-top: 2px; }
+  body.is-home .live-strip small { display: none; }
+
+  /* ---- 4. Snap rails: one row of large cards instead of a tall stack ---- */
+  body.is-home .m-rail {
+    display: flex; gap: 12px; margin: 0; padding-block-end: 8px;
+    overflow-x: auto; overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory; scroll-padding-inline: 2px;
+    scrollbar-width: none;
+  }
+  body.is-home .m-rail::-webkit-scrollbar { display: none; }
+  body.is-home .m-rail > * { flex: 0 0 84%; min-width: 0; scroll-snap-align: start; }
+  body.is-home .m-rail:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 12px; }
+  .m-rail-hint {
+    display: block; margin: 2px 0 0; text-align: end;
+    font-size: 10.5px; letter-spacing: .14em; color: var(--ink-3);
+  }
+  html[lang='ar'] .m-rail-hint { letter-spacing: 0; font-size: 12px; }
+
+  /* Challenge cards */
+  body.is-home .chal { gap: 9px; padding: 18px; }
+  body.is-home .chal h3 { font-size: 17px; }
+  body.is-home .chal__sym { display: none; }
+  body.is-home .chal__fix { margin-top: 4px; padding-top: 10px; gap: 5px; }
+  body.is-home .chal__code { font-size: 11.5px; }
+  body.is-home .chal__code b { font-size: 13px; }
+  body.is-home .chal__price { font-size: 11.5px; }
+  body.is-home .chal__cta { font-size: 12.5px; }
+
+  /* Work cards — keep the artwork dominant */
+  body.is-home .work-card__art { aspect-ratio: 16 / 9; }
+  body.is-home .work-card__body { gap: 7px; padding: 16px 18px 18px; }
+  body.is-home .work-card h3 { font-size: 18px; }
+  body.is-home .work-card p { font-size: 13px; line-height: 1.55; }
+  body.is-home .work-card__foot { padding-top: 10px; font-size: 11.5px; }
+
+  /* Founders */
+  body.is-home .duo__card { gap: 9px; padding: 18px; }
+  body.is-home .duo__card h3 { font-size: 20px; }
+  body.is-home .duo__tag, body.is-home .duo__card > p:not(.duo__tag) { font-size: 12.5px; line-height: 1.55; }
+  body.is-home .duo__card > p:not(.duo__tag) { display: none; }
+  body.is-home .duo__creds { gap: 5px; }
+  body.is-home .duo__creds li { padding: 4px 9px; font-size: 11px; }
+  body.is-home .duo__link { padding-top: 10px; }
+
+  /* Pillars */
+  body.is-home .pillar { gap: 9px; padding: 18px; }
+  body.is-home .pillar h3 { font-size: 18px; }
+  body.is-home .pillar > p { font-size: 12.5px; line-height: 1.55; }
+  body.is-home .pillar__list { padding-top: 10px; gap: 5px; }
+  body.is-home .pillar__list li { font-size: 10.5px; padding: 4px 8px; }
+  body.is-home .pillar__link { margin-top: 4px; font-size: 12.5px; }
+
+  /* ---- 5. Service tracks: title + count only ---- */
+  body.is-home .track > a { grid-template-columns: 32px minmax(0, 1fr) 30px; gap: 10px; padding: 13px 2px; }
+  body.is-home .track__for, body.is-home .track__body p { display: none; }
+  body.is-home .track__body h3 { font-size: 16px; margin-block-end: 3px; }
+  body.is-home .track__no { font-size: 18px; }
+  body.is-home .track__meta { gap: 0; }
+  body.is-home .track__meta b { font-size: 12px; font-family: var(--f-title); }
+  body.is-home .track__meta small { display: none; }
+  body.is-home .svc-note { margin-top: 14px; gap: 8px 18px; font-size: 13px; }
+
+  /* ---- 6. How we work / insights / markets / ERP / closing ---- */
+  body.is-home .steps3 > div { padding: 14px 16px; }
+  body.is-home .steps3 p { display: none; }
+  body.is-home .steps3 h3 { font-size: 16px; margin-block: 6px; }
+  body.is-home .steps3 .step__deliv { margin-top: 8px; padding-top: 8px; font-size: 12px; }
+
+  body.is-home .learn { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  body.is-home .learn__post { gap: 5px; padding: 16px; }
+  body.is-home .learn__post p { display: none; }
+  body.is-home .learn__post h3 { font-size: 16px; }
+  body.is-home .learn__books { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  body.is-home .learn__book { grid-template-columns: minmax(0, 1fr); padding: 12px; }
+  body.is-home .learn__cover, body.is-home .learn__book-body span, body.is-home .learn__book-body small { display: none; }
+  body.is-home .learn__book-body b { font-size: 13px; }
+  body.is-home .learn__books > .text-link { grid-column: 1 / -1; font-size: 13px; }
+
+  body.is-home .funnel { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 14px; margin-top: 16px; }
+  body.is-home .funnel__item p { display: none; }
+  body.is-home .funnel__item a { font-size: 13.5px; }
+  body.is-home .live-crosslinks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+  body.is-home .live-crosslink { padding: 12px; gap: 4px; }
+  body.is-home .live-crosslink > span { display: none; }
+  body.is-home .live-crosslink b { font-size: 13px; }
+  body.is-home .live-crosslink a { font-size: 11.5px; }
+
+  body.is-home .platform-band { padding: 18px; gap: 14px; }
+  body.is-home .platform-band__copy h2 { font-size: 22px; }
+  body.is-home .platform-band__list { margin-top: 10px; gap: 6px 14px; }
+  body.is-home .platform-band__list li { font-size: 12px; }
+  body.is-home #erp .note-quiet { font-size: 11.5px; margin-top: 10px; }
+  body.is-home .platform-band__actions { gap: 8px; }
+
+  body.is-home .closing__inner { padding: 26px 18px; }
+  body.is-home .closing__title { font-size: 26px; }
+  body.is-home .closing__contact { margin-top: 18px; gap: 6px 12px; font-size: 12px; }
+}

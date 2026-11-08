@@ -7,7 +7,7 @@ never paired with a fabricated result. Real client cases stay in /case-studies/
 with their published evidence limits, and new ones enter through the intake and
 approval process in docs/PORTFOLIO-INTAKE.md.
 """
-from h import esc, icon, crumbs, closing, btn, page, sec_head, facts
+from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, media_img
 from data_growth import PORTFOLIO, CONCEPT_LABEL, CONCEPT_LABEL_AR, EVIDENCE, EVIDENCE_AR
 
 MEDIA = '/assets/media/'
@@ -18,7 +18,7 @@ def tile(p, i=0):
     return f'''
       <article class="work-tile" data-category="{CAT_KEY[p['cat']]}" data-reveal style="--d:{(i % 2) * .06:.2f}s">
         <div class="work-tile__media">
-          <img src="{MEDIA}{esc(p['media'])}.webp" alt="{esc(CONCEPT_LABEL)} — {esc(p['title'])}" data-ar-alt="{esc(CONCEPT_LABEL_AR)} — {esc(p['title_ar'])}" width="1600" height="900" loading="lazy" decoding="async" />
+          {media_img(p['media'], CONCEPT_LABEL + ' — ' + p['title'], CONCEPT_LABEL_AR + ' — ' + p['title_ar'], sizes='(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 520px')}
           <span class="work-tile__badge" data-ar="دراسة مفاهيمية · ليست عمل عميل">CONCEPT STUDY · NOT CLIENT WORK</span>
           <span class="work-tile__cat" data-ar="{esc(p['cat_ar'])}">{esc(p['cat'])}</span>
         </div>
@@ -47,7 +47,7 @@ def case_page(p):
 
       <section class="section container section--tight" aria-label="Case study visual" data-ar-label="العمل الفني لدراسة الحالة">
         <figure class="live-figure live-figure--wide">
-          <img src="{MEDIA}{esc(p['media'])}.webp" alt="{esc(CONCEPT_LABEL)} — {esc(p['title'])}" data-ar-alt="{esc(CONCEPT_LABEL_AR)} — {esc(p['title_ar'])}" width="1600" height="900" loading="lazy" decoding="async" />
+          {media_img(p['media'], CONCEPT_LABEL + ' — ' + p['title'], CONCEPT_LABEL_AR + ' — ' + p['title_ar'], sizes='(max-width: 720px) 92vw, 1200px')}
           <figcaption><span data-ar="{esc(p['cat_ar'])}">{esc(p['cat'])}</span><span class="live-figure__disclaimer" data-ar="{esc(CONCEPT_LABEL_AR)}">{esc(CONCEPT_LABEL)}</span></figcaption>
         </figure>
         <p class="live-media-note" data-ar="عمل فني توضيحي أُنشئ لهذا الموقع. ليس لقطة شاشة لمنتج، ولا صورة لتغليف عميل، ولا إثباتًا على نتيجة عمل.">Illustrative artwork created for this site. It is not a product screenshot, a photograph of a client pack, or evidence of a business result.</p>
@@ -113,7 +113,7 @@ def hub():
 
       <section class="section container section--tight" aria-label="Portfolio visual" data-ar-label="صورة البورتفوليو">
         <figure class="live-figure live-figure--wide">
-          <img src="{MEDIA}brand-system.webp" alt="{esc(CONCEPT_LABEL)}" data-ar-alt="{esc(CONCEPT_LABEL_AR)}" width="1600" height="900" loading="eager" decoding="async" />
+          {media_img('brand-system', CONCEPT_LABEL, CONCEPT_LABEL_AR, sizes='(max-width: 720px) 92vw, 1200px', eager=True)}
           <figcaption><span data-ar="أنظمة العلامة · Code &amp; Canvas">BRAND SYSTEMS · CODE &amp; CANVAS</span><span class="live-figure__disclaimer" data-ar="{esc(CONCEPT_LABEL_AR)}">{esc(CONCEPT_LABEL)}</span></figcaption>
         </figure>
       </section>

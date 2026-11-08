@@ -75,7 +75,11 @@ test('shortlist ignores forged prices, titles, duplicates and unknown IDs; count
 
 for (const lang of ['en','ar']) test(`reader buttons, RTL keyboard, notes and preview gate — ${lang}`, async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('cc-library',JSON.stringify([{id:'marketing-fundamentals'}])));
-  const missing=[]; page.on('response',r=>{if(r.status()===404)missing.push(r.url());});
+  // Vercel injects /_vercel/insights/script.js only on its own platform, so the
+  // local dev server and non-Vercel static hosts legitimately 404 it. Keep the
+  // assertion strict for every first-party asset (check-links.mjs skips the
+  // same platform URL).
+  const missing=[]; page.on('response',r=>{if(r.status()===404 && !r.url().includes('/_vercel/'))missing.push(r.url());});
   await visit(page,'/books/marketing-fundamentals/read/',lang);
   await expect(page.locator('[data-counter]')).toHaveText(/^1 \//);
   await expect(page.locator('[data-prev]')).toBeDisabled();

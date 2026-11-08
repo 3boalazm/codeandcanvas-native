@@ -6,7 +6,7 @@ three-step process, real internal links (concept study → published case →
 article), a scoped inquiry CTA, a booking CTA and an FAQ. Prices are the
 indicative catalogue ranges and are always described as such.
 """
-from h import esc, icon, crumbs, closing, btn, page, sec_head, ORG_ID, SITE
+from h import esc, icon, crumbs, closing, btn, page, sec_head, ORG_ID, SITE, media_img
 from data_growth import SERVICE_LANDINGS
 
 MEDIA = '/assets/media/'
@@ -33,7 +33,7 @@ def landing(x):
 
       <section class="section container section--tight" aria-label="Service visual" data-ar-label="صورة الخدمة">
         <figure class="live-figure live-figure--wide">
-          <img src="{MEDIA}{esc(x['media'])}.webp" alt="Illustrative studio artwork for {esc(x['title'])}" data-ar-alt="عمل فني توضيحي للاستوديو — {esc(x['title_ar'])}" width="1600" height="900" loading="eager" decoding="async" />
+          {media_img(x['media'], 'Illustrative studio artwork for ' + x['title'], 'عمل فني توضيحي للاستوديو — ' + x['title_ar'], sizes='(max-width: 720px) 92vw, 1200px', eager=True, fetchpriority='high')}
           <figcaption><span data-ar="عمل توضيحي • ليس لقطة منتج">ILLUSTRATIVE · NOT A PRODUCT SHOT</span><span class="live-figure__disclaimer" data-ar="تصميم توضيحي للسيكشن">SECTION ARTWORK</span></figcaption>
         </figure>
         <p class="live-media-note" data-ar="عمل فني توضيحي أُنشئ للموقع؛ لا يمثّل لقطة شاشة لمنتج عميل ولا إثبات نتيجة.">Illustrative artwork created for this site; it is not a client product screenshot or evidence of a result.</p>

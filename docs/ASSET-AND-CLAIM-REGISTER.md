@@ -35,3 +35,26 @@ The machine inventory in `completion-2026-10-14/evidence/asset-slots.json` recor
 6. Approve exact claims and link to their source before removing the “illustration”/qualification labels.
 
 **Release rule:** an attractive image is not evidence. A publicly reachable demo is not proof of client impact. Do not close the asset, creative-proof, certification or production gates merely because the diagrams render and the browser tests pass.
+
+---
+
+## 2026-11-08 · Generated artwork added this lap
+
+Four new pieces of **illustrative studio artwork** were generated for this repository. They are abstract, AI-generated compositions in the site's navy / violet / teal / pink glass-panel language. **None of them is a photograph, a client deliverable, a product screenshot, a testimonial, or evidence of an outcome.** Every visible placement keeps an EN/AR `alt` (via `data-ar-alt`) and an on-page qualifier such as `ILLUSTRATIVE · NOT CLIENT WORK`, `ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO`, or `STUDIO VISUAL STUDY`. They must not be captioned or re-used as proof of work.
+
+| Source PNG (kept in Git) | Derived WebP | Visible placement | Purpose | What it does **not** prove |
+| --- | --- | --- | --- | --- |
+| `assets/media/blog-product-strategy.png` | `blog-product-strategy.webp` (1600w) + `blog-product-strategy-sm.webp` (780w) | Cover for four product-thinking / product-strategy articles and their AR twins, via `pages_blog.py::COVERS_BY_SLUG` | Editorial atmosphere for an article | No product, no client, no measured result |
+| `assets/media/blog-design-systems.png` | `blog-design-systems.webp` + `-sm.webp` | Cover for the design-systems article + AR twin | Editorial atmosphere | No design system was shipped by this image |
+| `assets/media/blog-experience-design.png` | `blog-experience-design.webp` + `-sm.webp` | Cover for two experience-design / digital-transformation articles + AR twins | Editorial atmosphere | No UX research or outcome |
+| `assets/media/studio-method.png` | `studio-method.webp` + `-sm.webp` | Labelled bilingual figure in `/methodology/` (and `/ar/methodology/`) via `pages_methodology.py::studio_figure()`; desktop-only background for the homepage "How we work" band in `assets/css/home.css` | Explains the *shape* of the process, not a real engagement | No milestone, invoice, client, or deployment evidence |
+
+All eight WebP derivatives are produced by `scripts/optimize-media.mjs`: 1600px q82 for desktop and 780px q72 for phone, with `srcset`/`sizes` emitted by `scripts/lib/h.py::media_img()`. The `<figure>` carries its own bilingual label and disclaimer. The smaller variants are deliberately not loaded on mobile for the desktop-only background, so the artwork adds **zero** phone bytes there.
+
+### Other asset/SEO resolutions recorded this lap
+
+- The 14 previously orphaned OG cards in `assets/brand/og/` are now routed to their matching pages by `scripts/lib/h.py::OG_BY_PATH` (16 routes); an explicit `og_image=` argument still wins. `/erp/` also uses `og/erp.png`, and `/claims/` uses `og/claims.png`.
+- `/index.html` and `/erp/index.html` now carry EN / AR / x-default `hreflang`; `ar/erp/index.html` is generated with Arabic `<title>` and description from `data-title-ar` / `data-desc-ar`. `/clinic-review/index.html` (noindex) has its own title/description so it no longer duplicates `amro-alahawany-review`.
+- These are **technical** resolutions. The editorial/legal approval rows above remain open: Arabic translations, licensed photography, permission-cleared client screenshots, and claim sources still require owner sign-off.
+
+**Still true:** the generated art makes the site feel alive; it does not close any claim, creative-proof, certification, legal, or production gate.

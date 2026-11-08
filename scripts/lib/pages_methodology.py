@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """/methodology/ — live copy of codeandcanvas.net/methodology/."""
-from h import esc, icon, crumbs, closing, btn, page, sec_head, steps3, facts
+from h import esc, icon, crumbs, closing, btn, page, sec_head, steps3, facts, studio_figure
 
 PHASES = [
     ('01', 'Foundation', 'الأساس', 'Discovery & Business Goals', 'الاستكشاف وأهداف الأعمال',
@@ -71,6 +71,12 @@ def build():
                 ('Stages with a named deliverable', 'مرحلة لها مخرج مسمّى', '8', True),
                 ('Productized services on this process', 'خدمة مُنتجة تعمل بهذه العملية', '23', True)])}
       </section>
+
+      {studio_figure('studio-method', 'THE METHOD, IN ONE FRAME', 'المنهجية في إطار واحد',
+                     'Abstract illustrative artwork of three milestone gates — not a client deliverable',
+                     'عمل فني تجريدي توضيحي لثلاث بوابات مراحل — ليس مخرج عميل',
+                     note='Illustrative artwork created for this site. It is a visual metaphor for written milestones, not a client deliverable or a product screenshot.',
+                     note_ar='عمل فني توضيحي أُنشئ للموقع. استعارة بصرية لمعالم مكتوبة، وليس مخرج عميل ولا لقطة منتج.')}
 
       <!-- ░░ 8 stages ░░ -->
       <section class="section container section--tight" id="stages" aria-labelledby="stages-title">

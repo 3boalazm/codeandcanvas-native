@@ -28,19 +28,30 @@ if (!CHECK) {
   var Resvg = (await import('@resvg/resvg-js')).Resvg;
 }
 
-/* ---------- 1. Illustrative artwork → WebP ---------- */
+/* ---------- 1. Illustrative artwork → WebP (desktop + phone) ----------
+   Two widths are emitted for every source. The 780px variant is what a phone
+   downloads through the srcset emitted by scripts/lib/h.py::media_img(); the
+   1600px original stays for large screens. Both are committed static assets,
+   so neither requires a runtime image service or a CDN resizer.            */
 const pngs = existsSync(MEDIA) ? readdirSync(MEDIA).filter((f) => f.endsWith('.png')) : [];
+const VARIANTS = [
+  { suffix: '', width: 1600, quality: 82 },
+  { suffix: '-sm', width: 780, quality: 72 },
+];
 let converted = 0;
 for (const file of pngs) {
   const src = join(MEDIA, file);
-  const dst = join(MEDIA, file.replace(/\.png$/, '.webp'));
-  if (CHECK) {
-    if (!existsSync(dst)) { console.error(`missing optimized asset: ${dst}`); process.exitCode = 1; }
-    continue;
+  const stem = file.replace(/\.png$/, '');
+  for (const v of VARIANTS) {
+    const dst = join(MEDIA, `${stem}${v.suffix}.webp`);
+    if (CHECK) {
+      if (!existsSync(dst)) { console.error(`missing optimized asset: ${dst}`); process.exitCode = 1; }
+      continue;
+    }
+    await sharp(src).resize({ width: v.width, withoutEnlargement: true }).webp({ quality: v.quality, effort: 6 }).toFile(dst);
+    converted += 1;
+    console.log(`webp: ${file} → ${basename(dst)} (${v.width}px)`);
   }
-  await sharp(src).resize({ width: 1600, withoutEnlargement: true }).webp({ quality: 82, effort: 6 }).toFile(dst);
-  converted += 1;
-  console.log(`webp: ${file} → ${basename(dst)}`);
 }
 
 /* ---------- 2. Per-route social cards (1200×630) ---------- */
@@ -136,4 +147,4 @@ for (const [slug, card] of Object.entries(CARDS)) {
   writeFileSync(out, png);
   ogCount += 1;
 }
-console.log(CHECK ? `media check: ${pngs.length} source(s), ${Object.keys(CARDS).length} OG card(s)` : `done: ${converted} WebP, ${ogCount} OG cards`);
+console.log(CHECK ? `media check: ${pngs.length} source(s), ${pngs.length * VARIANTS.length} WebP variant(s), ${Object.keys(CARDS).length} OG card(s)` : `done: ${converted} WebP variants, ${ogCount} OG cards`);

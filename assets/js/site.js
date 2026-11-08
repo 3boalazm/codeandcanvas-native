@@ -504,8 +504,8 @@
       bar.innerHTML = `<p>${ar ? 'هل تسمح بقياس استخدام الموقع؟ لا نرسل بيانات النماذج أو محتوى رسائلك. يمكنك تغيير اختيارك من التذييل.' : 'Allow usage measurement? We never send form values or message content. Change your choice in the footer.'}</p><div class="btn-row"><button type="button" class="btn btn--primary" data-choice="granted">${ar ? 'أوافق' : 'Allow'}</button><button type="button" class="btn btn--glass" data-choice="denied">${ar ? 'لا أوافق' : 'Decline'}</button></div>`;
       bar.hidden = !!store.get('cc-analytics-consent') || navigator.doNotTrack === '1' || !!navigator.globalPrivacyControl;
     };
-    bar.addEventListener('click', (e) => { const b = e.target.closest('[data-choice]'); if (!b) return; store.set('cc-analytics-consent', b.dataset.choice); bar.hidden = true; settings.focus(); if (b.dataset.choice === 'granted') { track('page-view'); loadMeasurementProviders(); } });
-    settings.addEventListener('click', () => { bar.hidden = false; bar.querySelector('button')?.focus(); });
+    bar.addEventListener('click', (e) => { const b = e.target.closest('[data-choice]'); if (!b) return; store.set('cc-analytics-consent', b.dataset.choice); bar.hidden = true; settings.focus({ preventScroll: true }); if (b.dataset.choice === 'granted') { track('page-view'); loadMeasurementProviders(); } });
+    settings.addEventListener('click', () => { bar.hidden = false; bar.querySelector('button')?.focus({ preventScroll: true }); });
     document.body.append(bar); $('.footer__bottom')?.append(settings); listeners.push(renderConsent); renderConsent();
   }
 

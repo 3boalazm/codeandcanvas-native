@@ -145,6 +145,17 @@ test('analytics requires consent, excludes PII, bounds queue and allows withdraw
   expect(await page.evaluate(()=>window.dataLayer.length)).toBe(100);
 });
 
+test('declining measurement consent keeps the page in place',async({page})=>{
+  await configure(page,{analyticsEndpoint:'/api/events'});
+  await visit(page);
+  await expect(page.locator('.consent-bar')).toBeVisible();
+  const before=await page.evaluate(()=>scrollY);
+  await page.locator('[data-choice=denied]').click();
+  await page.waitForTimeout(250);
+  expect(await page.evaluate(()=>scrollY)).toBe(before);
+  await expect(page.locator('.consent-bar')).toBeHidden();
+});
+
 for(const pref of ['doNotTrack','globalPrivacyControl']) test(`privacy signal suppresses analytics — ${pref}`,async({page})=>{
   await configure(page,{analyticsEndpoint:'/api/events'});
   await page.addInitScript(pref=>{localStorage.setItem('cc-analytics-consent','granted');Object.defineProperty(navigator,pref,{get:()=>pref==='doNotTrack'?'1':true});},pref);

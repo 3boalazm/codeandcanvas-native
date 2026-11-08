@@ -45,7 +45,7 @@ npm run gate            ✅ EXIT 0 (full publish gate, 2026-11-08)
   ├ generate           ✅ 60 chrome-marked pages · 61 Arabic pages · 129 outputs
   ├ check              ✅ 126 HTML files, 0 link/tag problems · parity 129 outputs
   │                      ✅ check-claims 123 pages · media 10 WebP + 35 OG cards
-  ├ test               ✅ 565 Playwright tests passed (9.1m) · no failures
+  ├ test               ✅ 566 Playwright tests passed (9.6m) · no failures
   └ build              ✅ Static site built in dist/ · dist/crm/index.html present
 npm run verify:api      ✅ 23/23 first-party pipeline checks
 node --check           ✅ server/api.mjs, assets/js/booking.js, dev-server.mjs

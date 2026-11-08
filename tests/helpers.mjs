@@ -27,6 +27,8 @@ export async function fillContact(page) {
   await page.locator('#c-email').fill('qa@example.invalid');
   await page.locator('#c-inquiry').selectOption({ index: 1 });
   await page.locator('#c-msg').fill('Local automated acceptance test, not a real inquiry.');
+  const consent = page.locator('#c-consent');
+  if (await consent.count()) await consent.check();
 }
 export async function seedShortlist(page, values = [{ id: 'marketing-fundamentals', qty: 3 }]) {
   await page.addInitScript(values => localStorage.setItem('cc-cart', JSON.stringify(values)), values);

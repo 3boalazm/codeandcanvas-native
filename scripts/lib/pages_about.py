@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """/about/ — the studio page: position, six structural differences, the two tracks,
 and the engagement process. v3 editorial layout (numbered heads, dense rows)."""
-from h import esc, icon, crumbs, closing, btn, page, sec_head, steps3, facts, PERSON_LD
+from h import esc, icon, crumbs, closing, btn, page, sec_head, steps3, facts, PERSON_LD, studio_figure
 
 WHY = [
     ('Productized, not open-ended', 'مُنتجة، لا مفتوحة النهاية',
@@ -14,8 +14,8 @@ WHY = [
      'An Enterprise Architect and a Brand Identity Designer as co-founders means <strong>technology and brand decisions happen in the same room</strong>, aligned from day one.',
      'مهندس معماري مؤسسي ومصمم هوية بصرية كشريكين مؤسسين يعني أن <strong>قرارات التقنية والعلامة تُتخذ في الغرفة نفسها</strong>، متوائمة من اليوم الأول.'),
     ('Deep healthcare domain knowledge', 'معرفة عميقة بقطاع الرعاية الصحية',
-     'CPHIMS, HIMSS EMRAM, CBAHI, NORA — <strong>active credentials, not listed frameworks</strong>. Every HC engagement is delivered with clinical workflow context built in from the first call.',
-     'CPHIMS و HIMSS EMRAM و CBAHI و NORA — <strong>اعتمادات فعّالة لا أطر مُدرجة</strong>. كل مشروع صحي يُنفَّذ بسياق مسارات العمل السريرية من المكالمة الأولى.'),
+     'CPHIMS, HIMSS EMRAM, CBAHI and NORA are <strong>frameworks we work within</strong>; personal certification status is recorded in the <a href="/claims/">claims register</a> until the owner supplies dated evidence. Every healthcare engagement starts with clinical workflow context.',
+     'CPHIMS و HIMSS EMRAM و CBAHI و NORA <strong>أطر نعمل في سياقها</strong>؛ وتُسجَّل حالة الشهادات الشخصية في <a href="/claims/">سجل الادعاءات</a> حتى يقدّم المالك مستندات مؤرّخة. كل مشروع صحي يبدأ بسياق مسارات العمل السريرية.'),
     ('MENA-native delivery', 'تنفيذ بروح المنطقة',
      'Bilingual AR/EN as standard. Vision 2030 and NORA alignment built into architecture. <strong>Saudi-specific regulatory context</strong> embedded in every technology recommendation.',
      'ثنائية اللغة عربي/إنجليزي كمعيار. مواءمة رؤية 2030 و NORA مدمجة في العمارة. <strong>السياق التنظيمي السعودي</strong> متضمَّن في كل توصية تقنية.'),
@@ -68,17 +68,24 @@ def build():
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="عن الاستوديو">About the Studio</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="نبني ما تحتاجه الأعمال">We build what businesses need</span><br /><span class="grad-text" data-ar="لتنمو — بالتصميم.">to grow — by design.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="Code &amp; Canvas استوديو بوتيكي لتطوير الأعمال أسّسه مهندس معماري مؤسسي ومصمم هوية بصرية — وكلاهما يمارس تطوير الأعمال فعليًا. نساعد المؤسسات في &lt;strong&gt;المنطقة&lt;/strong&gt; على النمو عبر مواءمة &lt;strong&gt;الهوية والتقنية والبيانات&lt;/strong&gt; مع الأهداف التجارية من خلال مشاريع ثابتة النطاق تُسلَّم على مراحل.">Code &amp; Canvas is a boutique business development studio co-founded by an Enterprise Architect and a Brand Identity Designer — both operating as active BD practitioners. We help organizations across <strong>MENA</strong> grow by aligning <strong>brand, technology, and data</strong> to commercial objectives through fixed-scope, milestone-delivered engagements.</p>
-        <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s">{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}{btn('Our story', 'قصتنا', '/our-story/', 'glass')}{btn('Meet the team', 'تعرّف على الفريق', '/team/', 'ghost', 'arrow')}</div>
+        <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s">{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/')}{btn('Our story', 'قصتنا', '/our-story/', 'glass')}{btn('Meet the team', 'تعرّف على الفريق', '/team/', 'ghost', 'arrow')}</div>
       </section>
 
       <!-- ░░ Studio at a glance ░░ -->
       <section class="section container section--tight" aria-label="Studio at a glance" data-ar-label="الاستوديو في أرقام">
-        {facts([('Years across both tracks', 'سنوات عبر كلا المسارين', '9+', True),
-                ('Brands &amp; orgs delivered', 'علامة ومؤسسة سلّمناها', '40+', True),
-                ('Sectors served', 'قطاعًا خدمناه', '12+', True),
-                ('Productized services', 'خدمة مُنتجة', '23', True),
-                ('Countries — KSA · Egypt', 'دولتان — السعودية · مصر', '2', True)])}
+        {facts([('Productized services', 'خدمة مُنتجة', '23', True),
+                ('Positioning pillars', 'مسارات تموضع', '4', True),
+                ('Published case studies', 'دراسات حالة منشورة', '3', True),
+                ('Flagship service pages', 'صفحات خدمات رئيسية', '7', True),
+                ('Languages · markets', 'لغات · أسواق', 'AR / EN · KSA / EG', True)])}
       </section>
+
+      <!-- ░░ Studio visual (labelled illustrative artwork) ░░ -->
+{studio_figure('studio-atmosphere', 'THE STUDIO, IN ONE FRAME', 'الاستوديو في إطار واحد',
+        'Abstract illustrative artwork representing the studio disciplines — not a photograph of people or offices',
+        'عمل فني تجريدي توضيحي يمثّل تخصصات الاستوديو — ليس صورة أشخاص أو مقر',
+        'Real, licensed founder and team photography is an owner gate. Until it is supplied, this page uses clearly labelled illustrative artwork instead of invented portraits.',
+        'صور حقيقية مرخّصة للمؤسسين والفريق بوابة بانتظار المالك. إلى أن تُوفَّر، تستخدم هذه الصفحة أعمالًا توضيحية مُعلَّنة بدل صور مُختلقة.')}
 
       <!-- ░░ Position ░░ -->
       <section class="section container section--tight" id="position" aria-labelledby="pos-title">
@@ -86,7 +93,7 @@ def build():
           <p class="kicker"><span data-ar="موقفنا">Our position</span></p>
           <h2 class="statement__text" id="pos-title" style="font-size:clamp(26px,3.4vw,44px)"><span data-ar="تطوير الأعمال يُقدَّم عبر التقنية والتصميم —">Business development delivered through technology and design —</span> <span class="grad-text" data-ar="لا رغمًا عنهما.">not despite them.</span></h2>
           <p class="lead">Most studios separate brand from technology. Most consultancies separate strategy from delivery. We built Code &amp; Canvas to collapse those gaps — into a single studio, two specialist tracks, and a shared commercial discipline that makes both more effective.</p>
-          <div class="pill-list" style="margin-top:22px"><span class="pill" data-ar="العمارة المؤسسية">Enterprise Architecture</span><span class="pill" data-ar="هوية العلامة">Brand Identity</span><span class="pill" data-ar="تقنية الرعاية الصحية">Healthcare IT</span><span class="pill" data-ar="التحول الرقمي">Digital Transformation</span><span class="pill" data-ar="البيانات والتحليلات">Data &amp; Analytics</span><span class="pill">TOGAF · CPHIMS · NORA</span></div>
+          <div class="pill-list" style="margin-top:22px"><span class="pill" data-ar="العمارة المؤسسية">Enterprise Architecture</span><span class="pill" data-ar="هوية العلامة">Brand Identity</span><span class="pill" data-ar="تقنية الرعاية الصحية">Healthcare IT</span><span class="pill" data-ar="التحول الرقمي">Digital Transformation</span><span class="pill" data-ar="البيانات والتحليلات">Data &amp; Analytics</span><a class="pill" href="/claims/" data-ar="الأطر والادعاءات ↗">Frameworks &amp; claims ↗</a></div>
         </div>
       </section>
 

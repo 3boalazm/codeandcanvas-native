@@ -15,9 +15,9 @@ SERVICES = {
         price="$1,000 – $5,000", price_ar=None, dur="2–8 weeks · TOGAF ADM", dur_ar="⁦2–8⁩ أسابيع · TOGAF ADM"),
     "AB-02": dict(track="technology", tag="CPHIMS · EMRAM", tag_ar=None,
         title="Healthcare Digital Transformation", title_ar="التحول الرقمي في الرعاية الصحية",
-        blurb="Hospital and clinic transformations executed against HIMSS Stage 6+ readiness — from EHR selection and interoperability rollout to CBAHI readiness and NORA compliance architecture. Delivered by an active HIMSS EMRAM assessor.",
-        blurb_ar="تحوّلات المستشفيات والعيادات وفق جاهزية HIMSS المرحلة 6+ — من اختيار نظام السجلات الطبية الإلكترونية ونشر التشغيل البيني إلى جاهزية CBAHI وعمارة الامتثال لـ NORA. بتنفيذ مقيّم HIMSS EMRAM نشط.",
-        price="$3,000 – $8,000", price_ar=None, dur="4–8 weeks · CPHIMS-delivered", dur_ar="⁦4–8⁩ أسابيع · بتنفيذ CPHIMS"),
+        blurb="Hospital and clinic transformations using EMRAM stage-readiness criteria — from EHR selection and interoperability rollout to CBAHI readiness and NORA-aligned architecture. Delivered with documented clinical workflow context.",
+        blurb_ar="تحوّلات المستشفيات والعيادات وفق جاهزية HIMSS المرحلة 6+ — من اختيار نظام السجلات الطبية الإلكترونية ونشر التشغيل البيني إلى جاهزية CBAHI وعمارة الامتثال لـ NORA. بسياق مسارات عمل سريرية موثّقة.",
+        price="$3,000 – $8,000", price_ar=None, dur="4–8 weeks · CPHIMS-informed", dur_ar="⁦4–8⁩ أسابيع · وفق معايير CPHIMS"),
     "AB-03": dict(track="technology", tag="Power BI · Python", tag_ar=None,
         title="Data Architecture & Analytics", title_ar="هندسة البيانات والتحليلات",
         blurb="From data governance design to ODS → EDW pipelines and production BI platforms — the data foundation that feeds dashboards, ML models, and executive decisions. Not retrospective reporting; decision intelligence.",
@@ -116,7 +116,7 @@ SERVICES = {
         title="Healthcare EA Assessment", title_ar="تقييم العمارة المؤسسية للرعاية الصحية",
         blurb="TOGAF-anchored assessment with EMRAM stage scoring, CBAHI readiness gap report, NORA alignment, and a 90-day technology roadmap.",
         blurb_ar="تقييم مرتكز على TOGAF مع تحديد مرحلة EMRAM وتقرير فجوات الجاهزية لـ CBAHI والمواءمة مع NORA وخارطة طريق تقنية لمدة 90 يومًا.",
-        price="$1,500 – $3,500", price_ar=None, dur="2–3 weeks · CPHIMS-delivered", dur_ar="⁦2–3⁩ أسابيع · بتنفيذ CPHIMS"),
+        price="$1,500 – $3,500", price_ar=None, dur="2–3 weeks · CPHIMS-informed", dur_ar="⁦2–3⁩ أسابيع · وفق معايير CPHIMS"),
 
     # ---------------- Combined — both founders (CC) ----------------
     "CC-01": dict(track="combined", tag="BRAND + TECH · FLAGSHIP", tag_ar="الهوية + التقنية · الباقة الرئيسية", star=True,

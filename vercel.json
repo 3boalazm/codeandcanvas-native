@@ -23,11 +23,6 @@
       "permanent": true
     },
     {
-      "source": "/book",
-      "destination": "/contact/#book",
-      "permanent": true
-    },
-    {
       "source": "/our-team",
       "destination": "/team/",
       "permanent": true
@@ -39,12 +34,12 @@
     },
     {
       "source": "/account-center",
-      "destination": "/account/",
+      "destination": "/resources/",
       "permanent": true
     },
     {
       "source": "/my-account",
-      "destination": "/account/",
+      "destination": "/resources/",
       "permanent": true
     },
     {
@@ -98,6 +93,71 @@
       "permanent": true
     },
     {
+      "source": "/portfolio",
+      "destination": "/work/",
+      "permanent": true
+    },
+    {
+      "source": "/our-work",
+      "destination": "/work/",
+      "permanent": true
+    },
+    {
+      "source": "/book-a-call",
+      "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/booking",
+      "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/appointments",
+      "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/locations",
+      "destination": "/saudi-arabia/",
+      "permanent": true
+    },
+    {
+      "source": "/ksa",
+      "destination": "/saudi-arabia/",
+      "permanent": true
+    },
+    {
+      "source": "/saudi",
+      "destination": "/saudi-arabia/",
+      "permanent": true
+    },
+    {
+      "source": "/eg",
+      "destination": "/egypt/",
+      "permanent": true
+    },
+    {
+      "source": "/egypt-services",
+      "destination": "/egypt/",
+      "permanent": true
+    },
+    {
+      "source": "/evidence",
+      "destination": "/claims/",
+      "permanent": true
+    },
+    {
+      "source": "/claim-register",
+      "destination": "/claims/",
+      "permanent": true
+    },
+    {
+      "source": "/library",
+      "destination": "/resources/",
+      "permanent": true
+    },
+    {
       "source": "/why-startups-waste-money-wrong-product",
       "destination": "/blog/why-startups-waste-money-wrong-product/",
       "permanent": true
@@ -128,22 +188,32 @@
       "permanent": true
     },
     {
+      "source": "/from-brand-identity-to-brand-systems",
+      "destination": "/blog/from-brand-identity-to-brand-systems/",
+      "permanent": true
+    },
+    {
+      "source": "/brand-identity-to-brand-systems",
+      "destination": "/blog/from-brand-identity-to-brand-systems/",
+      "permanent": true
+    },
+    {
       "source": "/design-systems-operating-system-modern-digital-products",
       "destination": "/blog/design-systems-operating-system-modern-digital-products/",
       "permanent": true
     },
     {
-      "source": "/from-brand-identity-to-brand-systems",
-      "destination": "/blog/design-systems-operating-system-modern-digital-products/",
+      "source": "/creative-strategy-in-the-age-of-generative-ai",
+      "destination": "/blog/creative-strategy-in-the-age-of-generative-ai/",
+      "permanent": true
+    },
+    {
+      "source": "/creative-strategy-generative-ai-age",
+      "destination": "/blog/creative-strategy-in-the-age-of-generative-ai/",
       "permanent": true
     },
     {
       "source": "/experience-design-business-growth-driver",
-      "destination": "/blog/experience-design-business-growth-driver/",
-      "permanent": true
-    },
-    {
-      "source": "/creative-strategy-in-the-age-of-generative-ai",
       "destination": "/blog/experience-design-business-growth-driver/",
       "permanent": true
     },

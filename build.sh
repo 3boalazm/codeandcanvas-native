@@ -9,6 +9,11 @@ for f in index.html 404.html favicon.svg manus-routes.json robots.txt sitemap.xm
 done
 # Shared assets
 cp -R assets dist/
+# Lead dashboard (noindex, operator-only). The API itself must be deployed as a
+# Node service; the static build only ships the dashboard shell.
+mkdir -p dist/crm
+cp server/crm.html dist/crm/index.html
+
 # Every route folder (anything that contains an index.html, except tooling folders)
 for d in */; do
   d="${d%/}"

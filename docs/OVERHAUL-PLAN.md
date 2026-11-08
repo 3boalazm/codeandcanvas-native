@@ -1,5 +1,8 @@
 # Code & Canvas — Overhaul plan (2026-10-14)
 
+> **HISTORICAL DOCUMENT — 2026-10-14 baseline.** This file describes the state *before* the 2026-11 audit overhaul. For the current architecture, routes, first-party API, verification results and remaining owner gates see [`docs/OVERHAUL-2026-11.md`](OVERHAUL-2026-11.md), [`README.md`](../README.md), [`docs/INTEGRATIONS.md`](INTEGRATIONS.md) and [`docs/PUBLISH-GATE.md`](PUBLISH-GATE.md). Do not use the operating rules below as current instructions.
+
+
 Working branch: `arena/327f43fd-codeandcanvas-native`. Live preview: port 3000 (`node dev-server.mjs`).
 
 ## 0. Operating rules

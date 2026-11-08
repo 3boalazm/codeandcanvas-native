@@ -7,15 +7,13 @@
 /healthcare-hub /healthcare/ 301
 /solutions /services/ 301
 /solutions/ /services/ 301
-/book /contact/#book 301
-/book/ /contact/#book 301
 /our-team/ /team/ 301
 /our-team /team/ 301
 /elementor-6205/ /team/ 301
-/account-center/ /account/ 301
-/account-center /account/ 301
-/my-account/ /account/ 301
-/my-account /account/ 301
+/account-center/ /resources/ 301
+/account-center /resources/ 301
+/my-account/ /resources/ 301
+/my-account /resources/ 301
 /shop/ /books/ 301
 /shop /books/ 301
 /product/ /books/ 301
@@ -28,6 +26,23 @@
 /data-analysis/ /technology-services/#ab-03 301
 /feed/ /blog/ 301
 /feed /blog/ 301
+/portfolio/ /work/ 301
+/portfolio /work/ 301
+/our-work/ /work/ 301
+/our-work /work/ 301
+/book-a-call/ /book/ 301
+/book-a-call /book/ 301
+/booking/ /book/ 301
+/booking /book/ 301
+/appointments/ /book/ 301
+/locations/ /saudi-arabia/ 301
+/ksa/ /saudi-arabia/ 301
+/saudi/ /saudi-arabia/ 301
+/eg/ /egypt/ 301
+/egypt-services/ /egypt/ 301
+/evidence/ /claims/ 301
+/claim-register/ /claims/ 301
+/library/ /resources/ 301
 
 # Blog: posts moved from the site root into /blog/ (+ fixed mis-slugged duplicates)
 /why-startups-waste-money-wrong-product/ /blog/why-startups-waste-money-wrong-product/ 301
@@ -42,14 +57,18 @@
 /how-product-thinking-creates-sustainable-business-growth /blog/how-product-thinking-creates-sustainable-business-growth/ 301
 /why-most-brands-look-different-but-feel-the-same/ /blog/why-most-brands-look-different-but-feel-the-same/ 301
 /why-most-brands-look-different-but-feel-the-same /blog/why-most-brands-look-different-but-feel-the-same/ 301
+/from-brand-identity-to-brand-systems/ /blog/from-brand-identity-to-brand-systems/ 301
+/from-brand-identity-to-brand-systems /blog/from-brand-identity-to-brand-systems/ 301
+/brand-identity-to-brand-systems/ /blog/from-brand-identity-to-brand-systems/ 301
+/brand-identity-to-brand-systems /blog/from-brand-identity-to-brand-systems/ 301
 /design-systems-operating-system-modern-digital-products/ /blog/design-systems-operating-system-modern-digital-products/ 301
 /design-systems-operating-system-modern-digital-products /blog/design-systems-operating-system-modern-digital-products/ 301
-/from-brand-identity-to-brand-systems/ /blog/design-systems-operating-system-modern-digital-products/ 301
-/from-brand-identity-to-brand-systems /blog/design-systems-operating-system-modern-digital-products/ 301
+/creative-strategy-in-the-age-of-generative-ai/ /blog/creative-strategy-in-the-age-of-generative-ai/ 301
+/creative-strategy-in-the-age-of-generative-ai /blog/creative-strategy-in-the-age-of-generative-ai/ 301
+/creative-strategy-generative-ai-age/ /blog/creative-strategy-in-the-age-of-generative-ai/ 301
+/creative-strategy-generative-ai-age /blog/creative-strategy-in-the-age-of-generative-ai/ 301
 /experience-design-business-growth-driver/ /blog/experience-design-business-growth-driver/ 301
 /experience-design-business-growth-driver /blog/experience-design-business-growth-driver/ 301
-/creative-strategy-in-the-age-of-generative-ai/ /blog/experience-design-business-growth-driver/ 301
-/creative-strategy-in-the-age-of-generative-ai /blog/experience-design-business-growth-driver/ 301
 
 # Books: WooCommerce product URLs → native landings
 /product/marketing-fundamentals/ /books/marketing-fundamentals/ 301

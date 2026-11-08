@@ -45,6 +45,9 @@ test('registration consent and password length are validated without fake auth',
 });
 
 test('availability inquiry requires consent and never creates an entitlement', async ({ page }) => {
+  // Exercise the static-host fallback path explicitly; default config now has a
+  // real first-party endpoint (verified separately in tests/smoke and verify:api).
+  await configure(page, { contactEndpoint: '' });
   await seedShortlist(page);
   await visit(page,'/checkout/');
   await page.locator('[name=name]').fill('Test Person'); await page.locator('[name=email]').fill('qa@example.invalid');
@@ -87,6 +90,7 @@ for (const lang of ['en','ar']) test(`reader buttons, RTL keyboard, notes and pr
 });
 
 test('manual contact handoff is not lead success and preserves input', async ({ page }) => {
+  await configure(page, { contactEndpoint: '' });
   await visit(page,'/contact/'); await fillContact(page); await page.locator('form button[type=submit]').click();
   await expect(page.locator('.form__status')).toContainText('not been sent');
   await expect(page.locator('#c-email')).toHaveValue('qa@example.invalid');
@@ -139,6 +143,17 @@ test('analytics requires consent, excludes PII, bounds queue and allows withdraw
   await page.getByRole('button',{name:'Measurement settings'}).click();await page.locator('[data-choice=denied]').click();
   await page.evaluate(()=>{for(let i=0;i<150;i++)CC.track('test');}); expect(sent).toHaveLength(2);
   expect(await page.evaluate(()=>window.dataLayer.length)).toBe(100);
+});
+
+test('declining measurement consent keeps the page in place',async({page})=>{
+  await configure(page,{analyticsEndpoint:'/api/events'});
+  await visit(page);
+  await expect(page.locator('.consent-bar')).toBeVisible();
+  const before=await page.evaluate(()=>scrollY);
+  await page.locator('[data-choice=denied]').click();
+  await page.waitForTimeout(250);
+  expect(await page.evaluate(()=>scrollY)).toBe(before);
+  await expect(page.locator('.consent-bar')).toBeHidden();
 });
 
 for(const pref of ['doNotTrack','globalPrivacyControl']) test(`privacy signal suppresses analytics — ${pref}`,async({page})=>{

@@ -32,7 +32,7 @@
       } catch (e) {}
     })();
     </script>
-  <link rel="preload" href="/assets/fonts/signategrotesk-black.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin-700.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/css/fonts.css" />
     <link rel="stylesheet" href="/assets/css/ds.css" />
   <link rel="stylesheet" href="/assets/css/erp.css" />
@@ -263,7 +263,10 @@
           <p class="lead">منهجية من خمس مراحل، تبدأ بفهم عملك وتنتهي بفريق يعمل على النظام بثقة. المدد تقديرية وتتحدد بعد جلسة الاكتشاف.</p>
         </div>
       </header>
-      <ol class="timeline" id="timeline"><span class="timeline__rail"><i id="timelineFill"></i></span></ol>
+      <div class="timeline-wrap">
+        <span class="timeline__rail" aria-hidden="true"><i id="timelineFill"></i></span>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
     </section>
 
     <!-- ░░ Why us ░░ -->

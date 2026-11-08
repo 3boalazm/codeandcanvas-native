@@ -199,9 +199,12 @@ def svc_rows(codes, alt_ids=False, alt_every=None):
 
 
 def svc_index_row(code):
-    """Compact index row used by the /services/ hub: code, title, who, duration, price."""
+    """Compact index row used by the /services/ hub: code, title, who, duration, price.
+    Flagship services link to their standalone landing page."""
+    from data_growth import LANDING_BY_CODE
     s = SERVICES[code]
-    return (f'<li><a href="{href(code)}" data-track="service-detail" data-track-id="{code}">'
+    target = LANDING_BY_CODE.get(code, href(code))
+    return (f'<li><a href="{target}" data-track="service-detail" data-track-id="{code}">'
             f'<span class="idx__code">{code}</span>'
             f'<span class="idx__title" data-ar="{esc(s["title_ar"])}">{esc(s["title"])}</span>'
             f'<span class="idx__who" data-ar="{esc(s["for_ar"])}">{esc(s["for_"])}</span>'
@@ -238,6 +241,21 @@ def chal(code, kicker, kicker_ar, title, title_ar, symptoms, symptoms_ar, price_
           </article>'''
 
 
+def studio_figure(media, label, label_ar, alt, alt_ar, note=None, note_ar=None):
+    """Labelled illustrative artwork. Never presented as a client photo or result."""
+    note_html = ''
+    if note:
+        note_html = (f'<p class="live-media-note" data-ar="{esc(note_ar or note)}">{esc(note)}</p>')
+    return f'''
+      <section class="section container section--tight" aria-label="{esc(label)}" data-ar-label="{esc(label_ar)}">
+        <figure class="live-figure live-figure--wide" data-reveal>
+          <img src="/assets/media/{esc(media)}.webp" alt="{esc(alt)}" data-ar-alt="{esc(alt_ar)}" width="1600" height="900" loading="lazy" decoding="async" />
+          <figcaption><span data-ar="{esc(label_ar)}">{esc(label)}</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي للاستوديو، وليس صورة أشخاص أو عمل عميل">ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO</span></figcaption>
+        </figure>
+        {note_html}
+      </section>
+'''
+
 def facts(items):
     """items = [(label_en, label_ar, value, value_is_ltr, value_ar or None)]"""
     cells = []
@@ -249,7 +267,7 @@ def facts(items):
     return '<div class="facts" data-reveal>' + ''.join(cells) + '</div>'
 
 
-def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extra_head='', scripts=('/assets/js/pages.js',), og_type='website', canonical=None, ld=None):
+def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extra_head='', scripts=('/assets/js/pages.js',), og_type='website', canonical=None, ld=None, og_image=None, view_track=None):
     """Write <ROOT>/<path>/index.html (or ROOT/<path> when path ends with .html).
 
     ld — optional list of extra schema.org objects (Article, Product, Service…);
@@ -258,14 +276,26 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
     url = canonical or (SITE + (path if path.endswith('.html') else path))
     ar_url = SITE + '/ar/' if path == '/' else SITE + '/ar' + path
     ar_path = '/ar/' if path == '/' else '/ar' + path
+    # Per-route social card: sync-chrome.mjs substitutes {{OG_IMAGE}} in the shared head.
+    og = og_image or '/assets/brand/og-default.png'
+    og_abs = og if og.startswith('http') else SITE + og
     if path.startswith('/books/') and not path.endswith('/read/'):
-        body = body.replace('</h1>', '</h1><p class="notice" data-ar="معاينات عامة فقط. الشراء الإلكتروني غير متاح حاليًا؛ الأسعار استرشادية. احفظ قائمة أو استفسر عن التوفر.">Public previews only. Online purchasing is not available yet; prices are indicative. Save a shortlist or ask about availability.</p><p><a class="text-link" href="/cart/" data-ar="قائمة الكتب المحفوظة ←">Your saved shortlist →</a></p>', 1)
+        body = body.replace('</h1>', '</h1><p class="notice" data-ar="معاينات عامة فقط. الشراء الإلكتروني غير متاح حاليًا؛ الأسعار استرشادية. احفظ قائمة أو استفسر عن التوفر.">Public previews only. Online purchasing is not available yet; prices are indicative. Save a shortlist or ask about availability.</p><p><a class="text-link" href="/resources/" data-ar="المصادر والمنتجات الرقمية ←">Resources &amp; digital products →</a></p>', 1)
+    # Commerce / account shells are kept out of the main studio journey. They still
+    # exist for legacy URLs, but say plainly what they are (and are not).
+    if path in ('/login/', '/register/', '/forgot-password/', '/reset-password/', '/account/', '/cart/', '/checkout/', '/thank-you/'):
+        body = ('<div class="container" style="padding-top:calc(var(--nav-h) + 24px)">'
+                '<div class="notice notice--violet" data-ar-html="هذه شاشة قديمة للحسابات أو التجارة الإلكترونية، &lt;strong&gt;مستبعدة من مسار الاستوديو الأساسي&lt;/strong&gt;. لا توجد حسابات أو دفع أو ملكية كتب حقيقية حاليًا. &lt;a href=&quot;/resources/&quot;&gt;المصادر والمنتجات الرقمية&lt;/a&gt; · &lt;a href=&quot;/contact/&quot;&gt;تواصل معنا&lt;/a&gt;.">'
+                'This is a legacy account / commerce screen, <strong>kept out of the main studio journey</strong>. '
+                'There are no real accounts, payments or book ownership yet. '
+                '<a href="/resources/">Resources &amp; digital products</a> · <a href="/contact/">Contact us</a>.'
+                '</div></div>') + body
     body = body.replace('<form ', '<form method="post" ')  # JS intercepts; never leak form values via GET if scripts fail.
     script_tags = '\n'.join(f'    <script src="{s}"></script>' for s in scripts)
     graph = [{
         '@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': title, 'description': desc,
         'inLanguage': ['en', 'ar'], 'isPartOf': {'@id': SITE_ID}, 'publisher': {'@id': ORG_ID},
-        'primaryImageOfPage': {'@type': 'ImageObject', 'url': SITE + '/assets/brand/og-default.png', 'width': 1200, 'height': 630},
+        'primaryImageOfPage': {'@type': 'ImageObject', 'url': og_abs, 'width': 1200, 'height': 630},
     }]
     if _LAST_CRUMBS:
         graph.append({'@type': 'BreadcrumbList', 'itemListElement': [
@@ -277,7 +307,7 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
         extra_head += '    <meta name="robots" content="noindex, follow" />\n'
     extra_head = jsonld(*graph) + extra_head
     doc = f'''<!doctype html>
-<html lang="en" dir="ltr" data-title-ar="{esc(title_ar)}" data-desc-ar="{esc(desc_ar)}" data-lang-mirror="{ar_path}">
+<html lang="en" dir="ltr" data-title-ar="{esc(title_ar)}" data-desc-ar="{esc(desc_ar)}" data-lang-mirror="{ar_path}" data-og="{esc(og)}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -295,7 +325,7 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
     <!-- cc:head -->
     <!-- /cc:head -->
 {extra_head}  </head>
-  <body class="is-loading{(' ' + body_class) if body_class else ''}"{f' data-nav="{nav}"' if nav else ''}>
+  <body class="is-loading{(' ' + body_class) if body_class else ''}"{f' data-nav="{nav}"' if nav else ''}{f' data-view-track="{view_track}"' if view_track else ''}>
     <!-- cc:top -->
     <!-- /cc:top -->
 
@@ -309,6 +339,8 @@ def page(path, *, title, title_ar, desc, desc_ar, nav, body, body_class='', extr
   </body>
 </html>
 '''
+    # Keep generated output free of indentation-only trailing whitespace.
+    doc = '\n'.join(line.rstrip() for line in doc.split('\n'))
     out = os.path.join(ROOT, path.lstrip('/')) if path.endswith('.html') else os.path.join(ROOT, path.strip('/'), 'index.html')
     os.makedirs(os.path.dirname(out), exist_ok=True)
     REGISTRY.append((path, title, title_ar))

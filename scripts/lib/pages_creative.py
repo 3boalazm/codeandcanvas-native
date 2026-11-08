@@ -64,7 +64,7 @@ def build():
           {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}
           {btn('Founder portfolio', 'أعمال المؤسس', 'https://aboalazm-os.vercel.app/', 'glass')}
         </div>
-        {facts([('Services', 'خدمات', '10', True), ('Years of practice', 'سنوات ممارسة', '9+ years', True),
+        {facts([('Services', 'خدمات', '10', True), ('Bilingual delivery', 'تسليم ثنائي اللغة', 'AR / EN', True),
                 ('Languages', 'اللغات', 'AR + EN', True), ('Starting at', 'تبدأ من', '$170', True)])}
       </section>
 
@@ -132,7 +132,7 @@ def build():
             <p class="person__role" data-ar="مدير إبداعي · مهندس هوية بصرية">Creative Director · Visual Brand Architect</p>
             <h3>Mustafa Aboalazm</h3>
             <p class="person__tag" data-ar="شريك مؤسس · Code &amp; Canvas · العبور، مصر">Co-Founder · Code &amp; Canvas · Al Obour, Egypt</p>
-            <p data-ar="مدير إبداعي بخبرة تتجاوز 9 سنوات في أنظمة العلامة والهوية البصرية والمواد المطبوعة والرقمية — مع أكثر من 20 علامة صاغها. يقود التصميم بنفسه من الاستراتيجية إلى الملف النهائي، وبالعربية والإنجليزية كأساس.">Creative director with 9+ years across brand systems, visual identity and print/digital production — with 20+ brands shaped. He leads the design himself from strategy to final file, working in Arabic and English as standard.</p>
+            <p data-ar="يقود مديرنا الإبداعي أنظمة العلامة والهوية البصرية والمواد المطبوعة والرقمية من الاستراتيجية إلى الملف النهائي، وبالعربية والإنجليزية كأساس. لا ننشر سنوات خبرة أو عدد علامات إلا بمستند مؤرّخ في سجل الادعاءات.">Our creative director leads brand systems, visual identity and print/digital production from strategy to final file, working in Arabic and English as standard. Experience and client counts are published only with dated evidence in the claims register.</p>
             <div class="creds" aria-label="Toolkit" data-ar-label="الأدوات"><span data-ar="استراتيجية العلامة">Brand strategy</span><span data-ar="أنظمة بصرية">Visual systems</span><span>Figma</span><span data-ar="الإخراج الفني">Art direction</span><span data-ar="طباعة وتغليف">Print &amp; packaging</span><span>AR + EN</span></div>
             <div class="person__links">
               <a href="https://aboalazm-os.vercel.app/" target="_blank" rel="noopener" title="Mustafa's portfolio">{icon('link')}<span data-ar="الأعمال ↗">Portfolio ↗</span></a>

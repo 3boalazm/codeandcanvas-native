@@ -1,22 +1,30 @@
 {
   "name": "codeandcanvas-site",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Code & Canvas native static site: bilingual marketing site, blog, books and the CanvasOne ERP proposal",
   "scripts": {
     "dev": "node dev-server.mjs",
     "sync": "node scripts/sync-chrome.mjs",
-    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs",
+    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs && node scripts/check-claims.mjs && node scripts/optimize-media.mjs --check",
     "build": "sh ./build.sh",
     "generate": "python3 scripts/gen-pages.py && npm run sync && node scripts/gen-ar.mjs",
     "test": "playwright test",
     "test:flows": "playwright test tests/flows.spec.mjs",
     "test:matrix": "playwright test tests/matrix.spec.mjs",
     "test:a11y": "playwright test tests/accessibility.spec.mjs",
-    "check:generated": "node scripts/check-generated.mjs"
+    "check:generated": "node scripts/check-generated.mjs",
+    "optimize:media": "node scripts/optimize-media.mjs",
+    "check:claims": "node scripts/check-claims.mjs",
+    "gate": "npm run generate && npm run check && npm test && npm run build",
+    "verify:live": "node scripts/verify-live.mjs",
+    "verify:api": "node scripts/smoke-api.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
-    "@playwright/test": "^1.64.1"
+    "@fontsource/space-grotesk": "^5.3.0",
+    "@playwright/test": "^1.64.1",
+    "@resvg/resvg-js": "^2.6.2",
+    "sharp": "^0.35.5"
   }
 }

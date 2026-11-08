@@ -9,6 +9,84 @@
    "title": "CanvasOne ERP — Code & Canvas"
   },
   {
+   "path": "/ar/",
+   "title": "Code & Canvas — الرئيسية",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/erp/",
+   "title": "CanvasOne ERP — العربية",
+   "lang": "ar"
+  },
+  {
+   "path": "/work/",
+   "title": "Creative Work — Brand, Packaging, Product & Web · Code & Canvas"
+  },
+  {
+   "path": "/work/bilingual-brand-system/",
+   "title": "A bilingual brand system that scales — Concept Study · Code & Canvas"
+  },
+  {
+   "path": "/work/packaging-print-system/",
+   "title": "From shelf to print-ready file — Concept Study · Code & Canvas"
+  },
+  {
+   "path": "/work/product-ui-system/",
+   "title": "A product UI that survives real data — Concept Study · Code & Canvas"
+  },
+  {
+   "path": "/work/web-experience-rebuild/",
+   "title": "Before / after: a site that earns the call — Concept Study · Code & Canvas"
+  },
+  {
+   "path": "/services/brand-identity-design/",
+   "title": "Brand Identity Design — Code & Canvas"
+  },
+  {
+   "path": "/services/brand-strategy-systems/",
+   "title": "Brand Strategy & Systems — Code & Canvas"
+  },
+  {
+   "path": "/services/packaging-design/",
+   "title": "Packaging & Print Design — Code & Canvas"
+  },
+  {
+   "path": "/services/website-design-development/",
+   "title": "Website Design & Development — Code & Canvas"
+  },
+  {
+   "path": "/services/product-design-ux/",
+   "title": "Product Design & UX — Code & Canvas"
+  },
+  {
+   "path": "/services/healthcare-digital-solutions/",
+   "title": "Healthcare Digital Solutions — Code & Canvas"
+  },
+  {
+   "path": "/services/ai-workflow-automation/",
+   "title": "AI Workflow Automation — Code & Canvas"
+  },
+  {
+   "path": "/book/",
+   "title": "Book a 30-Minute Discovery Call — Code & Canvas"
+  },
+  {
+   "path": "/saudi-arabia/",
+   "title": "Code & Canvas in Saudi Arabia — Brand, Product & Systems · Code & Canvas"
+  },
+  {
+   "path": "/egypt/",
+   "title": "Code & Canvas in Egypt — Brand, Product & Systems · Code & Canvas"
+  },
+  {
+   "path": "/resources/",
+   "title": "Resources & Digital Products — Code & Canvas"
+  },
+  {
+   "path": "/claims/",
+   "title": "Claims & Evidence Register — Code & Canvas"
+  },
+  {
    "path": "/services/",
    "title": "Solutions — 23 productized services · Code & Canvas"
   },
@@ -77,8 +155,16 @@
    "title": "Why Most Brands Look Different but Feel the Same — Code & Canvas"
   },
   {
+   "path": "/blog/from-brand-identity-to-brand-systems/",
+   "title": "From Brand Identity to Brand Systems — Code & Canvas"
+  },
+  {
    "path": "/blog/design-systems-operating-system-modern-digital-products/",
    "title": "Design Systems: The Operating System of Modern Digital Products — Code & Canvas"
+  },
+  {
+   "path": "/blog/creative-strategy-in-the-age-of-generative-ai/",
+   "title": "Creative Strategy in the Age of Generative AI — Code & Canvas"
   },
   {
    "path": "/blog/experience-design-business-growth-driver/",
@@ -170,6 +256,91 @@
    "notFound": true
   },
   {
+   "path": "/ar/work/",
+   "title": "الأعمال الإبداعية — العلامة والتغليف والمنتج والويب · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/work/bilingual-brand-system/",
+   "title": "منظومة علامة ثنائية اللغة قابلة للتوسّع — دراسة مفاهيمية · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/work/packaging-print-system/",
+   "title": "من الرفّ إلى ملف جاهز للطباعة — دراسة مفاهيمية · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/work/product-ui-system/",
+   "title": "واجهة منتج تصمد أمام بيانات حقيقية — دراسة مفاهيمية · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/work/web-experience-rebuild/",
+   "title": "قبل / بعد: موقع يستحق المكالمة — دراسة مفاهيمية · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/services/brand-identity-design/",
+   "title": "تصميم هوية العلامة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/services/brand-strategy-systems/",
+   "title": "استراتيجية العلامة وأنظمتها — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/services/packaging-design/",
+   "title": "تصميم التغليف والمطبوعات — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/services/website-design-development/",
+   "title": "تصميم وتطوير المواقع — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/services/product-design-ux/",
+   "title": "تصميم المنتجات وتجربة المستخدم — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/services/healthcare-digital-solutions/",
+   "title": "الحلول الرقمية للرعاية الصحية — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/services/ai-workflow-automation/",
+   "title": "أتمتة مسارات العمل بالذكاء الاصطناعي — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/book/",
+   "title": "احجز مكالمة استكشافية 30 دقيقة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/saudi-arabia/",
+   "title": "Code & Canvas في السعودية — العلامة والمنتج والأنظمة · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/egypt/",
+   "title": "Code & Canvas في مصر — العلامة والمنتج والأنظمة · Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/resources/",
+   "title": "المصادر والمنتجات الرقمية — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/claims/",
+   "title": "سجل الادعاءات والأدلة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
    "path": "/ar/services/",
    "title": "الحلول — 23 خدمة مُنتجة · Code & Canvas",
    "lang": "ar"
@@ -255,8 +426,18 @@
    "lang": "ar"
   },
   {
+   "path": "/ar/blog/from-brand-identity-to-brand-systems/",
+   "title": "من هوية العلامة إلى أنظمة العلامة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
    "path": "/ar/blog/design-systems-operating-system-modern-digital-products/",
    "title": "أنظمة التصميم: نظام التشغيل للمنتجات الرقمية الحديثة — Code & Canvas",
+   "lang": "ar"
+  },
+  {
+   "path": "/ar/blog/creative-strategy-in-the-age-of-generative-ai/",
+   "title": "الاستراتيجية الإبداعية في عصر الذكاء الاصطناعي التوليدي — Code & Canvas",
    "lang": "ar"
   },
   {
@@ -397,16 +578,6 @@
    "status": 301
   },
   {
-   "from": "/book",
-   "to": "/contact/#book",
-   "status": 301
-  },
-  {
-   "from": "/book/",
-   "to": "/contact/#book",
-   "status": 301
-  },
-  {
    "from": "/our-team/",
    "to": "/team/",
    "status": 301
@@ -423,22 +594,22 @@
   },
   {
    "from": "/account-center/",
-   "to": "/account/",
+   "to": "/resources/",
    "status": 301
   },
   {
    "from": "/account-center",
-   "to": "/account/",
+   "to": "/resources/",
    "status": 301
   },
   {
    "from": "/my-account/",
-   "to": "/account/",
+   "to": "/resources/",
    "status": 301
   },
   {
    "from": "/my-account",
-   "to": "/account/",
+   "to": "/resources/",
    "status": 301
   },
   {
@@ -499,6 +670,91 @@
   {
    "from": "/feed",
    "to": "/blog/",
+   "status": 301
+  },
+  {
+   "from": "/portfolio/",
+   "to": "/work/",
+   "status": 301
+  },
+  {
+   "from": "/portfolio",
+   "to": "/work/",
+   "status": 301
+  },
+  {
+   "from": "/our-work/",
+   "to": "/work/",
+   "status": 301
+  },
+  {
+   "from": "/our-work",
+   "to": "/work/",
+   "status": 301
+  },
+  {
+   "from": "/book-a-call/",
+   "to": "/book/",
+   "status": 301
+  },
+  {
+   "from": "/book-a-call",
+   "to": "/book/",
+   "status": 301
+  },
+  {
+   "from": "/booking/",
+   "to": "/book/",
+   "status": 301
+  },
+  {
+   "from": "/booking",
+   "to": "/book/",
+   "status": 301
+  },
+  {
+   "from": "/appointments/",
+   "to": "/book/",
+   "status": 301
+  },
+  {
+   "from": "/locations/",
+   "to": "/saudi-arabia/",
+   "status": 301
+  },
+  {
+   "from": "/ksa/",
+   "to": "/saudi-arabia/",
+   "status": 301
+  },
+  {
+   "from": "/saudi/",
+   "to": "/saudi-arabia/",
+   "status": 301
+  },
+  {
+   "from": "/eg/",
+   "to": "/egypt/",
+   "status": 301
+  },
+  {
+   "from": "/egypt-services/",
+   "to": "/egypt/",
+   "status": 301
+  },
+  {
+   "from": "/evidence/",
+   "to": "/claims/",
+   "status": 301
+  },
+  {
+   "from": "/claim-register/",
+   "to": "/claims/",
+   "status": 301
+  },
+  {
+   "from": "/library/",
+   "to": "/resources/",
    "status": 301
   }
  ]

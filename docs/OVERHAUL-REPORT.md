@@ -1,5 +1,8 @@
 # Code & Canvas — site overhaul report (2026-10-14)
 
+> **HISTORICAL DOCUMENT — 2026-10-14 baseline.** This file describes the state *before* the 2026-11 audit overhaul. For the current architecture, routes, first-party API, verification results and remaining owner gates see [`docs/OVERHAUL-2026-11.md`](OVERHAUL-2026-11.md), [`README.md`](../README.md), [`docs/INTEGRATIONS.md`](INTEGRATIONS.md) and [`docs/PUBLISH-GATE.md`](PUBLISH-GATE.md). Do not use the operating rules below as current instructions.
+
+
 Branch `arena/327f43fd-codeandcanvas-native` · commits `2aab58c` → `e61fbbe` · 114 files changed (+5,082 / −953).
 Companion documents: `docs/OVERHAUL-PLAN.md` (plan) · `docs/audit/GAP-REPORT.md` (live → native content audit) · `docs/audit/REVIEW.md` (cross-team review and decisions) · `docs/audit/native/*.txt` (visible text of all 42 pages, used as the QA corpus).
 

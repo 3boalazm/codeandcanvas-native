@@ -235,9 +235,9 @@
   }
 
   function renderJourney() {
-    const rail = '<span class="timeline__rail"><i id="timelineFill"></i></span>';
+    // The decorative rail is a sibling in the markup, never a child of <ol>:
+    // an ordered list may only contain <li> elements (WCAG / axe `list`).
     $('#timeline').innerHTML =
-      rail +
       P.journey.steps
         .map(
           (s, i) => `<li class="step" data-reveal>

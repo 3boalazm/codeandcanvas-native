@@ -8,7 +8,8 @@ export default defineConfig({
     trace: 'retain-on-failure', screenshot: 'only-on-failure',
     launchOptions: process.env.PW_EXECUTABLE_PATH ? {
       executablePath: process.env.PW_EXECUTABLE_PATH,
-      args: process.env.PW_BROWSER_ARGS ? JSON.parse(process.env.PW_BROWSER_ARGS) : ['--no-sandbox', '--disable-dev-shm-usage'],
+      args: process.env.PW_BROWSER_ARGS ? JSON.parse(process.env.PW_BROWSER_ARGS) : ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
+      ...(process.env.PW_LD_LIBRARY_PATH ? { env: { ...process.env, LD_LIBRARY_PATH: process.env.PW_LD_LIBRARY_PATH } } : {}),
     } : {},
   },
   webServer: {

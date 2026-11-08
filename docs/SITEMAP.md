@@ -1,5 +1,8 @@
 # codeandcanvas.net — site map & rebuild blueprint
 
+> **HISTORICAL DOCUMENT — 2026-10-14 baseline.** This file describes the state *before* the 2026-11 audit overhaul. For the current architecture, routes, first-party API, verification results and remaining owner gates see [`docs/OVERHAUL-2026-11.md`](OVERHAUL-2026-11.md), [`README.md`](../README.md), [`docs/INTEGRATIONS.md`](INTEGRATIONS.md) and [`docs/PUBLISH-GATE.md`](PUBLISH-GATE.md). Do not use the operating rules below as current instructions.
+
+
 Snapshot of the live WordPress site taken on **2026-10-14**, used as the source of truth for rebuilding it natively in this repository. Everything below was collected from the public pages, the WP REST API (`/wp-json/wp/v2/*`, `/wp-json/wc/store/v1/*`) and `robots.txt`. Nothing was changed on the live site.
 
 Machine-readable version: [`docs/sitemap.json`](./sitemap.json).

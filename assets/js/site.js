@@ -429,6 +429,47 @@
     }
     return payload;
   }
+  /* Canonical funnel names from docs/MEASUREMENT-PLAN.md are emitted by the
+     components that own them: service_view / case_study_view on page load,
+     cta_click on intent, form_start / form_submit in pages.js, and
+     booking_confirmed / lead_qualified / lead_converted in server/api.mjs.
+     This keeps the old short names working for existing dashboards. */
+  function viewEvent() {
+    const name = document.body?.dataset.viewTrack;
+    if (name && /^[a-z_]{3,40}$/.test(name)) track(name, { from: 'page' });
+  }
+  window.CC_VIEW_EVENT = viewEvent;
+
+  /* Third-party measurement is opt-in twice: an approved ID in public config
+     AND the visitor's explicit consent. Nothing is injected by default. */
+  function loadMeasurementProviders() {
+    const m = window.CC_CONFIG?.measurement || {};
+    if (window.__ccProvidersLoaded) return;
+    window.__ccProvidersLoaded = true;
+    try {
+      if (m.gtmContainerId && /^GTM-[A-Z0-9]+$/.test(m.gtmContainerId)) {
+        window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+        const s = document.createElement('script'); s.async = true;
+        s.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(m.gtmContainerId)}`;
+        document.head.appendChild(s);
+      }
+      if (m.ga4MeasurementId && /^G-[A-Z0-9]+$/.test(m.ga4MeasurementId)) {
+        const s = document.createElement('script'); s.async = true;
+        s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(m.ga4MeasurementId)}`;
+        document.head.appendChild(s);
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date()); window.gtag('config', m.ga4MeasurementId, { anonymize_ip: true, send_page_view: false });
+        window.gtag('event', 'page_view', { page_path: location.pathname });
+      }
+      if (m.clarityProjectId && /^[a-z0-9]{6,20}$/i.test(m.clarityProjectId)) {
+        window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+        const s = document.createElement('script'); s.async = true;
+        s.src = `https://www.clarity.ms/tag/${encodeURIComponent(m.clarityProjectId)}`;
+        document.head.appendChild(s);
+      }
+    } catch { /* a blocked script must never break the site */ }
+  }
+
   document.addEventListener('click', (e) => {
     const el = e.target.closest('a, [data-track]');
     if (!el) return;
@@ -463,8 +504,8 @@
       bar.innerHTML = `<p>${ar ? 'هل تسمح بقياس استخدام الموقع؟ لا نرسل بيانات النماذج أو محتوى رسائلك. يمكنك تغيير اختيارك من التذييل.' : 'Allow usage measurement? We never send form values or message content. Change your choice in the footer.'}</p><div class="btn-row"><button type="button" class="btn btn--primary" data-choice="granted">${ar ? 'أوافق' : 'Allow'}</button><button type="button" class="btn btn--glass" data-choice="denied">${ar ? 'لا أوافق' : 'Decline'}</button></div>`;
       bar.hidden = !!store.get('cc-analytics-consent') || navigator.doNotTrack === '1' || !!navigator.globalPrivacyControl;
     };
-    bar.addEventListener('click', (e) => { const b = e.target.closest('[data-choice]'); if (!b) return; store.set('cc-analytics-consent', b.dataset.choice); bar.hidden = true; settings.focus(); if (b.dataset.choice === 'granted') track('page-view'); });
-    settings.addEventListener('click', () => { bar.hidden = false; bar.querySelector('button')?.focus(); });
+    bar.addEventListener('click', (e) => { const b = e.target.closest('[data-choice]'); if (!b) return; store.set('cc-analytics-consent', b.dataset.choice); bar.hidden = true; settings.focus({ preventScroll: true }); if (b.dataset.choice === 'granted') { track('page-view'); loadMeasurementProviders(); } });
+    settings.addEventListener('click', () => { bar.hidden = false; bar.querySelector('button')?.focus({ preventScroll: true }); });
     document.body.append(bar); $('.footer__bottom')?.append(settings); listeners.push(renderConsent); renderConsent();
   }
 
@@ -528,6 +569,8 @@
     startPreloader();
     document.documentElement.classList.remove('i18n-pending');
     track('page-view');
+    viewEvent();
+    if (store.get('cc-analytics-consent') === 'granted' && navigator.doNotTrack !== '1' && !navigator.globalPrivacyControl) loadMeasurementProviders();
   }
 
   window.CC = {

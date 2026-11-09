@@ -168,6 +168,17 @@ def meta_files():
             {'source': '/assets/fonts/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=31536000, immutable'}]},
             {'source': '/assets/(css|js|brand)/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=3600, stale-while-revalidate=86400'}]},
             {'source': '/(.*)\\.html', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=0, must-revalidate'}]},
+            # The app shell must never be cached by the CDN: browsers revalidate
+            # /sw.js on every visit to pick up a new cache version.
+            {'source': '/sw.js', 'headers': [
+                {'key': 'Cache-Control', 'value': 'public, max-age=0, must-revalidate'},
+                {'key': 'Service-Worker-Allowed', 'value': '/'},
+            ]},
+            {'source': '/manifest.webmanifest', 'headers': [
+                {'key': 'Content-Type', 'value': 'application/manifest+json; charset=utf-8'},
+                {'key': 'Cache-Control', 'value': 'public, max-age=3600'},
+            ]},
+            {'source': '/offline.html', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=0, must-revalidate'}]},
         ],
     }
     write('vercel.json', json.dumps(vercel, ensure_ascii=False, indent=2) + '\n')

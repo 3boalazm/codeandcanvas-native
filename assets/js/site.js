@@ -151,6 +151,45 @@
     return theme;
   }
 
+  /* ------------------------------------------------------------------ */
+  /*  Installable app shell (PWA)                                        */
+  /*  Registration is deferred until after `load` so the worker never     */
+  /*  competes with the critical path on a phone. The install affordance */
+  /*  only appears when the browser really offers an install prompt.     */
+  /* ------------------------------------------------------------------ */
+  function registerAppShell() {
+    if (!('serviceWorker' in navigator)) return;
+    const secure = location.protocol === 'https:' ||
+      /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+    if (!secure) return;
+    const go = () => {
+      navigator.serviceWorker.register('/sw.js', { scope: '/', updateViaCache: 'none' })
+        .catch(() => { /* app still works as a normal site */ });
+    };
+    if (document.readyState === 'complete') setTimeout(go, 0);
+    else addEventListener('load', go, { once: true });
+  }
+
+  function bindInstall() {
+    const btn = $('#installApp');
+    let deferred = null;
+    addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault();
+      deferred = event;
+      if (btn) btn.hidden = false;
+    });
+    btn?.addEventListener('click', async () => {
+      if (!deferred) return;
+      try {
+        await deferred.prompt();
+        try { track('app-install-prompt', { to: 'pwa' }); } catch { /* optional */ }
+      } catch { /* user dismissed or browser declined */ }
+      deferred = null;
+      btn.hidden = true;
+    });
+    addEventListener('appinstalled', () => { deferred = null; if (btn) btn.hidden = true; });
+  }
+
   const t = (v) => (v && typeof v === 'object' && ('ar' in v || 'en' in v) ? v[lang] ?? v.ar : v ?? '');
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = (n, opts) => new Intl.NumberFormat(lang === 'ar' ? 'ar-EG' : 'en-US', opts).format(n);
@@ -611,12 +650,14 @@
     if (store.get('cc-analytics-consent') === 'granted' && navigator.doNotTrack !== '1' && !navigator.globalPrivacyControl) loadMeasurementProviders();
   }
 
-  // The theme switch is bound immediately, independent of CC.boot(), so it also
-  // works on pages that load site.js without registering a renderer.
+  // The theme switch and install affordance are bound immediately, independent
+  // of CC.boot(), so they also work on pages that load site.js without a renderer.
   syncThemeButton();
   $('#themeBtn')?.addEventListener('click', () => {
     setTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
   });
+  bindInstall();
+  registerAppShell();
 
   window.CC = {
     $, $$, esc, icon, ICONS, reduceMotion, finePointer,

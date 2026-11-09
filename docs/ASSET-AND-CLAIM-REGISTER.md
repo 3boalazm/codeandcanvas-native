@@ -106,3 +106,11 @@ Fifteen bilingual `/work/<slug>/` detail pages and a 15-card `/work/#project-cas
 `node scripts/optimize-media.mjs` now registers **29 PNG sources / 58 WebP variants / 50 OG cards** (up from 14/28/35). Fifteen `assets/media/case-*.png` sources, thirty `-sm`/1600w WebP derivatives and sixteen `assets/brand/og/case-*.png` cards were produced (15 per-route detail cards plus `case-studies.png` for the `/work/` index); `scripts/lib/case_study_cards.json` describes the fifteen OG descriptors. No founder-portfolio image, `/_next/image` response, client photo or screenshot was copied, hotlinked or regenerated.
 
 **Still true:** an illustrated, attributed work archive is not a portfolio of proven outcomes. The permission → evidence → attribution gate in the rows above is unchanged.
+
+---
+
+## 2026-11-09 · PWA / home-screen icons (own brand mark only)
+
+Five `assets/brand/app/*.png` files were added for the installable app (192/512 `any`, 192/512 `maskable`, 180 `apple-touch-icon`). They are **rendered locally by `scripts/generate-app-icons.mjs` from `assets/brand/icon-white.svg`** — the same committed brand squircle already used in the header — onto a navy radial-gradient field. No photography, client mark, third-party artwork, app-store asset or AI-generated image was used, and no new claim of any kind is attached to them. See `docs/PWA.md`.
+
+`manifest.webmanifest`, `sw.js` and `offline.html` contain no client names, outcomes, numbers, testimonials or screenshots. The offline page is a bilingual connection notice pointing back to `/` and `/ar/`. The service worker explicitly excludes `/api/*`, `/crm/*`, `/_vercel/*` and all non-GET requests, so no lead, form or analytics payload is ever stored in a cache. The permission → evidence → attribution gate above is unchanged.

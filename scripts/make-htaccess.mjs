@@ -75,10 +75,19 @@ Header set Cache-Control "public, max-age=31536000, immutable"
 <FilesMatch "\\.(css|js|svg|png|jpe?g|webp)$">
 Header set Cache-Control "public, max-age=3600, stale-while-revalidate=86400"
 </FilesMatch>
+# The app shell is revalidated on every visit. Later Header set directives win,
+# so sw.js must NOT inherit the one-hour cache above.
+<FilesMatch "^sw\\.js$">
+Header set Cache-Control "public, max-age=0, must-revalidate"
+Header set Service-Worker-Allowed "/"
+</FilesMatch>
+<FilesMatch "^manifest\\.webmanifest$">
+Header set Cache-Control "public, max-age=3600"
+</FilesMatch>
 </IfModule>
 
 <IfModule mod_deflate.c>
-AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml text/xml application/xml text/plain
+AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json application/manifest+json image/svg+xml text/xml application/xml text/plain
 </IfModule>
 `;
 writeFileSync(out, htaccess);

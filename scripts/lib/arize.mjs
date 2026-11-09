@@ -359,6 +359,10 @@ export function arize(html, { enPath, arPath, dict = null, untranslated = false 
   // Space Grotesk is the EN heading face only; Arabic uses Alexandria, so the
   // preload is dead weight (and competes with critical CSS) on every /ar/ page.
   head = head.replace(/\s*<link rel="preload" href="\/assets\/fonts\/space-grotesk-latin-700\.woff2"[^>]*\/>/, '');
+  // The /ar/ twin is its own installable entry point on iOS: localise the
+  // home-screen label. Manifest/icon hrefs are asset-like and stay at root
+  // (arHref already exempts .png and .webmanifest).
+  head = head.replace(/(<meta name="apple-mobile-web-app-title" content=")[^"]*(")/, '$1كود آند كانفاس$2');
   let body = localizeLd(out.slice(bodyStart));
   body = body.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, () => '');
 

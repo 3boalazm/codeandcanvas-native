@@ -5,6 +5,9 @@ export default defineConfig({
   use: {
     baseURL: process.env.TEST_BASE_URL || 'http://127.0.0.1:3000',
     reducedMotion: 'reduce', viewport: { width: 1440, height: 900 },
+    // The app shell caches responses, which would make ordinary E2E assertions
+    // non-deterministic. tests/pwa.spec.mjs opts back in for its own worker tests.
+    serviceWorkers: 'block',
     trace: 'retain-on-failure', screenshot: 'only-on-failure',
     launchOptions: process.env.PW_EXECUTABLE_PATH ? {
       executablePath: process.env.PW_EXECUTABLE_PATH,

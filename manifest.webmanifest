@@ -1,0 +1,28 @@
+{
+  "id": "/",
+  "name": "Code & Canvas — كود آند كانفاس",
+  "short_name": "Code&Canvas",
+  "description": "Brand, product and system, built around one business outcome. العلامة والمنتج والمنظومة، حول نتيجة عمل واحدة.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#05051a",
+  "theme_color": "#05051a",
+  "categories": ["business", "productivity", "design"],
+  "icons": [
+    { "src": "/assets/brand/app/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/brand/app/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/brand/app/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/assets/brand/app/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Work / الأعمال", "short_name": "Work", "url": "/work/", "icons": [{ "src": "/assets/brand/app/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Book a call / احجز مكالمة", "short_name": "Book", "url": "/book/", "icons": [{ "src": "/assets/brand/app/icon-192.png", "sizes": "192x192" }] },
+    { "name": "العربية", "short_name": "عربي", "url": "/ar/", "icons": [{ "src": "/assets/brand/app/icon-192.png", "sizes": "192x192" }] }
+  ],
+  "prefer_related_applications": false
+}

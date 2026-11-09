@@ -16,6 +16,13 @@
     <link rel="alternate" hreflang="x-default" href="https://codeandcanvas.net/blog/what-digital-transformation-actually-means-for-smes/" />
     <!-- cc:head -->
     <meta name="theme-color" content="#05051a" />
+    <!-- Installable app: manifest, standalone display and home-screen icon. -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="كود آند كانفاس" />
+    <link rel="apple-touch-icon" href="/assets/brand/app/apple-touch-icon.png" />
     <meta property="og:site_name" content="Code &amp; Canvas" />
     <meta property="og:image" content="https://codeandcanvas.net/assets/brand/og-default.png" />
     <meta property="og:image:width" content="1200" />
@@ -299,6 +306,8 @@
           <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span>جميع الحقوق محفوظة</span> · <span>السعودية + مصر</span></span>
           <div><a href="/ar/privacy-policy/">سياسة الخصوصية</a><a href="/ar/terms-of-use/">شروط الاستخدام</a><a href="/ar/cookie-policy/">سياسة ملفات الارتباط</a><a href="/ar/claims/">الادعاءات والأدلة</a></div>
           <div class="footer__reg" aria-label="التسجيل القانوني"><span>السجل التجاري رقم ٣١١٨٩١</span><span>رقم التسجيل الضريبي ٧٧٤٢٣٥٠٥٥</span></div>
+          <!-- Only revealed when the browser actually offers an install prompt. -->
+          <button class="footer__install" id="installApp" type="button" hidden>تثبيت التطبيق</button>
         </div>
       </div>
     </footer>

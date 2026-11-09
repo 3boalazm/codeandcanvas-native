@@ -4,7 +4,7 @@ set -eu
 rm -rf dist
 mkdir -p dist
 # Root files
-for f in index.html 404.html favicon.svg manus-routes.json robots.txt sitemap.xml _redirects google59d6c1a82a1cce60.html; do
+for f in index.html 404.html offline.html manifest.webmanifest sw.js favicon.svg manus-routes.json robots.txt sitemap.xml _redirects google59d6c1a82a1cce60.html; do
   [ -f "$f" ] && cp "$f" dist/
 done
 # Shared assets

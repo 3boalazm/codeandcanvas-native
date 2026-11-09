@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node dev-server.mjs",
     "sync": "node scripts/sync-chrome.mjs",
-    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs && node scripts/check-claims.mjs && node scripts/optimize-media.mjs --check && node scripts/check-phase3.mjs",
+    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs && node scripts/check-claims.mjs && node scripts/optimize-media.mjs --check && node scripts/check-phase3.mjs && node scripts/check-phase4.mjs",
     "build": "sh ./build.sh",
     "generate": "python3 scripts/gen-pages.py && npm run sync && node scripts/gen-ar.mjs",
     "test": "playwright test",
@@ -20,7 +20,8 @@
     "verify:live": "node scripts/verify-live.mjs",
     "verify:api": "node scripts/smoke-api.mjs",
     "audit:content": "node scripts/audit-content.mjs",
-    "check:phase3": "node scripts/check-phase3.mjs"
+    "check:phase3": "node scripts/check-phase3.mjs",
+    "check:phase4": "node scripts/check-phase4.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

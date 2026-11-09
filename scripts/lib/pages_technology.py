@@ -7,7 +7,7 @@ attributed numbers with their limits, and who delivers.
 """
 from catalog import SERVICES
 from h import (esc, t, th, icon, crumbs, closing, btn, page, service_ld, PERSON_LD,
-               sec_head, svc_rows, steps3, facts)
+               sec_head, svc_rows, steps3, facts, plate)
 
 AB = [c for c in SERVICES if c.startswith('AB-')]
 
@@ -95,7 +95,16 @@ def build():
       </section>
 
       <!-- ░░ 01 · Services ░░ -->
-      <section class="section container" id="services" aria-labelledby="svc-title">
+      <section class="section container section--tight" aria-label="BUSINESS → DATA → APPLICATION → TECHNOLOGY" data-ar-label="الأعمال ← البيانات ← التطبيقات ← التقنية">
+        {plate('art-arch-stack', 'BUSINESS → DATA → APPLICATION → TECHNOLOGY', 'الأعمال ← البيانات ← التطبيقات ← التقنية',
+               'Abstract illustrative stack of four architecture layers drawn for this site — not a client deliverable',
+               'رسم توضيحي تجريدي لأربع طبقات معمارية أُنشئ لهذا الموقع — ليس مخرج عميل',
+               'A visual metaphor for the layered model we work inside. It is not a real client diagram, a product screenshot or evidence of a delivered system.',
+               'استعارة بصرية للنموذج الطبقى الذي نعمل داخله. ليس مخطط عميل حقيقيًا ولا لقطة منتج ولا إثبات نظام مُسلَّم.',
+               sizes='(max-width: 720px) 92vw, 1200px', eager=True)}
+      </section>
+
+      <section class="section container section--flush-top" id="services" aria-labelledby="svc-title">
         {sec_head('01', 'THE SERVICES', 'الخدمات',
                   '<span id="svc-title" data-ar="ست خدمات.">Six services.</span> <span class="grad-text" data-ar="قرار واحد في كل صف.">One decision per row.</span>',
                   'Read who each service is for and what you keep before you see a price. Probe prices are published ranges, fixed in a written proposal after the scoping call.',

@@ -7,7 +7,7 @@ available, the page says so and offers an explicit manual hand-off; it never
 pretends a booking happened. An approved external scheduler can still replace
 this path through CC_CONFIG.bookingUrl (see pages.js).
 """
-from h import esc, icon, crumbs, closing, btn, page, sec_head, ORG_ID, SITE
+from h import esc, icon, crumbs, closing, btn, page, sec_head, ORG_ID, SITE, media_img
 
 SPECIALTIES = [
     ('brand', 'Brand & identity systems', 'العلامة وأنظمة الهوية'),
@@ -32,7 +32,15 @@ def build():
         <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Go to the scheduler', 'اذهب إلى جدول المواعيد', '#scheduler', 'primary', 'arrowDown')}{btn('Prefer a message?', 'تفضّل رسالة؟', '/contact/#message', 'glass', 'mail')}</div>
       </section>
 
-      <section class="section container section--tight" id="scheduler" aria-labelledby="sched-title">
+      <section class="section container section--tight" aria-label="SPECIALTY · SLOT · CONFIRMATION" data-ar-label="التخصص · الموعد · التأكيد">
+        <figure class="live-figure live-figure--wide live-figure--plate" data-reveal>
+          {media_img('art-book-steps', 'Abstract illustrative plate of three settled steps toward one call — not a product screenshot', 'لوحة توضيحية تجريدية لثلاث خطوات منتهية نحو مكالمة واحدة — ليست لقطة منتج', sizes='(max-width: 720px) 92vw, 1200px')}
+          <figcaption><span data-ar="التخصص · الموعد · التأكيد">SPECIALTY · SLOT · CONFIRMATION</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي للاستوديو، وليس صورة أشخاص أو عمل عميل">ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO</span></figcaption>
+        </figure>
+        <p class="live-media-note" data-ar="عمل فني توضيحي: يصف خطوات الحجز الثلاث وليس لقطة من جدول المواعيد ولا إثبات حجز.">Illustrative artwork: it describes the three booking steps and is not a screenshot of the scheduler or evidence of a booked call.</p>
+      </section>
+
+      <section class="section container section--flush-top" id="scheduler" aria-labelledby="sched-title">
         <div class="book-shell">
           <div class="book-panel" data-reveal>
             <h2 id="sched-title" style="font-size:clamp(22px,2.3vw,30px);margin:0 0 14px" data-ar="احجز مكالمتك">Book your call</h2>

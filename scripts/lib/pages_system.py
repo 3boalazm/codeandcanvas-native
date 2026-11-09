@@ -1,10 +1,23 @@
 # -*- coding: utf-8 -*-
-""" /system/ — the owner-safe Phase 2 of the REF UI study.
+""" /system/ — owner-safe Phase 2 of the REF UI study, Phase 3 no-go guardrails
+and Phase 4 residual identity-fit B mechanisms.
 
 Adapted mechanisms: palette/token cards (004/016), mixed-size bento component
 gallery + real-data inventory (023/041), CSS-only slit/accordion gallery (026),
 static orbit of tilted art tiles (044) and founder label plates (045). Reference
 060 (profile cards with borrowed portraits / follower counts) stays rejected.
+
+Phase 3 in the study is deliberately rejected, so it is published here only as
+a bilingual "what we refuse to ship" boundary list, locked by
+scripts/check-phase3.mjs and tests/phase3.spec.mjs — never as dashboard chrome,
+fabricated metrics, a foreign skin or runtime blur/WebGL.
+
+Phase 4 adds the remaining identity-fit B mechanisms that need no owner asset:
+a static capability loop (013), concentric Why/How/What rings (027), a curved
+static process path with numbered step cards (017/037/052), a compact step bar
+(055) and one labelled full-bleed art card with paired CTAs (030). All are
+CSS/SVG-only, bilingual, RTL-safe and animation-free; locked by
+scripts/check-phase4.mjs and tests/phase4.spec.mjs.
 
 Provenance contract: every image is our own labelled illustrative WebP, every
 number is read from the generator data, and no third-party photo, logo, font,
@@ -85,6 +98,49 @@ def profile_card(person, kind, name_ar):
       </article>'''
 
 
+def guard_card(no, title, title_ar, note, note_ar):
+    return f'''
+      <article class="sys-guard__card" aria-label="{esc(title)}" data-ar-label="{esc(title_ar)}">
+        <span class="sys-guard__no">{no}</span>
+        <span class="sys-guard__badge" data-ar="لا">NO</span>
+        <h3 data-ar="{esc(title_ar)}">{esc(title)}</h3>
+        <p data-ar="{esc(note_ar)}">{esc(note)}</p>
+      </article>'''
+
+
+def loop_pill(label, label_ar, pos):
+    return f'''
+        <li class="sys-loop__pill sys-loop__pill--{pos}" data-ar="{esc(label_ar)}">{esc(label)}</li>'''
+
+
+def step_card(no, title, title_ar, items, items_ar):
+    lis = ''.join(f'<li data-ar="{esc(a)}">{esc(e)}</li>' for e, a in zip(items, items_ar))
+    return f'''
+        <li class="sys-step" aria-label="{esc(title)}" data-ar-label="{esc(title_ar)}">
+          <span class="sys-step__no">{no}</span>
+          <h3 data-ar="{esc(title_ar)}">{esc(title)}</h3>
+          <ul>{lis}</ul>
+        </li>'''
+
+
+def stepbar_node(no, label, label_ar):
+    return f'''
+        <li class="sys-stepbar__node"><b>{no}</b><span data-ar="{esc(label_ar)}">{esc(label)}</span></li>'''
+
+
+def art_card():
+    alt, alt_ar = _alt('System composition study', 'دراسة تركيب المنظومة')
+    return f'''
+      <figure class="sys-artcard" aria-label="Labelled illustrative system art" data-ar-label="عمل توضيحي مُعلَّم للمنظومة">
+        {media_img('hero-system', alt, alt_ar, sizes='(max-width: 720px) 92vw, 760px', width=1200, height=675)}
+        <figcaption class="sys-artcard__caption">
+          <span class="sys-status" data-ar="{esc(SHORT_AR)}">{SHORT}</span>
+          <strong data-ar="دراسة تركيب بصري، ليست تسليم عميل.">Composition study, not a client deliverable.</strong>
+          <span class="sys-artcard__ctas">{btn('Read the methodology', 'اقرأ المنهجية', '/methodology/', 'primary', 'layers')}{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/', 'ghost', 'calendar')}</span>
+        </figcaption>
+      </figure>'''
+
+
 def build():
     tokens = [
         token_card('navy', 'Deep navy', 'كحلي عميق', '#00001e', '#00001e', 'Copy deep-navy token value', 'نسخ قيمة توكين الكحلي العميق'),
@@ -127,10 +183,64 @@ def build():
         profile_card(MUSTAFA, 'canvas', 'مصطفى أبو العزم'),
     ]
 
+    guards = [
+        guard_card('01', 'Fabricated metrics', 'مؤشرات مُختلقة',
+                   'No percentages, growth curves, revenue tooltips or KPI tiles.',
+                   'بلا نسب مئوية، منحنيات نمو، تلميحات إيرادات أو بلاطات KPI.'),
+        guard_card('02', 'AI / crypto / health dashboards', 'لوحات ذكاء اصطناعي / عملات / صحة',
+                   'No dashboard chrome for a product we do not sell.',
+                   'بلا واجهة لوحة بيانات لمنتج لا نبيعه.'),
+        guard_card('03', 'Orange / cyan / serif skins', 'قشور برتقالية / سماوية / سيريف',
+                   'One palette: navy, violet, teal, pink and gold; the amber CTA is the only warm accent.',
+                   'بالِت واحدة: كحلي، بنفسجي، تيل، وردي وذهبي؛ زر الكهرمان هو الدفء الوحيد.'),
+        guard_card('04', 'Runtime blur / WebGL', 'طمس وقتي / WebGL',
+                   'Static gradients only, reduced motion respected, no canvas and no always-on animation.',
+                   'تدرّجات ثابتة فقط، احترام تقليل الحركة، بلا canvas وبلا حركة دائمة.'),
+        guard_card('05', 'Third-party portraits & logos', 'بورتريهات وشعارات أطراف ثالثة',
+                   'Labelled first-party illustrative WebP only; every client screenshot stays out.',
+                   'أعمالنا التوضيحية المعلّمة فقط؛ أي لقطة شاشة عميل تظل خارجًا.'),
+        guard_card('06', 'REF 060 profile card', 'كارت المرجع 060',
+                   'No borrowed portrait, follower count or verified badge. Rejected, not deferred.',
+                   'بلا بورتريه مستعار، عدّاد متابعين أو شارة توثيق. مرفوض، مش مؤجّل.'),
+    ]
+
+    loop_pills = [
+        loop_pill('Signals', 'إشارات', 1),
+        loop_pill('Framing', 'تأطير', 2),
+        loop_pill('Design', 'تصميم', 3),
+        loop_pill('Build', 'بناء', 4),
+        loop_pill('Evidence', 'إثبات', 5),
+        loop_pill('Handover', 'تسليم', 6),
+        loop_pill('Language', 'لغة', 7),
+        loop_pill('Scope', 'نطاق', 8),
+    ]
+
+    steps = [
+        step_card('01', 'Frame', 'نحدّد القرار',
+                  ['One brief, one owner decision', 'No invented availability'],
+                  ['موجز واحد، قرار مالك واحد', 'بلا مواعيد مُختلقة']),
+        step_card('02', 'Design', 'نصمّم الطبقة',
+                  ['Tokens before pixels', 'Bilingual from the first sketch'],
+                  ['التوكينات قبل البكسلات', 'ثنائي اللغة من أول اسكتش']),
+        step_card('03', 'Build', 'نبني ونختبر',
+                  ['Generator-driven pages', 'Axe, RTL and theme gates'],
+                  ['صفحات من المولّد', 'بوابات axe وRTL والثيم']),
+        step_card('04', 'Hand over', 'نسلّم الملفات',
+                  ['Sources and captions together', 'No fake success state'],
+                  ['المصادر والوسوم معًا', 'بلا حالة نجاح وهمية']),
+    ]
+
+    stepbar = [
+        stepbar_node('01', 'Frame', 'تأطير'),
+        stepbar_node('02', 'Design', 'تصميم'),
+        stepbar_node('03', 'Build', 'بناء'),
+        stepbar_node('04', 'Hand over', 'تسليم'),
+    ]
+
     body = f'''
       <section class="phero container phero--left sys-hero" aria-labelledby="page-title">
         {crumbs([('Home', 'الرئيسية', '/'), ('Design system', 'نظام التصميم', None)])}
-        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="نظام التصميم · المرحلة الثانية">DESIGN SYSTEM · PHASE 02</span></span>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="نظام التصميم · المراحل ٢–٤">DESIGN SYSTEM · PHASES 02–04</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="لغة واحدة،">One language,</span><br /><span class="grad-text" data-ar="كل الأسطح.">every surface.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar="فهرس عمل للتوكينات والمكوّنات وجرد الموقع الحقيقي الذي نستخدمه في Code & Canvas. صفحة توثيق، لا عرض بيعي، ولا أرقام أداء مُختلقة.">A working index of the tokens, components and real site inventory behind Code & Canvas. This is documentation, not a pitch — and it contains no invented performance numbers.</p>
         <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Explore the tokens', 'استكشف التوكينات', '#tokens', 'primary', 'arrowDown')}{btn('See the components', 'شاهد المكوّنات', '#components', 'glass', 'grid')}{btn('Read the methodology', 'اقرأ المنهجية', '/methodology/', 'ghost', 'layers')}</div>
@@ -240,6 +350,62 @@ def build():
                   'مونوجرامات وأدوار حقيقية بدل وجوه ستوك أو عدّاد متابعين أو شارات توثيق. المرجع 060 يظل مرفوضًا.',
                   aside='<span class="pill" data-ar="بلا صور أشخاص">NO STOCK FACES</span>')}
         <div class="sys-profiles">{''.join(profiles)}</div>
+      </section>
+
+      <section class="section container section--flush-top" id="guardrails" aria-label="Design system guardrails" data-ar-label="حدود نظام التصميم">
+        {sec_head('07', 'GUARDRAILS', 'الحدود',
+                  '<span id="guardrails-title" data-ar="قائمة ممنوعات،">A no-go list,</span> <span class="grad-text" data-ar="مش قائمة تنفيذ.">not a backlog.</span>',
+                  'Phase 3 of the REF study is documented as deliberately rejected. These six rules are published here as design-system boundaries and locked by an automated check.',
+                  'المرحلة الثالثة من دراسة REF موثّقة كمرفوضة عن قصد. القواعد الست منشورة هنا كحدود لنظام التصميم ومُقفلة بفحص آلي.',
+                  aside='<span class="pill" data-ar="مُقفل آليًا">AUTO-LOCKED</span>')}
+        <div class="sys-guard">{''.join(guards)}</div>
+      </section>
+
+      <section class="section container section--flush-top" id="loop" aria-label="Capability loop" data-ar-label="حلقة القدرات">
+        {sec_head('08', 'CAPABILITY LOOP', 'حلقة القدرات',
+                  '<span id="loop-title" data-ar="حلقة ثابتة،">A static loop,</span> <span class="grad-text" data-ar="مش محرك.">not an engine.</span>',
+                  'Eight labelled capabilities around one sentence, plus concentric Why / How / What rings. No spin, no AI-innovation claim, no metric.',
+                  'ثماني قدرات مُعلَّمة حول عبارة واحدة، مع دوائر لماذا / كيف / ماذا متحدة المركز. بلا دوران، بلا ادّعاء ابتكار ذكاء اصطناعي، بلا مؤشر.',
+                  aside='<span class="pill" data-ar="بلا دوران">NO SPIN</span>')}
+        <div class="sys-loop">
+          <ul class="sys-loop__ring" aria-label="Static capability loop" data-ar-label="حلقة قدرات ثابتة">
+            {''.join(loop_pills)}
+            <li class="sys-loop__core" aria-hidden="true">
+              <span data-ar="موجز واحد">ONE BRIEF</span>
+              <strong data-ar="مالكان، منظومة واحدة.">Two owners, one system.</strong>
+            </li>
+          </ul>
+          <div class="sys-concentric" role="group" aria-label="Why, how, what" data-ar-label="لماذا، كيف، ماذا">
+            <div class="sys-concentric__ring sys-concentric__ring--why">
+              <span class="sys-concentric__label" data-ar="لماذا">WHY</span>
+              <span class="sys-concentric__note" data-ar="قرار عمل قبل أي سطح">A business decision before any surface</span>
+            </div>
+            <div class="sys-concentric__ring sys-concentric__ring--how">
+              <span class="sys-concentric__label" data-ar="كيف">HOW</span>
+              <span class="sys-concentric__note" data-ar="قواعد واحدة باللغتين">One rule set in both languages</span>
+            </div>
+            <div class="sys-concentric__ring sys-concentric__ring--what">
+              <span class="sys-concentric__label" data-ar="ماذا">WHAT</span>
+              <span class="sys-concentric__note" data-ar="صفحات وأصول معلّمة">Labelled pages and assets</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container section--flush-top" id="process" aria-label="Process map" data-ar-label="خريطة المسار">
+        {sec_head('09', 'PROCESS MAP', 'خريطة المسار',
+                  '<span id="process-title" data-ar="مسار،">A path,</span> <span class="grad-text" data-ar="مش وعد.">not a promise.</span>',
+                  'A static SVG curve plus four numbered step cards and a compact step bar. No week or duration claim, no invented availability.',
+                  'منحنى SVG ثابت مع أربع بطاقات خطوات مرقّمة وشريط خطوات مختصر. بلا ادّعاء أسابيع أو مدد، بلا مواعيد مُختلقة.',
+                  aside='<span class="pill" data-ar="بلا مواعيد">NO DATES</span>')}
+        <div class="sys-process" role="group" aria-label="Static delivery process" data-ar-label="مسار تسليم ثابت">
+          <svg class="sys-process__curve" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path d="M0 60 C 160 0, 260 120, 420 60 S 680 0, 800 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <ol class="sys-steps">{''.join(steps)}</ol>
+          <ol class="sys-stepbar" aria-label="Compact step bar" data-ar-label="شريط خطوات مختصر">{''.join(stepbar)}</ol>
+          {art_card()}
+        </div>
       </section>
 
       <section class="section container section--tight" aria-label="Phase 2 provenance" data-ar-label="مصدر المرحلة الثانية">

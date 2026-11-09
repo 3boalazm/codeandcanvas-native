@@ -39,6 +39,13 @@ def landing(x):
         <p class="live-media-note" data-ar="عمل فني توضيحي أُنشئ للموقع؛ لا يمثّل لقطة شاشة لمنتج عميل ولا إثبات نتيجة.">Illustrative artwork created for this site; it is not a client product screenshot or evidence of a result.</p>
       </section>
 
+      <section class="section container section--flush-top" aria-label="Offer mechanism visual" data-ar-label="آلية العرض">
+        <figure class="live-figure live-figure--wide live-figure--plate" data-reveal>
+          {media_img('hero-offer', 'Abstract illustrative plate of one offer mechanism — not a product screenshot or client deliverable', 'لوحة توضيحية تجريدية لآلية عرض واحدة — ليست لقطة منتج ولا مخرج عميل', sizes='(max-width: 720px) 92vw, 1200px')}
+          <figcaption><span data-ar="نطاق منشور · مورد واحد">PUBLISHED SCOPE · ONE OWNER</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي للاستوديو، وليس صورة أشخاص أو عمل عميل">ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO</span></figcaption>
+        </figure>
+      </section>
+
       <section class="section container section--flush-top" id="problem" aria-labelledby="problem-title">
         {sec_head('01', 'THE PROBLEM', 'المشكلة',
                   '<span id="problem-title" data-ar="لماذا يُطلب هذا العمل أصلًا.">Why this work gets commissioned.</span>',

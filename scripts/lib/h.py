@@ -241,6 +241,27 @@ def chal(code, kicker, kicker_ar, title, title_ar, symptoms, symptoms_ar, price_
           </article>'''
 
 
+PLATE_LABEL = 'ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO'
+PLATE_LABEL_AR = 'عمل توضيحي للاستوديو، وليس صورة أشخاص أو عمل عميل'
+
+
+def plate(media, label, label_ar, alt, alt_ar, note=None, note_ar=None,
+          sizes='(max-width: 720px) 92vw, (max-width: 1200px) 88vw, 1400px', eager=False):
+    """Section visual: a labelled illustrative plate (no surrounding <section>).
+
+    Used where a page needs a visual anchor but has no licensed photography.
+    The caption pair is fixed so no page can present the artwork as proof.
+    """
+    note_html = f'<p class="live-media-note" data-ar="{esc(note_ar or note)}">{esc(note)}</p>' if note else ''
+    q = ' data-reveal'
+    return f'''
+        <figure class="live-figure live-figure--wide live-figure--plate"{q}>
+          {media_img(media, alt, alt_ar, sizes=sizes, eager=eager)}
+          <figcaption><span data-ar="{esc(label_ar)}">{esc(label)}</span><span class="live-figure__disclaimer" data-ar="{PLATE_LABEL_AR}">{PLATE_LABEL}</span></figcaption>
+        </figure>
+        {note_html}'''
+
+
 def media_img(media, alt, alt_ar, *, sizes='(max-width: 720px) 92vw, (max-width: 1200px) 70vw, 900px',
               eager=False, fetchpriority=None, width=1600, height=900):
     """Responsive <img> for labelled illustrative artwork.

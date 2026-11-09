@@ -6,14 +6,14 @@
 
 | Check | Result |
 | --- | --- |
-| Working branch | `arena/f40e8902-codeandcanvas-native` (active); `origin/main` = `52aeeb8bd82b0bd49c6cea89f72fe5286fb15b3f` |
-| `main` HEAD | `52aeeb8b` — «Add files via upload», 2026-11-09T03:43:11Z, on top of `fbe3fbc3` («Create 123») |
+| Working branch | `arena/e9a49e14-codeandcanvas-native` (active); `origin/main` = `596124ff8fa5f69ae8060ccb04b8074f2fe29459` (PR #18 merge) |
+| `main` HEAD | `596124f` — «Merge pull request #18 …», 2026-11-09T09:27:38Z, on top of `52aeeb8b` («Add files via upload») |
 | `REF` at `origin/main` | **64 entries = 63 real visual sources** (62 JPG + 1 GIF, 3,157,261 bytes) + the 1-byte `REF/123` newline placeholder |
 | Local extraction | ignored `.qa-ref/originals/001.jpg`–`063.gif`, `.qa-ref/manifest.json` (original long filenames + blob sha + size + dimensions), 63 review thumbnails and `.qa-ref/notes.tsv` |
 | One-by-one study | **complete**: 63 rows in [`docs/REF-UI-STUDY-2026-11.md`](REF-UI-STUDY-2026-11.md) §4; descriptions come from the opened images, not filenames |
 | Decisions | **B 28** (adapt the idea) · **C 20** (defer) · **D 15** (reject) · **A 0** (adopt as-is) |
-| Implementation | Phase 1 shortlist (§6) and identity-safe Phase 2 `/system/` (§7) rebuilt and QA'd. No REF pixels, fonts, portraits, logos, licensed photos, client screenshots, CDN scripts or numeric claims were published |
-| Verification | `npm run gate` **706 passed / 0 failed**; `verify:api` 23/23; `audit:content` 155 pages / 110 findings / 0 blockers / `[claims] 0`; light-theme axe matrix 38 pages / 0 violations |
+| Implementation | Phase 1 shortlist (§6), identity-safe Phase 2 `/system/` (§7), Phase 3 no-go guardrails (§8) and Phase 4 residual identity-fit B mechanisms (§9) rebuilt and QA'd. No REF pixels, fonts, portraits, logos, licensed photos, client screenshots, CDN scripts, dashboards or numeric claims were published |
+| Verification | `npm run gate` **713 passed / 0 failed**; `verify:api` 23/23; `audit:content` 155 pages / 110 findings / 0 blockers / `[claims] 0`; `check-phase3` 0 no-go signatures; `check-phase4` 0 problems; light-theme axe matrix 38 pages / 0 violations |
 
 The earlier pass found only `REF/123`; that conclusion applied **only to `fbe3fbc3`** and is superseded. `docs/REF-INVENTORY.md` was not generated from the numbered local copies because the dated study's per-file table already carries the original filenames, descriptions, decisions and placements; `scripts/ref-inventory.mjs` remains the helper for any **future** reference drop.
 
@@ -26,9 +26,9 @@ The earlier pass found only `REF/123`; that conclusion applied **only to `fbe3fb
 5. **Decide** — `A` adopt as-is (rare), `B` adapt the idea into our own tokens/markup (expected for most), `C` defer (needs an owner/legal/asset decision), `D` reject (conflicts with identity, performance, a11y, bilingual or claims rules).
 6. **Map** — pick the exact home in the site (§5) and the existing class/partial/generator to extend.
 7. **Implement, if approved** — change `partials/`, `assets/css/`, `assets/js/`, `scripts/lib/*.py` / generator helpers; then `npm run generate` (**never hand-edit generated HTML**).
-8. **Prove** — `npm run gate` (706 Playwright tests after Phase 2), `npm run verify:api` (23/23), `npm run audit:content` (0 blockers), visual QA at 320/390/1440 in EN+AR, dark+light, a no-reduced-motion pass and a mobile jank check. Any new element must be `data-ar`-complete and present in both language twins.
+8. **Prove** — `npm run gate` (713 Playwright tests after Phase 4), `npm run verify:api` (23/23), `npm run audit:content` (0 blockers), `npm run check:phase3` (0 no-go signatures), `npm run check:phase4` (0 problems), visual QA at 320/390/1440 in EN+AR, dark+light, a no-reduced-motion pass and a mobile jank check. Any new element must be `data-ar`-complete and present in both language twins.
 
-The real pass delivered the **per-file table** (`# · source file · what it shows · idea · decision · placement · adaptation`), a **prioritised shortlist**, a **phased plan**, the Phase 1 code and the identity-safe Phase 2 `/system/` route — all in `docs/REF-UI-STUDY-2026-11.md` §6/§7. Phase 2 adapted mechanisms only; the `C` owner/legal/asset decisions remain pending.
+The real pass delivered the **per-file table** (`# · source file · what it shows · idea · decision · placement · adaptation`), a **prioritised shortlist**, a **phased plan**, the Phase 1 code, the identity-safe Phase 2 `/system/` route, the Phase 3 no-go guardrails and the Phase 4 residual `B` mechanisms — all in `docs/REF-UI-STUDY-2026-11.md` §6/§7/§8/§9. Phase 2 adapted mechanisms only; Phase 3 locked the rejection list; Phase 4 shipped the remaining asset-free `B` ideas; the `C` owner/legal/asset decisions remain pending.
 
 ## 3. Identity baseline (read from the source, not guessed)
 
@@ -59,7 +59,7 @@ Source of truth: `assets/css/ds.css`, `assets/css/fonts.css`, `assets/css/home.c
 - **Content / claims gate:** no unevidenced numbers, no client names or outcomes without evidence, `check-claims.mjs` bans guarantee language, all illustrative art stays labelled **ILLUSTRATIVE / NOT CLIENT WORK**, per-route OG images, consent on every lead form, no fake auth/commerce success states.
 - **Assets:** `scripts/check-media.mjs` does not exist; `optimize-media.mjs` expects WebP + `-sm.webp` + OG variants. No hotlinked third-party images/CDNs. New imagery must be recorded in `docs/ASSET-AND-CLAIM-REGISTER.md`.
 - **PWA:** `manifest.webmanifest` (standalone), `sw.js` (network-first HTML, stale-while-revalidate assets, `/api/*` + `/crm/*` excluded), `offline.html`, no-cache worker headers on both Vercel and Hostinger/Apache. No third-party script is loaded by default; analytics is consent-gated and first-party.
-- **Build discipline:** `npm run generate` → `npm run check` (sync-chrome parity, links, generator parity, claims, media) → `npm test` → `npm run build`; `npm run gate` is the local equivalent of the required CI check. `check-generated.mjs` regenerates in an isolated temp from `scripts`, `partials`, `index.html`, `erp/index.html`, `assets/js/erp-data.js` — anything generated must be reproducible from those sources. Current green baseline: **706 passed (12.2 m)**, `verify:api` 23/23, `audit:content` 110 findings / 0 blockers on 155 pages, 159 HTML files / 0 problems, parity 161 outputs.
+- **Build discipline:** `npm run generate` → `npm run check` (sync-chrome parity, links, generator parity, claims, media) → `npm test` → `npm run build`; `npm run gate` is the local equivalent of the required CI check. `check-generated.mjs` regenerates in an isolated temp from `scripts`, `partials`, `index.html`, `erp/index.html`, `assets/js/erp-data.js` — anything generated must be reproducible from those sources. Current green baseline: **713 passed**, `verify:api` 23/23, `audit:content` 110 findings / 0 blockers on 155 pages, 159 HTML files / 0 problems, parity 161 outputs, `check-phase3` 0 no-go signatures, `check-phase4` 0 problems.
 
 ## 4. Evaluation rubric (per item)
 

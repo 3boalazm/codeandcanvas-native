@@ -5,7 +5,7 @@ v3 architecture: each project is told as brief → constraints → our role →
 approach → artifacts → status/evidence → next step, and each one states exactly
 what can be published. No "proven results" claim without a measured source.
 """
-from h import esc, icon, crumbs, closing, btn, page, sec_head, facts
+from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, media_img
 
 PROJECTS = [
     dict(
@@ -209,7 +209,16 @@ def build():
                 ('Under NDA', 'تحت اتفاقية سرية', '1', True), ('Concept diagrams', 'رسوم توضيحية', '3', True)])}
       </section>
 
-      {''.join(project(p, i) for i, p in enumerate(PROJECTS))}
+      <!-- ░░ Case-ledger visual (labelled illustrative artwork) ░░ -->
+      <section class="section container section--tight" aria-label="Documented work visual" data-ar-label="الأعمال الموثّقة">
+        <figure class="live-figure live-figure--wide live-figure--plate" data-reveal>
+          {media_img('art-work-ledger', 'Abstract illustrative ledger of documented work — not a product screenshot or client board', 'سجل توضيحي تجريدي لأعمال موثّقة — ليس لقطة منتج ولا لوحة عميل', sizes='(max-width: 720px) 92vw, 1200px')}
+          <figcaption><span data-ar="المشكلة · الدور · التسليم · الحدود">PROBLEM · ROLE · DELIVERY · LIMITS</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي للاستوديو، وليس صورة أشخاص أو عمل عميل">ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO</span></figcaption>
+        </figure>
+        <p class="live-media-note" data-ar="لوحة توضيحية من هندستنا تشرح ترتيب كتابة كل مشروع؛ ليست لقطة منتج ولا إثبات نتيجة.">An illustrative plate from our own geometry showing how each project is written; not a product screenshot or evidence of a result.</p>
+      </section>
+
+{''.join(project(p, i) for i, p in enumerate(PROJECTS))}
 
       <!-- ░░ What these cases do not claim ░░ -->
       <section class="section container section--tight" id="limits" aria-labelledby="lim-title">

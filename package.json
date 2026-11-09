@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node dev-server.mjs",
     "sync": "node scripts/sync-chrome.mjs",
-    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs && node scripts/check-claims.mjs && node scripts/optimize-media.mjs --check",
+    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs && node scripts/check-claims.mjs && node scripts/optimize-media.mjs --check && node scripts/check-phase3.mjs && node scripts/check-phase4.mjs && node scripts/check-art.mjs",
     "build": "sh ./build.sh",
     "generate": "python3 scripts/gen-pages.py && npm run sync && node scripts/gen-ar.mjs",
     "test": "playwright test",
@@ -17,9 +17,14 @@
     "optimize:media": "node scripts/optimize-media.mjs",
     "check:claims": "node scripts/check-claims.mjs",
     "gate": "npm run generate && npm run check && npm test && npm run build",
+    "gate:art": "npm run art && npm run generate && npm run check",
     "verify:live": "node scripts/verify-live.mjs",
     "verify:api": "node scripts/smoke-api.mjs",
-    "audit:content": "node scripts/audit-content.mjs"
+    "audit:content": "node scripts/audit-content.mjs",
+    "check:phase3": "node scripts/check-phase3.mjs",
+    "check:phase4": "node scripts/check-phase4.mjs",
+    "check:art": "node scripts/check-art.mjs",
+    "art": "node scripts/generate-page-art.mjs && node scripts/optimize-media.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

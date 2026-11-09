@@ -913,6 +913,12 @@ html[lang='ar'] .story-body h2 { max-width: 30ch; line-height: 1.4; }
 .story-body p { color: var(--ink-2); font-size: 15.5px; line-height: 1.8; max-width: 62ch; }
 .story-body p.lead { color: var(--ink); font-size: clamp(16px, 1.2vw, 18.5px); }
 .story-plate { position: relative; display: grid; align-content: end; gap: 8px; min-height: 260px; padding: clamp(20px, 2.4vw, 30px); border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--panel); overflow: hidden; }
+/* Labelled illustrative artwork behind the chapter plate — never client work. */
+.story-plate img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .68; }
+.story-plate::after { content: ''; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(5,5,26,.15) 0%, rgba(5,5,26,.62) 62%, rgba(5,5,26,.9) 100%); pointer-events: none; }
+.story-plate > * { position: relative; z-index: 1; }
+.story-plate__badge { position: absolute; inset-block-start: 14px; inset-inline-start: 14px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(243,199,122,.45); background: rgba(5,5,26,.68); color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .1em; }
+html[lang='ar'] .story-plate__badge { letter-spacing: 0; font-size: 11px; }
 .story-plate::before { content: ''; position: absolute; inset: 0; background: radial-gradient(80% 80% at 18% 12%, var(--acc, rgba(139,108,255,.16)), transparent 68%); }
 .story-plate__no { position: relative; font-family: var(--f-num); font-size: clamp(64px, 8vw, 104px); font-weight: 800; line-height: .9; letter-spacing: -.04em; color: var(--hi, #fff); opacity: .16; }
 .story-plate__cap { position: relative; font-family: var(--f-num); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--acc-ink, var(--teal)); }
@@ -947,7 +953,11 @@ a.post-row:hover .post-row__go { gap: 12px; }
 .feat-post__body { display: grid; gap: 14px; }
 .feat-post__body h2 { font-family: var(--f-title); font-size: clamp(24px, 2.6vw, 34px); line-height: 1.28; letter-spacing: -.015em; max-width: 26ch; }
 .feat-post__body p { color: var(--ink-2); font-size: 15.5px; line-height: 1.75; max-width: 62ch; }
-.feat-post__plate { display: grid; gap: 10px; place-items: start; padding: 22px; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel-2); }
+.feat-post__plate { position: relative; display: grid; gap: 10px; place-items: start; padding: 22px; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel-2); overflow: hidden; min-height: 300px; align-content: end; }
+.feat-post__plate img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .5; }
+.feat-post__plate::after { content: ''; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(5,5,26,.2) 0%, rgba(5,5,26,.72) 58%, rgba(5,5,26,.94) 100%); }
+.feat-post__plate > * { position: relative; z-index: 1; }
+.feat-post__plate .story-plate__badge { position: absolute; inset-block-start: 14px; inset-inline-start: 14px; }
 .feat-post__mark { font-size: 40px; line-height: 1; }
 @media (max-width: 900px) { .post-row { grid-template-columns: 40px minmax(0, 1fr); } .post-row__foot { grid-column: 2; flex-direction: row; align-items: center; text-align: start; } .feat-post { grid-template-columns: 1fr; } .feat-post__plate { order: -1; } }
 

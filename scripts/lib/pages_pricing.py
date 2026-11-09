@@ -2,7 +2,7 @@
 """/pricing-faq/ — live copy of codeandcanvas.net/pricing-faq/ with the legacy
 S-codes mapped to the unified catalogue (AB / MA / HC / CC)."""
 from catalog import SERVICES, TRACKS, href
-from h import esc, icon, crumbs, closing, btn, page, svc_grid
+from h import esc, icon, crumbs, closing, btn, page, svc_grid, media_img
 
 # Pricing page shows the published range, duration, fit and deliverables straight
 # from the catalogue — no second copy of scope text that can drift out of sync.
@@ -118,7 +118,16 @@ def build():
 
       <nav class="subnav subnav--sticky container" data-spy aria-label="Pricing sections" data-ar-label="أقسام الأسعار"><a href="#pricing" data-ar="الخدمات والأسعار">Services &amp; pricing</a><a href="#how-we-charge" data-ar="شروط الدفع">Payment terms</a><a href="#faq" data-ar="الأسئلة الشائعة">FAQ</a></nav>
       <!-- ░░ How we charge ░░ -->
-      <section class="section container section--tight" id="how-we-charge" aria-labelledby="charge-title">
+      <!-- ░░ Pricing visual (labelled illustrative artwork) ░░ -->
+      <section class="section container section--tight" aria-label="Published tiers visual" data-ar-label="الفئات المنشورة">
+        <figure class="live-figure live-figure--wide live-figure--plate" data-reveal>
+          {media_img('art-pricing-tiers', 'Abstract illustrative plate of three published price tiers — no real figures, no client invoice', 'لوحة توضيحية تجريدية لثلاث فئات سعرية منشورة — بلا أرقام حقيقية وبلا فاتورة عميل', sizes='(max-width: 720px) 92vw, 1200px')}
+          <figcaption><span data-ar="نطاقات منشورة · نطاق مكتوب">PUBLISHED RANGES · WRITTEN SCOPE</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي للاستوديو، وليس صورة أشخاص أو عمل عميل">ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO</span></figcaption>
+        </figure>
+        <p class="live-media-note" data-ar="لوحة توضيحية بلا أرقام؛ الأسعار الفعلية منشورة نصًا في الجداول أدناه.">The plate carries no figures; the actual prices are published as text in the tables below.</p>
+      </section>
+
+      <section class="section container section--flush-top" id="how-we-charge" aria-labelledby="charge-title">
         <header class="section__head" data-reveal>
           <p class="kicker"><span class="kicker__num">01</span><span data-ar="كيف نُسعّر">How We Charge</span></p>
           <h2 class="section__title" id="charge-title"><span data-ar="حسب المعالم.">Milestone-based.</span> <span class="grad-text" data-ar="لا حسب الوقت.">Not time-based.</span></h2>

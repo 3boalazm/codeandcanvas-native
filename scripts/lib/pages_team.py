@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """/team/ — the two founders, what each one owns in the service catalogue, and the
 engagements that require both. v3 layout: numbered heads, ownership rows, dense index."""
-from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, svc_index_row, PERSON_LD, studio_figure
+from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, svc_index_row, PERSON_LD, studio_figure, media_img
 from catalog import SERVICES, TRACKS
 
 AHMED = {
@@ -126,6 +126,15 @@ def build():
         'عمل فني تجريدي توضيحي يمثّل تخصصات الاستوديو — ليس صورة أشخاص أو مقر',
         'Real, licensed founder and team photography is an owner gate. Until it is supplied, this page uses clearly labelled illustrative artwork instead of invented portraits.',
         'صور حقيقية مرخّصة للمؤسسين والفريق بوابة بانتظار المالك. إلى أن تُوفَّر، تستخدم هذه الصفحة أعمالًا توضيحية مُعلَّنة بدل صور مُختلقة.')}
+
+      <!-- ░░ Two disciplines, one table (labelled illustrative plate) ░░ -->
+      <section class="section container section--tight" aria-label="Two disciplines visual" data-ar-label="تخصصان في طاولة واحدة">
+        <figure class="live-figure live-figure--wide live-figure--plate" data-reveal>
+          {media_img('art-duo-practices', 'Abstract illustrative plate of two practices sharing one brief — not a photograph of people', 'لوحة توضيحية تجريدية لتخصصين يتشاركان موجزًا واحدًا — ليست صورة أشخاص', sizes='(max-width: 720px) 92vw, 1200px')}
+          <figcaption><span data-ar="مهندس وفنان · موجز واحد">ARCHITECT &amp; ARTIST · ONE BRIEF</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي للاستوديو، وليس صورة أشخاص أو عمل عميل">ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO</span></figcaption>
+        </figure>
+        <p class="live-media-note" data-ar="الصور الشخصية الحقيقية بوابة بانتظار المالك؛ هذه لوحة توضيحية من هندستنا، وليست صورة أشخاص.">Real portraits remain an owner gate; this is an illustrative plate from our own geometry, not a photograph of people.</p>
+      </section>
 
       <!-- ░░ Founders ░░ -->
       {person(AHMED)}

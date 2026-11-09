@@ -7,7 +7,7 @@ and a clinic-vs-hospital fit split. No unverified compliance claims.
 """
 from catalog import SERVICES
 from h import (esc, t, th, icon, crumbs, closing, btn, page, service_ld, PERSON_LD,
-               sec_head, svc_rows, steps3, facts)
+               sec_head, svc_rows, steps3, facts, plate)
 
 HC = [c for c in SERVICES if c.startswith('HC-')]
 
@@ -88,7 +88,16 @@ def build():
       </section>
 
       <!-- ░░ 01 · The decision path ░░ -->
-      <section class="section container" id="path" aria-labelledby="path-title">
+      <section class="section container section--tight" aria-label="READINESS CRITERIA · NO INVENTED METRICS" data-ar-label="معايير الجاهزية · بلا مؤشرات مُختلقة">
+        {plate('art-clinical-lanes', 'READINESS CRITERIA · NO INVENTED METRICS', 'معايير الجاهزية · بلا مؤشرات مُختلقة',
+               'Abstract illustrative readiness lanes labelled with framework names only — no patient data, no dashboard',
+               'مسارات جاهزية توضيحية تجريدية تحمل أسماء الأطر فقط — بلا بيانات مرضى وبلا لوحة بيانات',
+               'Illustrative artwork created for this site. It names the readiness frameworks we work within and deliberately shows no metric, chart value or patient data.',
+               'عمل فني توضيحي أُنشئ لهذا الموقع. يذكر أطر الجاهزية التي نعمل داخلها ولا يعرض أي مؤشر أو قيمة رسم بياني أو بيانات مرضى.',
+               sizes='(max-width: 720px) 92vw, 1200px', eager=True)}
+      </section>
+
+      <section class="section container section--flush-top" id="path" aria-labelledby="path-title">
         {sec_head('01', 'THE DECISION PATH', 'مسار القرار',
                   '<span id="path-title" data-ar="أربع خطوات">Four steps</span> <span class="grad-text" data-ar="من الفجوة إلى المقارنة.">from the gap to the comparison.</span>',
                   'This is the sequence a clinic owner or investor usually faces. You can enter it at any step — most enter at the second one, when a system purchase is already on the table.',

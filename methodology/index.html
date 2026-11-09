@@ -232,7 +232,7 @@
           </div>
 
         </header>
-        <div class="tbl-wrap panel" data-reveal>
+        <div class="tbl-wrap panel" data-reveal role="region" tabindex="0" aria-label="Scrollable traceability matrix" data-ar-label="مصفوفة تتبّع قابلة للتمرير">
           <table class="matrix">
             <thead><tr><th scope="col" data-ar="هدف العمل">Business Goal</th><th scope="col" data-ar="قدرة العلامة">Brand Capability</th><th scope="col" data-ar="الأصل التقني">Technology Asset</th><th scope="col" data-ar="البيانات / التحليلات">Data / Analytics</th><th scope="col" data-ar="التحول">Transformation</th></tr></thead>
             <tbody>
@@ -338,6 +338,11 @@
             <a class="footer__contact-alt" href="/contact/" data-ar="أو أرسل رسالة →">Or send a message →</a>
           </div>
         </div>
+        <!-- REF 019 / 022 / 048: a restrained oversized brand wordmark. Decorative,
+             clipped, and bilingual-safe (the Latin brand mark is used in both twins). -->
+        <!-- Decorative type is generated in CSS: no DOM text node, so it is not
+             announced and cannot be mistaken for low-contrast body copy. -->
+        <div class="footer__wordmark" aria-hidden="true"></div>
         <div class="footer__bottom">
           <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
           <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a><a href="/claims/" data-ar="الادعاءات والأدلة">Claims</a></div>

@@ -312,6 +312,54 @@
         <p class="m-rail-hint" aria-hidden="true"><span data-ar="اسحب ←">SWIPE →</span></p>
       </section>
 
+      <!-- ░░ Studio system · ideas adapted from REF 005 / 013 / 018 / 019 / 025 / 028 / 055 ░░
+           Rebuilt with our own tokens and bilingual copy; no reference pixels,
+           no stock vectors, no fabricated numbers and no runtime blur. -->
+      <section class="section container system" id="system" aria-labelledby="system-title">
+        <!-- CSS-generated decorative type; intentionally no DOM text node so it
+             cannot be announced or mistaken for low-contrast body copy. -->
+        <span class="system__ghost" aria-hidden="true"></span>
+        <header class="system__head" data-reveal>
+          <p class="eyebrow eyebrow--new" data-ar="منظومة واحدة · ثلاث طبقات">One system · three layers</p>
+          <h2 id="system-title"><span data-ar="ثلاث طبقات.">Three layers.</span> <span class="grad-text" data-ar="نتيجة عمل واحدة.">One business outcome.</span></h2>
+          <p class="lead" data-ar="العلامة والمنتج والمنظومة ليست خدمات منفصلة؛ تُبنى طبقة فوق الأخرى حتى يصبح القرار قابلاً للتنفيذ. لا ندّعي هنا نتائج مُقاسة، نعرض طريقة تنظيم العمل فقط.">Brand, product and system are not separate services; each layer is built on the one before it until the decision becomes executable. No measured outcomes are claimed here — only how the work is structured.</p>
+        </header>
+
+        <div class="system__venn" role="group" aria-label="Three layers of the studio system" data-ar-label="طبقات منظومة الاستوديو الثلاث">
+          <article class="system__layer system__layer--brand" data-reveal>
+            <span class="system__no">01</span>
+            <h3 data-ar="العلامة">Brand</h3>
+            <p data-ar="التموضع واللغة البصرية ونظام التصميم: ما الذي تقوله، وكيف يظهر، وكيف يصمد أمام التوسّع.">Positioning, visual language and the design system: what you say, how it looks, and how it survives scale.</p>
+          </article>
+          <article class="system__layer system__layer--product" data-reveal style="--d:.06s">
+            <span class="system__no">02</span>
+            <h3 data-ar="المنتج">Product</h3>
+            <p data-ar="الموقع أو المنصة أو الأداة الداخلية: واجهات حول قرار مستخدم، لا حول قائمة شاشات.">The site, platform or internal tool: interfaces built around a user decision, not a list of screens.</p>
+          </article>
+          <article class="system__layer system__layer--system" data-reveal style="--d:.12s">
+            <span class="system__no">03</span>
+            <h3 data-ar="المنظومة">System</h3>
+            <p data-ar="التكاملات والأتمتة والبيانات والحوكمة: ما يجعل الطبقتين السابقتين تعملان بعد التسليم.">Integrations, automation, data and governance: what keeps the first two layers working after hand-over.</p>
+          </article>
+        </div>
+
+        <ol class="system__rail" aria-label="How the layers are delivered" data-ar-label="كيف تُسلَّم الطبقات">
+          <li><span class="system__rail-no">01</span><span data-ar="نحدّد القرار">Frame the decision</span></li>
+          <li><span class="system__rail-no">02</span><span data-ar="نصمّم الطبقة">Design the layer</span></li>
+          <li><span class="system__rail-no">03</span><span data-ar="نبني ونختبر">Build and test</span></li>
+          <li><span class="system__rail-no">04</span><span data-ar="نسلّم الملفات">Hand over the files</span></li>
+        </ol>
+
+        <div class="system__cta" data-reveal>
+          <div class="system__cta-copy">
+            <p class="system__cta-kicker" data-ar="المنهجية">METHODOLOGY</p>
+            <h3 data-ar="من أول سؤال إلى آخر ملف.">From the first question to the final file.</h3>
+            <p data-ar="دورة عمل مكتوبة، معالم واضحة، وتسليم تملكه أنت.">A written delivery cycle, clear milestones, and a hand-over you own.</p>
+          </div>
+          <a class="btn btn--primary" href="/methodology/" data-track="navigation" data-track-to="methodology"><span data-ar="اقرأ المنهجية">Read the methodology</span><i class="flip" data-icon="arrowUpRight" aria-hidden="true"></i></a>
+        </div>
+      </section>
+
       <!-- ░░ 05 · Services ░░ -->
       <section class="section container" id="solutions" aria-labelledby="solutions-title">
         <header class="sec-head" data-reveal>
@@ -592,6 +640,11 @@
             <a class="footer__contact-alt" href="/contact/" data-ar="أو أرسل رسالة →">Or send a message →</a>
           </div>
         </div>
+        <!-- REF 019 / 022 / 048: a restrained oversized brand wordmark. Decorative,
+             clipped, and bilingual-safe (the Latin brand mark is used in both twins). -->
+        <!-- Decorative type is generated in CSS: no DOM text node, so it is not
+             announced and cannot be mistaken for low-contrast body copy. -->
+        <div class="footer__wordmark" aria-hidden="true"></div>
         <div class="footer__bottom">
           <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
           <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a><a href="/claims/" data-ar="الادعاءات والأدلة">Claims</a></div>

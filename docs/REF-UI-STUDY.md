@@ -1,23 +1,21 @@
 # REF / UI-reference study — framework and current status
 
-> **عربية مختصرة:** فتحت الرابط `github.com/3boalazm/codeandcanvas-native/tree/main/REF` ولقيت الفولدر **فاضي**: ملف واحد اسمه `123` حجمه 1 بايت (سطر جديد)، أُضيف في كوميت `fbe3fbc` («Create 123») الساعة 03:35 بتوقيت UTC في 2026-11-09. تأكدت من ده بـ GitHub API (contents + الشجرة الكاملة)، ومن كل البرانشات (11 برانش)، ومن تاريخ الكوميتات، ومن صفحة المجلد نفسها على GitHub. **مافيش أي سورسز لعناصر واجهة لسه**، فالدراسة «واحد واحد» مستنية الرفع. الملف ده بيجهّز كل حاجة مطلوبة عشان أول ما الملفات تظهر أشتغل عليها فورًا بدون ما أعيد تعريف الهوية أو المعايير.
+> **عربية مختصرة:** الفولدر كان فاضي في أول فحص، وبعدين **الملفات نزلت فعلاً** في كوميت `52aeeb8b` («Add files via upload») الساعة 03:43 UTC من 2026-11-09: **63 مرجع بصري** (62 JPG + GIF). اتقرأوا واحد واحد، واتكتبت دراستهم الكاملة في **[`docs/REF-UI-STUDY-2026-11.md`](REF-UI-STUDY-2026-11.md)** — كل ملف بوصفه والفكرة اللي تستاهل النقل وقرار `B/C/D` ومكانه في السايت. الملف ده فاضل كـ **مرجع المنهجية**: الهوية، الـ rubric، خريطة الإدماج، قائمة الممنوعات وقالب الدراسة.
 
-## 1. What was checked (2026-11-09)
+## 1. What was checked (2026-11-09 — updated after the upload)
 
 | Check | Result |
 | --- | --- |
-| Working branch | `arena/f40e8902-codeandcanvas-native` at `852fc10` (clean) |
-| `main` HEAD | `fbe3fbc` — `Create 123`, 2026-11-09T03:35:39Z |
-| `GET contents/REF?ref=main` | 1 entry: `123`, type `file`, size **1** |
-| Recursive git tree of `main`, filtered to `REF` | `REF` (tree) + `REF/123` (blob, 1 byte). Nothing else. |
-| All 11 branches, paths matching `(?i)ref` | only `REF/123` on `main` |
-| `git log --all -- REF` | one commit only: `fbe3fbc` |
-| GitHub tree page for `main/REF` | shows one file, `123`, last commit «Create 123» |
-| Releases / issues / local workspace | no archive, no attachment, no alternate folder with UI sources |
+| Working branch | `arena/f40e8902-codeandcanvas-native` (active); `origin/main` = `52aeeb8bd82b0bd49c6cea89f72fe5286fb15b3f` |
+| `main` HEAD | `52aeeb8b` — «Add files via upload», 2026-11-09T03:43:11Z, on top of `fbe3fbc3` («Create 123») |
+| `REF` at `origin/main` | **64 entries = 63 real visual sources** (62 JPG + 1 GIF, 3,157,261 bytes) + the 1-byte `REF/123` newline placeholder |
+| Local extraction | ignored `.qa-ref/originals/001.jpg`–`063.gif`, `.qa-ref/manifest.json` (original long filenames + blob sha + size + dimensions), 63 review thumbnails and `.qa-ref/notes.tsv` |
+| One-by-one study | **complete**: 63 rows in [`docs/REF-UI-STUDY-2026-11.md`](REF-UI-STUDY-2026-11.md) §4; descriptions come from the opened images, not filenames |
+| Decisions | **B 28** (adapt the idea) · **C 20** (defer) · **D 15** (reject) · **A 0** (adopt as-is) |
+| Implementation | Phase 1 shortlist rebuilt and QA'd; see §6 of the dated study. No REF pixels, fonts, portraits, logos, CDN scripts or numeric claims were published |
+| Verification | `npm run gate` **688 passed / 0 failed**; `verify:api` 23/23; `audit:content` 0 blockers; light-theme axe matrix 36 pages / 0 violations |
 
-`REF/123` is a newline placeholder — the usual way to create an otherwise-empty folder on GitHub. The upload that was expected here has not landed yet (or was aimed at a different path/repo).
-
-**Blocked on:** the actual source files. Once they are pushed to `main/REF` (any depth), or dropped into the chat as a zip/attachments, the study proceeds against this framework.
+The earlier pass found only `REF/123`; that conclusion applied **only to `fbe3fbc3`** and is superseded. `docs/REF-INVENTORY.md` was not generated from the numbered local copies because the dated study's per-file table already carries the original filenames, descriptions, decisions and placements; `scripts/ref-inventory.mjs` remains the helper for any **future** reference drop.
 
 ## 2. Study protocol (one item at a time)
 
@@ -28,9 +26,9 @@
 5. **Decide** — `A` adopt as-is (rare), `B` adapt the idea into our own tokens/markup (expected for most), `C` defer (needs an owner/legal/asset decision), `D` reject (conflicts with identity, performance, a11y, bilingual or claims rules).
 6. **Map** — pick the exact home in the site (§5) and the existing class/partial/generator to extend.
 7. **Implement, if approved** — change `partials/`, `assets/css/`, `assets/js/`, `scripts/lib/*.py` / generator helpers; then `npm run generate` (**never hand-edit generated HTML**).
-8. **Prove** — `npm run gate` (680 Playwright tests), `npm run verify:api` (23/23), `npm run audit:content` (0 blockers), visual QA at 390/768/1440 in EN+AR, dark+light, and a mobile jank check. Any new element must be `data-ar`-complete and present in both language twins.
+8. **Prove** — `npm run gate` (688 Playwright tests after this lap), `npm run verify:api` (23/23), `npm run audit:content` (0 blockers), visual QA at 320/390/1440 in EN+AR, dark+light, a no-reduced-motion pass and a mobile jank check. Any new element must be `data-ar`-complete and present in both language twins.
 
-The final deliverable for the real pass will be a **per-file table** (`# · file · idea · fit score · decision · where it lands · work · risk`), then a **prioritised shortlist** and a **phased implementation plan**, then the code for the approved items.
+The real pass delivered the **per-file table** (`# · source file · what it shows · idea · decision · placement · adaptation`), a **prioritised shortlist**, a **phased plan** and the code for the Phase 1 items — all in `docs/REF-UI-STUDY-2026-11.md`.
 
 ## 3. Identity baseline (read from the source, not guessed)
 
@@ -125,6 +123,6 @@ Source of truth: `assets/css/ds.css`, `assets/css/fonts.css`, `assets/css/home.c
 
 ## 8. What I need from the owner
 
-- Push the sources into `main/REF` (subfolders are fine), **or** send a zip/attachments here, **or** give the correct link if they live in another repo/branch.
+- For a **new** reference drop: push into `main/REF` (subfolders are fine), send a zip/attachments, or give the correct link.
 - If a licence/attribution file exists, include it — it changes the `provenance` score and may turn a `B` into a `D`.
 - Optional: say whether this pass should end with **a written study only**, or **study + implement the shortlist**. The default here is the study first; implementation waits for approval, because every adopted element has to pass the 680-test gate and the bilingual/claims rules.

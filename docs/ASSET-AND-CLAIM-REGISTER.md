@@ -114,3 +114,16 @@ Fifteen bilingual `/work/<slug>/` detail pages and a 15-card `/work/#project-cas
 Five `assets/brand/app/*.png` files were added for the installable app (192/512 `any`, 192/512 `maskable`, 180 `apple-touch-icon`). They are **rendered locally by `scripts/generate-app-icons.mjs` from `assets/brand/icon-white.svg`** — the same committed brand squircle already used in the header — onto a navy radial-gradient field. No photography, client mark, third-party artwork, app-store asset or AI-generated image was used, and no new claim of any kind is attached to them. See `docs/PWA.md`.
 
 `manifest.webmanifest`, `sw.js` and `offline.html` contain no client names, outcomes, numbers, testimonials or screenshots. The offline page is a bilingual connection notice pointing back to `/` and `/ar/`. The service worker explicitly excludes `/api/*`, `/crm/*`, `/_vercel/*` and all non-GET requests, so no lead, form or analytics payload is ever stored in a cache. The permission → evidence → attribution gate above is unchanged.
+
+---
+
+## 2026-11-09 · REF UI references (reference-only, nothing republished)
+
+The owner uploaded 63 UI-reference screenshots into `main/REF` (commit `52aeeb8b`). They were studied individually in `docs/REF-UI-STUDY-2026-11.md` and used **only as idea sources**. Every shipped element in that pass is rebuilt from CSS gradients, our own type and our own existing illustrative WebP art:
+
+- No REF screenshot, Dribbble/Behance/X image, stock vector, third-party portrait, logo, album art, QR code or app icon was copied into `assets/`, `dist/` or any published page.
+- No new font, image, WebP or OG asset was generated for this lap; `optimize-media --check` still reports 29 sources / 58 WebP / 50 OG cards.
+- No numeric claim, percentage, date, rating, client name or measured outcome was introduced. The new section explicitly says no measured outcomes are claimed.
+- The home-screen icons from the earlier PWA lap remain the only generated brand bitmaps; nothing from REF touches `manifest.webmanifest`, `sw.js` or `offline.html`.
+
+The permission → evidence → attribution gate above is unchanged. If any REF idea is later promoted from "idea" to "asset", it must first pass licence/attribution review here.

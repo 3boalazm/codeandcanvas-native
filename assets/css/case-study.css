@@ -62,3 +62,30 @@
 }
 html[lang='ar'] .cs-list li { line-height: 1.85; }
 html[lang='ar'] .cs-index-card__badge { letter-spacing: 0; }
+
+/* REF 001 / 038 / 044 — CSS-only scroll-snap rail for case cards on phones.
+   No library, no scroll listener; the region is keyboard-focusable and named. */
+.cs-index-hint { display: none; margin: 4px 0 0; text-align: end; font-size: 10.5px; letter-spacing: .14em; color: var(--ink-3); }
+@media (max-width: 720px) {
+  .cs-index-grid {
+    display: flex; gap: 12px; margin-top: 18px; padding-block-end: 8px;
+    overflow-x: auto; overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory; scroll-padding-inline: 2px;
+    scrollbar-width: none;
+  }
+  .cs-index-grid::-webkit-scrollbar { display: none; }
+  .cs-index-grid > .cs-index-card { flex: 0 0 84%; min-width: 0; scroll-snap-align: start; }
+  .cs-index-grid:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 12px; }
+  .cs-index-hint { display: block; }
+  html[lang='ar'] .cs-index-hint { letter-spacing: 0; font-size: 12px; }
+}
+
+/* Light theme: teal labels/CTAs authored for navy need a darker ink. */
+html[data-theme='light'] .cs-index-card__cta,
+html[data-theme='light'] .cs-links a,
+html[data-theme='light'] .cs-panel__label,
+html[data-theme='light'] .cs-facts .wa-card__year,
+html[data-theme='light'] .cs-evidence-foot a { color: #0f6b5c; }
+
+/* Light theme: case-card metadata uses the same dark teal as its CTA. */
+html[data-theme='light'] .cs-index-card__meta .wa-card__year { color: var(--ink-teal); }

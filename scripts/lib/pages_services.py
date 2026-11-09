@@ -63,7 +63,7 @@ def track_table():
               <td>{len(codes)} <span data-ar="خدمات">services</span></td>
               <td data-ar="{esc(m['starts_ar'])}">{esc(m['starts'])}</td>
             </tr>''')
-    return ('<div class="tbl-wrap" data-reveal><table class="tbl">'
+    return ('<div class="tbl-wrap" data-reveal role="region" tabindex="0" aria-label="Scrollable service tracks table" data-ar-label="جدول مسارات الخدمة القابل للتمرير"><table class="tbl">'
             '<caption data-ar="أربعة مسارات — اختر المسار الذي يناسب القرار الذي أمامك الآن.">Four tracks — pick the one that matches the decision in front of you.</caption>'
             '<thead><tr><th scope="col"><span data-ar="المسار">Track</span></th><th scope="col"><span data-ar="لمن؟">Who it is for</span></th>'
             '<th scope="col"><span data-ar="يقودها">Led by</span></th><th scope="col"><span data-ar="الخدمات">Services</span></th>'

@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-title-ar="نظام التصميم — التوكينات والمكوّنات وجرد الموقع · Code &amp; Canvas" data-desc-ar="فهرس عمل ثنائي اللغة لتوكينات تصميم Code &amp; Canvas ومكوّنات CSS والأعمال التوضيحية المعلّمة وجرد الموقع الحقيقي من بيانات المولّد. بلا بكسلات مرجعية ولا مؤشرات مُختلقة." data-lang-mirror="/ar/system/" data-og="/assets/brand/og/resources.png">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Design System — Tokens, Components &amp; Real Site Inventory · Code &amp; Canvas</title>
+    <meta name="description" content="A bilingual working index of the Code &amp; Canvas design tokens, CSS components, labelled illustrative artwork and real generator-driven site inventory. No reference pixels or fabricated metrics." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Design System — Tokens, Components &amp; Real Site Inventory · Code &amp; Canvas" />
+    <meta property="og:description" content="A bilingual working index of the Code &amp; Canvas design tokens, CSS components, labelled illustrative artwork and real generator-driven site inventory. No reference pixels or fabricated metrics." />
+    <meta property="og:url" content="https://codeandcanvas.net/system/" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="https://codeandcanvas.net/system/" />
+    <link rel="alternate" hreflang="en" href="https://codeandcanvas.net/system/" />
+    <link rel="alternate" hreflang="ar" href="https://codeandcanvas.net/ar/system/" />
+    <link rel="alternate" hreflang="x-default" href="https://codeandcanvas.net/system/" />
+    <!-- cc:head -->
+    <meta name="theme-color" content="#05051a" />
+    <!-- Installable app: manifest, standalone display and home-screen icon. -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Code & Canvas" />
+    <link rel="apple-touch-icon" href="/assets/brand/app/apple-touch-icon.png" />
+    <meta property="og:site_name" content="Code &amp; Canvas" />
+    <meta property="og:image" content="https://codeandcanvas.net/assets/brand/og/resources.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Code &amp; Canvas — Brand, product and system, built around one business outcome." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://codeandcanvas.net/assets/brand/og/resources.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+    /* Sets language, direction and colour scheme before first paint (same rules as assets/js/site.js).
+       Dark is the brand default; light is an explicit, persisted visitor choice. */
+    (function () {
+      try {
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null, t = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); t = localStorage.getItem('cc-theme'); } catch (e) {}
+        var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-pending');
+        var theme = t === 'light' ? 'light' : 'dark';
+        d.setAttribute('data-theme', theme);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f4ff' : '#05051a');
+        try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
+      } catch (e) {}
+    })();
+    </script>
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/css/fonts.css" />
+    <link rel="stylesheet" href="/assets/css/ds.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <link rel="stylesheet" href="/assets/css/live.css" />
+    <noscript><style>body.is-loading{overflow:auto}#preloader{display:none!important}[data-reveal],.split .w{opacity:1!important;transform:none!important;filter:none!important}form{display:none!important}[data-panel][hidden]{display:block!important}</style></noscript>
+    <!-- /cc:head -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/system/#webpage","url":"https://codeandcanvas.net/system/","name":"Design System — Tokens, Components & Real Site Inventory · Code & Canvas","description":"A bilingual working index of the Code & Canvas design tokens, CSS components, labelled illustrative artwork and real generator-driven site inventory. No reference pixels or fabricated metrics.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/assets/brand/og/resources.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"Design system"}]}]}</script>
+    <link rel="stylesheet" href="/assets/css/system.css" />
+  </head>
+  <body class="is-loading is-system" data-view-track="system_view">
+    <!-- cc:top -->
+    <noscript><div class="notice container" style="padding-top:110px" data-ar-html="تحتاج النماذج والأدوات التفاعلية إلى JavaScript. يمكنك التواصل عبر &lt;a href=&quot;mailto:info@codeandcanvas.net&quot;&gt;البريد الإلكتروني&lt;/a&gt; بدلًا من ذلك، أو &lt;a href=&quot;/book/&quot;&gt;حجز مكالمة&lt;/a&gt;.">Forms and interactive tools require JavaScript. <a href="mailto:info@codeandcanvas.net">Email us instead</a> or <a href="/book/">book a call</a>.</div></noscript>
+    <a class="skip-link" href="#main" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+    <noscript><style>.preloader{display:none}[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="true" data-word="Code &amp;|Canvas" data-text-en="Loading…" data-text-ar="جارٍ التحميل…"></div>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="blob blob--4"></span>
+      <span class="ambient__grid"></span>
+      <span class="ambient__grain"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+    <header class="nav" id="nav">
+      <div class="nav__pill container">
+        <!-- In RTL the brand is the first flex item (far right) and the burger is
+             the last (far left); the action group is a flexible spacer between them. -->
+        <a class="nav__brand nav__ring" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية">
+          <img class="nav__logo" src="/assets/brand/icon-white.svg" alt="" width="40" height="40" />
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+          <a href="/services/" data-key="services" data-ar="الخدمات">Services</a>
+          <a href="/work/" data-key="work" data-ar="الأعمال">Work</a>
+          <a href="/pricing-faq/" data-key="pricing" data-ar="الأسعار">Pricing</a>
+          <a href="/about/" data-key="about" data-ar="من نحن">About</a>
+          <a href="/blog/" data-key="blog" data-ar="الرؤى">Insights</a>
+          <a href="/resources/" data-key="resources" data-ar="المصادر">Resources</a>
+          <a class="only-mobile" href="/contact/" data-key="contact" data-ar="تواصل">Contact</a>
+          <a class="only-mobile" href="/book/" data-key="book" data-ar="احجز مكالمة">Book a call</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="nav__round nav__ring lang-btn" id="langBtn" type="button"></button>
+          <button class="nav__round nav__ring nav__theme" id="themeBtn" type="button" aria-label="Switch to light mode" data-ar-label="التبديل إلى الوضع الفاتح" aria-pressed="false">
+            <svg class="ico theme-ico theme-ico--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="ico theme-ico theme-ico--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          </button>
+          <a class="nav__round nav__ring nav__wa" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="WhatsApp" data-ar-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
+          <a class="btn btn--primary nav__cta magnetic" href="/book/" data-key="book" data-track="cta_click" data-track-id="nav-book"><span data-ar="احجز مكالمة">Book a call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+          <button class="nav__round nav__ring burger" id="burger" type="button" aria-label="Menu" data-ar-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <!-- /cc:top -->
+
+    <main id="main">
+
+      <section class="phero container phero--left sys-hero" aria-labelledby="page-title">
+        <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><span aria-current="page" data-ar="نظام التصميم">Design system</span></nav>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="نظام التصميم · المرحلة الثانية">DESIGN SYSTEM · PHASE 02</span></span>
+        <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="لغة واحدة،">One language,</span><br /><span class="grad-text" data-ar="كل الأسطح.">every surface.</span></h1>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="فهرس عمل للتوكينات والمكوّنات وجرد الموقع الحقيقي الذي نستخدمه في Code & Canvas. صفحة توثيق، لا عرض بيعي، ولا أرقام أداء مُختلقة.">A working index of the tokens, components and real site inventory behind Code & Canvas. This is documentation, not a pitch — and it contains no invented performance numbers.</p>
+        <div class="hero__ctas" data-reveal style="--d:.24s"><a class="btn btn--primary magnetic" href="#tokens"><span data-ar="استكشف التوكينات">Explore the tokens</span><i class="flip" data-icon="arrowDown"></i></a><a class="btn btn--glass" href="#components"><span data-ar="شاهد المكوّنات">See the components</span><i class="flip" data-icon="grid"></i></a><a class="btn btn--ghost" href="/methodology/"><span data-ar="اقرأ المنهجية">Read the methodology</span><i class="flip" data-icon="layers"></i></a></div>
+      </section>
+
+      <section class="section container section--flush-top" id="tokens" aria-label="Design tokens" data-ar-label="توكينات التصميم">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>01</b><span data-ar="التوكينات">TOKENS</span></p>
+            <h2><span id="tokens-title" data-ar="اللون قاعدة،">Colour is a rule,</span> <span class="grad-text" data-ar="مش مزاج.">not a mood.</span></h2>
+            <p class="lead" data-ar="قيم العلامة الست التي تحكم كل الأسطح. انسخ القيمة بالزر؛ لا تُحمَّل أي مكتبة ألوان خارجية.">The six brand values that drive every surface. Copy a value with the button; no external colour library is loaded.</p>
+          </div>
+          <div class="sec-head__aside"><span class="pill" data-ar="بتوكيناتنا">OUR OWN TOKENS</span></div>
+        </header>
+        <div class="sys-tokens">
+      <article class="sys-token sys-token--navy" aria-label="Copy deep-navy token value" data-ar-label="نسخ قيمة توكين الكحلي العميق">
+        <span class="sys-token__swatch" aria-hidden="true"></span>
+        <div class="sys-token__body">
+          <h3 data-ar="كحلي عميق">Deep navy</h3>
+          <code class="sys-token__value" dir="ltr">#00001e</code>
+          <button type="button" class="sys-token__copy" data-copy="#00001e" aria-label="Copy deep-navy token value" data-ar-label="نسخ قيمة توكين الكحلي العميق"><span data-ar="نسخ">Copy</span></button>
+        </div>
+      </article>
+      <article class="sys-token sys-token--violet" aria-label="Copy violet token value" data-ar-label="نسخ قيمة توكين البنفسجي">
+        <span class="sys-token__swatch" aria-hidden="true"></span>
+        <div class="sys-token__body">
+          <h3 data-ar="بنفسجي">Violet</h3>
+          <code class="sys-token__value" dir="ltr">#8b6cff</code>
+          <button type="button" class="sys-token__copy" data-copy="#8b6cff" aria-label="Copy violet token value" data-ar-label="نسخ قيمة توكين البنفسجي"><span data-ar="نسخ">Copy</span></button>
+        </div>
+      </article>
+      <article class="sys-token sys-token--teal" aria-label="Copy teal token value" data-ar-label="نسخ قيمة توكين التيل">
+        <span class="sys-token__swatch" aria-hidden="true"></span>
+        <div class="sys-token__body">
+          <h3 data-ar="تيل">Teal</h3>
+          <code class="sys-token__value" dir="ltr">#3fd6c4</code>
+          <button type="button" class="sys-token__copy" data-copy="#3fd6c4" aria-label="Copy teal token value" data-ar-label="نسخ قيمة توكين التيل"><span data-ar="نسخ">Copy</span></button>
+        </div>
+      </article>
+      <article class="sys-token sys-token--pink" aria-label="Copy pink token value" data-ar-label="نسخ قيمة توكين الوردي">
+        <span class="sys-token__swatch" aria-hidden="true"></span>
+        <div class="sys-token__body">
+          <h3 data-ar="وردي">Pink</h3>
+          <code class="sys-token__value" dir="ltr">#ee5ba3</code>
+          <button type="button" class="sys-token__copy" data-copy="#ee5ba3" aria-label="Copy pink token value" data-ar-label="نسخ قيمة توكين الوردي"><span data-ar="نسخ">Copy</span></button>
+        </div>
+      </article>
+      <article class="sys-token sys-token--gold" aria-label="Copy gold token value" data-ar-label="نسخ قيمة توكين الذهبي">
+        <span class="sys-token__swatch" aria-hidden="true"></span>
+        <div class="sys-token__body">
+          <h3 data-ar="ذهبي">Gold</h3>
+          <code class="sys-token__value" dir="ltr">#f3c77a</code>
+          <button type="button" class="sys-token__copy" data-copy="#f3c77a" aria-label="Copy gold token value" data-ar-label="نسخ قيمة توكين الذهبي"><span data-ar="نسخ">Copy</span></button>
+        </div>
+      </article>
+      <article class="sys-token sys-token--grad" aria-label="Copy brand-gradient token value" data-ar-label="نسخ قيمة توكين تدرّج العلامة">
+        <span class="sys-token__swatch" aria-hidden="true"></span>
+        <div class="sys-token__body">
+          <h3 data-ar="تدرّج العلامة">Brand gradient</h3>
+          <code class="sys-token__value" dir="ltr">teal → violet → pink</code>
+          <button type="button" class="sys-token__copy" data-copy="linear-gradient(120deg, #3fd6c4, #8b6cff, #ee5ba3)" aria-label="Copy brand-gradient token value" data-ar-label="نسخ قيمة توكين تدرّج العلامة"><span data-ar="نسخ">Copy</span></button>
+        </div>
+      </article></div>
+        <p class="sys-token__status" id="sys-copy-status" role="status" aria-live="polite"></p>
+        <p class="live-media-note" data-ar="القيم معروضة كما هي في ds.css؛ لا درجات لونية من مراجع خارجية.">Values are shown exactly as defined in ds.css; no swatches were borrowed from the references.</p>
+      </section>
+
+      <section class="section container section--flush-top" id="components" aria-label="Component gallery" data-ar-label="معرض المكوّنات">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>02</b><span data-ar="معرض المكوّنات">COMPONENT GALLERY</span></p>
+            <h2><span id="components-title" data-ar="قطع صغيرة،">Small pieces,</span> <span class="grad-text" data-ar="نظام واحد.">one system.</span></h2>
+            <p class="lead" data-ar="بينتو للأسطح الحقيقية المستخدمة في الموقع: زجاج، حبوب، حلقات، سكك مرقّمة، كتابة شبحية وأسطح حالة.">A bento of the actual surfaces used across the site: glass, pills, rings, numbered rails, ghost type and status surfaces.</p>
+          </div>
+          <div class="sec-head__aside"><span class="pill" data-ar="CSS فقط">CSS ONLY</span></div>
+        </header>
+        <div class="sys-bento">
+          <article class="sys-bento__card sys-bento__card--wide" aria-label="Glass panel" data-ar-label="لوح زجاجي">
+            <span class="sys-bento__kicker" data-ar="لوح / 01">PANEL / 01</span>
+            <h3 data-ar="سطح زجاجي">Glass surface</h3>
+            <p data-ar="حدود رقيقة، نصف قطر ثابت، وعمق من تدرّج ثابت بلا طمس وقتي.">A thin border, a fixed radius and depth from a static gradient — no runtime blur.</p>
+            <span class="pill" data-ar="999px">999px pill</span>
+          </article>
+          <article class="sys-bento__card" aria-label="Button pair" data-ar-label="زوج أزرار">
+            <span class="sys-bento__kicker" data-ar="أزرار / 02">BUTTONS / 02</span>
+            <h3 data-ar="قرار واحد">One decision</h3>
+            <span class="btn btn--primary sys-bento__btn" aria-hidden="true" data-ar="الإجراء الأساسي">Primary action</span>
+            <span class="btn btn--glass sys-bento__btn" aria-hidden="true" data-ar="الإجراء الثانوي">Secondary action</span>
+          </article>
+          <article class="sys-bento__card" aria-label="Ring control" data-ar-label="تحكم حلقي">
+            <span class="sys-bento__kicker" data-ar="حلقات / 03">RINGS / 03</span>
+            <span class="sys-ring" aria-hidden="true"><i data-icon="layers" aria-hidden="true"></i></span>
+            <h3 data-ar="تحكم دائري">Ring control</h3>
+            <p data-ar="خمس حلقات في الرأس؛ هذه نسخة توثيقية ثابتة.">Five rings live in the header; this is a static documentation copy.</p>
+          </article>
+          <article class="sys-bento__card" aria-label="Numbered rail" data-ar-label="سكة مرقّمة">
+            <span class="sys-bento__kicker" data-ar="سكة / 04">RAIL / 04</span>
+            <ol class="sys-bento__rail">
+              <li><b>01</b><span data-ar="نحدّد القرار">Frame</span></li>
+              <li><b>02</b><span data-ar="نصمّم الطبقة">Design</span></li>
+              <li><b>03</b><span data-ar="نبني ونختبر">Build</span></li>
+              <li><b>04</b><span data-ar="نسلّم الملفات">Hand over</span></li>
+            </ol>
+          </article>
+          <article class="sys-bento__card sys-bento__card--wide" aria-label="Ghost wordmark" data-ar-label="كتابة شبحية">
+            <span class="sys-bento__kicker" data-ar="كتابة / 05">TYPE / 05</span>
+            <span class="sys-ghost" aria-hidden="true"></span>
+            <h3 data-ar="كلمة شبحية">Ghost wordmark</h3>
+            <p data-ar="نوع مولّد بالـ CSS، لا عقدة نصية في الـ DOM ولا يُقرأ كنص منخفض التباين.">CSS-generated type, with no DOM text node and no low-contrast body copy.</p>
+          </article>
+          <article class="sys-bento__card" aria-label="Status surface" data-ar-label="سطح حالة">
+            <span class="sys-bento__kicker" data-ar="حالة / 06">STATUS / 06</span>
+            <span class="sys-status" data-ar="مُعلَّن">LABELLED</span>
+            <h3 data-ar="حدود واضحة">Plain limits</h3>
+            <p data-ar="كل عمل توضيحي يحمل وسمًا ظاهرًا.">Every illustrative work carries a visible label.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container section--flush-top" id="inventory" aria-label="Site inventory" data-ar-label="جرد الموقع">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>03</b><span data-ar="جرد الموقع">SITE INVENTORY</span></p>
+            <h2><span id="inventory-title" data-ar="أرقام من المولّد،">Counts from the generator,</span> <span class="grad-text" data-ar="مش من لوحة بيانات.">not a dashboard.</span></h2>
+            <p class="lead" data-ar="فهرس بينتو لمحتويات الموقع الحقيقية والموثّقة. بلا نسب مئوية، بلا نمو مُختلق، بلا مؤشرات أداء.">A bento index of real, documented site contents. No percentages, no fabricated growth, no business metrics.</p>
+          </div>
+          <div class="sec-head__aside"><span class="pill" data-ar="بيانات حقيقية">REAL DATA</span></div>
+        </header>
+        <div class="sys-inventory">
+      <article class="sys-inventory__card" aria-label="Productized services" data-ar-label="خدمات مُنتجة">
+        <span class="sys-inventory__no">01</span>
+        <b class="ltr">23</b>
+        <h3 data-ar="خدمات مُنتجة">Productized services</h3>
+        <p data-ar="مأخوذ من كتالوج الخدمات.">Read from the service catalogue.</p>
+      </article>
+      <article class="sys-inventory__card" aria-label="Service tracks" data-ar-label="مسارات الخدمة">
+        <span class="sys-inventory__no">02</span>
+        <b class="ltr">4</b>
+        <h3 data-ar="مسارات الخدمة">Service tracks</h3>
+        <p data-ar="تقنية · إبداع · رعاية صحية · مشاريع متكاملة.">Technology · creative · healthcare · combined.</p>
+      </article>
+      <article class="sys-inventory__card" aria-label="Project case studies" data-ar-label="دراسات حالة مشاريع">
+        <span class="sys-inventory__no">03</span>
+        <b class="ltr">15</b>
+        <h3 data-ar="دراسات حالة مشاريع">Project case studies</h3>
+        <p data-ar="كل صفحة توضّح مصدرها وحدود إثباتها.">Each page states its source and evidence limit.</p>
+      </article>
+      <article class="sys-inventory__card" aria-label="Founder archive entries" data-ar-label="مدخلات أرشيف المؤسس">
+        <span class="sys-inventory__no">04</span>
+        <b class="ltr">25</b>
+        <h3 data-ar="مدخلات أرشيف المؤسس">Founder archive entries</h3>
+        <p data-ar="مشروعات منشورة مع روابط إلى مصادرها.">Published projects with links back to their sources.</p>
+      </article>
+      <article class="sys-inventory__card" aria-label="Founders" data-ar-label="مؤسسان">
+        <span class="sys-inventory__no">05</span>
+        <b class="ltr">2</b>
+        <h3 data-ar="مؤسسان">Founders</h3>
+        <p data-ar="موجز واحد، مالكان، بلا فريق حساب وسيط.">One brief, two owners, no account layer.</p>
+      </article>
+      <article class="sys-inventory__card" aria-label="Local market pages" data-ar-label="صفحتا سوق محلي">
+        <span class="sys-inventory__no">06</span>
+        <b class="ltr">2</b>
+        <h3 data-ar="صفحتا سوق محلي">Local market pages</h3>
+        <p data-ar="الخبر، السعودية · العبور، مصر.">Al Khobar, KSA · Al Obour, Egypt.</p>
+      </article></div>
+        <p class="live-media-note" data-ar="تُقرأ الأرقام من كتالوج الخدمات وبيانات دراسات الحالة وأرشيف المؤسس وقت التوليد.">Counts are read from the service catalogue, case-study data and founder archive at generation time.</p>
+      </section>
+
+      <section class="section container section--flush-top" id="gallery" aria-label="Slit gallery" data-ar-label="معرض الشقائق">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>04</b><span data-ar="معرض الشقائق">SLIT GALLERY</span></p>
+            <h2><span id="gallery-title" data-ar="أربع لوحات،">Four panels,</span> <span class="grad-text" data-ar="بلا مكتبة.">no library.</span></h2>
+            <p class="lead" data-ar="أكورديون بـ CSS فقط من عناصر details/summary الأصلية. افتح لوحة بالنقر أو الكيبورد؛ بلا مستمع تمرير وبلا حركة.">A CSS-only accordion built from native details/summary. Open a panel by click or keyboard; no scroll listener and no animation.</p>
+          </div>
+          <div class="sec-head__aside"><span class="pill" data-ar="الكيبورد جاهز">KEYBOARD READY</span></div>
+        </header>
+        <div class="sys-slit" role="group" aria-label="Illustrative artwork accordion" data-ar-label="أكورديون الأعمال التوضيحية">
+        <details class="sys-slit__item" name="sys-slit" open aria-label="Brand systems" data-ar-label="أنظمة العلامة">
+          <summary><span class="sys-slit__no">01</span><span data-ar="أنظمة العلامة">Brand systems</span><span class="sys-slit__badge" data-ar="توضيحي">ILLUSTRATIVE</span></summary>
+          <figure class="sys-slit__figure">
+            <img src="/assets/media/brand-system.webp" srcset="/assets/media/brand-system-sm.webp 780w, /assets/media/brand-system.webp 1600w" sizes="(max-width: 720px) 92vw, 760px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Brand systems" data-ar-alt="عمل توضيحي · ليس عمل عميل — أنظمة العلامة" width="1200" height="675" loading="lazy" decoding="async" />
+            <figcaption><span data-ar="أنظمة العلامة">Brand systems</span><span data-ar="دراسة تركيب بصري، ليست تسليم عميل.">Composition study, not a client deliverable.</span></figcaption>
+          </figure>
+        </details>
+        <details class="sys-slit__item" name="sys-slit" aria-label="Maqloop" data-ar-label="مقلوب">
+          <summary><span class="sys-slit__no">02</span><span data-ar="مقلوب">Maqloop</span><span class="sys-slit__badge" data-ar="توضيحي">ILLUSTRATIVE</span></summary>
+          <figure class="sys-slit__figure">
+            <img src="/assets/media/case-maqloop.webp" srcset="/assets/media/case-maqloop-sm.webp 780w, /assets/media/case-maqloop.webp 1600w" sizes="(max-width: 720px) 92vw, 760px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Maqloop" data-ar-alt="عمل توضيحي · ليس عمل عميل — مقلوب" width="1200" height="675" loading="lazy" decoding="async" />
+            <figcaption><span data-ar="مقلوب">Maqloop</span><span data-ar="مفهوم إطلاقات أزياء مرقّمة.">Numbered apparel-release concept.</span></figcaption>
+          </figure>
+        </details>
+        <details class="sys-slit__item" name="sys-slit" aria-label="Packbox Studio" data-ar-label="باك بوكس ستوديو">
+          <summary><span class="sys-slit__no">03</span><span data-ar="باك بوكس ستوديو">Packbox Studio</span><span class="sys-slit__badge" data-ar="توضيحي">ILLUSTRATIVE</span></summary>
+          <figure class="sys-slit__figure">
+            <img src="/assets/media/case-packbox.webp" srcset="/assets/media/case-packbox-sm.webp 780w, /assets/media/case-packbox.webp 1600w" sizes="(max-width: 720px) 92vw, 760px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Packbox Studio" data-ar-alt="عمل توضيحي · ليس عمل عميل — باك بوكس ستوديو" width="1200" height="675" loading="lazy" decoding="async" />
+            <figcaption><span data-ar="باك بوكس ستوديو">Packbox Studio</span><span data-ar="مفهوم نظام تغليف ومطبوعات.">Packaging and print system concept.</span></figcaption>
+          </figure>
+        </details>
+        <details class="sys-slit__item" name="sys-slit" aria-label="Pharmacy OS" data-ar-label="نظام الصيدليات">
+          <summary><span class="sys-slit__no">04</span><span data-ar="نظام الصيدليات">Pharmacy OS</span><span class="sys-slit__badge" data-ar="توضيحي">ILLUSTRATIVE</span></summary>
+          <figure class="sys-slit__figure">
+            <img src="/assets/media/case-pharmacy.webp" srcset="/assets/media/case-pharmacy-sm.webp 780w, /assets/media/case-pharmacy.webp 1600w" sizes="(max-width: 720px) 92vw, 760px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Pharmacy OS" data-ar-alt="عمل توضيحي · ليس عمل عميل — نظام الصيدليات" width="1200" height="675" loading="lazy" decoding="async" />
+            <figcaption><span data-ar="نظام الصيدليات">Pharmacy OS</span><span data-ar="مفهوم مسار عمل رعاية صحية.">Healthcare workflow concept.</span></figcaption>
+          </figure>
+        </details>
+        </div>
+      </section>
+
+      <section class="section container section--flush-top" id="orbit" aria-label="Orbit study" data-ar-label="دراسة المدار">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>05</b><span data-ar="دراسة المدار">ORBIT STUDY</span></p>
+            <h2><span id="orbit-title" data-ar="مدار ثابت،">A static orbit,</span> <span class="grad-text" data-ar="مش ادّعاء توليد صور.">not an AI-photo claim.</span></h2>
+            <p class="lead" data-ar="ثماني بلاطات مائلة من أعمالنا المعلّمة حول عبارة واحدة. بلا صور أطراف ثالثة، بلا حركة، بلا تموضع منتج.">Eight tilted tiles from our own labelled artwork around one sentence. No third-party imagery, no animation, no product positioning.</p>
+          </div>
+          <div class="sec-head__aside"><span class="pill" data-ar="أعمالنا فقط">OUR ART ONLY</span></div>
+        </header>
+        <div class="sys-orbit" role="group" aria-label="Static orbit of labelled illustrative artwork" data-ar-label="مدار ثابت من أعمال توضيحية مُعلَّنة">
+          <ul class="sys-orbit__ring">
+        <li class="sys-orbit__tile sys-orbit__tile--1" aria-label="Axiom identity study" data-ar-label="دراسة هوية أكسيوم">
+          <img src="/assets/media/case-axiom.webp" srcset="/assets/media/case-axiom-sm.webp 780w, /assets/media/case-axiom.webp 1600w" sizes="(max-width: 720px) 44vw, 220px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Axiom identity study" data-ar-alt="عمل توضيحي · ليس عمل عميل — دراسة هوية أكسيوم" width="480" height="360" loading="lazy" decoding="async" />
+        </li>
+        <li class="sys-orbit__tile sys-orbit__tile--2" aria-label="Continuum system study" data-ar-label="دراسة منظومة كونتينوم">
+          <img src="/assets/media/case-continuum.webp" srcset="/assets/media/case-continuum-sm.webp 780w, /assets/media/case-continuum.webp 1600w" sizes="(max-width: 720px) 44vw, 220px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Continuum system study" data-ar-alt="عمل توضيحي · ليس عمل عميل — دراسة منظومة كونتينوم" width="480" height="360" loading="lazy" decoding="async" />
+        </li>
+        <li class="sys-orbit__tile sys-orbit__tile--3" aria-label="Evolve system study" data-ar-label="دراسة منظومة إيفولف">
+          <img src="/assets/media/case-evolve.webp" srcset="/assets/media/case-evolve-sm.webp 780w, /assets/media/case-evolve.webp 1600w" sizes="(max-width: 720px) 44vw, 220px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Evolve system study" data-ar-alt="عمل توضيحي · ليس عمل عميل — دراسة منظومة إيفولف" width="480" height="360" loading="lazy" decoding="async" />
+        </li>
+        <li class="sys-orbit__tile sys-orbit__tile--4" aria-label="Farm console study" data-ar-label="دراسة لوحة المزرعة">
+          <img src="/assets/media/case-farm.webp" srcset="/assets/media/case-farm-sm.webp 780w, /assets/media/case-farm.webp 1600w" sizes="(max-width: 720px) 44vw, 220px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Farm console study" data-ar-alt="عمل توضيحي · ليس عمل عميل — دراسة لوحة المزرعة" width="480" height="360" loading="lazy" decoding="async" />
+        </li>
+        <li class="sys-orbit__tile sys-orbit__tile--5" aria-label="Oltre collective study" data-ar-label="دراسة أولتري كولكتيف">
+          <img src="/assets/media/case-oltre.webp" srcset="/assets/media/case-oltre-sm.webp 780w, /assets/media/case-oltre.webp 1600w" sizes="(max-width: 720px) 44vw, 220px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Oltre collective study" data-ar-alt="عمل توضيحي · ليس عمل عميل — دراسة أولتري كولكتيف" width="480" height="360" loading="lazy" decoding="async" />
+        </li>
+        <li class="sys-orbit__tile sys-orbit__tile--6" aria-label="Sakanwave study" data-ar-label="دراسة سكن ويف">
+          <img src="/assets/media/case-sakanwave.webp" srcset="/assets/media/case-sakanwave-sm.webp 780w, /assets/media/case-sakanwave.webp 1600w" sizes="(max-width: 720px) 44vw, 220px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Sakanwave study" data-ar-alt="عمل توضيحي · ليس عمل عميل — دراسة سكن ويف" width="480" height="360" loading="lazy" decoding="async" />
+        </li>
+        <li class="sys-orbit__tile sys-orbit__tile--7" aria-label="Speech-to-text study" data-ar-label="دراسة تحويل الكلام إلى نص">
+          <img src="/assets/media/case-stt.webp" srcset="/assets/media/case-stt-sm.webp 780w, /assets/media/case-stt.webp 1600w" sizes="(max-width: 720px) 44vw, 220px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Speech-to-text study" data-ar-alt="عمل توضيحي · ليس عمل عميل — دراسة تحويل الكلام إلى نص" width="480" height="360" loading="lazy" decoding="async" />
+        </li>
+        <li class="sys-orbit__tile sys-orbit__tile--8" aria-label="Ummah Academy study" data-ar-label="دراسة أكاديمية الأمة">
+          <img src="/assets/media/case-ummah.webp" srcset="/assets/media/case-ummah-sm.webp 780w, /assets/media/case-ummah.webp 1600w" sizes="(max-width: 720px) 44vw, 220px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — Ummah Academy study" data-ar-alt="عمل توضيحي · ليس عمل عميل — دراسة أكاديمية الأمة" width="480" height="360" loading="lazy" decoding="async" />
+        </li>
+          </ul>
+          <div class="sys-orbit__core">
+            <p data-ar="منظومة واحدة">ONE SYSTEM</p>
+            <h3 data-ar="ثلاث طبقات، لغة واحدة.">Three layers, one language.</h3>
+            <p data-ar="العلامة والمنتج والمنظومة: نفس التوكينات، نفس القواعد، بالعربية والإنجليزية.">Brand, product and system: the same tokens, the same rules, in Arabic and English.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container section--flush-top" id="profiles" aria-label="Founder plates" data-ar-label="لوحات المؤسسين">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>06</b><span data-ar="لوحات المؤسسين">FOUNDER PLATES</span></p>
+            <h2><span id="profiles-title" data-ar="لوحة اسم،">A name plate,</span> <span class="grad-text" data-ar="مش بورتريه مستعار.">not a borrowed portrait.</span></h2>
+            <p class="lead" data-ar="مونوجرامات وأدوار حقيقية بدل وجوه ستوك أو عدّاد متابعين أو شارات توثيق. المرجع 060 يظل مرفوضًا.">Monograms and real roles instead of stock faces, follower counts or verification badges. Ref 060 stays rejected.</p>
+          </div>
+          <div class="sec-head__aside"><span class="pill" data-ar="بلا صور أشخاص">NO STOCK FACES</span></div>
+        </header>
+        <div class="sys-profiles">
+      <article class="sys-profile sys-profile--code" aria-label="Ahmed M. Bedeer" data-ar-label="أحمد بدير">
+        <span class="sys-profile__mono" aria-hidden="true">AB</span>
+        <div class="sys-profile__plate">
+          <span class="sys-profile__kicker" data-ar="الكود">THE CODE</span>
+          <h3 data-ar="أحمد بدير">Ahmed M. Bedeer</h3>
+          <p data-ar="شريك مؤسس · مهندس معماري مؤسسي · مهندس حلول">Co-Founder · Enterprise Architect · Solution Architect</p>
+        </div>
+        <p class="sys-profile__lead" data-ar="العمارة المؤسسية وأنظمة الرعاية الصحية والبيانات — النصف التقني في كل مشروع.">Enterprise architecture, healthcare systems and data — the technical half of every engagement.</p>
+        <a class="text-link sys-profile__link" href="/team/"><span data-ar="افتح صفحة الفريق">Meet the team</span><i data-icon="arrowUpRight" aria-hidden="true"></i></a>
+      </article>
+      <article class="sys-profile sys-profile--canvas" aria-label="Mustafa Aboalazm" data-ar-label="مصطفى أبو العزم">
+        <span class="sys-profile__mono" aria-hidden="true">MA</span>
+        <div class="sys-profile__plate">
+          <span class="sys-profile__kicker" data-ar="الكانفاس">THE CANVAS</span>
+          <h3 data-ar="مصطفى أبو العزم">Mustafa Aboalazm</h3>
+          <p data-ar="شريك مؤسس · مدير إبداعي · مهندس هوية بصرية">Co-Founder · Creative Director · Visual Brand Architect</p>
+        </div>
+        <p class="sys-profile__lead" data-ar="استراتيجية العلامة والأنظمة البصرية والإخراج التحريري — النصف الذي يحدد كيف يُرى العمل.">Brand strategy, visual systems and editorial direction — the half that decides how the work is seen.</p>
+        <a class="text-link sys-profile__link" href="/team/"><span data-ar="افتح صفحة الفريق">Meet the team</span><i data-icon="arrowUpRight" aria-hidden="true"></i></a>
+      </article></div>
+      </section>
+
+      <section class="section container section--tight" aria-label="Phase 2 provenance" data-ar-label="مصدر المرحلة الثانية">
+        <div class="work-disclaimer" data-reveal>
+          <i data-icon="alert" aria-hidden="true"></i>
+          <div>
+            <strong data-ar="اتُخذت الآلية فقط، لا البكسلات.">Only the mechanism was adapted, never the pixels.</strong>
+            <p data-ar="المرحلة الثانية مبنية من REF 004 / 016 / 023 / 026 / 041 / 044 / 045. كل الصور من أعمالنا التوضيحية المعلّمة، وكل رقم من بيانات المولّد، ولم تُضف صورة مرخّصة أو لقطة شاشة عميل أو خط أو CDN أو مكتبة جديدة.">Phase 2 adapts REF 004 / 016 / 023 / 026 / 041 / 044 / 045. Every image is our own labelled illustrative artwork, every number comes from generator data, and no licensed photo, client screenshot, font, CDN or new library was added.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section container section--tight" aria-label="Next step" data-ar-label="الخطوة التالية">
+        <div class="closing" data-reveal>
+          <span class="closing__border" aria-hidden="true"></span>
+          <div class="closing__inner glass glass--deep">
+            <p class="kicker kicker--center"><span data-ar="ابنِ على القواعد">BUILD ON THE RULES</span></p>
+            <h2 class="closing__title"><span data-ar="نظام واحد،">One system,</span> <span class="grad-text" data-ar="سطحًا بسطح.">surface by surface.</span></h2>
+            <p class="closing__text" data-ar="اقرأ طريقة التسليم، أو ابدأ بسؤال محدّد النطاق. القواعد واحدة باللغتين.">Read the delivery method, or start with a scoped question. The rules stay the same in both languages.</p>
+            <div class="hero__ctas hero__ctas--center"><a class="btn btn--primary magnetic" href="/methodology/"><span data-ar="اقرأ المنهجية">Read the methodology</span><i class="flip" data-icon="layers"></i></a><a class="btn btn--glass" href="/book/"><span data-ar="احجز مكالمة 30 دقيقة">Book a 30-min call</span><i class="flip" data-icon="calendar"></i></a></div>
+            <p class="closing__contact"><a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a> · <a class="ltr" href="tel:+966545520750">+966 54 552 0750</a> · <a class="ltr" href="tel:+201092500454">+20 109 250 0454</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- cc:bottom -->
+    <footer class="footer footer--full">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brandcol">
+            <a class="nav__brand" href="/" aria-label="Code & Canvas home" data-ar-label="Code & Canvas — الرئيسية"><img src="/assets/brand/logo-white-horizontal.svg" alt="" width="120" height="50" style="height:46px;width:auto" /></a>
+            <p class="footer__about" data-ar-html="الاستراتيجية. التصميم. التقنية.&lt;br /&gt;نبني العلامة والمنتج والمنظومة حول نتيجة عمل واحدة.&lt;br /&gt;نخدم مؤسسات القطاعين الخاص والعام في المنطقة.">Strategy. Design. Technology.<br />We build the brand, the product and the system around one business outcome.<br />Serving private and public sector organizations across MENA.</p>
+            <div class="footer__tags" aria-label="Disciplines" data-ar-label="التخصصات"><span>BRAND SYSTEMS</span><span>DIGITAL PRODUCTS</span><span>AUTOMATION</span><span>HEALTHCARE IT</span></div>
+            <p class="footer__loc"><a href="/saudi-arabia/" data-ar="الخبر، السعودية">Al Khobar, KSA</a> <b>·</b> <a href="/egypt/" data-ar="العبور، مصر">Al Obour, Egypt</a></p>
+            <p class="footer__loc"><a href="/claims/" data-ar="كيف نتحقق من الأرقام والادعاءات">How we verify our claims ↗</a></p>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="التموضع">WHAT WE DO</h3>
+            <a href="/services/" data-ar="كل الخدمات (23)">All services (23)</a>
+            <a href="/creative-services/" data-ar="أنظمة العلامة">Brand Systems</a>
+            <a href="/technology-services/" data-ar="المنتجات والمنصات">Digital Products &amp; Platforms</a>
+            <a href="/technology-services/" data-ar="التقنية والأتمتة">Technology &amp; Automation</a>
+            <a href="/healthcare/" data-ar="الحلول المتخصصة">Specialist Solutions</a>
+            <a href="/pricing-faq/" data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="صفحات الخدمات الرئيسية">FLAGSHIP SERVICES</h3>
+            <a href="/services/brand-identity-design/" data-ar="تصميم هوية العلامة">Brand Identity Design</a>
+            <a href="/services/brand-strategy-systems/" data-ar="استراتيجية العلامة وأنظمتها">Brand Strategy &amp; Systems</a>
+            <a href="/services/packaging-design/" data-ar="تصميم التغليف">Packaging Design</a>
+            <a href="/services/website-design-development/" data-ar="تصميم وتطوير المواقع">Website Design</a>
+            <a href="/services/product-design-ux/" data-ar="تصميم المنتجات وتجربة المستخدم">Product Design &amp; UX</a>
+            <a href="/services/healthcare-digital-solutions/" data-ar="الحلول الرقمية الصحية">Healthcare Digital</a>
+            <a href="/services/ai-workflow-automation/" data-ar="أتمتة بالذكاء الاصطناعي">AI Workflow Automation</a>
+          </div>
+
+          <div class="footer__col">
+            <h3 data-ar="الأعمال والأدلة">WORK &amp; EVIDENCE</h3>
+            <a href="/work/" data-ar="البورتفوليو الإبداعي">Creative Portfolio</a>
+            <a href="/case-studies/" data-ar="دراسات الحالة">Case Studies</a>
+            <a href="/work/#evidence" data-ar="سجل الادعاءات والأدلة">Claims Register</a>
+            <a href="/methodology/" data-ar="المنهجية">Methodology</a>
+            <a href="/erp/" data-ar="CanvasOne ERP">CanvasOne ERP</a>
+            <a href="/claims/" data-ar="سياسة الإثبات">Evidence policy</a>
+          </div>
+
+          <div class="footer__col footer__col--studio">
+            <h3 data-ar="الاستوديو والمصادر">STUDIO &amp; RESOURCES</h3>
+            <a href="/about/" data-ar="عن الاستوديو">About the Studio</a>
+            <a href="/our-story/" data-ar="قصتنا">Our Story</a>
+            <a href="/team/" data-ar="تعرّف على الفريق">Meet the Team</a>
+            <a href="/blog/" data-ar="المدونة والرؤى">Insights &amp; Blog</a>
+            <a href="/resources/" data-ar="المصادر والمنتجات الرقمية">Resources &amp; Digital Products</a>
+            <a href="/system/" data-ar="نظام التصميم">Design System</a>
+            <a href="/books/" data-ar="الكتب والمعاينات المجانية">Books &amp; Free Previews</a>
+            <a href="/saudi-arabia/" data-ar="السعودية">Saudi Arabia</a>
+            <a href="/egypt/" data-ar="مصر">Egypt</a>
+          </div>
+          <div class="footer__col footer__contact">
+            <h3 data-ar="ابدأ">START</h3>
+            <a href="tel:+966545520750"><i data-icon="phoneCall"></i><span class="ltr">+966 54 552 0750</span> <small data-ar="السعودية">KSA</small></a>
+            <a href="tel:+201092500454"><i data-icon="phoneCall"></i><span class="ltr">+20 109 250 0454</span> <small data-ar="مصر">Egypt</small></a>
+            <a href="mailto:info@codeandcanvas.net"><i data-icon="mail"></i><span class="ltr">info@codeandcanvas.net</span></a>
+            <a class="btn btn--primary btn--sm" href="/book/" data-track="cta_click" data-track-id="footer-book"><span data-ar="احجز مكالمة مجانية · 30 دقيقة">Book a free 30-min call</span><i class="flip" data-icon="arrowUpRight"></i></a>
+            <a class="footer__contact-alt" href="/contact/" data-ar="أو أرسل رسالة →">Or send a message →</a>
+          </div>
+        </div>
+        <!-- REF 019 / 022 / 048: a restrained oversized brand wordmark. Decorative,
+             clipped, and bilingual-safe (the Latin brand mark is used in both twins). -->
+        <!-- Decorative type is generated in CSS: no DOM text node, so it is not
+             announced and cannot be mistaken for low-contrast body copy. -->
+        <div class="footer__wordmark" aria-hidden="true"></div>
+        <div class="footer__bottom">
+          <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span data-ar="جميع الحقوق محفوظة">All rights reserved</span> · <span data-ar="السعودية + مصر">KSA + Egypt</span></span>
+          <div><a href="/privacy-policy/" data-ar="سياسة الخصوصية">Privacy Policy</a><a href="/terms-of-use/" data-ar="شروط الاستخدام">Terms of Use</a><a href="/cookie-policy/" data-ar="سياسة ملفات الارتباط">Cookie Policy</a><a href="/claims/" data-ar="الادعاءات والأدلة">Claims</a></div>
+          <div class="footer__reg" aria-label="Legal registration" data-ar-label="التسجيل القانوني"><span data-ar="السجل التجاري رقم ٣١١٨٩١">Commercial Register No. 311891</span><span data-ar="رقم التسجيل الضريبي ٧٧٤٢٣٥٠٥٥">Tax Registration No. 774235055</span></div>
+          <!-- Only revealed when the browser actually offers an install prompt. -->
+          <button class="footer__install" id="installApp" type="button" hidden data-ar="تثبيت التطبيق">Install app</button>
+        </div>
+      </div>
+    </footer>
+
+    <a class="to-top to-top--fixed" href="#top" aria-label="Back to top" data-ar-label="العودة للأعلى" data-icon="arrowUp"></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/assets/js/config.js"></script>
+    <script src="/assets/js/site.js"></script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- /cc:bottom -->
+    <script src="/assets/js/pages.js"></script>
+    <script src="/assets/js/system.js"></script>
+  </body>
+</html>

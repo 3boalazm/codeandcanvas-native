@@ -113,7 +113,7 @@ def build():
                   '<span id="matrix-title" data-ar="لتعرف دائمًا">So you always know</span> <span class="grad-text" data-ar="لماذا اتُّخذ القرار.">why a decision was made.</span>',
                   'A traceability matrix linking business goals to capabilities, technology assets, and transformation initiatives. Every engagement produces a version of this — so you always know why a decision was made.',
                   'مصفوفة تتبّع تربط أهداف الأعمال بالقدرات والأصول التقنية ومبادرات التحول. كل مشروع ينتج نسخة منها — لتعرف دائمًا سبب كل قرار.')}
-        <div class="tbl-wrap panel" data-reveal>
+        <div class="tbl-wrap panel" data-reveal role="region" tabindex="0" aria-label="Scrollable traceability matrix" data-ar-label="مصفوفة تتبّع قابلة للتمرير">
           <table class="matrix">
             <thead><tr><th scope="col" data-ar="هدف العمل">Business Goal</th><th scope="col" data-ar="قدرة العلامة">Brand Capability</th><th scope="col" data-ar="الأصل التقني">Technology Asset</th><th scope="col" data-ar="البيانات / التحليلات">Data / Analytics</th><th scope="col" data-ar="التحول">Transformation</th></tr></thead>
             <tbody>{rows}

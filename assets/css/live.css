@@ -237,3 +237,19 @@ html[lang='ar'] .post__cover .art__cap2 { letter-spacing: 0; font-size: 11.5px; 
   .wa-card:hover { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { .wa-card:hover { transform: none; } }
+
+/* Light theme (2026-11-09 REF pass): these inks were authored for navy panels
+   and became unreadable on the light surfaces. Dark, WCAG-safe replacements. */
+html[data-theme='light'] .work-disclaimer { color: #4a3312; border-color: rgba(160,110,20,.32); background: rgba(243,199,122,.14); }
+html[data-theme='light'] .work-disclaimer .ico { color: #8a5a10; }
+html[data-theme='light'] .work-disclaimer--archive { color: #174a42; border-color: rgba(20,120,105,.28); background: rgba(63,214,196,.12); }
+html[data-theme='light'] .work-disclaimer--archive .ico,
+html[data-theme='light'] .work-disclaimer--archive a { color: #0f6b5c; }
+html[data-theme='light'] .wa-card__status { color: #6b4610; background: rgba(243,199,122,.16); border-color: rgba(160,110,20,.32); }
+
+/* Light theme: case-study statuses and archive track labels (/work/). */
+html[data-theme='light'] .case-step span,
+html[data-theme='light'] .st--ok { color: var(--ink-teal); }
+html[data-theme='light'] .st--pending { color: var(--ink-gold); }
+html[data-theme='light'] .st--removed { color: var(--ink-pink); }
+html[data-theme='light'] .wa-track b { color: var(--ink-violet); }

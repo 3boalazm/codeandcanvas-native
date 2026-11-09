@@ -190,7 +190,7 @@
           </div>
 
         </header>
-        <div class="tbl-wrap" data-reveal><table class="tbl"><caption>أربعة مسارات — اختر المسار الذي يناسب القرار الذي أمامك الآن.</caption><thead><tr><th scope="col"><span>المسار</span></th><th scope="col"><span>لمن؟</span></th><th scope="col"><span>يقودها</span></th><th scope="col"><span>الخدمات</span></th><th scope="col"><span>تبدأ من</span></th></tr></thead><tbody><tr>
+        <div class="tbl-wrap" data-reveal role="region" tabindex="0" aria-label="جدول مسارات الخدمة القابل للتمرير"><table class="tbl"><caption>أربعة مسارات — اختر المسار الذي يناسب القرار الذي أمامك الآن.</caption><thead><tr><th scope="col"><span>المسار</span></th><th scope="col"><span>لمن؟</span></th><th scope="col"><span>يقودها</span></th><th scope="col"><span>الخدمات</span></th><th scope="col"><span>تبدأ من</span></th></tr></thead><tbody><tr>
               <th scope="row"><a href="#technology">التقنية والعمارة المؤسسية</a></th>
               <td>مديرو التقنية وقادة التحوّل ومكاتب المشاريع</td>
               <td>أحمد بدير</td>
@@ -362,6 +362,7 @@
             <a href="/ar/team/">تعرّف على الفريق</a>
             <a href="/ar/blog/">المدونة والرؤى</a>
             <a href="/ar/resources/">المصادر والمنتجات الرقمية</a>
+            <a href="/ar/system/">نظام التصميم</a>
             <a href="/ar/books/">الكتب والمعاينات المجانية</a>
             <a href="/ar/saudi-arabia/">السعودية</a>
             <a href="/ar/egypt/">مصر</a>
@@ -375,6 +376,11 @@
             <a class="footer__contact-alt" href="/ar/contact/">أو أرسل رسالة →</a>
           </div>
         </div>
+        <!-- REF 019 / 022 / 048: a restrained oversized brand wordmark. Decorative,
+             clipped, and bilingual-safe (the Latin brand mark is used in both twins). -->
+        <!-- Decorative type is generated in CSS: no DOM text node, so it is not
+             announced and cannot be mistaken for low-contrast body copy. -->
+        <div class="footer__wordmark" aria-hidden="true"></div>
         <div class="footer__bottom">
           <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span>جميع الحقوق محفوظة</span> · <span>السعودية + مصر</span></span>
           <div><a href="/ar/privacy-policy/">سياسة الخصوصية</a><a href="/ar/terms-of-use/">شروط الاستخدام</a><a href="/ar/cookie-policy/">سياسة ملفات الارتباط</a><a href="/ar/claims/">الادعاءات والأدلة</a></div>

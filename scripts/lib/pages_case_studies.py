@@ -185,7 +185,8 @@ def case_studies_section():
             <p data-ar="كل صورة هنا عمل توضيحي مولّد لهذا الموقع ومُعلَّن بوضوح. لا نعيد نشر صور المنتجات أو لقطات الشاشة من المواقع المباشرة، ولا ندّعي نتائج مُقاسة أو تعاقدات عملاء. ثلاث ريبهات من القائمة غير متاحة للعامة؛ حالتها موضحة داخل صفحتها.">Every image here is generated illustrative artwork, clearly labelled. We do not republish product photography or screenshots from the live sites, and we claim no measured outcomes or client engagements. Three supplied repositories are not publicly reachable; their status is stated on the relevant page.</p>
           </div>
         </div>
-        <div class="cs-index-grid">{''.join(cards)}</div>
+        <div class="cs-index-grid" role="region" aria-label="Project case studies" data-ar-label="دراسات حالة المشاريع" tabindex="0">{''.join(cards)}</div>
+        <p class="cs-index-hint" aria-hidden="true"><span data-ar="اسحب ←">SWIPE →</span></p>
         <p class="live-media-note cs-index-note" data-ar="الصور أعمال توضيحية مولّدة، ليست لقطات شاشة للمنتجات ولا صور عملاء. الروابط الخارجية تفتح في تبويب جديد.">Artwork is generated and illustrative, not product screenshots or client photography. External links open in a new tab.</p>
       </section>'''
 

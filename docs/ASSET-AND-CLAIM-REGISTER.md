@@ -114,3 +114,22 @@ Fifteen bilingual `/work/<slug>/` detail pages and a 15-card `/work/#project-cas
 Five `assets/brand/app/*.png` files were added for the installable app (192/512 `any`, 192/512 `maskable`, 180 `apple-touch-icon`). They are **rendered locally by `scripts/generate-app-icons.mjs` from `assets/brand/icon-white.svg`** — the same committed brand squircle already used in the header — onto a navy radial-gradient field. No photography, client mark, third-party artwork, app-store asset or AI-generated image was used, and no new claim of any kind is attached to them. See `docs/PWA.md`.
 
 `manifest.webmanifest`, `sw.js` and `offline.html` contain no client names, outcomes, numbers, testimonials or screenshots. The offline page is a bilingual connection notice pointing back to `/` and `/ar/`. The service worker explicitly excludes `/api/*`, `/crm/*`, `/_vercel/*` and all non-GET requests, so no lead, form or analytics payload is ever stored in a cache. The permission → evidence → attribution gate above is unchanged.
+
+---
+
+## 2026-11-09 · REF UI references (reference-only, nothing republished)
+
+The owner uploaded 63 UI-reference screenshots into `main/REF` (commit `52aeeb8b`). They were studied individually in `docs/REF-UI-STUDY-2026-11.md` and used **only as idea sources**. Every shipped element in that pass is rebuilt from CSS gradients, our own type and our own existing illustrative WebP art:
+
+- No REF screenshot, Dribbble/Behance/X image, stock vector, third-party portrait, logo, album art, QR code or app icon was copied into `assets/`, `dist/` or any published page.
+- No new font, image, WebP or OG asset was generated for this lap; `optimize-media --check` still reports 29 sources / 58 WebP / 50 OG cards.
+- No numeric claim, percentage, date, rating, client name or measured outcome was introduced. The new section explicitly says no measured outcomes are claimed.
+- The home-screen icons from the earlier PWA lap remain the only generated brand bitmaps; nothing from REF touches `manifest.webmanifest`, `sw.js` or `offline.html`.
+
+The permission → evidence → attribution gate above is unchanged. If any REF idea is later promoted from "idea" to "asset", it must first pass licence/attribution review here.
+
+---
+
+## 2026-11-09 · Phase 2 `/system/` (existing first-party assets only)
+
+The Phase 2 documentation route reuses **12 already-committed illustrative WebP files** (`brand-system`, `case-maqloop`, `case-packbox`, `case-pharmacy`, `case-axiom`, `case-continuum`, `case-evolve`, `case-farm`, `case-oltre`, `case-sakanwave`, `case-stt`, `case-ummah`) and the existing `resources.png` OG card. No new image, WebP, OG bitmap, font, icon sprite or third-party asset was generated or downloaded; `optimize-media --check` still reports **29 sources / 58 WebP / 50 OG cards**. Token swatches are CSS gradients/hex values from `assets/css/ds.css`, the founder plates are monograms from `pages_team.py`, and the six inventory numbers are `len()` results computed by `scripts/lib/pages_system.py` at generation time — not business metrics. All twelve art tiles carry `ILLUSTRATIVE ART · NOT CLIENT WORK` / «عمل توضيحي · ليس عمل عميل» and the page states that no licensed photo or client screenshot was added. No REF pixels, portraits, logos, follower counts or verification badges were republished; REF 060 remains rejected. The permission → evidence → attribution gate is unchanged.

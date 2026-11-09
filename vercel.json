@@ -158,6 +158,11 @@
       "permanent": true
     },
     {
+      "source": "/design-system",
+      "destination": "/system/",
+      "permanent": true
+    },
+    {
       "source": "/why-startups-waste-money-wrong-product",
       "destination": "/blog/why-startups-waste-money-wrong-product/",
       "permanent": true

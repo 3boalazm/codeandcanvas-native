@@ -98,6 +98,12 @@ html[data-theme='light'] {
   --glass-border: rgba(28, 22, 70, .14);
   --shadow: 0 26px 64px -34px rgba(35, 24, 90, .28), 0 8px 24px -18px rgba(35, 24, 90, .2);
   --hi: #171436;
+  /* Dark accent inks for text on light surfaces. The bright brand tokens stay
+     intact so gradients, dark panels and illustration wells keep their look. */
+  --ink-teal: #0f6b5c;
+  --ink-pink: #a5306a;
+  --ink-gold: #795411;
+  --ink-violet: #4f3fd8;
 }
 html[data-theme='light'] body { background: var(--bg); color: var(--ink); }
 html[data-theme='light'] .ambient {
@@ -547,6 +553,17 @@ html[lang='ar'] .footer__col h3 { letter-spacing: 0; font-size: 14.5px; text-tra
 .footer__install { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--glass-2); color: var(--ink-2); font-size: 12px; font-weight: 700; letter-spacing: .04em; transition: background .25s, border-color .25s, color .25s; }
 .footer__install[hidden] { display: none; }
 .footer__install:hover { background: rgba(139,108,255,.18); border-color: var(--violet); color: var(--hi, #fff); }
+/* REF 019 / 022 / 048 — clipped ghost wordmark above the legal row. Pure type,
+   no image, no interaction; overflow is clipped so 320px layouts stay clean. */
+.footer__wordmark { margin: 0 0 6px; overflow: hidden; pointer-events: none; user-select: none; }
+.footer__wordmark::before {
+  content: 'CODE & CANVAS';
+  display: block; white-space: nowrap; text-align: center;
+  font-family: var(--f-title); font-weight: 800; font-size: clamp(48px, 10vw, 148px);
+  line-height: 1; letter-spacing: -.045em; color: rgba(255,255,255,.055);
+}
+html[data-theme='light'] .footer__wordmark::before { color: rgba(5,5,26,.075); }
+html[lang='ar'] .footer__wordmark::before { letter-spacing: 0; }
 /* Owner-supplied legal identifiers. Full-width row under the copyright. */
 .footer__reg { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--ink-3); }
 .footer__reg span + span::before { content: '·'; margin-inline-end: 12px; opacity: .65; }
@@ -1412,3 +1429,65 @@ html[data-theme='light'] .float-chip {
   .burger[aria-expanded='true'] span:first-child,
   .burger[aria-expanded='true'] span:last-child { top: 20px; }
 }
+
+/* --------------------------------------------------------------------------
+   Light theme — WCAG-safe accent inks (2026-11-09 REF lap).
+   The bright teal/pink/gold/violet tokens were authored for deep navy and
+   fall below 4.5:1 on white and the light footer. Only text on light surfaces
+   is re-inked here; dark/gradient surfaces keep their white emphasis. These
+   rules are deliberately last in ds.css and carry the light-theme prefix so
+   they also survive the more specific rules in home.css / live.css.
+   -------------------------------------------------------------------------- */
+html[data-theme='light'] .sec-head__no b,
+html[data-theme='light'] .text-link,
+html[data-theme='light'] .chal__k,
+html[data-theme='light'] .chal__cta,
+html[data-theme='light'] .footer__col h3,
+html[data-theme='light'] .footer__contact h3,
+html[data-theme='light'] .footer__tags span,
+html[data-theme='light'] .footer__loc b,
+html[data-theme='light'] .footer__bottom .text-link { color: var(--ink-teal); }
+html[data-theme='light'] .chal__fix .chal__code,
+html[data-theme='light'] .chal__code { color: var(--ink-pink); }
+html[data-theme='light'] .text-link:hover { color: var(--ink-violet); }
+html[data-theme='light'] .footer__tags span { border-color: rgba(15,107,92,.28); background: rgba(15,107,92,.08); }
+
+/* --------------------------------------------------------------------------
+   Light theme — site-wide accent-ink + focusable-table pass (2026-11-09).
+   A WCAG A/AA sweep of the light theme found bright navy-only accent inks on
+   white panels across the service, pricing, case, book, blog and team pages.
+   Re-ink those labels with the dark accent variants above; dark/gradient
+   surfaces still opt into white via --hi. Bright brand tokens are untouched.
+   -------------------------------------------------------------------------- */
+html[data-theme='light'] :is(
+  .idx__code, .stepno, .svc-row__code, .mini__code, .tier__code,
+  .book__price, .post-row__no, .post-row__go, .post-row__go > span,
+  .kicker, .kicker__num, .cs__block > b, .who__mono,
+  .note-quiet a, .toolbar > p .ico, .tbl thead th, .story-plate__cap,
+  .milestones b, .cs-index-card__meta .wa-card__year
+) { color: var(--ink-teal); }
+html[data-theme='light'] .callout .kicker,
+html[data-theme='light'] .callout .kicker > span,
+html[data-theme='light'] .cs__evidence > b,
+html[data-theme='light'] .tag-soft--warn,
+html[data-theme='light'] .svc-row--alt .svc-row__code { color: var(--ink-pink); }
+html[data-theme='light'] .book__price--free,
+html[data-theme='light'] .mini--warn .mini__code,
+html[data-theme='light'] .tier--star .tier__code { color: var(--ink-gold); }
+html[data-theme='light'] .story-plate--tech .story-plate__cap,
+html[data-theme='light'] .story-plate--media .story-plate__cap { color: var(--ink-violet); }
+html[data-theme='light'] .story-plate--brand .story-plate__cap { color: var(--ink-pink); }
+html[data-theme='light'] .story-plate--data .story-plate__cap { color: var(--ink-gold); }
+html[data-theme='light'] .ticks li::before { color: var(--ink-teal); }
+html[data-theme='light'] .ticks--x li::before { color: var(--ink-pink); }
+/* A gradient background is not reliably resolved by contrast checkers; give
+   the active filter a solid brand-violet surface with white text in light mode. */
+html[data-theme='light'] .filter.is-active { background: #4f3fd8; color: #fff; }
+html[data-theme='light'] .filter.is-active b { color: #fff; }
+/* Scrollable tables are keyboard reachable; see the generator markup. */
+.tbl-wrap:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+html[data-theme='light'] .check a,
+html[data-theme='light'] .check span a,
+html[data-theme='light'] .consent a,
+html[data-theme='light'] .form__hint a,
+html[data-theme='light'] .field a { color: var(--ink-teal); }

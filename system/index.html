@@ -113,7 +113,7 @@
 
       <section class="phero container phero--left sys-hero" aria-labelledby="page-title">
         <nav class="crumbs" aria-label="Breadcrumb" data-ar-label="مسار التنقل"><a href="/" data-ar="الرئيسية">Home</a><i>›</i><span aria-current="page" data-ar="نظام التصميم">Design system</span></nav>
-        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="نظام التصميم · المرحلة الثانية">DESIGN SYSTEM · PHASE 02</span></span>
+        <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="نظام التصميم · المراحل ٢–٤">DESIGN SYSTEM · PHASES 02–04</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="لغة واحدة،">One language,</span><br /><span class="grad-text" data-ar="كل الأسطح.">every surface.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar="فهرس عمل للتوكينات والمكوّنات وجرد الموقع الحقيقي الذي نستخدمه في Code & Canvas. صفحة توثيق، لا عرض بيعي، ولا أرقام أداء مُختلقة.">A working index of the tokens, components and real site inventory behind Code & Canvas. This is documentation, not a pitch — and it contains no invented performance numbers.</p>
         <div class="hero__ctas" data-reveal style="--d:.24s"><a class="btn btn--primary magnetic" href="#tokens"><span data-ar="استكشف التوكينات">Explore the tokens</span><i class="flip" data-icon="arrowDown"></i></a><a class="btn btn--glass" href="#components"><span data-ar="شاهد المكوّنات">See the components</span><i class="flip" data-icon="grid"></i></a><a class="btn btn--ghost" href="/methodology/"><span data-ar="اقرأ المنهجية">Read the methodology</span><i class="flip" data-icon="layers"></i></a></div>
@@ -403,6 +403,150 @@
         <p class="sys-profile__lead" data-ar="استراتيجية العلامة والأنظمة البصرية والإخراج التحريري — النصف الذي يحدد كيف يُرى العمل.">Brand strategy, visual systems and editorial direction — the half that decides how the work is seen.</p>
         <a class="text-link sys-profile__link" href="/team/"><span data-ar="افتح صفحة الفريق">Meet the team</span><i data-icon="arrowUpRight" aria-hidden="true"></i></a>
       </article></div>
+      </section>
+
+      <section class="section container section--flush-top" id="guardrails" aria-label="Design system guardrails" data-ar-label="حدود نظام التصميم">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>07</b><span data-ar="الحدود">GUARDRAILS</span></p>
+            <h2><span id="guardrails-title" data-ar="قائمة ممنوعات،">A no-go list,</span> <span class="grad-text" data-ar="مش قائمة تنفيذ.">not a backlog.</span></h2>
+            <p class="lead" data-ar="المرحلة الثالثة من دراسة REF موثّقة كمرفوضة عن قصد. القواعد الست منشورة هنا كحدود لنظام التصميم ومُقفلة بفحص آلي.">Phase 3 of the REF study is documented as deliberately rejected. These six rules are published here as design-system boundaries and locked by an automated check.</p>
+          </div>
+          <div class="sec-head__aside"><span class="pill" data-ar="مُقفل آليًا">AUTO-LOCKED</span></div>
+        </header>
+        <div class="sys-guard">
+      <article class="sys-guard__card" aria-label="Fabricated metrics" data-ar-label="مؤشرات مُختلقة">
+        <span class="sys-guard__no">01</span>
+        <span class="sys-guard__badge" data-ar="لا">NO</span>
+        <h3 data-ar="مؤشرات مُختلقة">Fabricated metrics</h3>
+        <p data-ar="بلا نسب مئوية، منحنيات نمو، تلميحات إيرادات أو بلاطات KPI.">No percentages, growth curves, revenue tooltips or KPI tiles.</p>
+      </article>
+      <article class="sys-guard__card" aria-label="AI / crypto / health dashboards" data-ar-label="لوحات ذكاء اصطناعي / عملات / صحة">
+        <span class="sys-guard__no">02</span>
+        <span class="sys-guard__badge" data-ar="لا">NO</span>
+        <h3 data-ar="لوحات ذكاء اصطناعي / عملات / صحة">AI / crypto / health dashboards</h3>
+        <p data-ar="بلا واجهة لوحة بيانات لمنتج لا نبيعه.">No dashboard chrome for a product we do not sell.</p>
+      </article>
+      <article class="sys-guard__card" aria-label="Orange / cyan / serif skins" data-ar-label="قشور برتقالية / سماوية / سيريف">
+        <span class="sys-guard__no">03</span>
+        <span class="sys-guard__badge" data-ar="لا">NO</span>
+        <h3 data-ar="قشور برتقالية / سماوية / سيريف">Orange / cyan / serif skins</h3>
+        <p data-ar="بالِت واحدة: كحلي، بنفسجي، تيل، وردي وذهبي؛ زر الكهرمان هو الدفء الوحيد.">One palette: navy, violet, teal, pink and gold; the amber CTA is the only warm accent.</p>
+      </article>
+      <article class="sys-guard__card" aria-label="Runtime blur / WebGL" data-ar-label="طمس وقتي / WebGL">
+        <span class="sys-guard__no">04</span>
+        <span class="sys-guard__badge" data-ar="لا">NO</span>
+        <h3 data-ar="طمس وقتي / WebGL">Runtime blur / WebGL</h3>
+        <p data-ar="تدرّجات ثابتة فقط، احترام تقليل الحركة، بلا canvas وبلا حركة دائمة.">Static gradients only, reduced motion respected, no canvas and no always-on animation.</p>
+      </article>
+      <article class="sys-guard__card" aria-label="Third-party portraits &amp; logos" data-ar-label="بورتريهات وشعارات أطراف ثالثة">
+        <span class="sys-guard__no">05</span>
+        <span class="sys-guard__badge" data-ar="لا">NO</span>
+        <h3 data-ar="بورتريهات وشعارات أطراف ثالثة">Third-party portraits &amp; logos</h3>
+        <p data-ar="أعمالنا التوضيحية المعلّمة فقط؛ أي لقطة شاشة عميل تظل خارجًا.">Labelled first-party illustrative WebP only; every client screenshot stays out.</p>
+      </article>
+      <article class="sys-guard__card" aria-label="REF 060 profile card" data-ar-label="كارت المرجع 060">
+        <span class="sys-guard__no">06</span>
+        <span class="sys-guard__badge" data-ar="لا">NO</span>
+        <h3 data-ar="كارت المرجع 060">REF 060 profile card</h3>
+        <p data-ar="بلا بورتريه مستعار، عدّاد متابعين أو شارة توثيق. مرفوض، مش مؤجّل.">No borrowed portrait, follower count or verified badge. Rejected, not deferred.</p>
+      </article></div>
+      </section>
+
+      <section class="section container section--flush-top" id="loop" aria-label="Capability loop" data-ar-label="حلقة القدرات">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>08</b><span data-ar="حلقة القدرات">CAPABILITY LOOP</span></p>
+            <h2><span id="loop-title" data-ar="حلقة ثابتة،">A static loop,</span> <span class="grad-text" data-ar="مش محرك.">not an engine.</span></h2>
+            <p class="lead" data-ar="ثماني قدرات مُعلَّمة حول عبارة واحدة، مع دوائر لماذا / كيف / ماذا متحدة المركز. بلا دوران، بلا ادّعاء ابتكار ذكاء اصطناعي، بلا مؤشر.">Eight labelled capabilities around one sentence, plus concentric Why / How / What rings. No spin, no AI-innovation claim, no metric.</p>
+          </div>
+          <div class="sec-head__aside"><span class="pill" data-ar="بلا دوران">NO SPIN</span></div>
+        </header>
+        <div class="sys-loop">
+          <ul class="sys-loop__ring" aria-label="Static capability loop" data-ar-label="حلقة قدرات ثابتة">
+
+        <li class="sys-loop__pill sys-loop__pill--1" data-ar="إشارات">Signals</li>
+        <li class="sys-loop__pill sys-loop__pill--2" data-ar="تأطير">Framing</li>
+        <li class="sys-loop__pill sys-loop__pill--3" data-ar="تصميم">Design</li>
+        <li class="sys-loop__pill sys-loop__pill--4" data-ar="بناء">Build</li>
+        <li class="sys-loop__pill sys-loop__pill--5" data-ar="إثبات">Evidence</li>
+        <li class="sys-loop__pill sys-loop__pill--6" data-ar="تسليم">Handover</li>
+        <li class="sys-loop__pill sys-loop__pill--7" data-ar="لغة">Language</li>
+        <li class="sys-loop__pill sys-loop__pill--8" data-ar="نطاق">Scope</li>
+            <li class="sys-loop__core" aria-hidden="true">
+              <span data-ar="موجز واحد">ONE BRIEF</span>
+              <strong data-ar="مالكان، منظومة واحدة.">Two owners, one system.</strong>
+            </li>
+          </ul>
+          <div class="sys-concentric" role="group" aria-label="Why, how, what" data-ar-label="لماذا، كيف، ماذا">
+            <div class="sys-concentric__ring sys-concentric__ring--why">
+              <span class="sys-concentric__label" data-ar="لماذا">WHY</span>
+              <span class="sys-concentric__note" data-ar="قرار عمل قبل أي سطح">A business decision before any surface</span>
+            </div>
+            <div class="sys-concentric__ring sys-concentric__ring--how">
+              <span class="sys-concentric__label" data-ar="كيف">HOW</span>
+              <span class="sys-concentric__note" data-ar="قواعد واحدة باللغتين">One rule set in both languages</span>
+            </div>
+            <div class="sys-concentric__ring sys-concentric__ring--what">
+              <span class="sys-concentric__label" data-ar="ماذا">WHAT</span>
+              <span class="sys-concentric__note" data-ar="صفحات وأصول معلّمة">Labelled pages and assets</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container section--flush-top" id="process" aria-label="Process map" data-ar-label="خريطة المسار">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>09</b><span data-ar="خريطة المسار">PROCESS MAP</span></p>
+            <h2><span id="process-title" data-ar="مسار،">A path,</span> <span class="grad-text" data-ar="مش وعد.">not a promise.</span></h2>
+            <p class="lead" data-ar="منحنى SVG ثابت مع أربع بطاقات خطوات مرقّمة وشريط خطوات مختصر. بلا ادّعاء أسابيع أو مدد، بلا مواعيد مُختلقة.">A static SVG curve plus four numbered step cards and a compact step bar. No week or duration claim, no invented availability.</p>
+          </div>
+          <div class="sec-head__aside"><span class="pill" data-ar="بلا مواعيد">NO DATES</span></div>
+        </header>
+        <div class="sys-process" role="group" aria-label="Static delivery process" data-ar-label="مسار تسليم ثابت">
+          <svg class="sys-process__curve" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path d="M0 60 C 160 0, 260 120, 420 60 S 680 0, 800 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <ol class="sys-steps">
+        <li class="sys-step" aria-label="Frame" data-ar-label="نحدّد القرار">
+          <span class="sys-step__no">01</span>
+          <h3 data-ar="نحدّد القرار">Frame</h3>
+          <ul><li data-ar="موجز واحد، قرار مالك واحد">One brief, one owner decision</li><li data-ar="بلا مواعيد مُختلقة">No invented availability</li></ul>
+        </li>
+        <li class="sys-step" aria-label="Design" data-ar-label="نصمّم الطبقة">
+          <span class="sys-step__no">02</span>
+          <h3 data-ar="نصمّم الطبقة">Design</h3>
+          <ul><li data-ar="التوكينات قبل البكسلات">Tokens before pixels</li><li data-ar="ثنائي اللغة من أول اسكتش">Bilingual from the first sketch</li></ul>
+        </li>
+        <li class="sys-step" aria-label="Build" data-ar-label="نبني ونختبر">
+          <span class="sys-step__no">03</span>
+          <h3 data-ar="نبني ونختبر">Build</h3>
+          <ul><li data-ar="صفحات من المولّد">Generator-driven pages</li><li data-ar="بوابات axe وRTL والثيم">Axe, RTL and theme gates</li></ul>
+        </li>
+        <li class="sys-step" aria-label="Hand over" data-ar-label="نسلّم الملفات">
+          <span class="sys-step__no">04</span>
+          <h3 data-ar="نسلّم الملفات">Hand over</h3>
+          <ul><li data-ar="المصادر والوسوم معًا">Sources and captions together</li><li data-ar="بلا حالة نجاح وهمية">No fake success state</li></ul>
+        </li></ol>
+          <ol class="sys-stepbar" aria-label="Compact step bar" data-ar-label="شريط خطوات مختصر">
+        <li class="sys-stepbar__node"><b>01</b><span data-ar="تأطير">Frame</span></li>
+        <li class="sys-stepbar__node"><b>02</b><span data-ar="تصميم">Design</span></li>
+        <li class="sys-stepbar__node"><b>03</b><span data-ar="بناء">Build</span></li>
+        <li class="sys-stepbar__node"><b>04</b><span data-ar="تسليم">Hand over</span></li></ol>
+
+      <figure class="sys-artcard" aria-label="Labelled illustrative system art" data-ar-label="عمل توضيحي مُعلَّم للمنظومة">
+        <img src="/assets/media/hero-system.webp" srcset="/assets/media/hero-system-sm.webp 780w, /assets/media/hero-system.webp 1600w" sizes="(max-width: 720px) 92vw, 760px" alt="ILLUSTRATIVE ART · NOT CLIENT WORK — System composition study" data-ar-alt="عمل توضيحي · ليس عمل عميل — دراسة تركيب المنظومة" width="1200" height="675" loading="lazy" decoding="async" />
+        <figcaption class="sys-artcard__caption">
+          <span class="sys-status" data-ar="توضيحي">ILLUSTRATIVE</span>
+          <strong data-ar="دراسة تركيب بصري، ليست تسليم عميل.">Composition study, not a client deliverable.</strong>
+          <span class="sys-artcard__ctas"><a class="btn btn--primary magnetic" href="/methodology/"><span data-ar="اقرأ المنهجية">Read the methodology</span><i class="flip" data-icon="layers"></i></a><a class="btn btn--ghost" href="/book/"><span data-ar="احجز مكالمة 30 دقيقة">Book a 30-min call</span><i class="flip" data-icon="calendar"></i></a></span>
+        </figcaption>
+      </figure>
+        </div>
       </section>
 
       <section class="section container section--tight" aria-label="Phase 2 provenance" data-ar-label="مصدر المرحلة الثانية">

@@ -121,6 +121,36 @@
   const frameCallbacks = [];
   const readyCallbacks = [];
 
+  /* ------------------------------------------------------------------ */
+  /*  Theme — dark is the brand default; light is an explicit, persisted  */
+  /*  visitor choice. The same rule runs pre-paint in partials/head.html  */
+  /*  (and in arize.mjs::LOCKED_SCRIPT for /ar/ twins), so there is no    */
+  /*  flash of the wrong colours on reload.                               */
+  /* ------------------------------------------------------------------ */
+  const THEME_LABELS = {
+    en: { dark: 'Switch to light mode', light: 'Switch to dark mode' },
+    ar: { dark: 'التبديل إلى الوضع الفاتح', light: 'التبديل إلى الوضع الداكن' },
+  };
+  function syncThemeButton() {
+    const btn = $('#themeBtn');
+    if (!btn) return;
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const label = (THEME_LABELS[lang] || THEME_LABELS.en)[isLight ? 'light' : 'dark'];
+    btn.setAttribute('aria-label', label);
+    btn.setAttribute('aria-pressed', String(isLight));
+    btn.title = label;
+  }
+  function setTheme(next) {
+    const theme = next === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    store.set('cc-theme', theme);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f4ff' : '#05051a');
+    syncThemeButton();
+    try { track('theme-toggle', { to: theme }); } catch { /* tracking not ready yet */ }
+    return theme;
+  }
+
   const t = (v) => (v && typeof v === 'object' && ('ar' in v || 'en' in v) ? v[lang] ?? v.ar : v ?? '');
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = (n, opts) => new Intl.NumberFormat(lang === 'ar' ? 'ar-EG' : 'en-US', opts).format(n);
@@ -176,6 +206,7 @@
     applyI18n();
     listeners.forEach((fn) => fn(lang, initial));
     bindIcons();
+    syncThemeButton();
   }
 
   function setLang(next) {
@@ -550,11 +581,18 @@
       setTimeout(() => pre.remove(), 1200);
       readyCallbacks.forEach((fn) => fn());
     };
-    const minDelay = reduceMotion ? 0 : 1700;
+    // document.fonts.ready only resolves after every self-hosted weight settles.
+    // On a throttled phone that meant a scroll-locked screen for 4–6 seconds while
+    // ~500 KiB of fonts trickled in. Race it against a short cap instead: the mark
+    // still gets its branded moment, but the page becomes interactive as soon as
+    // the critical CSS is ready. Fonts keep loading with font-display:swap.
+    const smallScreen = Math.min(innerWidth, innerHeight) <= 720 || !finePointer;
+    const minDelay = reduceMotion ? 0 : smallScreen ? 420 : 850;
+    const fontCap = new Promise((resolve) => setTimeout(resolve, 350));
     const t0 = performance.now();
     const go = () => setTimeout(finish, Math.max(0, minDelay - (performance.now() - t0)));
-    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go);
-    setTimeout(finish, 4000); // safety net
+    Promise.race([(document.fonts && document.fonts.ready) || Promise.resolve(), fontCap]).then(go);
+    setTimeout(finish, 1800); // hard ceiling: never lock the page longer than this
   }
 
   /* ------------------------------------------------------------------ */
@@ -573,10 +611,17 @@
     if (store.get('cc-analytics-consent') === 'granted' && navigator.doNotTrack !== '1' && !navigator.globalPrivacyControl) loadMeasurementProviders();
   }
 
+  // The theme switch is bound immediately, independent of CC.boot(), so it also
+  // works on pages that load site.js without registering a renderer.
+  syncThemeButton();
+  $('#themeBtn')?.addEventListener('click', () => {
+    setTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+  });
+
   window.CC = {
     $, $$, esc, icon, ICONS, reduceMotion, finePointer,
     get lang() { return lang; },
-    t, num, splitWords, setLang, toast, track, refresh, boot, countUp, pointer,
+    t, num, splitWords, setLang, setTheme, syncThemeButton, toast, track, refresh, boot, countUp, pointer,
     onLang: (fn) => listeners.push(fn),
     onFrame: (fn) => frameCallbacks.push(fn),
     onReady: (fn) => readyCallbacks.push(fn),

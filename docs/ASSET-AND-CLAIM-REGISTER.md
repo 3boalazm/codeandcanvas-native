@@ -88,3 +88,21 @@ The owner supplied two identifiers and asked for them in the footer. They are no
 | Tax Registration | `774235055` EN / `٧٧٤٢٣٥٠٥٥` AR | Owner-supplied, published verbatim | Match against the official tax card / VAT registration: exact entity, number and jurisdiction | Legal + studio owner |
 
 The Arabic digits are a locale rendering of the **same** numbers, not different identifiers. These are identifiers, **not** a claim of certification, verification, tax filing status, or legal opinion, and they do **not** close the legal sign-off blocker in `docs/PUBLISH-GATE.md`. No certificate, tax card, or registry lookup was performed in this repository — the figures are published exactly as supplied by the owner and should be checked against the source documents before production.
+
+---
+
+## 2026-11-09 · Project case studies (illustrative art, no new outcome claims)
+
+Fifteen bilingual `/work/<slug>/` detail pages and a 15-card `/work/#project-cases` index were added from `scripts/lib/data_case_studies.py` + `scripts/lib/pages_case_studies.py`. **These are documented co-founder work, not verified studio client engagements and not measured business outcomes.** Each page carries the problem/approach/role, the concrete build and stack, verification/source links, a source note, and an explicit evidence-limits paragraph; each index card carries an `ILLUSTRATIVE` badge and the founder-work / not-client-claim disclaimer.
+
+| Material / claim | Current treatment | Required before stronger publication | Suggested reviewer |
+| --- | --- | --- | --- |
+| 15 detail-page figures | Labelled **illustrative studio artwork**; figure captions state it is not a product screenshot, real interface, client photo or proof of an outcome | Permission-cleared real screenshots, dated evidence and written role attribution | Project owner + client |
+| 10 AI-generated sources (`case-maqloop`, `case-packbox`, `case-ummah`, `case-zad`, `case-axiom`, `case-nile-bed`, `case-craft-egypt`, `case-stt`, `case-pharmacy`, `case-farm`; 1672×941) | Abstract composition only: no text, logo, UI mock, photograph, person or client mark | Same as above; the images are not evidence of any build | Editorial owner |
+| 5 locally generated composites (`case-sakanwave`, `case-oltre`, `case-continuum`, `case-npf`, `case-evolve`; 1600×900) | Built by `scripts/generate-case-art.mjs` from the site's own SVG geometry plus `sharp` / `@resvg`, composited over one of the ten abstract sources; **no third-party imagery was copied or hotlinked** | Same as above | Engineering + editorial |
+| `case-evolve` | Represents **source access pending**, not a claimed live product. The three inaccessible repositories (`evolve-system`, `NPF`, `craft-egypt`) are recorded as such, not published as public code evidence | Confirm access / ownership before any live-product claim | Technical founder |
+| Source links | Only links that were actually fetched are published; login-only screens and inaccessible GitHub repos are described in source notes rather than quoted as evidence | Recheck availability and permission at publication time | Technical founder |
+
+`node scripts/optimize-media.mjs` now registers **29 PNG sources / 58 WebP variants / 50 OG cards** (up from 14/28/35). Fifteen `assets/media/case-*.png` sources, thirty `-sm`/1600w WebP derivatives and sixteen `assets/brand/og/case-*.png` cards were produced (15 per-route detail cards plus `case-studies.png` for the `/work/` index); `scripts/lib/case_study_cards.json` describes the fifteen OG descriptors. No founder-portfolio image, `/_next/image` response, client photo or screenshot was copied, hotlinked or regenerated.
+
+**Still true:** an illustrated, attributed work archive is not a portfolio of proven outcomes. The permission → evidence → attribution gate in the rows above is unchanged.

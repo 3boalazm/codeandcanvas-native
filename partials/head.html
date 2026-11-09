@@ -8,14 +8,19 @@
     <meta name="twitter:image" content="https://codeandcanvas.net{{OG_IMAGE}}" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script>
-    /* Sets language/direction before first paint (same rules as assets/js/site.js) */
+    /* Sets language, direction and colour scheme before first paint (same rules as assets/js/site.js).
+       Dark is the brand default; light is an explicit, persisted visitor choice. */
     (function () {
       try {
-        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null;
-        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); } catch (e) {}
+        var d = document.documentElement, q = new URLSearchParams(location.search).get('lang'), s = null, t = null;
+        try { s = localStorage.getItem('cc-lang') || localStorage.getItem('c1-lang'); t = localStorage.getItem('cc-theme'); } catch (e) {}
         var l = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
         d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
         if (l === 'ar') d.classList.add('i18n-pending');
+        var theme = t === 'light' ? 'light' : 'dark';
+        d.setAttribute('data-theme', theme);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f4ff' : '#05051a');
         try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
       } catch (e) {}
     })();

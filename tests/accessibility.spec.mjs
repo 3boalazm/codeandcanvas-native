@@ -9,13 +9,13 @@ const routes = [
   '/', '/about/', '/our-story/', '/services/', '/technology-services/', '/creative-services/',
   '/healthcare/', '/contact/', '/pricing-faq/', '/case-studies/', '/books/',
   '/books/marketing-fundamentals/read/', '/register/', '/checkout/', '/blog/', '/team/',
-  '/work/', '/work/bilingual-brand-system/', '/work/packaging-print-system/',
+  '/work/', '/work/bilingual-brand-system/', '/work/packaging-print-system/', '/work/zad/',
   '/services/brand-identity-design/', '/services/website-design-development/',
   '/book/', '/resources/', '/claims/', '/saudi-arabia/', '/egypt/',
   '/privacy-policy/', '/terms-of-use/', '/cookie-policy/',
   '/blog/from-brand-identity-to-brand-systems/', '/blog/creative-strategy-in-the-age-of-generative-ai/',
 ];
-const lockedArabic = ['/ar/', '/ar/book/', '/ar/work/', '/ar/services/', '/ar/erp/'];
+const lockedArabic = ['/ar/', '/ar/book/', '/ar/work/', '/ar/work/zad/', '/ar/services/', '/ar/erp/'];
 
 for (const route of routes) for (const lang of ['en', 'ar']) test(`axe ${route} ${lang}`, async ({ page }, info) => {
   await isolate(page);

@@ -168,8 +168,8 @@ for (const file of pages) {
      /work/ carries the founder archive's documented project years (2019–2026).
      Those are provenance metadata, each source-linked from the card — not
      stale editorial copy — so they get one classified note, not 12 hits. */
-  if (/^\/(?:ar\/)?work\/$/.test(r)) {
-    if (html.includes('wa-card__year')) note('provenance', r, 'documented project years in the founder archive — each entry links to its source');
+  if (/^\/(?:ar\/)?work\//.test(r) && /class="[^"]*(?:wa-card__year|cs-facts|cs-index-card__meta)/.test(html)) {
+    note('provenance', r, 'documented project years in the founder archive / project case studies — each entry links to its source');
   } else {
   const seenYears = new Set();
   for (const m of text.matchAll(/\b(20\d{2})\b/g)) {

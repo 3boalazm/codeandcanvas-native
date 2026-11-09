@@ -235,11 +235,17 @@ function localizeLd(chunk) {
 }
 
 const LOCKED_SCRIPT = `<script>
-    /* Arabic document: language and direction are fixed in the markup, not chosen at runtime. */
+    /* Arabic document: language and direction are fixed in the markup, not chosen at runtime.
+       Colour scheme is still restored before first paint, same rule as the English head. */
     (function () {
       try {
-        var d = document.documentElement;
+        var d = document.documentElement, t = null;
+        try { t = localStorage.getItem('cc-theme'); } catch (e) {}
+        var theme = t === 'light' ? 'light' : 'dark';
         d.lang = 'ar'; d.dir = 'rtl';
+        d.setAttribute('data-theme', theme);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f4ff' : '#05051a');
         try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
       } catch (e) {}
     })();
@@ -345,11 +351,14 @@ export function arize(html, { enPath, arPath, dict = null, untranslated = false 
   ].join('\n');
   out = out.replace(/\n\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>/g, '');
   out = out.replace(/(\n\s*<link rel="canonical" href="[^"]*" \/>)/, `$1\n${alternates}`);
-  out = out.replace(/<script>\s*\/\* Sets language\/direction[\s\S]*?<\/script>/, LOCKED_SCRIPT);
+  out = out.replace(/<script>\s*\/\* Sets language[\s\S]*?<\/script>/, LOCKED_SCRIPT);
 
   // ── body copy ───────────────────────────────────────────────────────────
   const bodyStart = out.indexOf('<body');
   let head = localizeLd(out.slice(0, bodyStart));
+  // Space Grotesk is the EN heading face only; Arabic uses Alexandria, so the
+  // preload is dead weight (and competes with critical CSS) on every /ar/ page.
+  head = head.replace(/\s*<link rel="preload" href="\/assets\/fonts\/space-grotesk-latin-700\.woff2"[^>]*\/>/, '');
   let body = localizeLd(out.slice(bodyStart));
   body = body.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, () => '');
 
@@ -367,9 +376,13 @@ export function arize(html, { enPath, arPath, dict = null, untranslated = false 
     body = strip(body, attr);
   }
   body = rewriteLinks(body);
-  // the language pill becomes a real link back to the English twin (after link rewriting)
-  body = body.replace(/<a class="nav__round lang-btn" id="langBtn" href="[^"]*"[^>]*>EN<\/a>/, `<a class="nav__round lang-btn" id="langBtn" href="${enPath}" hreflang="en" title="Switch to English" aria-label="Switch to English">EN</a>`)
-    .replace(/<button class="nav__round lang-btn" id="langBtn" type="button"><\/button>/, `<a class="nav__round lang-btn" id="langBtn" href="${enPath}" hreflang="en" title="Switch to English" aria-label="Switch to English">EN</a>`);
+  // The language pill becomes a real link back to the English twin (after link
+  // rewriting). Match by the stable id/lang-btn class rather than an exact class
+  // string, so adding header decoration classes never silently leaves a button
+  // with no href behind.
+  const langLink = (cls) => `<a class="${cls}" id="langBtn" href="${enPath}" hreflang="en" title="Switch to English" aria-label="Switch to English">EN</a>`;
+  body = body.replace(/<a\s+class="([^"]*\blang-btn\b[^"]*)"\s+id="langBtn"[^>]*>EN<\/a>/, (_, cls) => langLink(cls))
+    .replace(/<button\s+class="([^"]*\blang-btn\b[^"]*)"\s+id="langBtn"[^>]*><\/button>/, (_, cls) => langLink(cls));
 
   if (untranslated) {
     // Long-form article not translated yet: keep the Arabic chrome, say so in the page,

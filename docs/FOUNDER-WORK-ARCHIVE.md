@@ -82,3 +82,13 @@ Repository pointers are only attached where the public repo name unambiguously m
 ## Verification
 
 `npm run generate` → `npm run check` → `npm run gate` (566 Playwright assertions + static build) → `npm run verify:api` → `npm run audit:content`, plus a 390px / 1440px EN+AR browser tour of `/work/`. No merge, deployment, or live-domain approval is implied by this document.
+
+---
+
+## 2026-11-09 · Detail pages for overlapping archive rows
+
+The text index stays as described above. Archive rows whose subject matches one of the fifteen documented projects now link through to a bilingual `/work/<slug>/` detail page (`ARCHIVE_CASE_BY_URL` / `ARCHIVE_CASE_BY_TITLE` in `scripts/lib/data_case_studies.py`). One detail page may serve two archive rows (`nile-pharma` + `nile-pharma-storefront` → `nile-pharma-food`); this is a mapping decision, not an additional project or claim.
+
+The `/work/` index now also carries a `Project cases · 15` CTA and a `#project-cases` card grid. `scripts/verify-live.mjs` therefore expects three markers on `/work/`: `CONCEPT STUDY`, `FOUNDER WORK ARCHIVE` and `PROJECT CASE STUDIES`. The older `Selected` expectation remains retired; no verifier check was relaxed.
+
+The new pages add **no** client, screenshot, outcome, certification or deployment claim. They publish role/approach/build detail, source links, source notes and evidence limits; the three inaccessible repositories and the login-only live sites are still described as source-access-pending. See `docs/ASSET-AND-CLAIM-REGISTER.md` (2026-11-09 section) for the art provenance and the publication gates that remain open.

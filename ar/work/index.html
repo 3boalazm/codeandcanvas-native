@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>الأعمال الإبداعية — العلامة والتغليف والمنتج والويب · Code &amp; Canvas</title>
-    <meta name="description" content="بورتفوليو بصري مُعلَّن: أربع دراسات مفاهيمية، يليها أرشيف بخمسة وعشرين مشروعًا من أعمال المؤسس بين أنظمة الهوية والمنتجات الرقمية. كل مدخل يوضّح مصدره ودوره وحدود إثباته." />
+    <meta name="description" content="بورتفوليو بصري مُعلَّن: أربع دراسات مفاهيمية، يليها أرشيف بخمسة وعشرين مشروعًا من أعمال المؤسس، ثم خمس عشرة دراسة حالة تفصيلية لمشروعات مباشرة بين أنظمة الهوية والمنتجات الرقمية. كل مدخل يوضّح مصدره ودوره وحدود إثباته." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="الأعمال الإبداعية — العلامة والتغليف والمنتج والويب · Code &amp; Canvas" />
-    <meta property="og:description" content="بورتفوليو بصري مُعلَّن: أربع دراسات مفاهيمية، يليها أرشيف بخمسة وعشرين مشروعًا من أعمال المؤسس بين أنظمة الهوية والمنتجات الرقمية. كل مدخل يوضّح مصدره ودوره وحدود إثباته." />
+    <meta property="og:description" content="بورتفوليو بصري مُعلَّن: أربع دراسات مفاهيمية، يليها أرشيف بخمسة وعشرين مشروعًا من أعمال المؤسس، ثم خمس عشرة دراسة حالة تفصيلية لمشروعات مباشرة بين أنظمة الهوية والمنتجات الرقمية. كل مدخل يوضّح مصدره ودوره وحدود إثباته." />
     <meta property="og:url" content="https://codeandcanvas.net/ar/work/" />
     <meta property="og:locale" content="ar_AR" />
     <link rel="canonical" href="https://codeandcanvas.net/ar/work/" />
@@ -25,23 +25,29 @@
     <meta name="twitter:image" content="https://codeandcanvas.net/assets/brand/og/work.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script>
-    /* Arabic document: language and direction are fixed in the markup, not chosen at runtime. */
+    /* Arabic document: language and direction are fixed in the markup, not chosen at runtime.
+       Colour scheme is still restored before first paint, same rule as the English head. */
     (function () {
       try {
-        var d = document.documentElement;
+        var d = document.documentElement, t = null;
+        try { t = localStorage.getItem('cc-theme'); } catch (e) {}
+        var theme = t === 'light' ? 'light' : 'dark';
         d.lang = 'ar'; d.dir = 'rtl';
+        d.setAttribute('data-theme', theme);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f4ff' : '#05051a');
         try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
       } catch (e) {}
     })();
     </script>
-    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/css/fonts.css" />
     <link rel="stylesheet" href="/assets/css/ds.css" />
     <link rel="stylesheet" href="/assets/css/pages.css" />
     <link rel="stylesheet" href="/assets/css/live.css" />
     <noscript><style>body.is-loading{overflow:auto}#preloader{display:none!important}[data-reveal],.split .w{opacity:1!important;transform:none!important;filter:none!important}form{display:none!important}[data-panel][hidden]{display:block!important}</style></noscript>
     <!-- /cc:head -->
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/ar/work/#webpage","url":"https://codeandcanvas.net/ar/work/","name":"الأعمال الإبداعية — العلامة والتغليف والمنتج والويب · Code & Canvas","description":"بورتفوليو بصري مُعلَّن: أربع دراسات مفاهيمية، يليها أرشيف بخمسة وعشرين مشروعًا من أعمال المؤسس بين أنظمة الهوية والمنتجات الرقمية. كل مدخل يوضّح مصدره ودوره وحدود إثباته.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/assets/brand/og/work.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"Work"}]}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/ar/work/#webpage","url":"https://codeandcanvas.net/ar/work/","name":"الأعمال الإبداعية — العلامة والتغليف والمنتج والويب · Code & Canvas","description":"بورتفوليو بصري مُعلَّن: أربع دراسات مفاهيمية، يليها أرشيف بخمسة وعشرين مشروعًا من أعمال المؤسس، ثم خمس عشرة دراسة حالة تفصيلية لمشروعات مباشرة بين أنظمة الهوية والمنتجات الرقمية. كل مدخل يوضّح مصدره ودوره وحدود إثباته.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://codeandcanvas.net/assets/brand/og/work.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"Work"}]}]}</script>
+    <link rel="stylesheet" href="/assets/css/case-study.css" />
   </head>
   <body class="is-loading" data-nav="work" data-view-track="case_study_view">
     <!-- cc:top -->
@@ -64,7 +70,9 @@
 
     <header class="nav" id="nav">
       <div class="nav__pill container">
-        <a class="nav__brand" href="/ar/" aria-label="Code & Canvas — الرئيسية">
+        <!-- In RTL the brand is the first flex item (far right) and the burger is
+             the last (far left); the action group is a flexible spacer between them. -->
+        <a class="nav__brand nav__ring" href="/ar/" aria-label="Code & Canvas — الرئيسية">
           <img class="nav__logo" src="/assets/brand/icon-white.svg" alt="" width="40" height="40" />
         </a>
         <nav class="nav__links" id="navLinks" aria-label="التنقل الرئيسي">
@@ -78,10 +86,14 @@
           <a class="only-mobile" href="/ar/book/" data-key="book">احجز مكالمة</a>
         </nav>
         <div class="nav__actions">
-          <a class="nav__round lang-btn" id="langBtn" href="/work/" hreflang="en" title="Switch to English" aria-label="Switch to English">EN</a>
-          <a class="nav__round" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
+          <a class="nav__round nav__ring lang-btn" id="langBtn" href="/work/" hreflang="en" title="Switch to English" aria-label="Switch to English">EN</a>
+          <button class="nav__round nav__ring nav__theme" id="themeBtn" type="button" aria-label="التبديل إلى الوضع الفاتح" aria-pressed="false">
+            <svg class="ico theme-ico theme-ico--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="ico theme-ico theme-ico--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          </button>
+          <a class="nav__round nav__ring nav__wa" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
           <a class="btn btn--primary nav__cta magnetic" href="/ar/book/" data-key="book" data-track="cta_click" data-track-id="nav-book"><span>احجز مكالمة</span><i class="flip" data-icon="arrowUpRight"></i></a>
-          <button class="nav__round burger" id="burger" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+          <button class="nav__round nav__ring burger" id="burger" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
         </div>
       </div>
     </header>
@@ -94,7 +106,7 @@
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span>بورتفوليو إبداعي · دراسات مُعلَّنة</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span>اعرض الحرفة،</span><br /><span class="grad-text">لا قائمة الخدمات.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s">أربع دراسات مفاهيمية تُظهر طريقة تفكير الاستوديو، يليها أرشيف موثّق بخمسة وعشرين مشروعًا من أعمال المؤسس الشريك — هوية أولًا، ثم منتجات رقمية. كل مدخل بمصدره وحدود إثباته.</p>
-        <div class="hero__ctas" data-reveal style="--d:.24s"><a class="btn btn--primary magnetic" href="#studies"><span>اطّلع على الدراسات</span><i class="flip" data-icon="arrowDown"></i></a><a class="btn btn--glass" href="#archive"><span>أعمال المؤسس · 25</span><i class="flip" data-icon="grid"></i></a><a class="btn btn--ghost" href="/ar/case-studies/"><span>دراسات عملاء منشورة</span><i class="flip" data-icon="layers"></i></a><a class="btn btn--ghost" href="/ar/book/"><span>احجز مكالمة 30 دقيقة</span><i class="flip" data-icon="calendar"></i></a></div>
+        <div class="hero__ctas" data-reveal style="--d:.24s"><a class="btn btn--primary magnetic" href="#studies"><span>اطّلع على الدراسات</span><i class="flip" data-icon="arrowDown"></i></a><a class="btn btn--glass" href="#archive"><span>أعمال المؤسس · 25</span><i class="flip" data-icon="grid"></i></a><a class="btn btn--glass" href="#project-cases"><span>دراسات المشاريع · 15</span><i class="flip" data-icon="layers"></i></a><a class="btn btn--ghost" href="/ar/case-studies/"><span>دراسات عملاء منشورة</span><i class="flip" data-icon="layers"></i></a><a class="btn btn--ghost" href="/ar/book/"><span>احجز مكالمة 30 دقيقة</span><i class="flip" data-icon="calendar"></i></a></div>
       </section>
 
       <section class="section container section--tight" aria-label="صورة البورتفوليو">
@@ -197,7 +209,7 @@
           <div>
             <p class="sec-head__no"><b>02</b><span>أرشيف أعمال المؤسس</span></p>
             <h2><span id="archive-title">خمسة وعشرون مشروعًا.</span> <span class="grad-text">مصدر واحد للتحقق.</span></h2>
-            <p class="lead">أعمال مختارة للمؤسس الشريك مصطفى أبو العزم، مُرتبة من جديد وفق مسارينا. كل مدخل يعود إلى دراسته الأصلية أو الموقع المباشر أو المستودع العام.</p>
+            <p class="lead">أعمال مختارة للمؤسس الشريك مصطفى أبو العزم، مُرتبة من جديد وفق مسارينا. كل مدخل يعود إلى مصدره؛ والمشروعات المشتركة تفتح أيضًا دراسة حالة ثنائية اللغة مفصلة.</p>
           </div>
 
         </header>
@@ -230,7 +242,7 @@
         <h3>نايل فارما فود</h3>
         <p>علامة أغذية صيدلانية كانت تعمل بلا حوكمة بصرية، واحتاجت حضورًا قويًا على الأرفف وتغليفًا استهلاكيًا متماسكًا ثنائي اللغة.</p>
         <ul class="wa-card__tags"><li>منظومة علامة</li><li>WordPress</li><li>إعادة بناء العلامة</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/nile-pharma" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/nile-pharma-food/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/nile-pharma" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="identity">
         <div class="wa-card__top"><span class="wa-card__no">04</span><span class="wa-card__year">2024 →</span></div>
@@ -289,35 +301,35 @@
         <h3>نايل فارما فود — المتجر</h3>
         <p>متجر ثنائي اللغة يجمع السرد التحريري عبر Payload CMS مع كتالوج منتجات وأسعار وطلبات عبر Vendure.</p>
         <ul class="wa-card__tags"><li>Next.js</li><li>Payload CMS</li><li>Vendure</li><li>PostgreSQL</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/nile-pharma-storefront" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://nile-vercel-seven.vercel.app/ar" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/NILE-VERCEL" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/nile-pharma-food/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/nile-pharma-storefront" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://nile-vercel-seven.vercel.app/ar" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/NILE-VERCEL" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">04</span><span class="wa-card__year">2026</span></div>
         <h3>OLTRÈ Collective</h3>
         <p>متجر أزياء شارعية ثنائي اللغة ولوحة إدارة تجمع عروضًا تحريرية مع السلة والمفضلة والولاء وتدفقات الطلبات.</p>
         <ul class="wa-card__tags"><li>React + Vite</li><li>Drizzle + Postgres</li><li>المدفوعات</li><li>الولاء والصلاحيات</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/momo-collective" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://momo-shop.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/momo-shop" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/oltre-collective/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/momo-collective" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://momo-shop.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/momo-shop" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">05</span><span class="wa-card__year">2025–26</span></div>
         <h3>زاد</h3>
         <p>رفيق إسلامي بلا إعلانات يعمل دون اتصال، يغطي 64 شاشة لمواقيت الصلاة وخطط ختم القرآن والأذكار ووضعًا للأطفال.</p>
         <ul class="wa-card__tags"><li>PWA</li><li>Firebase</li><li>Service Worker</li><li>إشعارات فورية</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/zad" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://zadullmuslim.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/zad" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a><a href="/ar/case-studies/"><span>ملاحظاتنا →</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/zad/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/zad" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://zadullmuslim.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/zad" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a><a href="/ar/case-studies/"><span>ملاحظاتنا →</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">06</span><span class="wa-card__year">2025–26</span></div>
         <h3>لوحة المزرعة</h3>
         <p>منصة عربية RTL لإدارة الثروة الحيوانية تعمل دون اتصال، تتتبّع سجلات القطيع وسلالات التربية وجداول الطب البيطري وتكاليف العلف وصافي الربح.</p>
         <ul class="wa-card__tags"><li>PWA</li><li>Firebase</li><li>Realtime DB</li><li>Chart.js</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/farm-console" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://farm-project-puce.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/farm-project" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/farm-console/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/farm-console" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://farm-project-puce.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/farm-project" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">07</span><span class="wa-card__year">2026</span></div>
         <h3>استوديو تحويل الكلام إلى نص</h3>
         <p>استوديو نسخ مرن يوجّه الملفات والتسجيلات المباشرة عبر أربعة محرّكات تحويل كلام مع تبديل تلقائي من جهة الخادم.</p>
         <ul class="wa-card__tags"><li>Next.js</li><li>TypeScript</li><li>4 محرّكات نسخ</li><li>PWA</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/speech-to-text-studio" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://mahtool.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/MahmoudTC-tool" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/speech-to-text-studio/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/speech-to-text-studio" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://mahtool.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/MahmoudTC-tool" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">08</span><span class="wa-card__year">2026</span></div>
@@ -338,14 +350,14 @@
         <h3>Continuum</h3>
         <p>نظام ذاكرة شخصية يعمل محليًا أولًا عبر 21 عرضًا، لإعادة بناء سياق الجلسات وتتبّع القرارات والمزامنة النظيفة مع Firebase.</p>
         <ul class="wa-card__tags"><li>HTML · CSS · JavaScript</li><li>LocalStorage</li><li>مزامنة Firebase اختيارية</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/continuum" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://continuum-khaki.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/Continuum" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/continuum/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/continuum" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://continuum-khaki.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/Continuum" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">11</span><span class="wa-card__year">2026</span></div>
         <h3>واجهة الصيدلية</h3>
         <p>واجهة صيدلية عربية RTL قائمة على الرموز، منظّمة حول 15 وحدة سياقية محدودة، بحدود استيراد صارمة ومعالجة دقيقة للمبالغ.</p>
         <ul class="wa-card__tags"><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>واجهة فقط</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/pharmacy-web" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://pharmacy-web-eight.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/pharmacy-web" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/pharmacy-saas/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/pharmacy-web" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://pharmacy-web-eight.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/pharmacy-web" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">12</span><span class="wa-card__year">2026</span></div>
@@ -359,28 +371,28 @@
         <h3>أكاديمية الأمّة</h3>
         <p>منصة تعلّم متعددة اللغات بـ Astro تمتد إلى 5 لغات وطباعة RTL أصلية و23 مسارًا وتسليم PWA جاهز للعمل دون اتصال.</p>
         <ul class="wa-card__tags"><li>Astro</li><li>5 لغات · RTL</li><li>PWA · دون اتصال</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/ummah-academy" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://ummah-academy.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/Ummah-academy" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/ummah-academy/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/ummah-academy" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://ummah-academy.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/Ummah-academy" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">14</span><span class="wa-card__year">2026</span></div>
         <h3>StemForge</h3>
         <p>مساحة صوت داخل المتصفح بلا رفع ملفات، تستخدم ONNX Runtime Web وWeb Workers لعزل الغناء والطبول والباص محليًا.</p>
         <ul class="wa-card__tags"><li>Next.js</li><li>ONNX Runtime</li><li>Web Workers</li><li>ذكاء صوتي</li></ul>
-        <div class="wa-card__links"><a href="https://aboalazm-os.vercel.app/case-studies/stemforge" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://mdp-opal.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/MDP" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/sakanwave/"><span>دراسة الحالة المفصلة →</span></a><a href="https://aboalazm-os.vercel.app/case-studies/stemforge" target="_blank" rel="noopener noreferrer"><span>دراسة الحالة ↗</span></a><a href="https://mdp-opal.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/MDP" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">15</span><span class="wa-card__year">2026</span><span class="wa-card__status">منتج مباشر</span></div>
         <h3>Nile Bed</h3>
         <p>كتالوج B2B صناعي ثنائي اللغة لمصنّع سوست مراتب وتوريد، يضم 69 صنفًا في 8 مجموعات مع تدفقات استفسار مباشرة عبر واتساب.</p>
         <ul class="wa-card__tags"><li>Next.js</li><li>TypeScript</li><li>عربي/إنجليزي · RTL</li><li>كتالوج B2B بـ69 صنفًا</li></ul>
-        <div class="wa-card__links"><a href="https://nile-bed.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/Nile-Bed" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/nile-bed/"><span>دراسة الحالة المفصلة →</span></a><a href="https://nile-bed.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a><a href="https://github.com/3boalazm/Nile-Bed" target="_blank" rel="noopener noreferrer"><span>الكود ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">16</span><span class="wa-card__year">2026</span><span class="wa-card__status">منتج مباشر</span></div>
         <h3>حِرَف مصر</h3>
         <p>متجر عربي RTL وأطلس للحِرَف الإقليمية يعرض المشغولات المصرية اليدوية من نحاسيات ومنسوجات وخزف وديكور مع تدفق طلبات حسب الطلب.</p>
         <ul class="wa-card__tags"><li>متجر عربي RTL</li><li>كتالوج تراث</li><li>أطلس إقليمي</li><li>طلب حسب الطلب</li></ul>
-        <div class="wa-card__links"><a href="https://craft-egypt.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a></div>
+        <div class="wa-card__links"><a href="/ar/work/craft-egypt/"><span>دراسة الحالة المفصلة →</span></a><a href="https://craft-egypt.vercel.app/" target="_blank" rel="noopener noreferrer"><span>الموقع المباشر ↗</span></a></div>
       </article>
       <article class="wa-card" data-category="product">
         <div class="wa-card__top"><span class="wa-card__no">17</span><span class="wa-card__year">2026</span><span class="wa-card__status">عرض تجريبي</span></div>
@@ -394,11 +406,213 @@
         <p class="live-media-note"><a href="https://github.com/3boalazm?tab=repositories" target="_blank" rel="noopener noreferrer"><span>كل المستودعات العامة على GitHub ↗</span></a> · <span>سجل المصادر وحدود الإثبات: docs/FOUNDER-WORK-ARCHIVE.md</span></p>
       </section>
 
+
+      <section class="section container section--flush-top" id="project-cases" aria-labelledby="project-cases-title">
+
+        <header class="sec-head" data-reveal>
+          <div>
+            <p class="sec-head__no"><b>03</b><span>دراسات حالة المشاريع</span></p>
+            <h2><span id="project-cases-title">خمسة عشر مشروعًا.</span> <span class="grad-text">صفحة موثّقة لكل واحد.</span></h2>
+            <p class="lead">صفحات ثنائية اللغة تفصيلية من المواقع المباشرة والمستودعات المُقدَّمة: المشكلة، والمنهج، ودور المؤسس، وما بُني، وروابط المصدر، وحدود الإثبات.</p>
+          </div>
+
+        </header>
+        <div class="work-disclaimer work-disclaimer--archive" data-reveal>
+          <i data-icon="alert" aria-hidden="true"></i>
+          <div>
+            <strong>توثيق مشاريع المؤسس، وليس ادعاءات عملاء مُثبتة.</strong>
+            <p>كل صورة هنا عمل توضيحي مولّد لهذا الموقع ومُعلَّن بوضوح. لا نعيد نشر صور المنتجات أو لقطات الشاشة من المواقع المباشرة، ولا ندّعي نتائج مُقاسة أو تعاقدات عملاء. ثلاث ريبهات من القائمة غير متاحة للعامة؛ حالتها موضحة داخل صفحتها.</p>
+          </div>
+        </div>
+        <div class="cs-index-grid">
+          <a class="cs-index-card" href="/ar/work/maqloop/" data-track="case_study_view" data-track-id="maqloop">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-maqloop.webp" srcset="/assets/media/case-maqloop-sm.webp 780w, /assets/media/case-maqloop.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="طبقات قماش مجردة ورموز إصدارات مرقّمة بالبنفسجي والتركوازي والوردي — توضيحي، وليس تصوير منتج" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>مقلوب</h3>
+              <p>إصدارات ملابس مرقّمة بمواصفات صريحة، وتصوّرات بصرية مُعلَّنة، وأدوات تتيح للزائر اللعب بالجرافيك قبل القرار.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/packbox-studio/" data-track="case_study_view" data-track-id="packbox-studio">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-packbox.webp" srcset="/assets/media/case-packbox-sm.webp 780w, /assets/media/case-packbox.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="هندسة كرتون مبسّطة مفكّكة بخطوط قصّ وطيّ متوهجة على خلفية كحلية داكنة — توضيحي، وليس واجهة برنامج" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>PackBox Studio</h3>
+              <p>تطبيق تغليف يعمل محليًا: قوالب قصّ بارامترية، ووضع التصميم، ومعاينة طيّ ثلاثية الأبعاد، بلا حساب سحابي ولا رفع لأعمالك.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/ummah-academy/" data-track="case_study_view" data-track-id="ummah-academy">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-ummah.webp" srcset="/assets/media/case-ummah-sm.webp 780w, /assets/media/case-ummah.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="صفحات كتاب مفتوحة مجردة بمسارات معرفة متوهجة وتدرّج تركوازي بنفسجي — توضيحي، وليس لقطة شاشة" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>أكاديمية الأمّة</h3>
+              <p>موقع تعلّم يبدأ بالهدف لدروس فردية في القرآن والتجويد والعربية والدراسات الإسلامية: أربعة مسارات، اختبار تحديد مستوى، وتحقق من المدرّسين، وخطط معلنة.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/zad/" data-track="case_study_view" data-track-id="zad">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-zad.webp" srcset="/assets/media/case-zad-sm.webp 780w, /assets/media/case-zad.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="هلال ضوء مجرد فوق طبقات زجاجية وأقواس مواقيت هادئة — توضيحي، وليس شاشة تطبيق" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2025–26</span><span>منتج رقمي</span></div>
+              <h3>زاد</h3>
+              <p>رفيق إسلامي بلا إعلانات يعمل دون اتصال: مواقيت الصلاة، وخطط القرآن، والأذكار، ومسبحة رقمية، وأدلة المواسم، مع مزامنة سحابية اختيارية.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/ibrahim-taha-axiom/" data-track="case_study_view" data-track-id="ibrahim-taha-axiom">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-axiom.webp" srcset="/assets/media/case-axiom-sm.webp 780w, /assets/media/case-axiom.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="منحنى توزيع طبيعي مجرد وعقد بحثية مترابطة بزجاج تركوازي وبنفسجي — توضيحي، وليس رسمًا من الموقع" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>إبراهيم طه · Axiom</h3>
+              <p>منصة أكاديمية ثنائية اللغة: كل رقم يوضّح ماذا يحصي، وكل بحث مرتبط بدليله، ومختبر تفاعلي يصرّح بما لا يُثبته.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/nile-bed/" data-track="case_study_view" data-track-id="nile-bed">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-nile-bed.webp" srcset="/assets/media/case-nile-bed-sm.webp 780w, /assets/media/case-nile-bed.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="هندسة سوست حلزونية مجردة وشبكة كتالوج صناعي بالتركوازي والبنفسجي — توضيحي، وليس صورة منتج" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>نايل بد</h3>
+              <p>كتالوج ثنائي اللغة لمصنّع سوست مراتب وتاجر جملة: مجموعات منتجات، وانقلاب كامل للاتجاه عند الإنجليزية، واستفسار عبر واتساب بدل سلة شراء وهمية.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/craft-egypt/" data-track="case_study_view" data-track-id="craft-egypt">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-craft-egypt.webp" srcset="/assets/media/case-craft-egypt-sm.webp 780w, /assets/media/case-craft-egypt.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="أوانٍ نحاسية مجردة وخيوط منسوجة وصور ظلية للخزف بذهبي دافئ وتركوازي — توضيحي، وليس صورة حِرَفية" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>حِرَف مصر</h3>
+              <p>متجر عربي RTL وأطلس للحِرَف الإقليمية للمشغولات النحاسية والمنسوجات والخزف والديكور، مبني حول تدفق طلبات حسب الطلب.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/speech-to-text-studio/" data-track="case_study_view" data-track-id="speech-to-text-studio">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-stt.webp" srcset="/assets/media/case-stt-sm.webp 780w, /assets/media/case-stt.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="موجات صوتية مجردة متعددة تتقاطع في شريط نص واحد نظيف بالتركوازي والبنفسجي — توضيحي، وليس واجهة برنامج" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>استوديو تحويل الكلام إلى نص</h3>
+              <p>ارفع ملفًا أو سجّل مباشرة واحصل على نص قابل للتحرير — أربعة محرّكات نسخ خلف مسار API واحد، مع تبديل تلقائي لا يراه المستخدم.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/pharmacy-saas/" data-track="case_study_view" data-track-id="pharmacy-saas">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-pharmacy.webp" srcset="/assets/media/case-pharmacy-sm.webp 780w, /assets/media/case-pharmacy.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="شبكة صيدلية معيارية مجردة بصفوف أدوية وخطوط دفاتر دقيقة بالتركوازي والأزرق — توضيحي، وليس لقطة منتج" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>صيدليتي · واجهة الويب</h3>
+              <p>واجهة صيدلية إنتاجية تعكس السياقات المحدودة للخادم بحدود استيراد صارمة، وتخطيط عربي RTL، ومعالجة دقيقة للمبالغ — ومُعلَّنة صراحةً كواجهة فقط.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/farm-console/" data-track="case_study_view" data-track-id="farm-console">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-farm.webp" srcset="/assets/media/case-farm-sm.webp 780w, /assets/media/case-farm.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="بطاقات سجلات قطيع مجردة وخطوط سلالات ورسوم تكلفة هادئة بالتركوازي والأخضر — توضيحي، وليس لقطة لوحة بيانات" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2025–26</span><span>منتج رقمي</span></div>
+              <h3>لوحة المزرعة</h3>
+              <p>لوحة عربية RTL لإدارة الثروة الحيوانية تتتبّع سجلات القطيع وسلالات التربية وجداول الطب البيطري وتكاليف العلف وصافي الربح، مصمّمة لتعمل مع ضعف الاتصال.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/sakanwave/" data-track="case_study_view" data-track-id="sakanwave">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-sakanwave.webp" srcset="/assets/media/case-sakanwave-sm.webp 780w, /assets/media/case-sakanwave.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="أربعة مسارات صوتية متوهجة مجردة تنفصل عن موجة واحدة بالبنفسجي والتركوازي — توضيحي، وليس مساحة عمل صوتي" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>SakanWave</h3>
+              <p>افصل أي مقطع إلى غناء وطبول وباص وباقي الآلات بالكامل داخل المتصفح — بلا رفع ولا خادم ولا شيء يخرج من الجهاز.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/oltre-collective/" data-track="case_study_view" data-track-id="oltre-collective">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-oltre.webp" srcset="/assets/media/case-oltre-sm.webp 780w, /assets/media/case-oltre.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="لوحات عروض تحريرية مجردة وصور ظلية لملابس بالبنفسجي والوردي — توضيحي، وليس تصوير أزياء" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>OLTRÈ Collective</h3>
+              <p>متجر أزياء شارعية ثنائي اللغة ولوحة إدارة تجمع عروضًا تحريرية مع السلة والمفضلة والولاء وتدفقات الطلبات.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/continuum/" data-track="case_study_view" data-track-id="continuum">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-continuum.webp" srcset="/assets/media/case-continuum-sm.webp 780w, /assets/media/case-continuum.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="عقد أفكار مترابطة مجردة وخيوط زمنية وحلقة استئناف بزجاج تركوازي وبنفسجي — توضيحي، وليس شاشة تطبيق" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>Continuum</h3>
+              <p>حلقة «التقاط ← ربط ← عمل ← لقطة ← استئناف» عبر عروض متعددة، محفوظة على الجهاز في localStorage، مع مزامنة سحابية اختيارية وواجهة ثنائية اللغة.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/nile-pharma-food/" data-track="case_study_view" data-track-id="nile-pharma-food">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-npf.webp" srcset="/assets/media/case-npf-sm.webp 780w, /assets/media/case-npf.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="لوحات تغليف دوائية مجردة وطباعة نشرات وشرائط رعاية بالتركوازي والبنفسجي — توضيحي، وليس صورة عبوة" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2020–26</span><span>منظومة هوية</span></div>
+              <h3>نايل فارما فود</h3>
+              <p>مسار علامة واحد: هوية ثنائية اللغة محكومة، ثم موقع منتج عربي أولًا يبدأ بالسؤال، ويذكر مصادره، ويُبقي المشورة الطبية عند المختص.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a>
+          <a class="cs-index-card" href="/ar/work/evolve-system/" data-track="case_study_view" data-track-id="evolve-system">
+            <figure class="cs-index-card__art">
+              <img src="/assets/media/case-evolve.webp" srcset="/assets/media/case-evolve-sm.webp 780w, /assets/media/case-evolve.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 980px) 46vw, 400px" alt="خزنة مصدر مغلقة مجردة بطبقات ووهج بنفسجي تركوازي هادئ — توضيحي، وليس مرجع منتج" width="1600" height="900" loading="lazy" decoding="async" />
+              <figcaption class="cs-index-card__badge">توضيحي</figcaption>
+            </figure>
+            <div class="cs-index-card__body">
+              <div class="cs-index-card__meta"><span class="wa-card__year">2026</span><span>منتج رقمي</span></div>
+              <h3>Evolve System</h3>
+              <p>مرجع مستودع قدّمه المالك. الوصول إلى المصدر غير متاح للعامة، لذا توثّق هذه الصفحة المرجع فقط ولا تُقدّم أي ادعاءات تقنية أو نتائج.</p>
+              <span class="cs-index-card__cta">اقرأ دراسة الحالة ←</span>
+            </div>
+          </a></div>
+        <p class="live-media-note cs-index-note">الصور أعمال توضيحية مولّدة، ليست لقطات شاشة للمنتجات ولا صور عملاء. الروابط الخارجية تفتح في تبويب جديد.</p>
+      </section>
+
       <section class="section container section--flush-top" id="intake" aria-labelledby="intake-title">
 
         <header class="sec-head" data-reveal>
           <div>
-            <p class="sec-head__no"><b>03</b><span>كيف تُنشر الأعمال الحقيقية</span></p>
+            <p class="sec-head__no"><b>04</b><span>كيف تُنشر الأعمال الحقيقية</span></p>
             <h2><span id="intake-title">من الموجز إلى الإثبات.</span></h2>
             <p class="lead">البوابة التي يجب أن تمر بها أي حالة عميل حقيقية قبل أن تحلّ محل دراسة مفاهيمية أو تجاورها.</p>
           </div>
@@ -415,7 +629,7 @@
 
         <header class="sec-head" data-reveal>
           <div>
-            <p class="sec-head__no"><b>04</b><span>سجل الادعاءات والأدلة</span></p>
+            <p class="sec-head__no"><b>05</b><span>سجل الادعاءات والأدلة</span></p>
             <h2><span id="ev-title">ما ننشره، ولماذا.</span></h2>
             <p class="lead">سجل حيّ للأرقام والادعاءات: منشور، أو مقيَّد، أو محذوف، أو محسوم. أي شيء بلا إثبات يُعاد صياغته أو يُشال.</p>
           </div>

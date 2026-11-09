@@ -14,6 +14,8 @@ docs/ASSET-AND-CLAIM-REGISTER.md.
 from h import esc, icon, crumbs, closing, btn, page, sec_head, facts, media_img
 from data_growth import PORTFOLIO, CONCEPT_LABEL, CONCEPT_LABEL_AR, EVIDENCE, EVIDENCE_AR
 from data_founder_work import FOUNDER_WORK, IDENTITY, PRODUCT
+from data_case_studies import archive_case_slug
+from pages_case_studies import case_studies_section, CSS
 
 MEDIA = '/assets/media/'
 CAT_KEY = {'Brand Identity': 'brand', 'Packaging & Print': 'packaging', 'Digital Products': 'product', 'Web Experiences': 'web'}
@@ -56,6 +58,9 @@ def archive_card(w):
         links.append(('Code ↗', 'الكود ↗', w['repo']))
     if w['own']:
         links.append(('Our notes →', 'ملاحظاتنا →', w['own']))
+    slug = archive_case_slug(w)
+    if slug:
+        links.insert(0, ('Detailed case study →', 'دراسة الحالة المفصلة →', f'/work/{slug}/'))
     link_html = ''.join(
         f'<a href="{esc(url)}"'
         + (' target="_blank" rel="noopener noreferrer"' if url.startswith('http') else '')
@@ -88,8 +93,8 @@ def archive_section():
       <section class="section container section--flush-top" id="archive" aria-labelledby="archive-title">
         {sec_head('02', 'FOUNDER WORK ARCHIVE', 'أرشيف أعمال المؤسس',
                   '<span id="archive-title" data-ar="خمسة وعشرون مشروعًا.">Twenty-five projects.</span> <span class="grad-text" data-ar="مصدر واحد للتحقق.">One place to check them.</span>',
-                  'Selected work by co-founder Mustafa Aboalazm, re-indexed in our two-track order. Every entry links back to his own case study, live deployment or public repository.',
-                  'أعمال مختارة للمؤسس الشريك مصطفى أبو العزم، مُرتبة من جديد وفق مسارينا. كل مدخل يعود إلى دراسته الأصلية أو الموقع المباشر أو المستودع العام.')}
+                  'Selected work by co-founder Mustafa Aboalazm, re-indexed in our two-track order. Every entry links back to its source; overlapping projects also open a detailed bilingual case study.',
+                  'أعمال مختارة للمؤسس الشريك مصطفى أبو العزم، مُرتبة من جديد وفق مسارينا. كل مدخل يعود إلى مصدره؛ والمشروعات المشتركة تفتح أيضًا دراسة حالة ثنائية اللغة مفصلة.')}
         <div class="work-disclaimer work-disclaimer--archive">
           {icon('alert')}
           <div>
@@ -184,7 +189,7 @@ def hub():
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="بورتفوليو إبداعي · دراسات مُعلَّنة">CREATIVE PORTFOLIO · LABELLED STUDIES</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="اعرض الحرفة،">Show the craft,</span><br /><span class="grad-text" data-ar="لا قائمة الخدمات.">not the service list.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar="أربع دراسات مفاهيمية تُظهر طريقة تفكير الاستوديو، يليها أرشيف موثّق بخمسة وعشرين مشروعًا من أعمال المؤسس الشريك — هوية أولًا، ثم منتجات رقمية. كل مدخل بمصدره وحدود إثباته.">Four concept studies show how the studio thinks, followed by a documented archive of 25 projects by our co-founder — identity first, then digital products. Every entry carries its source and its evidence limit.</p>
-        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('See the concept studies', 'اطّلع على الدراسات', '#studies', 'primary', 'arrowDown')}{btn('Founder work · 25', 'أعمال المؤسس · 25', '#archive', 'glass', 'grid')}{btn('Published client cases', 'دراسات عملاء منشورة', '/case-studies/', 'ghost', 'layers')}{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/', 'ghost', 'calendar')}</div>
+        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('See the concept studies', 'اطّلع على الدراسات', '#studies', 'primary', 'arrowDown')}{btn('Founder work · 25', 'أعمال المؤسس · 25', '#archive', 'glass', 'grid')}{btn('Project cases · 15', 'دراسات المشاريع · 15', '#project-cases', 'glass', 'layers')}{btn('Published client cases', 'دراسات عملاء منشورة', '/case-studies/', 'ghost', 'layers')}{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/', 'ghost', 'calendar')}</div>
       </section>
 
       <section class="section container section--tight" aria-label="Portfolio visual" data-ar-label="صورة البورتفوليو">
@@ -217,8 +222,10 @@ def hub():
 
       {archive_section()}
 
+      {case_studies_section()}
+
       <section class="section container section--flush-top" id="intake" aria-labelledby="intake-title">
-        {sec_head('03', 'HOW REAL WORK GETS PUBLISHED', 'كيف تُنشر الأعمال الحقيقية',
+        {sec_head('04', 'HOW REAL WORK GETS PUBLISHED', 'كيف تُنشر الأعمال الحقيقية',
                   '<span id="intake-title" data-ar="من الموجز إلى الإثبات.">From the brief to the evidence.</span>',
                   'The gate a real client case must pass before it replaces — or sits beside — a concept study.',
                   'البوابة التي يجب أن تمر بها أي حالة عميل حقيقية قبل أن تحلّ محل دراسة مفاهيمية أو تجاورها.')}
@@ -230,7 +237,7 @@ def hub():
       </section>
 
       <section class="section container section--flush-top" id="evidence" aria-labelledby="ev-title">
-        {sec_head('04', 'CLAIMS & EVIDENCE REGISTER', 'سجل الادعاءات والأدلة',
+        {sec_head('05', 'CLAIMS & EVIDENCE REGISTER', 'سجل الادعاءات والأدلة',
                   '<span id="ev-title" data-ar="ما ننشره، ولماذا.">What we publish, and why.</span>',
                   'A live register of numbers and claims: published, qualified, removed or resolved. Anything without evidence is rewritten or taken down.',
                   'سجل حيّ للأرقام والادعاءات: منشور، أو مقيَّد، أو محذوف، أو محسوم. أي شيء بلا إثبات يُعاد صياغته أو يُشال.')}
@@ -257,9 +264,9 @@ def hub():
 '''
     return page('/work/', title='Creative Work — Brand, Packaging, Product & Web · Code & Canvas',
                 title_ar='الأعمال الإبداعية — العلامة والتغليف والمنتج والويب · Code & Canvas',
-                desc='A labelled visual portfolio: four concept studies plus a 25-project founder work archive spanning brand identity and digital products. Every entry states its source, role and evidence limit.',
-                desc_ar='بورتفوليو بصري مُعلَّن: أربع دراسات مفاهيمية، يليها أرشيف بخمسة وعشرين مشروعًا من أعمال المؤسس بين أنظمة الهوية والمنتجات الرقمية. كل مدخل يوضّح مصدره ودوره وحدود إثباته.',
-                nav='work', body=body, og_image='/assets/brand/og/work.png', view_track='case_study_view')
+                desc='A labelled visual portfolio: four concept studies, a 25-project founder work archive and 15 detailed live-project case studies spanning brand identity and digital products. Every entry states its source, role and evidence limit.',
+                desc_ar='بورتفوليو بصري مُعلَّن: أربع دراسات مفاهيمية، يليها أرشيف بخمسة وعشرين مشروعًا من أعمال المؤسس، ثم خمس عشرة دراسة حالة تفصيلية لمشروعات مباشرة بين أنظمة الهوية والمنتجات الرقمية. كل مدخل يوضّح مصدره ودوره وحدود إثباته.',
+                nav='work', body=body, extra_head=CSS, og_image='/assets/brand/og/work.png', view_track='case_study_view')
 
 
 def build():

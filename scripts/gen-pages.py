@@ -15,9 +15,9 @@ from catalog import SERVICES, TRACKS, href  # noqa: E402
 from h import esc, t, th, icon, arrow, svc_card, svc_grid, crumbs, closing, btn, page  # noqa: E402
 
 import pages_services, pages_technology, pages_creative, pages_healthcare, pages_about, pages_story, pages_methodology, pages_team, pages_pricing, pages_contact, pages_blog, pages_work, pages_books, pages_shop, pages_legal  # noqa: E402
-import pages_portfolio, pages_landing, pages_booking, pages_locations  # noqa: E402
+import pages_portfolio, pages_case_studies, pages_landing, pages_booking, pages_locations  # noqa: E402
 
-BUILDERS = [pages_portfolio.build, pages_landing.build, pages_booking.build, pages_locations.build, pages_services.build, pages_technology.build, pages_creative.build, pages_healthcare.build, pages_about.build, pages_story.build, pages_methodology.build, pages_team.build, pages_pricing.build, pages_contact.build, pages_blog.build, pages_work.build, pages_books.build, pages_shop.build, pages_legal.build]
+BUILDERS = [pages_portfolio.build, pages_case_studies.build, pages_landing.build, pages_booking.build, pages_locations.build, pages_services.build, pages_technology.build, pages_creative.build, pages_healthcare.build, pages_about.build, pages_story.build, pages_methodology.build, pages_team.build, pages_pricing.build, pages_contact.build, pages_blog.build, pages_work.build, pages_books.build, pages_shop.build, pages_legal.build]
 
 import json  # noqa: E402
 import h  # noqa: E402

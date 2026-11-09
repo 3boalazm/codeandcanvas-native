@@ -127,3 +127,9 @@ The owner uploaded 63 UI-reference screenshots into `main/REF` (commit `52aeeb8b
 - The home-screen icons from the earlier PWA lap remain the only generated brand bitmaps; nothing from REF touches `manifest.webmanifest`, `sw.js` or `offline.html`.
 
 The permission → evidence → attribution gate above is unchanged. If any REF idea is later promoted from "idea" to "asset", it must first pass licence/attribution review here.
+
+---
+
+## 2026-11-09 · Phase 2 `/system/` (existing first-party assets only)
+
+The Phase 2 documentation route reuses **12 already-committed illustrative WebP files** (`brand-system`, `case-maqloop`, `case-packbox`, `case-pharmacy`, `case-axiom`, `case-continuum`, `case-evolve`, `case-farm`, `case-oltre`, `case-sakanwave`, `case-stt`, `case-ummah`) and the existing `resources.png` OG card. No new image, WebP, OG bitmap, font, icon sprite or third-party asset was generated or downloaded; `optimize-media --check` still reports **29 sources / 58 WebP / 50 OG cards**. Token swatches are CSS gradients/hex values from `assets/css/ds.css`, the founder plates are monograms from `pages_team.py`, and the six inventory numbers are `len()` results computed by `scripts/lib/pages_system.py` at generation time — not business metrics. All twelve art tiles carry `ILLUSTRATIVE ART · NOT CLIENT WORK` / «عمل توضيحي · ليس عمل عميل» and the page states that no licensed photo or client screenshot was added. No REF pixels, portraits, logos, follower counts or verification badges were republished; REF 060 remains rejected. The permission → evidence → attribution gate is unchanged.

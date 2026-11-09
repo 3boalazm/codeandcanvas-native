@@ -311,6 +311,10 @@
    "title": "Cookie Policy — Code & Canvas"
   },
   {
+   "path": "/system/",
+   "title": "Design System — Tokens, Components & Real Site Inventory · Code & Canvas"
+  },
+  {
    "path": "/404.html",
    "title": "404 — Lost · Code & Canvas",
    "notFound": true
@@ -679,6 +683,11 @@
    "path": "/ar/cookie-policy/",
    "title": "سياسة ملفات تعريف الارتباط — Code & Canvas",
    "lang": "ar"
+  },
+  {
+   "path": "/ar/system/",
+   "title": "نظام التصميم — التوكينات والمكوّنات وجرد الموقع · Code & Canvas",
+   "lang": "ar"
   }
  ],
  "redirects": [
@@ -890,6 +899,16 @@
   {
    "from": "/library/",
    "to": "/resources/",
+   "status": 301
+  },
+  {
+   "from": "/design-system/",
+   "to": "/system/",
+   "status": 301
+  },
+  {
+   "from": "/design-system",
+   "to": "/system/",
    "status": 301
   }
  ]

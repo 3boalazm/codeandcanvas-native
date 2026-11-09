@@ -10,7 +10,7 @@ const routes = [
   '/', '/about/', '/services/', '/technology-services/', '/creative-services/',
   '/healthcare/', '/contact/', '/pricing-faq/', '/case-studies/', '/books/',
   '/methodology/', '/claims/', '/blog/', '/team/', '/resources/', '/book/',
-  '/work/', '/work/zad/',
+  '/system/', '/work/', '/work/zad/',
 ];
 
 for (const lang of ['en', 'ar']) test(`light-theme axe matrix ${lang}`, async ({ page }, info) => {

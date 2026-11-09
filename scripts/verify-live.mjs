@@ -34,6 +34,8 @@ const ROUTES = [
   ['/terms-of-use/', ['Terms of Use']],
   ['/cookie-policy/', ['Cookie Policy']],
   ['/resources/', ['Resources']],
+  ['/system/', ['Design System', 'og:image']],
+  ['/ar/system/', ['نظام التصميم', 'dir="rtl"']],
   ['/claims/', ['Claims']],
 ];
 

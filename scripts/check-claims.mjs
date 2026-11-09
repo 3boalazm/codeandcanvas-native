@@ -82,6 +82,7 @@ for (const file of pages) {
 const REQUIRED = [
   '/work/index.html', '/services/index.html', '/book/index.html',
   '/resources/index.html', '/claims/index.html', '/saudi-arabia/index.html', '/egypt/index.html',
+  '/system/index.html',
   '/work/bilingual-brand-system/index.html', '/work/packaging-print-system/index.html',
   '/work/product-ui-system/index.html', '/work/web-experience-rebuild/index.html',
   '/services/brand-identity-design/index.html', '/services/brand-strategy-systems/index.html',
@@ -91,6 +92,7 @@ const REQUIRED = [
   '/blog/from-brand-identity-to-brand-systems/index.html',
   '/blog/creative-strategy-in-the-age-of-generative-ai/index.html',
   '/ar/index.html', '/ar/erp/index.html', '/ar/book/index.html', '/ar/work/index.html',
+  '/ar/system/index.html',
 ];
 for (const r of REQUIRED) if (!existsSync(join(ROOT, r))) fail(`missing required route: ${r}`);
 if (!existsSync(join(ROOT, 'server/crm.html'))) fail('missing lead dashboard: server/crm.html');

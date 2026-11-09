@@ -43,6 +43,8 @@
 /evidence/ /claims/ 301
 /claim-register/ /claims/ 301
 /library/ /resources/ 301
+/design-system/ /system/ 301
+/design-system /system/ 301
 
 # Blog: posts moved from the site root into /blog/ (+ fixed mis-slugged duplicates)
 /why-startups-waste-money-wrong-product/ /blog/why-startups-waste-money-wrong-product/ 301

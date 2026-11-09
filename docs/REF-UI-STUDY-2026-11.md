@@ -59,7 +59,7 @@ Chosen for identity fit + low gate risk. All are **B**, all rebuild the idea rat
 ### Phased plan
 
 - **Phase 1 — done in this pass:** the six items above, rebuilt with existing tokens, bilingual copy, no new assets, no dependencies and no claims. Covers the home hero system story, the footer brand mark, the phone case rail, the pill/index motif and the light-theme contrast repairs surfaced by the new components.
-- **Phase 2 — deferred, needs an owner decision:** licensed photography or client screenshots (fanned gallery 026, orbit art tiles 044, bento grids 023/041), palette/token showcases 004/016, profile cards 045/060, and any real-data dashboard. These are `C` decisions, not implementation backlog.
+- **Phase 2 — shipped in the identity-safe form (see §7):** only the *mechanisms* of 004/016 (token cards), 023/041 (bento), 026 (native `details`/`summary` slit gallery), 044 (a static grid of tilted art tiles) and 045 (label plates with monograms) were rebuilt at `/system/` using our own tokens, our own labelled illustrative WebP and real generator counts. **The `C` decisions are still pending:** no licensed photography, client screenshot, team portrait, real-data dashboard or owner asset approval was supplied or assumed. REF 060 remains rejected.
 - **Phase 3 — deliberately rejected:** fabricated metrics/charts, AI/crypto/health dashboard chrome, orange/cyan/serif skins, runtime blur/WebGL, third-party portraits and logos. They conflict with identity, evidence rules or mobile performance.
 
 Deferred/rejected items still have value: they document what *not* to import (fake metrics, third-party portraits, orange/blue palettes, runtime blur, WebGL, AI-product positioning).
@@ -209,7 +209,7 @@ Deferred/rejected items still have value: they document what *not* to import (fa
 
 - Changes go through `partials/` + generator helpers, then `npm run generate`; **no hand-edited generated HTML**.
 
-- Proof: `npm run gate` (680 tests), `npm run verify:api` (23/23), `npm run audit:content` (0 blockers), EN/AR 390/1440 dark/light visual QA, mobile jank check.
+- Proof: `npm run gate` (**706 tests** after Phase 2), `npm run verify:api` (23/23), `npm run audit:content` (0 blockers), EN/AR 320/390/1440 dark/light visual QA, no-reduced-motion pass and mobile jank check.
 
 ## 6. Implementation results (this pass)
 
@@ -226,10 +226,10 @@ Six adapted ideas were rebuilt from scratch with our own tokens and copy. **No r
 | 7 | **Acceptance tests** — 320/390/1440 × EN/AR × dark/light, one H1, no overflow, zero `data-ar*` leftovers in the AR twin, snap-rail contract, 4 home axe variants, plus a 36-page light-theme axe matrix | — | `tests/ref-system.spec.mjs`, `tests/light-contrast.spec.mjs` |
 
 ### Deliberately not implemented (and why)
-- Slit/expand gallery (026), orbit of rotated art tiles (044), bento grids (023/041), palette/token showcases (004/016), profile cards (045/060), AI/crypto/health dashboards (008/029/043/046/059) and every numeric stat/chart (035/049–054/057/058) — these need licensed imagery, an owner decision, a real dataset, or would introduce fabricated claims, runtime blur, a new dependency or a product we do not sell.
-- **No A decisions:** zero files were adopted as-is. All six shipped items are `B` — the mechanism only.
+- **Phase 1:** slit/expand gallery (026), orbit art tiles (044), bento grids (023/041), palette showcases (004/016) and profile cards (045/060) were not shipped because they appeared to need licensed imagery or an owner decision. **Phase 2 revisited the mechanisms only** on `/system/` — see §7 — without promoting any `C` source to an asset: no licensed photo, client screenshot, team portrait or dashboard dataset was added. AI/crypto/health dashboards (008/029/043/046/059), every numeric stat/chart (035/049–054/057/058), runtime blur/WebGL and third-party portraits/logos remain rejected.
+- **No A decisions:** zero files were adopted as-is. Phase 1's six shipped items and Phase 2's five adapted mechanisms are `B`-style rebuilds — the idea, never the pixels.
 
-### Verification (final)
+### Verification (Phase 1 final; Phase 2 results in §7)
 - `npm run generate` → `npm run check`: 157 HTML files · 0 problems · generator parity 159 outputs · `check-claims` ok on 153 pages · media 29/58/50.
 - **`npm run gate`: 688 passed (15.9 m), 0 failed**, including the 8 new REF/light-theme tests and `npm run build` (47 redirects + PWA headers in `dist/`).
 - `npm run verify:api`: **23/23** checks passed. `npm run audit:content`: **153 pages / 110 findings / 0 blockers / `[claims] 0` / `[provenance] 32`**; 444 `<img>` / 74 eager / 0 missing alt, dimensions, loading or AR alt.
@@ -237,4 +237,40 @@ Six adapted ideas were rebuilt from scratch with our own tokens and copy. **No r
 - No-reduced-motion QA at 390px EN/AR × dark/light on `/` and `/work/`: **0 problems** — no infinite animation, no always-on blur/`backdrop-filter` on the new components.
 - Light-theme axe matrix: **36 pages (18 EN + 18 AR) · 0 violations** across WCAG 2 A/AA and 2.1 AA.
 - Visual review: EN dark and light at 1440/390, AR light 390, footer wordmark, `/work/` snap rail in both themes — all read correctly in LTR and RTL. Fixed floating nav/skip-link overlays at the top of scrolled section crops are expected, not layout regressions.
-- Full gate/API/audit results are also recorded in `docs/CONTENT-AUDIT-2026-11.md` §F.
+- Full Phase 1 gate/API/audit results are also recorded in `docs/CONTENT-AUDIT-2026-11.md` §F. Phase 2 supersedes the *counts* in §7.
+
+---
+
+## 7. Phase 2 — `/system/` (identity-safe adaptation, 2026-11-09)
+
+The owner said **"Phase 2 يلا"** without supplying licensed photography, client screenshots, real dashboard data or an explicit `C`-item approval. Phase 2 therefore stayed on the safe path: a new bilingual documentation route that adapts **only mechanisms** from the deferred references, using first-party content that already exists in this repository. No owner decision was invented, and no `C` item was silently reclassified as approved.
+
+### 7.1 What shipped
+
+| # | Mechanism | Refs | Rebuild | Evidence rule |
+| --- | --- | --- | --- | --- |
+| 1 | Palette / token cards | 004, 016 | Six cards showing `ds.css` values (`#00001e`, `#8b6cff`, `#3fd6c4`, `#ee5ba3`, `#f3c77a`, `--grad`) with a copy button and a live status | Values are read from our own stylesheet, not the references' hex palettes; the page says so explicitly |
+| 2 | Bento component gallery | 023, 041 | Six cards documenting glass, buttons, ring, numbered rail, CSS ghost type and labelled status | Real site components, no foreign headline, no oversized fabricated numerals |
+| 3 | Real-data inventory | 041 | Six counts computed **at generation time**: `len(SERVICES)=23`, `len(TRACKS)=4`, `len(CASE_STUDIES)=15`, `len(FOUNDER_WORK)=25`, 2 founders, 2 local market pages | No percentages, growth, revenue, chart, tooltip or business KPI. A caption states the source of every number |
+| 4 | Slit / accordion gallery | 026 | Four native `<details name="sys-slit">` panels, keyboard-operable, each showing one existing labelled illustrative WebP | CSS-only; no scroll listener, no animation, no library; every caption repeats `ILLUSTRATIVE / NOT CLIENT WORK` |
+| 5 | Static orbit of tilted art tiles | 044 | Eight existing first-party case-study WebP tiles around a central bilingual statement, tilted with CSS `rotate()` only | No runtime orbit animation, WebGL, AI-photo claim or product positioning; at ≤720px it becomes a plain 2-column grid |
+| 6 | Founder label plates | 045 | Two monogram plates (`AB`, `MA`) with real bilingual names, roles and leads from `pages_team.py` | No stock portrait, follower count, verified badge or gradient-over-photo effect; **REF 060 stays rejected** |
+
+Supporting changes: `/system/` + `/ar/system/` generated from `scripts/lib/pages_system.py`; `assets/css/system.css`; `assets/js/system.js` (clipboard with a synchronous fallback and an AR/EN live region); a home `#system` cross-link; a footer link; `/design-system/` → `/system/` redirects; sitemap / `manus-routes.json` / `vercel.json` / `.htaccess` entries; `tests/phase2.spec.mjs`; `/system/` added to `check-claims`, `verify-live`, the accessibility, light-contrast and visual matrices. The OG card is the existing `resources.png` — no new OG bitmap.
+
+### 7.2 Still pending (owner decisions, unchanged)
+
+- Licensed photography or **client screenshots** for the fanned/slit gallery (026) and orbit tiles (044) — the shipped versions deliberately use our own labelled illustrative art.
+- **Real team portraits** for profile cards (045) — the shipped plates use monograms and real roles.
+- A **real-data dashboard** (008/029/043/046/059) — none was built; the inventory counts are generator-derived documentation, not a dashboard or a KPI claim.
+- Any palette/token showcase tied to the references' own colour sets (004/016) — we document our own tokens only.
+- REF 060 (portrait + follower counts + verification badge) and every fabricated metric remain rejected.
+
+### 7.3 Verification (Phase 2)
+
+- `npm run generate` + `npm run check` → 159 HTML / 0 problems / parity 161 / claims 155 pages / media 29-58-50.
+- `npm run gate` → **706 passed, 0 failed (12.2 m)**, including 6 new `/system/` tests and `npm run build` (48 redirect rules, 52 `RewriteRule` lines, PWA headers).
+- `npm run verify:api` → 23/23. `npm run audit:content` → 155 pages / 110 findings / **0 blockers** / `[claims] 0` / `[provenance] 32` / 472 `<img>` / 74 eager / 0 missing alt-dim-loading-AR-alt.
+- Browser QA: 12 EN/AR × dark/light × 320/390/1440 `/system/` combinations → one H1, no overflow, 6/6/6/4/8/2 component counts, zero AR `data-ar*` leftovers, zero external images/CSS/JS, zero infinite animation, zero runtime blur; 10 no-reduced-motion route/theme combinations → 0 problems; 38-page light axe matrix + 4 `/system/` axe variants → 0 violations.
+- Visual review of tokens, bento, inventory, slit gallery, orbit, founder plates, EN dark 1440, EN/AR light/dark 390 — read correctly in LTR and RTL. Screenshots remain in ignored `.qa-ref/p2-*.png`.
+- No PR, merge or deploy was performed; publication remains approval-gated by `docs/PUBLISH-GATE.md`.

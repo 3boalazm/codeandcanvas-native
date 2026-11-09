@@ -558,3 +558,10 @@ html[data-theme='light'] .track--creative .track__no { color: var(--ink-pink); }
 html[data-theme='light'] .track--health .track__no { color: var(--ink-violet); }
 html[data-theme='light'] .track--combined .track__no { color: var(--ink-gold); }
 html[data-theme='light'] .track > a:hover .track__body h3 { color: var(--ink); }
+
+/* Phase 2 cross-link from the studio-system band to /system/. */
+.system__cta-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+@media (max-width: 720px) {
+  .system__cta-actions { flex-direction: column; align-items: stretch; }
+  .system__cta-actions .btn { inline-size: 100%; }
+}

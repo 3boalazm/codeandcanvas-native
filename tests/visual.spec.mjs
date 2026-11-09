@@ -14,6 +14,7 @@ const routes = [
   ['/services/brand-identity-design/', 'service-landing'],
   ['/book/', 'booking'],
   ['/resources/', 'resources'],
+  ['/system/', 'design-system'],
   ['/ar/', 'home-arabic'],
 ];
 
@@ -44,6 +45,6 @@ for (const [route, name] of routes) for (const width of [1440, 390]) {
       if (!img.src || !img.src.startsWith('/assets/media/') || img.lazy) continue;
       expect(img.w, `illustrative artwork failed to decode: ${img.src}`).toBeGreaterThan(0);
     }
-    if (['home', 'work-hub'].includes(name)) expect(m.disclaimers).toBeGreaterThan(0);
+    if (['home', 'work-hub', 'design-system'].includes(name)) expect(m.disclaimers).toBeGreaterThan(0);
   });
 }

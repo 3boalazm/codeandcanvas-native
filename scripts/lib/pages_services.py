@@ -6,7 +6,7 @@ index of all 23 services. Full scope/deliverables for each service live on the
 track pages; this hub stays short enough to decide on.
 """
 from catalog import SERVICES, TRACKS
-from h import esc, t, th, icon, crumbs, closing, btn, page, service_ld, sec_head, chal, facts, svc_index_row
+from h import esc, t, th, icon, crumbs, closing, btn, page, service_ld, sec_head, chal, facts, svc_index_row, plate
 
 TRACK_ORDER = ['technology', 'creative', 'healthcare', 'combined']
 
@@ -98,6 +98,16 @@ def build():
         {facts([('Productized services', 'خدمات مُنتجة', '23', True), ('Tracks', 'مسارات', '4', True),
                 ('Engagements', 'نموذج التعاقد', 'Fixed scope', False, 'نطاق ثابت'),
                 ('Coverage', 'التغطية', 'KSA + Egypt', True)])}
+      </section>
+
+      <!-- ░░ Track visual (labelled illustrative artwork) ░░ -->
+      <section class="section container section--tight" aria-label="Four tracks visual" data-ar-label="المسارات الأربعة">
+        {plate('hero-services-geo', 'FOUR TRACKS, ONE INTAKE', 'أربعة مسارات، مدخل واحد',
+               'Abstract illustrative diagram of four connected delivery tracks — not a screenshot or client work',
+               'رسم توضيحي تجريدي لأربعة مسارات تنفيذ مترابطة — ليس لقطة شاشة أو عمل عميل',
+               'Illustrative artwork created for this site from our own geometry. It represents how the tracks relate; it is not a client deliverable, a product screenshot or evidence of a result.',
+               'عمل فني توضيحي أُنشئ لهذا الموقع من هندستنا الخاصة. يمثّل علاقة المسارات ببعضها؛ وليس مخرجًا لعميل ولا لقطة منتج ولا إثبات نتيجة.',
+               sizes='(max-width: 720px) 92vw, 1200px', eager=True)}
       </section>
 
       <!-- ░░ 01 · Start from the problem ░░ -->

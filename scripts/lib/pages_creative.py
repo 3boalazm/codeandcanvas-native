@@ -7,7 +7,7 @@ creative proof exists today and what does not, retainers, and who delivers.
 """
 from catalog import SERVICES
 from h import (esc, t, th, icon, crumbs, closing, btn, page, service_ld, PERSON_LD,
-               sec_head, svc_rows, steps3, facts)
+               sec_head, svc_rows, steps3, facts, plate)
 
 MA = [c for c in SERVICES if c.startswith('MA-')]
 SPRINTS = ['MA-01', 'MA-02', 'MA-03', 'MA-04']
@@ -69,7 +69,16 @@ def build():
       </section>
 
       <!-- ░░ 01 · The method ░░ -->
-      <section class="section container" id="method" aria-labelledby="method-title">
+      <section class="section container section--tight" aria-label="DISCOVERY · STRATEGY · CONCEPT · REFINE" data-ar-label="الاستكشاف · الاستراتيجية · المفهوم · الصقل">
+        {plate('art-brand-acts', 'DISCOVERY · STRATEGY · CONCEPT · REFINE', 'الاستكشاف · الاستراتيجية · المفهوم · الصقل',
+               'Abstract illustrative plate of the four-act brand method, drawn for this site — not a client deliverable',
+               'لوحة توضيحية تجريدية لمنهج الفصول الأربعة لهوية العلامة، أُنشئت لهذا الموقع — ليست مخرج عميل',
+               'A diagram of our published four-act method. It is not client work, a brand board or evidence of a delivered identity.',
+               'مخطط لمنهجنا المنشور بفصوله الأربعة. ليس عمل عميل ولا لوحة علامة ولا إثبات هوية مُسلَّمة.',
+               sizes='(max-width: 720px) 92vw, 1200px', eager=True)}
+      </section>
+
+      <section class="section container section--flush-top" id="method" aria-labelledby="method-title">
         {sec_head('01', 'THE METHOD', 'المنهجية', '<span id="method-title" data-ar="أربعة فصول.">Four acts.</span> <span class="grad-text" data-ar="التموضع أولًا.">Positioning first.</span>',
                   'The creative work runs on a stated method — the same four acts on a $170 sprint and a $2,975+ system. Scope changes, the method does not.',
                   'العمل الإبداعي يجري وفق منهجية معلنة — الفصول الأربعة نفسها في سبرنت ⁦$170⁩ ومنظومة ⁦$2,975+⁩. النطاق يتغير والمنهجية لا.')}

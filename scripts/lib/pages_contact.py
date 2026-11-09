@@ -151,7 +151,10 @@ def build():
               <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Khobar,+Saudi+Arabia" target="_blank" rel="noopener"><span data-ar="الخبر على الخريطة">Al Khobar on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
               <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Obour+City,+Cairo,+Egypt" target="_blank" rel="noopener"><span data-ar="العبور على الخريطة">Al Obour on Google Maps</span><i class="flip" data-icon="arrowUpRight"></i></a>
             </div>
-            <div class="art art--wide art--map" data-slot="contact/map" aria-hidden="true" style="margin-top:auto;aspect-ratio:16/7"><span class="art__cap" data-ar="الرياض · الخبر · القاهرة">RIYADH · AL KHOBAR · CAIRO</span></div>
+            <figure class="art art--wide art--map" data-slot="contact/map" style="margin-top:auto;aspect-ratio:16/7">
+              <img src="/assets/media/art-contact-arc.webp" srcset="/assets/media/art-contact-arc-sm.webp 780w, /assets/media/art-contact-arc.webp 1600w" sizes="(max-width: 720px) 92vw, 420px" width="1600" height="900" loading="lazy" decoding="async" alt="Abstract illustrative arc connecting Riyadh, Al Khobar and Cairo — not a map or a client photo" data-ar-alt="قوس توضيحي تجريدي يربط الرياض والخبر والقاهرة — ليس خريطة ولا صورة عميل" />
+              <figcaption><span class="art__cap" data-ar="الرياض · الخبر · القاهرة">RIYADH · AL KHOBAR · CAIRO</span><span class="art__cap2" data-ar="عمل توضيحي · ليس خريطة">ILLUSTRATIVE · NOT A MAP</span></figcaption>
+            </figure>
           </article>
           <article class="panel contact-card contact-card--wa" data-reveal style="--d:.16s">
             <span class="card__icon">{icon('chat')}</span>

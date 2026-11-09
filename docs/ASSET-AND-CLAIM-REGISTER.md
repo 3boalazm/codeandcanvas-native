@@ -145,3 +145,57 @@ Phase 3 added only a text-only bilingual boundary section to `/system/`, a stati
 ## 2026-11-09 · Phase 4 residual B mechanisms (no new assets)
 
 Phase 4 added two CSS/SVG-only `/system/` sections and one text-plus-existing-art card. The only image used is the already-committed **`hero-system.webp` / `hero-system-sm.webp`**, carrying the standard `ILLUSTRATIVE ART · NOT CLIENT WORK` alt and a visible `ILLUSTRATIVE` badge. **No new image, WebP, OG bitmap, font, icon, licensed photo, client screenshot, third-party portrait/logo or external asset was generated, downloaded or published.** `optimize-media --check` still reports **29 sources / 58 WebP / 50 OG cards**; the only new `<img>` references are the EN and AR art cards reusing that same asset (474 total images in the content audit). The capability loop, concentric rings, curved path, numbered steps and step bar are pure HTML/CSS/SVG with existing `ds.css` tokens; no metric, percentage, date, client name or outcome was introduced. `scripts/check-phase4.mjs` enforces the section counts and the no-CDN/no-canvas rule. The permission → evidence → attribution gate is unchanged; the `C` owner/legal/asset decisions from Phase 2 are still pending.
+
+---
+
+## 2026-11-09 · Page artwork pass (derived only from our own assets)
+
+Sixteen pages had no visual anchor at all: `/services/`, the seven
+`/services/<slug>/` flagship landings, `/technology-services/`,
+`/creative-services/`, `/healthcare/`, `/contact/`, `/book/`, `/pricing-faq/`,
+`/about/`, `/team/`, `/case-studies/`, `/resources/` and `/erp/`. They now carry
+labelled illustrative plates.
+
+**Provenance — nothing was downloaded, scraped, licensed or invented.** Every
+new file comes from this repository, produced by
+`scripts/generate-page-art.mjs`:
+
+| Technique | Output | Source of every pixel |
+| --- | --- | --- |
+| Crop + re-grade (zoom, mirror, hue/brightness/saturation) of a committed studio artwork PNG | `hero-creative`, `hero-work`, `hero-pricing`, `art-story-architecture`, `art-story-identity`, `art-story-healthcare`, `art-story-data`, `art-story-media`, `art-resources` | `assets/media/*.png` already in Git (the AI-generated abstract scenes documented above) |
+| Original SVG geometry + label, composited over a defocused crop of that same artwork (identical method to `scripts/generate-case-art.mjs`) | `hero-services-geo`, `hero-offer`, `art-contact-arc`, `art-book-steps`, `art-pricing-tiers`, `art-erp-modules`, `art-duo-practices`, `art-clinical-lanes`, `art-arch-stack`, `art-brand-acts`, `art-work-ledger` | Our own geometry + `assets/css/ds.css` palette + the committed studio PNGs |
+
+Placements, each with a bilingual `alt`/`data-ar-alt` and a visible qualifier:
+
+| Placement | Asset | Qualifier shown on page |
+| --- | --- | --- |
+| `/services/` | `hero-services-geo` | `ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO` + note |
+| `/services/<slug>/` (7 pages) | `hero-offer` (under the existing per-offer figure) | same caption pair |
+| `/technology-services/` | `art-arch-stack` | same |
+| `/creative-services/` | `art-brand-acts` | same |
+| `/healthcare/` | `art-clinical-lanes` (framework names only — no metric, chart value or patient data) | same |
+| `/contact/` | `art-contact-arc` — replaces the empty `contact/map` slot; states it is **not a map** | `ILLUSTRATIVE · NOT A MAP` |
+| `/book/` | `art-book-steps` — the three booking steps, not a scheduler screenshot | same caption pair |
+| `/pricing-faq/` | `art-pricing-tiers` — carries **no figures**; prices stay as published text | same |
+| `/about/`, `/team/` | `art-duo-practices` | same |
+| `/case-studies/` | `art-work-ledger` | same |
+| `/resources/` | `art-resources` | existing resources caption |
+| `/erp/` | `art-erp-modules` — module names only, no product UI, no figures | `ILLUSTRATIVE DIAGRAM · NOT A PRODUCT SCREENSHOT` |
+| `/our-story/` (5 chapters) | `art-story-{architecture,identity,healthcare,data,media}` behind the mono chapter plate | `ILLUSTRATIVE · NOT CLIENT WORK` badge per plate |
+| `/blog/` + all 10 articles | per-article derived cover (`ARTICLE_ART` map) instead of one shared file, plus a labelled plate on the `/blog/` featured card | `ILLUSTRATIVE ARTWORK · NOT EVIDENCE` |
+
+The five older shared blog covers (`blog-ai-strategy`, `blog-brand-systems`,
+`blog-design-systems`, `blog-experience-design`, `blog-product-strategy`) were
+retired once every article had its own plate — their PNG sources and WebP
+derivatives were deleted from `assets/media/`, so the tree carries no dead
+imagery; `optimize-media --check` now
+registers **44 PNG sources / 88 WebP variants / 50 OG cards**, and
+`audit:content` reports 522 `<img>` tags with 0 missing alt, dimensions,
+`loading` or Arabic alt.
+
+**Still true:** these plates make the pages legible; they are **not** client
+work, product screenshots, portraits, maps, dashboards, metrics or evidence of
+any outcome. Licensed photography, permission-cleared client screenshots and
+founder portraits remain owner gates. `scripts/check-phase3.mjs` still refuses
+any external/CDN image or canvas on the system routes, and no new asset was
+downloaded from a third party in this pass.

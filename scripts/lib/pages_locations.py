@@ -104,7 +104,7 @@ def resources():
 
       <section class="section container section--tight" aria-label="Resources visual" data-ar-label="صورة المصادر">
         <figure class="live-figure live-figure--wide">
-          {media_img('studio-atmosphere', 'Illustrative studio artwork for the resources library', 'عمل فني توضيحي لمكتبة المصادر', sizes='(max-width: 720px) 92vw, 1200px', eager=True)}
+          {media_img('art-resources', 'Illustrative artwork for the resources library — a re-cut of our own studio artwork, not a photograph or client work', 'عمل فني توضيحي لمكتبة المصادر — إعادة قص لعملكم الفني الخاص، وليست صورة أو عمل عميل', sizes='(max-width: 720px) 92vw, 1200px', eager=True)}
           <figcaption><span data-ar="مكتبة المصادر">RESOURCES LIBRARY</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي">ILLUSTRATIVE ARTWORK</span></figcaption>
         </figure>
       </section>

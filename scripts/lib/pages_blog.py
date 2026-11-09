@@ -30,21 +30,29 @@ COMING_SOON = []
 
 # Illustrative cover artwork per article category. Labelled in the markup as
 # artwork, never as a screenshot, client photo or evidence of a result.
-COVERS_BY_SLUG = {
-    'why-startups-waste-money-wrong-product': 'blog-product-strategy',
-    'how-to-turn-a-business-idea-into-a-market-ready-digital-product': 'blog-product-strategy',
-    'why-software-development-alone-wont-solve-your-business-problems': 'blog-product-strategy',
-    'how-product-thinking-creates-sustainable-business-growth': 'blog-product-strategy',
-    'design-systems-operating-system-modern-digital-products': 'blog-design-systems',
-    'experience-design-business-growth-driver': 'blog-experience-design',
-    'what-digital-transformation-actually-means-for-smes': 'blog-experience-design',
+# Every article in the archive now carries its own derived cover instead of
+# sharing two files across the whole hub. Each one is a re-cut of the same
+# first-party studio artwork (see docs/ASSET-AND-CLAIM-REGISTER.md).
+ARTICLE_ART = {
+    'why-startups-waste-money-wrong-product': ('hero-pricing', 'ILLUSTRATIVE · WRONG-PRODUCT ECONOMICS'),
+    'how-to-turn-a-business-idea-into-a-market-ready-digital-product': ('art-book-steps', 'ILLUSTRATIVE · IDEA TO PRODUCT'),
+    'why-software-development-alone-wont-solve-your-business-problems': ('art-arch-stack', 'ILLUSTRATIVE · SOFTWARE IS NOT THE FIX'),
+    'what-digital-transformation-actually-means-for-smes': ('hero-services-geo', 'ILLUSTRATIVE · TRANSFORMATION, NOT TOOLS'),
+    'how-product-thinking-creates-sustainable-business-growth': ('hero-offer', 'ILLUSTRATIVE · PRODUCT THINKING'),
+    'why-most-brands-look-different-but-feel-the-same': ('art-brand-acts', 'ILLUSTRATIVE · SAME-SAME BRANDS'),
+    'from-brand-identity-to-brand-systems': ('art-duo-practices', 'ILLUSTRATIVE · IDENTITY TO SYSTEM'),
+    'design-systems-operating-system-modern-digital-products': ('art-erp-modules', 'ILLUSTRATIVE · DESIGN SYSTEM AS OS'),
+    'creative-strategy-in-the-age-of-generative-ai': ('hero-creative', 'ILLUSTRATIVE · JUDGEMENT OVER OUTPUT'),
+    'experience-design-business-growth-driver': ('hero-work', 'ILLUSTRATIVE · EXPERIENCE AS GROWTH'),
 }
 
+# Category fallback now points at the derived first-party plates, so no article
+# has to reuse a shared cover file.
 COVERS = {
-    'Product Strategy': 'digital-product', 'Digital Transformation': 'web-experience',
-    'Product Thinking': 'digital-product', 'Brand Strategy': 'brand-system',
-    'Design Systems': 'digital-product', 'Experience Design': 'web-experience',
-    'Brand Identity': 'blog-brand-systems', 'Creative Strategy': 'blog-ai-strategy',
+    'Product Strategy': 'art-book-steps', 'Digital Transformation': 'hero-services-geo',
+    'Product Thinking': 'hero-offer', 'Brand Strategy': 'art-brand-acts',
+    'Design Systems': 'art-erp-modules', 'Experience Design': 'hero-work',
+    'Brand Identity': 'art-duo-practices', 'Creative Strategy': 'hero-creative',
 }
 
 CAT_KEY = {'Product Strategy': 'product', 'Digital Transformation': 'transformation', 'Product Thinking': 'thinking',
@@ -119,8 +127,13 @@ def hub(posts):
             <p data-ar="{esc(feat['excerpt_ar'])}">{esc(feat['excerpt'])}</p>
             <span class="post-row__go"><span data-ar="اقرأ المقال">Read the article</span>{icon('arrowUpRight', 'flip')}</span>
           </div>
-          <div class="feat-post__plate" aria-hidden="true">
-            <span class="feat-post__mark">{feat['emoji']}</span>
+          <div class="feat-post__plate">
+            {media_img(ARTICLE_ART.get(feat['slug'], (COVERS.get(feat['cat'], 'studio-atmosphere'), ''))[0],
+                       'Illustrative editorial artwork for the most-read article — not a screenshot or client photo',
+                       'عمل فني تحريري توضيحي للمقال الأكثر قراءة — ليس لقطة شاشة أو صورة عميل',
+                       sizes='(max-width: 900px) 92vw, 240px', width=480, height=720)}
+            <span class="story-plate__badge" data-ar="عمل توضيحي">ILLUSTRATIVE</span>
+            <span class="feat-post__mark" aria-hidden="true">{feat['emoji']}</span>
             <span class="story-plate__cap" data-ar="الأكثر قراءة">MOST READ</span>
             <span class="story-plate__cap2">{esc(feat['cat'])} · {feat['minutes']} <span data-ar="دقائق">min</span></span>
           </div>
@@ -176,9 +189,12 @@ def hub(posts):
 
 def article(p, by_slug):
     a = AUTHORS[p['author']]
-    cover_media = COVERS_BY_SLUG.get(p['slug']) or COVERS.get(p['cat'], 'studio-atmosphere')
+    cover_media = COVERS.get(p['cat'], 'studio-atmosphere')
     if p.get('og'):
         cover_media = p['og'].rsplit('/', 1)[-1].replace('.png', '')
+    cover_label = 'ILLUSTRATIVE · NOT CLIENT WORK'
+    if p['slug'] in ARTICLE_ART:
+        cover_media, cover_label = ARTICLE_ART[p['slug']]
     cover_img = media_img(cover_media, 'Illustrative editorial artwork — not a screenshot or client photo',
                            'عمل فني تحريري توضيحي — ليس لقطة شاشة أو صورة عميل',
                            sizes='(max-width: 720px) 92vw, 900px', eager=True, fetchpriority='high')
@@ -264,7 +280,7 @@ def article(p, by_slug):
           <div class="art art--wide {'art--pink' if p['author'] == 'ma' else 'art--violet'}" data-slot="blog/{p['slug']}/cover">
             {cover_img}
             <span class="art__cap" data-ar="{esc(p['cat_ar'])} · Code &amp; Canvas">{esc(p['cat'])} · Code &amp; Canvas</span>
-            <span class="art__cap2" data-ar="عمل توضيحي · ليس إثباتًا">ILLUSTRATIVE ARTWORK · NOT EVIDENCE</span>
+            <span class="art__cap2" data-ar="عمل توضيحي · ليس إثباتًا" data-cover-plate="{esc(cover_label)}">ILLUSTRATIVE ARTWORK · NOT EVIDENCE</span>
           </div>
         </div>
         <div class="post__layout">

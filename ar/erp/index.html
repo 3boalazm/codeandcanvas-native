@@ -6,6 +6,12 @@
   <title>CanvasOne ERP — كود آند كانفاس</title>
   <meta name="description" content="CanvasOne ERP من Code &amp; Canvas — منصة واحدة للمالية والمبيعات والمخزون والموارد البشرية والفوترة الإلكترونية، مبنية للسعودية ومصر." />
   <meta name="theme-color" content="#05051a" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="كود آند كانفاس" />
+  <link rel="apple-touch-icon" href="/assets/brand/app/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="CanvasOne ERP — كود آند كانفاس" />
   <meta property="og:description" content="CanvasOne ERP من Code &amp; Canvas — منصة واحدة للمالية والمبيعات والمخزون والموارد البشرية والفوترة الإلكترونية، مبنية للسعودية ومصر." />
@@ -23,16 +29,21 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://codeandcanvas.net/ar/erp/#webpage","url":"https://codeandcanvas.net/ar/erp/","name":"CanvasOne ERP — كود آند كانفاس","description":"CanvasOne ERP من Code & Canvas — منصة واحدة للمالية والمبيعات والمخزون والموارد البشرية والفوترة الإلكترونية، مبنية للسعودية ومصر.","inLanguage":["en","ar"],"isPartOf":{"@id":"https://codeandcanvas.net/#website"},"publisher":{"@id":"https://codeandcanvas.net/#org"}},{"@type":"SoftwareApplication","name":"CanvasOne ERP","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://codeandcanvas.net/ar/erp/","description":"One platform for finance, sales, inventory, HR and e-invoicing, built for Saudi Arabia and Egypt.","provider":{"@id":"https://codeandcanvas.net/#org"},"offers":{"@type":"Offer","url":"https://codeandcanvas.net/ar/erp/#builder","priceCurrency":"SAR","description":"Modular pricing — configure your plan with the builder."}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codeandcanvas.net/"},{"@type":"ListItem","position":2,"name":"CanvasOne ERP"}]}]}</script>
   <script>
-    /* Arabic document: language and direction are fixed in the markup, not chosen at runtime. */
+    /* Arabic document: language and direction are fixed in the markup, not chosen at runtime.
+       Colour scheme is still restored before first paint, same rule as the English head. */
     (function () {
       try {
-        var d = document.documentElement;
+        var d = document.documentElement, t = null;
+        try { t = localStorage.getItem('cc-theme'); } catch (e) {}
+        var theme = t === 'light' ? 'light' : 'dark';
         d.lang = 'ar'; d.dir = 'rtl';
+        d.setAttribute('data-theme', theme);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f4ff' : '#05051a');
         try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
       } catch (e) {}
     })();
     </script>
-  <link rel="preload" href="/assets/fonts/space-grotesk-latin-700.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/css/fonts.css" />
     <link rel="stylesheet" href="/assets/css/ds.css" />
   <link rel="stylesheet" href="/assets/css/erp.css" />

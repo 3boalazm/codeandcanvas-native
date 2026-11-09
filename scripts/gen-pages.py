@@ -15,9 +15,9 @@ from catalog import SERVICES, TRACKS, href  # noqa: E402
 from h import esc, t, th, icon, arrow, svc_card, svc_grid, crumbs, closing, btn, page  # noqa: E402
 
 import pages_services, pages_technology, pages_creative, pages_healthcare, pages_about, pages_story, pages_methodology, pages_team, pages_pricing, pages_contact, pages_blog, pages_work, pages_books, pages_shop, pages_legal  # noqa: E402
-import pages_portfolio, pages_landing, pages_booking, pages_locations  # noqa: E402
+import pages_portfolio, pages_case_studies, pages_landing, pages_booking, pages_locations  # noqa: E402
 
-BUILDERS = [pages_portfolio.build, pages_landing.build, pages_booking.build, pages_locations.build, pages_services.build, pages_technology.build, pages_creative.build, pages_healthcare.build, pages_about.build, pages_story.build, pages_methodology.build, pages_team.build, pages_pricing.build, pages_contact.build, pages_blog.build, pages_work.build, pages_books.build, pages_shop.build, pages_legal.build]
+BUILDERS = [pages_portfolio.build, pages_case_studies.build, pages_landing.build, pages_booking.build, pages_locations.build, pages_services.build, pages_technology.build, pages_creative.build, pages_healthcare.build, pages_about.build, pages_story.build, pages_methodology.build, pages_team.build, pages_pricing.build, pages_contact.build, pages_blog.build, pages_work.build, pages_books.build, pages_shop.build, pages_legal.build]
 
 import json  # noqa: E402
 import h  # noqa: E402
@@ -168,6 +168,17 @@ def meta_files():
             {'source': '/assets/fonts/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=31536000, immutable'}]},
             {'source': '/assets/(css|js|brand)/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=3600, stale-while-revalidate=86400'}]},
             {'source': '/(.*)\\.html', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=0, must-revalidate'}]},
+            # The app shell must never be cached by the CDN: browsers revalidate
+            # /sw.js on every visit to pick up a new cache version.
+            {'source': '/sw.js', 'headers': [
+                {'key': 'Cache-Control', 'value': 'public, max-age=0, must-revalidate'},
+                {'key': 'Service-Worker-Allowed', 'value': '/'},
+            ]},
+            {'source': '/manifest.webmanifest', 'headers': [
+                {'key': 'Content-Type', 'value': 'application/manifest+json; charset=utf-8'},
+                {'key': 'Cache-Control', 'value': 'public, max-age=3600'},
+            ]},
+            {'source': '/offline.html', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=0, must-revalidate'}]},
         ],
     }
     write('vercel.json', json.dumps(vercel, ensure_ascii=False, indent=2) + '\n')

@@ -15,3 +15,6 @@ playwright-report/
 
 # Applied historical full-repo patches are not source files.
 *.patch
+
+# Local browser QA scratch files (screenshots + ad-hoc scripts)
+/.qa-*

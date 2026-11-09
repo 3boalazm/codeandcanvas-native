@@ -68,6 +68,14 @@ for (const file of pages) {
   // No unresolved shared-head placeholder may ship.
   if (html.includes('{{OG_IMAGE}}')) fail(`${rel}: unresolved {{OG_IMAGE}} placeholder`);
   if (html.includes('signategrotesk')) fail(`${rel}: references the unlicensed Signate font`);
+  // The installable app shell is shared chrome: every page that loads the site
+  // runtime (which registers the worker) must point at the manifest and icon.
+  // The three noindex private review surveys have their own standalone head and
+  // never load site.js, so they are not app pages.
+  if (/<script[^>]+src="\/assets\/js\/site\.js"/.test(html)) {
+    if (!/<link rel="manifest" href="\/manifest\.webmanifest"/.test(html)) fail(`${rel}: missing PWA manifest link`);
+    if (!/<link rel="apple-touch-icon" href="\/assets\/brand\/app\/apple-touch-icon\.png"/.test(html)) fail(`${rel}: missing apple-touch-icon`);
+  }
 }
 
 /* ---- required first-party routes ---- */
@@ -120,6 +128,26 @@ for (const [r, og] of [
   const p = join(ROOT, r);
   if (!existsSync(p)) continue;
   if (!readFileSync(p, 'utf8').includes(og)) fail(`${r}: expected per-route OG card ${og}`);
+}
+
+/* ---- installable app shell ---- */
+for (const f of ['manifest.webmanifest', 'sw.js', 'offline.html',
+  'assets/brand/app/icon-192.png', 'assets/brand/app/icon-512.png',
+  'assets/brand/app/icon-maskable-192.png', 'assets/brand/app/icon-maskable-512.png',
+  'assets/brand/app/apple-touch-icon.png']) {
+  if (!existsSync(join(ROOT, f))) fail(`missing PWA asset: ${f}`);
+}
+try {
+  const m = JSON.parse(readFileSync(join(ROOT, 'manifest.webmanifest'), 'utf8'));
+  for (const key of ['name', 'short_name', 'start_url', 'scope', 'display', 'icons']) {
+    if (!(key in m)) fail(`manifest.webmanifest missing ${key}`);
+  }
+  if (m.display !== 'standalone') fail('manifest.webmanifest is not standalone');
+  for (const icon of m.icons || []) {
+    if (!existsSync(join(ROOT, String(icon.src || '').replace(/^\//, '')))) fail(`manifest icon missing: ${icon.src}`);
+  }
+} catch (e) {
+  fail(`manifest.webmanifest invalid: ${e.message}`);
 }
 
 if (errors.length) {

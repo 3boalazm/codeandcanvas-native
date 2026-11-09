@@ -106,6 +106,13 @@ const CARDS = {
   'claims': ['PUBLIC REGISTER', 'Every number,', 'with a stated status.', 'studio'],
 };
 
+/* One dedicated 1200×630 card for each detailed project case study. The JSON
+   keeps the route slugs in one place for generators and documentation. */
+const CASE_CARDS = JSON.parse(readFileSync(join(ROOT, 'scripts/lib/case_study_cards.json'), 'utf8'));
+for (const c of CASE_CARDS) {
+  CARDS[`case-${c.slug}`] = ['CASE STUDY · DOCUMENTED WORK', c.line1, c.line2, c.palette];
+}
+
 function svgFor([kicker, line1, line2, palette]) {
   const [a, b] = PALETTES[palette] || PALETTES.home;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">

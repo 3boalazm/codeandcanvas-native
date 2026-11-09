@@ -1,0 +1,17 @@
+[
+  {"slug": "maqloop", "line1": "MAQLOOB", "line2": "Numbered apparel.", "palette": "brand"},
+  {"slug": "packbox-studio", "line1": "PackBox Studio", "line2": "Dielines, locally.", "palette": "tech"},
+  {"slug": "ummah-academy", "line1": "Ummah Academy", "line2": "Goal-first learning.", "palette": "health"},
+  {"slug": "zad", "line1": "Zad", "line2": "Offline-first worship.", "palette": "product"},
+  {"slug": "ibrahim-taha-axiom", "line1": "Ibrahim Taha Axiom", "line2": "Numbers with sources.", "palette": "tech"},
+  {"slug": "nile-bed", "line1": "Nile Bed", "line2": "One supply path.", "palette": "product"},
+  {"slug": "craft-egypt", "line1": "Craft Egypt", "line2": "Made by hand.", "palette": "local"},
+  {"slug": "speech-to-text-studio", "line1": "Speech to Text", "line2": "Four engines, one route.", "palette": "tech"},
+  {"slug": "pharmacy-saas", "line1": "Pharmacy SaaS", "line2": "Bounded contexts.", "palette": "health"},
+  {"slug": "farm-console", "line1": "Farm Console", "line2": "Records in the field.", "palette": "product"},
+  {"slug": "sakanwave", "line1": "SakanWave", "line2": "Four local stems.", "palette": "insights"},
+  {"slug": "oltre-collective", "line1": "OLTRE Collective", "line2": "Editorial streetwear.", "palette": "brand"},
+  {"slug": "continuum", "line1": "Continuum", "line2": "Capture. Resume.", "palette": "product"},
+  {"slug": "nile-pharma-food", "line1": "Nile Pharma Food", "line2": "Information first.", "palette": "health"},
+  {"slug": "evolve-system", "line1": "Evolve System", "line2": "Source pending.", "palette": "studio"}
+]

@@ -10,6 +10,7 @@ import { isolate, visit } from './helpers.mjs';
 const routes = [
   ['/', 'home'],
   ['/work/', 'work-hub'],
+  ['/work/zad/', 'project-case'],
   ['/services/brand-identity-design/', 'service-landing'],
   ['/book/', 'booking'],
   ['/resources/', 'resources'],

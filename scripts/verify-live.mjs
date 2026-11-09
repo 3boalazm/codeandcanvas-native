@@ -26,7 +26,7 @@ const ROUTES = [
   ['/blog/', ['Insights', 'from-brand-identity-to-brand-systems']],
   // The old "Selected" marker went stale when /work/ was rewritten in the
   // overhaul; these strings are present in the current generator output.
-  ['/work/', ['CONCEPT STUDY', 'FOUNDER WORK ARCHIVE', 'work/']],
+  ['/work/', ['CONCEPT STUDY', 'FOUNDER WORK ARCHIVE', 'PROJECT CASE STUDIES', 'work/']],
   ['/book/', ['Book a 30-Minute', 'book-form']],
   ['/saudi-arabia/', ['Saudi Arabia']],
   ['/egypt/', ['Egypt']],

@@ -88,3 +88,59 @@ All commands below were run after the final `npm run generate` on this branch (2
 | `npm run verify:live` | **Not run as a pass** — the live domain still serves pre-overhaul content (see §5.2) |
 
 The gate initially reported `564 passed / 2 failed`; both failures were the PR #14 `/_vercel/insights/script.js` 404 counted by the reader-flow "no 404 responses" assertion. The test now excludes that platform URL (§5.1) and the full gate was re-run green.
+
+---
+
+# 2026-11-09 addendum · case studies, header, theme and mobile responsiveness
+
+Sections 1–6 above are the **2026-11-08 historical snapshot**; their page counts and byte figures describe that lap's build. This addendum records the following lap. Nothing above was rewritten.
+
+## A. What changed
+
+**15 bilingual project case studies.** `scripts/lib/pages_case_studies.py` generates 15 EN + 15 AR `/work/<slug>/` detail pages and a 15-card `/work/#project-cases` grid; overlapping founder-archive cards now open the matching detail page. `assets/css/case-study.css` is linked by the case and portfolio builders. Art provenance, evidence limits and the still-open publication gates: `docs/ASSET-AND-CLAIM-REGISTER.md` (2026-11-09) and `docs/FOUNDER-WORK-ARCHIVE.md` (2026-11-09).
+
+**Header.** `partials/top.html` now renders a deep-navy glass capsule with a thin outline and five ringed circular controls (brand, language, theme, WhatsApp, burger) plus the warm amber CTA on desktop/tablet. The pre-1024px layout uses `justify-content: space-between` with a flexible action group, so in Arabic the logo sits at the far right and the burger at the far left (measured at 390px: brand `x=325`, burger `x=23`, pill `[16,10,358,60]`). Previously the fixed `.nav__links` left no spacer and all controls clustered right-of-centre (burger `x=166`).
+
+**Real light/dark theme.** Dark remains the default; light is an explicit, persisted (`cc-theme`) opt-in. A pre-paint bootstrap in `partials/head.html` and the matching `scripts/lib/arize.mjs::LOCKED_SCRIPT` set `data-theme` and `theme-color` on EN and `/ar/` twins before first paint, so there is no flash. `assets/css/ds.css` introduces a `--hi` emphasis token and scoped `html[data-theme='light']` overrides derived from every plain white-alpha / near-black panel declaration across the seven stylesheets; dark artwork wells and the header capsule deliberately stay dark in both themes. `assets/js/site.js` owns the toggle, `aria-pressed`, localized label and sun/moon icon. The language button is now a tolerant id/class match in `arize.mjs`, so header decoration classes cannot silently break the `/ar/ → EN` link again.
+
+**Mobile load + jank.** `startPreloader()` no longer waits for `document.fonts.ready`; it races a 350 ms font cap, uses a 420 ms minimum on phones / 850 ms on desktop, and has a 1.8 s hard ceiling instead of 1.7 s minimum + 4 s safety. A mobile/coarse-pointer budget in `ds.css` replaces four `blur(96px)` drifting blobs with a static radial gradient, disables the full-viewport SVG-turbulence grain and cursor glow, lowers the fixed header's `backdrop-filter` from `blur(22px) saturate(160%)` to `blur(10px)`, drops `will-change` on every button, and removes `filter: blur()` from reveal transitions. Desktop rendering is unchanged. Latin-only `@font-face` declarations in `ds.css` gained `unicode-range`, the `ع` glyph no longer pulls an IBM Plex Arabic webfont onto English pages, and `/ar/` twins no longer preload the EN-only Space Grotesk face.
+
+## B. Measurements (same 390×844 / 4× CPU / 1.6 Mbps · 150 ms synthetic profile)
+
+| Metric | Before | After | Note |
+| --- | --- | --- | --- |
+| Interactive (`body.is-ready`) | ≈ 5.4 s (derived, not directly sampled: `document.fonts.ready` resolved ≈ 5.3 s; the 1.7 s minimum had already elapsed) | **3.3 s** | `load` still 5.3 s because non-blocking fonts finish later; the scroll lock is gone ~2 s earlier |
+| Startup long tasks | 5 tasks / 967 ms | **2 tasks / 619–810 ms** | varies by run |
+| Resources / bytes | 26 / 827,319 B | **25 / 806,511 B** | uncompressed local dev server; Vercel brotli reduces the 264 KiB of CSS in production |
+| Grain animation | `grain 1.2s steps(6) infinite` | **none** | mobile only |
+| Frames in a 3.1 s idle + rapid-scroll window | 113 frames, **27 over 50 ms**, worst 83 ms, avg 48.7 ms (≈20 fps) | **322 frames, 0 over 50 ms**, worst 50 ms, avg 17.2 ms (≈58 fps) | A/B on the same build, re-enabling the old effects via injected CSS |
+
+The byte saving is deliberately modest: **no font binary was modified**. Subsetting the Raleway/Poppins files was evaluated (a 425-character subset cuts one 51 KiB face to ~29 KiB) but **not done** — Raleway's OFL declares a Reserved Font Name, so a modified/subset build would require renaming and legal sign-off. Poppins has no RFN. This joins the typography decision below rather than silently changing licensed assets.
+
+## C. Verification on this lap
+
+| Command / check | Result |
+| --- | --- |
+| `npm run generate` | EXIT 0 · `75 page(s) carry chrome markers · 74 rewritten` · `Arabic pages: 76 written` |
+| `npm run check` | EXIT 0 · `75 · 0 out of date` · `156 HTML files checked · 0 problem(s)` · `Generator parity: 159 outputs` · `check-claims: ok — 153 HTML pages` · `media check: 29 source(s), 58 WebP variant(s), 50 OG card(s)` |
+| Custom case-study QA (browser script) | 15 case pages × 2 languages × 2 widths + `/work/` twins → **0 problems** (H1, overflow, AR leftovers/dir/lang, case CSS/OG, evidence/build structure, eager images, local 404s, 15 index cards, archive detail links) |
+| Header/theme QA (browser script) | 390/1440 × EN/AR → **0 problems**: RTL order, no overflow at 390 and 1440, five rings, circular brand, sun/moon, theme flip + `aria-pressed` + `theme-color` + persistence + pre-paint restore on reload, burger open/Escape, reciprocal language navigation, 0 page errors |
+| `npm run gate` (before PWA lap) | **EXIT 0** · `676 passed (17.5m)` / 0 failed · `47 redirect rules written to dist/.htaccess` · `Static site built in dist/`; includes 320→1920px geometry for EN/AR |
+| `npm run verify:api` | EXIT 0 · `smoke-api: all 23 checks passed` |
+| `npm run audit:content` | EXIT 0 · **110 findings, 0 blockers** (`[dates] 18`, `[provenance] 32`, `[roadmap] 5`, `[structure] 54`, `[dynamic] 1`, `[claims] 0`) · `444 <img> · 74 eager · 0 missing alt / dimensions / loading / AR alt`. The 32 provenance advisories are the case-study/archive year labels that each link to their source; the earlier `[claims] 1` was a negated sentence («without implying guaranteed outcomes») and was reworded in the source copy rather than by relaxing the checker. |
+| Mobile jank A/B (same build, old effects re-enabled via injected CSS) | old effects re-enabled on the same build → 113 frames / 27 over 50 ms / avg 48.7 ms; new budget → 322 frames / 0 over 50 ms / avg 17.2 ms |
+| Visual | Dark/light EN+AR mobile/desktop header crops and light-mode frames for `/`, `/ar/`, `/work/`, `/work/zad/`, `/ar/work/zad/` reviewed; illustrative badges and disclaimers remain visible |
+
+## D. Owner decisions still open
+
+1. **Typography is still the largest remaining mobile transfer.** ~460 KiB of `woff2` was requested in the 390px profile (the 2026-11-08 figure of ~505 KiB covered 12 files incl. Arabic faces). Replacing the eight static Raleway/Poppins faces with two variable families, or consolidating to two families, remains the single biggest win (~300 KiB), but needs visual sign-off. If subsetting is chosen instead, rename the Raleway subset per its OFL Reserved Font Name and add the missing Raleway/Poppins license texts to `assets/fonts/` first.
+2. **Light theme is opt-in.** If the owner wants OS-preference auto-detection or light as the default, change both the head bootstrap and `LOCKED_SCRIPT` together; the current default keeps every existing dark screenshot valid.
+3. Release blockers from §5.6 are unchanged: production reviewers, same-origin Node API with encrypted managed DB / real `CC_ADMIN_TOKEN` / approved mail provider, legal sign-off on the registration numbers, licensed photography, verified GBP/addresses/local references, permissioned client screenshots/outcomes, and post-deploy CI live verification.
+
+## E. 2026-11-09 · Installable app shell (PWA)
+
+The site is now installable on mobile: `manifest.webmanifest` (`display: standalone`), a deferred service worker, a self-contained bilingual `offline.html`, five locally rendered home-screen icons, iOS/Chrome meta chrome in `partials/head.html`, and a footer install button that appears only on a real `beforeinstallprompt`. Full policy, install steps, limits and verification: **`docs/PWA.md`**.
+
+Performance is protected deliberately: registration happens **after `load`**, the precache is ~12 small files added with `Promise.allSettled`, HTML is network-first (so no stale content is ever served while online), and static assets are stale-while-revalidate. This makes repeat visits instant and visited pages available offline without adding a byte to the first-load critical path. `tests/pwa.spec.mjs` opts into `serviceWorkers: 'allow'` while the rest of the suite blocks workers for determinism, and `scripts/check-claims.mjs` now fails the publish gate if any EN/AR page loses the manifest or apple-icon link, or if a PWA asset/manifest field is missing.
+
+No font binary was modified for this lap (see §D.1). No push notifications, background sync, native wrapper or app-store asset was added. The final gate after §E was **680 passed (17.6m)**, including 4 PWA tests with `verify:api` 23/23 and `audit:content` 0 blockers.

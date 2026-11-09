@@ -16,6 +16,13 @@
     <link rel="alternate" hreflang="x-default" href="https://codeandcanvas.net/blog/design-systems-operating-system-modern-digital-products/" />
     <!-- cc:head -->
     <meta name="theme-color" content="#05051a" />
+    <!-- Installable app: manifest, standalone display and home-screen icon. -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="كود آند كانفاس" />
+    <link rel="apple-touch-icon" href="/assets/brand/app/apple-touch-icon.png" />
     <meta property="og:site_name" content="Code &amp; Canvas" />
     <meta property="og:image" content="https://codeandcanvas.net/assets/brand/og-default.png" />
     <meta property="og:image:width" content="1200" />
@@ -25,16 +32,21 @@
     <meta name="twitter:image" content="https://codeandcanvas.net/assets/brand/og-default.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script>
-    /* Arabic document: language and direction are fixed in the markup, not chosen at runtime. */
+    /* Arabic document: language and direction are fixed in the markup, not chosen at runtime.
+       Colour scheme is still restored before first paint, same rule as the English head. */
     (function () {
       try {
-        var d = document.documentElement;
+        var d = document.documentElement, t = null;
+        try { t = localStorage.getItem('cc-theme'); } catch (e) {}
+        var theme = t === 'light' ? 'light' : 'dark';
         d.lang = 'ar'; d.dir = 'rtl';
+        d.setAttribute('data-theme', theme);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f4ff' : '#05051a');
         try { if (sessionStorage.getItem('cc-pre')) d.classList.add('no-pre'); } catch (e) {}
       } catch (e) {}
     })();
     </script>
-    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/css/fonts.css" />
     <link rel="stylesheet" href="/assets/css/ds.css" />
     <link rel="stylesheet" href="/assets/css/pages.css" />
@@ -64,7 +76,9 @@
 
     <header class="nav" id="nav">
       <div class="nav__pill container">
-        <a class="nav__brand" href="/ar/" aria-label="Code & Canvas — الرئيسية">
+        <!-- In RTL the brand is the first flex item (far right) and the burger is
+             the last (far left); the action group is a flexible spacer between them. -->
+        <a class="nav__brand nav__ring" href="/ar/" aria-label="Code & Canvas — الرئيسية">
           <img class="nav__logo" src="/assets/brand/icon-white.svg" alt="" width="40" height="40" />
         </a>
         <nav class="nav__links" id="navLinks" aria-label="التنقل الرئيسي">
@@ -78,10 +92,14 @@
           <a class="only-mobile" href="/ar/book/" data-key="book">احجز مكالمة</a>
         </nav>
         <div class="nav__actions">
-          <a class="nav__round lang-btn" id="langBtn" href="/blog/design-systems-operating-system-modern-digital-products/" hreflang="en" title="Switch to English" aria-label="Switch to English">EN</a>
-          <a class="nav__round" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
+          <a class="nav__round nav__ring lang-btn" id="langBtn" href="/blog/design-systems-operating-system-modern-digital-products/" hreflang="en" title="Switch to English" aria-label="Switch to English">EN</a>
+          <button class="nav__round nav__ring nav__theme" id="themeBtn" type="button" aria-label="التبديل إلى الوضع الفاتح" aria-pressed="false">
+            <svg class="ico theme-ico theme-ico--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="ico theme-ico theme-ico--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          </button>
+          <a class="nav__round nav__ring nav__wa" href="https://wa.me/966545520750" target="_blank" rel="noopener" aria-label="واتساب" title="WhatsApp"><i data-icon="chat"></i></a>
           <a class="btn btn--primary nav__cta magnetic" href="/ar/book/" data-key="book" data-track="cta_click" data-track-id="nav-book"><span>احجز مكالمة</span><i class="flip" data-icon="arrowUpRight"></i></a>
-          <button class="nav__round burger" id="burger" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+          <button class="nav__round nav__ring burger" id="burger" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
         </div>
       </div>
     </header>
@@ -275,6 +293,8 @@
           <span>© <span data-current-year>2026</span> Code &amp; Canvas · codeandcanvas.net · <span>جميع الحقوق محفوظة</span> · <span>السعودية + مصر</span></span>
           <div><a href="/ar/privacy-policy/">سياسة الخصوصية</a><a href="/ar/terms-of-use/">شروط الاستخدام</a><a href="/ar/cookie-policy/">سياسة ملفات الارتباط</a><a href="/ar/claims/">الادعاءات والأدلة</a></div>
           <div class="footer__reg" aria-label="التسجيل القانوني"><span>السجل التجاري رقم ٣١١٨٩١</span><span>رقم التسجيل الضريبي ٧٧٤٢٣٥٠٥٥</span></div>
+          <!-- Only revealed when the browser actually offers an install prompt. -->
+          <button class="footer__install" id="installApp" type="button" hidden>تثبيت التطبيق</button>
         </div>
       </div>
     </footer>

@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
-""" /system/ — the owner-safe Phase 2 of the REF UI study.
+""" /system/ — the owner-safe Phase 2 of the REF UI study, plus the Phase 3
+no-go boundary section.
 
 Adapted mechanisms: palette/token cards (004/016), mixed-size bento component
 gallery + real-data inventory (023/041), CSS-only slit/accordion gallery (026),
 static orbit of tilted art tiles (044) and founder label plates (045). Reference
 060 (profile cards with borrowed portraits / follower counts) stays rejected.
+
+Phase 3 in the study is deliberately rejected, so it is published here only as
+a bilingual "what we refuse to ship" boundary list, locked by
+scripts/check-phase3.mjs and tests/phase3.spec.mjs — never as dashboard chrome,
+fabricated metrics, a foreign skin or runtime blur/WebGL.
 
 Provenance contract: every image is our own labelled illustrative WebP, every
 number is read from the generator data, and no third-party photo, logo, font,
@@ -85,6 +91,16 @@ def profile_card(person, kind, name_ar):
       </article>'''
 
 
+def guard_card(no, title, title_ar, note, note_ar):
+    return f'''
+      <article class="sys-guard__card" aria-label="{esc(title)}" data-ar-label="{esc(title_ar)}">
+        <span class="sys-guard__no">{no}</span>
+        <span class="sys-guard__badge" data-ar="لا">NO</span>
+        <h3 data-ar="{esc(title_ar)}">{esc(title)}</h3>
+        <p data-ar="{esc(note_ar)}">{esc(note)}</p>
+      </article>'''
+
+
 def build():
     tokens = [
         token_card('navy', 'Deep navy', 'كحلي عميق', '#00001e', '#00001e', 'Copy deep-navy token value', 'نسخ قيمة توكين الكحلي العميق'),
@@ -125,6 +141,27 @@ def build():
     profiles = [
         profile_card(AHMED, 'code', 'أحمد بدير'),
         profile_card(MUSTAFA, 'canvas', 'مصطفى أبو العزم'),
+    ]
+
+    guards = [
+        guard_card('01', 'Fabricated metrics', 'مؤشرات مُختلقة',
+                   'No percentages, growth curves, revenue tooltips or KPI tiles.',
+                   'بلا نسب مئوية، منحنيات نمو، تلميحات إيرادات أو بلاطات KPI.'),
+        guard_card('02', 'AI / crypto / health dashboards', 'لوحات ذكاء اصطناعي / عملات / صحة',
+                   'No dashboard chrome for a product we do not sell.',
+                   'بلا واجهة لوحة بيانات لمنتج لا نبيعه.'),
+        guard_card('03', 'Orange / cyan / serif skins', 'قشور برتقالية / سماوية / سيريف',
+                   'One palette: navy, violet, teal, pink and gold; the amber CTA is the only warm accent.',
+                   'بالِت واحدة: كحلي، بنفسجي، تيل، وردي وذهبي؛ زر الكهرمان هو الدفء الوحيد.'),
+        guard_card('04', 'Runtime blur / WebGL', 'طمس وقتي / WebGL',
+                   'Static gradients only, reduced motion respected, no canvas and no always-on animation.',
+                   'تدرّجات ثابتة فقط، احترام تقليل الحركة، بلا canvas وبلا حركة دائمة.'),
+        guard_card('05', 'Third-party portraits & logos', 'بورتريهات وشعارات أطراف ثالثة',
+                   'Labelled first-party illustrative WebP only; every client screenshot stays out.',
+                   'أعمالنا التوضيحية المعلّمة فقط؛ أي لقطة شاشة عميل تظل خارجًا.'),
+        guard_card('06', 'REF 060 profile card', 'كارت المرجع 060',
+                   'No borrowed portrait, follower count or verified badge. Rejected, not deferred.',
+                   'بلا بورتريه مستعار، عدّاد متابعين أو شارة توثيق. مرفوض، مش مؤجّل.'),
     ]
 
     body = f'''
@@ -240,6 +277,15 @@ def build():
                   'مونوجرامات وأدوار حقيقية بدل وجوه ستوك أو عدّاد متابعين أو شارات توثيق. المرجع 060 يظل مرفوضًا.',
                   aside='<span class="pill" data-ar="بلا صور أشخاص">NO STOCK FACES</span>')}
         <div class="sys-profiles">{''.join(profiles)}</div>
+      </section>
+
+      <section class="section container section--flush-top" id="guardrails" aria-label="Design system guardrails" data-ar-label="حدود نظام التصميم">
+        {sec_head('07', 'GUARDRAILS', 'الحدود',
+                  '<span id="guardrails-title" data-ar="قائمة ممنوعات،">A no-go list,</span> <span class="grad-text" data-ar="مش قائمة تنفيذ.">not a backlog.</span>',
+                  'Phase 3 of the REF study is documented as deliberately rejected. These six rules are published here as design-system boundaries and locked by an automated check.',
+                  'المرحلة الثالثة من دراسة REF موثّقة كمرفوضة عن قصد. القواعد الست منشورة هنا كحدود لنظام التصميم ومُقفلة بفحص آلي.',
+                  aside='<span class="pill" data-ar="مُقفل آليًا">AUTO-LOCKED</span>')}
+        <div class="sys-guard">{''.join(guards)}</div>
       </section>
 
       <section class="section container section--tight" aria-label="Phase 2 provenance" data-ar-label="مصدر المرحلة الثانية">

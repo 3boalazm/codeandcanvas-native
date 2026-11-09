@@ -60,7 +60,7 @@ Chosen for identity fit + low gate risk. All are **B**, all rebuild the idea rat
 
 - **Phase 1 — done in this pass:** the six items above, rebuilt with existing tokens, bilingual copy, no new assets, no dependencies and no claims. Covers the home hero system story, the footer brand mark, the phone case rail, the pill/index motif and the light-theme contrast repairs surfaced by the new components.
 - **Phase 2 — shipped in the identity-safe form (see §7):** only the *mechanisms* of 004/016 (token cards), 023/041 (bento), 026 (native `details`/`summary` slit gallery), 044 (a static grid of tilted art tiles) and 045 (label plates with monograms) were rebuilt at `/system/` using our own tokens, our own labelled illustrative WebP and real generator counts. **The `C` decisions are still pending:** no licensed photography, client screenshot, team portrait, real-data dashboard or owner asset approval was supplied or assumed. REF 060 remains rejected.
-- **Phase 3 — deliberately rejected:** fabricated metrics/charts, AI/crypto/health dashboard chrome, orange/cyan/serif skins, runtime blur/WebGL, third-party portraits and logos. They conflict with identity, evidence rules or mobile performance.
+- **Phase 3 — deliberately rejected:** fabricated metrics/charts, AI/crypto/health dashboard chrome, orange/cyan/serif skins, runtime blur/WebGL, third-party portraits and logos. They conflict with identity, evidence rules or mobile performance. **Entered on 2026-11-09 as a guardrail lap (§8):** the list is now published as a bilingual boundary section on `/system/` and locked by an automated check; no rejected item was implemented.
 
 Deferred/rejected items still have value: they document what *not* to import (fake metrics, third-party portraits, orange/blue palettes, runtime blur, WebGL, AI-product positioning).
 
@@ -209,7 +209,7 @@ Deferred/rejected items still have value: they document what *not* to import (fa
 
 - Changes go through `partials/` + generator helpers, then `npm run generate`; **no hand-edited generated HTML**.
 
-- Proof: `npm run gate` (**706 tests** after Phase 2), `npm run verify:api` (23/23), `npm run audit:content` (0 blockers), EN/AR 320/390/1440 dark/light visual QA, no-reduced-motion pass and mobile jank check.
+- Proof: `npm run gate` (**711 tests** after Phase 3), `npm run verify:api` (23/23), `npm run audit:content` (0 blockers), EN/AR 320/390/1440 dark/light visual QA, no-reduced-motion pass and mobile jank check.
 
 ## 6. Implementation results (this pass)
 
@@ -273,4 +273,37 @@ Supporting changes: `/system/` + `/ar/system/` generated from `scripts/lib/pages
 - `npm run verify:api` → 23/23. `npm run audit:content` → 155 pages / 110 findings / **0 blockers** / `[claims] 0` / `[provenance] 32` / 472 `<img>` / 74 eager / 0 missing alt-dim-loading-AR-alt.
 - Browser QA: 12 EN/AR × dark/light × 320/390/1440 `/system/` combinations → one H1, no overflow, 6/6/6/4/8/2 component counts, zero AR `data-ar*` leftovers, zero external images/CSS/JS, zero infinite animation, zero runtime blur; 10 no-reduced-motion route/theme combinations → 0 problems; 38-page light axe matrix + 4 `/system/` axe variants → 0 violations.
 - Visual review of tokens, bento, inventory, slit gallery, orbit, founder plates, EN dark 1440, EN/AR light/dark 390 — read correctly in LTR and RTL. Screenshots remain in ignored `.qa-ref/p2-*.png`.
-- No PR, merge or deploy was performed; publication remains approval-gated by `docs/PUBLISH-GATE.md`.
+- PR #18 carrying Phase 1 + Phase 2 was opened from the earlier branch, passed Gate `42592459179` and merged as `596124f` (2026-11-09T09:27:38Z); deploy `42593598602` succeeded. Phase 3 below starts on a fresh branch from that merge; publication remains approval-gated by `docs/PUBLISH-GATE.md`.
+
+---
+
+## 8. Phase 3 — no-go guardrails (2026-11-09)
+
+The owner said **"ادخل على pase 3"** on the fresh branch `arena/e9a49e14-codeandcanvas-native`, cut from `main` at `596124f` after PR #18 merged. Phase 3 in §3 is **not an implementation backlog**: it is the list of things the study deliberately rejects. Entering it therefore meant publishing the rejection as a visible boundary and locking it in CI, **not** shipping any rejected item.
+
+### 8.1 What shipped
+
+| # | Change | File(s) |
+| --- | --- | --- |
+| 1 | A seventh `/system/` section `#guardrails` with six bilingual `NO / لا` cards: fabricated metrics, AI/crypto/health dashboards, orange/cyan/serif skins, runtime blur/WebGL, third-party portraits/logos, REF 060 | `scripts/lib/pages_system.py`, `assets/css/system.css` |
+| 2 | `scripts/check-phase3.mjs` — static scan of 163 HTML, 21 CSS/JS and 32 builder files for CDN scripts/stylesheets/images, `<canvas>`, WebGL contexts, GSAP/three.js, off-palette skin tokens, runtime blur/infinite motion on Phase 3 surfaces, untranslated AR `data-ar*`, the six guard cards in both twins, and the decision text in this study | `scripts/check-phase3.mjs` |
+| 3 | `check:phase3` npm script + the guard appended to the `npm run check` chain (so `npm run gate` enforces it) | `package.json` |
+| 4 | `tests/phase3.spec.mjs` — locks the rejection text and asserts in EN/AR × dark/light at 390px: no external scripts/CSS/images, no canvas, no heavy globals, no blur/infinite animation, no serif/cyan/orange computed skin, no fabricated metric, no AR `data-ar*` leftovers, six guard cards | `tests/phase3.spec.mjs` |
+| 5 | Docs refreshed: §8 here, framework §1/§2/§3, content audit §H, asset register, publish gate | `docs/*` |
+
+No new image, WebP, OG card, font, icon, CDN, library, client screenshot, licensed photo, dashboard dataset, percentage, chart, tooltip, follower count or verification badge was added. The six cards are text-only boundaries; `optimize-media --check` still reports **29 sources / 58 WebP / 50 OG cards**.
+
+### 8.2 What remains rejected (unchanged)
+
+- Fabricated metrics/charts, AI/crypto/health dashboard chrome, orange/cyan/serif skins, runtime blur/WebGL, third-party portraits and logos.
+- REF 060 and every `C` owner/legal/asset decision from §7.2: licensed photography, client screenshots, real team portraits and any real-data dashboard are still pending. Phase 3 did not approve or assume them.
+- No PR, merge or deploy was performed on this Phase 3 branch; publication remains approval-gated by `docs/PUBLISH-GATE.md`.
+
+### 8.3 Verification (Phase 3)
+
+- `npm run generate` + `npm run check` → **159 HTML / 0 problems / parity 161 / claims ok on 155 pages / media 29-58-50 / `phase3 guard: 0 no-go signatures`**.
+- **`npm run gate`: 711 passed, 0 failed (11.8 m)**, including 5 new Phase 3 tests and `npm run build` (48 redirect rules, 52 `RewriteRule` lines, PWA headers; `dist/system/` and `dist/ar/system/` each carry 6 guard cards).
+- `npm run verify:api` → **23/23**. `npm run audit:content` → **155 pages / 110 findings / 0 blockers / `[claims] 0` / `[provenance] 32`**; 472 `<img>` / 74 eager / 0 missing alt-dim-loading-AR-alt.
+- Targeted `tests/phase2.spec.mjs` + `tests/phase3.spec.mjs` → 11 passed; full gate → 711 passed.
+- Visual review of `#guardrails`: EN dark 1440, EN light 390, AR light 390 — six cards, RTL badge/number order, no overflow, no blur. Screenshots in ignored `.qa-ref/p3-guard-*.png`.
+- PR #18 (Phase 1 + 2) is merged at `596124f`; Gate `42592459179` passed and deploy `42593598602` succeeded before this branch was cut.

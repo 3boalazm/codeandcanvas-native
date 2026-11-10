@@ -199,7 +199,7 @@ def build():
                '<span data-ar="موجز واحد. مالكَان.">One brief. Two owners.</span><br /><span class="grad-text" data-ar="بلا فجوات تسليم.">No handoff gaps.</span>',
                'One shared brief means the brand desk and the architecture board never lose each other’s context. Tell us where your problem sits and we will point you to the founder who leads it.',
                'موجز واحد مشترك يعني أن مكتب العلامة ولوحة العمارة لا يفقدان سياق بعضهما. أخبرنا أين تقع مشكلتك وسنوجّهك إلى المؤسس الذي يقودها.',
-               [btn('Contact', 'تواصل معنا', '/contact/'), btn('Services', 'الخدمات', '/services/', 'glass', 'arrow')])}
+               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/', 'primary', 'calendar'), btn('Contact', 'تواصل معنا', '/contact/', 'glass', 'mail')])}
 '''
     return [page('/team/', title='Team — Code & Canvas', title_ar='الفريق — Code & Canvas',
                  desc='Two founders deliver the work and there is no account layer between them. Ahmed M. Bedeer leads technology and healthcare engagements; Mustafa Aboalazm leads creative and brand systems — with a published list of the services that require both.',

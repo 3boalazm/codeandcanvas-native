@@ -173,14 +173,16 @@ test('a slot taken between load and submit asks for another slot', async ({ page
 });
 
 test('every booking CTA across the site points at /book/, never an external scheduler', async ({ page }) => {
-  const routes = ['/', '/services/', '/technology-services/', '/creative-services/', '/healthcare/', '/pricing-faq/', '/contact/', '/team/', '/about/', '/work/', '/ar/', '/ar/healthcare/'];
+  /* Footer and nav CTAs count: the rule is "no route books anywhere else", not
+     "every page has a CTA in its first screen". */
+  const routes = ['/', '/services/', '/technology-services/', '/creative-services/', '/healthcare/', '/pricing-faq/', '/contact/', '/team/', '/about/', '/work/', '/ar/', '/ar/healthcare/', '/ar/team/'];
   for (const route of routes) {
     await visit(page, route, route.startsWith('/ar/') ? 'ar' : 'en');
-    const hrefs = await page.locator('main a[href]').evaluateAll((els) => els.map((e) => e.getAttribute('href')));
+    const hrefs = await page.locator('a[href]').evaluateAll((els) => els.map((e) => e.getAttribute('href')));
     const booking = hrefs.filter((h) => /#book|\/book\//.test(h));
-    expect(booking.length, `${route} has no booking CTA`).toBeGreaterThan(0);
+    expect(booking.length, `${route} never offers the first-party scheduler`).toBeGreaterThan(0);
     for (const href of booking) {
-      expect(href, `${route} books somewhere else`).not.toMatch(/calendly|cal\.com|savvycal|hubspot|wa\.me|whatsapp/i);
+      expect(href, `${route} books somewhere else: ${href}`).not.toMatch(/calendly|cal\.com|savvycal|hubspot|wa\.me|whatsapp/i);
     }
   }
 });
@@ -200,9 +202,13 @@ test('server: a confirmed booking is a stored booking, a CRM record and a calend
     return { status: res.status, json: await res.json().catch(() => null) };
   };
   try {
+    /* Dates come from the server's own business-day window; ask for slots on the
+       first date it publishes rather than assuming the two calls line up. */
     const schedule = await (await fetch(`${base}/api/booking/slots?timezone=AST`)).json();
     const date = schedule.dates[0];
-    const slot = schedule.slots.find((s) => s.available);
+    const day = await (await fetch(`${base}/api/booking/slots?timezone=AST&date=${date}`)).json();
+    const slot = day.slots.find((s) => s.available);
+    expect(slot, 'the published schedule has no free slot').toBeTruthy();
 
     const booked = await post('/api/booking', {
       name: 'QA Person', email: 'qa@example.invalid', specialty: 'brand',

@@ -50,15 +50,37 @@ for (const [route, name] of ROUTES) {
       const vw = window.innerWidth;
       const offenders = [];
       const seen = new Set();
+      /* A horizontal snap rail (body.is-home .m-rail) is a deliberate scroller:
+         the cards after the first sit outside the viewport on purpose. Text
+         inside a scroll container is measured against that container, not the
+         window, so a card is only "clipped" when it overflows the scroller
+         itself. Everything else is measured against the viewport. */
+      const railOf = (el) => el.closest('.m-rail');
+      const railBox = new Map();
+      const boxFor = (rail) => {
+        if (!railBox.has(rail)) railBox.set(rail, rail.getBoundingClientRect());
+        return railBox.get(rail);
+      };
       for (const el of document.querySelectorAll('main *')) {
         const r = el.getBoundingClientRect();
+        const rail = railOf(el);
         if (!r.width || !r.height) continue;
         const style = getComputedStyle(el);
         if (style.visibility === 'hidden' || style.display === 'none' || style.position === 'fixed') continue;
         // Allow decorative bleed, but nothing that carries text.
         const hasText = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim().length > 1);
         if (!hasText) continue;
-        if (r.right > vw + 1 || r.left < -1) {
+        let overflows;
+        if (rail) {
+          // The scroller legitimately extends the full width; its content must
+          // not, unless it is meant to scroll (snap rails are).
+          const scroller = getComputedStyle(rail);
+          const scrolls = /auto|scroll/.test(scroller.overflowX);
+          overflows = !scrolls && (r.right > vw + 1 || r.left < -1);
+        } else {
+          overflows = r.right > vw + 1 || r.left < -1;
+        }
+        if (overflows) {
           const key = `${el.tagName}.${el.className}`;
           if (seen.has(key)) continue;
           seen.add(key);

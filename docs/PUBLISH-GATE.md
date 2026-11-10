@@ -14,7 +14,9 @@ Pull Request
    │                                 ├─ optimize-media --check (WebP + 50 OG cards present)
    │                                 ├─ check-phase3 (Phase 3 no-go guard: CDN/canvas/WebGL/blur/skins/AR leftovers)
    │                                 ├─ check-phase4 (Phase 4 residual-B section counts + no CDN/canvas in new markup)
-   │                                 └─ check-art (first-party plates: both WebP variants, labelled placement, no hotlinked images)
+   │                                 ├─ check-art (first-party plates: both WebP variants, labelled placement, no hotlinked images)
+   │                                 ├─ version-assets --check (every CSS/JS ref carries a current ?v=<hash>)
+   │                                 └─ check-asset-versioning (no stale/unversioned refs; /system/ band ↔ stylesheet agree)
    ├─ 4. npm test                    (Playwright: matrix, Arabic, flows, a11y, layout)
    ├─ 5. npm run verify:api          (first-party lead/booking/CRM smoke test)
    ├─ 6. npm run build               (dist/)
@@ -62,3 +64,18 @@ npm run verify:live   # after an approved production release
 ## Sandbox note
 
 `cdn.playwright.dev` is unreachable in some sandboxes, so browser QA here used an npm-hosted Chromium via `PW_EXECUTABLE_PATH` / `PW_LD_LIBRARY_PATH` (`playwright.config.mjs` supports both). CI uses `npx playwright install --with-deps chromium` as normal. `scripts/optimize-media.mjs --check` deliberately lazy-loads `sharp` / `@resvg/resvg-js` so the static check gate also works on a minimal runner.
+
+### 3 · Playwright + accessibility matrix
+
+Failures inside this step are republished as GitHub **error annotations** by
+`tests/github-annotations.mjs` (wired in `playwright.config.mjs`, only active
+under `GITHUB_ACTIONS`). Each annotation names the spec file, line and test
+title, and an `::notice` line summarises the failing count. This exists because
+job logs are not always retrievable from outside CI; annotations are, through
+`GET /repos/:owner/:repo/check-runs/:id/annotations`.
+
+```sh
+gh api repos/3boalazm/codeandcanvas-native/commits/<sha>/check-runs \
+  --jq '.check_runs[] | select(.conclusion=="failure") | .id' \
+| while read id; do gh api repos/3boalazm/codeandcanvas-native/check-runs/$id/annotations; done
+```

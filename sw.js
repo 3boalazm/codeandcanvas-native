@@ -21,7 +21,7 @@
    ========================================================================== */
 'use strict';
 
-const VERSION = 'cc-app-2026-11-09-1';
+const VERSION = 'cc-app-2026-11-10-1';
 const SHELL = `${VERSION}-shell`;
 const PAGES = `${VERSION}-pages`;
 const ASSETS = `${VERSION}-assets`;

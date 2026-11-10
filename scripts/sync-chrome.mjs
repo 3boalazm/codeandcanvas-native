@@ -61,7 +61,12 @@ for (const file of walk(ROOT)) {
   // social preview instead of the old site-wide default.
   const og = (src.match(/<html[^>]*\sdata-og="([^"]+)"/) || [])[1] || '/assets/brand/og-default.png';
   out = out.split('{{OG_IMAGE}}').join(og);
+  /* version-assets.mjs appends `?v=<content-hash>` to every CSS/JS reference
+     AFTER this script runs, so the comparison must ignore that query string —
+     otherwise a fully synced page reads as out of date forever. */
+  const unversioned = (html) => html.replace(/(\.(?:css|js))\?v=[0-9a-f]+/g, '$1');
   touched++;
+  if (CHECK && unversioned(out) === unversioned(src)) continue;
   if (out !== src) {
     changed++;
     if (CHECK) console.log(`out of date: ${relative(ROOT, file)}`);

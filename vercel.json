@@ -143,11 +143,6 @@
       "permanent": true
     },
     {
-      "source": "/evidence",
-      "destination": "/claims/",
-      "permanent": true
-    },
-    {
       "source": "/claim-register",
       "destination": "/claims/",
       "permanent": true

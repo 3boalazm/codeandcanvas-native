@@ -18,8 +18,11 @@ AHMED = {
     'body_ar': 'يربط أحمد هدف العمل بالأنظمة والبيانات والحوكمة القادرة على تحقيقه فعليًا، مستندًا إلى TOGAF ADM و ArchiMate فوق نموذج دوافع الأعمال. وفي الرعاية الصحية يعمل من داخل المنظومة — مسارات العمل السريرية واختيار HIS وجاهزية EMRAM والعمارة الواعية بـ CBAHI — فتكون التوصية التقنية مقبولة سريريًا وقابلة للدفاع أمام مجلس الإدارة.',
     'quote': '“If it can’t be traced to a business goal, it doesn’t belong in the architecture.”',
     'quote_ar': '«إن لم يكن قابلًا للتتبع إلى هدف عمل، فلا مكان له في العمارة.»',
-    'creds': [('TOGAF ADM', None), ('ArchiMate 3.1', None), ('NORA', None), ('CPHIMS', None),
-              ('HIMSS EMRAM', None), ('FHIR · HL7', None), ('Data Management', 'إدارة البيانات'),
+    # Practice frameworks and tools — not personal certifications. No credential
+    # chip is published until the owner supplies a dated certificate.
+    'creds': [('TOGAF ADM', None), ('ArchiMate 3.1', None), ('NORA', None),
+              ('HIMSS EMRAM', None), ('CBAHI readiness', 'جاهزية CBAHI'), ('FHIR · HL7', None),
+              ('Data Management', 'إدارة البيانات'),
               ('Cloud Architecture', 'العمارة السحابية'), ('Java · Spring Boot', None)],
     'links': [('LinkedIn', 'linkedin', 'https://linkedin.com/in/ahmed-bedeer'),
               ('Portfolio', 'link', 'https://ahmed-bedeer.vercel.app/'),
@@ -124,8 +127,8 @@ def build():
 {studio_figure('studio-atmosphere', 'THE STUDIO, IN ONE FRAME', 'الاستوديو في إطار واحد',
         'Abstract illustrative artwork representing the studio disciplines — not a photograph of people or offices',
         'عمل فني تجريدي توضيحي يمثّل تخصصات الاستوديو — ليس صورة أشخاص أو مقر',
-        'Real, licensed founder and team photography is an owner gate. Until it is supplied, this page uses clearly labelled illustrative artwork instead of invented portraits.',
-        'صور حقيقية مرخّصة للمؤسسين والفريق بوابة بانتظار المالك. إلى أن تُوفَّر، تستخدم هذه الصفحة أعمالًا توضيحية مُعلَّنة بدل صور مُختلقة.')}
+        'Labelled illustrative artwork made for this page from our own geometry — not photography, and not a portrait of anyone.',
+        'عمل فني توضيحي صُنع لهذه الصفحة من هندستنا الخاصة — ليس تصويرًا ولا صورة لأي شخص.')}
 
       <!-- ░░ Two disciplines, one table (labelled illustrative plate) ░░ -->
       <section class="section container section--tight" aria-label="Two disciplines visual" data-ar-label="تخصصان في طاولة واحدة">
@@ -133,7 +136,7 @@ def build():
           {media_img('art-duo-practices', 'Abstract illustrative plate of two practices sharing one brief — not a photograph of people', 'لوحة توضيحية تجريدية لتخصصين يتشاركان موجزًا واحدًا — ليست صورة أشخاص', sizes='(max-width: 720px) 92vw, 1200px')}
           <figcaption><span data-ar="مهندس وفنان · موجز واحد">ARCHITECT &amp; ARTIST · ONE BRIEF</span><span class="live-figure__disclaimer" data-ar="عمل توضيحي للاستوديو، وليس صورة أشخاص أو عمل عميل">ILLUSTRATIVE STUDIO ARTWORK · NOT A PEOPLE OR CLIENT PHOTO</span></figcaption>
         </figure>
-        <p class="live-media-note" data-ar="الصور الشخصية الحقيقية بوابة بانتظار المالك؛ هذه لوحة توضيحية من هندستنا، وليست صورة أشخاص.">Real portraits remain an owner gate; this is an illustrative plate from our own geometry, not a photograph of people.</p>
+        <p class="live-media-note" data-ar="لوحة توضيحية من هندستنا الخاصة — ليست صورة أشخاص.">An illustrative plate from our own geometry — not a photograph of people.</p>
       </section>
 
       <!-- ░░ Founders ░░ -->

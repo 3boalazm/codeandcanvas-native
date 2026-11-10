@@ -117,8 +117,8 @@ def build():
 {studio_figure('studio-atmosphere', 'THE STUDIO, IN ONE FRAME', 'الاستوديو في إطار واحد',
         'Abstract illustrative artwork representing the studio disciplines — not a photograph of people or offices',
         'عمل فني تجريدي توضيحي يمثّل تخصصات الاستوديو — ليس صورة أشخاص أو مقر',
-        'Real, licensed founder and team photography is an owner gate. Until it is supplied, this page uses clearly labelled illustrative artwork instead of invented portraits.',
-        'صور حقيقية مرخّصة للمؤسسين والفريق بوابة بانتظار المالك. إلى أن تُوفَّر، تستخدم هذه الصفحة أعمالًا توضيحية مُعلَّنة بدل صور مُختلقة.')}
+        'Labelled illustrative artwork made for this page from our own geometry — not photography, and not a portrait of anyone.',
+        'عمل فني توضيحي صُنع لهذه الصفحة من هندستنا الخاصة — ليس تصويرًا ولا صورة لأي شخص.')}
 
       <section class="section container section--flush-top" id="chapters" aria-labelledby="chapters-title">
         {sec_head('01', 'THE CHAPTERS', 'الفصول',

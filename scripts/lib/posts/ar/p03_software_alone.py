@@ -41,7 +41,7 @@ AR = dict(
 </div>
 <aside class="cta-box">
   <div><p class="meta">Code &amp; Canvas · استراتيجية المنتج والتحوّل الرقمي</p><h3>تبني برمجيات بلا استراتيجية مُتحقَّق منها؟ لنصلح ذلك أولًا.</h3><p>فريقا استراتيجية المنتج وتطوير النسخ الأولى لدينا يطبّقان إطار التفكير المنتجي لضمان أن استثمارك التقني يقود نتائج أعمال قابلة للقياس — لا كودًا يعمل بلا مستخدمين.</p></div>
-  <div class="cta-box__actions"><a class="btn btn--primary" href="/contact/#book"><span>احجز مكالمة استكشافية</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/services/"><span>تعرّف على خدماتنا</span></a></div>
+  <div class="cta-box__actions"><a class="btn btn--primary" href="/ar/book/"><span>احجز مكالمة استكشافية</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/services/"><span>تعرّف على خدماتنا</span></a></div>
 </aside>
 <section class="takeaways" id="takeaways"><h2>خلاصات لقادة الابتكار</h2><p class="meta">ما يمكن تطبيقه بدءًا من يوم الاثنين</p><ul class="tk-list"><li><strong>اخرج من المبنى:</strong> لا حقائق داخل مكتبك. تفاعل مع المستخدمين في بيئتهم لترى كيف يحلّون المشكلة اليوم.</li><li><strong>رتّب الأولويات بلا مجاملة:</strong> استخدم أطر RICE أو MoSCoW لتحديد الـ20% من المزايا التي تعطيك 80% من القيمة، واحذف ما تبقّى.</li><li><strong>ابنِ مسكّنًا لا فيتامينًا:</strong> الناس يدفعون لإزالة ألم عاجل. أما «التحسينات اللطيفة» فهي أول ما يُحذف في مراجعة الميزانية.</li><li><strong>اعتبر الإطلاق خط بداية:</strong> التكرار بعد الإطلاق بناءً على بيانات السلوك الحيّة هو المكان الذي يبدأ فيه تطوير المنتج الحقيقي.</li><li><strong>تغيير المسار استراتيجية:</strong> تغيير المسار إعادة توجيه مدعومة بالدليل. Slack وInstagram لم يجدا الملاءمة إلا بعد تغييرات جوهرية. والاستمرار بلا دليل ليس إصرارًا — بل هدر.</li></ul></section>
 <h2 id="faq">الأسئلة الشائعة</h2><p class="meta">أسئلة متكررة عن التحقّق من المنتج وملاءمة السوق والتحوّل الرقمي.</p><div class="faq faq--prose">
@@ -59,6 +59,6 @@ AR = dict(
             <div class="panel tier" style="margin-top:14px">
               <p class="kicker"><span>ناقش هذا المقال</span></p>
               <p>احجز مكالمة استكشافية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.</p>
-              <div class="book-card__actions"><a class="btn btn--primary magnetic" href="/contact/#book"><span>احجز مكالمة مجانية</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+              <div class="book-card__actions"><a class="btn btn--primary magnetic" href="/ar/book/"><span>احجز مكالمة مجانية</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
             </div>''',
 )

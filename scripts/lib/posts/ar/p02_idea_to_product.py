@@ -57,7 +57,7 @@ AR = dict(
 </div>
 <aside class="cta-box">
   <div><p class="meta">Code &amp; Canvas · استشارات استراتيجية المنتج</p><h3>جاهز لتمرير فكرتك عبر هذا الإطار — بإرشاد خبراء؟</h3><p>سواء كنت مؤسسًا في الخطوة الأولى، أو منشأة عالقة بين الخطوتين الثالثة والرابعة، فإن فريقي استراتيجية المنتج وتطوير النسخ الأولى يقدّمان العملية المنظّمة والتنفيذ التقني للمضي بثقة — لا بالتخمين.</p></div>
-  <div class="cta-box__actions"><a class="btn btn--primary" href="/contact/#book"><span>احجز مكالمة استكشافية</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/services/"><span>تعرّف على خدماتنا</span></a></div>
+  <div class="cta-box__actions"><a class="btn btn--primary" href="/ar/book/"><span>احجز مكالمة استكشافية</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/services/"><span>تعرّف على خدماتنا</span></a></div>
 </aside>
 <section class="takeaways" id="takeaways"><h2>الخلاصات الأساسية</h2><p class="meta">الإطار من ست خطوات — بإيجاز</p><ol class="tk-list tk-list--num"><li><strong>حدّد الرؤية أولًا:</strong> الغاية والفئة المستهدفة وعوامل التمايز وأهداف العمل — موثّقة قبل أي دورة عمل.</li><li><strong>تحقّق قبل أن تبني:</strong> RAT والاختبارات الدخانية ومقابلات المشكلة قبل كتابة سطر كود إنتاجي واحد.</li><li><strong>احترم طبقات الملاءمة:</strong> ملاءمة المشكلة للسوق ← ملاءمة الحل للسوق ← ملاءمة المنتج للسوق. لا تتخطَّ البوابات.</li><li><strong>رتّب الأولويات بلا مجاملة:</strong> النسخة الأولى التي تعلّمك أكثر ليست الأكثر مزايا، بل الأقل مزايا التي تظل تختبر الافتراض الجوهري.</li><li><strong>قِس البقاء لا التنزيلات:</strong> استواء منحنيات الأفواج أنفع من أي مقياس تسجيل، لأنه يؤكّد تكوّن العادة.</li><li><strong>لا تتوسّع إلا بعد التأكيد:</strong> ملاءمة قوية في الجاذبية والبقاء واقتصاديات الوحدة هي الضوء الأخضر الوحيد لتوسيع الاستثمار.</li></ol></section>
 <h2 id="faq">الأسئلة الشائعة</h2><p class="meta">أسئلة متكررة عن استراتيجية المنتج والتحقّق والتوسّع.</p><div class="faq faq--prose">
@@ -75,6 +75,6 @@ AR = dict(
             <div class="panel tier" style="margin-top:14px">
               <p class="kicker"><span>ناقش هذا المقال</span></p>
               <p>احجز مكالمة استكشافية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.</p>
-              <div class="book-card__actions"><a class="btn btn--primary magnetic" href="/contact/#book"><span>احجز مكالمة مجانية</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+              <div class="book-card__actions"><a class="btn btn--primary magnetic" href="/ar/book/"><span>احجز مكالمة مجانية</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
             </div>''',
 )

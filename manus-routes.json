@@ -19,6 +19,10 @@
    "lang": "ar"
   },
   {
+   "path": "/evidence/",
+   "title": "Evidence — how we decide — Code & Canvas"
+  },
+  {
    "path": "/work/",
    "title": "Creative Work — Brand, Packaging, Product & Web · Code & Canvas"
   },
@@ -318,6 +322,11 @@
    "path": "/404.html",
    "title": "404 — Lost · Code & Canvas",
    "notFound": true
+  },
+  {
+   "path": "/ar/evidence/",
+   "title": "الإثبات — كيف نقرر — Code & Canvas",
+   "lang": "ar"
   },
   {
    "path": "/ar/work/",
@@ -884,11 +893,6 @@
   {
    "from": "/egypt-services/",
    "to": "/egypt/",
-   "status": 301
-  },
-  {
-   "from": "/evidence/",
-   "to": "/claims/",
    "status": 301
   },
   {

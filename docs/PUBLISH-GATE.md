@@ -79,3 +79,22 @@ gh api repos/3boalazm/codeandcanvas-native/commits/<sha>/check-runs \
   --jq '.check_runs[] | select(.conclusion=="failure") | .id' \
 | while read id; do gh api repos/3boalazm/codeandcanvas-native/check-runs/$id/annotations; done
 ```
+
+## 2026-11 buyer-audit locks (added after the client-side review)
+
+The following are now enforced by `scripts/check-claims.mjs` and
+`scripts/check-asset-versioning.mjs`, and exercised by `tests/evidence.spec.mjs`:
+
+| Rule | Why it exists |
+| --- | --- |
+| No `owner gate` / `بانتظار المالك` wording in public HTML | A buyer read internal delivery state as an unfinished studio. |
+| No `Are your credentials active?` FAQ | The site answered "Active." while `/claims/` called the same items unverified. The question is removed until dated certificates exist. |
+| No booking CTA pointing at `/contact/#book` | "Book a call" landed on a WhatsApp draft, not a schedule. Every booking CTA now resolves to `/book/`, which is a real slot picker. |
+| `/evidence/` exists in EN + AR with 4 decision blocks and the tiers section | The trust path must not silently disappear. |
+| `tests/helpers.mjs › configure()` matches on `url.pathname` | A `**/config.js` glob stops matching once the URL carries `?v=<hash>`, which silently disabled the stubbed config and hid the booking mismatch. |
+
+`/evidence/` ("how we decide") is built from `scripts/lib/pages_evidence.py`: four
+situations, each with the decision we would recommend, what we refuse to do, and
+the published service codes that carry it — plus the evidence-status table
+(published vs. stated limit) and four engagement tiers so a low entry price is
+not read as the price of the studio.

@@ -26,7 +26,7 @@ PKG = {
         ('HC-01', '5–7 weeks · brand + technology', '⁦5–7⁩ أسابيع · هوية + تقنية', True),
         ('HC-03', '3–5 weeks · scored vendor selection', '⁦3–5⁩ أسابيع · اختيار موزون للمورّدين', False),
         ('HC-02', '2–3 weeks · CBAHI KPI library', '⁦2–3⁩ أسابيع · مكتبة مؤشرات CBAHI', False),
-        ('HC-05', '2–3 weeks · CPHIMS-delivered', '⁦2–3⁩ أسابيع · بتنفيذ CPHIMS', False),
+        ('HC-05', '2–3 weeks · EMRAM scoring + roadmap', '⁦2–3⁩ أسابيع · تحديد مرحلة EMRAM وخارطة طريق', False),
     ],
 }
 ALSO = {'tech': ['AB-02', 'AB-06'], 'brand': ['MA-01', 'MA-04', 'MA-05', 'MA-06', 'MA-07', 'MA-08', 'MA-09', 'MA-10'], 'data': [], 'health': ['HC-04']}
@@ -49,17 +49,14 @@ FAQ = [
      'A 30-minute structured session. We come prepared, ask about your business problem, and leave you with a clear scope, timeline, and fit assessment — or tell you directly if we\'re not the right match.',
      'جلسة منظمة مدتها 30 دقيقة. نأتي مستعدين ونسأل عن مشكلة عملك ونترك لك نطاقًا واضحًا وجدولًا زمنيًا وتقييمًا للملاءمة — أو نخبرك بصراحة إن لم نكن الخيار المناسب.'),
     ('Do you work on healthcare projects only as a unit?', 'هل تعملون على المشاريع الصحية كوحدة واحدة فقط؟',
-     'No. Healthcare-specific services (HC-01 to HC-05) are led by Ahmed Bedeer (CPHIMS, HIMSS EMRAM, NORA). HC-04 Clinic Brand Identity is brand-only and led by Mustafa. Combined engagements (HC-01, HC-02) involve both founders.',
-     'لا. الخدمات الصحية المتخصصة (HC-01 إلى HC-05) يقودها أحمد بدير (CPHIMS، HIMSS EMRAM، NORA). هوية العيادة HC-04 مشروع هوية فقط ويقوده مصطفى. المشاريع المتكاملة (HC-01، HC-02) يشارك فيها المؤسسان.'),
+     'No. Healthcare-specific services (HC-01 to HC-05) are led by Ahmed Bedeer, who works inside the frameworks these decisions are judged by — TOGAF ADM, HIMSS EMRAM stage criteria, CBAHI readiness and NORA interoperability. HC-04 Clinic Brand Identity is brand-only and led by Mustafa. Combined engagements (HC-01, HC-02) involve both founders.',
+     'لا. الخدمات الصحية المتخصصة (HC-01 إلى HC-05) يقودها أحمد بدير، ويعمل داخل الأطر التي تُحكم بها هذه القرارات — TOGAF ADM ومعايير مراحل HIMSS EMRAM وجاهزية CBAHI والتشغيل البيني NORA. هوية العيادة HC-04 مشروع هوية فقط ويقوده مصطفى. المشاريع المتكاملة (HC-01، HC-02) يشارك فيها المؤسسان.'),
     ('Can I combine services across categories?', 'هل يمكنني الجمع بين خدمات من فئات مختلفة؟',
      'Yes. CC-01 Digital Launch Package and HC-01 / HC-02 already combine brand and technology. Any cross-track engagement is quoted as a single package — never double-billed.',
      'نعم. باقة الإطلاق الرقمي CC-01 و HC-01 / HC-02 تجمع بالفعل بين الهوية والتقنية. أي مشروع عابر للمسارات يُسعَّر كباقة واحدة — دون فوترة مزدوجة أبدًا.'),
     ('What currency do you invoice in?', 'بأي عملة تصدرون الفواتير؟',
      'Pricing is shown in USD. Equivalent SAR or EGP rates are confirmed at contract. Bank transfer or digital payment accepted. One invoice per milestone.',
      'الأسعار معروضة بالدولار الأمريكي. تُؤكَّد المعادلات بالريال السعودي أو الجنيه المصري عند التعاقد. يُقبل التحويل البنكي أو الدفع الرقمي. فاتورة واحدة لكل معلم.'),
-    ('Are your credentials active?', 'هل اعتماداتكم سارية؟',
-     'TOGAF, CPHIMS, HIMSS EMRAM, NORA and CBAHI are the frameworks and readiness criteria we work within. Personal certificate status and dates are owner-verification gates in the <a href="/claims/">claims register</a>; we do not publish a credential we cannot evidence.',
-     'TOGAF و CPHIMS و HIMSS EMRAM و NORA و CBAHI أطر ومعايير جاهزية نعمل في سياقها. حالة الشهادات الشخصية وتواريخها بوابات اعتماد بانتظار المالك في <a href="/claims/">سجل الادعاءات</a>؛ ولا ننشر اعتمادًا لا نستطيع إثباته.'),
     ('I\'m not sure which service I need.', 'لست متأكدًا أي خدمة أحتاج.',
      'That\'s what the discovery call is for. Tell us the business problem and we\'ll point you to the right engagement. If we\'re not the right match, we\'ll say so directly.',
      'لهذا وُجدت المكالمة الاستكشافية. أخبرنا بمشكلة العمل وسنوجّهك إلى المشروع المناسب. وإن لم نكن الخيار المناسب، فسنقولها بصراحة.'),
@@ -113,7 +110,7 @@ def build():
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="الأسعار والأسئلة الشائعة">Pricing &amp; FAQ</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="أسعار شفافة.">Transparent pricing.</span><br /><span class="grad-text" data-ar="بلا مفاجآت.">No surprises.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar="كل خدمة من الخدمات الـ23 لها نطاق سعري منشور ومدة معلنة ومخرجات مكتوبة. الدفعات مرتبطة بمعالم، والنطاق يُثبَّت قبل بدء العمل — فلا مفاجآت في الفاتورة.">Every one of the 23 services has a published price range, a stated duration and written deliverables. Payments follow milestones and scope is locked before work starts — so there are no invoice surprises.</p>
-        <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s">{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}{btn('Jump to service pricing', 'اذهب إلى أسعار الخدمات', '#pricing', 'glass', 'arrowDown')}</div>
+        <div class="hero__ctas hero__ctas--center" data-reveal style="--d:.24s">{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/')}{btn('Jump to service pricing', 'اذهب إلى أسعار الخدمات', '#pricing', 'glass', 'arrowDown')}{btn('How engagement tiers work', 'كيف تعمل مستويات التعاقد', '/evidence/#tiers', 'ghost', 'layers')}</div>
       </section>
 
       <nav class="subnav subnav--sticky container" data-spy aria-label="Pricing sections" data-ar-label="أقسام الأسعار"><a href="#pricing" data-ar="الخدمات والأسعار">Services &amp; pricing</a><a href="#how-we-charge" data-ar="شروط الدفع">Payment terms</a><a href="#faq" data-ar="الأسئلة الشائعة">FAQ</a></nav>
@@ -190,7 +187,7 @@ def build():
                '<span data-ar="نطاق واضح">Clear scope</span><br /><span class="grad-text" data-ar="من المكالمة الأولى.">from the first call.</span>',
                'Book a 30-minute discovery call. We define the engagement, confirm the fit, and give you a price — or tell you directly if we’re not the right match.',
                'احجز مكالمة استكشافية مدتها 30 دقيقة. نحدد المشروع ونؤكد الملاءمة ونعطيك سعرًا — أو نخبرك بصراحة إن لم نكن الخيار المناسب.',
-               [btn('Book a Free Discovery Call', 'احجز مكالمة استكشافية مجانية', '/contact/#book'), btn('View All Services', 'كل الخدمات', '/services/', 'glass', 'arrow')])}
+               [btn('Book a Free Discovery Call', 'احجز مكالمة استكشافية مجانية', '/book/'), btn('View All Services', 'كل الخدمات', '/services/', 'glass', 'arrow')])}
 '''
     return [page('/pricing-faq/', title='Pricing & FAQ — Code & Canvas', title_ar='الأسعار والأسئلة الشائعة — Code & Canvas',
                  desc='Transparent pricing, no surprises. Milestone-based payment, 23 productized services with fixed scope across technology, brand, data, and healthcare — plus answers to the questions we hear most.',

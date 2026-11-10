@@ -49,7 +49,7 @@ POST = dict(
 ''',
     cta=dict(k='Code & Canvas · Digital Launch & Experience Design', h='Ready to build digital experiences that convert — and keep — customers?',
              p='From our MA-05 Web Design & WordPress to MA-06 Custom Web Platform services, we build experience-led digital products that turn first-time visitors into long-term advocates.',
-             primary=('Explore Web Services', '/creative-services/#ma-05'), secondary=('Book a Discovery Call', '/contact/#book')),
+             primary=('Explore Web Services', '/creative-services/#ma-05'), secondary=('Book a Discovery Call', '/book/')),
     takeaways=('Executive Takeaway', 'Experience design is a management discipline, not a creative luxury', [
         '<strong>Every $1 in UX returns $100:</strong> No other business investment category consistently matches the ROI of well-executed experience design.',
         '<strong>Lowers CAC structurally:</strong> Experience design creates "mental shelf space" that ensures your brand is recalled at the buying moment — reducing the cost of every subsequent acquisition.',

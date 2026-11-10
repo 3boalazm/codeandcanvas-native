@@ -53,7 +53,7 @@ AR = dict(
 </div>
 <aside class="cta-box">
   <div><p class="meta">Code &amp; Canvas · هوية العلامة والتموضع الاستراتيجي</p><h3>جاهز لبناء علامة يشعر السوق تجاهها بشكل مختلف فعلًا؟</h3><p>تجمع ممارسة استراتيجية العلامة لدينا بين عمل تموضع استراتيجي عميق وتنفيذ نظام تصميم، لضمان أن تصبح هويتك خندقًا تنافسيًا — لا طبقة زخرفية.</p></div>
-  <div class="cta-box__actions"><a class="btn btn--primary" href="/creative-services/"><span>استكشف خدمات العلامة</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/contact/#book"><span>احجز مكالمة استكشافية</span></a></div>
+  <div class="cta-box__actions"><a class="btn btn--primary" href="/creative-services/"><span>استكشف خدمات العلامة</span><i class="flip" data-icon="arrowUpRight"></i></a><a class="btn btn--glass" href="/ar/book/"><span>احجز مكالمة استكشافية</span></a></div>
 </aside>
 <section class="takeaways" id="takeaways"><h2>خلاصات قابلة للتنفيذ للقيادة</h2><p class="meta">خمسة التزامات تبني رصيدًا علاميًا دائمًا</p><ol class="tk-list tk-list--num"><li><strong>دقّق فجوة الإدراك:</strong> أجرِ مقابلات مع العملاء والموظفين لترى إن كانت «حقيقتك» الداخلية تطابق «قصتك» الخارجية.</li><li><strong>استثمر في البنية لا في التكتيكات فقط:</strong> تعامل مع علامتك ونظام تصميمك كمحفظة مُدارة — توازن بين قوى إرثية ومتطلبات ناشئة.</li><li><strong>القِيادة من الأعلى:</strong> على الرئيس التنفيذي أن يعمل «مسؤول المعنى الأول» — فيضمن أن كل مبادرة تعزّز السرد الجوهري.</li><li><strong>ركّز على المرونة العاطفية:</strong> في الأسواق المتقلّبة، سمعتك هي تحوّطك. استثمر في «العمل البطيء» لبناء الحضور العاطفي قبل أن تحتاج إلى حصاده.</li><li><strong>قِس ما يهم:</strong> تابع مؤشرات صحة العلامة كالاعتبار التسويقي وتحمّل العلاوة السعرية والمواءمة الداخلية — لا الزيارات والظهور فقط.</li></ol></section>
 <h2 id="faq">الأسئلة الشائعة</h2><p class="meta">أسئلة متكررة عن استراتيجية العلامة وأنظمة التصميم والممارسة الإبداعية.</p><div class="faq faq--prose">
@@ -71,6 +71,6 @@ AR = dict(
             <div class="panel tier" style="margin-top:14px">
               <p class="kicker"><span>ناقش هذا المقال</span></p>
               <p>احجز مكالمة استكشافية مدتها 30 دقيقة — نأتي مستعدين، لا بعرض مبيعات.</p>
-              <div class="book-card__actions"><a class="btn btn--primary magnetic" href="/contact/#book"><span>احجز مكالمة مجانية</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
+              <div class="book-card__actions"><a class="btn btn--primary magnetic" href="/ar/book/"><span>احجز مكالمة مجانية</span><i class="flip" data-icon="arrowUpRight"></i></a></div>
             </div>''',
 )

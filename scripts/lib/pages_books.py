@@ -123,7 +123,7 @@ def hub():
                '<span data-ar="لا نطيق الانتظار">Can’t Wait To</span><br /><span class="grad-text" data-ar="لنسمع منك.">Hear From You.</span>',
                'Questions about a book, bulk licences for a team, or a custom training edition? Talk to us.',
                'أسئلة عن كتاب أو تراخيص جماعية لفريقك أو نسخة تدريبية مخصصة؟ كلمنا.',
-               [btn('Book an Appointment', 'احجز موعدًا', '/contact/#book'), btn('Get Started', 'ابدأ الآن', '/contact/', 'glass'), btn('Full Services', 'كل الخدمات', '/services/', 'ghost', 'arrow')])}
+               [btn('Book an Appointment', 'احجز موعدًا', '/book/'), btn('Get Started', 'ابدأ الآن', '/contact/', 'glass'), btn('Full Services', 'كل الخدمات', '/services/', 'ghost', 'arrow')])}
 '''
     return page('/books/', title='Books Library — Arabic Design & Brand References · Code & Canvas', title_ar='المكتبة — مراجع عربية في التصميم والعلامة · Code & Canvas',
                 desc='Code & Canvas digital library: practical Arabic guides in design, marketing, and technology — Marketing Fundamentals, Basics of Visual Identity, Basics of Graphic Design, and the UI/UX Handbook.',
@@ -217,7 +217,7 @@ def book_page(b, idx):
                '<span data-ar="لا نطيق الانتظار">Can’t Wait To</span><br /><span class="grad-text" data-ar="لنسمع منك.">Hear From You.</span>',
                'Questions about this book, bulk licences, or a custom training edition? Talk to us.',
                'أسئلة عن هذا الكتاب أو تراخيص جماعية أو نسخة تدريبية مخصصة؟ كلمنا.',
-               [btn('Book an Appointment', 'احجز موعدًا', '/contact/#book'), btn('Get Started', 'ابدأ الآن', '/contact/', 'glass'), btn('Full Services', 'كل الخدمات', '/services/', 'ghost', 'arrow')])}
+               [btn('Book an Appointment', 'احجز موعدًا', '/book/'), btn('Get Started', 'ابدأ الآن', '/contact/', 'glass'), btn('Full Services', 'كل الخدمات', '/services/', 'ghost', 'arrow')])}
 '''
     book_ld = {'@type': 'Book', 'name': b['title'], 'alternateName': b['title_ar'], 'description': b['lede'], 'inLanguage': 'ar',
                'bookFormat': 'https://schema.org/EBook', 'url': f'https://codeandcanvas.net/books/{b["slug"]}/',

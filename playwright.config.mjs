@@ -1,7 +1,14 @@
 import { defineConfig } from '@playwright/test';
 export default defineConfig({
   testDir: './tests', timeout: 30000, fullyParallel: false, workers: 1, retries: 0,
-  reporter: [['list'], ['json', { outputFile: 'test-results/results.json' }]],
+  reporter: [
+    ['list'],
+    ['json', { outputFile: 'test-results/results.json' }],
+    // Inside GitHub Actions, republish every failure as an error annotation so
+    // a red gate can be diagnosed from the check-runs API alone (job logs are
+    // not always retrievable). No effect locally.
+    ...(process.env.GITHUB_ACTIONS ? [['./tests/github-annotations.mjs']] : []),
+  ],
   use: {
     baseURL: process.env.TEST_BASE_URL || 'http://127.0.0.1:3000',
     reducedMotion: 'reduce', viewport: { width: 1440, height: 900 },

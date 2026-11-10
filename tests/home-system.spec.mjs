@@ -48,7 +48,7 @@ test('the /system/ stylesheet is versioned and actually applied', async ({ page 
 });
 
 for (const [lang, route] of [['en', '/'], ['ar', '/ar/']]) {
-  test(`/system/ band structure and layout — ${lang}`, async ({ page }) => {
+  test(`/system/ band structure and layout — ${lang}`, async ({ page }, info) => {
     await isolate(page);
     for (const width of [1440, 1024, 390, 320]) {
       await page.setViewportSize({ width, height: 900 });
@@ -69,9 +69,12 @@ for (const [lang, route] of [['en', '/'], ['ar', '/ar/']]) {
         const r = el.getBoundingClientRect();
         return { w: Math.round(r.width), h: Math.round(r.height), x: Math.round(r.x), y: Math.round(r.y) };
       }));
+      await info.attach(`system-${lang}-${width}`, { body: JSON.stringify(boxes), contentType: 'application/json' });
       for (const b of boxes) {
         expect(b.w, `${route} @${width}: card width`).toBeGreaterThan(120);
-        expect(b.h, `${route} @${width}: card height`).toBeGreaterThan(90);
+        /* A card carries number + heading + a 3–4 line paragraph + a tag rule,
+           so anything under 120px tall means the stylesheet collapsed it. */
+        expect(b.h, `${route} @${width}: card height`).toBeGreaterThan(120);
       }
       /* No vertical overlap between consecutive cards (stacked on phones,
          side by side on desktop — either way their boxes must not collide). */

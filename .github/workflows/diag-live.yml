@@ -1,0 +1,22 @@
+# Temporary diagnostic: runs the same production check as the deploy workflow and
+# prints the full per-route report, without deploying or touching any site state.
+name: Diagnose LIVE domain
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build dist (needed for the crawl list)
+        run: |
+          sh ./build.sh || true
+      - name: Full report
+        run: node scripts/verify-live.mjs || true
+      - name: JSON report
+        run: node scripts/verify-live.mjs --json || true

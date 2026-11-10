@@ -50,44 +50,31 @@ for (const [route, name] of ROUTES) {
       const vw = window.innerWidth;
       const offenders = [];
       const seen = new Set();
-      /* A horizontal snap rail (body.is-home .m-rail) is a deliberate scroller:
-         the cards after the first sit outside the viewport on purpose. Text
-         inside a scroll container is measured against that container, not the
-         window, so a card is only "clipped" when it overflows the scroller
-         itself. Everything else is measured against the viewport. */
-      /* Two rails exist: the home page's .m-rail and the case-study rail
-         (.cs-index-grid, a snap scroller below 720px). Both are deliberate. */
-      const railOf = (el) => el.closest('.m-rail, .cs-index-grid');
-      const railBox = new Map();
-      const boxFor = (rail) => {
-        if (!railBox.has(rail)) railBox.set(rail, rail.getBoundingClientRect());
-        return railBox.get(rail);
+      /* The honest rule: text that hangs past the viewport is only acceptable
+         when the visitor can scroll to it. Snap rails (.m-rail, .cs-index-grid)
+         and table scrollers (.evidence-scroll, .tbl-wrap, .table-wrap) are
+         deliberate horizontal scrollers; overflow-x: clip/hidden is not a way to
+         reach anything, so it still counts as clipped. */
+      const scrollable = (el) => {
+        for (let p = el.parentElement; p && p !== document.documentElement; p = p.parentElement) {
+          const ox = getComputedStyle(p).overflowX;
+          if (ox === 'auto' || ox === 'scroll' || ox === 'overlay') return true;
+        }
+        return false;
       };
       for (const el of document.querySelectorAll('main *')) {
         const r = el.getBoundingClientRect();
-        const rail = railOf(el);
         if (!r.width || !r.height) continue;
         const style = getComputedStyle(el);
         if (style.visibility === 'hidden' || style.display === 'none' || style.position === 'fixed') continue;
-        // Allow decorative bleed, but nothing that carries text.
         const hasText = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim().length > 1);
         if (!hasText) continue;
-        let overflows;
-        if (rail) {
-          // The scroller legitimately extends the full width; its content must
-          // not, unless it is meant to scroll (snap rails are).
-          const scroller = getComputedStyle(rail);
-          const scrolls = /auto|scroll/.test(scroller.overflowX);
-          overflows = !scrolls && (r.right > vw + 1 || r.left < -1);
-        } else {
-          overflows = r.right > vw + 1 || r.left < -1;
-        }
-        if (overflows) {
-          const key = `${el.tagName}.${el.className}`;
-          if (seen.has(key)) continue;
-          seen.add(key);
-          offenders.push({ el: key, left: Math.round(r.left), right: Math.round(r.right), text: el.textContent.trim().slice(0, 40) });
-        }
+        if (r.right <= vw + 1 && r.left >= -1) continue;
+        if (scrollable(el)) continue;
+        const key = `${el.tagName}.${el.className}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        offenders.push({ el: key, left: Math.round(r.left), right: Math.round(r.right), text: el.textContent.trim().slice(0, 40) });
       }
       return {
         docScroll: document.documentElement.scrollWidth,

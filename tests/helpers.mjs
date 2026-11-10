@@ -18,9 +18,16 @@ export async function visit(page, route = '/', lang = 'en') {
   await expect(page.locator('html')).toHaveAttribute('lang', lang);
 }
 export async function configure(page, config = {}) {
-  await page.route('**/assets/js/config.js', r => r.fulfill({
-    contentType: 'application/javascript', body: `window.CC_CONFIG = Object.freeze(${JSON.stringify(config)});`,
-  }));
+  // Match on the pathname, not a glob: asset URLs carry a content hash
+  // (config.js?v=2b71ba0be9) and a "**"-prefixed glob does not match
+  // across a query string, so the override silently stopped applying
+  // once cache-busting landed.
+  await page.route(
+    (url) => url.pathname === '/assets/js/config.js',
+    r => r.fulfill({
+      contentType: 'application/javascript', body: `window.CC_CONFIG = Object.freeze(${JSON.stringify(config)});`,
+    }),
+  );
 }
 export async function fillContact(page) {
   await page.locator('#c-first').fill('Test'); await page.locator('#c-last').fill('Person');

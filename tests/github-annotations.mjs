@@ -24,7 +24,8 @@ export default class GithubAnnotations {
     const line = test.location?.line || 1;
     const message = (result.error?.message || result.status || 'failed')
       .replace(/\u001b\[[0-9;]*m/g, '')   // strip ANSI colours
-      .split('\n').slice(0, 12).join('\n'); // keep the annotation readable
+      .split('\n').slice(0, 12).join('\n') // keep the annotation readable
+      .replace(/\*\//g, '*\\/');         // never close a JS block comment
     const row = {
       file: file.replace(/^.*\/(tests\/)/, '$1'),
       line,

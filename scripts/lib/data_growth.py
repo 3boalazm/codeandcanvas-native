@@ -345,7 +345,7 @@ EVIDENCE = [
     ('Creative portfolio visuals', 'Qualified', 'Four labelled concept studies with generated illustrative artwork. Explicitly not client work.', '2–3 permission-cleared real cases with brief, outputs, outcome and source', 'Creative founder + client'),
     ('10+ years · 40+ brands · 12+ sectors', 'Removed', 'Removed from published copy. No non-overlapping list, dated CV or studio-vs-founder definition was supplied.', 'Dated project list + definition of what counts as a brand/sector/year', 'Both founders'),
     ('4–7× faster · $50K–$200K HIS risk', 'Removed', 'No baseline, methodology or supporting study exists in the repository.', 'Dated baseline, denominator, method and source document', 'Technical + commercial owner'),
-    ('TOGAF · CPHIMS · EMRAM · NORA · CBAHI', 'Removed', 'No personal certification is published. The public pages describe the frameworks and readiness criteria the work is judged against, and never imply a credential we have not evidenced.', 'Dated certificates naming holder and current status — supplied by the owner', 'Both founders'),
+    ('Framework names presented as personal certifications', 'Removed', 'No personal certification is published. The public pages describe the frameworks and readiness criteria the work is judged against, and never imply a credential we have not evidenced.', 'Dated certificates naming holder and current status — supplied by the owner', 'Both founders'),
     ('Signate Grotesk web embedding', 'Resolved', 'Replaced with Space Grotesk (SIL OFL, license committed at assets/fonts/space-grotesk-OFL.txt).', 'None — license file present', 'Engineering'),
     ('Blog statistics, third-party percentages', 'Editorial', 'Quoted inside editorial articles with their original framing; not presented as studio results.', 'Source links and review before any marketing reuse', 'Editorial owner'),
 ]
@@ -357,7 +357,7 @@ EVIDENCE_AR = [
     ('الأعمال البصرية الإبداعية', 'مقيَّد', 'أربع دراسات مفاهيمية مُعلَنة بأعمال فنية توضيحية، وليست أعمال عملاء صراحةً.', '2–3 حالات حقيقية بموافقة مع الموجز والمخرجات والنتيجة والمصدر', 'المؤسس الإبداعي + العميل'),
     ('10+ سنة · 40+ علامة · 12+ قطاعًا', 'محذوف', 'حُذفت من النسخ المنشورة؛ لا توجد قائمة غير متكررة أو سيرة مؤرّخة أو تعريف للاستوديو مقابل المؤسسين.', 'قائمة مشاريع مؤرّخة وتعريف ما يُحسب علامة/قطاعًا/سنة', 'المؤسسان'),
     ('4–7× أسرع · مخاطر HIS 50K–200K دولار', 'محذوف', 'لا يوجد خط أساس أو منهجية أو دراسة داعمة في المستودع.', 'خط أساس مؤرّخ ومقام ومنهجية ومصدر', 'المالك التقني + التجاري'),
-    ('TOGAF · CPHIMS · EMRAM · NORA · CBAHI', 'محذوف', 'لا يُنشر أي اعتماد شخصي. الصفحات العامة تصف الأطر ومعايير الجاهزية التي يُحكم بها العمل، ولا تُوحي باعتماد غير مُثبت.', 'شهادات مؤرّخة باسم صاحبها وحالتها الحالية — يقدّمها المالك', 'المؤسسان'),
+    ('أسماء أطر تُقدَّم كاعتمادات شخصية', 'محذوف', 'لا يُنشر أي اعتماد شخصي. الصفحات العامة تصف الأطر ومعايير الجاهزية التي يُحكم بها العمل، ولا تُوحي باعتماد غير مُثبت.', 'شهادات مؤرّخة باسم صاحبها وحالتها الحالية — يقدّمها المالك', 'المؤسسان'),
     ('تضمين Signate Grotesk على الويب', 'محسوم', 'استُبدل بـ Space Grotesk بترخيص SIL OFL والترخيص مرفوع داخل المستودع.', 'لا شيء — ملف الترخيص موجود', 'الهندسة'),
     ('إحصاءات المقالات ونسب الأطراف الثالثة', 'تحريري', 'مقتبسة داخل مقالات تحريرية بإطارها الأصلي، ولا تُقدَّم كنتاج للاستوديو.', 'روابط مصادر ومراجعة قبل أي استخدام تسويقي', 'مالك التحرير'),
 ]

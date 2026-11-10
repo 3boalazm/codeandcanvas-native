@@ -142,7 +142,11 @@ def build():
             <h3>Mustafa Aboalazm</h3>
             <p class="person__tag" data-ar="شريك مؤسس · Code &amp; Canvas · العبور، مصر">Co-Founder · Code &amp; Canvas · Al Obour, Egypt</p>
             <p data-ar="يقود مديرنا الإبداعي أنظمة العلامة والهوية البصرية والمواد المطبوعة والرقمية من الاستراتيجية إلى الملف النهائي، وبالعربية والإنجليزية كأساس. لا ننشر سنوات خبرة أو عدد علامات إلا بمستند مؤرّخ في سجل الادعاءات.">Our creative director leads brand systems, visual identity and print/digital production from strategy to final file, working in Arabic and English as standard. Experience and client counts are published only with dated evidence in the claims register.</p>
-            <div class="creds" aria-label="Toolkit" data-ar-label="الأدوات"><span data-ar="استراتيجية العلامة">Brand strategy</span><span data-ar="أنظمة بصرية">Visual systems</span><span>Figma</span><span data-ar="الإخراج الفني">Art direction</span><span data-ar="طباعة وتغليف">Print &amp; packaging</span><span>AR + EN</span></div>
+            <ul class="person__scope" aria-label="Leads these services" data-ar-label="يقود هذه الخدمات">
+              <li><b data-ar="العلامة">Brand</b><span>MA-02 · MA-03 · MA-04</span></li>
+              <li><b data-ar="المنتج والإطلاق">Product &amp; launch</b><span>MA-05 · MA-06 · CC-01</span></li>
+              <li><b data-ar="الإنتاج">Production</b><span>MA-07 · MA-08 · MA-10</span></li>
+            </ul>
             <div class="person__links">
               <a href="https://aboalazm-os.vercel.app/" target="_blank" rel="noopener" title="Mustafa's portfolio">{icon('link')}<span data-ar="الأعمال ↗">Portfolio ↗</span></a>
               <a href="https://behance.net/aboalazm" target="_blank" rel="noopener">{icon('pen')}<span>Behance ↗</span></a>

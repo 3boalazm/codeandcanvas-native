@@ -202,7 +202,7 @@ const COMPOSITES = [
     shapes: `
       ${[0, 1, 2, 3, 4].map((i) => `<rect x="${300 + i * 210}" y="${640 - i * 84}" width="150" height="${84 + i * 84}" rx="18" fill="url(#g1)" opacity="${.16 + i * .1}"/>`).join('')}
       <path d="M300 640 L 1380 260" fill="none" stroke="${TEAL}" stroke-width="3" stroke-dasharray="12 14" opacity=".7"/>
-      ${[['CPHIMS', 300, 700], ['EMRAM', 720, 560], ['CBAHI', 1140, 420], ['NORA', 1300, 260]].map(([t, x, y]) => `<text x="${x}" y="${y}" font-family="Poppins" font-size="20" letter-spacing="3" fill="#ffffff" opacity=".62">${t}</text>`).join('')}
+      ${[['ASSESS', 300, 700], ['SCORE', 720, 560], ['GAP', 1140, 420], ['ROADMAP', 1300, 260]].map(([t, x, y]) => `<text x="${x}" y="${y}" font-family="Poppins" font-size="20" letter-spacing="3" fill="#ffffff" opacity=".62">${t}</text>`).join('')}
       ${label('READINESS CRITERIA · NO INVENTED METRICS')}`,
   },
   {

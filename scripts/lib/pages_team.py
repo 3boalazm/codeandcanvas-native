@@ -14,16 +14,17 @@ AHMED = {
     'kicker_ar': 'الكود',
     'lead': 'Enterprise architecture, healthcare systems and data — the technical half of every engagement.',
     'lead_ar': 'العمارة المؤسسية وأنظمة الرعاية الصحية والبيانات — النصف التقني في كل مشروع.',
-    'body': 'Ahmed maps a business goal to the systems, data and governance that can actually deliver it, using TOGAF ADM and ArchiMate on a Business Motivation Model base. In healthcare he works from inside the ecosystem — clinical workflow, HIS selection, EMRAM readiness and CBAHI-aware architecture — so a technology recommendation is defensible to clinicians and to a board.',
-    'body_ar': 'يربط أحمد هدف العمل بالأنظمة والبيانات والحوكمة القادرة على تحقيقه فعليًا، مستندًا إلى TOGAF ADM و ArchiMate فوق نموذج دوافع الأعمال. وفي الرعاية الصحية يعمل من داخل المنظومة — مسارات العمل السريرية واختيار HIS وجاهزية EMRAM والعمارة الواعية بـ CBAHI — فتكون التوصية التقنية مقبولة سريريًا وقابلة للدفاع أمام مجلس الإدارة.',
+    'body': 'Ahmed maps a business goal to the systems, data and governance that can actually deliver it, modelling in ArchiMate on a Business Motivation Model base and sequencing delivery with TOGAF ADM. In healthcare he works from inside the ecosystem — clinical workflow, HIS selection, EMRAM readiness scoring and CBAHI-aware architecture — so a technology recommendation is defensible to clinicians and to a board.',
+    'body_ar': 'يربط أحمد هدف العمل بالأنظمة والبيانات والحوكمة القادرة على تحقيقه فعليًا، بنمذجة ArchiMate فوق نموذج دوافع الأعمال وترتيب التسليم وفق TOGAF ADM. وفي الرعاية الصحية يعمل من داخل المنظومة — مسارات العمل السريرية واختيار HIS وتقييم جاهزية EMRAM والعمارة الواعية بـ CBAHI — فتكون التوصية التقنية مقبولة سريريًا وقابلة للدفاع أمام مجلس الإدارة.',
     'quote': '“If it can’t be traced to a business goal, it doesn’t belong in the architecture.”',
     'quote_ar': '«إن لم يكن قابلًا للتتبع إلى هدف عمل، فلا مكان له في العمارة.»',
-    # Practice frameworks and tools — not personal certifications. No credential
-    # chip is published until the owner supplies a dated certificate.
-    'creds': [('TOGAF ADM', None), ('ArchiMate 3.1', None), ('NORA', None),
-              ('HIMSS EMRAM', None), ('CBAHI readiness', 'جاهزية CBAHI'), ('FHIR · HL7', None),
-              ('Data Management', 'إدارة البيانات'),
-              ('Cloud Architecture', 'العمارة السحابية'), ('Java · Spring Boot', None)],
+    # No badge shelf: a founder card states responsibilities, specialisation and
+    # the services that founder leads. Frameworks live on the service pages, in
+    # the context of the decision they decide (2026-11 audit).
+    'expertise': [('Enterprise & solution architecture', 'العمارة المؤسسية والحلول'),
+                  ('Healthcare systems & HIS selection', 'أنظمة الرعاية الصحية واختيار HIS'),
+                  ('Data architecture & analytics', 'هندسة البيانات والتحليلات'),
+                  ('Cloud & platform modernisation', 'السحابة وتحديث المنصات')],
     'links': [('LinkedIn', 'linkedin', 'https://linkedin.com/in/ahmed-bedeer'),
               ('Portfolio', 'link', 'https://ahmed-bedeer.vercel.app/'),
               ('GitHub', 'github', 'https://github.com/ahmedbdeer')],
@@ -44,10 +45,10 @@ MUSTAFA = {
     'body_ar': 'يتعامل مصطفى مع عمل العلامة كعمل تجاري: التموضع أولًا، ثم نظام كامل — الشعار والخطوط والشبكة واللون وقواعد تحفظ الاتساق بالعربية والإنجليزية. ويدير منهجية الفصول الأربعة (استكشاف، استراتيجية، مفهوم، صقل) لأن تخطّي الاستراتيجية ينتج ملف شعار، لا علامة يستطيع فريق تشغيلها.',
     'quote': '“A brand is the rule set a team can follow when we’re not in the room.”',
     'quote_ar': '«العلامة هي مجموعة القواعد التي يستطيع الفريق اتباعها عندما لا نكون في الغرفة.»',
-    'creds': [('Brand Strategy', 'استراتيجية العلامة'), ('Visual Systems', 'الأنظمة البصرية'),
-              ('Arabic Typography', 'الطباعة العربية'), ('Design Systems', 'أنظمة التصميم'),
-              ('Figma · Webflow', None), ('Art Direction', 'الإخراج الفني'),
-              ('Print & Packaging', 'المطبوعات والتغليف'), ('Photography', 'التصوير'), ('Video Production', 'إنتاج الفيديو')],
+    'expertise': [('Brand strategy & positioning', 'استراتيجية العلامة والتموضع'),
+                  ('Visual & design systems', 'الأنظمة البصرية وأنظمة التصميم'),
+                  ('Bilingual typography (AR/EN)', 'الطباعة ثنائية اللغة'),
+                  ('Art direction, print & packaging', 'الإخراج الفني والطباعة والتغليف')],
     'links': [('Behance', 'pen', 'https://behance.net/aboalazm'),
               ('Portfolio', 'link', 'https://aboalazm-os.vercel.app/'),
               ('WhatsApp', 'chat', 'https://wa.me/201092500454')],
@@ -56,20 +57,14 @@ MUSTAFA = {
 
 
 
-def tag_soft(en, ar=None):
-    """Credential chip: Arabic variant only when one exists (no empty data-ar)."""
-    if ar:
-        return f'<span class="tag-soft" data-ar="{esc(ar)}">{esc(en)}</span>'
-    return f'<span class="tag-soft">{esc(en)}</span>'
-
-
 def owns(track):
     """Services a person owns, straight from the catalogue (no invented capability list)."""
     return [c for c, s in SERVICES.items() if TRACKS[s['track']]['owner'] == ('Ahmed Bedeer' if track == 'technology' else 'Mustafa Aboalazm')]
 
 
 def person(p, delay=0):
-    creds = ''.join(tag_soft(e, a) for e, a in p['creds'])
+    expertise = ''.join(
+        f'<li data-ar="{esc(a)}">{esc(e)}</li>' for e, a in p['expertise'])
     links = ''.join(
         f'<a class="text-link" href="{u}" target="_blank" rel="noopener">{icon(ic)}<span>{esc(label)}</span></a>'
         for label, ic, u in p['links'])
@@ -92,7 +87,10 @@ def person(p, delay=0):
               <p class="lead" data-ar="{esc(p['lead_ar'])}">{esc(p['lead'])}</p>
               <p data-ar="{esc(p['body_ar'])}">{esc(p['body'])}</p>
               <blockquote class="who__quote" data-ar="{esc(p['quote_ar'])}">{esc(p['quote'])}</blockquote>
-              <div class="who__creds">{creds}</div>
+              <div class="who__block">
+                <p class="who__label" data-ar="مجالات التخصص">Areas of specialisation</p>
+                <ul class="who__list">{expertise}</ul>
+              </div>
               <p class="who__owns-label"><b data-ar="يقود من الكتالوج">Owns in the catalogue</b><span>{len(codes)} <span data-ar="خدمة">services</span></span></p>
               <ul class="idx idx--compact">{owned}</ul>
             </div>

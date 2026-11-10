@@ -895,6 +895,26 @@ html[lang='ar'] .who__name { line-height: 1.45; }
 .who__body .lead { color: var(--ink); font-size: clamp(16px, 1.15vw, 18px); }
 .who__quote { border-inline-start: 2px solid var(--violet); padding-inline-start: 16px; color: var(--ink); font-family: var(--f-title); font-size: clamp(16px, 1.3vw, 19px); line-height: 1.6; }
 .who__creds { display: flex; flex-wrap: wrap; gap: 8px; }
+.who__block { margin-block: 14px 4px; }
+.who__label { margin: 0 0 8px; font-family: var(--f-num); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+html[lang='ar'] .who__label { letter-spacing: 0; text-transform: none; font-size: 12.5px; }
+.who__list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; max-width: 620px; border-block-start: 1px solid var(--line); }
+.who__list li { padding-block: 8px; border-block-end: 1px solid var(--line); color: var(--ink-2); font-size: 14px; line-height: 1.55; }
+.who__list li::before { content: '·'; color: var(--teal); margin-inline-end: 9px; font-weight: 700; }
+.focus-list { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0; padding: 0; list-style: none; }
+.focus-list li { color: var(--ink-3); font-size: 13px; }
+.focus-list li::before { content: '·'; color: var(--teal); margin-inline-end: 7px; font-weight: 700; }
+
+/* Frameworks in context (/technology-services/#frameworks): statements, not badges. */
+.fw-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 18px); }
+.fw { display: grid; align-content: start; gap: 4px; padding: clamp(16px, 2vw, 22px); border: 1px solid var(--line-2); border-radius: var(--r); background: var(--glass); }
+.fw__name { margin: 0; font-family: var(--f-title); font-size: clamp(16px, 1.4vw, 19px); font-weight: 800; color: var(--hi, #fff); }
+html[data-theme='light'] .fw__name { color: var(--ink); }
+.fw__kind { margin: 0; color: var(--teal); font-size: 12px; font-weight: 700; }
+html[data-theme='light'] .fw__kind { color: #0f6b5c; }
+.fw__use { margin: 6px 0 8px; color: var(--ink-2); font-size: 13.5px; line-height: 1.7; }
+.fw__where { margin: 0; padding-block-start: 8px; border-block-start: 1px solid var(--line); font-family: var(--f-num); font-size: 11.5px; letter-spacing: .04em; color: var(--ink-3); }
+@media (max-width: 720px) { .fw-grid { grid-template-columns: 1fr; } }
 .who__owns-label { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding-block-end: 8px; border-block-end: 1px solid var(--line); }
 .who__owns-label b { font-family: var(--f-num); font-size: 11.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
 html[lang='ar'] .who__owns-label b { letter-spacing: 0; text-transform: none; font-size: 13.5px; }

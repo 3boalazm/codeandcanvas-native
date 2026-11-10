@@ -17,7 +17,7 @@ CAPS = [
      'نمذجة القدرات ونماذج التشغيل وحوكمة تقنية المعلومات التي تترجم الاستراتيجية إلى طبقات BDAT.', ['TOGAF', 'ArchiMate', 'Sparx EA']),
     ('HC', 'Healthcare Informatics', 'المعلوماتية الصحية',
      'HIS, EHR/EMR, LIS, RIS/PACS and patient portals, with clinical workflow design and HIMSS Stage 6 readiness.',
-     'أنظمة HIS و EHR/EMR و LIS و RIS/PACS وبوابات المرضى، مع تصميم المسارات السريرية وجاهزية HIMSS المرحلة 6.', ['CPHIMS', 'HIMSS', 'HL7 · FHIR']),
+     'أنظمة HIS و EHR/EMR و LIS و RIS/PACS وبوابات المرضى، مع تصميم المسارات السريرية وجاهزية HIMSS المرحلة 6.', ['HIS selection', 'EMRAM criteria', 'HL7 · FHIR']),
     ('INT', 'Integration & Interoperability', 'التكامل والتشغيل البيني',
      'Integration engines, FHIR APIs, HL7 v2.x and DICOM, with terminology mapping against LOINC and SNOMED CT.',
      'محرّكات التكامل وواجهات FHIR و HL7 v2.x و DICOM، مع ربط المصطلحات وفق LOINC و SNOMED CT.', ['FHIR', 'HL7 v2.x', 'DICOM']),
@@ -32,11 +32,33 @@ CAPS = [
      'التعاون مع مكاتب إدارة المشاريع ومراجعة المورّدين ونطاقات العمل والتوثيق التقني واستشارات الخبراء.', ['Agile', 'SOW Review', 'Governance']),
 ]
 
-CREDS = [
-    ('CPHIMS', 'Certified Professional in Health Informatics', 'محترف معتمد في المعلوماتية الصحية', 'HIMSS · health informatics and information management', 'HIMSS · المعلوماتية الصحية وإدارة المعلومات', 'award'),
-    ('EMRAM', 'EMR Adoption Model assessor', 'مقيّم نموذج تبنّي السجلات الطبية الإلكترونية', 'HIMSS · certified stage assessment', 'HIMSS · تقييم معتمد للمراحل', 'shield'),
-    ('TOGAF', 'Enterprise architecture framework', 'إطار العمارة المؤسسية', 'The Open Group · ADM-anchored delivery', 'The Open Group · تسليم مرتكز على ADM', 'layers'),
-    ('NORA', 'National health exchange architecture · KSA', 'عمارة التبادل الصحي الوطني · السعودية', 'Saudi MOH · active integration architecture', 'وزارة الصحة السعودية · عمارة تكامل فعّالة', 'plug'),
+# Frameworks and standards we *use*. Presented as "where it applies in the work",
+# never as a certificate, a badge, or a personal qualification (2026-11 audit).
+FRAMEWORKS = [
+    ('TOGAF ADM', 'Enterprise architecture method', 'منهج العمارة المؤسسية',
+     'Used to structure an engagement: current state, target state, gaps, roadmap. Its phases are our delivery order, not a badge.',
+     'يُستخدم لهيكلة المشروع: الوضع الحالي والمستهدف والفجوات وخارطة الطريق. مراحله هي ترتيب تسليمنا، لا شارة.',
+     'where it applies: AB-01 · HC-05', 'يُطبَّق في: AB-01 · HC-05'),
+    ('ArchiMate 3.1', 'Architecture notation', 'لغة نمذجة معمارية',
+     'The modelling language behind every architecture view we hand over, so your own team can extend the models after the engagement.',
+     'لغة النمذجة خلف كل عرض معماري نسلّمه، ليتمكن فريقك من توسيع النماذج بعد المشروع.',
+     'where it applies: AB-01 · AB-04', 'يُطبَّق في: AB-01 · AB-04'),
+    ('HIMSS EMRAM', 'Digital-maturity stage criteria', 'معايير مراحل النضج الرقمي',
+     'The stage criteria hospitals are measured against. We score against them and write the gap report — scoring is an assessment, not an accreditation.',
+     'معايير المراحل التي تُقاس بها المستشفيات. نُقيّم مقابلها ونكتب تقرير الفجوات — التقييم تحليل، وليس اعتمادًا.',
+     'where it applies: AB-02 · HC-05', 'يُطبَّق في: AB-02 · HC-05'),
+    ('CBAHI', 'Saudi accreditation readiness', 'جاهزية الاعتماد السعودي',
+     'Used to frame readiness gaps in clinical and operational workflows. We prepare for accreditation; we do not issue it.',
+     'تُستخدم لتأطير فجوات الجاهزية في المسارات السريرية والتشغيلية. نُهيّئ للاعتماد ولا نمنحه.',
+     'where it applies: AB-02 · HC-02 · HC-03', 'يُطبَّق في: AB-02 · HC-02 · HC-03'),
+    ('NORA', 'National health interoperability architecture · KSA', 'عمارة التبادل الصحي الوطني · السعودية',
+     'The interoperability frame KSA healthcare integrations are designed against — it shapes interface and data-exchange decisions.',
+     'إطار التشغيل البيني الذي تُصمَّم عليه تكاملات القطاع الصحي في السعودية — يوجّه قرارات الواجهات وتبادل البيانات.',
+     'where it applies: AB-01 · AB-02 · HC-03', 'يُطبَّق في: AB-01 · AB-02 · HC-03'),
+    ('HL7 · FHIR', 'Clinical data exchange standards', 'معايير تبادل البيانات السريرية',
+     'The interface standards behind every clinical integration we specify — read and write paths, patient identity, terminology.',
+     'معايير الواجهات خلف كل تكامل سريري نُحدده — مسارات القراءة والكتابة وهوية المريض والمصطلحات.',
+     'where it applies: AB-02 · AB-04', 'يُطبَّق في: AB-02 · AB-04'),
 ]
 
 RESULTS = [
@@ -56,13 +78,13 @@ RESULTS = [
 
 
 def build():
-    creds = ''.join(f'''
-          <article class="panel mini" data-reveal style="--d:{i * .05:.2f}s">
-            <span class="card__icon">{icon(ic)}</span>
-            <h3>{name}</h3>
-            <p data-ar="{esc(p_ar)}">{p_en}</p>
-            <span class="mini__foot" data-ar="{esc(f_ar)}">{f_en}</span>
-          </article>''' for i, (name, p_en, p_ar, f_en, f_ar, ic) in enumerate(CREDS))
+    frameworks = ''.join(f'''
+          <article class="fw" data-reveal style="--d:{i * .04:.2f}s">
+            <p class="fw__name">{esc(f[0])}</p>
+            <p class="fw__kind" data-ar="{esc(f[2])}">{esc(f[1])}</p>
+            <p class="fw__use" data-ar="{esc(f[4])}">{esc(f[3])}</p>
+            <p class="fw__where" data-ar="{esc(f[6])}">{esc(f[5])}</p>
+          </article>''' for i, f in enumerate(FRAMEWORKS))
 
     caps = ''.join(f'''
           <article class="panel mini" data-reveal style="--d:{(i % 3) * .05:.2f}s">
@@ -134,14 +156,15 @@ def build():
         </div>
       </section>
 
-      <!-- ░░ 03 · Credentials ░░ -->
-      <section class="section container" id="credentials" aria-labelledby="cred-title">
-        {sec_head('03', 'CREDENTIALS', 'الاعتمادات',
-                  '<span id="cred-title" data-ar="أطر مستخدمة في العمل">Frameworks used in the work</span> <span class="grad-text" data-ar="لا مُدرجة على السيرة.">not listed on a CV.</span>',
-                  'Each of these is part of how the work is actually delivered or assessed — not a badge added after the fact.',
-                  'كل واحدة من هذه جزء من طريقة تنفيذ العمل أو تقييمه — لا شارة أُضيفت لاحقًا.')}
-        <div class="grid-4">{creds}
+      <!-- ░░ 03 · Frameworks, in context (not credentials) ░░ -->
+      <section class="section container" id="frameworks" aria-labelledby="fw-title">
+        {sec_head('03', 'FRAMEWORKS IN CONTEXT', 'الأطر في سياقها',
+                  '<span id="fw-title" data-ar="أين تُستخدم فعلًا.">Where each one is actually used.</span> <span class="grad-text" data-ar="لا شهادات شخصية.">No personal certifications.</span>',
+                  'These are the methods, notations and readiness criteria the work is delivered and judged against. Each is listed with the part of an engagement it decides — and none of them is presented as a personal credential or an organisational accreditation.',
+                  'هذه هي المناهج ولغات النمذجة ومعايير الجاهزية التي يُسلَّم بها العمل ويُحكم. كل واحدة مذكورة بالجزء الذي تحكمه من المشروع — ولا واحدة منها تُقدَّم كاعتماد شخصي أو اعتماد مؤسسي.')}
+        <div class="fw-grid">{frameworks}
         </div>
+        <p class="note-quiet" style="margin-top:16px" data-ar-html="لا ننشر شهادات شخصية ولا نُوحي باعتماد مؤسسي. سجل الادعاءات يوثّق حالة هذا البند: &lt;a href=&quot;/claims/&quot;&gt;/claims/&lt;/a&gt;.">We publish no personal certificates and imply no organisational accreditation. The claims register records the status of this item: <a href="/claims/">/claims/</a>.</p>
       </section>
 
       <!-- ░░ 04 · Depth ░░ -->
@@ -173,8 +196,12 @@ def build():
             <p class="person__role" data-ar="مهندس معماري مؤسسي · متخصص في التحول الرقمي">Enterprise Architect · Digital Transformation Specialist</p>
             <h3>Ahmed M. Bedeer</h3>
             <p class="person__tag" data-ar="شريك مؤسس · Code &amp; Canvas · الخبر، السعودية">Co-Founder · Code &amp; Canvas · Al Khobar, KSA</p>
-            <p data-ar="مهندس معماري مؤسسي ومتخصص في التحول الرقمي بخبرة تتجاوز 7 سنوات في السعودية — عبر الرعاية الصحية والقطاع الحكومي والخاص. حاصل على CPHIMS وبخبرة فعلية في تقييمات HIMSS EMRAM، مع عمارة TOGAF/NORA واختيار موردي HIS والهجرة السحابية وتحليلات البيانات.">Enterprise architect and digital transformation specialist with 7+ years in KSA across healthcare, government and private sector. CPHIMS-certified with active HIMSS EMRAM assessment experience, working on TOGAF/NORA architecture, HIS vendor selection, cloud migration and data analytics.</p>
-            <div class="creds" aria-label="Skills" data-ar-label="المهارات"><span>TOGAF</span><span>NORA</span><span>CPHIMS</span><span>EMRAM</span><span>ArchiMate</span><span>Sparx EA</span><span>Power BI</span><span>FHIR · HL7</span></div>
+            <p data-ar="مهندس معماري مؤسسي ومتخصص في التحول الرقمي بخبرة تتجاوز 7 سنوات في السعودية — عبر الرعاية الصحية والقطاع الحكومي والخاص. يعمل على عمارة المؤسسة واختيار موردي HIS وتقييم جاهزية EMRAM والهجرة السحابية وتحليلات البيانات، مستندًا إلى نماذج ArchiMate في Sparx EA وPower BI.">Enterprise architect and digital transformation specialist with 7+ years in KSA across healthcare, government and the private sector. Works on enterprise architecture, HIS vendor selection, EMRAM readiness assessment, cloud migration and data analytics — modelling in ArchiMate (Sparx EA) and reporting in Power BI.</p>
+            <ul class="person__scope" aria-label="Leads these services" data-ar-label="يقود هذه الخدمات">
+              <li><b data-ar="العمارة">Architecture</b><span data-ar="AB-01 · AB-04 · AB-05">AB-01 · AB-04 · AB-05</span></li>
+              <li><b data-ar="الرعاية الصحية">Healthcare</b><span>AB-02 · HC-03 · HC-05</span></li>
+              <li><b data-ar="البيانات والاستشارات">Data &amp; advisory</b><span data-ar="AB-03 · AB-06">AB-03 · AB-06</span></li>
+            </ul>
             <div class="person__links">
               <a href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener" title="Ahmed's portfolio">{icon('link')}<span data-ar="الأعمال ↗">Portfolio ↗</span></a>
               <a href="/team/#ahmed">{icon('users')}<span data-ar="ملفه في صفحة الفريق">Team profile</span></a>
@@ -192,7 +219,7 @@ def build():
 '''
     return [page('/technology-services/', title='Technology Services — Enterprise architecture, data and cloud · Code & Canvas',
                  title_ar='خدمات التقنية — العمارة المؤسسية والبيانات والسحابة · Code & Canvas',
-                 desc='Six technology services led by Ahmed Bedeer (CPHIMS, TOGAF, EMRAM, NORA): enterprise architecture, healthcare transformation, data architecture, solution architecture, cloud modernisation and executive advisory — with scope, deliverables and price ranges.',
-                 desc_ar='ست خدمات تقنية بقيادة أحمد بدير (CPHIMS، TOGAF، EMRAM، NORA): العمارة المؤسسية والتحول الصحي وهندسة البيانات وعمارة الحلول والتحديث السحابي والاستشارات التنفيذية — بالنطاق والمخرجات والنطاقات السعرية.',
+                 desc='Six technology services led by one founder: enterprise architecture, healthcare transformation, data architecture, solution architecture, cloud modernisation and executive advisory — with scope, deliverables and price ranges.',
+                 desc_ar='ست خدمات تقنية بقيادة مؤسس واحد: العمارة المؤسسية والتحول الصحي وهندسة البيانات وعمارة الحلول والتحديث السحابي والاستشارات التنفيذية — بالنطاق والمخرجات والنطاقات السعرية.',
                  nav='services', body=body,
                  ld=[service_ld(AB, 'https://codeandcanvas.net/technology-services/'), PERSON_LD['ahmed']])]

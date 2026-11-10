@@ -5,8 +5,8 @@
   "description": "Code & Canvas native static site: bilingual marketing site, blog, books and the CanvasOne ERP proposal",
   "scripts": {
     "dev": "node dev-server.mjs",
-    "sync": "node scripts/sync-chrome.mjs",
-    "check": "node scripts/sync-chrome.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs && node scripts/check-claims.mjs && node scripts/optimize-media.mjs --check && node scripts/check-phase3.mjs && node scripts/check-phase4.mjs && node scripts/check-art.mjs",
+    "sync": "node scripts/sync-chrome.mjs && node scripts/version-assets.mjs",
+    "check": "node scripts/sync-chrome.mjs --check && node scripts/version-assets.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs && node scripts/check-claims.mjs && node scripts/optimize-media.mjs --check && node scripts/check-phase3.mjs && node scripts/check-phase4.mjs && node scripts/check-art.mjs && node scripts/check-asset-versioning.mjs",
     "build": "sh ./build.sh",
     "generate": "python3 scripts/gen-pages.py && npm run sync && node scripts/gen-ar.mjs",
     "test": "playwright test",
@@ -24,6 +24,8 @@
     "check:phase3": "node scripts/check-phase3.mjs",
     "check:phase4": "node scripts/check-phase4.mjs",
     "check:art": "node scripts/check-art.mjs",
+    "version:assets": "node scripts/version-assets.mjs",
+    "check:versions": "node scripts/check-asset-versioning.mjs",
     "art": "node scripts/generate-page-art.mjs && node scripts/optimize-media.mjs"
   },
   "devDependencies": {

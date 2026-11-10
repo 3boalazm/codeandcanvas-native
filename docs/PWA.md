@@ -33,6 +33,7 @@ static bilingual site — no framework, no native binary, no app-store listing.
 - **Offline:** a visited page is served from the pages cache; an unvisited one shows `offline.html`. The install precache is deliberately tiny (~12 small files, added with `Promise.allSettled`, so one missing asset cannot break installation).
 - No `clients.claim()` and no `skipWaiting()`: an already-open tab is never taken over by a newly activated worker.
 - Bump `VERSION` in `sw.js` when the cache policy or precache list changes; `activate` deletes every cache from older versions.
+- **CSS/JS are content-hashed (`?v=<sha256[:10]>`).** Asset URLs are stable by design, and this worker caches them by URL with stale-while-revalidate on top of a 1-hour CDN window. A stylesheet edit that kept its URL therefore reached returning visitors *after* the new markup — which is exactly how the home `/system/` band once rendered as unstyled text. `scripts/version-assets.mjs` now rewrites every CSS/JS reference in the partials and on every page after `sync-chrome.mjs`, so a changed file gets a new URL, a new cache entry and an immediate fetch. It is part of `npm run sync`, `npm run check` (as `version-assets --check`) and `scripts/check-generated.mjs`, and `scripts/check-asset-versioning.mjs` fails the build on any unversioned or stale-hash reference plus any drift between the `/system/` markup and its stylesheet.
 
 ## Verification
 

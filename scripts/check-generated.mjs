@@ -9,11 +9,16 @@ const root = fileURLToPath(new URL('../',import.meta.url));
 const temp = mkdtempSync(join(tmpdir(),'cc-generated-'));
 try {
   for (const file of ['scripts','partials','index.html','erp/index.html','assets/js/erp-data.js']) cpSync(join(root,file),join(temp,file),{recursive:true});
+  // version-assets.mjs hashes the real CSS/JS bytes, so the isolated run needs them.
+  for (const dir of ['assets/css','assets/js']) cpSync(join(root,dir),join(temp,dir),{recursive:true});
   execFileSync('python3',['scripts/gen-pages.py'],{cwd:temp,stdio:'pipe'});
   execFileSync(process.execPath,['scripts/sync-chrome.mjs'],{cwd:temp,stdio:'pipe'});
   execFileSync(process.execPath,['scripts/gen-ar.mjs'],{cwd:temp,stdio:'pipe'});
+  // Content-hashed CSS/JS query strings must be reproducible from the sources
+  // too, otherwise a stale hash pair (HTML vs stylesheet) would slip through.
+  execFileSync(process.execPath,['scripts/version-assets.mjs'],{cwd:temp,stdio:'pipe'});
   const files=[];
-  function walk(dir){for(const e of readdirSync(dir,{withFileTypes:true})){if(['scripts','partials'].includes(e.name))continue;const p=join(dir,e.name);if(e.isDirectory())walk(p);else files.push(relative(temp,p));}}
+  function walk(dir,top=true){for(const e of readdirSync(dir,{withFileTypes:true})){if(['scripts','partials','assets'].includes(e.name))continue;const p=join(dir,e.name);if(e.isDirectory())walk(p);else files.push(relative(temp,p));}}
   walk(temp);
   const stale=files.filter(f=>!existsSync(join(root,f))||!readFileSync(join(root,f)).equals(readFileSync(join(temp,f))));
   if(stale.length){console.error('Generated output is stale. Run npm run generate:\n'+stale.join('\n'));process.exitCode=1;}

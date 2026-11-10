@@ -884,6 +884,16 @@ html[lang='ar'] .tier__price strong { font-size: 18px; }
    ========================================================================== */
 .who { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(22px, 3.4vw, 46px); align-items: start; }
 .who__side { display: grid; gap: 10px; position: sticky; top: calc(var(--nav-h) + 24px); }
+/* Supplied founder photographs, cropped 4:5. Nothing retouched: the crop is the
+   only edit, and the monogram stays as the identity if the image is blocked. */
+.who__figure { margin: 0 0 4px; position: relative; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line-2); background: var(--panel-2); }
+.who__photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; }
+.who__figure::after { content: ''; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 -60px 70px -40px rgba(5, 5, 26, .85); }
+html[data-theme='light'] .who__figure::after { box-shadow: inset 0 -40px 60px -45px rgba(20, 20, 40, .35); }
+.tile__head { display: flex; align-items: center; gap: 12px; margin-block: 2px 6px; }
+.tile__head h3 { margin: 0; }
+.tile__avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: 50% 24%; border: 1px solid var(--line-2); background: var(--panel-2); flex: none; }
+@media (max-width: 1024px) { .who__figure { max-width: 420px; } }
 .who__mono { display: grid; place-items: center; width: 84px; height: 84px; border: 1px solid var(--line-2); border-radius: var(--r); background: var(--panel-2); font-family: var(--f-num); font-size: 26px; font-weight: 800; letter-spacing: .06em; color: var(--teal); }
 .who__name { font-family: var(--f-title); font-size: clamp(24px, 2.6vw, 34px); font-weight: 800; letter-spacing: -.02em; }
 html[lang='ar'] .who__name { line-height: 1.45; }

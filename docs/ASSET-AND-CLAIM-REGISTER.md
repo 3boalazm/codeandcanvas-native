@@ -199,3 +199,36 @@ any outcome. Licensed photography, permission-cleared client screenshots and
 founder portraits remain owner gates. `scripts/check-phase3.mjs` still refuses
 any external/CDN image or canvas on the system routes, and no new asset was
 downloaded from a third party in this pass.
+
+## Supplied founder photographs — 2026-11-10
+
+| Asset | Source | What it is | Open question |
+| --- | --- | --- | --- |
+| `assets/brand/Brand Owners/Ahmed Bedeer.jpeg` (1024×1024) | uploaded by the owner to `main` (`bdd757d`) | a real photograph of Ahmed M. Bedeer, cyan studio light, dark sunglasses | the small gold circuit-chip emblem printed on the chest of the jacket — garment print, or a mark added to the image? |
+| `assets/brand/Brand Owners/Mustafa Aboalazm.png` (768×768, alpha) | uploaded by the owner to `main` (`bdd757d`) | a real silhouette/profile photograph of Mustafa Aboalazm, warm orange backdrop | **the same circuit-chip emblem appears on the chest**, at a different size and rotation |
+
+Served derivatives (never edited, only cropped): `assets/media/founder-ahmed{,-sm}.webp`
+and `assets/media/founder-mustafa{,-sm}.webp`, produced reproducibly by
+`scripts/make-founder-portraits.mjs` (4:5 crop, two widths) and checked by
+`npm run check:portraits`, which is part of the mandatory gate.
+
+Where they appear: `/team/` and `/ar/team/` (4:5 portrait in the founder card),
+`/about/` and `/ar/about/` (44px avatar in each track tile), and the two home-page
+founder cards as a 56px avatar. Alt text names the person; no role, award or
+credential claim is attached to the image.
+
+**Rights:** the owner supplied both files and asked for them to be used as the
+founder photographs, which is the licence this register requires. They are
+first-party assets — nothing was downloaded, scraped or synthesized.
+
+**Unresolved — one line from the owner is needed before release.** The same emblem
+sits on both chests. Either two different people happen to be wearing the same
+studio's apparel, or the mark was composited. Composite imagery is not forbidden
+here, but an unlabelled composite presented as photography is — the `/work/` and
+`/system/` rules already require illustrative or composited images to say so. No
+caption was invented to cover it, and the crop deliberately keeps the emblem in
+frame rather than hiding it. If it is a composite, the fix is one sentence of
+caption, or the uncomposited originals.
+
+The large illustrative plates on `/team/` and `/about/` that say "not a portrait
+of anyone" stay accurate: they describe those plates, not these photographs.

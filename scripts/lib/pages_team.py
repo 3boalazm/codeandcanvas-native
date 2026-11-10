@@ -29,6 +29,11 @@ AHMED = {
               ('Portfolio', 'link', 'https://ahmed-bedeer.vercel.app/'),
               ('GitHub', 'github', 'https://github.com/ahmedbdeer')],
     'track': 'technology',
+    # Supplied by the owner (assets/brand/Brand Owners/), cropped to 4:5 by
+    # scripts/make-founder-portraits.mjs. Never a synthetic portrait.
+    'photo': 'founder-ahmed',
+    'photo_alt': 'Ahmed M. Bedeer, co-founder, photographed in the studio',
+    'photo_alt_ar': 'أحمد بدير، الشريك المؤسس، في صورة من الاستوديو',
 }
 
 MUSTAFA = {
@@ -53,6 +58,9 @@ MUSTAFA = {
               ('Portfolio', 'link', 'https://aboalazm-os.vercel.app/'),
               ('WhatsApp', 'chat', 'https://wa.me/201092500454')],
     'track': 'creative',
+    'photo': 'founder-mustafa',
+    'photo_alt': 'Mustafa Aboalazm, co-founder, photographed in profile against a warm backdrop',
+    'photo_alt_ar': 'مصطفى أبو العزم، الشريك المؤسس، في صورة جانبية على خلفية دافئة',
 }
 
 
@@ -77,6 +85,12 @@ def person(p, delay=0):
         <section class="section container work-case" id="{p['id']}" aria-labelledby="{p['id']}-title" data-reveal{' style="--d:%.2fs"' % delay if delay else ''}>
           <div class="who">
             <div class="who__side">
+              <figure class="who__figure">
+                <img class="who__photo" src="/assets/media/{p['photo']}.webp"
+                     srcset="/assets/media/{p['photo']}-sm.webp 400w, /assets/media/{p['photo']}.webp 800w"
+                     sizes="(max-width: 1024px) 60vw, 300px" width="800" height="1000" loading="lazy" decoding="async"
+                     alt="{esc(p['photo_alt'])}" data-ar-alt="{esc(p['photo_alt_ar'])}" />
+              </figure>
               <span class="who__mono" aria-hidden="true">{p['mono']}</span>
               <p class="kicker"><span data-ar="{esc(p['kicker_ar'])}">{p['kicker']}</span></p>
               <h2 class="who__name" id="{p['id']}-title">{esc(p['name'])}</h2>

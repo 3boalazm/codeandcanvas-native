@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node dev-server.mjs",
     "sync": "node scripts/sync-chrome.mjs && node scripts/version-assets.mjs",
-    "check": "node scripts/sync-chrome.mjs --check && node scripts/version-assets.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs && node scripts/check-claims.mjs && node scripts/optimize-media.mjs --check && node scripts/check-phase3.mjs && node scripts/check-phase4.mjs && node scripts/check-art.mjs && node scripts/check-asset-versioning.mjs",
+    "check": "node scripts/sync-chrome.mjs --check && node scripts/version-assets.mjs --check && node scripts/check-links.mjs && node scripts/check-generated.mjs && node scripts/check-claims.mjs && node scripts/optimize-media.mjs --check && node scripts/check-phase3.mjs && node scripts/check-phase4.mjs && node scripts/check-art.mjs && node scripts/check-asset-versioning.mjs && node scripts/make-founder-portraits.mjs --check",
     "build": "sh ./build.sh",
     "generate": "python3 scripts/gen-pages.py && npm run sync && node scripts/gen-ar.mjs",
     "test": "playwright test",
@@ -26,7 +26,9 @@
     "check:art": "node scripts/check-art.mjs",
     "version:assets": "node scripts/version-assets.mjs",
     "check:versions": "node scripts/check-asset-versioning.mjs",
-    "art": "node scripts/generate-page-art.mjs && node scripts/optimize-media.mjs"
+    "art": "node scripts/generate-page-art.mjs && node scripts/optimize-media.mjs",
+    "portraits": "node scripts/make-founder-portraits.mjs",
+    "check:portraits": "node scripts/make-founder-portraits.mjs --check"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

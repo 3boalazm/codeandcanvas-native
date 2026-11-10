@@ -201,6 +201,31 @@ verify:api         33/33
 build              dist/ + 47 redirect rules
 ```
 
+## 6b · Founder photographs (added 2026-11-10)
+
+Supplied by the owner on `main` (`bdd757d`, `assets/brand/Brand Owners/`). Nothing
+was generated, retouched or composited — the images are cropped, nothing more, by
+`scripts/make-founder-portraits.mjs`, whose `--check` is now part of `npm run check`.
+
+| Surface | Treatment |
+| --- | --- |
+| `/team/`, `/ar/team/` | 4:5 portrait above the monogram in each founder card (`srcset` 400/800, lazy) |
+| `/about/`, `/ar/about/` | 44px circular avatar in each track tile |
+| `/`, `/ar/` | 56px circular avatar beside each founder's name |
+
+Alt text names the person in the page language, with no role or qualification
+claim attached. The supplied originals stay in the repo; the served derivatives
+are `assets/media/founder-{ahmed,mustafa}{,-sm}.webp`.
+
+**Open question for the owner (does not block the code, does block the release):**
+both photographs carry the *same* gold circuit-chip emblem on the chest, at
+different size and rotation — verified by cropping and comparing the two emblems,
+not by eye at full size. Either both happen to wear the same studio's apparel, or
+the mark was composited onto both. The site's own rule is that a composite
+presented as photography must say so, so this needs one line from the owner. The
+crop deliberately keeps the emblem in frame rather than quietly cropping it out.
+See `docs/ASSET-AND-CLAIM-REGISTER.md`.
+
 ## 7 · Release decision
 
 Nothing is merged and nothing is deployed. PR #23 is open against `main` with a

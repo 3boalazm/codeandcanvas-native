@@ -14,8 +14,8 @@ WHY = [
      'An Enterprise Architect and a Brand Identity Designer as co-founders means <strong>technology and brand decisions happen in the same room</strong>, aligned from day one.',
      'مهندس معماري مؤسسي ومصمم هوية بصرية كشريكين مؤسسين يعني أن <strong>قرارات التقنية والعلامة تُتخذ في الغرفة نفسها</strong>، متوائمة من اليوم الأول.'),
     ('Deep healthcare domain knowledge', 'معرفة عميقة بقطاع الرعاية الصحية',
-     'CPHIMS, HIMSS EMRAM, CBAHI and NORA are <strong>frameworks we work within</strong>; personal certification status is recorded in the <a href="/claims/">claims register</a> until the owner supplies dated evidence. Every healthcare engagement starts with clinical workflow context.',
-     'CPHIMS و HIMSS EMRAM و CBAHI و NORA <strong>أطر نعمل في سياقها</strong>؛ وتُسجَّل حالة الشهادات الشخصية في <a href="/claims/">سجل الادعاءات</a> حتى يقدّم المالك مستندات مؤرّخة. كل مشروع صحي يبدأ بسياق مسارات العمل السريرية.'),
+     'TOGAF ADM, HIMSS EMRAM stage criteria, CBAHI readiness and NORA interoperability are <strong>the frameworks our healthcare decisions are judged against</strong> — cited in the deliverable, not worn as a badge. Every healthcare engagement starts with clinical workflow context.',
+     'TOGAF ADM ومعايير مراحل HIMSS EMRAM وجاهزية CBAHI والتشغيل البيني NORA هي <strong>الأطر التي تُحكم بها قراراتنا الصحية</strong> — تُذكَر داخل المخرج، لا تُعلَّق كشارة. كل مشروع صحي يبدأ بسياق مسارات العمل السريرية.'),
     ('MENA-native delivery', 'تنفيذ بروح المنطقة',
      'Bilingual AR/EN as standard. Vision 2030 and NORA alignment built into architecture. <strong>Saudi-specific regulatory context</strong> embedded in every technology recommendation.',
      'ثنائية اللغة عربي/إنجليزي كمعيار. مواءمة رؤية 2030 و NORA مدمجة في العمارة. <strong>السياق التنظيمي السعودي</strong> متضمَّن في كل توصية تقنية.'),
@@ -84,8 +84,8 @@ def build():
 {studio_figure('studio-atmosphere', 'THE STUDIO, IN ONE FRAME', 'الاستوديو في إطار واحد',
         'Abstract illustrative artwork representing the studio disciplines — not a photograph of people or offices',
         'عمل فني تجريدي توضيحي يمثّل تخصصات الاستوديو — ليس صورة أشخاص أو مقر',
-        'Real, licensed founder and team photography is an owner gate. Until it is supplied, this page uses clearly labelled illustrative artwork instead of invented portraits.',
-        'صور حقيقية مرخّصة للمؤسسين والفريق بوابة بانتظار المالك. إلى أن تُوفَّر، تستخدم هذه الصفحة أعمالًا توضيحية مُعلَّنة بدل صور مُختلقة.')}
+        'Labelled illustrative artwork made for this page from our own geometry — not photography, and not a portrait of anyone.',
+        'عمل فني توضيحي صُنع لهذه الصفحة من هندستنا الخاصة — ليس تصويرًا ولا صورة لأي شخص.')}
 
       <!-- ░░ Two disciplines, one table (labelled illustrative plate) ░░ -->
       <section class="section container section--tight" aria-label="Two disciplines visual" data-ar-label="تخصصان في طاولة واحدة">
@@ -149,7 +149,7 @@ def build():
             <p data-ar="احجز مكالمة استكشافية مدتها 30 دقيقة. نحدد النطاق ونؤكد الملاءمة ونعطيك صورة واضحة عمّا يبدو عليه المشروع — أو نخبرك بصراحة إن لم نكن الخيار المناسب.">Book a 30-minute discovery call. We define the scope, confirm the fit, and give you a clear picture of what an engagement looks like — or tell you directly if we're not the right match.</p>
           </div>
           <div class="callout__actions">
-            {btn('Book a free call', 'احجز مكالمة مجانية', '/contact/#book')}
+            {btn('Book a free call', 'احجز مكالمة مجانية', '/book/')}
             <a class="text-link" href="/our-story/"><span data-ar="اقرأ قصتنا ←">Read our story →</span></a>
             <a class="text-link" href="/team/"><span data-ar="تعرّف على الفريق ←">Meet the team →</span></a>
           </div>

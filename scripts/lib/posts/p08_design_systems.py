@@ -50,7 +50,7 @@ POST = dict(
 ''',
     cta=dict(k='Code & Canvas · Visual & Design Systems', h='Ready to build the design infrastructure your product needs to scale?',
              p='Our MA-04 Visual & Design Systems service takes your brand identity and transforms it into a scalable, team-ready Figma component library with token-driven architecture and full documentation.',
-             primary=('Explore Design Systems', '/creative-services/#ma-04'), secondary=('Book a Discovery Call', '/contact/#book')),
+             primary=('Explore Design Systems', '/creative-services/#ma-04'), secondary=('Book a Discovery Call', '/book/')),
     takeaways=('Actionable Takeaways for Leadership', 'Five principles for successful design system implementation', [
         '<strong>Treat design systems as infrastructure:</strong> Not a side project — a strategic platform investment that enables long-term scalability and competitive resilience.',
         '<strong>Establish clear ownership:</strong> Successful systems require dedicated governance and cross-functional alignment to prevent them from becoming outdated orphan documentation.',

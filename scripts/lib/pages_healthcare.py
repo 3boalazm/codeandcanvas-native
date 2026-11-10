@@ -80,7 +80,7 @@ def build():
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="قرارات الرعاية الصحية">Healthcare decisions</span><br /><span class="grad-text" data-ar="تُبنى على بيانات وأدلة.">built on data and evidence.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="خمس خدمات للعيادات والمستشفيات: الإطلاق الرقمي وذكاء الأعمال الصحي واستشارات اختيار HIS وهوية العيادة وتقييم العمارة المؤسسية. &lt;strong&gt;تُسلَّم وفق معايير جاهزية CPHIMS و EMRAM وبسياق سريري حقيقي.&lt;/strong&gt;">Five services for clinics and hospitals: digital launch, healthcare BI, HIS selection advisory, clinic identity and enterprise-architecture assessment. <strong>Working within CPHIMS and EMRAM readiness criteria, with real clinical context.</strong></p>
         <div class="hero__ctas" data-reveal style="--d:.24s">
-          {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}
+          {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/')}
           {btn('Healthcare pricing', 'أسعار الرعاية الصحية', '/pricing-faq/', 'glass')}
         </div>
         {facts([('Services', 'خدمات', '5', True), ('Engagements from', 'تبدأ المشاريع من', '$1,500', True),
@@ -141,7 +141,7 @@ def build():
                '<span data-ar="قرار صحي">A healthcare decision</span> <span class="grad-text" data-ar="تريد أن تدافع عنه؟">you need to defend?</span>',
                'Bring the situation — a system purchase, an accreditation deadline, a branch launch — and we will propose the smallest engagement that makes the next decision defensible.',
                'أحضر الحالة — شراء نظام أو موعد اعتماد أو إطلاق فرع — وسنقترح أصغر مشروع يجعل القرار التالي قابلًا للدفاع.',
-               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book'), btn('All 23 services', 'كل الخدمات الـ23', '/services/', 'glass')])}
+               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/'), btn('All 23 services', 'كل الخدمات الـ23', '/services/', 'glass')])}
 '''
     return [page('/healthcare/', title='Healthcare Solutions — Clinics and hospitals in KSA and Egypt · Code & Canvas',
                  title_ar='حلول الرعاية الصحية — العيادات والمستشفيات في السعودية ومصر · Code & Canvas',

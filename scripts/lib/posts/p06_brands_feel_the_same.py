@@ -60,7 +60,7 @@ POST = dict(
 ''',
     cta=dict(k='Code & Canvas · Brand Identity & Strategic Positioning', h='Ready to build a brand the market actually feels differently about?',
              p='Our brand strategy practice combines deep strategic positioning work with the design system execution to ensure your identity is a competitive moat — not a decorative layer.',
-             primary=('Explore Brand Services', '/creative-services/'), secondary=('Book a Discovery Call', '/contact/#book')),
+             primary=('Explore Brand Services', '/creative-services/'), secondary=('Book a Discovery Call', '/book/')),
     takeaways=('Actionable Takeaways for Leadership', 'Five commitments that build lasting brand equity', [
         '<strong>Audit your perception gap:</strong> Conduct interviews with customers and employees to see if your internal "truth" matches your external "story."',
         '<strong>Invest in infrastructure, not just tactics:</strong> Treat your brand and design system as a managed portfolio — balancing legacy strengths with emerging demands.',

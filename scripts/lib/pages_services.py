@@ -92,7 +92,7 @@ def build():
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="كل خدمة تبدأ">Every service starts</span><br /><span class="grad-text" data-ar="بقرار واضح.">with a clear decision.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar="لا نبيع ساعات؛ نبيع نطاقًا معلنًا ومخرجًا محددًا. لكل خدمة من الخدمات الـ23: لمن هي، وما الذي تحصل عليه، ومدة التنفيذ، والنطاق السعري — كله منشور قبل أن تتحدث معنا.">We don’t sell hours; we sell published scope and a defined deliverable. For each of the 23 services you can read who it is for, what you keep, how long it takes and the price range — all before you talk to us.</p>
         <div class="hero__ctas" data-reveal style="--d:.24s">
-          {btn('Book a free 30-min call', 'احجز مكالمة مجانية · 30 دقيقة', '/contact/#book')}
+          {btn('Book a free 30-min call', 'احجز مكالمة مجانية · 30 دقيقة', '/book/')}
           {btn('Prices & payment terms', 'الأسعار وشروط الدفع', '/pricing-faq/', 'glass')}
         </div>
         {facts([('Productized services', 'خدمات مُنتجة', '23', True), ('Tracks', 'مسارات', '4', True),
@@ -163,7 +163,7 @@ def build():
             <p data-ar="أحيانًا تكون الإجابة خدمة بـ ⁦$170⁩، وأحيانًا تكون «لا تشترِ شيئًا الآن». نقول أيهما في مكالمة واحدة مدتها 30 دقيقة، بلا التزام.">Sometimes the answer is a $170 service; sometimes it is “don’t buy anything yet”. We say which in one 30-minute call, with no obligation.</p>
           </div>
           <div class="callout__actions">
-            {btn('Book a free 30-min call', 'احجز مكالمة مجانية · 30 دقيقة', '/contact/#book')}
+            {btn('Book a free 30-min call', 'احجز مكالمة مجانية · 30 دقيقة', '/book/')}
             <a class="text-link" href="https://wa.me/966545520750" target="_blank" rel="noopener">{icon('chat')}<span data-ar="واتساب · السعودية (التقنية)">WhatsApp · KSA (Technology)</span></a>
             <a class="text-link" href="https://wa.me/201092500454" target="_blank" rel="noopener">{icon('chat')}<span data-ar="واتساب · مصر (الإبداع)">WhatsApp · EG (Creative)</span></a>
           </div>

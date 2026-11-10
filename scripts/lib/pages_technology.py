@@ -87,7 +87,7 @@ def build():
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="عمارة تقنية">Technology architecture</span><br /><span class="grad-text" data-ar="تُقرَّر قبل أن يُنفَّق المال.">decided before the money moves.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="ست خدمات يقودها مؤسس واحد بخبرة تتجاوز 7 سنوات في السعودية: العمارة المؤسسية والتحوّل الصحي وهندسة البيانات وعمارة الحلول والسحابة والاستشارات التنفيذية. &lt;strong&gt;كل مشروع ينتهي بمخرجات يستطيع التنفيذيون التصرف بناءً عليها.&lt;/strong&gt;">Six services led by one founder with 7+ years in KSA: enterprise architecture, healthcare transformation, data engineering, solution architecture, cloud and executive advisory. <strong>Every engagement ends with artifacts executives can act on.</strong></p>
         <div class="hero__ctas" data-reveal style="--d:.24s">
-          {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}
+          {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/')}
           {btn('Founder portfolio', 'أعمال المؤسس', 'https://ahmed-bedeer.vercel.app/', 'glass')}
         </div>
         {facts([('Services', 'خدمات', '6', True), ('Experience in KSA', 'سنوات في السعودية', '7+ years', True),
@@ -178,7 +178,7 @@ def build():
             <div class="person__links">
               <a href="https://ahmed-bedeer.vercel.app/" target="_blank" rel="noopener" title="Ahmed's portfolio">{icon('link')}<span data-ar="الأعمال ↗">Portfolio ↗</span></a>
               <a href="/team/#ahmed">{icon('users')}<span data-ar="ملفه في صفحة الفريق">Team profile</span></a>
-              <a href="/contact/#book">{icon('calendar')}<span data-ar="احجز مكالمة">Book a call</span></a>
+              <a href="/book/">{icon('calendar')}<span data-ar="احجز مكالمة">Book a call</span></a>
             </div>
           </div>
         </article>
@@ -188,7 +188,7 @@ def build():
                '<span data-ar="لديك قرار تقني">A technology decision</span> <span class="grad-text" data-ar="يستحق عمارة؟">worth architecting?</span>',
                'Tell us the business problem — greenfield hospital, data governance programme or cloud migration — and we will propose the lightest engagement that gets you a confident decision.',
                'أخبرنا بمشكلة العمل — مستشفى جديد أو برنامج حوكمة بيانات أو هجرة سحابية — وسنقترح أخف مشروع يوصلك إلى قرار واثق.',
-               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book'), btn('All 23 services', 'كل الخدمات الـ23', '/services/', 'glass')])}
+               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/'), btn('All 23 services', 'كل الخدمات الـ23', '/services/', 'glass')])}
 '''
     return [page('/technology-services/', title='Technology Services — Enterprise architecture, data and cloud · Code & Canvas',
                  title_ar='خدمات التقنية — العمارة المؤسسية والبيانات والسحابة · Code & Canvas',

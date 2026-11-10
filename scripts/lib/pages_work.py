@@ -203,7 +203,8 @@ def build():
         {crumbs([('Home', 'الرئيسية', '/'), ('Work', 'أعمالنا', None)])}
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="ثلاثة أنظمة · 2024–2026 · عربية أولًا">Three systems · 2024–2026 · Arabic-first</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مشاريع حقيقية">Real projects,</span><br /><span class="grad-text" data-ar="وثائق نطاق لا شعارات.">documented scope — not badges.</span></h1>
-        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="كل مشروع أدناه مكتوب بالترتيب نفسه: الموجز، القيود، دورنا، المنهج، المخرجات، ثم ما يمكن نشره فعلًا وما لا يمكن. لن تجد هنا «نتائج مضمونة» أو لقطات شاشة لعميل لم يوافق على نشرها.">Every project below is written in the same order: brief, constraints, our role, approach, artifacts — then exactly what can be published and what cannot. You will not find “proven results” or screenshots from a client who has not approved publication.</p>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar="كل مشروع أدناه مكتوب بالترتيب نفسه: الموجز، القيود، دورنا، المنهج، المخرجات، ثم ما يمكن نشره فعلًا وما لا يمكن. ومعها صفحة الإثبات: أربعة قرارات مكتوبة — ما نوصي به، وما نرفضه، وأي خدمة منشورة تحمل القرار.">Every project below is written in the same order: brief, constraints, our role, approach, artifacts — then exactly what can be published and what cannot. Alongside it, the evidence page: four written decisions — what we would recommend, what we refuse, and which published service carries it.</p>
+        <div class="hero__ctas" data-reveal style="--d:.2s">{btn('How we decide', 'كيف نقرر', '/evidence/', 'glass')}</div>
         <nav class="subnav container" aria-label="Projects" data-ar-label="المشاريع" data-reveal style="--d:.22s">{''.join(f'<a href="#{p["anchor"]}">{p["n"]} · <span data-ar="{esc(p["name_ar"])}">{esc(p["name"])}</span></a>' for p in PROJECTS)}</nav>
         {facts([('Projects on this page', 'مشاريع هذه الصفحة', '3', True), ('Publicly usable', 'متاح للاستخدام العام', '1', True),
                 ('Under NDA', 'تحت اتفاقية سرية', '1', True), ('Concept diagrams', 'رسوم توضيحية', '3', True)])}
@@ -238,7 +239,7 @@ def build():
           </div>
           <div class="callout__actions">
             {btn('Open Zad ↗', 'افتح زاد ↗', 'https://zadullashr.vercel.app/', 'glass')}
-            {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}
+            {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/')}
           </div>
         </div>
       </section>
@@ -247,7 +248,7 @@ def build():
                '<span data-ar="لديك نظام">Have a system</span> <span class="grad-text" data-ar="يستحق التوثيق؟">worth documenting?</span>',
                'Bring the situation and we will tell you which of the three shapes — product, platform or brand — it actually needs.',
                'أحضر الحالة وسنقول لك أي شكل من الثلاثة تحتاج فعلًا — منتج أو منصة أو علامة.',
-               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book'), btn('Services', 'الخدمات', '/services/', 'glass')])}
+               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/'), btn('Services', 'الخدمات', '/services/', 'glass')])}
 '''
     return [page('/case-studies/', title='Work — Three shipped systems, documented scope · Code & Canvas',
                  title_ar='أعمالنا — ثلاثة أنظمة مُسلَّمة بنطاق موثق · Code & Canvas',

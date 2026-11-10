@@ -451,6 +451,24 @@ html[lang='ar'] .track__for { letter-spacing: 0; text-transform: none; font-size
   body.is-home #erp .note-quiet { font-size: 11px; margin-top: 8px; }
 }
 
+/* ---------- Who you work with (home 04, above the pillar grid) ---------- */
+.fitband { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(18px, 2.6vw, 34px); align-items: start; margin-block-end: 26px; padding: clamp(20px, 2.6vw, 30px); border: 1px solid var(--line-2); border-radius: var(--r-lg); background: var(--glass); }
+.fitband__kicker { margin: 0 0 10px; color: var(--teal); font-family: var(--f-num); font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+html[lang='ar'] .fitband__kicker { letter-spacing: 0; }
+.fitband__copy h3 { margin: 0 0 10px; font-family: var(--f-title); font-size: clamp(19px, 1.9vw, 25px); line-height: 1.35; }
+html[lang='ar'] .fitband__copy h3 { line-height: 1.6; }
+.fitband__copy p:last-child { margin: 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.75; }
+.fitband__list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.fitband__list li { display: grid; gap: 2px; padding-block-end: 12px; border-block-end: 1px solid var(--line); }
+.fitband__list li:last-child { padding-block-end: 0; border-block-end: 0; }
+.fitband__list b { font-family: var(--f-num); font-size: 15px; font-weight: 800; color: var(--hi, #fff); }
+html[data-theme='light'] .fitband__list b { color: var(--ink); }
+.fitband__list span { color: var(--ink-2); font-size: 13px; line-height: 1.6; }
+@media (max-width: 900px) {
+  .fitband { grid-template-columns: 1fr; }
+}
+html[data-theme='light'] .fitband__kicker { color: #0f6b5c; }
+
 /* ==========================================================================
    Studio system section — adapted ideas from the REF UI study (2026-11-09).
    Refs 005/025 (three-circle pillars), 006/011/019 (ghost wordmark),
@@ -598,4 +616,15 @@ html[data-theme='light'] .track > a:hover .track__body h3 { color: var(--ink); }
 @media (max-width: 720px) {
   .system__cta-actions { flex-direction: column; align-items: stretch; }
   .system__cta-actions .btn { inline-size: 100%; }
+}
+
+/* ---------- Evidence CTA closing the work band ---------- */
+.workcta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(16px, 2.4vw, 30px); align-items: center; margin-block-start: 26px; padding: clamp(20px, 2.4vw, 28px) clamp(20px, 2.6vw, 32px); }
+.workcta .kicker { margin: 0 0 8px; }
+.workcta h3 { margin: 0 0 8px; font-family: var(--f-title); font-size: clamp(19px, 1.9vw, 25px); line-height: 1.35; }
+html[lang='ar'] .workcta h3 { line-height: 1.6; }
+.workcta p:last-child { margin: 0; max-width: 70ch; color: var(--ink-2); font-size: 14.5px; line-height: 1.75; }
+.workcta__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+@media (max-width: 900px) {
+  .workcta { grid-template-columns: 1fr; align-items: start; }
 }

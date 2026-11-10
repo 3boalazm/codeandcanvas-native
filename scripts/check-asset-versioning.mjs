@@ -106,6 +106,38 @@ for (const [name, re, want] of expected) {
   if (got !== want) problems.push(`ar/index.html: #system ${name} = ${got}, expected ${want}`);
 }
 
+/* ---------- 2b · the public promise and the browser-side implementation agree
+   The 2026-11 buyer audit found the site promising a booked call while the page
+   handed the visitor a WhatsApp draft. `configure()` in tests/helpers.mjs also
+   silently stopped applying once asset URLs gained a query string, which hid
+   the mismatch. These two checks keep both halves honest. */
+{
+  // Every page that ships the config script must actually be routed by
+  // helpers.configure() — i.e. the route matches on pathname, not a glob that
+  // a `?v=` hash defeats.
+  const helpers = read('tests/helpers.mjs');
+  if (!/url\.pathname === '\/assets\/js\/config\.js'/.test(helpers)) {
+    problems.push('tests/helpers.mjs: configure() no longer matches the hashed config.js URL');
+  }
+  // The booking page must present itself as a real scheduler (slots from the
+  // first-party API), so a "Book a call" CTA is never just a message hand-off.
+  const booking = read('book/index.html');
+  for (const marker of ['id="book-form"', 'id="b-slots"', 'name="slot"', 'data-ar="احجز مكالمتك"']) {
+    if (!booking.includes(marker) && !booking.includes(marker.replace('name="slot"', 'id="b-time"'))) {
+      problems.push(`book/index.html: missing ${marker} — the scheduler is not a real slot picker`);
+    }
+  }
+  // `/evidence/` is part of the published trust path in both languages.
+  for (const rel of ['evidence/index.html', 'ar/evidence/index.html']) {
+    if (!fs.existsSync(path.join(ROOT, rel))) { problems.push(`${rel}: the evidence page is missing`); continue; }
+    const html = read(rel);
+    const blocks = (html.match(/class="decision"/g) || []).length;
+    if (blocks !== 4) problems.push(`${rel}: expected 4 decision blocks, found ${blocks}`);
+    if (!html.includes('id="tiers"')) problems.push(`${rel}: engagement tiers section is missing`);
+  }
+  if (!read('index.html').includes('class="workcta')) problems.push('index.html: the evidence CTA closing the work band is missing');
+}
+
 /* ---------- 3 · the service worker version moves with the CSS ---------- */
 const sw = read('sw.js');
 const swVersion = (sw.match(/const VERSION = '([^']+)'/) || [])[1];

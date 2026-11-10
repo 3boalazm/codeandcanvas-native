@@ -125,7 +125,7 @@ def jsonld(*objects):
 PERSON_LD = {
     'ahmed': {'@type': 'Person', '@id': SITE + '/team/#ahmed', 'name': 'Ahmed M. Bedeer', 'url': SITE + '/team/#ahmed',
               'jobTitle': 'Co-Founder · Enterprise Architect · Solution Architect', 'worksFor': {'@id': ORG_ID},
-              'knowsAbout': ['Enterprise Architecture', 'TOGAF', 'NORA', 'ArchiMate', 'Healthcare IT', 'HL7 FHIR', 'Java · Spring Boot', 'Cloud'],
+              'knowsAbout': ['Enterprise Architecture', 'TOGAF', 'NORA', 'ArchiMate', 'Healthcare IT', 'HL7 FHIR', 'CBAHI readiness', 'Java · Spring Boot', 'Cloud'],
               'sameAs': ['https://linkedin.com/in/ahmed-bedeer', 'https://ahmed-bedeer.vercel.app/', 'https://github.com/ahmedbdeer']},
     'mustafa': {'@type': 'Person', '@id': SITE + '/team/#mustafa', 'name': 'Mustafa Aboalazm', 'url': SITE + '/team/#mustafa',
                 'jobTitle': 'Co-Founder · Creative Director · Visual Brand Architect', 'worksFor': {'@id': ORG_ID},

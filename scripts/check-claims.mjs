@@ -67,6 +67,15 @@ for (const file of pages) {
   }
   // No unresolved shared-head placeholder may ship.
   if (html.includes('{{OG_IMAGE}}')) fail(`${rel}: unresolved {{OG_IMAGE}} placeholder`);
+  // Internal delivery state is not customer copy. The owner-gate wording used to
+  // appear on /about/, /team/ and /our-story/; the 2026-11 buyer audit flagged it.
+  if (/owner gate|بانتظار المالك/i.test(html)) fail(`${rel}: internal owner-gate wording leaked into public copy`);
+  // A "Book …" promise must land on the real scheduler, never on a WhatsApp
+  // hand-off or a contact-page anchor. The 2026-11 audit found the CTA lying.
+  if (/href="[^"]*\/contact\/[^"]*#book"/.test(html)) fail(`${rel}: booking CTA points at /contact/#book instead of /book/`);
+  // The credential FAQ was removed by owner decision (2026-11); reinstating the
+  // question without dated evidence would repeat the contradiction.
+  if (/Are your credentials active|هل اعتماداتكم سارية/i.test(html)) fail(`${rel}: credential-status FAQ without owner evidence`);
   if (html.includes('signategrotesk')) fail(`${rel}: references the unlicensed Signate font`);
   // The installable app shell is shared chrome: every page that loads the site
   // runtime (which registers the worker) must point at the manifest and icon.

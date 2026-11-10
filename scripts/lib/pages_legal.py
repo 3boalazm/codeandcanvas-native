@@ -8,9 +8,10 @@ notification webhook; no accounts, no payments, no third-party analytics IDs
 by default. Every statement here is verifiable from `server/api.mjs`,
 `assets/js/site.js`, `assets/js/pages.js` and `assets/js/config.js`.
 
-Owner gate: a qualified legal adviser must confirm jurisdiction-specific
-wording before production. The wording below is complete and accurate about
-the implementation, not a placeholder draft.
+Review note (internal, not rendered): a qualified legal adviser should confirm
+jurisdiction-specific wording before it is relied on commercially. The wording
+below is complete and accurate about the implementation, not a placeholder
+draft — but internal review state is not published as customer copy.
 """
 from h import esc, icon, crumbs, btn, page
 
@@ -28,7 +29,7 @@ def legal(path, *, title, title_ar, intro, intro_ar, sections, nav=''):
           <h1 class="section__title" id="page-title" data-ar="{esc(title_ar)}">{esc(title)}</h1>
           <div class="legal__meta"><span>{icon('calendar')}<span data-ar="آخر تحديث: {UPDATED}">Last updated: {UPDATED}</span></span><span>{icon('shield')}<span data-ar="الإصدار {VERSION} · يصف التشغيل الفعلي">Version {VERSION} · describes the live implementation</span></span><span>{icon('mail')}<a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a></span></div>
           <p class="hero__lead" data-ar="{esc(intro_ar)}">{esc(intro)}</p>
-          <div class="notice notice--violet" data-ar-html="تصف هذه السياسة ما يفعله الموقع فعليًا: واجهة برمجية من الطرف الأول تحفظ الاستفسارات والحجوزات وأحداث القياس بعد الموافقة. لا توجد حسابات ولا دفع إلكتروني ولا معرّفات تحليلات خارجية افتراضيًا. &lt;strong&gt;بوابة مالك:&lt;/strong&gt; يجب على مستشار قانوني مختص اعتماد الصياغة الخاصة بكل اختصاص قضائي قبل النشر الإنتاجي.">This policy describes what the site actually does: a first-party API stores inquiries, bookings and consent-gated measurement events. There are no accounts, no online payments and no third-party analytics IDs by default. <strong>Owner gate:</strong> a qualified legal adviser must approve jurisdiction-specific wording before production.</div>
+          <div class="notice notice--violet" data-ar-html="تصف هذه السياسة ما يفعله الموقع فعليًا: واجهة برمجية من الطرف الأول تحفظ الاستفسارات والحجوزات وأحداث القياس بعد الموافقة. لا توجد حسابات ولا دفع إلكتروني ولا معرّفات تحليلات خارجية افتراضيًا. تُراجَع الصياغة لكل اختصاص قضائي قبل تطبيقها عليك؛ وإن لم يكن أي بند واضحًا فاكتب إلى &lt;a href=&quot;mailto:info@codeandcanvas.net&quot;&gt;info@codeandcanvas.net&lt;/a&gt; وسنجيب كتابةً.">This policy describes what the site actually does: a first-party API stores inquiries, bookings and consent-gated measurement events. There are no accounts, no online payments and no third-party analytics IDs by default. Wording is reviewed for each jurisdiction before it applies to you; if anything here is unclear, write to <a href="mailto:info@codeandcanvas.net">info@codeandcanvas.net</a> and we will answer in writing.</div>
           <nav class="toc glass" style="margin:24px 0" aria-label="Sections" data-ar-label="الأقسام"><h4 data-ar="الأقسام">Sections</h4>{toc}</nav>
           <div class="prose">{secs}</div>
           <div class="panel tier" style="margin-top:28px">

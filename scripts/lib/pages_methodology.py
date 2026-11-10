@@ -61,7 +61,7 @@ def build():
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="منهجيتنا">Our Methodology</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="مواءمة الأعمال مع الأصول.">Business-Asset Alignment.</span><br /><span class="grad-text" data-ar="لا مجرد تسليم.">Not just delivery.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar="معظم المشاريع تسلّم مخرجات. مشاريعنا تسلّم مواءمة — رابطًا قابلًا للتتبع بين أهدافك وقدراتك وتقنيتك وبياناتك. كل مرحلة مقصودة. لا يُبنى شيء بلا سبب عمل.">Most engagements deliver outputs. Ours deliver alignment — a traceable connection between your goals, capabilities, technology, and data. Every phase is intentional. Nothing is built without a business reason.</p>
-        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}{btn('See the 8 stages', 'استعرض المراحل الثماني', '#stages', 'glass', 'arrowDown')}</div>
+        <div class="hero__ctas" data-reveal style="--d:.24s">{btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/')}{btn('See the 8 stages', 'استعرض المراحل الثماني', '#stages', 'glass', 'arrowDown')}</div>
       </section>
 
       <!-- ░░ At a glance ░░ -->
@@ -131,7 +131,7 @@ def build():
             <h3 id="cta-title" data-ar="تريد رؤية المنهجية مطبّقة؟">Want to see the methodology applied?</h3>
             <p data-ar="احجز مكالمة استكشافية مدتها 30 دقيقة. سنشرح لك كيف تنطبق العملية ذات المراحل الثماني على مشروعك تحديدًا — ونعطيك صورة واضحة عن شكل المخرجات.">Book a 30-minute discovery call. We'll walk you through how the 8-stage process applies to your specific engagement — and give you a clear picture of what the output looks like.</p>
           </div>
-          <div class="callout__actions">{btn('Book a Discovery Call', 'احجز مكالمة استكشافية', '/contact/#book')}<a class="text-link" href="/pricing-faq/"><span data-ar="الأسعار والأسئلة الشائعة ←">Pricing &amp; FAQ →</span></a></div>
+          <div class="callout__actions">{btn('Book a Discovery Call', 'احجز مكالمة استكشافية', '/book/')}<a class="text-link" href="/pricing-faq/"><span data-ar="الأسعار والأسئلة الشائعة ←">Pricing &amp; FAQ →</span></a></div>
         </div>
       </section>
 
@@ -139,7 +139,7 @@ def build():
                '<span data-ar="لنحدد خطوتك التالية.">Let’s scope your next step.</span>',
                'Start with our story, or book an appointment and bring the business problem — we’ll bring the structure.',
                'ابدأ بقصتنا، أو احجز موعدًا وأحضر مشكلة العمل — ونحن نُحضر الهيكل.',
-               [btn('Get Started', 'ابدأ الآن', '/our-story/'), btn('Book an Appointment', 'احجز موعدًا', '/contact/#book', 'glass')])}
+               [btn('Get Started', 'ابدأ الآن', '/our-story/'), btn('Book an Appointment', 'احجز موعدًا', '/book/', 'glass')])}
 '''
     return [page('/methodology/', title='Methodology — Code & Canvas', title_ar='المنهجية — Code & Canvas',
                  desc='Business-Asset Alignment, not just delivery. The 8-stage Code & Canvas methodology — BMM discovery, engagement brief, capability research, TOGAF ADM target state, concept, build, validation, and launch — plus the Business-to-Technology Alignment Matrix.',

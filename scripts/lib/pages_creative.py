@@ -61,7 +61,7 @@ def build():
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="هوية تُدار">Identity you can run</span><br /><span class="grad-text" data-ar="كنظام، لا كملف شعار.">as a system, not a logo file.</span></h1>
         <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="عشر خدمات إبداعية — من سبرنت شعار بـ ⁦$170⁩ إلى منظومة علامة كاملة ومنصات مخصّصة واشتراكات شهرية. &lt;strong&gt;كلها ثنائية اللغة عربي/إنجليزي كأساس، لا كإضافة.&lt;/strong&gt;">Ten creative services — from a $170 logo sprint to a full brand system, custom platforms and monthly retainers. <strong>All of them bilingual Arabic/English as standard, not as an add-on.</strong></p>
         <div class="hero__ctas" data-reveal style="--d:.24s">
-          {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book')}
+          {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/')}
           {btn('Founder portfolio', 'أعمال المؤسس', 'https://aboalazm-os.vercel.app/', 'glass')}
         </div>
         {facts([('Services', 'خدمات', '10', True), ('Bilingual delivery', 'تسليم ثنائي اللغة', 'AR / EN', True),
@@ -156,7 +156,7 @@ def build():
                '<span data-ar="علامة تصلح">A brand built to</span> <span class="grad-text" data-ar="للنمو، لا للعرض.">grow, not just to present.</span>',
                'Tell us what the business is trying to become — we will say whether that needs a sprint, a full system, or nothing visual at all yet.',
                'أخبرنا بما يريد العمل أن يصبح — وسنقول إن كان ذلك يحتاج سبرنت أو منظومة كاملة أو لا شيء بصريًا بعد.',
-               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/contact/#book'), btn('All 23 services', 'كل الخدمات الـ23', '/services/', 'glass')])}
+               [btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/'), btn('All 23 services', 'كل الخدمات الـ23', '/services/', 'glass')])}
 '''
     return [page('/creative-services/', title='Creative Services — Brand systems, web and production · Code & Canvas',
                  title_ar='الخدمات الإبداعية — أنظمة العلامة والويب والإنتاج · Code & Canvas',

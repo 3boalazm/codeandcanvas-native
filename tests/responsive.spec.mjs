@@ -55,7 +55,9 @@ for (const [route, name] of ROUTES) {
          inside a scroll container is measured against that container, not the
          window, so a card is only "clipped" when it overflows the scroller
          itself. Everything else is measured against the viewport. */
-      const railOf = (el) => el.closest('.m-rail');
+      /* Two rails exist: the home page's .m-rail and the case-study rail
+         (.cs-index-grid, a snap scroller below 720px). Both are deliberate. */
+      const railOf = (el) => el.closest('.m-rail, .cs-index-grid');
       const railBox = new Map();
       const boxFor = (rail) => {
         if (!railBox.has(rail)) railBox.set(rail, rail.getBoundingClientRect());

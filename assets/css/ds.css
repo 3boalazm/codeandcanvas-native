@@ -121,11 +121,11 @@ html[data-theme='light'] .preloader {
 html[data-theme='light'] .preloader__mark path { stroke: #3a2d78; }
 html[data-theme='light'] .preloader__word,
 html[data-theme='light'] .preloader__text { color: var(--ink); }
-html[data-theme='light'] .nav__links {
-  background: rgba(247, 246, 252, .98);
-  border-color: var(--line-2);
-}
-html[data-theme='light'] .nav__links a.is-active { background: rgba(139,108,255,.13); }
+/* The capsule nav stays dark in the light theme (an intentional dark surface),
+   so the desktop link row must not paint a sheet of its own — it used to, and the
+   links ended up light grey on near-white. The light sheet belongs to the mobile
+   dropdown only, which is handled inside the max-width:1024px block below. */
+html[data-theme='light'] .nav__links a.is-active { background: rgba(255, 255, 255, .1); }
 html[data-theme='light'] .footer { background: var(--bg-2); }
 html[data-theme='light'] .consent-bar { background: #12122f; }
 html[data-theme='light'] .toast { background: #12122f; }
@@ -1093,7 +1093,8 @@ html[data-theme='light'] .lang-btn:hover {
 }
 /* ds.css */
 html[data-theme='light'] .nav__links a:hover {
-  background: rgba(24, 21, 58, 0.04);
+  background: rgba(255, 255, 255, .07);
+  color: #fff;
 }
 /* ds.css */
 html[data-theme='light'] .eyebrow {
@@ -1391,10 +1392,16 @@ html[data-theme='light'] .float-chip {
   html[data-theme='light'] .nav__links {
     --ink: #171436;
     --ink-2: rgba(30, 25, 70, .78);
-    --ink-3: #5b5680;
+    --ink-3: #4a4570;
     --hi: #171436;
     color: var(--ink);
+    background: #fbfaff;
+    border-color: var(--line-2);
+    box-shadow: 0 24px 60px -28px rgba(35, 24, 90, .35);
   }
+  html[data-theme='light'] .nav__links a { color: #4a4570; }
+  html[data-theme='light'] .nav__links a:hover,
+  html[data-theme='light'] .nav__links a.is-active { color: #171436; background: rgba(24, 21, 58, .06); }
 }
 
 /* --------------------------------------------------------------------------

@@ -107,12 +107,22 @@ here. The state of the pipeline, read from GitHub, is:
 Run after approval: `npm run verify:live` (the deploy workflow already does it as
 a post-deploy job and fails the release if any route answers wrong).
 
-**Vercel — NOT APPLICABLE / NOT VERIFIED.** `vercel.json` is maintained in the
-repo (build, `cleanUrls`, `trailingSlash`, cache headers, 47 redirect rules), but
-the live host is Hostinger via the `hostinger` branch. The connected Vercel
-account has no project or domain for this site (`list_projects` and
-`list_domains` both return empty), so there is no deployment, alias or domain to
-verify there. No Vercel or DNS setting was changed.
+**Vercel — partial, and not the live host.** `vercel.json` is maintained in the
+repo (build, `cleanUrls`, `trailingSlash`, cache headers, 47 redirect rules). The
+GitHub app does build this repo on Vercel: PR #23 got a preview deployment
+(`Vercel` check = pass) and Vercel Preview Comments passed. Three limits:
+
+- the production release path recorded in this repo is Hostinger via the
+  `hostinger` branch, and that branch is still `Deploy 30d8ea3`;
+- the connected Vercel account exposes no project or domain for this site
+  (`list_projects` / `list_domains` return empty), so the project that built this
+  preview lives in another team and its alias, production URL and domain
+  assignment are **NOT VERIFIED** from here;
+- `vercel.json` is not itself validated by any gate. If production were Vercel,
+  the redirect rules would need the same treatment `verify-live.mjs` gives the
+  Hostinger `.htaccess` rules.
+
+No Vercel setting, alias, domain or DNS record was changed.
 
 ## 4 · Responsive and interaction
 

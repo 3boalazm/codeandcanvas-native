@@ -10,7 +10,7 @@ CHAPTERS = [
          lead_ar='عمل معماري يُتتبّع فيه كل قرار إلى النية التجارية — <strong>لا إلى وثيقة مواصفات.</strong> مرتكز على TOGAF. متوائم مع NORA. واعٍ برؤية 2030.',
          body='Ahmed builds enterprise architectures in KSA grounded in <strong>TOGAF, ArchiMate and NORA</strong> — translating a CIO\'s problem into a traceable decision tree a board can approve and a developer can implement. Every engagement produces a <em>Business-to-Technology Alignment Matrix.</em>',
          body_ar='يبني أحمد عمارات مؤسسية في السعودية مرتكزة على <strong>TOGAF و ArchiMate و NORA</strong> — محوّلًا مشكلة مدير تقنية المعلومات إلى شجرة قرارات قابلة للتتبع يعتمدها مجلس الإدارة وينفذها المطوّر. كل مشروع ينتج <em>مصفوفة مواءمة الأعمال مع التقنية.</em>',
-         pills=['TOGAF', 'NORA', 'ArchiMate 3.1', 'Vision 2030'], href='/technology-services/',
+         pills=[('Enterprise architecture', 'العمارة المؤسسية'), ('Solution design', 'تصميم الحلول'), ('Data & cloud', 'البيانات والسحابة'), ('Vision 2030 alignment', 'مواءمة رؤية 2030')], href='/technology-services/',
          cap='AB · Enterprise Architecture', cap2='Enterprise Architecture Practice', cap2_ar='ممارسة العمارة المؤسسية', flip=False,
          media='art-story-architecture', art_alt='Abstract illustrative plate for the technology and architecture practice — not a client deliverable', art_alt_ar='لوحة توضيحية تجريدية لممارسة التقنية والعمارة — ليست مخرج عميل'),
     dict(id='identity', num='02', accent='brand', kicker='Brand Identity & Creative', kicker_ar='هوية العلامة والإبداع',
@@ -19,17 +19,17 @@ CHAPTERS = [
          lead_ar='حيث يصبح الشعار نظامًا، والنظام لغة، واللغة <strong>هي ما يتعرّف عليه العملاء قبل أن يقرأوا كلمة واحدة.</strong>',
          body='Mustafa treats brand work as <strong>commercial work</strong> — every design decision either supports a revenue outcome or gets cut. The four-act methodology (Discovery, Strategy, Concept, Refine) exists because <em>skipping strategy gives you a logo, not a brand.</em>',
          body_ar='يتعامل مصطفى مع عمل العلامة بوصفه <strong>عملًا تجاريًا</strong> — كل قرار تصميمي إما يدعم نتيجة إيرادية أو يُستبعد. منهجية الفصول الأربعة (الاستكشاف، الاستراتيجية، المفهوم، الصقل) موجودة لأن <em>تخطّي الاستراتيجية يعطيك شعارًا لا علامة.</em>',
-         pills=['Brand Strategy', 'Bilingual AR/EN', 'Design Systems', 'Figma'], href='/creative-services/',
+         pills=[('Brand Strategy', 'استراتيجية العلامة'), ('Bilingual AR/EN', 'ثنائية اللغة'), ('Design Systems', 'أنظمة التصميم'), ('Figma', 'Figma')], href='/creative-services/',
          cap='MA · Brand Systems', cap2='Brand systems built across sectors', cap2_ar='أنظمة علامة عبر قطاعات مختلفة', flip=True,
          media='art-story-identity', art_alt='Abstract illustrative plate for the brand identity practice — not a client brand board', art_alt_ar='لوحة توضيحية تجريدية لممارسة هوية العلامة — ليست لوحة علامة لعميل'),
     dict(id='healthcare', num='03', accent='health', kicker='Healthcare Vertical', kicker_ar='قطاع الرعاية الصحية',
          title='Where clinical context is built in from day one.', title_ar='حيث يُبنى السياق السريري من اليوم الأول.',
-         lead='Clinical context from the first call — not briefed in on the first call. <strong>CPHIMS. EMRAM. CBAHI. NORA.</strong> Frameworks and readiness criteria we work within; certificate status is documented in the claims register.',
-         lead_ar='سياق سريري من أول مكالمة — لا شرح يُقدَّم في أول مكالمة. <strong>CPHIMS. EMRAM. CBAHI. NORA.</strong> أطر ومعايير نعمل في سياقها؛ وحالة الشهادات موثّقة في سجل الادعاءات.',
+         lead='Clinical context from the first call — not briefed in on the first call. <strong>Readiness criteria, interoperability and accreditation gaps</strong> are part of the first conversation, not a later phase.',
+         lead_ar='سياق سريري من أول مكالمة — لا شرح يُقدَّم في أول مكالمة. <strong>معايير الجاهزية والتشغيل البيني وفجوات الاعتماد</strong> جزء من المحادثة الأولى، لا مرحلة لاحقة.',
          body='Healthcare IT is where a wrong decision costs most — a misaligned HIS is not a licence you cancel, it is years of workarounds and manual reporting. We operate <em>inside</em> the ecosystem: clinical workflow context in every technology recommendation, CBAHI-aware design in every visual decision.',
          body_ar='تقنية الرعاية الصحية هي حيث يكلّف القرار الخاطئ أكثر — النظام غير المتوائم ليس ترخيصًا يُلغى، بل سنوات من الحلول المؤقتة والتقارير اليدوية. نعمل <em>داخل</em> المنظومة: سياق مسارات العمل السريرية في كل توصية تقنية، وتصميم واعٍ بـ CBAHI في كل قرار بصري.',
-         pills=['CPHIMS', 'HIMSS EMRAM', 'CBAHI', 'NORA'], href='/healthcare/',
-         cap='HC · Clinical Architecture', cap2='CBAHI · NORA · HIMSS', cap2_ar='CBAHI · NORA · HIMSS', flip=False,
+         pills=[('Clinical workflow', 'المسارات السريرية'), ('HIS selection', 'اختيار HIS'), ('Readiness assessment', 'تقييم الجاهزية'), ('Interoperability', 'التشغيل البيني')], href='/healthcare/',
+         cap='HC · Clinical Architecture', cap2='Clinical readiness · interoperability', cap2_ar='جاهزية سريرية · تشغيل بيني', flip=False,
          media='art-story-healthcare', art_alt='Abstract illustrative plate for the healthcare practice — no patient data, no dashboard', art_alt_ar='لوحة توضيحية تجريدية لممارسة الرعاية الصحية — بلا بيانات مرضى وبلا لوحة بيانات'),
     dict(id='data', num='04', accent='data', kicker='Data & Analytics', kicker_ar='البيانات والتحليلات',
          title='Where data stops being a reporting burden.', title_ar='حيث تتوقف البيانات عن كونها عبء تقارير.',
@@ -37,7 +37,7 @@ CHAPTERS = [
          lead_ar='حيث تبدأ البيانات التشغيلية في أن تكون <strong>ما يخبر القيادة بالخطوة التالية.</strong>',
          body='The problem is rarely the data — <em>it is the distance between the data and the decision.</em> We close it by building <strong>the right KPI framework first</strong>, then connecting the data, then making it visible in a format leadership can act on without a data team in the room.',
          body_ar='نادرًا ما تكون المشكلة في البيانات — <em>بل في المسافة بين البيانات والقرار.</em> نغلقها ببناء <strong>إطار المؤشرات الصحيح أولًا</strong>، ثم ربط البيانات، ثم إظهارها بصيغة تستطيع القيادة التصرف بناءً عليها دون فريق بيانات في الغرفة.',
-         pills=['Power BI', 'Tableau', 'Python', 'CBAHI KPIs'], href='/technology-services/#ab-03',
+         pills=[('Operational data models', 'نماذج البيانات التشغيلية'), ('Executive dashboards', 'لوحات المؤشرات التنفيذية'), ('Reporting pipelines', 'خطوط التقارير'), ('KPI libraries', 'مكتبات المؤشرات')], href='/technology-services/#ab-03',
          cap='AB · Data & Analytics', cap2='Power BI · Tableau · Python · EDW', cap2_ar='Power BI · Tableau · Python · EDW', flip=True,
          media='art-story-data', art_alt='Abstract illustrative plate for the data practice — no chart values, no client reporting', art_alt_ar='لوحة توضيحية تجريدية لممارسة البيانات — بلا قيم رسوم بيانية وبلا تقارير عميل'),
     dict(id='media', num='05', accent='media', kicker='Media & Content Production', kicker_ar='الإعلام وإنتاج المحتوى',
@@ -46,7 +46,7 @@ CHAPTERS = [
          lead_ar='حيث يلتقي نظام العلامة بالكاميرا. <strong>مُخرَجة. مكتوبة. ثنائية اللغة. متوائمة مع العلامة.</strong>',
          body='Media without direction is expensive content nobody remembers. Every production starts with a creative brief and a <strong>bilingual script</strong> — <em>the message is designed before the camera turns on.</em> Brand systems need to live in motion, not only in guidelines PDFs.',
          body_ar='الإعلام بلا إخراج محتوى مكلف لا يتذكره أحد. كل إنتاج يبدأ بموجز إبداعي و<strong>نص ثنائي اللغة</strong> — <em>الرسالة تُصمَّم قبل أن تدور الكاميرا.</em> أنظمة العلامة يجب أن تعيش في الحركة، لا في ملفات الأدلة فقط.',
-         pills=['Art Direction', 'Video', 'Photography', 'Voice-over'], href='/creative-services/#ma-08',
+         pills=[('Art Direction', 'الإخراج الفني'), ('Video', 'الفيديو'), ('Photography', 'التصوير'), ('Voice-over', 'التعليق الصوتي')], href='/creative-services/#ma-08',
          cap='MA · Production', cap2='Photography · Video · Voice-over', cap2_ar='تصوير · فيديو · تعليق صوتي', flip=False,
          media='art-story-media', art_alt='Abstract illustrative plate for the media practice — not a photograph of people or a studio shoot', art_alt_ar='لوحة توضيحية تجريدية لممارسة الإعلام — ليست صورة أشخاص ولا تصويرًا حقيقيًا'),
 ]
@@ -67,13 +67,13 @@ def plate(c):
 
 
 def chapter(c):
-    pills = ''.join(f'<span class="tag-soft">{esc(p)}</span>' for p in c['pills'])
+    pills = ''.join(f'<li><span data-ar="{esc(p_ar)}">{esc(p)}</span></li>' for p, p_ar in c['pills'])
     text = f'''
           <div class="story-body">
             <h2 id="ch-{c['id']}-title" data-ar="{esc(c['title_ar'])}">{esc(c['title'])}</h2>
             <p class="lead" data-ar-html="{esc(c['lead_ar'])}">{c['lead']}</p>
             <p data-ar-html="{esc(c['body_ar'])}">{c['body']}</p>
-            <div class="who__creds" style="margin-top:4px">{pills}</div>
+            <ul class="focus-list" aria-label="Focus" data-ar-label="مجالات التركيز" style="margin-top:10px">{pills}</ul>
             <p style="margin-top:6px"><a class="text-link" href="{c['href']}"><span data-ar="اقرأ المسار كاملًا ←">Read the full track →</span>{icon('arrow')}</a></p>
           </div>'''
     cols = (text + plate(c)) if c['flip'] else (plate(c) + text)

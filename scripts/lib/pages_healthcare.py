@@ -78,7 +78,7 @@ def build():
         {crumbs([('Home', 'الرئيسية', '/'), ('Solutions', 'الحلول', '/services/'), ('Healthcare', 'الرعاية الصحية', None)])}
         <span class="eyebrow" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span><span data-ar="عيادات ومستشفيات · السعودية ومصر · ثنائي اللغة">Clinics &amp; hospitals · KSA + Egypt · bilingual</span></span>
         <h1 class="phero__title" id="page-title" data-reveal style="--d:.08s"><span data-ar="قرارات الرعاية الصحية">Healthcare decisions</span><br /><span class="grad-text" data-ar="تُبنى على بيانات وأدلة.">built on data and evidence.</span></h1>
-        <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="خمس خدمات للعيادات والمستشفيات: الإطلاق الرقمي وذكاء الأعمال الصحي واستشارات اختيار HIS وهوية العيادة وتقييم العمارة المؤسسية. &lt;strong&gt;تُسلَّم وفق معايير جاهزية CPHIMS و EMRAM وبسياق سريري حقيقي.&lt;/strong&gt;">Five services for clinics and hospitals: digital launch, healthcare BI, HIS selection advisory, clinic identity and enterprise-architecture assessment. <strong>Working within CPHIMS and EMRAM readiness criteria, with real clinical context.</strong></p>
+        <p class="hero__lead" data-reveal style="--d:.16s" data-ar-html="خمس خدمات للعيادات والمستشفيات: الإطلاق الرقمي وذكاء الأعمال الصحي واستشارات اختيار HIS وهوية العيادة وتقييم العمارة المؤسسية. &lt;strong&gt;تُسلَّم وفق معايير جاهزية EMRAM و CBAHI وبسياق سريري حقيقي.&lt;/strong&gt;">Five services for clinics and hospitals: digital launch, healthcare BI, HIS selection advisory, clinic identity and enterprise-architecture assessment. <strong>Working within EMRAM and CBAHI readiness criteria, with real clinical context.</strong></p>
         <div class="hero__ctas" data-reveal style="--d:.24s">
           {btn('Book a 30-min call', 'احجز مكالمة 30 دقيقة', '/book/')}
           {btn('Healthcare pricing', 'أسعار الرعاية الصحية', '/pricing-faq/', 'glass')}
@@ -145,7 +145,7 @@ def build():
 '''
     return [page('/healthcare/', title='Healthcare Solutions — Clinics and hospitals in KSA and Egypt · Code & Canvas',
                  title_ar='حلول الرعاية الصحية — العيادات والمستشفيات في السعودية ومصر · Code & Canvas',
-                 desc='Five healthcare services for clinics and hospitals: clinic digital launch, healthcare BI, HIS selection advisory, clinic brand identity and enterprise-architecture assessment — using CPHIMS and EMRAM readiness criteria.',
-                 desc_ar='خمس خدمات صحية للعيادات والمستشفيات: الإطلاق الرقمي للعيادات وذكاء الأعمال الصحي واستشارات اختيار نظام HIS وهوية العيادة وتقييم العمارة المؤسسية — وفق معايير جاهزية CPHIMS و EMRAM.',
+                 desc='Five healthcare services for clinics and hospitals: clinic digital launch, healthcare BI, HIS selection advisory, clinic brand identity and enterprise-architecture assessment — using EMRAM and CBAHI readiness criteria.',
+                 desc_ar='خمس خدمات صحية للعيادات والمستشفيات: الإطلاق الرقمي للعيادات وذكاء الأعمال الصحي واستشارات اختيار نظام HIS وهوية العيادة وتقييم العمارة المؤسسية — وفق معايير جاهزية EMRAM و CBAHI.',
                  nav='healthcare', body=body,
                  ld=[service_ld(HC, 'https://codeandcanvas.net/healthcare/'), PERSON_LD['ahmed'], PERSON_LD['mustafa']])]

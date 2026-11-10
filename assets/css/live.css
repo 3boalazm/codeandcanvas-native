@@ -129,6 +129,9 @@
 .slot:hover:not(:disabled) { border-color: var(--live-teal); }
 .slot.is-selected { background: linear-gradient(100deg, var(--live-violet), #5b8cff); border-color: transparent; color: var(--hi, #fff); font-weight: 700; }
 .slot:disabled { opacity: .32; cursor: not-allowed; text-decoration: line-through; }
+/* The slot carries its timezone (AST / EET / UTC) so the time the visitor reads
+   is the time that is stored — not a label they have to infer. */
+.slot small { display: block; margin-top: 2px; font-size: 10px; letter-spacing: .08em; opacity: .72; }
 .book-summary { display: grid; gap: 10px; }
 .book-summary div { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--live-line); font-size: 13.5px; }
 .book-summary span { color: var(--ink-3); }

@@ -41,6 +41,13 @@ const BANNED = [
   [/4[–—-]7\s*[×x]/i, 'unverified speed multiplier'],
   [/\$?50\s?K\s*[–—-]\s*\$?200\s?K/i, 'unverified risk figure'],
   [/active credentials|worked credentials|اعتمادات فعّالة|اعتمادات يمارسها/i, 'unverified credential wording'],
+  /* A · credential presentation. Framework names are legitimate when a page
+     explains where the method decides a decision; they are not legitimate as a
+     personal qualification, a badge shelf or an assessor title. */
+  [/\bCPHIMS\b/, 'CPHIMS presented as a qualification (owner removed it)'],
+  [/(?:TOGAF|CPHIMS|EMRAM|NORA|CBAHI|HIMSS)\s*(?:‑|–|-|—)?\s*(?:certified|accredited|assessor|certificate|certification)/i, 'framework name used as a personal certification'],
+  [/(?:certified|accredited)\s+(?:in|by)\s+(?:TOGAF|CPHIMS|EMRAM|NORA|CBAHI|HIMSS)/i, 'certified-in-framework wording'],
+  [/class="(?:who__creds|duo__creds|creds)\b/, 'credential chip shelf reintroduced'],
 ];
 const QUOTE_ALLOWED = /\/claims\/|\/work\/|\/evidence/;
 
@@ -73,6 +80,14 @@ for (const file of pages) {
   // A "Book …" promise must land on the real scheduler, never on a WhatsApp
   // hand-off or a contact-page anchor. The 2026-11 audit found the CTA lying.
   if (/href="[^"]*\/contact\/[^"]*#book"/.test(html)) fail(`${rel}: booking CTA points at /contact/#book instead of /book/`);
+  // …and never at a third-party scheduler (owner decision: first-party only).
+  if (/href="[^"]*(?:calendly\.com|cal\.com|savvycal\.com|calend\.ly|hubspot\.com\/meetings|tidycal)/i.test(html)) {
+    fail(`${rel}: booking CTA uses a third-party scheduler`);
+  }
+  // Every page that offers a call must offer the first-party scheduler somewhere.
+  if (/30[- ]min(?:ute)?|30 دقيقة/i.test(html) && /\/book\//.test(html) === false) {
+    fail(`${rel}: offers a 30-minute call but never links /book/`);
+  }
   // The credential FAQ was removed by owner decision (2026-11); reinstating the
   // question without dated evidence would repeat the contradiction.
   if (/Are your credentials active|هل اعتماداتكم سارية/i.test(html)) fail(`${rel}: credential-status FAQ without owner evidence`);
@@ -85,6 +100,37 @@ for (const file of pages) {
     if (!/<link rel="manifest" href="\/manifest\.webmanifest"/.test(html)) fail(`${rel}: missing PWA manifest link`);
     if (!/<link rel="apple-touch-icon" href="\/assets\/brand\/app\/apple-touch-icon\.png"/.test(html)) fail(`${rel}: missing apple-touch-icon`);
   }
+}
+
+/* ---- D · localisation: EN and AR twins must keep the same structure --------
+   The claim-strength rule is already enforced by the banned-pattern list. This
+   adds the structural half: a section that exists in English must exist in
+   Arabic, so a rewrite cannot silently drop content from one language. */
+const TWINS = [
+  'technology-services', 'team', 'our-story', 'creative-services', 'healthcare',
+  'work', 'about', 'claims', 'contact', 'book',
+];
+for (const slug of TWINS) {
+  const enFile = join(ROOT, slug, 'index.html');
+  const arFile = join(ROOT, 'ar', slug, 'index.html');
+  if (!existsSync(enFile) || !existsSync(arFile)) { fail(`missing twin for /${slug}/`); continue; }
+  const en = readFileSync(enFile, 'utf8');
+  const ar = readFileSync(arFile, 'utf8');
+  const count = (html, re) => (html.match(re) || []).length;
+  for (const [re, label] of [
+    [/<section\b/g, 'sections'],
+    [/<h2\b/g, 'h2 headings'],
+    [/<article\b/g, 'articles'],
+  ]) {
+    const a = count(en, re), b = count(ar, re);
+    if (a !== b) fail(`/${slug}/: ${label} differ between languages (en ${a}, ar ${b})`);
+  }
+  // The Arabic page must be Arabic and the English page must not be.
+  if (!/<html[^>]+lang="ar"/.test(ar)) fail(`/ar/${slug}/: html lang is not ar`);
+  if (/<html[^>]+lang="ar"/.test(en)) fail(`/${slug}/: html lang is ar on the English page`);
+  // Every Arabic page needs a self-referential canonical under /ar/.
+  const canon = (ar.match(/<link rel="canonical" href="([^"]+)"/) || [])[1] || '';
+  if (!canon.includes(`/ar/${slug}/`)) fail(`/ar/${slug}/: canonical is ${canon || 'missing'}`);
 }
 
 /* ---- required first-party routes ---- */

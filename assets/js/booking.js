@@ -52,6 +52,7 @@
   const setStep = (n) => $$('[data-step]').forEach((li) => li.classList.toggle('is-active', Number(li.dataset.step) <= n));
 
   let days = [];
+  let lastSlots = [];
   async function loadDays() {
     try {
       const res = await fetch(cfg.slotsEndpoint || '/api/booking/slots', { headers: { Accept: 'application/json' } });
@@ -76,17 +77,23 @@
     try {
       const url = new URL(cfg.slotsEndpoint || '/api/booking/slots', location.origin);
       url.searchParams.set('date', date);
+      /* The schedule is published in both office timezones; asking the API for
+         the visitor's choice means the labels they read are the ones stored. */
+      if (tzEl?.value) url.searchParams.set('timezone', tzEl.value);
       const res = await fetch(url, { headers: { Accept: 'application/json' } });
       if (!res.ok) throw new Error('slots unavailable');
       const data = await res.json();
-      const list = data.slots || [];
+      lastSlots = data.slots || [];
+      const list = lastSlots;
       if (!list.length) { slotsEl.innerHTML = `<p class="field__hint">${CC.esc(L('No slots on this day.', 'لا مواعيد في هذا اليوم.'))}</p>`; return; }
-      slotsEl.innerHTML = list.map((s) => `<button class="slot" type="button" data-time="${s.time}" aria-pressed="false"${s.available ? '' : ' disabled'}>${s.time}</button>`).join('');
+      const tzLabel = tzEl?.value || 'AST';
+      slotsEl.innerHTML = list.map((s) => `<button class="slot" type="button" data-time="${s.time}" aria-pressed="false"${s.available ? '' : ' disabled'} aria-label="${CC.esc(s.time + ' ' + tzLabel)}">${CC.esc(s.time)}<small>${CC.esc(tzLabel)}</small></button>`).join('');
     } catch {
       slotsEl.innerHTML = `<p class="field__hint">${CC.esc(L('Slots could not be loaded. Try again or request a call manually.', 'تعذّر تحميل المواعيد. حاول مجددًا أو اطلب مكالمة يدويًا.'))}</p>`;
     }
   }
   dateEl?.addEventListener('change', () => { if (dateEl.value) loadSlots(dateEl.value); });
+  tzEl?.addEventListener('change', () => { if (dateEl.value) loadSlots(dateEl.value); });
   slotsEl?.addEventListener('click', (e) => {
     const b = e.target.closest('.slot'); if (!b || b.disabled) return;
     $$('.slot', slotsEl).forEach((x) => { x.classList.remove('is-selected'); x.setAttribute('aria-pressed', 'false'); });
@@ -150,6 +157,7 @@
       ];
       $('#b-summary').innerHTML = rows.map(([k, v]) => `<div><span>${CC.esc(k)}</span><b>${CC.esc(v)}</b></div>`).join('');
       $('#b-ics').href = result.calendarUrl || '#';
+      if (result.duplicate) { setStatus(`<strong>${CC.esc(L('This booking was already recorded — nothing was duplicated.', 'هذا الحجز مسجّل بالفعل — لم يتكرر شيء.'))}</strong>`, true); }
       $('#b-confirm').scrollIntoView({ block: 'start', behavior: 'smooth' });
     } catch (err) {
       setStatus(`<strong>${CC.esc(L('We could not confirm the booking.', 'لم نتمكن من تأكيد الحجز.'))}</strong>${manual()}<p class="field__hint">${CC.esc(err.message === 'slot unavailable' ? L('That slot was just taken — please pick another.', ' هذا الموعد حُجز للتو — اختر موعدًا آخر.') : '')}</p>`);

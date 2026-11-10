@@ -112,8 +112,8 @@ def build():
             <div class="panel tier" style="margin-top:14px">
               <p class="kicker"><span data-ar="ساعات العمل">Office hours</span></p>
               <ul class="kv">
-                <li><span data-ar="السعودية">KSA</span><b class="ltr">Sun – Thu · 9:00 – 18:00 AST</b></li>
-                <li><span data-ar="مصر">Egypt</span><b class="ltr">Sun – Thu · 9:00 – 18:00 EET</b></li>
+                <li><span data-ar="السعودية">KSA</span><b class="ltr">Sun – Thu · 9:00 – 17:00 AST</b></li>
+                <li><span data-ar="مصر">Egypt</span><b class="ltr">Sun – Thu · 9:00 – 17:00 EET</b></li>
               </ul>
               <p class="field__hint" style="margin-top:10px" data-ar="الرسائل خارج ساعات العمل تُجاب في يوم العمل التالي.">Messages outside office hours are answered the next business day.</p>
             </div>

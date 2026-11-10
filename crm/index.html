@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Lead Desk — Code &amp; Canvas</title>
+<style>
+  :root{--bg:#05051a;--panel:#111132;--line:rgba(255,255,255,.11);--ink:#f4f4ff;--mut:#a9a9c8;--violet:#8b6cff;--teal:#3fd6c4;--pink:#ee5ba3;--gold:#f3c77a}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+  a{color:var(--teal)}button,input,select{font:inherit}
+  header{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:18px clamp(16px,4vw,40px);border-bottom:1px solid var(--line);background:linear-gradient(90deg,#0d0b30,#080824)}
+  header h1{font-size:19px;margin:0;letter-spacing:.01em}header h1 small{display:block;font-size:11px;letter-spacing:.16em;color:var(--mut);font-weight:600;text-transform:uppercase}
+  .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}input[type=search],input[type=password]{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:var(--ink);min-width:170px}
+  .btn{border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);border-radius:10px;padding:9px 14px;cursor:pointer}
+  .btn:hover{border-color:var(--violet)}.btn--go{background:linear-gradient(100deg,var(--violet),#5b8cff);border-color:transparent;color:#fff;font-weight:700}
+  main{padding:clamp(16px,3vw,32px)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:24px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}.stat b{display:block;font-size:28px;line-height:1.2}.stat span{color:var(--mut);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start}
+  .col{background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:14px;padding:12px;min-height:160px}
+  .col h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:0 0 12px;display:flex;justify-content:space-between}
+  .col h2 b{color:var(--teal)}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px;margin-bottom:10px}
+  .lead .top{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--mut)}
+  .lead strong{display:block;font-size:15px;margin:6px 0 2px;overflow-wrap:anywhere}
+  .lead p{margin:6px 0;font-size:13px;color:var(--mut);white-space:pre-wrap;max-height:90px;overflow:auto}
+  .lead code{font-size:11px;color:var(--gold)}
+  .row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.row select,.row button{font-size:12px;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--ink);cursor:pointer}
+  .empty{color:var(--mut);font-size:13px;padding:8px}
+  .notice{padding:12px 16px;border-radius:12px;background:rgba(243,199,122,.09);border:1px solid rgba(243,199,122,.3);color:#fbe6bd;margin-bottom:18px;font-size:13px}
+  footer{padding:20px clamp(16px,4vw,40px);border-top:1px solid var(--line);color:var(--mut);font-size:12px}
+  @media(max-width:640px){header{padding:14px}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Lead Desk <small>Code &amp; Canvas · pipeline</small></h1>
+  <div class="bar">
+    <input type="search" id="q" placeholder="Search name, email, inquiry…" aria-label="Search leads" />
+    <input type="password" id="token" placeholder="Admin token" aria-label="Admin token" />
+    <button class="btn btn--go" id="connect" type="button">Connect</button>
+    <button class="btn" id="refresh" type="button">Refresh</button>
+    <a class="btn" id="csv" href="/api/export.csv">Export CSV</a>
+  </div>
+</header>
+<main>
+  <p class="notice">Review build: a real first-party pipeline with durable records, consent, spam controls and stage tracking. File-backed on a single node — a production launch needs a managed database, mail delivery, backups and access control. See <code>docs/LEAD-PIPELINE.md</code>.</p>
+  <div class="stats" id="stats"></div>
+  <div id="error" role="status" aria-live="polite"></div>
+  <div class="board" id="board"></div>
+</main>
+<footer>Website inquiry → validation · spam protection · consent → CRM lead → notification → New · Qualified · Proposal · Won · Lost. No third-party tracker is loaded by the public site.</footer>
+<script>
+(() => {
+  'use strict';
+  const STAGES = ['new','qualified','proposal','won','lost'];
+  const LABEL = { new:'New', qualified:'Qualified', proposal:'Proposal', won:'Won', lost:'Lost' };
+  const $ = (s) => document.querySelector(s);
+  const tokenEl = $('#token'), qEl = $('#q');
+  tokenEl.value = localStorage.getItem('cc-crm-token') || '';
+  const headers = () => ({ 'Authorization': 'Bearer ' + (tokenEl.value.trim() || localStorage.getItem('cc-crm-token') || ''), 'Content-Type': 'application/json' });
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  let leads = [];
+
+  async function load() {
+    localStorage.setItem('cc-crm-token', tokenEl.value.trim());
+    $('#error').textContent = '';
+    try {
+      const [a, b] = await Promise.all([
+        fetch('/api/leads', { headers: headers() }), fetch('/api/stats', { headers: headers() }),
+      ]);
+      if (!a.ok || !b.ok) throw new Error('Connect with the admin token (CC_ADMIN_TOKEN).');
+      const data = await a.json(), stats = await b.json();
+      leads = data.leads || [];
+      $('#stats').innerHTML = [['leads', stats.leads], ['bookings', stats.bookings], ['events', stats.events],
+        ...STAGES.map((s) => [s, stats.byStage[s]])].map(([k,v]) => `<div class="stat"><b>${esc(v ?? 0)}</b><span>${esc(LABEL[k] ?? k)}</span></div>`).join('');
+      $('#csv').href = '/api/export.csv?token=' + encodeURIComponent(tokenEl.value.trim());
+      render();
+    } catch (e) { $('#error').innerHTML = `<p class="notice">${esc(e.message)}</p>`; }
+  }
+  function render() {
+    const q = qEl.value.trim().toLowerCase();
+    const shown = q ? leads.filter((l) => JSON.stringify(l).toLowerCase().includes(q)) : leads;
+    $('#board').innerHTML = STAGES.map((stage) => {
+      const rows = shown.filter((l) => l.stage === stage).slice().reverse();
+      return `<section class="col"><h2>${esc(LABEL[stage] ?? stage)} <b>${rows.length}</b></h2>${rows.length ? rows.map(card).join('') : '<p class="empty">No records</p>'}</section>`;
+    }).join('');
+  }
+  function card(l) {
+    const opts = STAGES.map((s) => `<option value="${s}"${s === l.stage ? ' selected' : ''}>${LABEL[s] ?? s}</option>`).join('');
+    return `<article class="lead" data-id="${esc(l.id)}">
+      <div class="top"><span>${esc(new Date(l.createdAt).toLocaleString())}</span><span>${esc(l.kind)} · ${esc(l.score)}</span></div>
+      <strong>${esc(l.name || '—')}</strong>
+      <div><a href="mailto:${esc(l.email)}">${esc(l.email)}</a></div>
+      <p>${esc(l.inquiry || '')}${l.organization ? '\n' + esc(l.organization) : ''}${l.bookingId ? '\n📅 ' + esc(l.bookingId) : ''}</p>
+      ${l.message ? `<p>${esc(l.message.slice(0, 300))}</p>` : ''}
+      <code>${esc(l.id)} · ${esc(l.lang)} · ${esc(l.page || '')}</code>
+      <div class="row"><select aria-label="Stage for ${esc(l.id)}" data-stage>${opts}</select><button type="button" data-save>Move</button><button type="button" data-note>Add note</button></div>
+      ${(l.notes || []).slice(-2).map((n) => `<p>📝 ${esc(n.text)}</p>`).join('')}
+    </article>`;
+  }
+  async function patch(id, body) {
+    const r = await fetch('/api/leads/' + encodeURIComponent(id), { method: 'PATCH', headers: headers(), body: JSON.stringify(body) });
+    if (!r.ok) { $('#error').innerHTML = '<p class="notice">Update refused. Check the token.</p>'; return; }
+    await load();
+  }
+  $('#board').addEventListener('click', async (e) => {
+    const el = e.target.closest('.lead'); if (!el) return;
+    const id = el.dataset.id;
+    if (e.target.closest('[data-save]')) return patch(id, { stage: el.querySelector('[data-stage]').value });
+    if (e.target.closest('[data-note]')) { const note = prompt('Pipeline note'); if (note) return patch(id, { note }); }
+  });
+  $('#connect').addEventListener('click', load);
+  $('#refresh').addEventListener('click', load);
+  qEl.addEventListener('input', render);
+  tokenEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') load(); });
+  load();
+})();
+</script>
+</body>
+</html>

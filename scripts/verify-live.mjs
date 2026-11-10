@@ -184,7 +184,33 @@ if (CRAWL.length && !networkError) {
   }
 }
 
-/* 3 · declared redirects must land on a 200, not a chain */
+/* 3 · the booking API lives behind the same origin. The published site is a
+   static build; if the Node service is not mounted next to it, /book/ silently
+   degrades to a manual hand-off while still looking like a working scheduler.
+   Report it always; fail only when the release claims a live scheduler
+   (CC_REQUIRE_API=1), so the owner can see the truth without a red deploy gate. */
+let apiStatus = 'not checked';
+try {
+  const res = await fetch(`${BASE}/api/health`, { headers: { 'User-Agent': 'cc-live-verify/2.0' } });
+  const body = await res.text();
+  const live = res.status === 200 && /"ok":\s*true/.test(body);
+  apiStatus = live ? `live (${(JSON.parse(body).commit || 'unknown').slice(0, 7)})` : `HTTP ${res.status}`;
+  const required = process.env.CC_REQUIRE_API === '1';
+  out.push({
+    route: '/api/health (booking + CRM)', url: BASE + '/api/health', status: res.status,
+    ok: live || !required,
+    problems: live ? [] : [required
+      ? 'the booking API is not answering on the production origin'
+      : 'booking API not answering — /book/ falls back to a manual request (not a booking)'],
+    warn: !live && !required,
+  });
+} catch (e) {
+  apiStatus = `unreachable (${e.message})`;
+  out.push({ route: '/api/health (booking + CRM)', url: BASE + '/api/health', status: 0, ok: process.env.CC_REQUIRE_API !== '1',
+    problems: ['booking API unreachable — /book/ falls back to a manual request'], warn: true });
+}
+
+/* 4 · declared redirects must land on a 200, not a chain */
 for (const probe of redirectProbes()) {
   if (networkError) break;
   try {
@@ -209,15 +235,18 @@ for (const probe of redirectProbes()) {
   }
 }
 
+const warned = out.filter((r) => r.warn);
+
 if (AS_JSON) {
   console.log(JSON.stringify({ base: BASE, networkError, results: out }, null, 2));
 } else {
   console.log(`Live domain verification — ${BASE}`);
   for (const r of out) console.log(`${r.ok ? '✓' : '✗'} ${r.route}  [${r.status}]${r.problems.length ? '  ' + r.problems.join('; ') : ''}`);
   console.log(`\n${out.filter((r) => r.ok).length}/${out.length} routes answered · ${EXPECTED.length} hashed asset reference(s) in the build`);
+  if (warned.length) console.log(`${warned.length} warning(s): ` + warned.map((r) => r.route).join(', '));
 }
 
-const failed = out.filter((r) => !r.ok);
+const failed = out.filter((r) => !r.ok && !r.warn);
 if (networkError) {
   console.error(`\nCould not reach ${BASE}: ${networkError}. Live verification is REQUIRED; do not treat a green build as deployment.`);
   process.exit(2);

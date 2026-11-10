@@ -9,7 +9,7 @@ branch with a named command, or marked **NOT VERIFIED** with the reason.
 | 1 · Credential presentation removed | ✅ done, gate-enforced |
 | 2 · Booking end to end | ✅ done (server + payload), UI specs written |
 | 3 · Production integrity | ✅ verifier rebuilt, run locally 175/175; live domain **NOT VERIFIED** from this sandbox |
-| 4 · Responsive / interaction | ⚠️ specs written; **NOT VERIFIED** — no browser binary here, CI runs them |
+| 4 · Responsive / interaction | ✅ verified in CI (no browser binary in this sandbox) |
 | 5 · Regression gates A–F | ✅ done, each proven by injecting a violation |
 | 6 · `npm run check` + `npm run build` | ✅ green |
 | 7 · Focused PR | ✅ opened, **not merged**, nothing deployed |
@@ -127,9 +127,29 @@ No Vercel setting, alias, domain or DNS record was changed.
 ## 4 · Responsive and interaction
 
 There is no Chromium in this sandbox and the Playwright download is blocked
-(`npx playwright install chromium` → `Download failure, code=1`), so browser
-tests are written but **NOT VERIFIED here**. CI runs them (`npm test`, the gate
-installs Playwright with deps).
+(`npx playwright install chromium` → `Download failure, code=1`), so these were
+verified in CI, not here: PR #23 run `42755261246` — step **3 · Playwright +
+accessibility matrix: success**, **4 · verify:api: success**, **5 · production
+build: success**.
+
+The first three CI runs failed on my own new specs and that is worth recording,
+because each failure was a real defect or a wrong assertion:
+
+1. `/team/` had **no first-party booking CTA** in its closing block (only Contact
+   and Services) — a genuine gap, fixed by making the closing action
+   “Book a 30-min call”.
+2. The 320px sweep measured text inside the home page's horizontal snap rail
+   against the window, so cards 2–3 read as clipped. A snap rail is a deliberate
+   scroller.
+3. Same problem for the case-study rail on `/work/`.
+4. Same problem for the claims/evidence table on `/work/`, which sits in an
+   `overflow-x:auto` region — and the sweep only looked inside `<main>`, so a
+   page whose scheduler link lives in the footer failed.
+
+The final rule is general rather than a class allowlist: text hanging past the
+viewport fails only when no ancestor can scroll horizontally; `overflow-x:
+clip|hidden` still counts as clipped, because clip is not a way to reach
+content.
 
 `tests/responsive.spec.mjs` (new, 14 tests): every page changed in this pass at
 **320px**, in both languages — no horizontal scroll, no clipped text node, plus
@@ -162,6 +182,11 @@ Every injected violation was reverted; the tree is clean afterwards.
 
 ## 6 · Green gates at the time of writing
 
+CI (PR #23, run `42755261246`, commit `1b329cf`) — every step success:
+generate · check · Playwright + accessibility matrix · verify:api · build.
+
+Locally:
+
 ```
 sync-chrome        77 pages carry chrome markers · 0 out of date
 version-assets     21 hashed assets · 0 pages out of date
@@ -178,11 +203,13 @@ build              dist/ + 47 redirect rules
 
 ## 7 · Release decision
 
-Nothing is merged and nothing is deployed. Before the owner approves:
+Nothing is merged and nothing is deployed. PR #23 is open against `main` with a
+green gate. Before the owner approves:
 
-1. Let CI run `npm test` (browser suite, including the two new specs).
+1. ~~CI runs `npm test`~~ — done: run `42755261246`, all steps success.
 2. After the approved deploy, read the `Verify the LIVE domain` job: it must print
-   `All … live routes answered correctly`.
+   `All … live routes answered correctly` (that job now covers 175 routes, the
+   canonical/hreflang/stale-hash checks and the `/api/health` probe).
 3. Then, and only then, re-run `npm run verify:live` against production and paste
    the output into this file.
 

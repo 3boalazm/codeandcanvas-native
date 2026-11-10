@@ -56,6 +56,16 @@ jobs:
       - name: 5 · Production build
         run: npm run build
 
+      # A post-deploy verification is only meaningful if the artifact it checks
+      # is complete. Serve dist/ with production semantics and verify it here,
+      # before anything is published: a truncated dist/ must fail the gate, not
+      # the live domain an hour later.
+      - name: 6 · Verify the built artifact (before deploying it)
+        run: |
+          node server/static.mjs &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8080/ >/dev/null && break || sleep 1; done
+          CC_BASE_URL=http://127.0.0.1:8080 node scripts/verify-live.mjs
+
       - name: Upload dist for deployment
         uses: actions/upload-artifact@v4
         with:
@@ -104,3 +114,19 @@ jobs:
 
       - name: Request every core route on https://codeandcanvas.net
         run: npm run verify:live
+
+      # If the live check fails, publish the per-route report as an annotation so
+      # the failure names the route. Job logs are not always retrievable; the
+      # check-runs API always is.
+      - name: Publish the live report on failure
+        if: failure()
+        run: |
+          {
+            echo "### Live domain verification failed"
+            echo ''
+            echo '```'
+            npm run verify:live 2>&1 | tail -40 || true
+            echo '```'
+          } | sed 's/%/%25/g; s/\r//g' > report.md
+          printf '::error file=.github/workflows/deploy-hostinger.yml,line=%s::%s\n' "$(grep -n 'npm run verify:live' .github/workflows/deploy-hostinger.yml | head -1 | cut -d: -f1)" "$(grep -E '✗|routes answered' report.md | head -12 | tr '\n' ' ' | cut -c1-900)"
+

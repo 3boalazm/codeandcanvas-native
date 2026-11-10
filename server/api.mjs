@@ -18,7 +18,11 @@ import { createHash, randomUUID } from 'node:crypto';
 const STAGES = ['new', 'qualified', 'proposal', 'won', 'lost'];
 const SPECIALTIES = new Set(['brand', 'product', 'technology', 'healthcare', 'general']);
 const KINDS = new Set(['contact', 'newsletter', 'career', 'books']);
-const EMAIL_RE = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/;
+/* Strict enough to reject what a buyer would call a broken address:
+   no whitespace, angle brackets, double @, leading/trailing dot, or a TLD
+   shorter than two characters. Deliberately not RFC-complete — the goal is to
+   catch typos before a lead is stored, not to police exotic mailboxes. */
+const EMAIL_RE = /^[^\s@<>.][^\s@<>]*@[^\s@<>.]+(?:\.[^\s@<>.]+)*\.[A-Za-z]{2,}$/;
 const CODE_RE = /^(AB|MA|HC|CC)-\d{2}$/i;
 const EVENT_KEYS = new Set(['id', 'service', 'from', 'form', 'channel', 'filter', 'to']);
 
@@ -158,16 +162,46 @@ export function createApi({ root, env = process.env } = {}) {
     }
     return out;
   }
-  function slots(date) {
+  /* Office hours are published wall-clock times: 09:00–17:00 AST (UTC+3) and
+     09:00–17:00 EET (UTC+2). A slot is therefore defined in UTC and rendered per
+     visitor timezone — storing the wall clock alone made the timezone picker
+     cosmetic and let two visitors book the same UTC instant. */
+  function slots(date, tz = 'AST') {
     if (!businessDates().includes(date)) return [];
-    const taken = new Set(load('bookings').filter((b) => b.date === date && b.status !== 'cancelled').map((b) => b.time));
-    return SLOTS.map((time) => ({ time, available: !taken.has(time) }));
+    const off = TZ_OFFSET[tz] ?? TZ_OFFSET.AST;
+    const taken = new Set(load('bookings').filter((b) => b.date === date && b.status !== 'cancelled').map((b) => slotUtc(b)));
+    return SLOTS.map((time) => {
+      const utc = wallToUtc(date, time, off);
+      return { time, utc, label: utcToWall(utc, off), available: !taken.has(utc) };
+    });
+  }
+  /* Booking identity is the UTC instant, so AST 09:00 and EET 09:00 never clash
+     with each other and the same instant can only be sold once. */
+  function wallToUtc(date, time, off) {
+    const [y, m, d] = date.split('-').map(Number);
+    const [hh, mm] = time.split(':').map(Number);
+    return new Date(Date.UTC(y, m - 1, d, hh - off, mm, 0)).toISOString().slice(0, 16);
+  }
+  function slotUtc(b) {
+    const off = TZ_OFFSET[b.timezone] ?? 3;
+    return b.utc || wallToUtc(b.date, b.time, off);
+  }
+  function utcToWall(utc, off) {
+    const d = new Date(utc + ':00Z');
+    const local = new Date(d.getTime() + off * 3600000);
+    return local.toISOString().slice(11, 16);
   }
   function ics(booking) {
-    const off = TZ_OFFSET[booking.timezone] ?? 3;
-    const [y, m, d] = booking.date.split('-').map(Number);
-    const [hh, mm] = booking.time.split(':').map(Number);
-    const start = new Date(Date.UTC(y, m - 1, d, hh - off, mm, 0));
+    /* Prefer the stored UTC instant; fall back to the wall clock + offset for
+       bookings created before the utc field existed. */
+    const start = booking.utc
+      ? new Date(booking.utc + ':00Z')
+      : (() => {
+          const off = TZ_OFFSET[booking.timezone] ?? 3;
+          const [y, m, d] = booking.date.split('-').map(Number);
+          const [hh, mm] = booking.time.split(':').map(Number);
+          return new Date(Date.UTC(y, m - 1, d, hh - off, mm, 0));
+        })();
     const end = new Date(start.getTime() + 30 * 60000);
     const fmt = (x) => x.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
     const esc = (s) => String(s).replace(/([,;\\])/g, '\\$1').replace(/\n/g, '\\n').slice(0, 500);
@@ -234,13 +268,18 @@ export function createApi({ root, env = process.env } = {}) {
     }
     if (path === '/api/booking/slots' && req.method === 'GET') {
       const date = clean(url.searchParams.get('date'), 10);
-      return json(res, 200, { accepted: true, dates: businessDates(), date, slots: slots(date), timezone: 'AST' });
+      const tzIn = clean(url.searchParams.get('timezone'), 64);
+      const timezone = TZ_OFFSET[tzIn] !== undefined ? tzIn : (TZ_ALIAS[tzIn] || 'AST');
+      return json(res, 200, {
+        accepted: true, dates: businessDates(), date, timezone,
+        offsets: TZ_OFFSET, slots: slots(date, timezone),
+      });
     }
 
     if (req.method !== 'POST') return json(res, 405, { accepted: false, error: 'method not allowed' });
     if (!originOk(req)) return json(res, 403, { accepted: false, error: 'cross-origin request refused' });
     const ip = clientIp(req);
-    if (rateLimited(`post:${ip}`, 12, 60000)) return json(res, 429, { accepted: false, error: 'too many requests' });
+    if (rateLimited(`post:${ip}`, 30, 60000)) return json(res, 429, { accepted: false, error: 'too many requests' });
     let body;
     try { body = await readJson(req); } catch (e) { return json(res, 400, { accepted: false, error: e.message }); }
     if (body._hp) return json(res, 400, { accepted: false, error: 'rejected' });
@@ -301,12 +340,26 @@ export function createApi({ root, env = process.env } = {}) {
       if (!EMAIL_RE.test(email) || !name || !consent) return json(res, 422, { accepted: false, error: 'name, valid email and consent required' });
       if (!SPECIALTIES.has(specialty)) return json(res, 422, { accepted: false, error: 'unknown specialty' });
       if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !businessDates().includes(date)) return json(res, 422, { accepted: false, error: 'date outside the published schedule' });
-      const free = slots(date).find((s) => s.time === time && s.available);
+      /* Replay-safe: the same person booking the same slot twice inside 10
+         minutes gets the first booking back instead of a second record. */
+      const requestedUtc = wallToUtc(date, time, TZ_OFFSET[timezone] ?? 3);
+      const duplicate = load('bookings').find((b) => b.status !== 'cancelled'
+        && b.email === email && slotUtc(b) === requestedUtc
+        && Date.now() - Date.parse(b.createdAt) < 600000);
+      if (duplicate) {
+        return json(res, 200, { accepted: true, duplicate: true, id: duplicate.id, leadId: duplicate.leadId || '',
+          date: duplicate.date, time: duplicate.time, timezone: duplicate.timezone, calendarUrl: duplicate.calendarUrl });
+      }
+      /* One address cannot hold the whole day: a second *different* slot within
+         ten minutes is treated as a burst, not a real second appointment. */
+      const recent = load('bookings').filter((b) => b.email === email && Date.now() - Date.parse(b.createdAt) < 600000);
+      if (recent.length >= 2) return json(res, 429, { accepted: false, error: 'too many bookings from this address' });
+      const free = slots(date, timezone).find((s) => s.time === time && s.available);
       if (!free) return json(res, 409, { accepted: false, error: 'slot unavailable' });
       const booking = {
         id: id('book'), createdAt: new Date().toISOString(), name, email,
         phone: clean(body.phone, 60), organization: clean(body.organization, 200),
-        specialty, timezone, date, time, durationMinutes: 30,
+        specialty, timezone, date, time, utc: requestedUtc, durationMinutes: 30,
         notes: clean(body.notes, 2000), service: CODE_RE.test(clean(body.service, 5)) ? clean(body.service, 5).toUpperCase() : '',
         inquiry: clean(body.inquiry, 200), lang: clean(body.lang, 5) === 'ar' ? 'ar' : 'en',
         calendarUrl: '', status: 'confirmed', source: 'website',
@@ -324,7 +377,7 @@ export function createApi({ root, env = process.env } = {}) {
       event('booking_confirmed', { id: booking.id, service: booking.service });
       event('lead_qualified', { id: lead.id });
       notify('booking', booking);
-      return json(res, 201, { accepted: true, id: booking.id, leadId: lead.id, date, time, timezone, calendarUrl: booking.calendarUrl });
+      return json(res, 201, { accepted: true, id: booking.id, leadId: lead.id, date, time, timezone, utc: booking.utc, calendarUrl: booking.calendarUrl });
     }
 
     return json(res, 404, { accepted: false, error: 'unknown endpoint' });

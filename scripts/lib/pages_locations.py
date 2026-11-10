@@ -20,7 +20,7 @@ def local(x):
                 'priceRange': 'Indicative ranges published in the service catalogue',
                 'address': {'@type': 'PostalAddress', 'addressLocality': x['city'].split(' · ')[0], 'addressCountry': x['country']},
                 'areaServed': x['city'], 'parentOrganization': {'@id': ORG_ID},
-                'openingHoursSpecification': [{'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'], 'opens': '09:00', 'closes': '18:00'}]}
+                'openingHoursSpecification': [{'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'], 'opens': '09:00', 'closes': '17:00'}]}
     city_closing_title = ('<span data-ar="مشروعك في">Your project in</span> '
                           '<span class="grad-text" data-ar="' + esc(x['city_ar']) + '">' + esc(x['city']) + '.</span>')
     body = f'''

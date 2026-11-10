@@ -89,12 +89,69 @@ try {
   if (booking.json?.calendarUrl) {
     const ics = await j(booking.json.calendarUrl);
     ok('GET calendar.ics → VEVENT', ics.status === 200 && /BEGIN:VEVENT/.test(ics.body) && /BEGIN:VCALENDAR/.test(ics.body));
+    const dt = (ics.body.match(/DTSTART:(\d{8}T\d{6})Z/) || [])[1];
+    const expected = booking.json?.utc ? `${booking.json.utc.replace(/[-:]/g, '')}00` : '';
+    ok('calendar invite starts at the booked UTC instant', !!dt && dt === expected, `${dt || 'no DTSTART'} vs ${expected || 'no utc'}`);
+    ok('calendar invite carries a reminder and a reference', /BEGIN:VALARM/.test(ics.body) && new RegExp(booking.json.id).test(ics.body),
+       'VALARM + UID reference');
   }
+  /* ---- timezone correctness -------------------------------------------------
+     Office hours are published wall-clock times. Asking for EET must return the
+     same wall-clock grid with a different UTC instant, and two visitors booking
+     "09:00" in different zones must NOT be sold the same instant. */
+  const slotsAst = await j(`/api/booking/slots?date=${dates[0]}&timezone=AST`);
+  const slotsEet = await j(`/api/booking/slots?date=${dates[0]}&timezone=EET`);
+  const ast09 = slotsAst.json?.slots?.find((x) => x.time === '09:00');
+  const eet09 = slotsEet.json?.slots?.find((x) => x.time === '09:00');
+  ok('slots are labelled in the requested timezone', slotsAst.json?.timezone === 'AST' && slotsEet.json?.timezone === 'EET',
+     `${slotsAst.json?.timezone}/${slotsEet.json?.timezone}`);
+  ok('same wall clock ≠ same instant across zones', !!ast09?.utc && !!eet09?.utc && ast09.utc !== eet09.utc,
+     `${ast09?.utc} vs ${eet09?.utc}`);
+  ok('offset difference is exactly one hour', (() => {
+    if (!ast09?.utc || !eet09?.utc) return false;
+    return Math.abs(Date.parse(`${ast09.utc}:00Z`) - Date.parse(`${eet09.utc}:00Z`)) === 3600000;
+  })(), 'AST is UTC+3, EET is UTC+2');
+
+  /* ---- malformed input ------------------------------------------------------ */
+  const badEmail = await post('/api/booking', {
+    name: 'Bad Email', email: 'not-an-email', specialty: 'brand', date: dates[0], time: ast09?.time || '09:00',
+    timezone: 'AST', consent: 'on',
+  });
+  ok('booking rejects a malformed email', badEmail.status === 422, `status ${badEmail.status}`);
+  const badTz = await post('/api/booking', {
+    name: 'Bad Zone', email: 'zone@example.invalid', specialty: 'brand', date: dates[0], time: '09:00',
+    timezone: 'Mars/Olympus', consent: 'on',
+  });
+  ok('booking rejects an unsupported timezone', badTz.status === 422, `status ${badTz.status}`);
+  const weekend = dates.find((d) => [5, 6].includes(new Date(`${d}T00:00:00Z`).getUTCDay()));
+  const offSchedule = await post('/api/booking', {
+    name: 'Weekend', email: 'weekend@example.invalid', specialty: 'brand', date: weekend || '1999-01-01',
+    time: '09:00', timezone: 'AST', consent: 'on',
+  });
+  ok('booking rejects a date outside published office days', offSchedule.status === 422, `status ${offSchedule.status}`);
+
+  /* ---- replay safety -------------------------------------------------------- */
+  const replay = await post('/api/booking', {
+    name: 'QA Person', email: 'qa@example.invalid', specialty: 'brand', date: dates[0],
+    time: free?.time || '10:00', timezone: 'AST', consent: 'on', lang: 'en',
+  });
+  ok('re-submitting the same booking is idempotent, not duplicated',
+     replay.status === 200 && replay.json?.duplicate === true && replay.json?.id === booking.json?.id,
+     `status ${replay.status} · ${replay.json?.id || 'no id'}`);
+
   const clash = await post('/api/booking', {
     name: 'Other Person', email: 'other@example.invalid', specialty: 'product', date: dates[0], time: free?.time || '10:00',
     timezone: 'Asia/Riyadh', consent: 'on', lang: 'en',
   });
-  ok('double-booking the same slot rejected', clash.status >= 400, `status ${clash.status}`);
+  ok('double-booking the same slot rejected', clash.status === 409, `status ${clash.status}`);
+  /* A third distinct booking from one address inside ten minutes is a burst —
+     refused so a single visitor cannot empty the day. */
+  const burst1 = await post('/api/booking', { name: 'Burst A', email: 'burst@example.invalid', specialty: 'brand', date: dates[0], time: slotsAst.json?.slots?.[1]?.time || '09:30', timezone: 'AST', consent: 'on' });
+  const burst2 = await post('/api/booking', { name: 'Burst B', email: 'burst@example.invalid', specialty: 'brand', date: dates[0], time: slotsAst.json?.slots?.[2]?.time || '10:00', timezone: 'AST', consent: 'on' });
+  const burst3 = await post('/api/booking', { name: 'Burst C', email: 'burst@example.invalid', specialty: 'brand', date: dates[0], time: slotsAst.json?.slots?.[3]?.time || '10:30', timezone: 'AST', consent: 'on' });
+  ok('a burst of bookings from one address is refused',
+     [200, 201].includes(burst1.status) && [200, 201].includes(burst2.status) && burst3.status === 429,
+     `${burst1.status}/${burst2.status}/${burst3.status}`);
 
   const ev1 = await post('/api/events', { event: 'cc', name: 'page_view', path: '/', lang: 'en' });
   const ev2 = await post('/api/events', { event: 'cc', name: 'cta_click', path: '/', lang: 'en' });

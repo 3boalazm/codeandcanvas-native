@@ -119,8 +119,8 @@ def build():
             <div class="panel tier" data-reveal style="--d:.06s">
               <p class="kicker"><span data-ar="ساعات العمل">Office hours</span></p>
               <ul class="kv">
-                <li><span data-ar="السعودية">KSA</span><b class="ltr">Sun – Thu · 9:00 – 18:00 AST</b></li>
-                <li><span data-ar="مصر">Egypt</span><b class="ltr">Sun – Thu · 9:00 – 18:00 EET</b></li>
+                <li><span data-ar="السعودية">KSA</span><b class="ltr">Sun – Thu · 9:00 – 17:00 AST</b></li>
+                <li><span data-ar="مصر">Egypt</span><b class="ltr">Sun – Thu · 9:00 – 17:00 EET</b></li>
               </ul>
               <p class="field__hint" style="margin-top:10px" data-ar="المواعيد المعروضة أيام الأحد–الخميس، وتُحجز لمرة واحدة فقط.">Slots are published for Sun–Thu and each one can be booked only once.</p>
             </div>

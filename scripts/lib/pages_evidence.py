@@ -111,7 +111,7 @@ def decision_block(d, i):
         f'<li><a href="/{SERVICES[c]["track"] and {"technology": "technology-services", "creative": "creative-services", "healthcare": "healthcare", "combined": "services"}[SERVICES[c]["track"]]}/#{c.lower()}">'
         f'<span class="idx__code">{c}</span>'
         f'<span class="idx__title" data-ar="{esc(SERVICES[c]["title_ar"])}">{esc(SERVICES[c]["title"])}</span>'
-        f'<span class="idx__meta ltr">{esc(SERVICES[c]["price"])}</span></a></li>'
+        f'<span class="idx__price ltr">{esc(SERVICES[c]["price"])}</span></a></li>'
         for c in d['codes'])
     return f'''
       <article class="decision" id="decision-{d['n']}" data-reveal{' style="--d:%.2fs"' % (i * .05) if i else ''}>

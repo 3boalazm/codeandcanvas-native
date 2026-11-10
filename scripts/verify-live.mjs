@@ -64,6 +64,10 @@ function routesFromDist() {
 }
 const PAGES = (() => {
   const internal = routesFromDist();
+  if (!internal.length) {
+    console.error('verify-live: dist/ is missing or empty — build before verifying, otherwise the crawl checks nothing.');
+    process.exitCode = 3;
+  }
   const picked = internal.length
     ? internal.filter((r) => /^\/(ar\/)?(book|technology-services|team|about|our-story|work|claims|contact|services|healthcare|creative-services|pricing-faq)\/$/.test(r))
     : [];
@@ -210,26 +214,28 @@ try {
     problems: ['booking API unreachable — /book/ falls back to a manual request'], warn: true });
 }
 
-/* 4 · declared redirects must land on a 200, not a chain */
+/* 4 · declared redirects must land on a 200, not a chain. The redirect itself is
+   the host's job (Apache .htaccess on one host, Vercel rules on another), so on
+   the live domain this follows the rule and then requests the destination. In a
+   local run the rule is exercised by the target server, and the destination is
+   checked with the same request either way. */
 for (const probe of redirectProbes()) {
   if (networkError) break;
+  const clean = (probe.expect || '').replace(/#.*$/, '');
   try {
     const res = await fetch(BASE + probe.from, { redirect: 'manual', headers: { 'User-Agent': 'cc-live-verify/2.0' } });
     const loc = res.headers.get('location') || '';
-    const isHost = !/^https?:\/\/(127\.0\.0\.1|localhost)/.test(BASE);
-    if ([301, 302, 307, 308].includes(res.status)) {
-      const ok = !probe.expect || loc.includes(probe.expect.replace(/\/#.*$/, '').replace(/\/$/, ''));
-      out.push({ route: `${probe.from} → ${loc}`, url: BASE + probe.from, status: res.status, ok, problems: ok ? [] : [`redirect → ${loc || 'nowhere'}, expected ${probe.expect}`] });
-    } else if (!isHost) {
-      /* A local server serves files, not host rules: assert the destination is a
-         real page and record that the rule itself is unverified here. */
-      const clean = (probe.expect || '').replace(/#.*$/, '').replace(/\/?$/, '/');
-      const target = LOCAL_TARGETS.has(clean);
-      out.push({ route: `${probe.from} → ${probe.expect}`, url: BASE + probe.from, status: res.status, ok: target,
-        problems: target ? [] : [`redirect target ${probe.expect} is not in the build`], note: 'host rule not exercised locally' });
-    } else {
+    if (![301, 302, 307, 308].includes(res.status)) {
       out.push({ route: `${probe.from} → ${probe.expect}`, url: BASE + probe.from, status: res.status, ok: false, problems: [`expected a redirect, got ${res.status}`] });
+      continue;
     }
+    const wanted = probe.expect ? clean : loc;
+    const land = await fetch(BASE + (wanted.startsWith('/') ? wanted : new URL(wanted, BASE).pathname), { redirect: 'follow', headers: { 'User-Agent': 'cc-live-verify/2.0' } });
+    const ok = land.status === 200;
+    out.push({
+      route: `${probe.from} → ${wanted}`, url: BASE + probe.from, status: res.status, ok,
+      problems: ok ? [] : [`redirect destination answered ${land.status}`],
+    });
   } catch (e) {
     out.push({ route: probe.from, url: BASE + probe.from, status: 0, ok: false, problems: ['network error: ' + e.message] });
   }

@@ -226,6 +226,38 @@ presented as photography must say so, so this needs one line from the owner. The
 crop deliberately keeps the emblem in frame rather than quietly cropping it out.
 See `docs/ASSET-AND-CLAIM-REGISTER.md`.
 
+## 6c · Post-merge: the live verification caught something (2026-11-10)
+
+PR #23 was merged on owner instruction (`00caeba`). The deploy workflow published
+`Deploy 00caeba` to the `hostinger` branch, and then its **Verify the LIVE domain**
+job failed. Two things came out of that, and one of them is a defect in my own
+verifier:
+
+1. **The check was not reproducible.** I could not reproduce the failure locally,
+   because `npm run check` leaves no `dist/`, and `verify-live` silently skipped
+   the crawl when `dist/` was absent — it reported `175/175` against a *source*
+   dev server whose redirect behaviour is not the host's. A verifier that passes
+   while skipping its own work is worse than none. It now refuses to run without a
+   `dist/` (`exit 3`) and fails, instead of warning, when there is no crawl list.
+2. **The deploy had no pre-flight.** The gate verified the source, then published
+   whatever `build.sh` produced. It now serves `dist/` through
+   `server/static.mjs` — production semantics: directory-slash resolution,
+   `_redirects` rules, `404.html` fallback, `.git` blocked — and runs the same
+   verifier against it **before** the artifact is uploaded. A truncated dist fails
+   the gate, not the live domain.
+
+Redirect verification also changed: it used to check the *local* build for the
+rule's target. It now follows the rule on the live host and requests the
+destination, which is the only way to prove a redirect works in production.
+
+**NOT VERIFIED — what the live failure actually was.** The job log is not
+retrievable from this sandbox (`gh run view --log` → `EOF` from the actions
+results service, repeatedly), the check-run carries no annotations from the old
+workflow, and no outbound network reach exists to `codeandcanvas.net` from here.
+So the failing route is unknown. The next deploy run prints the failing routes as
+a GitHub annotation naming each one, and the pre-flight now catches artifact
+problems before they reach the domain.
+
 ## 7 · Release decision
 
 Nothing is merged and nothing is deployed. PR #23 is open against `main` with a

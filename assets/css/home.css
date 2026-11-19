@@ -506,6 +506,7 @@ html[lang='ar'] .system__head h2 { line-height: 1.5; }
   position: relative; display: flex; flex-direction: column; gap: 10px;
   min-width: 0; padding: clamp(20px, 2.4vw, 30px);
   border: 1px solid var(--line-2); border-radius: var(--r-lg); text-align: start;
+  overflow: hidden; /* clip the coloured top track to the rounded corners */
   background: var(--panel);
   transition: border-color .35s var(--ease), transform .35s var(--ease);
 }

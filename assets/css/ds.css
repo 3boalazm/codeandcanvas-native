@@ -911,8 +911,8 @@ html[lang='ar'] .svc-row__price strong { font-size: 16.5px; }
 .steps3 > div { padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px); background: transparent; }
 .steps3 .stepno { font-family: var(--f-num); font-size: 12px; font-weight: 700; letter-spacing: .18em; color: var(--teal); }
 .steps3 h3 { font-size: clamp(18px, 1.6vw, 21px); margin-block: 12px 8px; }
-.steps3 p { color: var(--ink-2); font-size: 14.5px; line-height: 1.7; }
-.steps3 .step__deliv { margin-top: 14px; padding-top: 12px; border-block-start: 1px dashed var(--line-2); font-size: 13.5px; color: var(--ink-3); display: flex; gap: 9px; align-items: center; }
+.steps3 p { color: var(--ink); font-size: 14.5px; line-height: 1.7; }
+.steps3 .step__deliv { margin-top: 14px; padding-top: 12px; border-block-start: 1px dashed var(--line-2); font-size: 13.5px; color: var(--ink-2); display: flex; gap: 9px; align-items: center; }
 .steps3 .step__deliv .ico { color: var(--teal); font-size: 15px; }
 
 /* Comparison table */

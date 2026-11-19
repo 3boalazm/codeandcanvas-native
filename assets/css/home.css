@@ -208,8 +208,7 @@ html[lang='ar'] .track__for { letter-spacing: 0; text-transform: none; font-size
   body.is-home .closing__text,
   body.is-home #erp .platform-band__copy > p:not(.note-quiet),
   body.is-home #trust > .live-media-note,
-  body.is-home #work > .live-media-note,
-  body.is-home #how .facts { display: none; }
+  body.is-home #work > .live-media-note { display: none; }
   body.is-home .sec-head__aside { gap: 6px; }
   body.is-home .sec-head__aside .text-link { font-size: 13px; }
 
@@ -356,7 +355,6 @@ html[lang='ar'] .track__for { letter-spacing: 0; text-transform: none; font-size
 
   /* ---- 6. How we work / insights / markets / ERP / closing ---- */
   body.is-home .steps3 > div { padding: 14px 16px; }
-  body.is-home .steps3 p { display: none; }
   body.is-home .steps3 h3 { font-size: 16px; margin-block: 6px; }
   body.is-home .steps3 .step__deliv { margin-top: 8px; padding-top: 8px; font-size: 12px; }
 

@@ -238,7 +238,7 @@
     const btn = $('#langBtn');
     if (btn) {
       const label = lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية';
-      btn.textContent = lang === 'ar' ? 'EN' : 'ع';
+      btn.textContent = lang === 'ar' ? 'EN' : 'AR';
       btn.title = label;
       btn.setAttribute('aria-label', label);
     }
@@ -626,12 +626,12 @@
     // still gets its branded moment, but the page becomes interactive as soon as
     // the critical CSS is ready. Fonts keep loading with font-display:swap.
     const smallScreen = Math.min(innerWidth, innerHeight) <= 720 || !finePointer;
-    const minDelay = reduceMotion ? 0 : smallScreen ? 420 : 850;
+    const minDelay = reduceMotion ? 0 : smallScreen ? 0 : 0;
     const fontCap = new Promise((resolve) => setTimeout(resolve, 350));
     const t0 = performance.now();
     const go = () => setTimeout(finish, Math.max(0, minDelay - (performance.now() - t0)));
     Promise.race([(document.fonts && document.fonts.ready) || Promise.resolve(), fontCap]).then(go);
-    setTimeout(finish, 1800); // hard ceiling: never lock the page longer than this
+    setTimeout(finish, 600); // hard ceiling: never lock the page longer than this
   }
 
   /* ------------------------------------------------------------------ */
